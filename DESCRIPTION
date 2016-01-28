@@ -1,0 +1,20 @@
+Package: bsplus
+Type: Package
+Title: Adds functionality to the Shiny/RMarkdown Bootstrap framework
+Version: 0.1.0
+Authors@R: c(
+    person(
+      given = "Ian",
+      family = "Lyttle",
+      email = "ian.lyttle@schneider-electric.com",
+      role = c("aut", "cre")
+    ),
+    person(given = "Alex", family = "Shum", email = "alex@ALShum.com", role = c("ctb")),
+    person(given = "Schneider Electric",role = "cph")
+  )
+Description: Focuses on tabPanel arrangement
+License: MIT + file LICENSE
+LazyData: TRUE
+Imports:
+    htmltools
+RoxygenNote: 5.0.0
