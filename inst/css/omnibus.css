@@ -1,18 +1,20 @@
 /*
  * Would like to cite a reason for each of these entries
  *
+ * In the meantime, I'll leave them here and put the into their own
+ * containers.
+ *
  */
 container-fluid {
   max-width: 920px;
   margin-left: auto;
   margin-right: auto;
+  padding: 10px;
   padding-top: 5px;
   padding-bottom: 5px;
-  padding-left: 10px;
-  padding-right: 10px;
 }
 
-/* this might have to do with panel_collapse */
+/* these might have to do with panel_collapse */
 .row-fluid {
   padding-top: 2.5px;
   padding-bottom: 2.5px;
@@ -22,6 +24,12 @@ container-fluid {
   text-align: center;
   margin: 0;
 }
+
+/* do not underline links that contain block buttons */
+.btn-block:hover {
+  text-decoration: none;
+}
+
 
 /* This is used so that the modal backdrop renders properly */
 .modal-backdrop {
@@ -40,7 +48,4 @@ th, td {
   text-align: center;
 }
 
-/* do not underline links that contain block buttons */
-.btn-block:hover {
-  text-decoration: none;
-}
+
