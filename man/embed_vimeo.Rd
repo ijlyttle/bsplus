@@ -13,6 +13,6 @@ embed_vimeo(vimeo_id)
 html code describing div
 }
 \description{
-creates a centered div for embedding a vimeo
+creates a centered div for embedding a video from vimeo
 }
 

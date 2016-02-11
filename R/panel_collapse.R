@@ -1,3 +1,29 @@
+#' @export
+panel_bs <- function(type = "primary", title = NULL, content = NULL){
+
+  html_header <- NULL
+  if (!is.null(title)) {
+    html_header <-
+      htmltools::tags$div(
+        class = "panel-heading",
+        htmltools::tags$h4(
+          class = "panel-title",
+          title
+        )
+      )
+  }
+
+  htmltools::div(
+    class = paste0("panel panel-", type),
+    html_header,
+    htmltools::div(
+      class = "panel-body",
+      content
+    )
+  )
+
+}
+
 #' collapse_panel_set
 #'
 #' creates a fluidRow

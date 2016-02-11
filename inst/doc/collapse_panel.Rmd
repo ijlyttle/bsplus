@@ -1,0 +1,114 @@
+# How collapse_panels work
+
+A `collapse_sidebar_set` is composed of zero or more `collapse_sidebar_layout` elements
+
+A `collapse_sidebar_layout` is composed of one `collapse_sidebar_panel` and one `collapse_sidebar_main` element
+
+## Top layer
+
+In this layer, we define the things that are bound together in the accordion arrangement.
+
+At the top layer is the `collapse_sidebar_set()`. 
+
+It has arguments:
+
+```R
+#' @param ...       `collapse_sidebar_layout()` functions
+#' @param id_set    character, identifier for the sidebar_collapse_set
+#' @param width     integer, width (number of bootstrap columns) of the sidebar column
+#' @param position  character, position of sidebar column "left", "right"
+#'
+#' @return `shiny::fluidRow()` where columns are defined below, depending on `position`  
+#' @export
+```
+
+Sidebar:
+
+```
+<div class="panel-group" id="{{id_set}}" role="tablist" aria-multiselectable="true">
+  {{elements returned from the `collapse_sidebar_panel` within every `collapse_sidebar_layout`}}
+</div>
+```
+
+Main:
+
+```
+<div>
+  {{elements returned from the `collapse_main_panel` within every `collapse_sidebar_layout`}}
+</div>
+```
+
+## Middle layer
+
+In this layer, we define the matched sidebar and main layout elements
+
+```R
+#' @param id_layout               character, identifier for the sidebar_collapse_layout
+#' @param is_open                 logical, indicating if this element is initially open
+#' @param sidebar_collapse_panel  `sidebar_collapse_panel()` function
+#' @param main_collapse_panel     `main_collapse_panel()` function
+#'
+#' @return function that returns a `sidebar_collapse_layout` list
+```
+
+A `sidebar_collapse_layout` is a list with two members: `sidebar` and `main`.
+
+## Bottom Layer
+
+### Sidebar
+
+```R
+#' @param ...           UI elements to put into a `sidebar_collapse_panel` body 
+#' @param title         stuff (coercible to HTML) to appear in panel-heading
+#'
+#' @return function that returns a `sidebar_collapse_panel`
+```
+
+Talk about `<type>`, `<type-open>`, and `<type-closed>`
+
+`{{state}}` can be `true` or `false`
+`{{in_state}}` can be `in` or ``
+`{{if_empty}}` can be `padding-top: 0px; padding-bottom: 0px;` or ``
+
+```
+<div class="panel panel-<type>" class-open="panel-<type-open>" class-closed="panel-<type-closed>">
+  <div class="panel-heading" role="tab" id="{{id_set}}_{{id_layout}}_heading">
+    <h4 class="panel-title">
+      <a role="button" data-toggle="collapse" data-parent="#{{id_set}}" href="#{{id_set}}_{{id_layout}}_collapse" aria-expanded="{{state}}" aria-controls="{{id_set}}_{{id_layout}}_collapse">
+        {{title}}
+      </a>
+    </h4>
+  </div>
+  <div id="{{id_set}}_{{id_layout}}_collapse" class="panel-collapse collapse {{in_state}} panel-collapse-leader" role="tabpanel" aria-labelledby="{{id_set}}_{{id_layout}}_heading">
+    <div class="panel-body" style="{{if_empty}}">
+      {{...}}
+    </div>
+  </div>
+</div>
+```
+
+### Main
+
+```R
+#' closure for `sidebar_collapse_main` 
+#'
+#' @param ...           UI elements to put into a `sidebar_collapse_main` body 
+#' 
+#' @return function that returns a `sidebar_collapse_main`, given `id_set` and `id_layout` and `is_open`
+```
+
+Note that we can use `$("#id")` to identify elements with a given id
+
+The function will return a `div`:
+
+```
+<div id="{{id_set}}_{{id_layout}}_collapse_follower" class="panel-collapse collapse {{in_state}}">
+{{...}}
+</div>
+```
+
+
+
+
+
+

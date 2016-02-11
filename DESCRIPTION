@@ -17,4 +17,4 @@ License: MIT + file LICENSE
 LazyData: TRUE
 Imports:
     htmltools
-RoxygenNote: 5.0.0
+RoxygenNote: 5.0.1
