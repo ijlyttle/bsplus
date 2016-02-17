@@ -13,7 +13,7 @@ tagList(
       disabled(
         bs_panel(
           title = "Inputs",
-          type = "primary",
+          bstype = "primary",
           id = "test",
           selectInput(
             inputId = "yo",
@@ -25,23 +25,17 @@ tagList(
       actionButton(
         inputId = "button",
         label = "Activate"
-      )
-    ),
-    tabPanel(
-      title = tags$span(icon("info-circle")),
-      collapse_panel_set(
-        collapse_panel(
-          title = "Introduction",
-          control = NULL,
-          display = bs_panel(
-            type = "success",
-            title = "Yo",
-            "Hi there"
-          )
-        )
       ),
-      bs_panel(title = "yo", "more")
-
+      bs_panel(title = "yo", "more"),
+      bs_panel_collapse(
+        id = "collapse",
+        title = "yo",
+        is_open = FALSE,
+        bstype = "success",
+        tags$p("more"),
+        tags$p("moar")
+      ),
+      bs_panel("hello")
     )
   ),
   includeScript(system.file(file.path("js", "navbar_mod_shiny.js"), package = "bsplus")),

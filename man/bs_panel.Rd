@@ -4,17 +4,22 @@
 \alias{bs_panel}
 \title{wrapper for bootstrap panel}
 \usage{
-bs_panel(type = "primary", title = NULL, ...)
+bs_panel(..., id = NULL, title = NULL, bstype = c("primary", "success",
+  "info", "warning", "danger", "default"), use_bstype_open = FALSE)
 }
 \arguments{
-\item{type, }{character bootstrap class,
-one of: c("default", "primary", "success", "info", "warning", "danger")}
-
-\item{title, }{cracter, title for the panel (maybe this can be html, not guaranteed)}
-
 \item{...}{UI elements to include in the panel}
+
+\item{id}{character, id for the element}
+
+\item{title}{character, title for the panel (maybe this can be html, not guaranteed)}
+
+\item{bstype}{character, bootstrap type}
+}
+\value{
+a panel div
 }
 \description{
-wrapper for bootstrap panel
+if title is null, then the heading is null
 }
 
