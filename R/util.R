@@ -31,3 +31,14 @@ set_bstype_open <- function(
 
   tag
 }
+
+get_class <- function(tag){
+
+  x <- tagGetAttribute(tag, "class")
+  x <- str_trim(x)
+  x <- str_split(x, " ")
+
+  x[[1]]
+}
+
+

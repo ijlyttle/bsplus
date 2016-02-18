@@ -109,20 +109,29 @@ collapse_sidebar_layout <- function(
 #'
 collapse_sidebar_panel <- function(..., title){
 
-  function(id_set, id_layout, is_open, bstype_open, bstype_closed){
+  function(
+    id_set,
+    id_layout,
+    is_open,
+    bstype_open = c("primary", "success", "info", "warning", "danger", "default"),
+    bstype_closed = c("success", "info", "warning", "danger", "default", "primary")
+  ){
 
     # validate
-    bstype_open <- match.arg(bstype_all)
-    bstype_closed <- match.arg(bstype_all)
+    bstype_open <- match.arg(bstype_open)
+    bstype_closed <- match.arg(bstype_closed)
 
     .collapse_sidebar_panel(
-      ..., title,
-      id_set, id_layout,
-      is_open, bstype_open, bstype_closed
+      ...,
+      title = title,
+      id_set = id_set,
+      id_layout = id_layout,
+      is_open = is_open,
+      bstype_open = bstype_open,
+      bstype_closed = bstype_closed
     )
   }
 }
-
 
 #' Define a collapse_main_panel
 #'

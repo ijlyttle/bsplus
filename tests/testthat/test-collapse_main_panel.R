@@ -1,7 +1,6 @@
 library("htmltools")
 library("stringr")
 
-
 context("collapse_main_panel")
 
 # when we compose a main_panel
@@ -18,15 +17,6 @@ fn_panel <-
 
 panel_closed <- fn_panel(id_set = "set", id_layout = "layout", is_open = FALSE, bstype_open = "info")
 panel_open <- fn_panel(id_set = "set", id_layout = "layout", is_open = TRUE, bstype_open = "info")
-
-get_class <- function(x){
-
-  x <- tagGetAttribute(x, "class")
-  x <- str_trim(x)
-  x <- str_split(x, " ")
-
-  x[[1]]
-}
 
 class_children_open <- panel_open$children[[1]]
 

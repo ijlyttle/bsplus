@@ -132,9 +132,8 @@
     ifelse(
       identical(length(content), 0L),
       "padding-top: 0px; padding-bottom: 0px;",
-      NULL
+      ""
     )
-
 
   # http://getbootstrap.com/javascript/#collapse-example-accordion
   #
