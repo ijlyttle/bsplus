@@ -40,7 +40,7 @@ ui <- shinyUI(fluidPage(
         bs_modal_helpify(
           selectInput(
             inputId = "choice",
-            label = "label",
+            label = "humungous label",
             choices = c("a", "b", "c")
           ),
           html_modal
