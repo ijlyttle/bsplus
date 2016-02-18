@@ -20,28 +20,26 @@ collapse_sidebar_set <- function(
 ){
 
   # args
+  list_fn_layout <- list(...)
   bstype_open <- match.arg(bstype_open)
   bstype_closed <- match.arg(bstype_closed)
 
-  # go through the list of closures, offering bstype_open, bstype_closed
-  n_layout <- length(list_fn_layout)
-  is_open <- rep(FALSE, n_layout)
-  if (n_layout > 0){
-    is_open[1] <- TRUE
-  }
+  list_layout <- list()
 
-  list_layout <-
-    mapply(
-      do.call,
-      list(...),
-      is_open = is_open,
-      MoreArgs = list(
+  is_open <- TRUE
+  for (i in seq_along(list_fn_layout)){
+    fn_layout <- list_fn_layout[[i]]
+
+    list_layout[[i]] <-
+      fn_layout(
         id_set = id_set,
+        is_open = is_open,
         bstype_open = bstype_open,
         bstype_closed = bstype_closed
-      ),
-      SIMPLIFY = FALSE
-    )
+      )
+
+    is_open <- FALSE
+  }
 
   .collapse_sidebar_set(
     list_layout,

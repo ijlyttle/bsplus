@@ -10,14 +10,13 @@
 # @return \code{\link[shiny]{fluidRow}} where columns are defined below, depending on `position`
 #
 .collapse_sidebar_set <- function(
-  ...,
+  list_layout,
   id_set,
   width = 3,
   position = c("left", "right")
 ){
 
   # args
-  list_layout <- list(...)
   position <- match.arg(position)
 
   # sidebar container
@@ -182,7 +181,7 @@
 
   panel_body <-
     htmltools::tags$div(
-      class = "panel_body",
+      class = "panel-body",
       style = panel_body_style,
       content
     )
