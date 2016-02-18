@@ -18,4 +18,6 @@ LazyData: TRUE
 Imports:
     htmltools
 RoxygenNote: 5.0.1
-Suggests: testthat
+Suggests: testthat,
+    shinythemes,
+    shinypod
