@@ -31,9 +31,11 @@ container-fluid {
 }
 
 /* This is used so that the modal backdrop renders properly */
+/*
 .modal-backdrop {
-  z-index: -1;
+  z-index: 1000;
 }
+*/
 
 /* Table headings and entries can benefit from some extra spacing */
 th, td {

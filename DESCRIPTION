@@ -19,5 +19,4 @@ Imports:
     htmltools
 RoxygenNote: 5.0.1
 Suggests: testthat,
-    shinythemes,
-    shinypod
+    shinythemes

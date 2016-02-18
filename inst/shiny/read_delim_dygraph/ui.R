@@ -6,11 +6,52 @@ library("shinypod")
 library("bsplus")
 library("dygraphs")
 
+html_button <-
+  htmltools::tags$button(
+    type = "button",
+    class = "btn btn-primary btn-lg",
+    `data-toggle` = "modal",
+    `data-target` = "#myModal",
+    "Launch"
+  )
+
+html_modal <-
+  htmltools::tags$div(
+    class = "modal fade",
+    id = "myModal",
+    tabindex = "-1",
+    role = "dialog",
+    htmltools::tags$div(
+      class = "modal-dialog",
+      role = "document",
+      htmltools::tags$div(
+        class = "modal-content",
+        htmltools::tags$div(
+          class = "modal-header",
+          htmltools::tags$button(
+            type = "button",
+            class = "close",
+            `data-dismiss` = "modal",
+            htmltools::span(htmltools::HTML("&times;"))
+          ),
+          htmltools::tags$h4(
+            class = "modal-title",
+            "Modal title"
+          ),
+          htmltools::tags$div(
+            class = "modal-body",
+            "Here it is"
+          )
+        )
+      )
+    )
+  )
+
 tagList(
   includeCSS(system.file(file.path("css", "omnibus.css"), package = "bsplus")),
   useShinyjs(),
   navbarPage(
-    theme = shinytheme("flatly"),
+#    theme = shinytheme("flatly"),
     title = "Parse CSV & Dygraph",
     windowTitle = "Parse CSV & Dygraph",
     tabPanel(
@@ -24,7 +65,9 @@ tagList(
           collapse_sidebar_panel =
             collapse_sidebar_panel(
               title = "Parse CSV",
-              read_delim_sidebar_side("csv")
+              read_delim_sidebar_side("csv"),
+              html_button,
+              html_modal
             ),
           collapse_main_panel =
             collapse_main_panel(
