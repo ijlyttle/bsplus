@@ -1,13 +1,12 @@
-#
-# This is a Shiny web application. You can run the application by clicking
-# the 'Run App' button above.
-#
-# Find out more about building applications with Shiny here:
-#
-#    http://shiny.rstudio.com/
-#
-
 library("shiny")
+
+# reference: http://jsfiddle.net/3gYa3/221/
+#
+# note that we will need a bit of css:
+#
+# .accordion-toggle:hover {
+#   cursor: pointer;
+# }
 
 # Define UI for application that draws a histogram
 ui <- shinyUI(fluidPage(
@@ -46,7 +45,6 @@ ui <- shinyUI(fluidPage(
             class = "panel panel-primary",
             tags$div(
               class = "panel-heading accordion-toggle collapsed",
-              disable = "disabled",
               `data-toggle` = "collapse",
               `data-parent` = "#set",
               `data-target` = "#layout-02-collapse",
