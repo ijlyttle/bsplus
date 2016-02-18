@@ -36,18 +36,28 @@ ui <- shinyUI(fluidPage(
    # Sidebar with a slider input for number of bins
    sidebarLayout(
       sidebarPanel(
-        html_button,
-        html_modal
+
+        bs_modal_helpify(
+          selectInput(
+            inputId = "choice",
+            label = "label",
+            choices = c("a", "b", "c")
+          ),
+          html_modal
+        )
+
+
       ),
 
       mainPanel(
+        textOutput("result")
       )
    )
 ))
 
 # Define server logic required to draw a histogram
 server <- shinyServer(function(input, output) {
-
+  output$result <- renderText(input$choice)
 })
 
 # Run the application
