@@ -20,16 +20,15 @@ container-fluid {
   padding-bottom: 2.5px;
 }
 
+/* for panel_collapse, adds cursor on panel heading */
+.accordion-toggle:hover {
+  cursor: pointer;
+}
+
 .partition-title {
   text-align: center;
   margin: 0;
 }
-
-/* do not underline links that contain block buttons */
-.btn-block:hover {
-  text-decoration: none;
-}
-
 
 /* This is used so that the modal backdrop renders properly */
 .modal-backdrop {
@@ -47,5 +46,6 @@ th, td {
   padding-bottom: 10px;
   text-align: center;
 }
+
 
 

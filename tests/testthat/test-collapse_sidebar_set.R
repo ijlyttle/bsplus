@@ -5,7 +5,6 @@ context("collapse_sidebar_set")
 
 # when we compose a sidebar_set
 
-
 my_set <-
   collapse_sidebar_set(
     id_set = "set",
