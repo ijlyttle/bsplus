@@ -21,16 +21,14 @@
 
   # sidebar container
   #
-  # <div class="panel-group" id="{{id_set}}" role="tablist" aria-multiselectable="true">
+  # <div class="panel-group" id="{{id_set}}">
   #   {{elements returned from the `collapse_sidebar_panel` within every `collapse_sidebar_layout`}}
   # </div>
   #
   div_sidebar <-
     shiny::tags$div(
-      `class` = "panel-group",
-      `id` = id_set,
-      `role` = "tablist",
-      `aria-multiselectable` = "true"
+      class = "panel-group",
+      id = id_set
     )
 
   # main container
@@ -134,48 +132,21 @@
       ""
     )
 
-  # http://getbootstrap.com/javascript/#collapse-example-accordion
-  #
-  # `{{state}}` can be `true` or `false`
-  # `{{in_state}}` can be `in` or ``
-  # `{{if_empty}}` can be `padding-top: 0px; padding-bottom: 0px;` or ``
-  #
-  # <div class="panel panel-{{bs_type}}" class-open="panel-{{bs_type_open}}" class-closed="panel-{{bs_type_closed}}" id="{{id_set}}_{{id_layout}}">
-  #   <div class="panel-heading" role="tab" id="{{id_set}}_{{id_layout}}_heading">
-  #     <h4 class="panel-title">
-  #       <a role="button" data-toggle="collapse" data-parent="#{{id_set}}" href="#{{id_set}}_{{id_layout}}_collapse" aria-expanded="{{state}}" aria-controls="{{id_set}}_{{id_layout}}_collapse">
-  #       {{title}}
-  #       </a>
-  #     </h4>
-  #   </div>
-  #   <div id="{{id_set}}_{{id_layout}}_collapse" class="panel-collapse collapse {{in_state}} panel-collapse-leader" role="tabpanel" aria-labelledby="{{id_set}}_{{id_layout}}_heading">
-  #     <div class="panel-body" style="{{if_empty}}">
-  #       ...
-  #     </div>
-  #   </div>
-  # </div>
+  # reference: http://jsfiddle.net/3gYa3/221/
 
   panel_title <-
     htmltools::tags$h4(
       class = "panel-title",
-      htmltools::tags$a(
-        class = "btn-block", # secret-sauce to make the whole panel-heading clickable
-        role = "button",
-        `data-toggle` = "collapse",
-        `data-parent` = .ref(id_set),
-        href = .ref(id_set_layout_collapse),
-        followref = .ref(id_set_layout_follow),
-        `aria-expanded` = state,
-        `aria-controls` = id_set_layout_collapse,
-        title
-      )
+      title
     )
 
   panel_heading <-
     htmltools::tags$div(
-      class = "panel-heading",
-      role = "tab",
       id = id_set_layout_heading,
+      class = "panel-heading accordion-toggle",
+      `data-toggle` = "collapse",
+      `data-parent` = .ref(id_set),
+      `data-target` = .ref(id_set_layout_collapse),
       panel_title
     )
 
@@ -200,7 +171,6 @@
         sep = " "
       ),
       role = "tabpanel",
-      `aria-labelledby` = id_set_layout_heading,
       panel_body
     )
 
