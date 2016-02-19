@@ -4,15 +4,15 @@
 \alias{collapse_sidebar_set}
 \title{Composes collapse_sidebar_layouts vertically into a collapse_sidebar_set}
 \usage{
-collapse_sidebar_set(..., id_set, width = 3, position = c("left", "right"),
-  bstype_open = c("primary", "success", "info", "warning", "danger",
-  "default"), bstype_closed = c("success", "info", "warning", "danger",
-  "default", "primary"))
+collapse_sidebar_set(id_set, ..., width = 3, position = c("left", "right"),
+  bstype_open = c("success", "info", "warning", "danger", "default",
+  "primary"), bstype_closed = c("primary", "success", "info", "warning",
+  "danger", "default"))
 }
 \arguments{
-\item{...}{`collapse_sidebar_layout` functions}
-
 \item{id_set}{character, identifier for the sidebar_collapse_set}
+
+\item{...}{`collapse_sidebar_layout` functions}
 
 \item{width}{integer, width (number of bootstrap columns) of the sidebar column}
 

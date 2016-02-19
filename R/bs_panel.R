@@ -2,6 +2,10 @@
 #'
 #' if title is null, then the heading is null
 #'
+#' \code{bs_panel_open()} is a wrapper for \code{bs_panel()}, with \code{use_bstype_open = TRUE}
+#'
+#' @name bs_panel
+#'
 #' @param ...       UI elements to include in the panel
 #' @param id        character, id for the element
 #' @param title     character, title for the panel (maybe this can be html, not guaranteed)
@@ -55,6 +59,13 @@ bs_panel <- function(
     )
 
   bs_panel
+}
+
+#' @rdname bs_panel
+#' @export
+#
+bs_panel_open <- function(...){
+  bs_panel(..., use_bstype_open = TRUE)
 }
 
 #' wrapper for collapseable bootstrap panel

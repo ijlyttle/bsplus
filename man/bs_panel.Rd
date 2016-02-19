@@ -2,10 +2,13 @@
 % Please edit documentation in R/bs_panel.R
 \name{bs_panel}
 \alias{bs_panel}
+\alias{bs_panel_open}
 \title{wrapper for bootstrap panel}
 \usage{
 bs_panel(..., id = NULL, title = NULL, bstype = c("primary", "success",
   "info", "warning", "danger", "default"), use_bstype_open = FALSE)
+
+bs_panel_open(...)
 }
 \arguments{
 \item{...}{UI elements to include in the panel}
@@ -21,5 +24,8 @@ a panel div
 }
 \description{
 if title is null, then the heading is null
+}
+\details{
+\code{bs_panel_open()} is a wrapper for \code{bs_panel()}, with \code{use_bstype_open = TRUE}
 }
 

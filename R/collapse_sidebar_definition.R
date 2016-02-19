@@ -11,12 +11,12 @@
 #' @export
 #
 collapse_sidebar_set <- function(
-  ...,
   id_set,
+  ...,
   width = 3,
   position = c("left", "right"),
-  bstype_open = c("primary", "success", "info", "warning", "danger", "default"),
-  bstype_closed = c("success", "info", "warning", "danger", "default", "primary")
+  bstype_open = c("success", "info", "warning", "danger", "default", "primary"),
+  bstype_closed = c("primary", "success", "info", "warning", "danger", "default")
 ){
 
   # args
@@ -111,8 +111,8 @@ collapse_sidebar_panel <- function(..., title){
     id_set,
     id_layout,
     is_open,
-    bstype_open = c("primary", "success", "info", "warning", "danger", "default"),
-    bstype_closed = c("success", "info", "warning", "danger", "default", "primary")
+    bstype_open = c("success", "info", "warning", "danger", "default", "primary"),
+    bstype_closed = c("primary", "success", "info", "warning", "danger", "default")
   ){
 
     # validate
