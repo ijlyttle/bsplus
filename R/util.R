@@ -11,11 +11,13 @@
 #' @usage lhs \%>\% rhs
 NULL
 
-
-
 # handy function
 .ref <- function(x){
   paste0("#", x)
+}
+
+.class <- function(x){
+  paste0(".", x)
 }
 
 # if a tag has an attribute `use-bstype-open` set to true,
