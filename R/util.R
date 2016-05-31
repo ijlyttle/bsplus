@@ -1,3 +1,18 @@
+#' Pipe operator
+#'
+#' Import mechanism taken from
+#' https://github.com/hadley/modelr/blob/master/R/utils.R
+#'
+#' @name %>%
+#' @rdname pipe
+#' @keywords internal
+#' @export
+#' @importFrom magrittr %>%
+#' @usage lhs \%>\% rhs
+NULL
+
+
+
 # handy function
 .ref <- function(x){
   paste0("#", x)

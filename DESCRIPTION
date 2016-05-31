@@ -17,7 +17,8 @@ Description: Needs more words here.
 License: MIT + file LICENSE
 LazyData: TRUE
 Imports:
-    htmltools
+    htmltools,
+    magrittr
 RoxygenNote: 5.0.1
 Suggests: testthat,
     shinythemes
