@@ -106,7 +106,7 @@ bs_panel_collapse <- function(
         class = "btn-block", # secret-sauce to make the whole panel-heading clickable
         role = "button",
         `data-toggle` = "collapse",
-        href = .ref(id_collapse),
+        href = .id(id_collapse),
         `aria-expanded` = state,
         `aria-controls` = id_collapse,
         title

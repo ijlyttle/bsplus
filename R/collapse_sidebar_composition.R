@@ -145,8 +145,8 @@
       id = id_set_layout_heading,
       class = "panel-heading accordion-toggle",
       `data-toggle` = "collapse",
-      `data-parent` = .ref(id_set),
-      `data-target` = .ref(id_set_layout_collapse),
+      `data-parent` = .id(id_set),
+      `data-target` = .id(id_set_layout_collapse),
       panel_title
     )
 

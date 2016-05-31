@@ -12,7 +12,7 @@
 NULL
 
 # handy function
-.ref <- function(x){
+.id <- function(x){
   paste0("#", x)
 }
 

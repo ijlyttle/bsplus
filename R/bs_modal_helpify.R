@@ -21,7 +21,7 @@ bs_modal_helpify <- function(input, bs_modal){
       label_elements,
       htmltools::tags$a(
         `data-toggle` = "modal",
-        `data-target` = .ref(id_modal),
+        `data-target` = .id(id_modal),
         shiny::icon("info-circle")
       )
     )
