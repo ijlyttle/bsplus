@@ -7,12 +7,16 @@ Authors@R: c(
       given = "Ian",
       family = "Lyttle",
       email = "ian.lyttle@schneider-electric.com",
-      role = c("aut", "cre")
+      role = c("aut", "cre", "cph")
     ),
     person(given = "Alex", family = "Shum", email = "alex@ALShum.com", role = c("ctb")),
     person(given = "Emily", family = "Berry", email = "emily.berry@schneider-electric.com", role = c("ctb"))
   )
-Description: Needs more words here.
+Description: The Bootstrap framework lets you add some Javascript functionality to your web site by
+  adding attributes to your html tags - Bootstrap takes care of the Javascript
+  (https://getbootstrap.com/javascript). If you are using R Markdown or Shiny, you can
+  use these functions to create collapsible sections, accordion panels, modals, tooltips,
+  popovers, and an accordion sidebar framework (not described at bootstrap site).
 License: MIT + file LICENSE
 LazyData: TRUE
 Imports:
@@ -20,4 +24,6 @@ Imports:
     magrittr
 RoxygenNote: 5.0.1
 Suggests: testthat,
-    shinythemes
+    rmarkdown,
+    shinythemes,
+    shiny

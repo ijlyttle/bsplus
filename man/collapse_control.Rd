@@ -9,7 +9,7 @@ collapse_control(tag, id_target)
 \arguments{
 \item{tag}{\code{shiny.tag} either link or button}
 
-\item{id_target}{character, unique id for the div to be controlled}
+\item{id_target}{character, id for the div to be controlled}
 }
 \value{
 \code{shiny.tag} of the same type as \code{tag}
