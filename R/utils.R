@@ -11,13 +11,19 @@
 #' @usage lhs \%>\% rhs
 NULL
 
-# handy function
 .id <- function(x){
   paste0("#", x)
 }
 
 .class <- function(x){
   paste0(".", x)
+}
+
+.validate_tag <- function(tag){
+  # ensure we have a shiny tag
+  if (!identical(class(tag), "shiny.tag")){
+    stop("tag is not a shiny.tag - tag must be generated using htmltools or shiny")
+  }
 }
 
 # if a tag has an attribute `use-bstype-open` set to true,

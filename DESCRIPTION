@@ -10,8 +10,7 @@ Authors@R: c(
       role = c("aut", "cre")
     ),
     person(given = "Alex", family = "Shum", email = "alex@ALShum.com", role = c("ctb")),
-    person(given = "Emily", family = "Berry", email = "emily.berry@schneider-electric.com", role = c("ctb")),
-    person(given = "Schneider Electric",role = "cph")
+    person(given = "Emily", family = "Berry", email = "emily.berry@schneider-electric.com", role = c("ctb"))
   )
 Description: Needs more words here.
 License: MIT + file LICENSE
