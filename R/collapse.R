@@ -1,13 +1,6 @@
-#' Modifies a tag to control a collpasible div
+#' Attaches collpase control to a tag
 #'
 #' Works on either a button (\code{<button>}) or a link (\code{<a>}).
-#'
-#' Adds attribute: \code{data-toggle="collapse"}.
-#'
-#' If this is a button, also adds attribute \code{data-target="#[id_target]"}
-#'
-#' If this is a link, also adds attributes \code{role="button"}, \code{href="#[id_target]"}.
-#'
 #'
 #' @param tag          \code{shiny.tag} either link or button
 #' @param id_target    character, id for the div to be controlled
@@ -17,7 +10,7 @@
 #'
 #' @seealso \url{https://getbootstrap.com/javascript/#collapse}
 #
-collapse_control <- function(tag, id_target){
+attach_collapse <- function(tag, id_collapse){
 
   .validate_tag(tag)
 
@@ -30,34 +23,29 @@ collapse_control <- function(tag, id_target){
 
   # button
   if (identical(tag$name, "button")){
-    tag <- htmltools::tagAppendAttributes(tag, `data-target` = .id(id_target))
+    tag <- htmltools::tagAppendAttributes(tag, `data-target` = .id(id_collapse))
   }
 
   # link
   if (identical(tag$name, "a")){
     tag <- htmltools::tagAppendAttributes(tag, `role` = "button")
-    tag <- htmltools::tagAppendAttributes(tag, `href` = .id(id_target))
+    tag <- htmltools::tagAppendAttributes(tag, `href` = .id(id_collapse))
   }
 
   tag
 }
 
-#' Wraps a tag to make it collapsible
+#' Creates a collapsible div
 #'
-#' Works on any tag - wraps it in a \code{<div>},
-#' sets the attributes \code{class="collpase"} and \code{id="[id]"}
 #'
-#' @param tag     \code{shiny.tag} to be collapsed
-#' @param id      character, unique id corresponds to \code{id_target}
+#' @param id      character, unique id corresponds to \code{id_collapse}
 #'
-#' @return \code{shiny.tag}
+#' @return \code{shiny.tag} div
 #' @export
 #
-collapse_target <- function(tag, id){
+collapse <- function(id){
 
-  .validate_tag(tag)
+  tag <- htmltools::tags$div(class = "collapse", id = id)
 
-  tag_new <- htmltools::tags$div(class = "collapse", id = id, tag)
-
-  tag_new
+  tag
 }
