@@ -19,7 +19,11 @@ NULL
   paste0(".", x)
 }
 
-.tag_validate <- function(tag, name = NULL){
+# @param tag htmltools tag
+# @param name character, the name of the tag must be in this vector
+# @param attribs named list of characters, these are attributes
+#
+.tag_validate <- function(tag, name = NULL, attribs = NULL){
   # ensure we have a shiny tag
   if (!identical(class(tag), "shiny.tag")){
     stop("tag is not a shiny.tag - tag must be generated using htmltools or shiny")
@@ -31,6 +35,11 @@ NULL
     if (!(tag$name) %in% name){
       stop("tag needs to be one of: ", paste(name, collapse = ", "))
     }
+  }
+
+  # if attribs are provided
+  if (!is.null(attribs)){
+    # for each
   }
 
   # make it pipeable (just in case)
