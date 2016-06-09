@@ -2,7 +2,10 @@
 #'
 #' @param id      character, unique id corresponds to \code{id_collapse}
 #'
-#' @return \code{shiny.tag} div
+#' @return \code{\link[htmltools]{tag}} div
+#' @examples
+#' collapse(id = "id_yeah")
+#'
 #' @export
 #
 collapse <- function(id){
@@ -14,23 +17,21 @@ collapse <- function(id){
 
 #' Appends a tag to a collapsible div
 #'
-#' This is syntactic sugar for htmltools \code{\link[htmltools]{tagAppendChild}}
+#' This is a thin wrapper to htmltools \code{\link[htmltools]{tagAppendChild}}
 #'
 #' @param tag_collapse \code{\link[htmltools]{tag}}, made using \code{\link{collapse()}}
-#' @param tag_child \code{\link[htmltools]{tag}}
+#' @param tag_child \code{\link[htmltools]{tag}} to be appended to \code{tag_collapse}
 #'
 #' @return \code{\link[htmltools]{tag}}, modified copy of \code{tag_collapse}
+#' @examples
+#' collapse(id = "id_yeah") %>%
+#'   collapse_append("Yeah Yeah Yeah")
 #'
 #' @export
 #
 collapse_append <- function(tag_collapse, tag_child){
 
-  tag_collapse <-
-    .tag_validate(
-      tag_collapse,
-      name = "div",
-      attribs = list(class = "collapse")
-    )
+  tag_collapse <- .tag_validate(tag_collapse, name = "div")
 
   tag_child <- .tag_validate(tag_child)
 
@@ -46,9 +47,12 @@ collapse_append <- function(tag_collapse, tag_child){
 #'
 #' @param tag          htmltools \code{\link[htmltools]{tag}}, must be a link
 #'                     or a button
-#' @param id_target    character, id for the div to be controlled
+#' @param id_collapse    character, id for the div to be controlled
 #'
 #' @return \code{\link[htmltools]{tag}}, modified copy of \code{tag}
+#' @examples
+#' htmltools::tags$button("She Loves You") %>%
+#'   collapse_attach("id_yeah")
 #' @export
 #'
 #' @seealso \url{https://getbootstrap.com/javascript/#collapse}

@@ -10,9 +10,13 @@ collapse(id)
 \item{id}{character, unique id corresponds to \code{id_collapse}}
 }
 \value{
-\code{shiny.tag} div
+\code{\link[htmltools]{tag}} div
 }
 \description{
 Creates a collapsible div
+}
+\examples{
+collapse(id = "id_yeah")
+
 }
 

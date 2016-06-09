@@ -10,13 +10,17 @@ attach_collapse(tag, id_collapse)
 \item{tag}{htmltools \code{\link[htmltools]{tag}}, must be a link
 or a button}
 
-\item{id_target}{character, id for the div to be controlled}
+\item{id_collapse}{character, id for the div to be controlled}
 }
 \value{
 \code{\link[htmltools]{tag}}, modified copy of \code{tag}
 }
 \description{
 Works on either a button (\code{<button>}) or a link (\code{<a>}).
+}
+\examples{
+htmltools::tags$button("She Loves You") \%>\%
+  collapse_attach("id_yeah")
 }
 \seealso{
 \url{https://getbootstrap.com/javascript/#collapse}

@@ -9,12 +9,17 @@ collapse_append(tag_collapse, tag_child)
 \arguments{
 \item{tag_collapse}{\code{\link[htmltools]{tag}}, made using \code{\link{collapse()}}}
 
-\item{tag_child}{\code{\link[htmltools]{tag}}}
+\item{tag_child}{\code{\link[htmltools]{tag}} to be appended to \code{tag_collapse}}
 }
 \value{
 \code{\link[htmltools]{tag}}, modified copy of \code{tag_collapse}
 }
 \description{
-This is syntactic sugar for htmltools \code{\link[htmltools]{tagAppendChild}}
+This is a thin wrapper to htmltools \code{\link[htmltools]{tagAppendChild}}
+}
+\examples{
+collapse(id = "id_yeah") \%>\%
+  collapse_append("Yeah Yeah Yeah")
+
 }
 
