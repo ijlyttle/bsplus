@@ -7,16 +7,24 @@
 collapse(id)
 }
 \arguments{
-\item{id}{character, unique id corresponds to \code{id_collapse}}
+\item{id}{character, unique id for collapsible div}
 }
 \value{
 \code{\link[htmltools]{tag}} div
 }
 \description{
-Creates a collapsible div
+Important to note that it is your responsibility to ensure that id is unique
+among html elements in your page. If you have non-unique id's, strange things may
+happen as your page is rendered.
 }
 \examples{
 collapse(id = "id_yeah")
 
+}
+\seealso{
+\url{https://getbootstrap.com/javascript/#collapse}
+
+Other collapse.functions: \code{\link{attach_collapse}},
+  \code{\link{collapse_append}}
 }
 

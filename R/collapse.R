@@ -1,10 +1,17 @@
 #' Creates a collapsible div
 #'
-#' @param id      character, unique id corresponds to \code{id_collapse}
+#' Important to note that it is your responsibility to ensure that id is unique
+#' among html elements in your page. If you have non-unique id's, strange things may
+#' happen as your page is rendered.
+#'
+#' @param id      character, unique id for collapsible div
 #'
 #' @return \code{\link[htmltools]{tag}} div
 #' @examples
 #' collapse(id = "id_yeah")
+#'
+#' @family collapse functions
+#' @seealso \url{https://getbootstrap.com/javascript/#collapse}
 #'
 #' @export
 #
@@ -27,6 +34,9 @@ collapse <- function(id){
 #' collapse(id = "id_yeah") %>%
 #'   collapse_append("Yeah Yeah Yeah")
 #'
+#' @family collapse functions
+#' @seealso \url{https://getbootstrap.com/javascript/#collapse}
+#'
 #' @export
 #
 collapse_append <- function(tag_collapse, tag_child){
@@ -40,22 +50,25 @@ collapse_append <- function(tag_collapse, tag_child){
   tag_collapse
 }
 
-
-#' Attaches collpase control to a tag
+#' Attaches a collapsible div to a control
 #'
 #' Works on either a button (\code{<button>}) or a link (\code{<a>}).
 #'
-#' @param tag          htmltools \code{\link[htmltools]{tag}}, must be a link
-#'                     or a button
-#' @param id_collapse    character, id for the div to be controlled
+#' You may attach a collapseable div to more than one control.
+#'
+#' @param tag          htmltools \code{\link[htmltools]{tag}},
+#'  must be a link or a button
+#' @param id_collapse  character, id for the collapsible div
 #'
 #' @return \code{\link[htmltools]{tag}}, modified copy of \code{tag}
 #' @examples
 #' htmltools::tags$button("She Loves You") %>%
 #'   collapse_attach("id_yeah")
-#' @export
 #'
+#' @family collapse functions
 #' @seealso \url{https://getbootstrap.com/javascript/#collapse}
+#'
+#' @export
 #
 attach_collapse <- function(tag, id_collapse){
 

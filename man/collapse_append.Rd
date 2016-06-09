@@ -22,4 +22,10 @@ collapse(id = "id_yeah") \%>\%
   collapse_append("Yeah Yeah Yeah")
 
 }
+\seealso{
+\url{https://getbootstrap.com/javascript/#collapse}
+
+Other collapse.functions: \code{\link{attach_collapse}},
+  \code{\link{collapse}}
+}
 

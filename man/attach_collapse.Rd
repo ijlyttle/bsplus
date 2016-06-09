@@ -2,15 +2,15 @@
 % Please edit documentation in R/collapse.R
 \name{attach_collapse}
 \alias{attach_collapse}
-\title{Attaches collpase control to a tag}
+\title{Attaches a collapsible div to a control}
 \usage{
 attach_collapse(tag, id_collapse)
 }
 \arguments{
-\item{tag}{htmltools \code{\link[htmltools]{tag}}, must be a link
-or a button}
+\item{tag}{htmltools \code{\link[htmltools]{tag}},
+must be a link or a button}
 
-\item{id_collapse}{character, id for the div to be controlled}
+\item{id_collapse}{character, id for the collapsible div}
 }
 \value{
 \code{\link[htmltools]{tag}}, modified copy of \code{tag}
@@ -18,11 +18,18 @@ or a button}
 \description{
 Works on either a button (\code{<button>}) or a link (\code{<a>}).
 }
+\details{
+You may attach a collapseable div to more than one control.
+}
 \examples{
 htmltools::tags$button("She Loves You") \%>\%
   collapse_attach("id_yeah")
+
 }
 \seealso{
 \url{https://getbootstrap.com/javascript/#collapse}
+
+Other collapse.functions: \code{\link{collapse_append}},
+  \code{\link{collapse}}
 }
 
