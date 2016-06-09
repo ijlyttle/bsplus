@@ -2,7 +2,7 @@
 % Please edit documentation in R/collapse.R
 \name{attach_collapse}
 \alias{attach_collapse}
-\title{Appends a tag to a collapsible div}
+\title{Attaches collpase control to a tag}
 \usage{
 attach_collapse(tag, id_collapse)
 }
@@ -16,10 +16,6 @@ or a button}
 \code{\link[htmltools]{tag}}, modified copy of \code{tag}
 }
 \description{
-This is syntactic sugar
-Attaches collpase control to a tag
-}
-\details{
 Works on either a button (\code{<button>}) or a link (\code{<a>}).
 }
 \seealso{
