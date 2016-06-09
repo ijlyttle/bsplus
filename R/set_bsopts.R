@@ -1,7 +1,9 @@
 # S3 generic for converting to a bootstrap option
 
+#' @export
 bsopt <- function(x) UseMethod("bsopt")
 
+#' @export
 bsopt.default <- function(x){
   x <- as.character(x)
   x <- paste(x, collapse = " ")
@@ -9,6 +11,7 @@ bsopt.default <- function(x){
   x
 }
 
+#' @export
 bsopt.logical <- function(x){
   x <- as.character(x)
   x <- tolower(x)
@@ -19,10 +22,12 @@ bsopt.logical <- function(x){
 
 # S4 generic for converting to a bootstrap option
 
+#' @export
 setGeneric("bsopt", function(x) {
   standardGeneric("bsopt")
 })
 
+#' @export
 #' @importClassesFrom lubridate Duration
 setMethod("bsopt", list("Duration"), function(x){
   x <- x@.Data * 1000 # get ms
