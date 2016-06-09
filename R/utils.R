@@ -19,11 +19,22 @@ NULL
   paste0(".", x)
 }
 
-.validate_tag <- function(tag){
+.tag_validate <- function(tag, name = NULL){
   # ensure we have a shiny tag
   if (!identical(class(tag), "shiny.tag")){
     stop("tag is not a shiny.tag - tag must be generated using htmltools or shiny")
   }
+
+  # if a name argument is provided
+  if (!is.null(name)){
+    # ensure that the name of the tag is among the provided name(s)
+    if (!(tag$name) %in% name){
+      stop("tag needs to be one of: ", paste(name, collapse = ", "))
+    }
+  }
+
+  # make it pipeable (just in case)
+  invisible(tag)
 }
 
 # if a tag has an attribute `use-bstype-open` set to true,

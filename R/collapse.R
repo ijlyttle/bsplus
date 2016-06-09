@@ -10,26 +10,24 @@
 #'
 #' @seealso \url{https://getbootstrap.com/javascript/#collapse}
 #
-attach_collapse <- function(tag, id_collapse){
+collapse_append <- function(tag, id_collapse){
 
-  .validate_tag(tag)
+  tag <- .tag_validate(tag, name = c("a", "button"))
 
-  # ensure we have either a link or a button
-  if (!(tag$name %in% c("a", "button"))){
-    stop("tag is not link or a button")
-  }
-
-  tag <- htmltools::tagAppendAttributes(tag, `data-toggle` = "collapse")
+  tag <- append_bsopts(tag, toggle = "collapse")
 
   # button
   if (identical(tag$name, "button")){
-    tag <- htmltools::tagAppendAttributes(tag, `data-target` = .id(id_collapse))
+    tag <- append_bsopts(tag, target = .id(id_collapse))
   }
 
   # link
   if (identical(tag$name, "a")){
-    tag <- htmltools::tagAppendAttributes(tag, `role` = "button")
-    tag <- htmltools::tagAppendAttributes(tag, `href` = .id(id_collapse))
+    tag <- htmltools::tagAppendAttributes(
+      tag,
+      role = "button",
+      href = .id(id_collapse)
+    )
   }
 
   tag

@@ -21,7 +21,8 @@ License: MIT + file LICENSE
 LazyData: TRUE
 Imports:
     htmltools,
-    magrittr
+    magrittr,
+    purrr
 RoxygenNote: 5.0.1
 Suggests: testthat,
     rmarkdown,
