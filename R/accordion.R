@@ -6,7 +6,7 @@ accordion <- function(id){
     `aria-multiselectable` = "true"
   )
 
-  div <- accordion_set(div, panel_type = "default")
+  div <- accordion_set(div, panel_type = "default", use_block_button = FALSE)
 
   div
 }
