@@ -4,10 +4,12 @@
 \alias{set_bsopts}
 \title{Sets Bootstrap data-attributes}
 \usage{
-set_bsopts(tag, ...)
+set_bsopts(tag, .prefix = "data", ...)
 }
 \arguments{
 \item{tag}{htmltools \code{\link[htmltools]{tag}}}
+
+\item{.prefix}{character, prefix to prepend to attribute names}
 
 \item{...}{named arguments used to set the attributes of \code{tag}}
 }

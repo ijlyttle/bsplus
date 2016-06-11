@@ -38,12 +38,12 @@ setMethod("bsopt", list("Duration"), function(x){
 
 # converts a series of names arguments into
 # Bootstrap format.
-bsopts <- function(...){
+bsopts <- function(.prefix = "data", ...){
 
   x <- list(...)
 
   # prepend names with "data-"
-  names(x) <- purrr::map_chr(names(x), ~paste("data", .x, sep = "-"))
+  names(x) <- purrr::map_chr(names(x), ~paste(.prefix, .x, sep = "-"))
 
   # convert to boostrap format
   x <- purrr::map(x, bsopt)
@@ -75,15 +75,16 @@ bsopts <- function(...){
 #'   \item Vector (non scalar) values can be expressed as vectors.
 #' }
 #'
-#' @param tag htmltools \code{\link[htmltools]{tag}}
-#' @param ... named arguments used to set the attributes of \code{tag}
+#' @param tag     htmltools \code{\link[htmltools]{tag}}
+#' @param .prefix character, prefix to prepend to attribute names
+#' @param ...     named arguments used to set the attributes of \code{tag}
 #'
 #' @return htmltools \code{\link[htmltools]{tag}}
 #' @export
 #'
 #' @seealso \href{http://getbootstrap.com/javascript}{Boostrap Javascript Components}
 #
-set_bsopts <- function(tag, ...){
+set_bsopts <- function(tag, .prefix = "data", ...){
 
   # general purpose warning on danger of directly setting attributes
   # https://groups.google.com/forum/#!topic/shiny-discuss/6j87S7nuhQA
@@ -92,7 +93,7 @@ set_bsopts <- function(tag, ...){
 
   # transforms the attributes
   attributes_raw <- list(...)
-  attributes_bs <- do.call(bsopts, attributes_raw)
+  attributes_bs <- do.call(bsopts, c(list(.prefix = .prefix), attributes_raw))
 
   # figure out which attributes to keep (caution!)
   names_existing <- names(tag$attribs)
@@ -107,4 +108,16 @@ set_bsopts <- function(tag, ...){
   tag <- do.call(htmltools::tagAppendAttributes, args)
 
   tag
+}
+
+#' @export
+#
+set_dataopts <- function(tag, ...){
+  set_bsopts(tag, .prefix = "data", ...)
+}
+
+#' @export
+#
+set_ariaopts <- function(tag, ...){
+  set_bsopts(tag, .prefix = "aria", ...)
 }
