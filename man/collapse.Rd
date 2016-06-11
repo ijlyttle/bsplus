@@ -4,27 +4,29 @@
 \alias{collapse}
 \title{Creates a collapsible div}
 \usage{
-collapse(id)
+collapse(id, content = NULL)
 }
 \arguments{
 \item{id}{character, unique id for collapsible div}
+
+\item{content}{htmltools \code{\link[htmltools]{tagList}}}
 }
 \value{
 \code{\link[htmltools]{tag}} div
 }
 \description{
-Important to note that it is your responsibility to ensure that id is unique
+It is your responsibility to ensure that id is unique
 among html elements in your page. If you have non-unique id's, strange things may
 happen as your page is rendered.
 }
 \examples{
-collapse(id = "id_yeah")
+library("htmltools")
+collapse(id = "id_yeah", tags$p("Yeah Yeah Yeah"))
 
 }
 \seealso{
 \url{https://getbootstrap.com/javascript/#collapse}
 
-Other collapse.functions: \code{\link{attach_collapse}},
-  \code{\link{collapse_append}}
+Other collapse.functions: \code{\link{attach_collapse}}
 }
 

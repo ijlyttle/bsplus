@@ -7,8 +7,7 @@
 attach_collapse(tag, id_collapse)
 }
 \arguments{
-\item{tag}{htmltools \code{\link[htmltools]{tag}},
-must be a link or a button}
+\item{tag}{htmltools \code{\link[htmltools]{tag}},}
 
 \item{id_collapse}{character, id for the collapsible div}
 }
@@ -16,20 +15,20 @@ must be a link or a button}
 \code{\link[htmltools]{tag}}, modified copy of \code{tag}
 }
 \description{
-Works on either a button (\code{<button>}) or a link (\code{<a>}).
+Typical to use either a button (\code{<button>}) or a link (\code{<a>}).
 }
 \details{
 You may attach a collapseable div to more than one control.
 }
 \examples{
-htmltools::tags$button("She Loves You") \%>\%
+library("htmltools")
+tags$button("She Loves You") \%>\%
   collapse_attach("id_yeah")
 
 }
 \seealso{
 \url{https://getbootstrap.com/javascript/#collapse}
 
-Other collapse.functions: \code{\link{collapse_append}},
-  \code{\link{collapse}}
+Other collapse.functions: \code{\link{collapse}}
 }
 
