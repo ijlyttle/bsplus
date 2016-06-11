@@ -1,8 +1,10 @@
 #' @export
 accordion <- function(id){
 
-  div <- tags$div(class = "panel-group", id = id, role="tablist",
-                  `aria-multiselectable` = "true")
+  div <- htmltools::tags$div(
+    class = "panel-group", id = id, role="tablist",
+    `aria-multiselectable` = "true"
+  )
 
   div <- accordion_set(div, panel_type = "default")
 
