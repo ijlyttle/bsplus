@@ -22,15 +22,12 @@ accordion_append <- function(tag_accordion, title, content){
 
   tag_accordion <- .tag_validate(tag_accordion, name = "div")
 
-  # determine how many panels are already in the group, panel type
+  # characterize the existing accordion
   n_panel <- length(tag_accordion$children)
   panel_type <- attr(tag_accordion, "bsplus.panel_type")
+  use_block_button <- attr(tag_accordion, "bsplus.use_block_button")
 
-  # do we use block button?
-  use_block_button <-
-    htmltools::tagGetAttribute(tag_accordion, "use_block_button")
-
-  # id
+  # get/set id's for constituent elements
   id_accordion <- htmltools::tagGetAttribute(tag_accordion, "id")
   id_panel <- paste(id_accordion, n_panel, sep = "-")
   id_heading <- paste(id_panel, "heading", sep = "-")
