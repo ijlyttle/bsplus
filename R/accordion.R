@@ -33,22 +33,22 @@ accordion_append <- function(accordion, title, content){
   id_heading <- paste(id_panel, "heading", sep = "-")
   id_collapse <- paste(id_panel, "collapse", sep = "-")
 
-  heading <-
-    htmltools::tags$div(class = "panel-heading", role = "tab", id = id_heading,
-      htmltools::tags$h4(
-        class = "panel-title",
-        htmltools::tags$a(
-          role = "button", `data-toggle` = "collapse",
-          `data-parent` = .id(id_accordion), href = .id(id_collapse),
-          `aria-expanded` = "true", `aria-controls` = id_collapse,
-          title
-        )
-      )
+  link <-
+    htmltools::tags$a(
+      role = "button", `data-toggle` = "collapse",
+      `data-parent` = .id(id_accordion), href = .id(id_collapse),
+      `aria-expanded` = "true", `aria-controls` = id_collapse,
+      title
     )
 
   if (use_block_button){
-    heading <- htmltools::tagAppendAttributes(heading, class = "btn-block")
+    link <- htmltools::tagAppendAttributes(link, class = "btn-block")
   }
+
+  heading <-
+    htmltools::tags$div(class = "panel-heading", role = "tab", id = id_heading,
+      htmltools::tags$h4(class = "panel-title", link)
+    )
 
   collapse <- # append to class if first panel
     htmltools::tags$div(
