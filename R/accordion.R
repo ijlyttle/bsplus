@@ -1,4 +1,7 @@
 #' @export
+#
+#  note the defaults
+#
 accordion <- function(id){
 
   div <- htmltools::tags$div(
@@ -12,6 +15,9 @@ accordion <- function(id){
 }
 
 #' @export
+#
+#  try to use underlying collapse functionality
+#
 accordion_append <- function(tag_accordion, title, content){
 
   tag_accordion <- .tag_validate(tag_accordion, name = "div")
@@ -72,19 +78,27 @@ accordion_append <- function(tag_accordion, title, content){
 }
 
 #' @export
-accordion_set <- function(tag_accordion, panel_type = NULL,
-                          use_block_button = NULL){
+accordion_set <- function(
+  tag_accordion,
+  panel_type = NULL,
+  use_block_button = NULL){
 
-  bstypes <- c("default", "primary", "success", "info", "warning", "danger")
 
   # argument validation
   tag_accordion <- .tag_validate(tag_accordion, name = "div")
+
+
+  # panel_type
+
+  bstypes <- c("default", "primary", "success", "info", "warning", "danger")
 
   if (!is.null(panel_type)){
     panel_type <- match.arg(panel_type, bstypes)
     attr(tag_accordion, "bsplus.panel_type") <-
       paste("panel", panel_type, sep = "-")
   }
+
+  # use_block_button
 
   if (!is.null(use_block_button)){
     attr(tag_accordion, "bsplus.use_block_button") <- use_block_button
