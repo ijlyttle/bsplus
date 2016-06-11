@@ -20,6 +20,10 @@ accordion_append <- function(tag_accordion, title, content){
   n_panel <- length(tag_accordion$children)
   panel_type <- attr(tag_accordion, "bsplus.panel_type")
 
+  # do we use block button?
+  use_block_button <-
+    htmltools::tagGetAttribute(tag_accordion, "use_block_button")
+
   # id
   id_accordion <- htmltools::tagGetAttribute(tag_accordion, "id")
   id_panel <- paste(id_accordion, n_panel, sep = "-")
@@ -38,6 +42,10 @@ accordion_append <- function(tag_accordion, title, content){
         )
       )
     )
+
+  if (use_block_button){
+    heading <- htmltools::tagAppendAttributes(class = "btn-block")
+  }
 
   collapse <- # append to class if first panel
     htmltools::tags$div(
@@ -64,15 +72,23 @@ accordion_append <- function(tag_accordion, title, content){
 }
 
 #' @export
-accordion_set <- function(tag_accordion, panel_type =
-  c("default", "primary", "success", "info", "warning", "danger")){
+accordion_set <- function(tag_accordion, panel_type = NULL,
+                          use_block_button = NULL){
+
+  bstypes <- c("default", "primary", "success", "info", "warning", "danger")
 
   # argument validation
   tag_accordion <- .tag_validate(tag_accordion, name = "div")
-  panel_type <- match.arg(panel_type)
 
-  attr(tag_accordion, "bsplus.panel_type") <-
-    paste("panel", panel_type, sep = "-")
+  if (!is.null(panel_type)){
+    panel_type <- match.arg(panel_type, bstypes)
+    attr(tag_accordion, "bsplus.panel_type") <-
+      paste("panel", panel_type, sep = "-")
+  }
+
+  if (!is.null(use_block_button)){
+    attr(tag_accordion, "bsplus.use_block_button") <- use_block_button
+  }
 
   tag_accordion
 }
