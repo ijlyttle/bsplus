@@ -50,7 +50,7 @@ test_that("all change correctly", {
 
 # Public function
 
-div_in <- tags$div()
+div_in <- tags$div(`data-char` = "should_be_replaced")
 att <- list(
   char = "char1",
   vec = c("char1", "char2", "char3"),
@@ -66,5 +66,5 @@ div_out <- tags$div(
 )
 
 test_that("public function works", {
-  expect_identical(do.call(append_bsopts, c(list(tag = div_in), att)), div_out)
+  expect_identical(do.call(set_bsopts, c(list(tag = div_in), att)), div_out)
 })

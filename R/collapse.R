@@ -48,7 +48,7 @@ attach_collapse <- function(tag, id_collapse){
 
   tag <- .tag_validate(tag)
 
-  tag <- append_bsopts(tag, toggle = "collapse")
+  tag <- set_bsopts(tag, toggle = "collapse")
 
   if (identical(tag$name, "a")){
     # link
@@ -59,7 +59,7 @@ attach_collapse <- function(tag, id_collapse){
     )
   } else {
     # not a link
-    tag <- append_bsopts(tag, target = .id(id_collapse))
+    tag <- set_bsopts(tag, target = .id(id_collapse))
   }
 
   tag

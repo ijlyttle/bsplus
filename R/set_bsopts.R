@@ -51,7 +51,7 @@ bsopts <- function(...){
   x
 }
 
-#' Appends Bootstrap data-attributes
+#' Sets Bootstrap data-attributes
 #'
 #' Helper function to manage attributes for Bootstrap's Javascript components.
 #'
@@ -83,13 +83,26 @@ bsopts <- function(...){
 #'
 #' @seealso \href{http://getbootstrap.com/javascript}{Boostrap Javascript Components}
 #
-append_bsopts <- function(tag, ...){
+set_bsopts <- function(tag, ...){
+
+  # general purpose warning on danger of directly setting attributes
+  # https://groups.google.com/forum/#!topic/shiny-discuss/6j87S7nuhQA
 
   tag <- .tag_validate(tag)
 
+  # transforms the attributes
   attributes_raw <- list(...)
   attributes_bs <- do.call(bsopts, attributes_raw)
 
+  # figure out which attributes to keep (caution!)
+  names_existing <- names(tag$attribs)
+  names_new <- names(attributes_bs)
+  names_to_keep <- setdiff(names_existing, names_new)
+
+  # keep those attributes
+  tag$attribs <- tag$attribs[names_to_keep]
+
+  # append these attributes to the tag
   args <- c(list(tag = tag), attributes_bs)
   tag <- do.call(htmltools::tagAppendAttributes, args)
 

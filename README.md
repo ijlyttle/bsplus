@@ -22,3 +22,13 @@ Rmarkdown has support for navbars, but those may also be useful to make programa
 I'd like for everything to be pipeable, so that adding another element to a thing could be done by piping to a function like `add_foo()`.
 
 I'd also acknowlege the shinybs package written by Eric Bailey.
+
+### Ways I am abusing htmltools
+
+There are places that I am not using the htmltools API; I should probably not those here:
+
+If we had these functions, I could avoid the abuse:
+
+- `tagSetAttributes()` - clears and sets, rather than appends
+- `tagName()` - gets the name of the tag, i.e. "div", "button"
+- `tagNChildren()` - gets the number of children of the tag
