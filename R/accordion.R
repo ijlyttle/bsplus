@@ -18,17 +18,17 @@ accordion <- function(id){
 #
 #  try to use underlying collapse functionality
 #
-accordion_append <- function(tag_accordion, title, content){
+accordion_append <- function(accordion, title, content){
 
-  tag_accordion <- .tag_validate(tag_accordion, name = "div")
+  accordion <- .tag_validate(accordion, name = "div")
 
   # characterize the existing accordion
-  n_panel <- length(tag_accordion$children)
-  panel_type <- attr(tag_accordion, "bsplus.panel_type")
-  use_block_button <- attr(tag_accordion, "bsplus.use_block_button")
+  n_panel <- length(accordion$children)
+  panel_type <- attr(accordion, "bsplus.panel_type")
+  use_block_button <- attr(accordion, "bsplus.use_block_button")
 
   # get/set id's for constituent elements
-  id_accordion <- htmltools::tagGetAttribute(tag_accordion, "id")
+  id_accordion <- htmltools::tagGetAttribute(accordion, "id")
   id_panel <- paste(id_accordion, n_panel, sep = "-")
   id_heading <- paste(id_panel, "heading", sep = "-")
   id_collapse <- paste(id_panel, "collapse", sep = "-")
@@ -47,7 +47,7 @@ accordion_append <- function(tag_accordion, title, content){
     )
 
   if (use_block_button){
-    heading <- htmltools::tagAppendAttributes(class = "btn-block")
+    heading <- htmltools::tagAppendAttributes(heading, class = "btn-block")
   }
 
   collapse <- # append to class if first panel
@@ -69,20 +69,20 @@ accordion_append <- function(tag_accordion, title, content){
   panel <- htmltools::tagAppendAttributes(panel, class = panel_type)
 
   # append panel to accordion
-  tag_accordion <- htmltools::tagAppendChild(tag_accordion, panel)
+  accordion <- htmltools::tagAppendChild(accordion, panel)
 
-  tag_accordion
+  accordion
 }
 
 #' @export
 accordion_set <- function(
-  tag_accordion,
+  accordion,
   panel_type = NULL,
   use_block_button = NULL){
 
 
   # argument validation
-  tag_accordion <- .tag_validate(tag_accordion, name = "div")
+  accordion <- .tag_validate(accordion, name = "div")
 
 
   # panel_type
@@ -91,15 +91,15 @@ accordion_set <- function(
 
   if (!is.null(panel_type)){
     panel_type <- match.arg(panel_type, bstypes)
-    attr(tag_accordion, "bsplus.panel_type") <-
+    attr(accordion, "bsplus.panel_type") <-
       paste("panel", panel_type, sep = "-")
   }
 
   # use_block_button
 
   if (!is.null(use_block_button)){
-    attr(tag_accordion, "bsplus.use_block_button") <- use_block_button
+    attr(accordion, "bsplus.use_block_button") <- use_block_button
   }
 
-  tag_accordion
+  accordion
 }
