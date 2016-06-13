@@ -22,7 +22,8 @@ LazyData: TRUE
 Imports:
     htmltools,
     magrittr,
-    purrr
+    purrr,
+    lubridate
 RoxygenNote: 5.0.1
 Suggests: testthat,
     rmarkdown,
