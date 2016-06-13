@@ -27,4 +27,5 @@ RoxygenNote: 5.0.1
 Suggests: testthat,
     rmarkdown,
     shinythemes,
-    shiny
+    shiny,
+    covr
