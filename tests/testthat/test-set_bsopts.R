@@ -50,7 +50,6 @@ test_that("all change correctly", {
 
 # Public function
 
-div_in <- tags$div(`data-char` = "should_be_replaced")
 att <- list(
   char = "char1",
   vec = c("char1", "char2", "char3"),
@@ -58,13 +57,23 @@ att <- list(
   dur = dhours(1)
 )
 
-div_out <- tags$div(
+data_in <- tags$div(`data-char` = "should_be_replaced")
+data_out <- tags$div(
   `data-char` = "char1",
   `data-vec` = "char1 char2 char3",
   `data-num` = "7",
   `data-dur` = "3600000"
 )
 
-test_that("public function works", {
-  expect_identical(do.call(set_bsopts, c(list(tag = div_in), att)), div_out)
+aria_in <- tags$div(`aria-char` = "should_be_replaced")
+aria_out <- tags$div(
+  `aria-char` = "char1",
+  `aria-vec` = "char1 char2 char3",
+  `aria-num` = "7",
+  `aria-dur` = "3600000"
+)
+
+test_that("public functions work", {
+  expect_identical(do.call(set_bsdata, c(list(tag = data_in), att)), data_out)
+  expect_identical(do.call(set_bsaria, c(list(tag = aria_in), att)), aria_out)
 })
