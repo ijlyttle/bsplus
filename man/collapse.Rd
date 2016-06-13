@@ -7,21 +7,31 @@
 collapse(id, content = NULL)
 }
 \arguments{
-\item{id}{character, unique id for collapsible div}
+\item{id}{character, id for div}
 
-\item{content}{htmltools \code{\link[htmltools]{tagList}}}
+\item{content}{htmltools \code{\link[htmltools]{tagList}} or html, content to be
+put into the div}
 }
 \value{
 \code{\link[htmltools]{tag}} div
 }
 \description{
+When a page is renedered, this div will be hidden initialy, but can be revealed
+using a control to which you will have attached this div's id.
+}
+\details{
 It is your responsibility to ensure that id is unique
 among html elements in your page. If you have non-unique id's, strange things may
 happen as your page is rendered.
+
+This div's id may be attached to more than one control, see
+\code{\link{attach_collapse}}.
 }
 \examples{
 library("htmltools")
 collapse(id = "id_yeah", tags$p("Yeah Yeah Yeah"))
+tags$button("She Loves You") \%>\%
+  collapse_attach("id_yeah")
 
 }
 \seealso{

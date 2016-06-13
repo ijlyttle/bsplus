@@ -2,7 +2,7 @@
 % Please edit documentation in R/collapse.R
 \name{attach_collapse}
 \alias{attach_collapse}
-\title{Attaches a collapsible div to a control}
+\title{Attaches a collapsible div's id to a tag}
 \usage{
 attach_collapse(tag, id_collapse)
 }
@@ -15,13 +15,15 @@ attach_collapse(tag, id_collapse)
 \code{\link[htmltools]{tag}}, modified copy of \code{tag}
 }
 \description{
-Typical to use either a button (\code{<button>}) or a link (\code{<a>}).
+Typical to attach to a button
+or link tag (see \code{\link[htmltools]{builder}}).
 }
 \details{
-You may attach a collapseable div to more than one control.
+You may attach a collapsible div's id to more than one tag.
 }
 \examples{
 library("htmltools")
+collapse(id = "id_yeah", tags$p("Yeah Yeah Yeah"))
 tags$button("She Loves You") \%>\%
   collapse_attach("id_yeah")
 

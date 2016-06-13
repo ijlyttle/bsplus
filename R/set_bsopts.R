@@ -36,6 +36,8 @@ setMethod("bsopt", list("Duration"), function(x){
   x
 })
 
+# put in lubridate periods here, just because
+
 # converts a series of names arguments into
 # Bootstrap format.
 bsopts <- function(.prefix = "data", ...){
@@ -51,39 +53,6 @@ bsopts <- function(.prefix = "data", ...){
   x
 }
 
-#' Sets Bootstrap data-attributes
-#'
-#' Helper function to manage attributes for Bootstrap's Javascript components.
-#'
-#' One of the mechanisms used by the API for Boostrap Javascript-components is
-#' an html elements' attributes. These attribute names are prefixed with
-#' \code{"data-"}. The expressed in html, attributes themselves have the
-#' properties:
-#'
-#' \itemize{
-#'   \item Logical values are expressed as \code{"true"} or \code{"false"}.
-#'   \item Time durations are expressed as number of milliseconds.
-#'   \item Vector (non scalar) values are expressed in a space-delimited list.
-#' }
-#'
-#' The purpose of this function is to let you express these values in ways
-#' familiar to you as an R user. For example:
-#'
-#' \itemize{
-#'   \item Logical values can be expressed as \code{TRUE} or \code{FALSE}.
-#'   \item Time durations can be expressed using lubridate durations.
-#'   \item Vector (non scalar) values can be expressed as vectors.
-#' }
-#'
-#' @param tag     htmltools \code{\link[htmltools]{tag}}
-#' @param .prefix character, prefix to prepend to attribute names
-#' @param ...     named arguments used to set the attributes of \code{tag}
-#'
-#' @return htmltools \code{\link[htmltools]{tag}}
-#' @export
-#'
-#' @seealso \href{http://getbootstrap.com/javascript}{Boostrap Javascript Components}
-#
 set_bsopts <- function(tag, .prefix = "data", ...){
 
   # general purpose warning on danger of directly setting attributes
@@ -110,14 +79,54 @@ set_bsopts <- function(tag, .prefix = "data", ...){
   tag
 }
 
+#' Sets Bootstrap data- and aria- attributes.
+#'
+#' Helper function to manage attributes for Bootstrap's Javascript components.
+#'
+#' One of the mechanisms used by the API for Boostrap Javascript-components is
+#' an html elements' attributes. These attribute names are prefixed with
+#' \code{"data-"} or \code{"aria-"}, depending on the function.
+#'
+#' When expressed in html, attributes themselves have the properties:
+#'
+#' \itemize{
+#'   \item Logical values are expressed as \code{"true"} or \code{"false"}.
+#'   \item Time durations are expressed as number of milliseconds.
+#'   \item Vector (non scalar) values are expressed in a space-delimited list.
+#' }
+#'
+#' The purpose of this function is to let you express these values in ways
+#' familiar to you as an R user. For example:
+#'
+#' \itemize{
+#'   \item Logical values can be expressed as \code{TRUE} or \code{FALSE}.
+#'   \item Time durations can be expressed using lubridate durations.
+#'   \item Vector (non scalar) values can be expressed as vectors.
+#' }
+#'
+#' Note that this returns a modified copy of the tag sent to it, so it is pipeable.
+#'
+#' @param tag     htmltools \code{\link[htmltools]{tag}}
+#' @param ...     named arguments used to set the attributes of \code{tag}
+#'
+#' @return htmltools \code{\link[htmltools]{tag}}
+#' @examples
+#' library("htmltools")
+#' library("lubridate")
+#' tags$div() %>%
+#'   set_bsdata(target = "#target", delay = dseconds(1)) %>%
+#'   set_bsaria(expanded = FALSE)
 #' @export
+#'
+#' @seealso \href{http://getbootstrap.com/javascript}{Boostrap Javascript Components}
 #
-set_dataopts <- function(tag, ...){
+set_bsdata <- function(tag, ...){
   set_bsopts(tag, .prefix = "data", ...)
 }
 
+#' @rdname set_bsdata
 #' @export
 #
-set_ariaopts <- function(tag, ...){
+set_bsaria <- function(tag, ...){
   set_bsopts(tag, .prefix = "aria", ...)
 }

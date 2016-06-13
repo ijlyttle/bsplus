@@ -25,7 +25,7 @@ NULL
 #
 .tag_validate <- function(tag, name = NULL, attribs = NULL){
   # ensure we have a shiny tag
-  if (!identical(class(tag), "shiny.tag")){
+  if (!inherits(tag, "shiny.tag")){
     stop("tag is not a shiny.tag - tag must be generated using htmltools or shiny")
   }
 
@@ -75,6 +75,8 @@ set_bstype_open <- function(
   tag
 }
 
+
+# we will be able to get rid of this code
 get_class <- function(tag){
 
   x <- tagGetAttribute(tag, "class")
