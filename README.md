@@ -1,5 +1,7 @@
 # bsplus
 
+[![Travis-CI Build Status](https://travis-ci.org/ijlyttle/bsplus.svg?branch=master)](https://travis-ci.org/ijlyttle/bsplus)
+
 The goal of this package is to provide a framework to use bootstrap's markup API described here: http://getbootstrap.com/javascript/
 
 Some of these items are already provided in some way, shape, or form by the rmarkdown package or the shiny package.
