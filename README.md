@@ -15,7 +15,7 @@ Here's what we want to do:
 - carousel
 - coordinated collapse
 
-Shiny already provides these, but it may be handy:
+Shiny already provides these, but it may be handy (no hurry to do this):
 
 - tabs
 
