@@ -1,7 +1,5 @@
 # bsplus
-
 [![Travis-CI Build Status](https://travis-ci.org/ijlyttle/bsplus.svg?branch=master)](https://travis-ci.org/ijlyttle/bsplus)
-
 [![Coverage Status](https://img.shields.io/codecov/c/github/ijlyttle/bsplus/master.svg)](https://codecov.io/github/ijlyttle/bsplus?branch=master)
 
 The goal of this package is to provide a framework to use bootstrap's markup API described here: http://getbootstrap.com/javascript/
