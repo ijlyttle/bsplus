@@ -1,0 +1,15 @@
+---
+title: "Accordion"
+---
+
+```{r}
+library("bsplus")
+
+accordion(id = "beatles") %>%
+  set_opts(panel_type = "success", use_heading_link = TRUE) %>%
+  append(title = "John Lennon", content = "Rhythm guitar, vocals") %>%
+  append(title = "Paul McCartney", content = "Bass guitar, vocals") %>%
+  append(title = "George Harrison", content = "Lead guitar, vocals") %>%
+  set_opts(panel_type = "info") %>%
+  append(title = "Ringo Starr", content = "Drums, vocals") 
+```

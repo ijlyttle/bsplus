@@ -1,0 +1,40 @@
+---
+title: "Collapse"
+---
+
+```{r}
+library("htmltools")
+library("bsplus")
+```
+
+The collapse family of functions may not be the most useful, but it gives us a place to start. 
+
+
+## Example
+
+First, let's build the stuff we will put into the collapse elements:
+
+```{r button}
+button <- tags$button("She Loves You")
+hidden <- tags$div(class = "well", "Yeah Yeah Yeah")
+```
+
+Now let's create our collapsible content. The first step is to create the div using the `collapse()` function, supplying a unique id and the content to include.
+
+```{r collapse}
+collapse(id = "id_yeah", content = hidden)
+```
+
+Next we attach the id of our collapsible div to our button using the `attach_collapse()` function, which returns a modified copy of the button or link sent to it.
+
+```{r attach_collapse}
+button %>%
+  attach_collapse(id_collapse = "id_yeah")
+```
+
+You are able to attach a collapsible div to a button or to a link. In fact, you are able to attach a collapsible div to as many buttons or links as you like:
+
+```{r new_button}
+tags$button("Sie Liebt Dich") %>%
+  attach_collapse("id_yeah")
+```

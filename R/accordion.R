@@ -41,7 +41,7 @@
 #'   \url{http://getbootstrap.com/javascript/#collapse-example-accordion};
 #'   if \code{TRUE}, makes the entire panel heading clickable.
 #' @param title HTML or text, used for the panel heading
-#' @param content HTML or \code{\link[htmltools]{tagList}}}, used for the panel body.
+#' @param content HTML or \code{\link[htmltools]{tagList}}, used for the panel body.
 #'
 #' @return \code{bsplus_accordion} object
 #'

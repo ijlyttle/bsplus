@@ -1,0 +1,12 @@
+title: "bsplus"
+right:
+  - text: Function families
+    menu:
+    - text: Collapse
+      href: collapse.html
+    - text: Accordion
+      href: accordion.html
+  - text: About
+    href: contributors.html
+  - icon: fa-github fa-lg
+    href: https://github.com/ijlyttle/bsplus

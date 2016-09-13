@@ -1,0 +1,12 @@
+---
+title: "bsplus"
+output:
+  html_document:
+    code_folding: none
+---
+
+```{r echo=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+The Bootstrap framework is used extensively to develop R Markdown websites and Shiny apps. The Bootstrap website describes some Javascript extensions, where you can add additional functionality to your page by setting atttributes to some of your tags. An example of this from Shiny is the `tabsetPanel()` family of functions.

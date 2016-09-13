@@ -1,0 +1,8 @@
+output_dir: "."
+output:
+  html_document:
+    theme: cerulean
+    highlight: textmate
+    self_contained: false
+    lib_dir: site_libs
+    code_folding: show

@@ -16,9 +16,9 @@ accordion(id)
 \arguments{
 \item{id}{character, id for div}
 
-\item{title}{html or taglist}
+\item{title}{HTML or text, used for the panel heading}
 
-\item{content}{html or taglist}
+\item{content}{HTML or \code{\link[htmltools]{tagList}}, used for the panel body.}
 
 \item{panel_type}{character, one of the standard Bootstrap types
 \code{c("default", "primary", "success", "info", "warning", "danger")}}
@@ -26,7 +26,7 @@ accordion(id)
 \item{use_heading_link}{logical, indicates whether to use the entire panel heading
 as a link. If \code{FALSE}, uses construction shown in
 \url{http://getbootstrap.com/javascript/#collapse-example-accordion};
-if \code{TRUE}, makes the entire panel-heading clickable.}
+if \code{TRUE}, makes the entire panel heading clickable.}
 }
 \value{
 \code{bsplus_accordion} object
@@ -57,12 +57,12 @@ be appended. There are two options that can be set for accordions:
   made clickable; the default is \code{FALSE}.}
 }
 
-The \code{append} method is used to append a panel to an accordion. Such a
+The \code{append} method is used to build and append a panel to an accordion. Such a
 panel is built using two additional arguments:
 
 \describe{
   \item{\code{title}}{Usually text for the panel heading, but HTML can be used as well}
-  \item{\code{content}}{Can be HTML or an htmltools
+  \item{\code{content}}{Content for the panel body, can be HTML or an htmltools
   \code{\link[htmltools]{tagList}}}
 }
 }

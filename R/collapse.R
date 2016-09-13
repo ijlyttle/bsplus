@@ -17,16 +17,16 @@
 #' @return \code{\link[htmltools]{tag}} div
 #' @examples
 #' library("htmltools")
-#' collapse(id = "id_yeah", tags$p("Yeah Yeah Yeah"))
+#' bs_collapse(id = "id_yeah", tags$p("Yeah Yeah Yeah"))
 #' tags$button("She Loves You") %>%
-#'   collapse_attach("id_yeah")
+#'   bs_attach_collapse("id_yeah")
 #'
 #' @family collapse functions
 #' @seealso \url{https://getbootstrap.com/javascript/#collapse}
 #'
 #' @export
 #
-collapse <- function(id, content = NULL){
+bs_collapse <- function(id, content = NULL){
 
   tag <- htmltools::tags$div(class = "collapse", id = id, content)
 
@@ -55,7 +55,7 @@ collapse <- function(id, content = NULL){
 #'
 #' @export
 #
-attach_collapse <- function(tag, id_collapse){
+bs_attach_collapse <- function(tag, id_collapse){
 
   tag <- .tag_validate(tag)
 

@@ -1,37 +1,37 @@
 # S3 generic for converting to a bootstrap option
 
-#' @export
-bsopt <- function(x) UseMethod("bsopt")
+# @export
+bs_attr <- function(x) UseMethod("bs_attr")
 
-#' @export
-bsopt.default <- function(x){
+# @export
+bs_attr.default <- function(x){
   x <- as.character(x)
   x <- paste(x, collapse = " ")
 
   x
 }
 
-#' @export
-bsopt.logical <- function(x){
+# @export
+bs_attr.logical <- function(x){
   x <- as.character(x)
   x <- tolower(x)
-  x <- bsopt.default(x)
+  x <- bs_attr.default(x)
 
   x
 }
 
 # S4 generic for converting to a bootstrap option
 
-#' @export
-setGeneric("bsopt", function(x) {
-  standardGeneric("bsopt")
+# @export
+setGeneric("bs_attr", function(x) {
+  standardGeneric("bs_attr")
 })
 
-#' @export
+# @export
 #' @importClassesFrom lubridate Duration
-setMethod("bsopt", list("Duration"), function(x){
+setMethod("bs_attr", list("Duration"), function(x){
   x <- x@.Data * 1000 # get ms
-  x <- bsopt.default(x)
+  x <- bs_attr.default(x)
 
   x
 })
@@ -40,20 +40,20 @@ setMethod("bsopt", list("Duration"), function(x){
 
 # converts a series of names arguments into
 # Bootstrap format.
-bsopts <- function(.prefix = "data", ...){
+bs_map_attr <- function(.prefix = "data", ...){
 
   x <- list(...)
 
-  # prepend names with "data-"
+  # prepend names with `.prefix`
   names(x) <- purrr::map_chr(names(x), ~paste(.prefix, .x, sep = "-"))
 
   # convert to boostrap format
-  x <- purrr::map(x, bsopt)
+  x <- purrr::map(x, bs_attr)
 
   x
 }
 
-set_bsopts <- function(tag, .prefix = "data", ...){
+bs_set_attr <- function(tag, .prefix = "data", ...){
 
   # general purpose warning on danger of directly setting attributes
   # https://groups.google.com/forum/#!topic/shiny-discuss/6j87S7nuhQA
@@ -62,7 +62,7 @@ set_bsopts <- function(tag, .prefix = "data", ...){
 
   # transforms the attributes
   attributes_raw <- list(...)
-  attributes_bs <- do.call(bsopts, c(list(.prefix = .prefix), attributes_raw))
+  attributes_bs <- do.call(bs_map_attr, c(list(.prefix = .prefix), attributes_raw))
 
   # figure out which attributes to keep (caution!)
   names_existing <- names(tag$attribs)
@@ -114,19 +114,19 @@ set_bsopts <- function(tag, .prefix = "data", ...){
 #' library("htmltools")
 #' library("lubridate")
 #' tags$div() %>%
-#'   set_bsdata(target = "#target", delay = dseconds(1)) %>%
-#'   set_bsaria(expanded = FALSE)
+#'   bs_set_data(target = "#target", delay = dseconds(1)) %>%
+#'   bs_set_aria(expanded = FALSE)
 #' @export
 #'
 #' @seealso \href{http://getbootstrap.com/javascript}{Boostrap Javascript Components}
 #
-set_bsdata <- function(tag, ...){
-  set_bsopts(tag, .prefix = "data", ...)
+bs_set_data <- function(tag, ...){
+  bs_set_attr(tag, .prefix = "data", ...)
 }
 
-#' @rdname set_bsdata
+#' @rdname bs_set_data
 #' @export
 #
-set_bsaria <- function(tag, ...){
-  set_bsopts(tag, .prefix = "aria", ...)
+bs_set_aria <- function(tag, ...){
+  bs_set_attr(tag, .prefix = "aria", ...)
 }
