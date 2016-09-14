@@ -79,9 +79,9 @@ set_bstype_open <- function(
 # we will be able to get rid of this code
 get_class <- function(tag){
 
-  x <- tagGetAttribute(tag, "class")
-  x <- str_trim(x)
-  x <- str_split(x, " ")
+  x <- htmltools::tagGetAttribute(tag, "class")
+  x <- stringr::str_trim(x)
+  x <- stringr::str_split(x, " ")
 
   x[[1]]
 }

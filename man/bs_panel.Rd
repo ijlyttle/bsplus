@@ -18,6 +18,8 @@ bs_panel_open(...)
 \item{title}{character, title for the panel (maybe this can be html, not guaranteed)}
 
 \item{bstype}{character, bootstrap type}
+
+\item{use_bstype_open}{logical, indicates if to use the default tuype}
 }
 \value{
 a panel div

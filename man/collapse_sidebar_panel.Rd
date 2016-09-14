@@ -8,6 +8,8 @@ collapse_sidebar_panel(..., title)
 }
 \arguments{
 \item{...}{UI elements to put into a `collapse_sidebar_panel` body}
+
+\item{title}{character or HTML, title}
 }
 \value{
 Function to create a div of sidebaar-panel. This function will be evaluated

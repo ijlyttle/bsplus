@@ -6,10 +6,11 @@
 #'
 #' @name bs_panel
 #'
-#' @param ...       UI elements to include in the panel
-#' @param id        character, id for the element
-#' @param title     character, title for the panel (maybe this can be html, not guaranteed)
-#' @param bstype    character, bootstrap type
+#' @param ...             UI elements to include in the panel
+#' @param id              character, id for the element
+#' @param title           character, title for the panel (maybe this can be html, not guaranteed)
+#' @param bstype          character, bootstrap type
+#' @param use_bstype_open logical, indicates if to use the default tuype
 #'
 #' @return a panel div
 #'
@@ -75,6 +76,7 @@ bs_panel_open <- function(...){
 #' @param title     character, title for the panel (maybe this can be html, not guaranteed)
 #' @param is_open   boolean, indicates if this div will be initially open (or closed)
 #' @param bstype    character, bootstrap type
+#' @param use_bstype_open logical, indicates if to use the default tuype
 #'
 #' @return a panel div
 #'

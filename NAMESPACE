@@ -2,8 +2,10 @@
 
 S3method(bs_append,bsplus_accordion)
 S3method(bs_append,default)
+S3method(bs_append,shiny.tag)
 S3method(bs_set_opts,bsplus_accordion)
 S3method(bs_set_opts,default)
+S3method(bs_set_opts,shiny.tag)
 export("%>%")
 export(bs_accordion)
 export(bs_append)

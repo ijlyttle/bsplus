@@ -25,7 +25,7 @@ among html elements in your page. If you have non-unique id's, strange things ma
 happen as your page is rendered.
 
 This div's id may be attached to more than one control, see
-\code{\link{attach_collapse}}.
+\code{\link{bs_attach_collapse}}.
 }
 \examples{
 library("htmltools")

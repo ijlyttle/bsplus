@@ -33,15 +33,17 @@
 #'   \code{\link[htmltools]{tagList}}}
 #' }
 #'
-#' @param id character, id for div
-#' @param panel_type character, one of the standard Bootstrap types
+#' @param id              character, id for div
+#' @param panel_type      character, one of the standard Bootstrap types
 #'   \code{c("default", "primary", "success", "info", "warning", "danger")}
 #' @param use_heading_link logical, indicates whether to use the entire panel heading
 #'   as a link. If \code{FALSE}, uses construction shown in
 #'   \url{http://getbootstrap.com/javascript/#collapse-example-accordion};
 #'   if \code{TRUE}, makes the entire panel heading clickable.
-#' @param title HTML or text, used for the panel heading
-#' @param content HTML or \code{\link[htmltools]{tagList}}, used for the panel body.
+#' @param tag              \code{shiny.tag}, accordion element
+#' @param title            HTML or text, used for the panel heading
+#' @param content          HTML or \code{\link[htmltools]{tagList}}, used for the panel body.
+#' @param ...              other args
 #'
 #' @return \code{bsplus_accordion} object
 #'

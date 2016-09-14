@@ -13,6 +13,8 @@ collapse_sidebar_layout(collapse_sidebar_panel, collapse_main_panel, id_layout,
 \item{collapse_main_panel}{function that returns `main_collapse_panel` element}
 
 \item{id_layout}{character, identifier for the sidebar_collapse_layout}
+
+\item{bstype_closed}{character, bootstrap type for closed panels}
 }
 \value{
 function that returns a \code{collapse_sidebar_layout} list

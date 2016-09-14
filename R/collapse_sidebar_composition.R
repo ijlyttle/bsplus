@@ -43,8 +43,8 @@
   #
   for (layout in list_layout){
 
-    div_sidebar <- tagAppendChild(div_sidebar, layout$sidebar)
-    div_main <- tagAppendChild(div_main, layout$main)
+    div_sidebar <- htmltools::tagAppendChild(div_sidebar, layout$sidebar)
+    div_main <- htmltools::tagAppendChild(div_main, layout$main)
 
   }
 

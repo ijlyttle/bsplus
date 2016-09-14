@@ -1,9 +1,21 @@
-# S3 generic for converting to a bootstrap option
-
+#' Convert a value to be used as an html attribute
+#'
+#' \itemize{
+#'   \item character vectors collapsed to a space-delimited character string
+#'   \item logicals are converted to "true" or "false"
+#'   \item lubridate durations are converted to numeric (milliseconds)
+#' }
+#'
+#' @param x  value to be converted
+#'
+#' @return character
+#'
 #' @keywords internal
 #' @export
+#'
 bs_attr <- function(x) UseMethod("bs_attr")
 
+#' @rdname bs_attr
 #' @keywords internal
 #' @export
 bs_attr.default <- function(x){
@@ -13,6 +25,7 @@ bs_attr.default <- function(x){
   x
 }
 
+#' @rdname bs_attr
 #' @keywords internal
 #' @export
 bs_attr.logical <- function(x){
@@ -25,12 +38,14 @@ bs_attr.logical <- function(x){
 
 # S4 generic for converting to a bootstrap option
 
+#' @rdname bs_attr
 #' @keywords internal
 #' @export
 setGeneric("bs_attr", function(x) {
   standardGeneric("bs_attr")
 })
 
+#' @rdname bs_attr
 #' @keywords internal
 #' @export
 #' @importClassesFrom lubridate Duration

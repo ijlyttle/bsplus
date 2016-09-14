@@ -25,7 +25,7 @@ You may attach a collapsible div's id to more than one tag.
 library("htmltools")
 bs_collapse(id = "id_yeah", tags$p("Yeah Yeah Yeah"))
 tags$button("She Loves You") \%>\%
-  bs_collapse_attach("id_yeah")
+  bs_attach_collapse("id_yeah")
 
 }
 \seealso{

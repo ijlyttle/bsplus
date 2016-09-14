@@ -55,6 +55,7 @@ collapse_sidebar_set <- function(
 #' @param id_layout               character, identifier for the sidebar_collapse_layout
 #' @param collapse_sidebar_panel  function that returns `collapse_sidebar_panel` element
 #' @param collapse_main_panel     function that returns `main_collapse_panel` element
+#' @param bstype_closed   character, bootstrap type for closed panels
 #'
 #' @return function that returns a \code{collapse_sidebar_layout} list
 #'
@@ -98,6 +99,7 @@ collapse_sidebar_layout <- function(
 #'
 #' @param ...
 #'   UI elements to put into a `collapse_sidebar_panel` body
+#' @param title   character or HTML, title
 #'
 #' @return
 #'   Function to create a div of sidebaar-panel. This function will be evaluated

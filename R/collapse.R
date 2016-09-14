@@ -8,7 +8,7 @@
 #' happen as your page is rendered.
 #'
 #' This div's id may be attached to more than one control, see
-#' \code{\link{attach_collapse}}.
+#' \code{\link{bs_attach_collapse}}.
 #'
 #' @param id       character, id for div
 #' @param content  htmltools \code{\link[htmltools]{tagList}} or html, content to be
@@ -48,7 +48,7 @@ bs_collapse <- function(id, content = NULL){
 #' library("htmltools")
 #' bs_collapse(id = "id_yeah", tags$p("Yeah Yeah Yeah"))
 #' tags$button("She Loves You") %>%
-#'   bs_collapse_attach("id_yeah")
+#'   bs_attach_collapse("id_yeah")
 #'
 #' @family collapse functions
 #' @seealso \url{https://getbootstrap.com/javascript/#collapse}

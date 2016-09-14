@@ -8,17 +8,21 @@
 \usage{
 bs_accordion(id)
 
-\method{bs_append}{bsplus_accordion}(accordion, title, content)
+\method{bs_append}{bsplus_accordion}(tag, title, content, ...)
 
-\method{bs_set_opts}{bsplus_accordion}(accordion, panel_type = NULL,
-  use_heading_link = NULL)
+\method{bs_set_opts}{bsplus_accordion}(tag, panel_type = NULL,
+  use_heading_link = NULL, ...)
 }
 \arguments{
 \item{id}{character, id for div}
 
+\item{tag}{\code{shiny.tag}, accordion element}
+
 \item{title}{HTML or text, used for the panel heading}
 
 \item{content}{HTML or \code{\link[htmltools]{tagList}}, used for the panel body.}
+
+\item{...}{other args}
 
 \item{panel_type}{character, one of the standard Bootstrap types
 \code{c("default", "primary", "success", "info", "warning", "danger")}}

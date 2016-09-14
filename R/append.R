@@ -1,20 +1,41 @@
+#' Append to a bsplus html element
+#'
+#' This would be used when we want to add items to a collection
+#'
+#' @param tag   \code{htmltools:shinytag}
+#' @param ...  additional arguments
+#'
+#' @return modified copy of \code{tag}
 #' @export
-bs_append <- function(...) UseMethod("bs_append")
+#'
+bs_append <- function(tag, ...) UseMethod("bs_append")
 
+#' @rdname bs_append
 #' @export
-bs_append.default <- function(...) "Unknown class"
+#'
+bs_append.default <- function(tag, ...){
+  stop("Unknown class")
+}
+
+#' @rdname bs_append
+#' @export
+#'
+bs_append.shiny.tag <- function(tag, ...){
+  stop("This shiny.tag is not supported")
+}
 
 #' @rdname bs_accordion
 #' @export
-bs_append.bsplus_accordion <- function(accordion, title, content){
+#'
+bs_append.bsplus_accordion <- function(tag, title, content, ...){
 
   # characterize the existing accordion
-  n_panel <- length(accordion$children)
-  panel_type <- attr(accordion, "bsplus.panel_type")
-  use_heading_link <- attr(accordion, "bsplus.use_heading_link")
+  n_panel <- length(tag$children)
+  panel_type <- attr(tag, "bsplus.panel_type")
+  use_heading_link <- attr(tag, "bsplus.use_heading_link")
 
   # get/set id's for constituent elements
-  id_accordion <- htmltools::tagGetAttribute(accordion, "id")
+  id_accordion <- htmltools::tagGetAttribute(tag, "id")
   id_panel <- paste(id_accordion, n_panel, sep = "-")
   id_heading <- paste(id_panel, "heading", sep = "-")
   id_collapse <- paste(id_panel, "collapse", sep = "-")
@@ -75,7 +96,7 @@ bs_append.bsplus_accordion <- function(accordion, title, content){
   panel <- htmltools::tagAppendAttributes(panel, class = panel_type)
 
   # append panel to accordion
-  accordion <- htmltools::tagAppendChild(accordion, panel)
+  tag <- htmltools::tagAppendChild(tag, panel)
 
-  accordion
+  tag
 }

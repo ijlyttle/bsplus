@@ -18,6 +18,8 @@ bs_panel_collapse(..., id = NULL, title = NULL, is_open = TRUE,
 \item{is_open}{boolean, indicates if this div will be initially open (or closed)}
 
 \item{bstype}{character, bootstrap type}
+
+\item{use_bstype_open}{logical, indicates if to use the default tuype}
 }
 \value{
 a panel div
