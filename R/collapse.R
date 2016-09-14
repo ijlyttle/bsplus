@@ -46,9 +46,9 @@ bs_collapse <- function(id, content = NULL){
 #' @return \code{\link[htmltools]{tag}}, modified copy of \code{tag}
 #' @examples
 #' library("htmltools")
-#' collapse(id = "id_yeah", tags$p("Yeah Yeah Yeah"))
+#' bs_collapse(id = "id_yeah", tags$p("Yeah Yeah Yeah"))
 #' tags$button("She Loves You") %>%
-#'   collapse_attach("id_yeah")
+#'   bs_collapse_attach("id_yeah")
 #'
 #' @family collapse functions
 #' @seealso \url{https://getbootstrap.com/javascript/#collapse}
@@ -59,7 +59,7 @@ bs_attach_collapse <- function(tag, id_collapse){
 
   tag <- .tag_validate(tag)
 
-  tag <- set_bsdata(tag, toggle = "collapse")
+  tag <- bs_set_data(tag, toggle = "collapse")
 
   if (identical(tag$name, "a")){
     # link
@@ -70,7 +70,7 @@ bs_attach_collapse <- function(tag, id_collapse){
     )
   } else {
     # not a link
-    tag <- set_bsdata(tag, target = .id(id_collapse))
+    tag <- bs_set_data(tag, target = .id(id_collapse))
   }
 
   tag
