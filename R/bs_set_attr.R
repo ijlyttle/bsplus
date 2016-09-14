@@ -1,10 +1,10 @@
 # S3 generic for converting to a bootstrap option
 
-#' @internal
+#' @keywords internal
 #' @export
 bs_attr <- function(x) UseMethod("bs_attr")
 
-#' @internal
+#' @keywords internal
 #' @export
 bs_attr.default <- function(x){
   x <- as.character(x)
@@ -13,7 +13,7 @@ bs_attr.default <- function(x){
   x
 }
 
-#' @internal
+#' @keywords internal
 #' @export
 bs_attr.logical <- function(x){
   x <- as.character(x)
@@ -25,13 +25,13 @@ bs_attr.logical <- function(x){
 
 # S4 generic for converting to a bootstrap option
 
-#' @internal
+#' @keywords internal
 #' @export
 setGeneric("bs_attr", function(x) {
   standardGeneric("bs_attr")
 })
 
-#' @internal
+#' @keywords internal
 #' @export
 #' @importClassesFrom lubridate Duration
 setMethod("bs_attr", list("Duration"), function(x){

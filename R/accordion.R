@@ -14,7 +14,7 @@
 #' compose an accordion by piping. The \code{bsplus_accordion} class inherits
 #' from htmltools' \code{shiny.tag} class.
 #'
-#' The \code{set_opts} method is used to modify panels that have yet to
+#' The \code{bs_set_opts} method is used to modify panels that have yet to
 #' be appended. There are two options that can be set for accordions:
 #'
 #' \describe{
@@ -46,21 +46,21 @@
 #' @return \code{bsplus_accordion} object
 #'
 #' @examples
-#' accordion(id = "meet_the_beatles") %>%
-#'   set_opts(panel_type = "success", use_heading_link = TRUE) %>%
-#'   append(title = "John Lennon", content = "Rhythm guitar, vocals") %>%
-#'   set_opts(panel_type = "info") %>%
-#'   append(title = "Paul McCartney", content = "Bass guitar, vocals")
+#' bs_accordion(id = "meet_the_beatles") %>%
+#'   bs_set_opts(panel_type = "success", use_heading_link = TRUE) %>%
+#'   bs_append(title = "John Lennon", content = "Rhythm guitar, vocals") %>%
+#'   bs_set_opts(panel_type = "info") %>%
+#'   bs_append(title = "Paul McCartney", content = "Bass guitar, vocals")
 #'
 #' @seealso \url{http://getbootstrap.com/javascript/#collapse-example-accordion}
 #' @export
 #
-accordion <- function(id){
+bs_accordion <- function(id){
 
   div <- htmltools::tags$div(id = id, class = "panel-group", role="tablist")
   div <- structure(div, class = c("bsplus_accordion", class(div)))
-  div <- set_bsaria(div, multiselectable = TRUE)
-  div <- set_opts(div, panel_type = "default", use_heading_link = FALSE)
+  div <- bs_set_aria(div, multiselectable = TRUE)
+  div <- bs_set_opts(div, panel_type = "default", use_heading_link = FALSE)
 
   div
 }

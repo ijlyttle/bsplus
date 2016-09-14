@@ -1,12 +1,12 @@
 #' @export
-append <- function(...) UseMethod("append")
+bs_append <- function(...) UseMethod("bs_append")
 
 #' @export
-append.default <- base::append
+bs_append.default <- function(...) "Unknown class"
 
-#' @rdname accordion
+#' @rdname bs_accordion
 #' @export
-append.bsplus_accordion <- function(accordion, title, content){
+bs_append.bsplus_accordion <- function(accordion, title, content){
 
   # characterize the existing accordion
   n_panel <- length(accordion$children)
@@ -21,9 +21,9 @@ append.bsplus_accordion <- function(accordion, title, content){
 
   # function to attach target
   .attach_collapse_local <- function(x){
-    x <- attach_collapse(x, id_collapse)
-    x <- set_bsdata(x, parent = .id(id_accordion))
-    x <- set_bsaria(x, expanded = TRUE, controls = id_collapse)
+    x <- bs_attach_collapse(x, id_collapse)
+    x <- bs_set_data(x, parent = .id(id_accordion))
+    x <- bs_set_aria(x, expanded = TRUE, controls = id_collapse)
   }
 
   heading <-
@@ -63,7 +63,7 @@ append.bsplus_accordion <- function(accordion, title, content){
       )
     )
 
-  collapse <- set_bsaria(collapse, labelledby = id_heading)
+  collapse <- bs_set_aria(collapse, labelledby = id_heading)
 
   # if this is the first panel, set it as open (add option to suppress)
   if (identical(n_panel, 0L)){

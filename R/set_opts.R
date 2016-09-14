@@ -1,12 +1,12 @@
 #' @export
-set_opts <- function(...) UseMethod("set_opts")
+bs_set_opts <- function(...) UseMethod("bs_set_opts")
 
 #' @export
-set_opts.default <- function(...) "Unknown class"
+bs_set_opts.default <- function(...) "Unknown class"
 
-#' @rdname accordion
+#' @rdname bs_accordion
 #' @export
-set_opts.bsplus_accordion <-
+bs_set_opts.bsplus_accordion <-
   function(accordion, panel_type = NULL, use_heading_link = NULL){
 
   # panel_type

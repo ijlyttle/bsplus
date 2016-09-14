@@ -11,7 +11,7 @@
 
 
 
-<title>Collapse</title>
+<title>bsplus</title>
 
 <script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -160,12 +160,6 @@ $(document).ready(function () {
 </script>
 
 <!-- code folding -->
-<script src="site_libs/navigation-1.1/codefolding.js"></script>
-<script>
-$(document).ready(function () {
-  window.initializeCodeFolding("show" === "show");
-});
-</script>
 
 
 
@@ -218,43 +212,14 @@ $(document).ready(function () {
 
 <div class="fluid-row" id="header">
 
-<div class="btn-group pull-right">
-<button type="button" class="btn btn-default btn-xs dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span>Code</span> <span class="caret"></span></button>
-<ul class="dropdown-menu" style="min-width: 50px;">
-<li><a id="rmd-show-all-code" href="#">Show All Code</a></li>
-<li><a id="rmd-hide-all-code" href="#">Hide All Code</a></li>
-</ul>
-</div>
 
 
-
-<h1 class="title toc-ignore">Collapse</h1>
+<h1 class="title toc-ignore">bsplus</h1>
 
 </div>
 
 
-<pre class="r"><code>library(&quot;htmltools&quot;)
-library(&quot;bsplus&quot;)</code></pre>
-<p>The collapse family of functions may not be the most useful, but it gives us a place to start.</p>
-<div id="example" class="section level2">
-<h2>Example</h2>
-<p>First, let’s build the stuff we will put into the collapse elements:</p>
-<pre class="r"><code>button &lt;- tags$button(&quot;She Loves You&quot;)
-hidden &lt;- tags$div(class = &quot;well&quot;, &quot;Yeah Yeah Yeah&quot;)</code></pre>
-<p>Now let’s create our collapsible content. The first step is to create the div using the <code>collapse()</code> function, supplying a unique id and the content to include.</p>
-<pre class="r"><code>bs_collapse(id = &quot;id_yeah&quot;, content = hidden)</code></pre>
-<div class="collapse" id="id_yeah">
-<div class="well">Yeah Yeah Yeah</div>
-</div>
-<p>Next we attach the id of our collapsible div to our button using the <code>attach_collapse()</code> function, which returns a modified copy of the button or link sent to it.</p>
-<pre class="r"><code>button %&gt;%
-  bs_attach_collapse(id_collapse = &quot;id_yeah&quot;)</code></pre>
-<button data-toggle="collapse" data-target="#id_yeah">She Loves You</button>
-<p>You are able to attach a collapsible div to a button or to a link. In fact, you are able to attach a collapsible div to as many buttons or links as you like:</p>
-<pre class="r"><code>tags$button(&quot;Sie Liebt Dich&quot;) %&gt;%
-  bs_attach_collapse(&quot;id_yeah&quot;)</code></pre>
-<button data-toggle="collapse" data-target="#id_yeah">Sie Liebt Dich</button>
-</div>
+<p>The Bootstrap framework is used extensively to develop R Markdown websites and Shiny apps. The Bootstrap website describes some Javascript extensions, where you can add additional functionality to your page by setting atttributes to some of your tags. An example of this from Shiny is the <code>tabsetPanel()</code> family of functions.</p>
 
 
 

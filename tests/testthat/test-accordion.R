@@ -2,7 +2,7 @@ context("accordion")
 
 library("htmltools")
 
-acc <- accordion(id = "test")
+acc <- bs_accordion(id = "test")
 
 test_that("constructor works", {
   expect_s3_class(acc, c("shiny.tag", "bsplus_accordion"))
@@ -17,7 +17,7 @@ test_that("set_opts works", {
   expect_identical(attr(acc, "bsplus.use_heading_link"), FALSE)
 })
 
-acc_new <- acc %>% append(title = "foo", content = "bar")
+acc_new <- acc %>% bs_append(title = "foo", content = "bar")
 panel <- acc_new$children[[1]]
 panel_heading <- panel$children[[1]]
 panel_body <- panel$children[[2]]
