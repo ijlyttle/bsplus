@@ -26,6 +26,9 @@ $('.panel-collapse-leader').on('show.bs.collapse', function () {
 
 $('.panel-collapse-leader').on('hide.bs.collapse', function () {
 
+  /* This function is the converse of the 'show.bs.collapse' function
+   */
+
   var id = $(this).attr('id');
   var follower = $('.'.concat(id).concat('-follower'));
   follower.collapse('hide');
