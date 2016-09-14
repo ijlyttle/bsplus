@@ -20,33 +20,36 @@ bs_accordion_sidebar <- function(id, spec_side = c(width = 4, offset = 0),
   ## validation
   position <- match.arg(position)
 
+  .col_create <- function(id, spec){
+
+    col <- shiny::column(width = spec[["width"]], offset = spec[["offset"]])
+    col <- htmltools::tagAppendAttributes(col, id = id)
+
+    col
+  }
+
+  .id <- function(id, x){
+    id = paste(id, x, sep = "-")
+  }
+
+  ## create columns
+  col_side <- .col_create(id = .id(id, "side"), spec = spec_side)
+  col_main <- .col_create(id = .id(id, "main"), spec = spec_main)
+
   ## create enclosing fluid row
   if (identical(position, "left")) {
 
-    width_first <- spec_side[["width"]]
-    offset_first <- spec_side[["offset"]]
-
-    width_second <- spec_main[["width"]]
-    offset_second <- spec_main[["offset"]]
+    div <- shiny::fluidRow(col_side, col_main)
 
   } else if (identical(position, "right")){
 
-    width_first <- spec_main[["width"]]
-    offset_first <- spec_main[["offset"]]
+    div <- shiny::fluidRow(col_main, col_side)
 
-    width_second <- spec_side[["width"]]
-    offset_second <- spec_side[["offset"]]
   }
 
-  div <-
-    shiny::fluidRow(
-      shiny::column(width = width_first, offset = offset_first),
-      shiny::column(width = width_second, offset = offset_second)
-    )
+  div <- htmltools::tagAppendAttributes(div, id = id)
 
   div <- structure(div, class = c("bsplus_accordion_sidebar", class(div)))
-
-  div <- htmltools::tagAppendAttributes(div, id = id)
 
   div
 }

@@ -12,10 +12,14 @@ test_that("constructor works with defaults", {
   expect_identical(acc_sidebar[["name"]], "div")
   expect_identical(tagGetAttribute(acc_sidebar, "id"), "test")
   expect_identical(tagGetAttribute(acc_sidebar, "class"), "row")
+
   expect_identical(acc_sidebar_side[["name"]], "div")
   expect_identical(tagGetAttribute(acc_sidebar_side, "class"), "col-sm-4")
+  expect_identical(tagGetAttribute(acc_sidebar_side, "id"), "test-side")
+
   expect_identical(acc_sidebar_main[["name"]], "div")
   expect_identical(tagGetAttribute(acc_sidebar_main, "class"), "col-sm-8")
+  expect_identical(tagGetAttribute(acc_sidebar_main, "id"), "test-main")
 })
 
 acc_sidebar <- bs_accordion_sidebar(id = "test", position = "right")
