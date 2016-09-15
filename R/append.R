@@ -92,7 +92,8 @@ bs_append.bsplus_accordion <- function(tag, title, content, ...){
   }
 
   # compose the panel
-  panel <- htmltools::tags$div(class = "panel", heading, collapse)
+  panel <-
+    htmltools::tags$div(class = "panel", id = id_panel, heading, collapse)
   panel <- htmltools::tagAppendAttributes(panel, class = panel_type)
 
   # append panel to accordion
@@ -100,3 +101,81 @@ bs_append.bsplus_accordion <- function(tag, title, content, ...){
 
   tag
 }
+
+#' @rdname bs_accordion_sidebar
+#' @export
+#'
+bs_append.bsplus_accordion_sidebar <- function(tag, title_side, content_side, content_main, ...){
+
+  # get attributes of accordion_sidebar
+  panel_type_active <- attr(tag, "bsplus.panel_type_active")
+  panel_type_inactive <- attr(tag, "bsplus.panel_type_inactive")
+  index_side <- attr(tag, "bsplus.index_side")
+  index_main <- attr(tag, "bsplus.index_main")
+
+  # get accordion
+  tag_accordion <- tag[["children"]][[index_side]][["children"]][[1]]
+
+  # determine number of panels
+  n_accordion_panel <- length(tag_accordion[["children"]])
+  is_empty <- identical(n_accordion_panel, 0L)
+
+  panel_type <- ifelse(is_empty, panel_type_active, panel_type_inactive)
+
+  # modify the options of the accordion
+  tag_accordion <- bs_set_opts(tag_accordion, panel_type = panel_type)
+
+  # add element to accordion
+  tag_accordion <-
+    bs_append(tag_accordion, title = title_side, content = content_side)
+
+  # get last panel in accordion
+  tag_accordion_panel <- tag_accordion[["children"]][[n_accordion_panel + 1]]
+  id_accordion_panel <- htmltools::tagGetAttribute(tag_accordion_panel, "id")
+
+  # modify element of accordion
+
+  ## panel needs attributes
+  tag_accordion_panel <-
+    htmltools::tagAppendAttributes(
+      tag_accordion_panel,
+      `class-active` = paste("panel", panel_type_active, sep = "-"),
+      `class-inactive` = paste("panel", panel_type_inactive, sep = "-")
+    )
+
+  ## collapse needs additional class
+  tag_accordion_panel[["children"]][[2]] <-
+    htmltools::tagAppendAttributes(
+      tag_accordion_panel[["children"]][[2]],
+      class = "panel-collapse-leader"
+    )
+
+  # put accordion back
+  tag_accordion[["children"]][[n_accordion_panel + 1]] <- tag_accordion_panel
+  tag[["children"]][[index_side]][["children"]][[1]] <- tag_accordion
+
+  # put content_main
+  # (consider panel function)
+  content_panel_main <-
+    htmltools::tags$div(
+      class = paste("panel panel", panel_type_active, sep = "-"),
+      htmltools::tags$div(
+        class = "panel-body",
+        content_main
+      )
+    )
+
+  id_main_panel <- paste(id_accordion_panel, "follow", sep = "-")
+  tag[["children"]][[index_main]] <-
+    htmltools::tagAppendChild(
+      tag[["children"]][[index_main]],
+      bs_collapse(
+        id = id_main_panel,
+        content = content_panel_main,
+        show = is_empty
+      )
+    )
+
+  tag
+}
+

@@ -13,6 +13,7 @@
 #' @param id       character, id for div
 #' @param content  htmltools \code{\link[htmltools]{tagList}} or html, content to be
 #'   put into the div
+#' @param show     logical to indicate if tag should be shown by default
 #'
 #' @return \code{\link[htmltools]{tag}} div
 #' @examples
@@ -26,9 +27,13 @@
 #'
 #' @export
 #
-bs_collapse <- function(id, content = NULL){
+bs_collapse <- function(id, content = NULL, show = FALSE){
 
   tag <- htmltools::tags$div(class = "collapse", id = id, content)
+
+  if (show){
+    tag <- htmltools::tagAppendAttributes(tag, class = "in")
+  }
 
   tag
 }

@@ -1,7 +1,7 @@
 output_dir: "."
 output:
   html_document:
-    theme: cerulean
+    theme: readable
     highlight: textmate
     self_contained: false
     lib_dir: site_libs

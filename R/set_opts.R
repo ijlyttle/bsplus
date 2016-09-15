@@ -27,7 +27,7 @@ bs_set_opts.shiny.tag <- function(tag, ...){
 #' @rdname bs_accordion
 #' @export
 bs_set_opts.bsplus_accordion <-
-  function(tag, panel_type = NULL, use_heading_link = NULL, ...){
+  function(tag, panel_type = "primary", use_heading_link = TRUE, ...){
 
   # panel_type
   bstypes <- c("default", "primary", "success", "info", "warning", "danger")
@@ -45,3 +45,25 @@ bs_set_opts.bsplus_accordion <-
 
   tag
 }
+
+#' @rdname bs_accordion_sidebar
+#' @export
+#'
+bs_set_opts.bsplus_accordion_sidebar <-
+  function(tag, panel_type_active = "success", panel_type_inactive = "primary", ...){
+
+    # panel_type
+    bstypes <- c("default", "primary", "success", "info", "warning", "danger")
+
+    if (!is.null(panel_type_active)){
+      panel_type_active <- match.arg(panel_type_active, bstypes)
+      attr(tag, "bsplus.panel_type_active") <- panel_type_active
+    }
+
+    if (!is.null(panel_type_inactive)){
+      panel_type_inactive <- match.arg(panel_type_inactive, bstypes)
+      attr(tag, "bsplus.panel_type_inactive") <- panel_type_inactive
+    }
+
+    tag
+  }
