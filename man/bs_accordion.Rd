@@ -4,14 +4,17 @@
 \alias{bs_accordion}
 \alias{bs_append.bsplus_accordion}
 \alias{bs_set_opts.bsplus_accordion}
+\alias{use_bs_accordion_sidebar}
 \title{Builds an accordion panel-group.}
 \usage{
 bs_accordion(id)
 
+use_bs_accordion_sidebar()
+
 \method{bs_append}{bsplus_accordion}(tag, title, content, ...)
 
-\method{bs_set_opts}{bsplus_accordion}(tag, panel_type = NULL,
-  use_heading_link = NULL, ...)
+\method{bs_set_opts}{bsplus_accordion}(tag, panel_type = "primary",
+  use_heading_link = TRUE, ...)
 }
 \arguments{
 \item{id}{character, id for div}

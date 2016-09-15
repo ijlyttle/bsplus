@@ -4,13 +4,15 @@
 \alias{bs_collapse}
 \title{Creates a collapsible div}
 \usage{
-bs_collapse(id, content = NULL)
+bs_collapse(id, content = NULL, show = FALSE)
 }
 \arguments{
 \item{id}{character, id for div}
 
 \item{content}{htmltools \code{\link[htmltools]{tagList}} or html, content to be
 put into the div}
+
+\item{show}{logical to indicate if tag should be shown by default}
 }
 \value{
 \code{\link[htmltools]{tag}} div
