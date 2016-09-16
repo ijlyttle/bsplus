@@ -73,6 +73,14 @@ bs_append.bsplus_accordion <- function(tag, title, content, ...){
   # put the panel title into the heading
   heading <- htmltools::tagAppendChild(heading, panel_title)
 
+  # what to do if panel is empty?
+  panel_body_style <-
+    ifelse(
+      identical(length(content), 0L),
+      "padding-top: 0px; padding-bottom: 0px;",
+      ""
+    )
+
   collapse <-
     htmltools::tags$div(
       id = id_collapse,
@@ -80,6 +88,7 @@ bs_append.bsplus_accordion <- function(tag, title, content, ...){
       role = "tabpanel",
       htmltools::tags$div(
         class = "panel-body",
+        style = panel_body_style,
         content
       )
     )
