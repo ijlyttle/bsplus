@@ -160,6 +160,10 @@ $(document).ready(function () {
 </script>
 
 <!-- code folding -->
+<style type="text/css">
+.code-folding-btn { margin-bottom: -22px; }
+.code-folding-btn.collapsed { margin-bottom: 4px; }
+</style>
 <script src="site_libs/navigation-1.1/codefolding.js"></script>
 <script>
 $(document).ready(function () {
@@ -267,7 +271,7 @@ bs_accordion_sidebar(id = &quot;beatles&quot;) %&gt;%
 <h4 class="panel-title">John Lennon</h4>
 </div>
 <div aria-labelledby="beatles-side-accordion-0-heading" class="panel-collapse collapse in panel-collapse-leader" id="beatles-side-accordion-0-collapse" role="tabpanel">
-<div class="panel-body">Rhythm guitar, vocals</div>
+<div class="panel-body" style="">Rhythm guitar, vocals</div>
 </div>
 </div>
 <div class="panel panel-primary" class-active="panel-success" class-inactive="panel-primary" id="beatles-side-accordion-1">
@@ -275,7 +279,7 @@ bs_accordion_sidebar(id = &quot;beatles&quot;) %&gt;%
 <h4 class="panel-title">Paul McCartney</h4>
 </div>
 <div aria-labelledby="beatles-side-accordion-1-heading" class="panel-collapse collapse panel-collapse-leader" id="beatles-side-accordion-1-collapse" role="tabpanel">
-<div class="panel-body">Bass guitar, vocals</div>
+<div class="panel-body" style="">Bass guitar, vocals</div>
 </div>
 </div>
 <div class="panel panel-primary" class-active="panel-success" class-inactive="panel-primary" id="beatles-side-accordion-2">
@@ -283,7 +287,7 @@ bs_accordion_sidebar(id = &quot;beatles&quot;) %&gt;%
 <h4 class="panel-title">George Harrison</h4>
 </div>
 <div aria-labelledby="beatles-side-accordion-2-heading" class="panel-collapse collapse panel-collapse-leader" id="beatles-side-accordion-2-collapse" role="tabpanel">
-<div class="panel-body">Lead guitar, vocals</div>
+<div class="panel-body" style="">Lead guitar, vocals</div>
 </div>
 </div>
 <div class="panel panel-primary" class-active="panel-success" class-inactive="panel-primary" id="beatles-side-accordion-3">
@@ -291,7 +295,7 @@ bs_accordion_sidebar(id = &quot;beatles&quot;) %&gt;%
 <h4 class="panel-title">Ringo Starr</h4>
 </div>
 <div aria-labelledby="beatles-side-accordion-3-heading" class="panel-collapse collapse panel-collapse-leader" id="beatles-side-accordion-3-collapse" role="tabpanel">
-<div class="panel-body">Drums, vocals</div>
+<div class="panel-body" style="">Drums, vocals</div>
 </div>
 </div>
 </div>
@@ -321,39 +325,113 @@ bs_accordion_sidebar(id = &quot;beatles&quot;) %&gt;%
 </div>
 <pre class="r"><code># there needs to be a better way to do this (talk to Dean)
 use_bs_accordion_sidebar()</code></pre>
-<script>$('.panel-collapse-leader').on('show.bs.collapse', function () {
+<script>function bsplus_collpase_validator(target, collapse) {
+
+
+
+  /* target    element that initiated the event
+   * collapse  element that is acting on the event
+   *
+   * we want to return true/false on the question:
+   *
+   *  does the target (or any parent of the target) have an attribute
+   *  called 'data-target' with a value the same as the id of the collapse?
+   *
+   *  [name=”value”] - attribute selector
+   *  .closest()
+   *
+   * This turns out to be too restrictive - see the _new function below
+   */
+
+  //console.log(target);
+
+  var id_collapse = $(collapse).attr('id');
+
+  var attr_string = '[data-target="#'.concat(id_collapse).concat('"]');
+
+  var elem_collapse_from_target = $(target).closest(attr_string);
+
+  var result = elem_collapse_from_target.length > 0;
+
+  return result;
+}
+
+function bsplus_collpase_validator_new(target, collapse) {
+
+  /* target    element that initiated the event
+   * collapse  element that is acting on the event
+   *
+   * we want to return true/false on the question:
+   *
+   *  does the target (or any parent of the target) have an attribute
+   *  called 'data-parent' with a value the same as the id of a parent of
+   *  the collapse?
+   *
+   *  [name=”value”] - attribute selector
+   *  .closest()
+   */
+
+  var query_id_parent = $(target).closest('[data-parent]').attr('data-parent');
+
+  if (typeof query_id_parent === "undefined"){
+    //console.log("data-parent undefined");
+    //console.log(false);
+    return false;
+  }
+
+  //console.log(query_id_parent);
+  var elem_parent = $(collapse).closest(query_id_parent);
+
+  //console.log(elem_parent);
+  var result = elem_parent.length > 0;
+
+  //console.log(result);
+  return result;
+}
+
+$('.panel-collapse-leader').on('show.bs.collapse', function () {
 
   /* This function is called whenver an element of class
    * 'panel-collapse-leader' has been expanded, or shown.
    */
 
-  /*  finds the closest parent with the class name 'panel' */
-  var panel = $(this).closest('.panel');
+  var is_valid = bsplus_collpase_validator_new(event.target, this);
 
-  /* changes out the class of the panel (changes color) */
-  panel.removeClass(panel.attr('class-inactive'));
-  panel.addClass(panel.attr('class-active'));
+  if (is_valid){
+    /*  finds the closest parent with the class name 'panel' */
+    var panel = $(this).closest('.panel');
 
-  /* find and show the element that follows this panel */
-  var panel_id = panel.attr('id');
-  var follower = $('#'.concat(panel_id).concat('-follow'));
+    /* changes out the class of the panel (changes color) */
+    panel.removeClass(panel.attr('class-inactive'));
+    panel.addClass(panel.attr('class-active'));
 
-  follower.collapse('show');
+    /* find and show the element that follows this panel */
+    var panel_id = panel.attr('id');
+    var follower = $('#'.concat(panel_id).concat('-follow'));
+
+    follower.collapse('show');
+  }
+
 
 });
 
 $('.panel-collapse-leader').on('hide.bs.collapse', function () {
 
-  var panel = $(this).closest('.panel');
+  var is_valid = bsplus_collpase_validator_new(event.target, this);
 
-  panel.removeClass(panel.attr('class-active'));
-  panel.addClass(panel.attr('class-inactive'));
+  if (is_valid){
 
-  /* find and show the element that follows this panel */
-  var panel_id = panel.attr('id');
-  var follower = $('#'.concat(panel_id).concat('-follow'));
+    var panel = $(this).closest('.panel');
 
-  follower.collapse('hide');
+    panel.removeClass(panel.attr('class-active'));
+    panel.addClass(panel.attr('class-inactive'));
+
+    /* find and show the element that follows this panel */
+    var panel_id = panel.attr('id');
+    var follower = $('#'.concat(panel_id).concat('-follow'));
+
+    follower.collapse('hide');
+  }
 
 });
 
