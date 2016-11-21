@@ -1,7 +1,7 @@
 Package: bsplus
 Type: Package
 Title: Adds functionality to the R Markdown + Shiny Bootstrap framework
-Version: 0.0.9.9000
+Version: 0.0.9.9001
 Authors@R: c(
     person(
       given = "Ian",
@@ -18,7 +18,7 @@ Description: The Bootstrap framework lets you add some Javascript functionality 
   use these functions to create collapsible sections, accordion panels, modals, tooltips,
   popovers, and an accordion sidebar framework (not described at bootstrap site).
 License: MIT + file LICENSE
-Repository: CRAN
+Repository: SERAN
 LazyData: TRUE
 Depends: R (>= 3.3.0)
 Imports:
