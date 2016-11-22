@@ -1,0 +1,22 @@
+---
+title: "Accordion"
+author: "Ian Lyttle"
+date: "`r Sys.Date()`"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Vignette Title}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r}
+library("bsplus")
+
+bs_accordion(id = "beatles") %>%
+  bs_set_opts(panel_type = "success", use_heading_link = TRUE) %>%
+  bs_append(title = "John Lennon", content = "Rhythm guitar, vocals") %>%
+  bs_append(title = "Paul McCartney", content = "Bass guitar, vocals") %>%
+  bs_append(title = "George Harrison", content = "Lead guitar, vocals") %>%
+  bs_set_opts(panel_type = "info") %>%
+  bs_append(title = "Ringo Starr", content = "Drums, vocals") 
+```

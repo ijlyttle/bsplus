@@ -1,0 +1,39 @@
+---
+title: "Accordion Sidebar"
+author: "Ian Lyttle"
+date: "`r Sys.Date()`"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Vignette Title}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r}
+library("bsplus")
+
+bs_accordion_sidebar(id = "beatles") %>%
+  bs_append(
+    title_side = "John Lennon", 
+    content_side = "Rhythm guitar, vocals",
+    content_main = "Dear Prudence"
+  ) %>%
+  bs_append(
+    title_side = "Paul McCartney", 
+    content_side = "Bass guitar, vocals",
+    content_main = "Blackbird"
+  ) %>%
+  bs_append(
+    title_side = "George Harrison", 
+    content_side = "Lead guitar, vocals",
+    content_main = "While My Guitar Gently Weeps"
+  ) %>%
+  bs_append(
+    title_side = "Ringo Starr", 
+    content_side = "Drums, vocals",
+    content_main = "Don't Pass Me By"
+  ) 
+
+# there needs to be a better way to do this (talk to Dean)
+use_bs_accordion_sidebar()
+```

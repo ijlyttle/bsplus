@@ -1,0 +1,12 @@
+---
+title: "Introduction"
+author: "Ian Lyttle"
+date: "`r Sys.Date()`"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Vignette Title}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+The Bootstrap framework is used extensively to develop R Markdown websites and Shiny apps. The Bootstrap website describes some Javascript extensions, where you can add additional functionality to your page by setting atttributes to some of your tags. An example of this from Shiny is the `tabsetPanel()` family of functions.

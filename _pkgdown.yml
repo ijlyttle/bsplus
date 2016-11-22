@@ -1,0 +1,12 @@
+templates:
+  params:
+    bootswatch: cerulean
+
+articles:
+  - title: "Extending Bootstrap"
+    desc: Use this package to extend your use of the Bootstrap Javascript API
+    contents:
+    - introduction
+    - collapse
+    - accordion
+    - accordion_sidebar
