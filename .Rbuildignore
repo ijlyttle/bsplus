@@ -7,3 +7,4 @@
 ^docs$
 ^docs_old$
 ^scratch$
+^_pkgdown\.yml$
