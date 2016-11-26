@@ -43,7 +43,7 @@ NULL
   }
 
   # make it pipeable (just in case)
-  invisible(tag)
+  tag
 }
 
 

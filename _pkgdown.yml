@@ -3,10 +3,19 @@ templates:
     bootswatch: cerulean
 
 articles:
-  - title: "Extending Bootstrap"
-    desc: Use this package to extend your use of the Bootstrap Javascript API
-    contents:
-    - introduction
-    - collapse
-    - accordion
-    - accordion_sidebar
+- title: "Introduction"
+  contents:
+  - introduction
+- title: "Collapse"
+  contents:
+  - collapse
+- title: "Accordion"
+  contents:
+  - accordion
+- title: "Accordion Sidebar"
+  contents:
+  - accordion_sidebar
+#- title: "Tooltips & Popovers"
+#- title: "Modal"
+#- title: "Carousel"
+
