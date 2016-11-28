@@ -4,16 +4,17 @@
 \alias{bs_modal}
 \title{Make a bootstrap modal window}
 \usage{
-bs_modal(id, title, ..., size = c("large", "medium", "small"))
+bs_modal(id, title, body, footer = bs_modal_closebutton(title = "Close"),
+  size = c("medium", "large", "small"))
 }
 \arguments{
 \item{id}{character, unique identifier for the modal window}
 
 \item{title}{character (or HTML), to put in as the title of the modal window}
 
-\item{...}{elements to include in the body}
-
 \item{size}{character, how big to make the window}
+
+\item{...}{elements to include in the body}
 }
 \value{
 \code{\link[htmltools]{div}} containing the code for the modal window

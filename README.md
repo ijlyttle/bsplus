@@ -33,6 +33,13 @@ I'd like for everything to be pipeable, so that adding another element to a thin
 
 I'd also acknowlege the shinybs package written by Eric Bailey.
 
+## Verbs
+
+* `set`
+* `attach`
+* `append`
+* `embed`
+
 ### Ways I am abusing htmltools
 
 There are places that I am not using the htmltools API; I should probably not those here:

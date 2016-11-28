@@ -22,7 +22,7 @@ The collapse family of functions may not be the most useful, but it gives us a p
 First, let's build the stuff we will put into the collapse elements:
 
 ```{r button}
-button <- tags$button("She Loves You")
+button <- tags$button("She Loves You", class = "btn btn-primary")
 hidden <- tags$div(class = "well", "Yeah Yeah Yeah")
 ```
 
@@ -42,6 +42,6 @@ button %>%
 You are able to attach a collapsible div to a button or to a link. In fact, you are able to attach a collapsible div to as many buttons or links as you like:
 
 ```{r new_button}
-tags$button("Sie Liebt Dich") %>%
+tags$button("Sie Liebt Dich", class = "btn btn-primary") %>%
   bs_attach_collapse("id_yeah")
 ```

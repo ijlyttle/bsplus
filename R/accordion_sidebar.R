@@ -74,3 +74,16 @@ bs_accordion_sidebar <- function(id, spec_side = c(width = 4, offset = 0),
 
   div
 }
+
+#' @rdname bs_accordion
+#' @export
+#'
+use_bs_accordion_sidebar <- function(){
+
+  # this will be a rough equivalent to useShinyjs() - just not as good for now.
+
+  jsfile <-
+    system.file("js", "accordion_sidebar.js", package = "bsplus")
+
+  htmltools::includeScript(jsfile)
+}

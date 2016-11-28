@@ -1,0 +1,30 @@
+---
+title: "Tooltips and popovers"
+author: "Ian Lyttle"
+date: "`r Sys.Date()`"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Vignette Title}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r}
+library("htmltools")
+library("bsplus")
+```
+
+```{r}
+tags$button(type = "button", class = "btn btn-default", "Hover for tooltip") %>%
+  bs_embed_tooltip(title = "I'm a tooltip")
+```
+
+```{r}
+tags$button(type = "button", class = "btn btn-default", "Click for popover") %>%
+  bs_embed_popover(title = "I'm a popover", content = "Really!")
+```
+
+```{r}
+use_bs_tooltip()
+use_bs_popover()
+```

@@ -1,21 +1,18 @@
 templates:
   params:
-    bootswatch: cerulean
+    bootswatch: sandstone
 
 articles:
 - title: "Introduction"
   contents:
   - introduction
-- title: "Collapse"
+- title: "Elements"
   contents:
   - collapse
-- title: "Accordion"
-  contents:
   - accordion
-- title: "Accordion Sidebar"
-  contents:
   - accordion_sidebar
-#- title: "Tooltips & Popovers"
+  - tooltip_popover
+  - modals
 #- title: "Modal"
 #- title: "Carousel"
 
