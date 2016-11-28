@@ -22,3 +22,16 @@ bs_modal(id = "modal", title = "I'm a modal", body = "Yes, I am.")
 tags$button(type = "button", class = "btn btn-default", "Click for modal") %>%
   bs_attach_modal(id_modal = "modal")
 ```
+
+```{r}
+bs_modal(
+  id = "modal_markdown", 
+  title = "Using Markdown",
+  body = render_html_fragment(
+    system.file("markdown", "modal.md", package = "bsplus")
+  )
+)
+
+tags$button(type = "button", class = "btn btn-default", "Click for modal") %>%
+  bs_attach_modal(id_modal = "modal_markdown")
+```

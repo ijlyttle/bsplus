@@ -28,12 +28,12 @@ Imports:
     purrr,
     lubridate,
     stringr,
+    rmarkdown,
     methods
 URL: https://github.com/ijlyttle/bsplus
 BugReports: https://github.com/ijlyttle/bsplus/issues
 RoxygenNote: 5.0.1
 Suggests: testthat,
-    rmarkdown,
     shiny,
     covr,
     knitr

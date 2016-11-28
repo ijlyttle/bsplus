@@ -1,3 +1,22 @@
+#' Build a modal window
+#'
+#' @param id       character, unique id for modal window to create
+#' @param title    character, title for the modal or close-button
+#' @param body     character, content of the body, can be HTML fragment
+#' @param footer   character, HTML fragment for footers
+#' @param size     character, size of the modal
+#' @param id_modal character, unique id modal window to attach
+#' @param tag      character, HTML element to which to attach
+#'
+#' @return HTML fragment
+#' @examples
+#' library("htmltools")
+#'
+#' bs_modal(id = "modal", title = "I'm a modal", body = "Yes, I am.")
+#' tags$button(type = "button", class = "btn btn-default", "Click for modal") %>%
+#'   bs_attach_modal(id_modal = "modal")
+#'
+#'
 #' @export
 #'
 bs_modal <- function(id,
@@ -70,6 +89,7 @@ bs_modal <- function(id,
   modal
 }
 
+#' @rdname bs_modal
 #' @export
 #'
 bs_modal_closebutton <- function(title = "Close"){
@@ -82,6 +102,7 @@ bs_modal_closebutton <- function(title = "Close"){
     bs_set_data(dismiss = "modal")
 }
 
+#' @rdname bs_modal
 #' @export
 #'
 bs_attach_modal <- function(tag, id_modal){
