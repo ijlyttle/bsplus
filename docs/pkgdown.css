@@ -63,6 +63,8 @@ a.anchor {
   margin-top: -60px;
 }
 
+
+
 /* Sidebar --------------------------*/
 
 #sidebar {
@@ -111,3 +113,20 @@ pre img {
   background-color: #fff;
   display: block;
 }
+
+/* IJL fixes for bsplus */
+
+.panel h1, .panel h2, .panel h3, .panel h4 {
+  padding-top: 0;
+  margin-top: 10px;
+}
+
+.panel a.anchor {
+  width: 0;
+  height: 0;
+}
+
+.panel .hasAnchor {
+  margin-left: 0;
+}
+

@@ -38,8 +38,6 @@ reference:
     contents:
       - bs_accordion_sidebar
 
-
-
   - title: "Helpers"
     contents:
       - bs_set_aria
