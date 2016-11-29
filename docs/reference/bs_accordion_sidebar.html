@@ -87,6 +87,8 @@
     <pre><span class='fu'>bs_accordion_sidebar</span>(<span class='no'>id</span>, <span class='kw'>spec_side</span> <span class='kw'>=</span> <span class='fu'>c</span>(<span class='kw'>width</span> <span class='kw'>=</span> <span class='fl'>4</span>, <span class='kw'>offset</span> <span class='kw'>=</span> <span class='fl'>0</span>),
   <span class='kw'>spec_main</span> <span class='kw'>=</span> <span class='fu'>c</span>(<span class='kw'>width</span> <span class='kw'>=</span> <span class='fl'>8</span>, <span class='kw'>offset</span> <span class='kw'>=</span> <span class='fl'>0</span>), <span class='kw'>position</span> <span class='kw'>=</span> <span class='fu'>c</span>(<span class='st'>"left"</span>, <span class='st'>"right"</span>))
 
+<span class='fu'>use_bs_accordion_sidebar</span>()
+
 <span class='co'># S3 method for bsplus_accordion_sidebar</span>
 <span class='fu'><a href='bs_append.html'>bs_append</a></span>(<span class='no'>tag</span>, <span class='no'>title_side</span>, <span class='no'>content_side</span>,
   <span class='no'>content_main</span>, <span class='no'>...</span>)
@@ -128,13 +130,52 @@ repspect to the main panels</dd>
     
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='fu'>bs_accordion_sidebar</span>(<span class='kw'>id</span> <span class='kw'>=</span> <span class='st'>"meet_the_beatles"</span>)</div><div class='output co'>#&gt; &lt;div class=&quot;row&quot; id=&quot;meet_the_beatles&quot;&gt;
+    <pre class="examples"><div class='input'><span class='fu'>bs_accordion_sidebar</span>(<span class='kw'>id</span> <span class='kw'>=</span> <span class='st'>"meet_the_beatles"</span>) <span class='kw'>%&gt;%</span>
+  <span class='fu'><a href='bs_append.html'>bs_append</a></span>(
+    <span class='kw'>title_side</span> <span class='kw'>=</span> <span class='st'>"John Lennon"</span>,
+    <span class='kw'>content_side</span> <span class='kw'>=</span> <span class='st'>"Rhythm guitar, vocals"</span>,
+    <span class='kw'>content_main</span> <span class='kw'>=</span> <span class='st'>"Dear Prudence"</span>
+  ) <span class='kw'>%&gt;%</span>
+  <span class='fu'><a href='bs_append.html'>bs_append</a></span>(
+    <span class='kw'>title_side</span> <span class='kw'>=</span> <span class='st'>"Paul McCartney"</span>,
+    <span class='kw'>content_side</span> <span class='kw'>=</span> <span class='st'>"Bass guitar, vocals"</span>,
+    <span class='kw'>content_main</span> <span class='kw'>=</span> <span class='st'>"Blackbird"</span>
+  )</div><div class='output co'>#&gt; &lt;div class=&quot;row&quot; id=&quot;meet_the_beatles&quot;&gt;
 #&gt;   &lt;div class=&quot;col-sm-4&quot; id=&quot;meet_the_beatles-side&quot;&gt;
-#&gt;     &lt;div id=&quot;meet_the_beatles-side-accordion&quot; class=&quot;panel-group&quot; role=&quot;tablist&quot; aria-multiselectable=&quot;true&quot;&gt;&lt;/div&gt;
+#&gt;     &lt;div id=&quot;meet_the_beatles-side-accordion&quot; class=&quot;panel-group&quot; role=&quot;tablist&quot; aria-multiselectable=&quot;true&quot;&gt;
+#&gt;       &lt;div class=&quot;panel panel-success&quot; class-active=&quot;panel-success&quot; class-inactive=&quot;panel-primary&quot; id=&quot;meet_the_beatles-side-accordion-0&quot;&gt;
+#&gt;         &lt;div id=&quot;meet_the_beatles-side-accordion-0-heading&quot; class=&quot;panel-heading&quot; role=&quot;tab&quot; data-toggle=&quot;collapse&quot; data-target=&quot;#meet_the_beatles-side-accordion-0-collapse&quot; data-parent=&quot;#meet_the_beatles-side-accordion&quot; aria-expanded=&quot;true&quot; aria-controls=&quot;meet_the_beatles-side-accordion-0-collapse&quot; style=&quot;cursor: pointer;&quot;&gt;
+#&gt;           &lt;h4 class=&quot;panel-title&quot;&gt;John Lennon&lt;/h4&gt;
+#&gt;         &lt;/div&gt;
+#&gt;         &lt;div aria-labelledby=&quot;meet_the_beatles-side-accordion-0-heading&quot; class=&quot;panel-collapse collapse in panel-collapse-leader&quot; id=&quot;meet_the_beatles-side-accordion-0-collapse&quot; role=&quot;tabpanel&quot;&gt;
+#&gt;           &lt;div class=&quot;panel-body&quot; style=&quot;&quot;&gt;Rhythm guitar, vocals&lt;/div&gt;
+#&gt;         &lt;/div&gt;
+#&gt;       &lt;/div&gt;
+#&gt;       &lt;div class=&quot;panel panel-primary&quot; class-active=&quot;panel-success&quot; class-inactive=&quot;panel-primary&quot; id=&quot;meet_the_beatles-side-accordion-1&quot;&gt;
+#&gt;         &lt;div id=&quot;meet_the_beatles-side-accordion-1-heading&quot; class=&quot;panel-heading&quot; role=&quot;tab&quot; data-toggle=&quot;collapse&quot; data-target=&quot;#meet_the_beatles-side-accordion-1-collapse&quot; data-parent=&quot;#meet_the_beatles-side-accordion&quot; aria-expanded=&quot;true&quot; aria-controls=&quot;meet_the_beatles-side-accordion-1-collapse&quot; style=&quot;cursor: pointer;&quot;&gt;
+#&gt;           &lt;h4 class=&quot;panel-title&quot;&gt;Paul McCartney&lt;/h4&gt;
+#&gt;         &lt;/div&gt;
+#&gt;         &lt;div aria-labelledby=&quot;meet_the_beatles-side-accordion-1-heading&quot; class=&quot;panel-collapse collapse panel-collapse-leader&quot; id=&quot;meet_the_beatles-side-accordion-1-collapse&quot; role=&quot;tabpanel&quot;&gt;
+#&gt;           &lt;div class=&quot;panel-body&quot; style=&quot;&quot;&gt;Bass guitar, vocals&lt;/div&gt;
+#&gt;         &lt;/div&gt;
+#&gt;       &lt;/div&gt;
+#&gt;     &lt;/div&gt;
 #&gt;   &lt;/div&gt;
-#&gt;   &lt;div class=&quot;col-sm-8&quot; id=&quot;meet_the_beatles-main&quot;&gt;&lt;/div&gt;
-#&gt; &lt;/div&gt;</div><div class='input'>
-</div></pre>
+#&gt;   &lt;div class=&quot;col-sm-8&quot; id=&quot;meet_the_beatles-main&quot;&gt;
+#&gt;     &lt;div class=&quot;collapse in&quot; id=&quot;meet_the_beatles-side-accordion-0-follow&quot;&gt;
+#&gt;       &lt;div class=&quot;panel panel-success&quot;&gt;
+#&gt;         &lt;div class=&quot;panel-body&quot;&gt;Dear Prudence&lt;/div&gt;
+#&gt;       &lt;/div&gt;
+#&gt;     &lt;/div&gt;
+#&gt;     &lt;div class=&quot;collapse&quot; id=&quot;meet_the_beatles-side-accordion-1-follow&quot;&gt;
+#&gt;       &lt;div class=&quot;panel panel-success&quot;&gt;
+#&gt;         &lt;div class=&quot;panel-body&quot;&gt;Blackbird&lt;/div&gt;
+#&gt;       &lt;/div&gt;
+#&gt;     &lt;/div&gt;
+#&gt;   &lt;/div&gt;
+#&gt; &lt;/div&gt;</div><div class='input'><span class='co'>## Not run: ------------------------------------</span>
+<span class='co'># use_bs_accordion_sidebar()</span>
+<span class='co'>## ---------------------------------------------</span></div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>

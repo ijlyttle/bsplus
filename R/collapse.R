@@ -1,32 +1,35 @@
-#' Creates a collapsible div
+#' Create and attach a collapsible div
 #'
-#' When a page is renedered, this div will be hidden initialy, but can be revealed
-#' using a control to which you will have attached this div's id.
+#' When a page is renedered, a collapsible div will be hidden initially
+#' (by default), but can be revealed  using a control to which you will
+#' have attached this div's id.
 #'
 #' It is your responsibility to ensure that id is unique
 #' among html elements in your page. If you have non-unique id's, strange things may
-#' happen as your page is rendered.
+#' happen to your page.
 #'
-#' This div's id may be attached to more than one control, see
-#' \code{\link{bs_attach_collapse}}.
+#' Keep in mind that you can attach a collapsible div to more than one element.
 #'
-#' @param id       character, id for div
-#' @param content  htmltools \code{\link[htmltools]{tagList}} or html, content to be
-#'   put into the div
-#' @param show     logical to indicate if tag should be shown by default
+#' @param id           character, unique id for modal window to create
+#' @param content      character (HTML) or \code{htmltools::\link[htmltools]{tagList}},
+#'   content to be put into the div
+#' @param show         logical, indicates if element is shown initially
+#' @param id_collapse  character, unique id of collapsible div to attach
+#' @param tag          character, HTML element to which to attach collapsible div
 #'
-#' @return \code{\link[htmltools]{tag}} div
+#' @return \code{htmltools::\link[htmltools]{tag}} div
 #' @examples
 #' library("htmltools")
+#'
 #' bs_collapse(id = "id_yeah", tags$p("Yeah Yeah Yeah"))
+#'
 #' tags$button("She Loves You") %>%
 #'   bs_attach_collapse("id_yeah")
 #'
-#' @family collapse functions
 #' @seealso \url{https://getbootstrap.com/javascript/#collapse}
 #'
 #' @export
-#
+#'
 bs_collapse <- function(id, content = NULL, show = FALSE){
 
   tag <- htmltools::tags$div(class = "collapse", id = id, content)
@@ -38,28 +41,9 @@ bs_collapse <- function(id, content = NULL, show = FALSE){
   tag
 }
 
-#' Attaches a collapsible div's id to a tag
-#'
-#' Typical to attach to a button
-#' or link tag (see \code{\link[htmltools]{builder}}).
-#'
-#' You may attach a collapsible div's id to more than one tag.
-#'
-#' @param tag          htmltools \code{\link[htmltools]{tag}},
-#' @param id_collapse  character, id for the collapsible div
-#'
-#' @return \code{\link[htmltools]{tag}}, modified copy of \code{tag}
-#' @examples
-#' library("htmltools")
-#' bs_collapse(id = "id_yeah", tags$p("Yeah Yeah Yeah"))
-#' tags$button("She Loves You") %>%
-#'   bs_attach_collapse("id_yeah")
-#'
-#' @family collapse functions
-#' @seealso \url{https://getbootstrap.com/javascript/#collapse}
-#'
+#' @rdname bs_collapse
 #' @export
-#
+#'
 bs_attach_collapse <- function(tag, id_collapse){
 
   tag <- .tag_validate(tag)

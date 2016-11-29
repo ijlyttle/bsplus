@@ -15,7 +15,7 @@ bs_set_opts(tag, ...)
 \arguments{
 \item{tag}{\code{htmltools:shinytag}}
 
-\item{...}{additional arguments}
+\item{...}{additional arguments, key/va}
 }
 \value{
 modified copy of \code{tag}
@@ -23,4 +23,5 @@ modified copy of \code{tag}
 \description{
 This would be used when we want set options for adding items
 }
+\keyword{internal}
 

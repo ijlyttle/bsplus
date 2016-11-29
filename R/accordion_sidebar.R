@@ -16,8 +16,20 @@
 #' @return \code{bsplus_accsidebar} object
 #'
 #' @examples
-#' bs_accordion_sidebar(id = "meet_the_beatles")
-#'
+#' bs_accordion_sidebar(id = "meet_the_beatles") %>%
+#'   bs_append(
+#'     title_side = "John Lennon",
+#'     content_side = "Rhythm guitar, vocals",
+#'     content_main = "Dear Prudence"
+#'   ) %>%
+#'   bs_append(
+#'     title_side = "Paul McCartney",
+#'     content_side = "Bass guitar, vocals",
+#'     content_main = "Blackbird"
+#'   )
+#' \dontrun{
+#' use_bs_accordion_sidebar()
+#' }
 #' @export
 #'
 bs_accordion_sidebar <- function(id, spec_side = c(width = 4, offset = 0),
@@ -75,7 +87,7 @@ bs_accordion_sidebar <- function(id, spec_side = c(width = 4, offset = 0),
   div
 }
 
-#' @rdname bs_accordion
+#' @rdname bs_accordion_sidebar
 #' @export
 #'
 use_bs_accordion_sidebar <- function(){

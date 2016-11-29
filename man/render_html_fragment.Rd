@@ -2,24 +2,26 @@
 % Please edit documentation in R/render_html_fragment.R
 \name{render_html_fragment}
 \alias{render_html_fragment}
-\title{render an html fragment}
+\title{Renders and returns an HTML fragment}
 \usage{
 render_html_fragment(input, output_format = rmarkdown::html_fragment(), ...)
 }
 \arguments{
 \item{input}{character, path to input file}
 
-\item{output_format}{rmarkdown format, provided so you can specify arguments}
+\item{output_format}{rmarkdown output format, provided so you can specify arguments}
 
-\item{...}{other arguments passed to \code{rmarkdown::\link{render}}}
+\item{...}{other arguments passed to
+\code{rmarkdown::\link[rmarkdown]{render}}}
 }
 \value{
-HTML fragment (unless another format specified)
+HTML fragment
 }
 \description{
-This is a wrapper around the \code{rmarkdown::\link{render}} function.
-The principal difference is that the function returns an HTML fragment so
-that it can be used, for example, in a modal window or a popover.
+This is a wrapper around the \code{rmarkdown::\link[rmarkdown]{render}}
+function. The principal difference is that the function is designed to
+return an HTML fragment (rather than writing to a file). This function is
+useful to populate the content of a modal window or a popover.
 }
 \examples{
 my_file <- system.file("markdown", "modal.md", package = "bsplus")

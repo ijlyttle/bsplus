@@ -1,14 +1,16 @@
-#' render an html fragment
+#' Renders and returns an HTML fragment
 #'
-#' This is a wrapper around the \code{rmarkdown::\link{render}} function.
-#' The principal difference is that the function returns an HTML fragment so
-#' that it can be used, for example, in a modal window or a popover.
+#' This is a wrapper around the \code{rmarkdown::\link[rmarkdown]{render}}
+#' function. The principal difference is that the function is designed to
+#' return an HTML fragment (rather than writing to a file). This function is
+#' useful to populate the content of a modal window or a popover.
 #'
 #' @param input          character, path to input file
-#' @param output_format  rmarkdown format, provided so you can specify arguments
-#' @param ...            other arguments passed to \code{rmarkdown::\link{render}}
+#' @param output_format  rmarkdown output format, provided so you can specify arguments
+#' @param ...            other arguments passed to
+#'   \code{rmarkdown::\link[rmarkdown]{render}}
 #'
-#' @return HTML fragment (unless another format specified)
+#' @return HTML fragment
 #' @examples
 #' my_file <- system.file("markdown", "modal.md", package = "bsplus")
 #' render_html_fragment(my_file)

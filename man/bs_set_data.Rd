@@ -10,12 +10,12 @@ bs_set_data(tag, ...)
 bs_set_aria(tag, ...)
 }
 \arguments{
-\item{tag}{htmltools \code{\link[htmltools]{tag}}}
+\item{tag}{\code{htmltools::\link[htmltools]{tag}}}
 
 \item{...}{named arguments used to set the attributes of \code{tag}}
 }
 \value{
-htmltools \code{\link[htmltools]{tag}}
+\code{htmltools::\link[htmltools]{tag}}, modified copy of \code{tag}
 }
 \description{
 Helper function to manage attributes for Bootstrap's Javascript components.
@@ -47,8 +47,9 @@ Note that this returns a modified copy of the tag sent to it, so it is pipeable.
 \examples{
 library("htmltools")
 library("lubridate")
+
 tags$div() \%>\%
-  bs_set_data(target = "#target", delay = dseconds(1)) \%>\%
+  bs_set_data(target = "#foobar", delay = dseconds(1)) \%>\%
   bs_set_aria(expanded = FALSE)
 }
 \seealso{

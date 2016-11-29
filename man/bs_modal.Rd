@@ -4,7 +4,7 @@
 \alias{bs_attach_modal}
 \alias{bs_modal}
 \alias{bs_modal_closebutton}
-\title{Build a modal window}
+\title{Create and attach a modal window}
 \usage{
 bs_modal(id, title, body, footer = bs_modal_closebutton(title = "Close"),
   size = c("medium", "large", "small"))
@@ -20,19 +20,19 @@ bs_attach_modal(tag, id_modal)
 
 \item{body}{character, content of the body, can be HTML fragment}
 
-\item{footer}{character, HTML fragment for footers}
+\item{footer}{character, HTML fragment for footer}
 
 \item{size}{character, size of the modal}
 
-\item{tag}{character, HTML element to which to attach}
+\item{tag}{character, HTML element to which to attach modal}
 
-\item{id_modal}{character, unique id modal window to attach}
+\item{id_modal}{character, unique id of modal window to attach}
 }
 \value{
 HTML fragment
 }
 \description{
-Build a modal window
+You can attach an modal window to more than one element.
 }
 \examples{
 library("htmltools")
@@ -40,7 +40,6 @@ library("htmltools")
 bs_modal(id = "modal", title = "I'm a modal", body = "Yes, I am.")
 tags$button(type = "button", class = "btn btn-default", "Click for modal") \%>\%
   bs_attach_modal(id_modal = "modal")
-
 
 }
 

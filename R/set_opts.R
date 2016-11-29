@@ -3,13 +3,15 @@
 #' This would be used when we want set options for adding items
 #'
 #' @param tag   \code{htmltools:shinytag}
-#' @param ...  additional arguments
+#' @param ...  additional arguments, key/va
 #'
+#' @keywords internal
 #' @return modified copy of \code{tag}
 #' @export
 #'
 bs_set_opts <- function(tag, ...) UseMethod("bs_set_opts")
 
+#' @keywords internal
 #' @rdname bs_set_opts
 #' @export
 #'
@@ -17,6 +19,7 @@ bs_set_opts.default <- function(tag, ...){
   stop("Unknown class")
 }
 
+#' @keywords internal
 #' @rdname bs_set_opts
 #' @export
 #'

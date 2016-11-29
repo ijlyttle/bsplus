@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Creates a collapsible div — bs_collapse • bsplus</title>
+<title>Create and attach a collapsible div — bs_collapse • bsplus</title>
 
 <!-- jquery -->
 <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha384-nrOSfDHtoPMzJHjVTdCopGqIqeYETSXhZDFyniQ8ZHcVy08QesyHcnOUpMpqnmWq" crossorigin="anonymous"></script>
@@ -77,51 +77,58 @@
       <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Creates a collapsible div</h1>
+    <h1>Create and attach a collapsible div</h1>
     </div>
 
     
-    <p>When a page is renedered, this div will be hidden initialy, but can be revealed
-using a control to which you will have attached this div&#39;s id.</p>
+    <p>When a page is renedered, a collapsible div will be hidden initially
+(by default), but can be revealed  using a control to which you will
+have attached this div&#39;s id.</p>
     
 
-    <pre><span class='fu'>bs_collapse</span>(<span class='no'>id</span>, <span class='kw'>content</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>show</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>)</pre>
+    <pre><span class='fu'>bs_collapse</span>(<span class='no'>id</span>, <span class='kw'>content</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>show</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>)
+
+<span class='fu'>bs_attach_collapse</span>(<span class='no'>tag</span>, <span class='no'>id_collapse</span>)</pre>
     
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a> Arguments</h2>
     <dl class="dl-horizontal">
       <dt>id</dt>
-      <dd>character, id for div</dd>
+      <dd>character, unique id for modal window to create</dd>
       <dt>content</dt>
-      <dd>htmltools <code><a href='http://www.rdocumentation.org/packages/htmltools/topics/tag'>tagList</a></code> or html, content to be
-put into the div</dd>
+      <dd>character (HTML) or <code>htmltools::<a href='http://www.rdocumentation.org/packages/htmltools/topics/tag'>tagList</a></code>,
+content to be put into the div</dd>
       <dt>show</dt>
-      <dd>logical to indicate if tag should be shown by default</dd>
+      <dd>logical, indicates if element is shown initially</dd>
+      <dt>tag</dt>
+      <dd>character, HTML element to which to attach collapsible div</dd>
+      <dt>id_collapse</dt>
+      <dd>character, unique id of collapsible div to attach</dd>
     </dl>
     
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
-    <p><code><a href='http://www.rdocumentation.org/packages/htmltools/topics/tag'>tag</a></code> div</p>
+    <p><code>htmltools::<a href='http://www.rdocumentation.org/packages/htmltools/topics/tag'>tag</a></code> div</p>
     
     <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
 
     <p>It is your responsibility to ensure that id is unique
 among html elements in your page. If you have non-unique id&#39;s, strange things may
-happen as your page is rendered.</p>
-    <p>This div&#39;s id may be attached to more than one control, see
-<code><a href='bs_attach_collapse.html'>bs_attach_collapse</a></code>.</p>
+happen to your page.</p>
+    <p>Keep in mind that you can attach a collapsible div to more than one element.</p>
     
     <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
 
     <p><a href = 'https://getbootstrap.com/javascript/#collapse'>https://getbootstrap.com/javascript/#collapse</a></p>
-    <p>Other collapse.functions: <code><a href='bs_attach_collapse.html'>bs_attach_collapse</a></code></p>
     
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'><span class='fu'>library</span>(<span class='st'>"htmltools"</span>)
+
 <span class='fu'>bs_collapse</span>(<span class='kw'>id</span> <span class='kw'>=</span> <span class='st'>"id_yeah"</span>, <span class='no'>tags</span>$<span class='fu'>p</span>(<span class='st'>"Yeah Yeah Yeah"</span>))</div><div class='output co'>#&gt; &lt;div class=&quot;collapse&quot; id=&quot;id_yeah&quot;&gt;
 #&gt;   &lt;p&gt;Yeah Yeah Yeah&lt;/p&gt;
-#&gt; &lt;/div&gt;</div><div class='input'><span class='no'>tags</span>$<span class='fu'>button</span>(<span class='st'>"She Loves You"</span>) <span class='kw'>%&gt;%</span>
-  <span class='fu'><a href='bs_attach_collapse.html'>bs_attach_collapse</a></span>(<span class='st'>"id_yeah"</span>)</div><div class='output co'>#&gt; &lt;button data-toggle=&quot;collapse&quot; data-target=&quot;#id_yeah&quot;&gt;She Loves You&lt;/button&gt;</div><div class='input'>
+#&gt; &lt;/div&gt;</div><div class='input'>
+<span class='no'>tags</span>$<span class='fu'>button</span>(<span class='st'>"She Loves You"</span>) <span class='kw'>%&gt;%</span>
+  <span class='fu'>bs_attach_collapse</span>(<span class='st'>"id_yeah"</span>)</div><div class='output co'>#&gt; &lt;button data-toggle=&quot;collapse&quot; data-target=&quot;#id_yeah&quot;&gt;She Loves You&lt;/button&gt;</div><div class='input'>
 </div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">

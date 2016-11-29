@@ -1,12 +1,14 @@
-#' Build a modal window
+#' Create and attach a modal window
+#'
+#' You can attach an modal window to more than one element.
 #'
 #' @param id       character, unique id for modal window to create
 #' @param title    character, title for the modal or close-button
 #' @param body     character, content of the body, can be HTML fragment
-#' @param footer   character, HTML fragment for footers
+#' @param footer   character, HTML fragment for footer
 #' @param size     character, size of the modal
-#' @param id_modal character, unique id modal window to attach
-#' @param tag      character, HTML element to which to attach
+#' @param id_modal character, unique id of modal window to attach
+#' @param tag      character, HTML element to which to attach modal
 #'
 #' @return HTML fragment
 #' @examples
@@ -15,7 +17,6 @@
 #' bs_modal(id = "modal", title = "I'm a modal", body = "Yes, I am.")
 #' tags$button(type = "button", class = "btn btn-default", "Click for modal") %>%
 #'   bs_attach_modal(id_modal = "modal")
-#'
 #'
 #' @export
 #'

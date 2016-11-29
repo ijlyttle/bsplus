@@ -1,0 +1,238 @@
+---
+title: "Manifesto"
+author: "Ian Lyttle"
+date: "`r Sys.Date()`"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Vignette Title}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+## Preamble
+
+This manifesto started out as an issue on the Github repository - this seems like a better place for it. It started out as an aspirational document, so that I could look at the package API all in ine place. It is slowly being implemented.
+
+## Manifesto
+
+The purposes of the bsplus package:
+1. Provide access to [Bootstrap's Javascript components](http://getbootstrap.com/javascript/), created by setting attributes of HTML tags.
+2. Provide functions for some compound components.
+
+The fact that there is more than one item on this list suggests that this should be more than one package, I hope that I will be forgiven for keeping them together at this nascent stage.
+
+It may be useful to prepend all the functions with `bs_`, to keep the namespace clean.
+
+### Grammar
+
+- `bs_noun()` We are creating a thing. 
+- `bs_noun_verb(thing, ...)` We are taking an action on the `thing`.
+- `bs_noun1_verb_noun2(thing1, thing2)` We are taking an action on `thing1` using `thing2`. 
+
+If we have an S3 class, then:
+- `bs_verb(thing, ...)` We are taking an action on the `thing`.
+- `bs_verb_noun(thing1, thing2)` We are taking an action on `thing1` using `thing2`. 
+
+#### Verbs
+
+- `bs_append(tag, ...)` we are appending something to the tag, perhaps a panel into a panel-group, or a set of attributes.
+- `bs_attach(tag, ...)` we are attaching something to the tag
+- `bs_emded(tag, ...)` we are embed something as part of the tag
+- `bs_set_opts(tag, ...)` we are setting some options for the tags yet to be appended
+
+Let's consider the differences between`append`, `attach`, and `embed`.
+- We can **append** more than one element to a tag, i.e., we would append multiple panel elements to an accordion.
+- We can **attach** only one thing to a tag. When we are attaching, we attach the id of an element, not the element itself.
+- We can **embed** only one thing into a tag. i.e., into a given tag, we embed a tooltip or a popover, modifying the attributes and setting a child element.
+
+### Note
+
+Going back-and-forth a lot in my head as to the extent to which these functions should use the S3 framework.
+
+#### Helper function
+
+``` R
+bs_set_data(tag, ...)
+bs_set_aria(tag, ...)
+```
+
+for the each of the named `...` args
+- prefixes the names with `data-` or `aria-`
+- converts logical values to `"true"` and `"false"`
+- converts lubridate durations to milliseconds
+- converts vectors to space-delimited character strings
+
+**Note** we have to go around the htmltools API to set (rather than append) the attributes - this will need to be addressed.
+
+## Components
+
+For the first pass of this package, it is proposed to provide access to some useful components not already offered in Shiny:
+- [collapse](http://getbootstrap.com/javascript/#collapse)
+- [accordion](http://getbootstrap.com/javascript/#collapse-example-accordion)
+- [modal](http://getbootstrap.com/javascript/#modals)
+- [tooltip](http://getbootstrap.com/javascript/#tooltips)
+- [popover](http://getbootstrap.com/javascript/#popovers)
+- [carousel](http://getbootstrap.com/javascript/#carousel)
+
+We also propose a compound component:
+- accordion_sidebar
+
+### Collapse
+
+``` R
+bs_collapse(id, content)
+bs_attach_collapse(tag, id_collapse)
+```
+
+#### Example
+
+``` R
+tags$button("Click me") %>%
+  bs_attach_collapse(id_collapse = "ex_collapse")
+
+bs_collapse(id = "ex_collapse", content = tags$p("Hi there")) 
+```
+
+### Accordion
+
+S3 class
+
+``` R
+bs_accordion(id)
+bs_append(tag_accordion, title, content)
+bs_set_opts(tag_accordion, panel_type, use_heading_link) # boostrap type: "default", "primary", etc.
+```
+
+#### Example
+
+``` R
+bs_accordion(id = "meet_the_beatles") %>%
+  bs_append(title = "John", content = tags$p("Rhythm guitar, vocals")) %>%
+  bs_append(title = "Paul", content = tags$p("Bass guitar, vocals")) %>%
+  bs_append(title = "George", content = tags$p("Lead guitar, vocals")) %>%
+  bs_append(title = "Ringo", content = tags$p("Drums, vocals"))
+```
+
+``` R
+bs_accordion(id = "with_the_beatles") %>%
+  bs_set_opts(panel_type = "primary") %>% 
+  bs_append(title = "John", content = tags$p("Rhythm guitar, vocals")) %>%
+  bs_append(title = "Paul", content = tags$p("Bass guitar, vocals")) %>%
+  bs_append(title = "George", content = tags$p("Lead guitar, vocals")) %>%
+  bs_set_opts(panel_type = "info") %>%
+  bs_append(title = "Ringo", content = tags$p("Drums, vocals"))
+```
+
+### Modal
+
+``` R
+bs_modal(id, title, content, footer, size)
+bs_attach_modal(tag, id_modal)
+```
+
+#### Helpers
+
+Need to think this through
+
+``` R
+bs_modal_closebutton(title = "Close")
+bs_embed_modalhelp(tag_shinyinput, id_modal)
+# bs_modal_helplink(id_modal)
+# bs_embed_helplink(tag_shinyinput, tag_link)
+```
+
+#### Example
+
+``` R
+bs_modal(
+  id = "help"
+  title = "I need somebody"
+  content = tagList(
+    tags$h4("Help!"),
+    tags$p("Not just anybody")
+  ),
+  footer = bs_modal_closebutton(title = "Close")
+)
+
+tags$button("Help!") %>%
+  bs_attach_modal(id_modal = "help")
+
+selectInput(
+  inputId = "beatles_for_sale",
+  label = "Choose a Beatle",
+  choices = c("John", "Paul", "George", "Ringo")
+) %>%
+  bs_embed_modalhelp(id_modal = "help")
+```
+
+### Tooltip
+
+``` R
+bs_embed_tooltip(tag, title)
+```
+
+#### Example
+
+``` R
+tags$button("John Lennon") %>%
+  bs_embed_tooltip(title = "Rhythm Guitar, vocals")
+```
+
+### Popover
+
+``` R
+bs_embed_popover(tag, title, content)
+```
+
+#### Example
+
+``` R
+tags$button("John Lennon") %>%
+  bs_embed_popover(
+    title = "More information",
+    content = "Although he wrote \"I Am the Walrus\", he later insisted that the Walrus was Paul."
+  )
+```
+
+### Carousel
+
+S3 Class
+
+``` R
+bs_carousel(id, use_indicators, use_controls)
+bs_append(carousel, content, caption)
+bs_append_img(carousel, src, alt, caption)
+bs_carousel_caption(title, content) #helper
+```
+
+#### Example
+
+``` R
+bs_carousel("the_beatles") %>%
+  bs_append_img(
+    src = "img/john.jpg", alt = "John Lennon", 
+    caption = carousel_caption("John Lennon", "Rhythm guitar, vocals")
+  ) %>%
+  bs_append_img(
+    src = "img/paul.jpg", alt = "Paul McCartney", 
+    caption = carousel_caption("Paul McCartney", "Bass guitar, vocals")
+  ) %>%
+  bs_append_img(
+    src = "img/george.jpg", alt = "George Harrison", 
+    caption = carousel_caption("George Harrison", "Lead guitar, vocals")
+  ) %>%
+  bs_append_img(
+    src = "img/ringo.jpg", alt = "Ringo Starr", 
+    caption = carousel_caption("Ringo Starr", "Drums, vocals")
+  ) 
+```
+
+### Accordion Sidebar
+
+This is an add-on that makes it easier to fit more stuff into a shiny app. S3 class
+
+``` R
+bs_accordion_sidebar(id, spec_side = c(width = 4, offset =0), spec_main = c(width = 8, offset = 0), position = "left") 
+bs_append(accordion_sidebar, title_side, content_side, content_main)
+bs_set_opts(accordion_sidebar, panel_type_active, panel_type_inactive, use_main_panel) 
+```

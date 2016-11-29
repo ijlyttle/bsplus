@@ -1,36 +1,5 @@
 function bsplus_collpase_validator(target, collapse) {
 
-
-
-  /* target    element that initiated the event
-   * collapse  element that is acting on the event
-   *
-   * we want to return true/false on the question:
-   *
-   *  does the target (or any parent of the target) have an attribute
-   *  called 'data-target' with a value the same as the id of the collapse?
-   *
-   *  [name=”value”] - attribute selector
-   *  .closest()
-   *
-   * This turns out to be too restrictive - see the _new function below
-   */
-
-  //console.log(target);
-
-  var id_collapse = $(collapse).attr('id');
-
-  var attr_string = '[data-target="#'.concat(id_collapse).concat('"]');
-
-  var elem_collapse_from_target = $(target).closest(attr_string);
-
-  var result = elem_collapse_from_target.length > 0;
-
-  return result;
-}
-
-function bsplus_collpase_validator_new(target, collapse) {
-
   /* target    element that initiated the event
    * collapse  element that is acting on the event
    *
@@ -68,7 +37,7 @@ $('.panel-collapse-leader').on('show.bs.collapse', function () {
    * 'panel-collapse-leader' has been expanded, or shown.
    */
 
-  var is_valid = bsplus_collpase_validator_new(event.target, this);
+  var is_valid = bsplus_collpase_validator(event.target, this);
 
   if (is_valid){
     /*  finds the closest parent with the class name 'panel' */
@@ -90,7 +59,7 @@ $('.panel-collapse-leader').on('show.bs.collapse', function () {
 
 $('.panel-collapse-leader').on('hide.bs.collapse', function () {
 
-  var is_valid = bsplus_collpase_validator_new(event.target, this);
+  var is_valid = bsplus_collpase_validator(event.target, this);
 
   if (is_valid){
 

@@ -6,11 +6,13 @@
 #' @param ...  additional arguments
 #'
 #' @return modified copy of \code{tag}
+#' @keywords internal
 #' @export
 #'
 bs_append <- function(tag, ...) UseMethod("bs_append")
 
 #' @rdname bs_append
+#' @keywords internal
 #' @export
 #'
 bs_append.default <- function(tag, ...){
@@ -18,6 +20,7 @@ bs_append.default <- function(tag, ...){
 }
 
 #' @rdname bs_append
+#' @keywords internal
 #' @export
 #'
 bs_append.shiny.tag <- function(tag, ...){

@@ -67,18 +67,18 @@
 </div>
 </div>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">tags$<span class="kw">button</span>(<span class="dt">type =</span> <span class="st">"button"</span>, <span class="dt">class =</span> <span class="st">"btn btn-default"</span>, <span class="st">"Click for modal"</span>) %&gt;%
-<span class="st">  </span><span class="kw">bs_attach_modal</span>(<span class="dt">id_modal =</span> <span class="st">"modal"</span>)</code></pre></div>
+<span class="st">  </span><span class="kw"><a href="../reference/bs_modal.html">bs_attach_modal</a></span>(<span class="dt">id_modal =</span> <span class="st">"modal"</span>)</code></pre></div>
 <button type="button" class="btn btn-default" data-toggle="modal" data-target="#modal">Click for modal</button>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw"><a href="../reference/bs_modal.html">bs_modal</a></span>(
   <span class="dt">id =</span> <span class="st">"modal_markdown"</span>, 
   <span class="dt">title =</span> <span class="st">"Using Markdown"</span>,
-  <span class="dt">body =</span> <span class="kw">render_html_fragment</span>(
-    <span class="kw">system.file</span>(<span class="st">"demo"</span>, <span class="st">"markdown"</span>, <span class="st">"modal.md"</span>, <span class="dt">package =</span> <span class="st">"bsplus"</span>)
+  <span class="dt">body =</span> <span class="kw"><a href="../reference/render_html_fragment.html">render_html_fragment</a></span>(
+    <span class="kw">system.file</span>(<span class="st">"markdown"</span>, <span class="st">"modal.md"</span>, <span class="dt">package =</span> <span class="st">"bsplus"</span>)
   )
 )</code></pre></div>
-<pre><code>## /Applications/RStudio.app/Contents/MacOS/pandoc/pandoc +RTS -K512m -RTS modal.utf8.md --to html --from markdown+autolink_bare_uris+ascii_identifiers+tex_math_single_backslash --output /var/folders/rg/9kvy_lsn43z90d439n02nfw80000gn/T//Rtmpu2EpMH/file1676d5ee178e8 --smart --email-obfuscation none --self-contained --mathjax --standalone --section-divs --template /Library/Frameworks/R.framework/Versions/3.3/Resources/library/rmarkdown/rmd/fragment/default.html --no-highlight</code></pre>
+<pre><code>## /Applications/RStudio.app/Contents/MacOS/pandoc/pandoc +RTS -K512m -RTS modal.utf8.md --to html --from markdown+autolink_bare_uris+ascii_identifiers+tex_math_single_backslash --output /var/folders/rg/9kvy_lsn43z90d439n02nfw80000gn/T//Rtmp5EdpQm/file2ded346a6a9f --smart --email-obfuscation none --self-contained --mathjax --standalone --section-divs --template /Library/Frameworks/R.framework/Versions/3.3/Resources/library/rmarkdown/rmd/fragment/default.html --no-highlight</code></pre>
 <pre><code>## 
-## Output created: /var/folders/rg/9kvy_lsn43z90d439n02nfw80000gn/T//Rtmpu2EpMH/file1676d5ee178e8</code></pre>
+## Output created: /var/folders/rg/9kvy_lsn43z90d439n02nfw80000gn/T//Rtmp5EdpQm/file2ded346a6a9f</code></pre>
 <div class="modal fade" id="modal_markdown" tabindex="-1" role="dialog" aria-labelledby="modal_markdown-title">
 <div class="modal-dialog" role="document">
 <div class="modal-content">
@@ -96,7 +96,7 @@
 </div>
 </div>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">tags$<span class="kw">button</span>(<span class="dt">type =</span> <span class="st">"button"</span>, <span class="dt">class =</span> <span class="st">"btn btn-default"</span>, <span class="st">"Click for modal"</span>) %&gt;%
-<span class="st">  </span><span class="kw">bs_attach_modal</span>(<span class="dt">id_modal =</span> <span class="st">"modal_markdown"</span>)</code></pre></div>
+<span class="st">  </span><span class="kw"><a href="../reference/bs_modal.html">bs_attach_modal</a></span>(<span class="dt">id_modal =</span> <span class="st">"modal_markdown"</span>)</code></pre></div>
 <button type="button" class="btn btn-default" data-toggle="modal" data-target="#modal_markdown">Click for modal</button>
 </div>
   </div>

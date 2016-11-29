@@ -3,11 +3,6 @@
 [![Coverage Status](https://img.shields.io/codecov/c/github/ijlyttle/bsplus/master.svg)](https://codecov.io/github/ijlyttle/bsplus?branch=master)
 [![CRAN_Status_Badge](http://www.r-pkg.org/badges/version/bsplus)](https://cran.r-project.org/package=plus)
 
-
-## Note: Not on CRAN
-
-Despite what is shown in the on this website, bsplus is not yet on CRAN. I suspect this is a bug in the pkgdown package, where something is looking for a line with `Repository:` in the DESCRIPTION file.
-
 ## Introduction
 
 The goal of this package is to provide a framework to use bootstrap's markup API described here: http://getbootstrap.com/javascript/

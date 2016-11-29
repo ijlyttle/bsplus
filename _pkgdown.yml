@@ -2,10 +2,55 @@ templates:
   params:
     bootswatch: sandstone
 
+
+reference:
+  - title: "Collapse"
+    desc: >
+      These functions are used to create collapsible elements,
+      and attach the element id's to button and links.
+
+      * [Demonstration](../articles/collapse.html)
+
+      * [Boostrap reference](http://getbootstrap.com/javascript/#collapse)
+
+    contents:
+      - bs_collapse
+
+  - title: "Accordion"
+    desc: >
+      These functions are used to create a set of "accordion" panels.
+
+      * [Demonstration](../articles/accordion.html)
+
+      * [Boostrap reference](http://getbootstrap.com/javascript/#collapse-example-accordion)
+
+    contents:
+      - bs_accordion
+
+  - title: "Accordion Sidebar"
+    desc: >
+      These functions are used to create a set of "accordion sidebar" panels.
+      This framework is original to this package; it is designed to help give shiny
+      apps more "room" to operate.
+
+      * [Demonstration](../articles/accordion_sidebar.html)
+
+    contents:
+      - bs_accordion_sidebar
+
+
+
+  - title: "Helpers"
+    contents:
+      - bs_set_aria
+      - render_html_fragment
+
+
 articles:
 - title: "Introduction"
   contents:
   - introduction
+  - manifesto
 - title: "Elements"
   contents:
   - collapse
@@ -13,6 +58,5 @@ articles:
   - accordion_sidebar
   - tooltip_popover
   - modals
-#- title: "Modal"
 #- title: "Carousel"
 

@@ -4,10 +4,13 @@
 \alias{bs_accordion_sidebar}
 \alias{bs_append.bsplus_accordion_sidebar}
 \alias{bs_set_opts.bsplus_accordion_sidebar}
+\alias{use_bs_accordion_sidebar}
 \title{framework for accordion-sidebar}
 \usage{
 bs_accordion_sidebar(id, spec_side = c(width = 4, offset = 0),
   spec_main = c(width = 8, offset = 0), position = c("left", "right"))
+
+use_bs_accordion_sidebar()
 
 \method{bs_append}{bsplus_accordion_sidebar}(tag, title_side, content_side,
   content_main, ...)
@@ -46,7 +49,19 @@ repspect to the main panels}
 framework for accordion-sidebar
 }
 \examples{
-bs_accordion_sidebar(id = "meet_the_beatles")
-
+bs_accordion_sidebar(id = "meet_the_beatles") \%>\%
+  bs_append(
+    title_side = "John Lennon",
+    content_side = "Rhythm guitar, vocals",
+    content_main = "Dear Prudence"
+  ) \%>\%
+  bs_append(
+    title_side = "Paul McCartney",
+    content_side = "Bass guitar, vocals",
+    content_main = "Blackbird"
+  )
+\dontrun{
+use_bs_accordion_sidebar()
+}
 }
 
