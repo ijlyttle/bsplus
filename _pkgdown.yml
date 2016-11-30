@@ -4,45 +4,46 @@ templates:
 
 
 reference:
-  - title: "Collapse"
-    desc: >
-      These functions are used to create collapsible elements,
-      and attach the element id's to button and links.
+- title: "Collapse, accordion, and accordion sidebar"
+  desc: >
+    All of these functions deal with collapsible elements. The foundation
+    is the collapse element. Upon this we can build a set of accordion panels.
+    For shiny apps, the accordion sidebar framework may be useful as it can
+    give you another dimension with which to organize your ui.
 
-      * [Demonstration](../articles/collapse.html)
+    * Collapse: [Demonstration](../articles/collapse.html),
+    [Boostrap reference](http://getbootstrap.com/javascript/#collapse)
 
-      * [Boostrap reference](http://getbootstrap.com/javascript/#collapse)
+    * Accordion: [Demonstration](../articles/accordion.html),
+    [Boostrap reference](http://getbootstrap.com/javascript/#collapse-example-accordion)
 
-    contents:
-      - bs_collapse
+    * Accordion sidebar: [Demonstration](../articles/accordion_sidebar.html)
 
-  - title: "Accordion"
-    desc: >
-      These functions are used to create a set of "accordion" panels.
+  contents:
+    - bs_collapse
+    - bs_accordion
+    - bs_accordion_sidebar
 
-      * [Demonstration](../articles/accordion.html)
+- title: "Tooltips, popovers, and modals"
+  desc: >
+    Tooltips, popovers, and modals can be useful for including extra information.
 
-      * [Boostrap reference](http://getbootstrap.com/javascript/#collapse-example-accordion)
+    * Tooltips and popovers: [Demonstration](../articles/tooltip_popover.html),
+    [Tooltip Bootstrap reference](http://getbootstrap.com/javascript/#tooltips),
+    [Popover Bootstrap reference](http://getbootstrap.com/javascript/#popovers)
 
-    contents:
-      - bs_accordion
+    * Modals: [Demonstration](../articles/modals.html),
+    [Boostrap reference](http://getbootstrap.com/javascript/#modals)
 
-  - title: "Accordion Sidebar"
-    desc: >
-      These functions are used to create a set of "accordion sidebar" panels.
-      This framework is original to this package; it is designed to help give shiny
-      apps more "room" to operate.
+  contents:
+    - bs_embed_tooltip
+    - bs_embed_popover
+    - bs_modal
 
-      * [Demonstration](../articles/accordion_sidebar.html)
-
-    contents:
-      - bs_accordion_sidebar
-
-  - title: "Helpers"
-    contents:
-      - bs_set_aria
-      - render_html_fragment
-
+- title: "Helpers"
+  contents:
+    - bs_set_aria
+    - render_html_fragment
 
 articles:
 - title: "Introduction"

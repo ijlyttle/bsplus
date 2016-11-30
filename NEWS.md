@@ -1,5 +1,9 @@
 # bsplus 0.0.9.9002
 
+* adds vignettes
+
+* adds modals, tooltips, and popovers
+
 * clears out a lot of old code
 
 * bumps version to use pkgdown

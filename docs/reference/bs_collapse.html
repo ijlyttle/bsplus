@@ -81,9 +81,9 @@
     </div>
 
     
-    <p>When a page is renedered, a collapsible div will be hidden initially
-(by default), but can be revealed  using a control to which you will
-have attached this div&#39;s id.</p>
+    <p>This is useful for content that you may wish to be hidden when the page is
+initialized, but that can be revealed (and subsequently hidden)
+by clicking a button or a link.</p>
     
 
     <pre><span class='fu'>bs_collapse</span>(<span class='no'>id</span>, <span class='kw'>content</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>show</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>)
@@ -100,21 +100,34 @@ content to be put into the div</dd>
       <dt>show</dt>
       <dd>logical, indicates if element is shown initially</dd>
       <dt>tag</dt>
-      <dd>character, HTML element to which to attach collapsible div</dd>
+      <dd><code>htmltools::<a href='http://www.rdocumentation.org/packages/htmltools/topics/tag'>tag</a></code>,
+button or link to which to attach collapsible div</dd>
       <dt>id_collapse</dt>
-      <dd>character, unique id of collapsible div to attach</dd>
+      <dd>character, id of collapsible div to attach</dd>
     </dl>
     
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
-    <p><code>htmltools::<a href='http://www.rdocumentation.org/packages/htmltools/topics/tag'>tag</a></code> div</p>
+    <p><dl class='dl-horizontal'>
+  <dt><code>bs_collapse()</code></dt><dd><code>htmltools::<a href='http://www.rdocumentation.org/packages/htmltools/topics/tag'>tag</a></code>, div</dd>
+  <dt><code>bs_attach_collapse()</code></dt><dd><code>htmltools::<a href='http://www.rdocumentation.org/packages/htmltools/topics/tag'>tag</a></code>,
+    modified copy of <code>tag</code></dd>
+</dl></p>
     
     <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
 
+    <p>There are two parts to the system:</p>
+    <p><ol>
+<li>A collapsible div, created using <code>bs_collapse()</code>
+  </li>
+<li>At least one button or link to which the id of the
+  collabsible div is attached, using <code>bs_attach_collapse()</code>
+</li>
+</ol></p>
+    <p>Keep in mind that you can attach a collapsible div to more than one button or link.</p>
     <p>It is your responsibility to ensure that id is unique
 among html elements in your page. If you have non-unique id&#39;s, strange things may
 happen to your page.</p>
-    <p>Keep in mind that you can attach a collapsible div to more than one element.</p>
     
     <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
 

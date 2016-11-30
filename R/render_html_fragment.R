@@ -20,11 +20,6 @@ render_html_fragment <- function(input,
                                  output_format = rmarkdown::html_fragment(),
                                  ...){
 
-  if (!requireNamespace("rmarkdown", quietly = TRUE)) {
-    stop("rmarkdown package needed for this function to work. Please install it.",
-         call. = FALSE)
-  }
-
   tempfile_html <- tempfile()
 
   rmarkdown::render(input, output_format, output_file = tempfile_html, ...)
