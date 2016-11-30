@@ -4,7 +4,7 @@
 #' initialized, but that can be revealed (and subsequently hidden)
 #' by clicking a button or a link.
 #'
-#' There are two parts to the system:
+#' There are two parts to this system:
 #'
 #' \enumerate{
 #'   \item{A collapsible div, created using \code{bs_collapse()}}
@@ -18,7 +18,7 @@
 #' among html elements in your page. If you have non-unique id's, strange things may
 #' happen to your page.
 #'
-#' @param id           character, unique id for modal window to create
+#' @param id           character, unique id for collapsible div
 #' @param content      character (HTML) or \code{htmltools::\link[htmltools]{tagList}},
 #'   content to be put into the div
 #' @param show         logical, indicates if element is shown initially

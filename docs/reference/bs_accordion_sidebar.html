@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>framework for accordion-sidebar — bs_accordion_sidebar • bsplus</title>
+<title>Create, append, and set options for an accordion-sidebar panel-group — bs_accordion_sidebar • bsplus</title>
 
 <!-- jquery -->
 <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha384-nrOSfDHtoPMzJHjVTdCopGqIqeYETSXhZDFyniQ8ZHcVy08QesyHcnOUpMpqnmWq" crossorigin="anonymous"></script>
@@ -77,11 +77,13 @@
       <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>framework for accordion-sidebar</h1>
+    <h1>Create, append, and set options for an accordion-sidebar panel-group</h1>
     </div>
 
     
-    <p>framework for accordion-sidebar</p>
+    <p>Combines the Bootstrap Accordion with
+the <code>shiny::<a href='http://www.rdocumentation.org/packages/shiny/topics/sidebarLayout'>sidebarLayout</a></code>,
+allowing you to add another dimension to your Shiny apps.</p>
     
 
     <pre><span class='fu'>bs_accordion_sidebar</span>(<span class='no'>id</span>, <span class='kw'>spec_side</span> <span class='kw'>=</span> <span class='fu'>c</span>(<span class='kw'>width</span> <span class='kw'>=</span> <span class='fl'>4</span>, <span class='kw'>offset</span> <span class='kw'>=</span> <span class='fl'>0</span>),
@@ -100,7 +102,8 @@
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a> Arguments</h2>
     <dl class="dl-horizontal">
       <dt>id</dt>
-      <dd>character, id for div and root it for included elements</dd>
+      <dd>character, unique id for accordion-sidebar div,
+also serves as root it for panels appended using <code>bs_append()</code></dd>
       <dt>spec_side</dt>
       <dd>numeric, column specification for sidebar panels</dd>
       <dt>spec_main</dt>
@@ -109,24 +112,66 @@
       <dd>character, indicates where to put the sidebar panels with
 repspect to the main panels</dd>
       <dt>tag</dt>
-      <dd><code>shiny.tag</code>, accordion-sidebar element</dd>
+      <dd><code>htmltools::<a href='http://www.rdocumentation.org/packages/htmltools/topics/tag'>tag</a></code>,
+accordion div to which to append a panel</dd>
       <dt>title_side</dt>
-      <dd>character or HTML, stuff to put into sidebar title</dd>
+      <dd>character (HTML) or <code>htmltools::<a href='http://www.rdocumentation.org/packages/htmltools/topics/tag'>tagList</a></code>,
+title for the sidebar panel</dd>
       <dt>content_side</dt>
-      <dd>character or HTML, stuff to put into sidebar content</dd>
+      <dd>character (HTML) or <code>htmltools::<a href='http://www.rdocumentation.org/packages/htmltools/topics/tag'>tagList</a></code>,
+content for the sidebar panel</dd>
       <dt>content_main</dt>
-      <dd>character or HTML, stuff to put into main content</dd>
+      <dd>character (HTML) or <code>htmltools::<a href='http://www.rdocumentation.org/packages/htmltools/topics/tag'>tagList</a></code>,
+content for the main panel</dd>
       <dt>...</dt>
-      <dd>other args</dd>
+      <dd>other args (not used)</dd>
       <dt>panel_type_active</dt>
-      <dd>character, indicated bootstrap type for active-panel header</dd>
+      <dd>character, indicated bootstrap type for active-panel header,
+one of <code>c(&quot;default&quot;, &quot;primary&quot;, &quot;success&quot;, &quot;info&quot;, &quot;warning&quot;, &quot;danger&quot;)</code></dd>
       <dt>panel_type_inactive</dt>
-      <dd>character, indicated bootstrap type for inactive-panel header</dd>
+      <dd>character, indicated bootstrap type for inactive-panel header,
+one of <code>c(&quot;default&quot;, &quot;primary&quot;, &quot;success&quot;, &quot;info&quot;, &quot;warning&quot;, &quot;danger&quot;)</code></dd>
     </dl>
     
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
     <p><code>bsplus_accsidebar</code> object</p>
+    
+    <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
+
+    <p>If you use a <code>bs_accordion_sidebar()</code>, you will have to call the function
+<code>use_bs_accordion_sidebar()</code> somewhere in your UI. This attaches some
+javascript needed for your accordion sidebar to work properly.</p>
+    <p>All of these functions return a <code>bsplus_accsidebar</code> object, so you can
+compose an accordion sidebar by piping. There are three parts to this system:</p>
+    <p><ol>
+<li>A constructor function for the accordion sidebar, <code>bs_accordion_sidebar()</code>
+  </li>
+<li>A function to set options for subsequent panels, <code>bs_set_opts()</code>
+  </li>
+<li>A function to append a panel-set to the group, <code>bs_append()</code>
+</li>
+</ol></p>
+    <p>For the constructor, <code>bs_accordion_sidebar()</code>,
+it is your responsibility to ensure that id is unique
+among html elements in your page. If you have non-unique id&#39;s, strange things may
+happen to your page.</p>
+    <p>Using <code>bs_set_opts()</code>, there are two options that can be set for
+the panels that follow: <code>panel_type_active</code> and <code>panel_type_active</code>.
+Both these arguments expect one of the standard Bootstrap types.</p>
+    <p><dl class='dl-horizontal'>
+  <dt><code>panel_type_active</code></dt><dd>used for the open accordion-panel</dd>
+  <dt><code>panel_type_inactive</code></dt><dd>used for the closed accordion-panels</dd>
+</dl></p>
+    <p>The <code>bs_append()</code> function is used to build a set of panels
+and append them to the accordion-sidebar, using the arguments:</p>
+    <p><dl class='dl-horizontal'>
+  <dt><code>title_side</code></dt><dd>Usually text for the sidebar-panel heading, but HTML can be used as well</dd>
+  <dt><code>content_side</code></dt><dd>Content for the sidebar-panel body, such as Shiny inputs. Can be HTML
+  or an <code>htmltools::<a href='http://www.rdocumentation.org/packages/htmltools/topics/tag'>tagList</a></code></dd>
+  <dt><code>content_main</code></dt><dd>Content for the main-panel body, such as Shiny outputs. Can be HTML
+  or an <code>htmltools::<a href='http://www.rdocumentation.org/packages/htmltools/topics/tag'>tagList</a></code></dd>
+</dl></p>
     
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
@@ -183,6 +228,8 @@ repspect to the main panels</dd>
       <li><a href="#arguments">Arguments</a></li>
       
       <li><a href="#value">Value</a></li>
+
+      <li><a href="#details">Details</a></li>
       
       <li><a href="#examples">Examples</a></li>
     </ul>

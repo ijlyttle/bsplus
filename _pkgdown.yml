@@ -2,6 +2,9 @@ templates:
   params:
     bootswatch: sandstone
 
+template:
+  assets: "inst/pkgdown/assets"
+
 
 reference:
 - title: "Collapse, accordion, and accordion sidebar"

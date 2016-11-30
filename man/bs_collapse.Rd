@@ -10,7 +10,7 @@ bs_collapse(id, content = NULL, show = FALSE)
 bs_attach_collapse(tag, id_collapse)
 }
 \arguments{
-\item{id}{character, unique id for modal window to create}
+\item{id}{character, unique id for collapsible div}
 
 \item{content}{character (HTML) or \code{htmltools::\link[htmltools]{tagList}},
 content to be put into the div}
@@ -35,7 +35,7 @@ initialized, but that can be revealed (and subsequently hidden)
 by clicking a button or a link.
 }
 \details{
-There are two parts to the system:
+There are two parts to this system:
 
 \enumerate{
   \item{A collapsible div, created using \code{bs_collapse()}}
