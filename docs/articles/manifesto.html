@@ -41,7 +41,7 @@
       <h1>Manifesto</h1>
                         <h4 class="author">Ian Lyttle</h4>
             
-            <h4 class="date">2016-11-30</h4>
+            <h4 class="date">2016-12-01</h4>
           </div>
 
     
@@ -49,44 +49,52 @@
 <div class="contents">
 <div id="preamble" class="section level2">
 <h2 class="hasAnchor"><html><body><a href="#preamble" class="anchor"> </a></body></html>Preamble</h2>
-<p>This manifesto started out as an issue on the Github repository - this seems like a better place for it. It started out as an aspirational document, so that I could look at the package API all in ine place. It is slowly being implemented.</p>
+<p>This manifesto started out as an issue on the Github repository - this seems like a better place for it.</p>
+<p>I am using this document to reason with myself about how the API should work. It started out as an aspirational document, so that I could look at the package API all in one place. It is slowly being implemented.</p>
 </div>
 <div id="manifesto" class="section level2">
 <h2 class="hasAnchor"><html><body><a href="#manifesto" class="anchor"> </a></body></html>Manifesto</h2>
-<p>The purposes of the bsplus package: 1. Provide access to <a href="http://getbootstrap.com/javascript/">Bootstrap&rsquo;s Javascript components</a>, created by setting attributes of HTML tags. 2. Provide functions for some compound components.</p>
-<p>The fact that there is more than one item on this list suggests that this should be more than one package, I hope that I will be forgiven for keeping them together at this nascent stage.</p>
-<p>It may be useful to prepend all the functions with <code>bs_</code>, to keep the namespace clean.</p>
+<p>The purposes of the bsplus package:</p>
+<ol style="list-style-type: decimal"><li><p>Provide access to <a href="http://getbootstrap.com/javascript/">Bootstrap&rsquo;s Javascript components</a>, created by setting attributes of HTML tags.</p></li>
+<li><p>Provide functions for some compound components.</p></li>
+</ol><p>It may be useful to prepend all the functions with <code>bs_</code>, to keep the namespace clean.</p>
 <div id="grammar" class="section level3">
 <h3 class="hasAnchor"><html><body><a href="#grammar" class="anchor"> </a></body></html>Grammar</h3>
-<ul><li><code>bs_noun()</code> We are creating a thing.</li>
-<li><code>bs_noun_verb(thing, ...)</code> We are taking an action on the <code>thing</code>.</li>
-<li><code>bs_noun1_verb_noun2(thing1, thing2)</code> We are taking an action on <code>thing1</code> using <code>thing2</code>.</li>
-</ul><p>If we have an S3 class, then: - <code>bs_verb(thing, ...)</code> We are taking an action on the <code>thing</code>. - <code>bs_verb_noun(thing1, thing2)</code> We are taking an action on <code>thing1</code> using <code>thing2</code>.</p>
-<div id="verbs" class="section level4">
+<ul><li><p><code>bs_noun()</code> We are creating a thing.</p></li>
+<li><p><code>bs_verb_noun(tag, thing, ...)</code> We are taking an action on the <code>tag</code> using <code>thing</code> (instance of <code>noun</code>).</p></li>
+</ul><p>If we have an S3 class, then:</p>
+<ul><li><code>bs_verb(tag, ...)</code> We are taking an action on the <code>tag</code>.</li>
+</ul><div id="verbs" class="section level4">
 <h4 class="hasAnchor"><html><body><a href="#verbs" class="anchor"> </a></body></html>Verbs</h4>
 <ul><li><code><a href="../reference/bs_append.html">bs_append(tag, ...)</a></code> we are appending something to the tag, perhaps a panel into a panel-group, or a set of attributes.</li>
 <li><code>bs_attach(tag, ...)</code> we are attaching something to the tag</li>
-<li><code>bs_emded(tag, ...)</code> we are embed something as part of the tag</li>
+<li><code>bs_emded_foo(tag, ...)</code> we are embed something as part of the tag</li>
 <li><code><a href="../reference/bs_set_opts.html">bs_set_opts(tag, ...)</a></code> we are setting some options for the tags yet to be appended</li>
-</ul><p>Let&rsquo;s consider the differences between<code>append</code>, <code>attach</code>, and <code>embed</code>. - We can <strong>append</strong> more than one element to a tag, i.e., we would append multiple panel elements to an accordion. - We can <strong>attach</strong> only one thing to a tag. When we are attaching, we attach the id of an element, not the element itself. - We can <strong>embed</strong> only one thing into a tag. i.e., into a given tag, we embed a tooltip or a popover, modifying the attributes and setting a child element.</p>
+</ul><p>Let&rsquo;s consider the differences between <code>append</code>, <code>attach</code>, and <code>embed</code>. - We can <strong>append</strong> more than one element to a tag, i.e., we would append multiple panel elements to an accordion. - We can <strong>attach</strong> only one id of a thing to a tag. When we are attaching, we attach the id of an element, not the element itself. However, we can attach an id of a thing to more than one tag. - We can <strong>embed</strong> only one thing into a tag. i.e., into a given tag, we embed a tooltip or a popover, modifying the attributes and setting a child element.</p>
 </div>
-</div>
-<div id="note" class="section level3">
-<h3 class="hasAnchor"><html><body><a href="#note" class="anchor"> </a></body></html>Note</h3>
-<p>Going back-and-forth a lot in my head as to the extent to which these functions should use the S3 framework.</p>
 <div id="helper-function" class="section level4">
 <h4 class="hasAnchor"><html><body><a href="#helper-function" class="anchor"> </a></body></html>Helper function</h4>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw"><a href="../reference/bs_set_data.html">bs_set_data</a></span>(tag, ...)
 <span class="kw"><a href="../reference/bs_set_data.html">bs_set_aria</a></span>(tag, ...)</code></pre></div>
-<p>for the each of the named <code>...</code> args - prefixes the names with <code>data-</code> or <code>aria-</code> - converts logical values to <code>"true"</code> and <code>"false"</code> - converts lubridate durations to milliseconds - converts vectors to space-delimited character strings</p>
-<p><strong>Note</strong> we have to go around the htmltools API to set (rather than append) the attributes - this will need to be addressed.</p>
+<p>for the each of the named <code>...</code> args</p>
+<ul><li><p>prefixes the names with <code>data-</code> or <code>aria-</code></p></li>
+<li><p>converts logical values to <code>"true"</code> and <code>"false"</code></p></li>
+<li><p>converts lubridate durations to milliseconds</p></li>
+<li><p>converts vectors to space-delimited character strings</p></li>
+</ul><p><strong>Note</strong> we have to go around the htmltools API to set (rather than append) the attributes - this should be thought-about more.</p>
 </div>
 </div>
 </div>
 <div id="components" class="section level2">
 <h2 class="hasAnchor"><html><body><a href="#components" class="anchor"> </a></body></html>Components</h2>
-<p>For the first pass of this package, it is proposed to provide access to some useful components not already offered in Shiny: - <a href="http://getbootstrap.com/javascript/#collapse">collapse</a> - <a href="http://getbootstrap.com/javascript/#collapse-example-accordion">accordion</a> - <a href="http://getbootstrap.com/javascript/#modals">modal</a> - <a href="http://getbootstrap.com/javascript/#tooltips">tooltip</a> - <a href="http://getbootstrap.com/javascript/#popovers">popover</a> - <a href="http://getbootstrap.com/javascript/#carousel">carousel</a></p>
-<p>We also propose a compound component: - accordion_sidebar</p>
+<p>For the first pass of this package, it is proposed to provide access to some useful components not already offered in Shiny:</p>
+<ul><li><p><a href="http://getbootstrap.com/javascript/#collapse">collapse</a></p></li>
+<li><p><a href="http://getbootstrap.com/javascript/#collapse-example-accordion">accordion</a></p></li>
+<li><p><a href="http://getbootstrap.com/javascript/#modals">modal</a></p></li>
+<li><p><a href="http://getbootstrap.com/javascript/#tooltips">tooltip</a></p></li>
+<li><p><a href="http://getbootstrap.com/javascript/#popovers">popover</a></p></li>
+<li><p><a href="http://getbootstrap.com/javascript/#carousel">carousel</a></p></li>
+</ul><p>We also propose a compound component: - accordion_sidebar</p>
 <div id="collapse" class="section level3">
 <h3 class="hasAnchor"><html><body><a href="#collapse" class="anchor"> </a></body></html>Collapse</h3>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw"><a href="../reference/bs_collapse.html">bs_collapse</a></span>(id, content)
@@ -127,8 +135,63 @@
 <span class="kw"><a href="../reference/bs_modal.html">bs_attach_modal</a></span>(tag, id_modal)</code></pre></div>
 <div id="helpers" class="section level4">
 <h4 class="hasAnchor"><html><body><a href="#helpers" class="anchor"> </a></body></html>Helpers</h4>
-<p>Need to think this through</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw"><a href="../reference/bs_modal.html">bs_modal_closebutton</a></span>(<span class="dt">title =</span> <span class="st">"Close"</span>)
+<p>It could be useful to take a Shiny input and embed a help link into the label. This help link would have a modal window attached.</p>
+<p>Do all shiny inputs have class &ldquo;form-group shiny-input-container&rdquo;?</p>
+<p>Is a label element always the first child?</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw"><a href="../reference/bs_modal.html">bs_modal</a></span>(<span class="dt">id =</span> <span class="st">"my_modal"</span>, ...)
+
+my_shiny_input &lt;-<span class="st"> </span><span class="kw">selectInput</span>(...)
+
+bs_infolink_modal &lt;-<span class="st"> </span>function(id_modal){
+
+  <span class="co"># shiny dependency</span>
+
+  htmltools::tags$<span class="kw">a</span>(shiny::<span class="kw">icon</span>(<span class="st">"info-circle"</span>)) %&gt;%
+<span class="st">    </span><span class="kw">bs_modal_attach</span>(id_modal)
+}
+
+shiny_embed_link &lt;-<span class="st"> </span>function(input, link){
+
+  <span class="co"># validate shiny input</span>
+  input &lt;-<span class="st"> </span>
+<span class="st">    </span><span class="kw">.tag_validate</span>(
+      input, 
+      <span class="dt">name =</span> <span class="st">"div"</span>, 
+      <span class="dt">class =</span> <span class="st">"form-group shiny-input-container"</span>
+    )
+
+  <span class="co"># get existing label elements</span>
+  label_elements &lt;-<span class="st"> </span>input$children[[<span class="dv">1</span>]]$children
+
+  <span class="co"># get id of modal</span>
+  id_modal &lt;-<span class="st"> </span>htmltools::<span class="kw">tagGetAttribute</span>(bs_modal, <span class="st">"id"</span>)
+
+  <span class="co"># compose new label</span>
+  label_new &lt;-<span class="st"> </span>htmltools::tags$<span class="kw">span</span>(label_elements, link)
+  
+  <span class="co"># put link into input</span>
+  input$children[[<span class="dv">1</span>]] &lt;-
+<span class="st">    </span>htmltools::<span class="kw">tagSetChildren</span>(input$children[[<span class="dv">1</span>]], label_new)
+
+  input
+}
+
+link &lt;-<span class="st"> </span><span class="kw">bs_infolink_modal</span>(<span class="st">"my_modal"</span>)
+
+my_shiny_input %&gt;%
+<span class="st">  </span><span class="kw">shiny_embed_link</span>(<span class="dt">link =</span> link)
+  
+<span class="co"># or</span>
+
+shiny_embed_helplink_modal &lt;-<span class="st"> </span>function(input, id_modal){
+
+  <span class="kw">shiny_embed_link</span>(input, <span class="kw">bs_infolink_modal</span>(id_modal))
+}
+
+my_shiny_input %&gt;%
+<span class="st">  </span><span class="kw">shiny_embed_helplink_modal</span>(<span class="dt">id_modal =</span> <span class="st">"my_modal"</span>)
+  
+
 <span class="kw">bs_embed_modalhelp</span>(tag_shinyinput, id_modal)
 <span class="co"># bs_modal_helplink(id_modal)</span>
 <span class="co"># bs_embed_helplink(tag_shinyinput, tag_link)</span></code></pre></div>
@@ -141,8 +204,7 @@
   <span class="dt">content =</span> <span class="kw">tagList</span>(
     tags$<span class="kw">h4</span>(<span class="st">"Help!"</span>),
     tags$<span class="kw">p</span>(<span class="st">"Not just anybody"</span>)
-  ),
-  <span class="dt">footer =</span> <span class="kw"><a href="../reference/bs_modal.html">bs_modal_closebutton</a></span>(<span class="dt">title =</span> <span class="st">"Close"</span>)
+  )
 )
 
 tags$<span class="kw">button</span>(<span class="st">"Help!"</span>) %&gt;%

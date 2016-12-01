@@ -1,16 +1,3 @@
-#' Pipe operator
-#'
-#' Import mechanism taken from
-#' https://github.com/hadley/modelr/blob/master/R/utils.R
-#'
-#' @name %>%
-#' @rdname pipe
-#' @keywords internal
-#' @export
-#' @importFrom magrittr %>%
-#' @usage lhs \%>\% rhs
-NULL
-
 .id <- function(x){
   paste0("#", x)
 }
@@ -21,9 +8,9 @@ NULL
 
 # @param tag htmltools tag
 # @param name character, the name of the tag must be in this vector
-# @param attribs named list of characters, these are attributes
+# @param class an attribute -
 #
-.tag_validate <- function(tag, name = NULL, attribs = NULL){
+.tag_validate <- function(tag, name = NULL, class = NULL){
   # ensure we have a shiny tag
   if (!inherits(tag, "shiny.tag")){
     stop("tag is not a shiny.tag - tag must be generated using htmltools or shiny")
@@ -37,9 +24,11 @@ NULL
     }
   }
 
-  # if attribs are provided
-  if (!is.null(attribs)){
-    # for each
+  # if class is provided
+  if (!is.null(class)){
+    if (!identical(tagGetAttribute(tag, class), class)){
+      stop("class needs to be: ", class)
+    }
   }
 
   # make it pipeable (just in case)

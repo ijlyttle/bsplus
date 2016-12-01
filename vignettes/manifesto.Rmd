@@ -11,43 +11,41 @@ vignette: >
 
 ## Preamble
 
-This manifesto started out as an issue on the Github repository - this seems like a better place for it. It started out as an aspirational document, so that I could look at the package API all in ine place. It is slowly being implemented.
+This manifesto started out as an issue on the Github repository - this seems like a better place for it. 
+
+I am using this document to reason with myself about how the API should work. It started out as an aspirational document, so that I could look at the package API all in one place. It is slowly being implemented.
 
 ## Manifesto
 
 The purposes of the bsplus package:
-1. Provide access to [Bootstrap's Javascript components](http://getbootstrap.com/javascript/), created by setting attributes of HTML tags.
-2. Provide functions for some compound components.
 
-The fact that there is more than one item on this list suggests that this should be more than one package, I hope that I will be forgiven for keeping them together at this nascent stage.
+1. Provide access to [Bootstrap's Javascript components](http://getbootstrap.com/javascript/), created by setting attributes of HTML tags.
+
+2. Provide functions for some compound components.
 
 It may be useful to prepend all the functions with `bs_`, to keep the namespace clean.
 
 ### Grammar
 
-- `bs_noun()` We are creating a thing. 
-- `bs_noun_verb(thing, ...)` We are taking an action on the `thing`.
-- `bs_noun1_verb_noun2(thing1, thing2)` We are taking an action on `thing1` using `thing2`. 
+- `bs_noun()` We are creating a thing.
+
+- `bs_verb_noun(tag, thing, ...)` We are taking an action on the `tag` using `thing` (instance of `noun`).
 
 If we have an S3 class, then:
-- `bs_verb(thing, ...)` We are taking an action on the `thing`.
-- `bs_verb_noun(thing1, thing2)` We are taking an action on `thing1` using `thing2`. 
+
+- `bs_verb(tag, ...)` We are taking an action on the `tag`.
 
 #### Verbs
 
 - `bs_append(tag, ...)` we are appending something to the tag, perhaps a panel into a panel-group, or a set of attributes.
 - `bs_attach(tag, ...)` we are attaching something to the tag
-- `bs_emded(tag, ...)` we are embed something as part of the tag
+- `bs_emded_foo(tag, ...)` we are embed something as part of the tag
 - `bs_set_opts(tag, ...)` we are setting some options for the tags yet to be appended
 
-Let's consider the differences between`append`, `attach`, and `embed`.
+Let's consider the differences between `append`, `attach`, and `embed`.
 - We can **append** more than one element to a tag, i.e., we would append multiple panel elements to an accordion.
-- We can **attach** only one thing to a tag. When we are attaching, we attach the id of an element, not the element itself.
+- We can **attach** only one id of a thing to a tag. When we are attaching, we attach the id of an element, not the element itself. However, we can attach an id of a thing to more than one tag.
 - We can **embed** only one thing into a tag. i.e., into a given tag, we embed a tooltip or a popover, modifying the attributes and setting a child element.
-
-### Note
-
-Going back-and-forth a lot in my head as to the extent to which these functions should use the S3 framework.
 
 #### Helper function
 
@@ -57,21 +55,31 @@ bs_set_aria(tag, ...)
 ```
 
 for the each of the named `...` args
+
 - prefixes the names with `data-` or `aria-`
+
 - converts logical values to `"true"` and `"false"`
+
 - converts lubridate durations to milliseconds
+
 - converts vectors to space-delimited character strings
 
-**Note** we have to go around the htmltools API to set (rather than append) the attributes - this will need to be addressed.
+**Note** we have to go around the htmltools API to set (rather than append) the attributes - this should be thought-about more.
 
 ## Components
 
 For the first pass of this package, it is proposed to provide access to some useful components not already offered in Shiny:
+
 - [collapse](http://getbootstrap.com/javascript/#collapse)
+
 - [accordion](http://getbootstrap.com/javascript/#collapse-example-accordion)
+
 - [modal](http://getbootstrap.com/javascript/#modals)
+
 - [tooltip](http://getbootstrap.com/javascript/#tooltips)
+
 - [popover](http://getbootstrap.com/javascript/#popovers)
+
 - [carousel](http://getbootstrap.com/javascript/#carousel)
 
 We also propose a compound component:
@@ -132,10 +140,68 @@ bs_attach_modal(tag, id_modal)
 
 #### Helpers
 
-Need to think this through
+It could be useful to take a Shiny input and embed a help link into the label. This help link 
+would have a modal window attached.
+
+Do all shiny inputs have class "form-group shiny-input-container"?
+
+Is a label element always the first child?
 
 ``` R
-bs_modal_closebutton(title = "Close")
+bs_modal(id = "my_modal", ...)
+
+my_shiny_input <- selectInput(...)
+
+bs_infolink_modal <- function(id_modal){
+
+  # shiny dependency
+
+  htmltools::tags$a(shiny::icon("info-circle")) %>%
+    bs_modal_attach(id_modal)
+}
+
+shiny_embed_link <- function(input, link){
+
+  # validate shiny input
+  input <- 
+    .tag_validate(
+      input, 
+      name = "div", 
+      class = "form-group shiny-input-container"
+    )
+
+  # get existing label elements
+  label_elements <- input$children[[1]]$children
+
+  # get id of modal
+  id_modal <- htmltools::tagGetAttribute(bs_modal, "id")
+
+  # compose new label
+  label_new <- htmltools::tags$span(label_elements, link)
+  
+  # put link into input
+  input$children[[1]] <-
+    htmltools::tagSetChildren(input$children[[1]], label_new)
+
+  input
+}
+
+link <- bs_infolink_modal("my_modal")
+
+my_shiny_input %>%
+  shiny_embed_link(link = link)
+  
+# or
+
+shiny_embed_helplink_modal <- function(input, id_modal){
+
+  shiny_embed_link(input, bs_infolink_modal(id_modal))
+}
+
+my_shiny_input %>%
+  shiny_embed_helplink_modal(id_modal = "my_modal")
+  
+
 bs_embed_modalhelp(tag_shinyinput, id_modal)
 # bs_modal_helplink(id_modal)
 # bs_embed_helplink(tag_shinyinput, tag_link)
@@ -150,8 +216,7 @@ bs_modal(
   content = tagList(
     tags$h4("Help!"),
     tags$p("Not just anybody")
-  ),
-  footer = bs_modal_closebutton(title = "Close")
+  )
 )
 
 tags$button("Help!") %>%
