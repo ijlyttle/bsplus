@@ -15,13 +15,13 @@ render_html_fragment(input, output_format = rmarkdown::html_fragment(), ...)
 \code{rmarkdown::\link[rmarkdown]{render}}}
 }
 \value{
-HTML fragment
+\code{htmltools::\link[htmltools]{tag}}
 }
 \description{
 This is a wrapper around the \code{rmarkdown::\link[rmarkdown]{render}}
 function. The principal difference is that the function is designed to
 return an HTML fragment (rather than writing to a file). This function is
-useful to populate the content of a modal window or a popover.
+useful to populate the content of a modal window.
 }
 \examples{
 my_file <- system.file("markdown", "modal.md", package = "bsplus")

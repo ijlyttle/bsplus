@@ -14,25 +14,63 @@ bs_modal_closebutton(title = "Close")
 bs_attach_modal(tag, id_modal)
 }
 \arguments{
-\item{id}{character, unique id for modal window to create}
+\item{id}{character, unique id for collapsible div}
 
-\item{title}{character, title for the modal or close-button}
+\item{title}{character, title for the modal window (or close-button)}
 
-\item{body}{character, content of the body, can be HTML fragment}
+\item{body}{character (HTML) or \code{htmltools::\link[htmltools]{tagList}},
+content for the body of the modal window}
 
-\item{footer}{character, HTML fragment for footer}
+\item{footer}{character (HTML) or \code{htmltools::\link[htmltools]{tagList}},
+content for the footer of the modal window}
 
-\item{size}{character, size of the modal}
+\item{size}{character, size of the modal window}
 
-\item{tag}{character, HTML element to which to attach modal}
+\item{tag}{\code{htmltools::\link[htmltools]{tag}},
+button or link to which to attach the modal window}
 
 \item{id_modal}{character, unique id of modal window to attach}
 }
 \value{
-HTML fragment
+\describe{
+  \item{\code{bs_modal()}}{\code{htmltools::\link[htmltools]{tag}}, div}
+  \item{\code{bs_attach_modal()}}{\code{htmltools::\link[htmltools]{tag}},
+    modified copy of \code{tag}}
+  \item{\code{bs_modal_closebutton()}}{\code{htmltools::\link[htmltools]{tag}}, button}
+}
 }
 \description{
-You can attach an modal window to more than one element.
+Modal windows are useful to make detailed explanations. If you want to compose
+body of a modal window using markdown, a helper function is provided:
+\code{\link{render_html_fragment}}.
+}
+\details{
+Modal windows are typically attached to buttons or links. Thus,
+there are two parts to this system:
+
+\enumerate{
+  \item{A modal window, created using \code{bs_modal()}}
+  \item{At least one button or link to which the id of the
+  modal window is attached, using \code{bs_attach_modal()}}
+}
+
+The verb "attach" is used to signify that we are attaching the id of our
+modal window to the tag in question (likely a button or a link). This implies that
+you can attach (the id of) a modal window to more than one button or link.
+
+It is your responsibility to ensure that id is unique
+among html elements in your page. If you have non-unique id's, strange things may
+happen to your page.
+
+Your code may be cleaner if you can import the content for the modal body from
+an external source. This is the motivation for the helper function,
+\code{\link{render_html_fragment}}, which is supplied with a path to a markdown
+(or even R markdown) file, then renders it into HTML, then returns the HTML.
+Accordingly, this can be supplied as the value of the \code{body} argument.
+
+If you want to compose your own footer for the modal window, the function
+\code{bs_modal_closebutton()} can be useful. It takes a single argument,
+\code{title}, as the text to put in the button.
 }
 \examples{
 library("htmltools")
@@ -41,5 +79,19 @@ bs_modal(id = "modal", title = "I'm a modal", body = "Yes, I am.")
 tags$button(type = "button", class = "btn btn-default", "Click for modal") \%>\%
   bs_attach_modal(id_modal = "modal")
 
+bs_modal(
+  id = "modal_large",
+  title = "I'm a modal",
+  size = "large",
+  body = render_html_fragment(
+    system.file("markdown", "modal.md", package = "bsplus")
+  )
+)
+tags$button(type = "button", class = "btn btn-default", "Click for modal") \%>\%
+  bs_attach_modal(id_modal = "modal_large")
+
+}
+\seealso{
+\code{\link{render_html_fragment}}
 }
 

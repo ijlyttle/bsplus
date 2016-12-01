@@ -43,7 +43,9 @@ There are two parts to this system:
   collabsible div is attached, using \code{bs_attach_collapse()}}
 }
 
-Keep in mind that you can attach a collapsible div to more than one button or link.
+The verb "attach" is used to signify that we are attaching the id of our collapsible
+div to the tag in question (likely a button or a link). This implies that
+you can attach (the id of) a collapsible div to more than one button or link.
 
 It is your responsibility to ensure that id is unique
 among html elements in your page. If you have non-unique id's, strange things may

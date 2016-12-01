@@ -119,7 +119,7 @@ bs_set_attr <- function(tag, .prefix = "data", ...){
 #' familiar to you as an R user. For example:
 #'
 #' \itemize{
-#'   \item Logical values can be expressed as \code{TRUE} or \code{FALSE}.
+#'   \item Logical values can be expressed as logicals: \code{TRUE} or \code{FALSE}.
 #'   \item Time durations can be expressed using lubridate durations.
 #'   \item Vector (non scalar) values can be expressed as vectors.
 #' }
@@ -135,7 +135,11 @@ bs_set_attr <- function(tag, .prefix = "data", ...){
 #' library("lubridate")
 #'
 #' tags$div() %>%
-#'   bs_set_data(target = "#foobar", delay = dseconds(1)) %>%
+#'   bs_set_data(
+#'     target = "#foobar",
+#'     delay = dseconds(1),
+#'     placement = c("right", "auto")
+#'   ) %>%
 #'   bs_set_aria(expanded = FALSE)
 #' @export
 #'

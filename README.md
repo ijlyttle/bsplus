@@ -7,6 +7,8 @@
 
 The goal of this package is to provide a framework to use bootstrap's markup API described here: http://getbootstrap.com/javascript/
 
+These are tools to help you compose html - a Shiny UI is, at its heart, HTML.
+
 Some of these items are already provided in some way, shape, or form by the rmarkdown package or the shiny package.
 
 Here's what we want to do:

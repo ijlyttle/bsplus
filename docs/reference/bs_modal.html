@@ -81,7 +81,9 @@
     </div>
 
     
-    <p>You can attach an modal window to more than one element.</p>
+    <p>Modal windows are useful to make detailed explanations. If you want to compose
+body of a modal window using markdown, a helper function is provided:
+<code><a href='render_html_fragment.html'>render_html_fragment</a></code>.</p>
     
 
     <pre><span class='fu'>bs_modal</span>(<span class='no'>id</span>, <span class='no'>title</span>, <span class='no'>body</span>, <span class='kw'>footer</span> <span class='kw'>=</span> <span class='fu'>bs_modal_closebutton</span>(<span class='kw'>title</span> <span class='kw'>=</span> <span class='st'>"Close"</span>),
@@ -94,24 +96,62 @@
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a> Arguments</h2>
     <dl class="dl-horizontal">
       <dt>id</dt>
-      <dd>character, unique id for modal window to create</dd>
+      <dd>character, unique id for collapsible div</dd>
       <dt>title</dt>
-      <dd>character, title for the modal or close-button</dd>
+      <dd>character, title for the modal window (or close-button)</dd>
       <dt>body</dt>
-      <dd>character, content of the body, can be HTML fragment</dd>
+      <dd>character (HTML) or <code>htmltools::<a href='http://www.rdocumentation.org/packages/htmltools/topics/tag'>tagList</a></code>,
+content for the body of the modal window</dd>
       <dt>footer</dt>
-      <dd>character, HTML fragment for footer</dd>
+      <dd>character (HTML) or <code>htmltools::<a href='http://www.rdocumentation.org/packages/htmltools/topics/tag'>tagList</a></code>,
+content for the footer of the modal window</dd>
       <dt>size</dt>
-      <dd>character, size of the modal</dd>
+      <dd>character, size of the modal window</dd>
       <dt>tag</dt>
-      <dd>character, HTML element to which to attach modal</dd>
+      <dd><code>htmltools::<a href='http://www.rdocumentation.org/packages/htmltools/topics/tag'>tag</a></code>,
+button or link to which to attach the modal window</dd>
       <dt>id_modal</dt>
       <dd>character, unique id of modal window to attach</dd>
     </dl>
     
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
-    <p>HTML fragment</p>
+    <p><dl class='dl-horizontal'>
+  <dt><code>bs_modal()</code></dt><dd><code>htmltools::<a href='http://www.rdocumentation.org/packages/htmltools/topics/tag'>tag</a></code>, div</dd>
+  <dt><code>bs_attach_modal()</code></dt><dd><code>htmltools::<a href='http://www.rdocumentation.org/packages/htmltools/topics/tag'>tag</a></code>,
+    modified copy of <code>tag</code></dd>
+  <dt><code>bs_modal_closebutton()</code></dt><dd><code>htmltools::<a href='http://www.rdocumentation.org/packages/htmltools/topics/tag'>tag</a></code>, button</dd>
+</dl></p>
+    
+    <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
+
+    <p>Modal windows are typically attached to buttons or links. Thus,
+there are two parts to this system:</p>
+    <p><ol>
+<li>A modal window, created using <code>bs_modal()</code>
+  </li>
+<li>At least one button or link to which the id of the
+  modal window is attached, using <code>bs_attach_modal()</code>
+</li>
+</ol></p>
+    <p>The verb &quot;attach&quot; is used to signify that we are attaching the id of our
+modal window to the tag in question (likely a button or a link). This implies that
+you can attach (the id of) a modal window to more than one button or link.</p>
+    <p>It is your responsibility to ensure that id is unique
+among html elements in your page. If you have non-unique id&#39;s, strange things may
+happen to your page.</p>
+    <p>Your code may be cleaner if you can import the content for the modal body from
+an external source. This is the motivation for the helper function,
+<code><a href='render_html_fragment.html'>render_html_fragment</a></code>, which is supplied with a path to a markdown
+(or even R markdown) file, then renders it into HTML, then returns the HTML.
+Accordingly, this can be supplied as the value of the <code>body</code> argument.</p>
+    <p>If you want to compose your own footer for the modal window, the function
+<code>bs_modal_closebutton()</code> can be useful. It takes a single argument,
+<code>title</code>, as the text to put in the button.</p>
+    
+    <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
+
+    <p><code><a href='render_html_fragment.html'>render_html_fragment</a></code></p>
     
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
@@ -134,6 +174,31 @@
 #&gt;   &lt;/div&gt;
 #&gt; &lt;/div&gt;</div><div class='input'><span class='no'>tags</span>$<span class='fu'>button</span>(<span class='kw'>type</span> <span class='kw'>=</span> <span class='st'>"button"</span>, <span class='kw'>class</span> <span class='kw'>=</span> <span class='st'>"btn btn-default"</span>, <span class='st'>"Click for modal"</span>) <span class='kw'>%&gt;%</span>
   <span class='fu'>bs_attach_modal</span>(<span class='kw'>id_modal</span> <span class='kw'>=</span> <span class='st'>"modal"</span>)</div><div class='output co'>#&gt; &lt;button type=&quot;button&quot; class=&quot;btn btn-default&quot; data-toggle=&quot;modal&quot; data-target=&quot;#modal&quot;&gt;Click for modal&lt;/button&gt;</div><div class='input'>
+<span class='fu'>bs_modal</span>(
+  <span class='kw'>id</span> <span class='kw'>=</span> <span class='st'>"modal_large"</span>,
+  <span class='kw'>title</span> <span class='kw'>=</span> <span class='st'>"I'm a modal"</span>,
+  <span class='kw'>size</span> <span class='kw'>=</span> <span class='st'>"large"</span>,
+  <span class='kw'>body</span> <span class='kw'>=</span> <span class='fu'><a href='render_html_fragment.html'>render_html_fragment</a></span>(
+    <span class='fu'>system.file</span>(<span class='st'>"markdown"</span>, <span class='st'>"modal.md"</span>, <span class='kw'>package</span> <span class='kw'>=</span> <span class='st'>"bsplus"</span>)
+  )
+)</div><div class='output co'>#&gt; /Applications/RStudio.app/Contents/MacOS/pandoc/pandoc +RTS -K512m -RTS modal.utf8.md --to html --from markdown+autolink_bare_uris+ascii_identifiers+tex_math_single_backslash --output /var/folders/rg/9kvy_lsn43z90d439n02nfw80000gn/T//RtmpuOcC0Y/file7d07773ea72e --smart --email-obfuscation none --self-contained --mathjax --standalone --section-divs --template /Library/Frameworks/R.framework/Versions/3.3/Resources/library/rmarkdown/rmd/fragment/default.html --no-highlight </div><div class='output co'>#&gt; <span class='message'></span>
+#&gt; <span class='message'>Output created: /var/folders/rg/9kvy_lsn43z90d439n02nfw80000gn/T//RtmpuOcC0Y/file7d07773ea72e</span></div><div class='output co'>#&gt; &lt;div aria-labelledby=&quot;modal_large-title&quot; class=&quot;modal fade bs-example-modal-lg&quot; id=&quot;modal_large&quot; role=&quot;dialog&quot; tabindex=&quot;-1&quot;&gt;
+#&gt;   &lt;div class=&quot;modal-dialog modal-lg&quot; role=&quot;document&quot;&gt;
+#&gt;     &lt;div class=&quot;modal-content&quot;&gt;
+#&gt;       &lt;div class=&quot;modal-header&quot;&gt;
+#&gt;         &lt;button type=&quot;button&quot; class=&quot;close&quot; data-dismiss=&quot;modal&quot; aria-label=&quot;Close&quot;&gt;
+#&gt;           &lt;span aria-hidden=&quot;true&quot;&gt;&amp;times;&lt;/span&gt;
+#&gt;         &lt;/button&gt;
+#&gt;         &lt;h4 class=&quot;modal-title&quot; id=&quot;modal_large-title&quot;&gt;I&#39;m a modal&lt;/h4&gt;
+#&gt;       &lt;/div&gt;
+#&gt;       &lt;div class=&quot;modal-body&quot;&gt;&lt;div id=&quot;th-level-headers-work-well&quot; class=&quot;section level4&quot;&gt; &lt;h4&gt;4th-level headers work well&lt;/h4&gt; &lt;p&gt;We can do our regular Markdown stuff in modal windows.&lt;/p&gt; &lt;ul&gt; &lt;li&gt;&lt;span class=&quot;math inline&quot;&gt;\(F = ma\)&lt;/span&gt;&lt;/li&gt; &lt;li&gt;&lt;span class=&quot;math inline&quot;&gt;\(E = mc^2\)&lt;/span&gt;&lt;/li&gt; &lt;/ul&gt; &lt;/div&gt;&lt;/div&gt;
+#&gt;       &lt;div class=&quot;modal-footer&quot;&gt;
+#&gt;         &lt;button type=&quot;button&quot; class=&quot;btn btn-default&quot; data-dismiss=&quot;modal&quot;&gt;Close&lt;/button&gt;
+#&gt;       &lt;/div&gt;
+#&gt;     &lt;/div&gt;
+#&gt;   &lt;/div&gt;
+#&gt; &lt;/div&gt;</div><div class='input'><span class='no'>tags</span>$<span class='fu'>button</span>(<span class='kw'>type</span> <span class='kw'>=</span> <span class='st'>"button"</span>, <span class='kw'>class</span> <span class='kw'>=</span> <span class='st'>"btn btn-default"</span>, <span class='st'>"Click for modal"</span>) <span class='kw'>%&gt;%</span>
+  <span class='fu'>bs_attach_modal</span>(<span class='kw'>id_modal</span> <span class='kw'>=</span> <span class='st'>"modal_large"</span>)</div><div class='output co'>#&gt; &lt;button type=&quot;button&quot; class=&quot;btn btn-default&quot; data-toggle=&quot;modal&quot; data-target=&quot;#modal_large&quot;&gt;Click for modal&lt;/button&gt;</div><div class='input'>
 </div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
@@ -142,6 +207,10 @@
       <li><a href="#arguments">Arguments</a></li>
       
       <li><a href="#value">Value</a></li>
+
+      <li><a href="#details">Details</a></li>
+
+      <li><a href="#see-also">See also</a></li>
       
       <li><a href="#examples">Examples</a></li>
     </ul>

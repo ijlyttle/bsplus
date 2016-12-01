@@ -10,25 +10,48 @@ bs_embed_popover(tag, title = NULL, content = NULL, placement = NULL, ...)
 use_bs_popover()
 }
 \arguments{
-\item{tag}{shinytag}
+\item{tag}{\code{htmltools::\link[htmltools]{tag}},
+button or link into which to embed a popover}
 
-\item{title}{character,}
+\item{title}{character, title for the popover}
 
-\item{content}{character,}
+\item{content}{character, content for the popover body}
 
-\item{placement}{character,}
+\item{placement}{character, placement of the popover with respect to the tag}
 
 \item{...}{other named arguments, passed to bs_set_data()}
 }
 \value{
-tag
+\code{htmltools::\link[htmltools]{tag}}, modified copy of tag
 }
 \description{
-Embed a popover into an html element
+This is useful to add a more-verbose explanation to an element.
+}
+\details{
+To activate the use of popovers in your page, you will need to call
+the \code{use_bs_popover()} function somewhere.
+
+The verb "embed" is used to signify that we are embedding information
+into the tag. This implies that we can embed, at most, one "thing"
+into a particular tag. We should not, for example, embed both a tooltip
+and a popover into a tag.
 }
 \examples{
 library("htmltools")
-tags$button(type = "button", class = "btn btn-default", "I'm a button") \%>\%
+
+tags$button(type = "button", class = "btn btn-default", "A button") \%>\%
   bs_embed_popover(title = "I'm a popover", content = "Really!")
+
+tags$button(type = "button", class = "btn btn-default", "Another button") \%>\%
+  bs_embed_popover(
+    title  = "Verbose popover",
+    content = render_html_fragment(
+      system.file("markdown", "modal.md", package = "bsplus")
+    )
+  )
+}
+\seealso{
+\code{\link{bs_embed_tooltip}},
+  \url{http://getbootstrap.com/javascript/#popovers}
 }
 

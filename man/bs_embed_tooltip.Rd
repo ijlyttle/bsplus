@@ -10,23 +10,36 @@ bs_embed_tooltip(tag, title = "", placement = c("right", "auto"), ...)
 use_bs_tooltip()
 }
 \arguments{
-\item{tag}{shinytag}
+\item{tag}{\code{htmltools::\link[htmltools]{tag}},
+button or link into which to embed a tooltip}
 
-\item{title}{character,}
+\item{title}{character, title for the tooltip}
 
-\item{placement}{character,}
+\item{placement}{character, placement of the tooltip with respect to the tag}
 
 \item{...}{other named arguments, passed to bs_set_data()}
 }
 \value{
-tag
+\code{htmltools::\link[htmltools]{tag}}, modified copy of tag
 }
 \description{
-Embed a tooltip into an html element
+This is useful to add a few words of explanation to an element.
+}
+\details{
+To activate the use of tooltips in your page, you will need to call
+the \code{use_bs_tooltip()} function somewhere.
+
+The verb "embed" is used to signify that we are embedding information
+into the tag. This implies that we can embed, at most, one "thing"
+into a particular tag. We should not, for example, embed both a tooltip
+and a popover into a tag.
 }
 \examples{
 library("htmltools")
 tags$button(type = "button", class = "btn btn-default", "I'm a button") \%>\%
   bs_embed_tooltip(title = "I'm a tooltip")
+}
+\seealso{
+\code{\link{bs_embed_popover}}, \url{http://getbootstrap.com/javascript/#tooltips}
 }
 

@@ -12,10 +12,13 @@
 #' compose an accordion sidebar by piping. There are three parts to this system:
 #'
 #' \enumerate{
-#'   \item{A constructor function for the accordion sidebar, \code{bs_accordion_sidebar()}}
+#'   \item{A constructor function for the accordion-sidebar, \code{bs_accordion_sidebar()}}
 #'   \item{A function to set options for subsequent panels, \code{bs_set_opts()}}
-#'   \item{A function to append a panel-set to the group, \code{bs_append()}}
+#'   \item{A function to append a panel-set to an accordion-sidebar, \code{bs_append()}}
 #' }
+#'
+#' The verb "append" is used to signify that we can append an arbitrary
+#' number of panels-sets to an accordion-sidebar.
 #'
 #' For the constructor, \code{bs_accordion_sidebar()},
 #' it is your responsibility to ensure that id is unique

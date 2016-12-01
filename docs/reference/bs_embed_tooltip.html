@@ -81,7 +81,7 @@
     </div>
 
     
-    <p>Embed a tooltip into an html element</p>
+    <p>This is useful to add a few words of explanation to an element.</p>
     
 
     <pre><span class='fu'>bs_embed_tooltip</span>(<span class='no'>tag</span>, <span class='kw'>title</span> <span class='kw'>=</span> <span class='st'>""</span>, <span class='kw'>placement</span> <span class='kw'>=</span> <span class='fu'>c</span>(<span class='st'>"right"</span>, <span class='st'>"auto"</span>), <span class='no'>...</span>)
@@ -91,18 +91,32 @@
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a> Arguments</h2>
     <dl class="dl-horizontal">
       <dt>tag</dt>
-      <dd>shinytag</dd>
+      <dd><code>htmltools::<a href='http://www.rdocumentation.org/packages/htmltools/topics/tag'>tag</a></code>,
+button or link into which to embed a tooltip</dd>
       <dt>title</dt>
-      <dd>character,</dd>
+      <dd>character, title for the tooltip</dd>
       <dt>placement</dt>
-      <dd>character,</dd>
+      <dd>character, placement of the tooltip with respect to the tag</dd>
       <dt>...</dt>
       <dd>other named arguments, passed to bs_set_data()</dd>
     </dl>
     
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
-    <p>tag</p>
+    <p><code>htmltools::<a href='http://www.rdocumentation.org/packages/htmltools/topics/tag'>tag</a></code>, modified copy of tag</p>
+    
+    <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
+
+    <p>To activate the use of tooltips in your page, you will need to call
+the <code>use_bs_tooltip()</code> function somewhere.</p>
+    <p>The verb &quot;embed&quot; is used to signify that we are embedding information
+into the tag. This implies that we can embed, at most, one &quot;thing&quot;
+into a particular tag. We should not, for example, embed both a tooltip
+and a popover into a tag.</p>
+    
+    <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
+
+    <p><code><a href='bs_embed_popover.html'>bs_embed_popover</a></code>, <a href = 'http://getbootstrap.com/javascript/#tooltips'>http://getbootstrap.com/javascript/#tooltips</a></p>
     
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
@@ -116,6 +130,10 @@
       <li><a href="#arguments">Arguments</a></li>
       
       <li><a href="#value">Value</a></li>
+
+      <li><a href="#details">Details</a></li>
+
+      <li><a href="#see-also">See also</a></li>
       
       <li><a href="#examples">Examples</a></li>
     </ul>

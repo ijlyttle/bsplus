@@ -121,6 +121,11 @@ pre img {
   margin-top: 10px;
 }
 
+.popover h1, .popover h2, .popover h3, .popover h4 {
+  padding-top: 8px;
+  margin-top: 0;
+}
+
 .panel a.anchor {
   width: 0;
   height: 0;

@@ -117,7 +117,7 @@ an html elements&#39; attributes. These attribute names are prefixed with
     <p>The purpose of this function is to let you express these values in ways
 familiar to you as an R user. For example:</p>
     <p><ul>
-<li> Logical values can be expressed as <code>TRUE</code> or <code>FALSE</code>.
+<li> Logical values can be expressed as logicals: <code>TRUE</code> or <code>FALSE</code>.
   </li>
 <li> Time durations can be expressed using lubridate durations.
   </li>
@@ -136,8 +136,12 @@ familiar to you as an R user. For example:</p>
 <span class='fu'>library</span>(<span class='st'>"lubridate"</span>)
 
 <span class='no'>tags</span>$<span class='fu'>div</span>() <span class='kw'>%&gt;%</span>
-  <span class='fu'>bs_set_data</span>(<span class='kw'>target</span> <span class='kw'>=</span> <span class='st'>"#foobar"</span>, <span class='kw'>delay</span> <span class='kw'>=</span> <span class='fu'>dseconds</span>(<span class='fl'>1</span>)) <span class='kw'>%&gt;%</span>
-  <span class='fu'>bs_set_aria</span>(<span class='kw'>expanded</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>)</div><div class='output co'>#&gt; &lt;div data-target=&quot;#foobar&quot; data-delay=&quot;1000&quot; aria-expanded=&quot;false&quot;&gt;&lt;/div&gt;</div></pre>
+  <span class='fu'>bs_set_data</span>(
+    <span class='kw'>target</span> <span class='kw'>=</span> <span class='st'>"#foobar"</span>,
+    <span class='kw'>delay</span> <span class='kw'>=</span> <span class='fu'>dseconds</span>(<span class='fl'>1</span>),
+    <span class='kw'>placement</span> <span class='kw'>=</span> <span class='fu'>c</span>(<span class='st'>"right"</span>, <span class='st'>"auto"</span>)
+  ) <span class='kw'>%&gt;%</span>
+  <span class='fu'>bs_set_aria</span>(<span class='kw'>expanded</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>)</div><div class='output co'>#&gt; &lt;div data-target=&quot;#foobar&quot; data-delay=&quot;1000&quot; data-placement=&quot;right auto&quot; aria-expanded=&quot;false&quot;&gt;&lt;/div&gt;</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>

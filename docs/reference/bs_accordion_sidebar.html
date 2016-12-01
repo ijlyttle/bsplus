@@ -145,13 +145,15 @@ javascript needed for your accordion sidebar to work properly.</p>
     <p>All of these functions return a <code>bsplus_accsidebar</code> object, so you can
 compose an accordion sidebar by piping. There are three parts to this system:</p>
     <p><ol>
-<li>A constructor function for the accordion sidebar, <code>bs_accordion_sidebar()</code>
+<li>A constructor function for the accordion-sidebar, <code>bs_accordion_sidebar()</code>
   </li>
 <li>A function to set options for subsequent panels, <code>bs_set_opts()</code>
   </li>
-<li>A function to append a panel-set to the group, <code>bs_append()</code>
+<li>A function to append a panel-set to an accordion-sidebar, <code>bs_append()</code>
 </li>
 </ol></p>
+    <p>The verb &quot;append&quot; is used to signify that we can append an arbitrary
+number of panels-sets to an accordion-sidebar.</p>
     <p>For the constructor, <code>bs_accordion_sidebar()</code>,
 it is your responsibility to ensure that id is unique
 among html elements in your page. If you have non-unique id&#39;s, strange things may

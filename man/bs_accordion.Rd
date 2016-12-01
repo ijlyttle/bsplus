@@ -50,6 +50,9 @@ compose an accordion by piping. There are three parts to this system:
   \item{A function to append a panel to the group, \code{bs_append()}}
 }
 
+The verb "append" is used to signify that we can append an arbitrary
+number of panels to an accordion.
+
 For the constructor, \code{bs_accordion()},
 it is your responsibility to ensure that id is unique
 among html elements in your page. If you have non-unique id's, strange things may

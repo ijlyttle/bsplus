@@ -11,7 +11,7 @@ reference:
   desc: >
     All of these functions deal with collapsible elements. The foundation
     is the collapse element. Upon this we can build a set of accordion panels.
-    For shiny apps, the accordion sidebar framework may be useful as it can
+    For Shiny apps, the accordion-sidebar framework may be useful as it can
     give you another dimension with which to organize your ui.
 
     * Collapse: [Demonstration](../articles/collapse.html),
