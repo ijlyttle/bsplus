@@ -1,3 +1,7 @@
+# bsplus 0.0.9.9003
+
+* version bump as new repository-version needed
+
 # bsplus 0.0.9.9002
 
 * adds vignettes
