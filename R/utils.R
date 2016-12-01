@@ -26,7 +26,7 @@
 
   # if class is provided
   if (!is.null(class)){
-    if (!identical(tagGetAttribute(tag, class), class)){
+    if (!identical(tagGetAttribute(tag, "class"), class)){
       stop("class needs to be: ", class)
     }
   }

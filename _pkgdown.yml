@@ -43,6 +43,15 @@ reference:
     - bs_embed_popover
     - bs_modal
 
+- title: "Shiny extensions"
+  desc: >
+    Things that require Shiny, or are used with Shiny
+
+  contents:
+    - shiny_iconlink
+    - shinyInput_label_embed
+
+
 - title: "Helpers"
   contents:
     - bs_set_aria

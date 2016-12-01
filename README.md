@@ -46,3 +46,4 @@ If we had these functions, I could avoid the abuse:
 - `tagSetAttributes()` - clears and sets, rather than appends
 - `tagName()` - gets the name of the tag, i.e. "div", "button"
 - `tagNChildren()` - gets the number of children of the tag
+- `shinyInput_label_embed()` 

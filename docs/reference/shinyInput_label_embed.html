@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Renders and returns an HTML fragment — render_html_fragment • bsplus</title>
+<title>Embed a tag into the label of a Shiny input — shinyInput_label_embed • bsplus</title>
 
 <!-- jquery -->
 <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha384-nrOSfDHtoPMzJHjVTdCopGqIqeYETSXhZDFyniQ8ZHcVy08QesyHcnOUpMpqnmWq" crossorigin="anonymous"></script>
@@ -77,38 +77,51 @@
       <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Renders and returns an HTML fragment</h1>
+    <h1>Embed a tag into the label of a Shiny input</h1>
     </div>
 
     
-    <p>This is a wrapper around the <code>rmarkdown::<a href='http://www.rdocumentation.org/packages/rmarkdown/topics/render'>render</a></code>
-function. The principal difference is that the function is designed to
-return an HTML fragment (rather than writing to a file). This function is
-useful to populate the content of a modal window.</p>
+    <p>Embed a tag into the label of a Shiny input</p>
     
 
-    <pre><span class='fu'>render_html_fragment</span>(<span class='no'>input</span>, <span class='kw'>output_format</span> <span class='kw'>=</span> <span class='kw'>rmarkdown</span><span class='kw'>::</span><span class='fu'>html_fragment</span>(), <span class='no'>...</span>)</pre>
+    <pre><span class='fu'>shinyInput_label_embed</span>(<span class='no'>shinyInput</span>, <span class='no'>tag</span>)</pre>
     
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a> Arguments</h2>
     <dl class="dl-horizontal">
-      <dt>input</dt>
-      <dd>character, path to input file</dd>
-      <dt>output_format</dt>
-      <dd>rmarkdown output format, provided so you can specify arguments</dd>
-      <dt>...</dt>
-      <dd>other arguments passed to
-<code>rmarkdown::<a href='http://www.rdocumentation.org/packages/rmarkdown/topics/render'>render</a></code></dd>
+      <dt>shinyInput</dt>
+      <dd>Shiny input, such as <code>shiny::<a href='http://www.rdocumentation.org/packages/shiny/topics/numericInput'>numericInput</a></code></dd>
+      <dt>tag</dt>
+      <dd><code>htmltools::<a href='http://www.rdocumentation.org/packages/htmltools/topics/tag'>tag</a></code>, usually a link</dd>
     </dl>
     
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
-    <p><code>htmltools::<a href='http://www.rdocumentation.org/packages/htmltools/topics/tag'>tag</a></code></p>
+    <p>Shiny input, modified copy of <code>shinyInput</code></p>
+    
+    <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
+
+    <p><code><a href='shiny_iconlink.html'>shiny_iconlink</a></code></p>
     
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='no'>my_file</span> <span class='kw'>&lt;-</span> <span class='fu'>system.file</span>(<span class='st'>"markdown"</span>, <span class='st'>"modal.md"</span>, <span class='kw'>package</span> <span class='kw'>=</span> <span class='st'>"bsplus"</span>)
-<span class='fu'>render_html_fragment</span>(<span class='no'>my_file</span>)</div><div class='output co'>#&gt; /Applications/RStudio.app/Contents/MacOS/pandoc/pandoc +RTS -K512m -RTS modal.utf8.md --to html --from markdown+autolink_bare_uris+ascii_identifiers+tex_math_single_backslash --output /var/folders/rg/9kvy_lsn43z90d439n02nfw80000gn/T//RtmpTiYgfQ/filecb8b57cc13c --smart --email-obfuscation none --self-contained --mathjax --standalone --section-divs --template /Library/Frameworks/R.framework/Versions/3.3/Resources/library/rmarkdown/rmd/fragment/default.html --no-highlight </div><div class='output co'>#&gt; <span class='message'></span>
-#&gt; <span class='message'>Output created: /var/folders/rg/9kvy_lsn43z90d439n02nfw80000gn/T//RtmpTiYgfQ/filecb8b57cc13c</span></div><div class='output co'>#&gt; &lt;div id=&quot;th-level-headers-work-well&quot; class=&quot;section level4&quot;&gt; &lt;h4&gt;4th-level headers work well&lt;/h4&gt; &lt;p&gt;We can do our regular Markdown stuff in modal windows.&lt;/p&gt; &lt;ul&gt; &lt;li&gt;&lt;span class=&quot;math inline&quot;&gt;\(F = ma\)&lt;/span&gt;&lt;/li&gt; &lt;li&gt;&lt;span class=&quot;math inline&quot;&gt;\(E = mc^2\)&lt;/span&gt;&lt;/li&gt; &lt;/ul&gt; &lt;/div&gt;</div></pre>
+    <pre class="examples"><div class='input'><span class='fu'>library</span>(<span class='st'>"shiny"</span>)
+
+<span class='fu'>numericInput</span>(<span class='kw'>inputId</span> <span class='kw'>=</span> <span class='st'>"foo"</span>, <span class='kw'>label</span> <span class='kw'>=</span> <span class='st'>"Enter a number"</span>, <span class='kw'>value</span> <span class='kw'>=</span> <span class='fl'>0</span>) <span class='kw'>%&gt;%</span>
+  <span class='fu'>shinyInput_label_embed</span>(
+    <span class='fu'><a href='shiny_iconlink.html'>shiny_iconlink</a></span>() <span class='kw'>%&gt;%</span>
+    <span class='fu'><a href='bs_embed_popover.html'>bs_embed_popover</a></span>(<span class='kw'>title</span> <span class='kw'>=</span> <span class='st'>"Number"</span>, <span class='kw'>content</span> <span class='kw'>=</span> <span class='st'>"Not a complex number"</span>)
+  )</div><div class='output co'>#&gt; &lt;div class=&quot;form-group shiny-input-container&quot;&gt;
+#&gt;   &lt;label for=&quot;foo&quot;&gt;
+#&gt;     &lt;span&gt;
+#&gt;       Enter a number
+#&gt;       &lt;a title=&quot;Number&quot; data-toggle=&quot;popover&quot; data-content=&quot;Not a complex number&quot; data-placement=&quot;&quot;&gt;
+#&gt;         &lt;i class=&quot;fa fa-info-circle&quot;&gt;&lt;/i&gt;
+#&gt;       &lt;/a&gt;
+#&gt;     &lt;/span&gt;
+#&gt;   &lt;/label&gt;
+#&gt;   &lt;input id=&quot;foo&quot; type=&quot;number&quot; class=&quot;form-control&quot; value=&quot;0&quot;/&gt;
+#&gt; &lt;/div&gt;</div><div class='input'>
+</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>
@@ -116,6 +129,8 @@ useful to populate the content of a modal window.</p>
       <li><a href="#arguments">Arguments</a></li>
       
       <li><a href="#value">Value</a></li>
+
+      <li><a href="#see-also">See also</a></li>
       
       <li><a href="#examples">Examples</a></li>
     </ul>

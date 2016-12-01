@@ -142,59 +142,53 @@
 
 my_shiny_input &lt;-<span class="st"> </span><span class="kw">selectInput</span>(...)
 
-bs_infolink_modal &lt;-<span class="st"> </span>function(id_modal){
-
-  <span class="co"># shiny dependency</span>
-
-  htmltools::tags$<span class="kw">a</span>(shiny::<span class="kw">icon</span>(<span class="st">"info-circle"</span>)) %&gt;%
-<span class="st">    </span><span class="kw">bs_modal_attach</span>(id_modal)
+shiny_iconlink &lt;-<span class="st"> </span>function(...){
+  htmltools::tags$<span class="kw">a</span>(shiny::<span class="kw">icon</span>(...))
 }
 
-shiny_embed_link &lt;-<span class="st"> </span>function(input, link){
+shinyInput_label_embed &lt;-<span class="st"> </span>function(shinyInput, tag){
 
   <span class="co"># validate shiny input</span>
-  input &lt;-<span class="st"> </span>
+  shinyInput &lt;-<span class="st"> </span>
 <span class="st">    </span><span class="kw">.tag_validate</span>(
-      input, 
+      shinyInput, 
       <span class="dt">name =</span> <span class="st">"div"</span>, 
       <span class="dt">class =</span> <span class="st">"form-group shiny-input-container"</span>
     )
 
   <span class="co"># get existing label elements</span>
-  label_elements &lt;-<span class="st"> </span>input$children[[<span class="dv">1</span>]]$children
-
-  <span class="co"># get id of modal</span>
-  id_modal &lt;-<span class="st"> </span>htmltools::<span class="kw">tagGetAttribute</span>(bs_modal, <span class="st">"id"</span>)
-
+  label_elements &lt;-<span class="st"> </span>shinyInput$children[[<span class="dv">1</span>]]$children
+  
   <span class="co"># compose new label</span>
-  label_new &lt;-<span class="st"> </span>htmltools::tags$<span class="kw">span</span>(label_elements, link)
+  label_new &lt;-<span class="st"> </span>htmltools::tags$<span class="kw">span</span>(label_elements, tag)
   
   <span class="co"># put link into input</span>
-  input$children[[<span class="dv">1</span>]] &lt;-
-<span class="st">    </span>htmltools::<span class="kw">tagSetChildren</span>(input$children[[<span class="dv">1</span>]], label_new)
+  shinyInput$children[[<span class="dv">1</span>]] &lt;-
+<span class="st">    </span>htmltools::<span class="kw">tagSetChildren</span>(shinyInput$children[[<span class="dv">1</span>]], label_new)
 
-  input
+  shinyInput
 }
 
-link &lt;-<span class="st"> </span><span class="kw">bs_infolink_modal</span>(<span class="st">"my_modal"</span>)
+link &lt;-
+<span class="st">  </span><span class="kw"><a href="../reference/shiny_iconlink.html">shiny_iconlink</a></span>() %&gt;%
+<span class="st">  </span><span class="kw"><a href="../reference/bs_modal.html">bs_attach_modal</a></span>(<span class="st">"my_modal"</span>)
 
 my_shiny_input %&gt;%
-<span class="st">  </span><span class="kw">shiny_embed_link</span>(<span class="dt">link =</span> link)
+<span class="st">  </span><span class="kw"><a href="../reference/shinyInput_label_embed.html">shinyInput_label_embed</a></span>(<span class="dt">link =</span> link)
   
-<span class="co"># or</span>
-
-shiny_embed_helplink_modal &lt;-<span class="st"> </span>function(input, id_modal){
-
-  <span class="kw">shiny_embed_link</span>(input, <span class="kw">bs_infolink_modal</span>(id_modal))
-}
+my_shiny_input %&gt;%
+<span class="st">  </span><span class="kw"><a href="../reference/shinyInput_label_embed.html">shinyInput_label_embed</a></span>(
+    <span class="kw"><a href="../reference/shiny_iconlink.html">shiny_iconlink</a></span>() %&gt;%
+<span class="st">    </span><span class="kw"><a href="../reference/bs_modal.html">bs_attach_modal</a></span>(<span class="st">"my_modal"</span>)
+  )
 
 my_shiny_input %&gt;%
-<span class="st">  </span><span class="kw">shiny_embed_helplink_modal</span>(<span class="dt">id_modal =</span> <span class="st">"my_modal"</span>)
-  
+<span class="st">  </span><span class="kw"><a href="../reference/shinyInput_label_embed.html">shinyInput_label_embed</a></span>(
+    <span class="kw"><a href="../reference/shiny_iconlink.html">shiny_iconlink</a></span>() %&gt;%
+<span class="st">    </span><span class="kw"><a href="../reference/bs_embed_popover.html">bs_embed_popover</a></span>(...)
+  )
 
-<span class="kw">bs_embed_modalhelp</span>(tag_shinyinput, id_modal)
-<span class="co"># bs_modal_helplink(id_modal)</span>
-<span class="co"># bs_embed_helplink(tag_shinyinput, tag_link)</span></code></pre></div>
+  </code></pre></div>
 </div>
 <div id="example-2" class="section level4">
 <h4 class="hasAnchor"><html><body><a href="#example-2" class="anchor"> </a></body></html>Example</h4>
