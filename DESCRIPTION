@@ -7,9 +7,9 @@ Authors@R: c(
       given = "Ian",
       family = "Lyttle",
       email = "ian.lyttle@schneider-electric.com",
-      role = c("aut", "cre")
+      role = c("aut", "cre", "cph")
     ),
-    person(family = "Schneider Electric", role = c("cph")),
+    person(family = "Schneider Electric", role = c("cph", "fnd")),
     person(given = "Alex", family = "Shum", email = "alex@ALShum.com", role = c("ctb")),
     person(given = "Emily", family = "Berry", email = "emily.berry@schneider-electric.com", role = c("ctb"))
   )

@@ -60,15 +60,15 @@ shinyInput_label_embed <- function(shinyInput, tag){
       class = "form-group shiny-input-container"
     )
 
-  # get existing label elements
-  label_elements <- shinyInput$children[[1]]$children
+  # wrap tag in a div that pulls right
+  tag <- htmltools::div(class = "pull-right", tag)
 
-  # compose new label
-  label_new <- htmltools::tags$span(label_elements, tag)
-
-  # put link into input
+  # shinyInput$children[[1]] is a <label/>
+  # add tag to children, add style attribute
   shinyInput$children[[1]] <-
-    htmltools::tagSetChildren(shinyInput$children[[1]], label_new)
+    shinyInput$children[[1]] %>%
+    htmltools::tagAppendChild(tag) %>%
+    htmltools::tagAppendAttributes(style = "width:100%;")
 
   shinyInput
 }
