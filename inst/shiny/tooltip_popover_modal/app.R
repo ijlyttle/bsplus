@@ -1,6 +1,9 @@
 library("shiny")
 library("shinythemes")
+library("markdown")
 library("bsplus")
+
+# Define some UI elements
 
 input_letter <-
   selectInput(
@@ -28,9 +31,10 @@ modal_equation <-
   bs_modal(
     id = "modal_equation",
     title = "Equations",
-    body = render_html_fragment(
-      system.file("markdown", "modal.md", package = "bsplus")
-    ),
+    body =
+      system.file("markdown", "modal.md", package = "bsplus") %>%
+      renderMarkdown() %>%
+      HTML(),
     size = "medium"
   )
 
@@ -42,10 +46,10 @@ input_equation <-
   ) %>%
   shinyInput_label_embed(
     shiny_iconlink() %>%
-      bs_attach_modal(id_modal = "modal_equation")
+    bs_attach_modal(id_modal = "modal_equation")
   )
 
-# Define UI for application that draws a histogram
+# UI
 ui <- shinyUI(fluidPage(
 
    theme = shinytheme("sandstone"),
@@ -77,7 +81,7 @@ ui <- shinyUI(fluidPage(
 
 ))
 
-# Define server logic
+# Server
 server <- shinyServer(function(input, output) {
   output$letter <- renderText(input$letter)
   output$number <- renderText(input$number)

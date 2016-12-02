@@ -15,7 +15,7 @@
 #' shiny_iconlink() %>%
 #'   bs_embed_popover(title = "Help!", content = "I need somebody")
 #'
-#' @seealso \code{\link{shinyInput_label_embed}}
+#' @seealso \code{\link{shinyInput_label_embed}},
 #'   \code{shiny::\link[shiny]{icon}}, \code{\link{bs_attach_modal}},
 #'   \code{\link{bs_embed_popover}}, \code{\link{bs_embed_tooltip}}
 #' @export
