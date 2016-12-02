@@ -29,7 +29,7 @@ shiny_iconlink <- function(name = "info-circle", ...){
     )
   }
 
-  htmltools::tags$a(shiny::icon(name = name, ...))
+  htmltools::tags$a(shiny::icon(name = name, ...), href = "#")
 }
 
 #' Embed a tag into the label of a Shiny input

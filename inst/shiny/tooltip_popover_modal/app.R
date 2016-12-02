@@ -5,6 +5,17 @@ library("bsplus")
 
 # Define some UI elements
 
+input_number <-
+  numericInput(
+    inputId = "number",
+    label = "Label with tooltip help",
+    value = 0
+  ) %>%
+  shinyInput_label_embed(
+    icon("info") %>%
+    bs_embed_tooltip(title = "Not a complex number")
+  )
+
 input_letter <-
   selectInput(
     inputId = "letter",
@@ -14,17 +25,6 @@ input_letter <-
   shinyInput_label_embed(
     shiny_iconlink() %>%
     bs_embed_popover(title = "Letter", content = "Choose a favorite")
-  )
-
-input_number <-
-  numericInput(
-    inputId = "number",
-    label = "Label with tooltip help",
-    value = 0
-  ) %>%
-  shinyInput_label_embed(
-    shiny_iconlink("info") %>%
-    bs_embed_tooltip(title = "Not a complex number")
   )
 
 modal_equation <-
