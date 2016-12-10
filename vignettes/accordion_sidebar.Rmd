@@ -33,7 +33,81 @@ bs_accordion_sidebar(id = "beatles") %>%
     content_side = "Drums, vocals",
     content_main = "Don't Pass Me By"
   ) 
+```
 
+Let's try something crazy:
+
+```{r}
+bs_accordion_sidebar(id = "the_beatles") %>%
+  bs_set_opts(use_main_enclosure = FALSE) %>%
+  bs_append(
+    title_side = "John Lennon", 
+    content_side = NULL,
+    content_main = 
+      bs_accordion_sidebar(id = "john") %>%
+      bs_append(
+        title_side = "Beatles",
+        content_side = "1960-1969",
+        content_main = "Help!"
+      ) %>%
+      bs_append(
+        title_side = "Solo",
+        content_side = "1968-1980",
+        content_main = "Love"
+      )
+  ) %>%
+  bs_append(
+    title_side = "Paul McCartney", 
+    content_side = NULL,
+    content_main =
+      bs_accordion_sidebar(id = "paul") %>%
+      bs_append(
+        title_side = "Beatles",
+        content_side = "1960-1970",
+        content_main = "Yesterday"
+      ) %>%
+      bs_append(
+        title_side = "Solo",
+        content_side = "1968-1980",
+        content_main = "Maybe I'm Amazed"
+      )
+  ) %>%
+  bs_append(
+    title_side = "George Harrison", 
+    content_side = NULL,
+    content_main = 
+      bs_accordion_sidebar(id = "george") %>%
+      bs_append(
+        title_side = "Beatles",
+        content_side = "1960-1970",
+        content_main = "Here Comes the Sun"
+      ) %>%
+      bs_append(
+        title_side = "Solo",
+        content_side = "1968-2001",
+        content_main = "My Sweet Lord"
+      )
+  ) %>%
+  bs_append(
+    title_side = "Ringo Starr", 
+    content_side = NULL,
+    content_main = 
+            bs_accordion_sidebar(id = "ringo") %>%
+      bs_append(
+        title_side = "Beatles",
+        content_side = "1962-1970",
+        content_main = "Octopus' Garden"
+      ) %>%
+      bs_append(
+        title_side = "Solo",
+        content_side = "1970-",
+        content_main = "Photograph"
+      )
+
+  ) 
+```
+
+```{r}
 # there needs to be a better way to do this (talk to Dean)
 use_bs_accordion_sidebar()
 ```

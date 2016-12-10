@@ -16,7 +16,8 @@ use_bs_accordion_sidebar()
   content_main, ...)
 
 \method{bs_set_opts}{bsplus_accordion_sidebar}(tag,
-  panel_type_active = "success", panel_type_inactive = "primary", ...)
+  panel_type_active = "success", panel_type_inactive = "primary",
+  use_main_enclosure = TRUE, ...)
 }
 \arguments{
 \item{id}{character, unique id for accordion-sidebar div,
@@ -48,6 +49,9 @@ one of \code{c("default", "primary", "success", "info", "warning", "danger")}}
 
 \item{panel_type_inactive}{character, indicated bootstrap type for inactive-panel header,
 one of \code{c("default", "primary", "success", "info", "warning", "danger")}}
+
+\item{use_main_enclosure}{logical, indicates if main content is to be wrapped in a
+Bootstrap panel}
 }
 \value{
 \code{bsplus_accsidebar} object

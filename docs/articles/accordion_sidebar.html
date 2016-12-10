@@ -41,7 +41,7 @@
       <h1>Accordion Sidebar</h1>
                         <h4 class="author">Ian Lyttle</h4>
             
-            <h4 class="date">2016-12-02</h4>
+            <h4 class="date">2016-12-10</h4>
           </div>
 
     
@@ -126,6 +126,258 @@
 <div class="collapse" id="beatles-side-accordion-3-follow">
 <div class="panel panel-success">
 <div class="panel-body">Don't Pass Me By</div>
+</div>
+</div>
+</div>
+</div>
+<p>Let&rsquo;s try something crazy:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw"><a href="../reference/bs_accordion_sidebar.html">bs_accordion_sidebar</a></span>(<span class="dt">id =</span> <span class="st">"the_beatles"</span>) %&gt;%
+<span class="st">  </span><span class="kw"><a href="../reference/bs_set_opts.html">bs_set_opts</a></span>(<span class="dt">use_main_enclosure =</span> <span class="ot">FALSE</span>) %&gt;%
+<span class="st">  </span><span class="kw"><a href="../reference/bs_append.html">bs_append</a></span>(
+    <span class="dt">title_side =</span> <span class="st">"John Lennon"</span>, 
+    <span class="dt">content_side =</span> <span class="ot">NULL</span>,
+    <span class="dt">content_main =</span> 
+      <span class="kw"><a href="../reference/bs_accordion_sidebar.html">bs_accordion_sidebar</a></span>(<span class="dt">id =</span> <span class="st">"john"</span>) %&gt;%
+<span class="st">      </span><span class="kw"><a href="../reference/bs_append.html">bs_append</a></span>(
+        <span class="dt">title_side =</span> <span class="st">"Beatles"</span>,
+        <span class="dt">content_side =</span> <span class="st">"1960-1969"</span>,
+        <span class="dt">content_main =</span> <span class="st">"Help!"</span>
+      ) %&gt;%
+<span class="st">      </span><span class="kw"><a href="../reference/bs_append.html">bs_append</a></span>(
+        <span class="dt">title_side =</span> <span class="st">"Solo"</span>,
+        <span class="dt">content_side =</span> <span class="st">"1968-1980"</span>,
+        <span class="dt">content_main =</span> <span class="st">"Love"</span>
+      )
+  ) %&gt;%
+<span class="st">  </span><span class="kw"><a href="../reference/bs_append.html">bs_append</a></span>(
+    <span class="dt">title_side =</span> <span class="st">"Paul McCartney"</span>, 
+    <span class="dt">content_side =</span> <span class="ot">NULL</span>,
+    <span class="dt">content_main =</span>
+      <span class="kw"><a href="../reference/bs_accordion_sidebar.html">bs_accordion_sidebar</a></span>(<span class="dt">id =</span> <span class="st">"paul"</span>) %&gt;%
+<span class="st">      </span><span class="kw"><a href="../reference/bs_append.html">bs_append</a></span>(
+        <span class="dt">title_side =</span> <span class="st">"Beatles"</span>,
+        <span class="dt">content_side =</span> <span class="st">"1960-1970"</span>,
+        <span class="dt">content_main =</span> <span class="st">"Yesterday"</span>
+      ) %&gt;%
+<span class="st">      </span><span class="kw"><a href="../reference/bs_append.html">bs_append</a></span>(
+        <span class="dt">title_side =</span> <span class="st">"Solo"</span>,
+        <span class="dt">content_side =</span> <span class="st">"1968-1980"</span>,
+        <span class="dt">content_main =</span> <span class="st">"Maybe I'm Amazed"</span>
+      )
+  ) %&gt;%
+<span class="st">  </span><span class="kw"><a href="../reference/bs_append.html">bs_append</a></span>(
+    <span class="dt">title_side =</span> <span class="st">"George Harrison"</span>, 
+    <span class="dt">content_side =</span> <span class="ot">NULL</span>,
+    <span class="dt">content_main =</span> 
+      <span class="kw"><a href="../reference/bs_accordion_sidebar.html">bs_accordion_sidebar</a></span>(<span class="dt">id =</span> <span class="st">"george"</span>) %&gt;%
+<span class="st">      </span><span class="kw"><a href="../reference/bs_append.html">bs_append</a></span>(
+        <span class="dt">title_side =</span> <span class="st">"Beatles"</span>,
+        <span class="dt">content_side =</span> <span class="st">"1960-1970"</span>,
+        <span class="dt">content_main =</span> <span class="st">"Here Comes the Sun"</span>
+      ) %&gt;%
+<span class="st">      </span><span class="kw"><a href="../reference/bs_append.html">bs_append</a></span>(
+        <span class="dt">title_side =</span> <span class="st">"Solo"</span>,
+        <span class="dt">content_side =</span> <span class="st">"1968-2001"</span>,
+        <span class="dt">content_main =</span> <span class="st">"My Sweet Lord"</span>
+      )
+  ) %&gt;%
+<span class="st">  </span><span class="kw"><a href="../reference/bs_append.html">bs_append</a></span>(
+    <span class="dt">title_side =</span> <span class="st">"Ringo Starr"</span>, 
+    <span class="dt">content_side =</span> <span class="ot">NULL</span>,
+    <span class="dt">content_main =</span> 
+            <span class="kw"><a href="../reference/bs_accordion_sidebar.html">bs_accordion_sidebar</a></span>(<span class="dt">id =</span> <span class="st">"ringo"</span>) %&gt;%
+<span class="st">      </span><span class="kw"><a href="../reference/bs_append.html">bs_append</a></span>(
+        <span class="dt">title_side =</span> <span class="st">"Beatles"</span>,
+        <span class="dt">content_side =</span> <span class="st">"1962-1970"</span>,
+        <span class="dt">content_main =</span> <span class="st">"Octopus' Garden"</span>
+      ) %&gt;%
+<span class="st">      </span><span class="kw"><a href="../reference/bs_append.html">bs_append</a></span>(
+        <span class="dt">title_side =</span> <span class="st">"Solo"</span>,
+        <span class="dt">content_side =</span> <span class="st">"1970-"</span>,
+        <span class="dt">content_main =</span> <span class="st">"Photograph"</span>
+      )
+
+  ) </code></pre></div>
+<div class="row" id="the_beatles">
+<div class="col-sm-4" id="the_beatles-side">
+<div id="the_beatles-side-accordion" class="panel-group" role="tablist" aria-multiselectable="true">
+<div class="panel panel-success" class-active="panel-success" class-inactive="panel-primary" id="the_beatles-side-accordion-0">
+<div id="the_beatles-side-accordion-0-heading" class="panel-heading" role="tab" data-toggle="collapse" data-target="#the_beatles-side-accordion-0-collapse" data-parent="#the_beatles-side-accordion" aria-expanded="true" aria-controls="the_beatles-side-accordion-0-collapse" style="cursor: pointer;">
+<h4 class="hasAnchor"><html><body><a href="#the_beatles-side-accordion-0-heading" class="anchor"> </a></body></html>John Lennon</h4>
+</div>
+<div aria-labelledby="the_beatles-side-accordion-0-heading" class="panel-collapse collapse in panel-collapse-leader" id="the_beatles-side-accordion-0-collapse" role="tabpanel">
+<div class="panel-body" style="padding-top: 0px; padding-bottom: 0px;"></div>
+</div>
+</div>
+<div class="panel panel-primary" class-active="panel-success" class-inactive="panel-primary" id="the_beatles-side-accordion-1">
+<div id="the_beatles-side-accordion-1-heading" class="panel-heading" role="tab" data-toggle="collapse" data-target="#the_beatles-side-accordion-1-collapse" data-parent="#the_beatles-side-accordion" aria-expanded="true" aria-controls="the_beatles-side-accordion-1-collapse" style="cursor: pointer;">
+<h4 class="hasAnchor"><html><body><a href="#the_beatles-side-accordion-1-heading" class="anchor"> </a></body></html>Paul McCartney</h4>
+</div>
+<div aria-labelledby="the_beatles-side-accordion-1-heading" class="panel-collapse collapse panel-collapse-leader" id="the_beatles-side-accordion-1-collapse" role="tabpanel">
+<div class="panel-body" style="padding-top: 0px; padding-bottom: 0px;"></div>
+</div>
+</div>
+<div class="panel panel-primary" class-active="panel-success" class-inactive="panel-primary" id="the_beatles-side-accordion-2">
+<div id="the_beatles-side-accordion-2-heading" class="panel-heading" role="tab" data-toggle="collapse" data-target="#the_beatles-side-accordion-2-collapse" data-parent="#the_beatles-side-accordion" aria-expanded="true" aria-controls="the_beatles-side-accordion-2-collapse" style="cursor: pointer;">
+<h4 class="hasAnchor"><html><body><a href="#the_beatles-side-accordion-2-heading" class="anchor"> </a></body></html>George Harrison</h4>
+</div>
+<div aria-labelledby="the_beatles-side-accordion-2-heading" class="panel-collapse collapse panel-collapse-leader" id="the_beatles-side-accordion-2-collapse" role="tabpanel">
+<div class="panel-body" style="padding-top: 0px; padding-bottom: 0px;"></div>
+</div>
+</div>
+<div class="panel panel-primary" class-active="panel-success" class-inactive="panel-primary" id="the_beatles-side-accordion-3">
+<div id="the_beatles-side-accordion-3-heading" class="panel-heading" role="tab" data-toggle="collapse" data-target="#the_beatles-side-accordion-3-collapse" data-parent="#the_beatles-side-accordion" aria-expanded="true" aria-controls="the_beatles-side-accordion-3-collapse" style="cursor: pointer;">
+<h4 class="hasAnchor"><html><body><a href="#the_beatles-side-accordion-3-heading" class="anchor"> </a></body></html>Ringo Starr</h4>
+</div>
+<div aria-labelledby="the_beatles-side-accordion-3-heading" class="panel-collapse collapse panel-collapse-leader" id="the_beatles-side-accordion-3-collapse" role="tabpanel">
+<div class="panel-body" style="padding-top: 0px; padding-bottom: 0px;"></div>
+</div>
+</div>
+</div>
+</div>
+<div class="col-sm-8" id="the_beatles-main">
+<div class="collapse in" id="the_beatles-side-accordion-0-follow">
+<div class="row" id="john">
+<div class="col-sm-4" id="john-side">
+<div id="john-side-accordion" class="panel-group" role="tablist" aria-multiselectable="true">
+<div class="panel panel-success" class-active="panel-success" class-inactive="panel-primary" id="john-side-accordion-0">
+<div id="john-side-accordion-0-heading" class="panel-heading" role="tab" data-toggle="collapse" data-target="#john-side-accordion-0-collapse" data-parent="#john-side-accordion" aria-expanded="true" aria-controls="john-side-accordion-0-collapse" style="cursor: pointer;">
+<h4 class="hasAnchor"><html><body><a href="#john-side-accordion-0-heading" class="anchor"> </a></body></html>Beatles</h4>
+</div>
+<div aria-labelledby="john-side-accordion-0-heading" class="panel-collapse collapse in panel-collapse-leader" id="john-side-accordion-0-collapse" role="tabpanel">
+<div class="panel-body" style="">1960-1969</div>
+</div>
+</div>
+<div class="panel panel-primary" class-active="panel-success" class-inactive="panel-primary" id="john-side-accordion-1">
+<div id="john-side-accordion-1-heading" class="panel-heading" role="tab" data-toggle="collapse" data-target="#john-side-accordion-1-collapse" data-parent="#john-side-accordion" aria-expanded="true" aria-controls="john-side-accordion-1-collapse" style="cursor: pointer;">
+<h4 class="hasAnchor"><html><body><a href="#john-side-accordion-1-heading" class="anchor"> </a></body></html>Solo</h4>
+</div>
+<div aria-labelledby="john-side-accordion-1-heading" class="panel-collapse collapse panel-collapse-leader" id="john-side-accordion-1-collapse" role="tabpanel">
+<div class="panel-body" style="">1968-1980</div>
+</div>
+</div>
+</div>
+</div>
+<div class="col-sm-8" id="john-main">
+<div class="collapse in" id="john-side-accordion-0-follow">
+<div class="panel panel-success">
+<div class="panel-body">Help!</div>
+</div>
+</div>
+<div class="collapse" id="john-side-accordion-1-follow">
+<div class="panel panel-success">
+<div class="panel-body">Love</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="collapse" id="the_beatles-side-accordion-1-follow">
+<div class="row" id="paul">
+<div class="col-sm-4" id="paul-side">
+<div id="paul-side-accordion" class="panel-group" role="tablist" aria-multiselectable="true">
+<div class="panel panel-success" class-active="panel-success" class-inactive="panel-primary" id="paul-side-accordion-0">
+<div id="paul-side-accordion-0-heading" class="panel-heading" role="tab" data-toggle="collapse" data-target="#paul-side-accordion-0-collapse" data-parent="#paul-side-accordion" aria-expanded="true" aria-controls="paul-side-accordion-0-collapse" style="cursor: pointer;">
+<h4 class="hasAnchor"><html><body><a href="#paul-side-accordion-0-heading" class="anchor"> </a></body></html>Beatles</h4>
+</div>
+<div aria-labelledby="paul-side-accordion-0-heading" class="panel-collapse collapse in panel-collapse-leader" id="paul-side-accordion-0-collapse" role="tabpanel">
+<div class="panel-body" style="">1960-1970</div>
+</div>
+</div>
+<div class="panel panel-primary" class-active="panel-success" class-inactive="panel-primary" id="paul-side-accordion-1">
+<div id="paul-side-accordion-1-heading" class="panel-heading" role="tab" data-toggle="collapse" data-target="#paul-side-accordion-1-collapse" data-parent="#paul-side-accordion" aria-expanded="true" aria-controls="paul-side-accordion-1-collapse" style="cursor: pointer;">
+<h4 class="hasAnchor"><html><body><a href="#paul-side-accordion-1-heading" class="anchor"> </a></body></html>Solo</h4>
+</div>
+<div aria-labelledby="paul-side-accordion-1-heading" class="panel-collapse collapse panel-collapse-leader" id="paul-side-accordion-1-collapse" role="tabpanel">
+<div class="panel-body" style="">1968-1980</div>
+</div>
+</div>
+</div>
+</div>
+<div class="col-sm-8" id="paul-main">
+<div class="collapse in" id="paul-side-accordion-0-follow">
+<div class="panel panel-success">
+<div class="panel-body">Yesterday</div>
+</div>
+</div>
+<div class="collapse" id="paul-side-accordion-1-follow">
+<div class="panel panel-success">
+<div class="panel-body">Maybe I'm Amazed</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="collapse" id="the_beatles-side-accordion-2-follow">
+<div class="row" id="george">
+<div class="col-sm-4" id="george-side">
+<div id="george-side-accordion" class="panel-group" role="tablist" aria-multiselectable="true">
+<div class="panel panel-success" class-active="panel-success" class-inactive="panel-primary" id="george-side-accordion-0">
+<div id="george-side-accordion-0-heading" class="panel-heading" role="tab" data-toggle="collapse" data-target="#george-side-accordion-0-collapse" data-parent="#george-side-accordion" aria-expanded="true" aria-controls="george-side-accordion-0-collapse" style="cursor: pointer;">
+<h4 class="hasAnchor"><html><body><a href="#george-side-accordion-0-heading" class="anchor"> </a></body></html>Beatles</h4>
+</div>
+<div aria-labelledby="george-side-accordion-0-heading" class="panel-collapse collapse in panel-collapse-leader" id="george-side-accordion-0-collapse" role="tabpanel">
+<div class="panel-body" style="">1960-1970</div>
+</div>
+</div>
+<div class="panel panel-primary" class-active="panel-success" class-inactive="panel-primary" id="george-side-accordion-1">
+<div id="george-side-accordion-1-heading" class="panel-heading" role="tab" data-toggle="collapse" data-target="#george-side-accordion-1-collapse" data-parent="#george-side-accordion" aria-expanded="true" aria-controls="george-side-accordion-1-collapse" style="cursor: pointer;">
+<h4 class="hasAnchor"><html><body><a href="#george-side-accordion-1-heading" class="anchor"> </a></body></html>Solo</h4>
+</div>
+<div aria-labelledby="george-side-accordion-1-heading" class="panel-collapse collapse panel-collapse-leader" id="george-side-accordion-1-collapse" role="tabpanel">
+<div class="panel-body" style="">1968-2001</div>
+</div>
+</div>
+</div>
+</div>
+<div class="col-sm-8" id="george-main">
+<div class="collapse in" id="george-side-accordion-0-follow">
+<div class="panel panel-success">
+<div class="panel-body">Here Comes the Sun</div>
+</div>
+</div>
+<div class="collapse" id="george-side-accordion-1-follow">
+<div class="panel panel-success">
+<div class="panel-body">My Sweet Lord</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="collapse" id="the_beatles-side-accordion-3-follow">
+<div class="row" id="ringo">
+<div class="col-sm-4" id="ringo-side">
+<div id="ringo-side-accordion" class="panel-group" role="tablist" aria-multiselectable="true">
+<div class="panel panel-success" class-active="panel-success" class-inactive="panel-primary" id="ringo-side-accordion-0">
+<div id="ringo-side-accordion-0-heading" class="panel-heading" role="tab" data-toggle="collapse" data-target="#ringo-side-accordion-0-collapse" data-parent="#ringo-side-accordion" aria-expanded="true" aria-controls="ringo-side-accordion-0-collapse" style="cursor: pointer;">
+<h4 class="hasAnchor"><html><body><a href="#ringo-side-accordion-0-heading" class="anchor"> </a></body></html>Beatles</h4>
+</div>
+<div aria-labelledby="ringo-side-accordion-0-heading" class="panel-collapse collapse in panel-collapse-leader" id="ringo-side-accordion-0-collapse" role="tabpanel">
+<div class="panel-body" style="">1962-1970</div>
+</div>
+</div>
+<div class="panel panel-primary" class-active="panel-success" class-inactive="panel-primary" id="ringo-side-accordion-1">
+<div id="ringo-side-accordion-1-heading" class="panel-heading" role="tab" data-toggle="collapse" data-target="#ringo-side-accordion-1-collapse" data-parent="#ringo-side-accordion" aria-expanded="true" aria-controls="ringo-side-accordion-1-collapse" style="cursor: pointer;">
+<h4 class="hasAnchor"><html><body><a href="#ringo-side-accordion-1-heading" class="anchor"> </a></body></html>Solo</h4>
+</div>
+<div aria-labelledby="ringo-side-accordion-1-heading" class="panel-collapse collapse panel-collapse-leader" id="ringo-side-accordion-1-collapse" role="tabpanel">
+<div class="panel-body" style="">1970-</div>
+</div>
+</div>
+</div>
+</div>
+<div class="col-sm-8" id="ringo-main">
+<div class="collapse in" id="ringo-side-accordion-0-follow">
+<div class="panel panel-success">
+<div class="panel-body">Octopus' Garden</div>
+</div>
+</div>
+<div class="collapse" id="ringo-side-accordion-1-follow">
+<div class="panel panel-success">
+<div class="panel-body">Photograph</div>
+</div>
+</div>
+</div>
 </div>
 </div>
 </div>

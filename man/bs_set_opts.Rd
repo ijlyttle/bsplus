@@ -15,7 +15,7 @@ bs_set_opts(tag, ...)
 \arguments{
 \item{tag}{\code{htmltools:shinytag}}
 
-\item{...}{additional arguments, key/va}
+\item{...}{additional arguments, key/value pairs}
 }
 \value{
 modified copy of \code{tag}

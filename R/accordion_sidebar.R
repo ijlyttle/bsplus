@@ -57,6 +57,8 @@
 #'   one of \code{c("default", "primary", "success", "info", "warning", "danger")}
 #' @param panel_type_inactive character, indicated bootstrap type for inactive-panel header,
 #'   one of \code{c("default", "primary", "success", "info", "warning", "danger")}
+#' @param use_main_enclosure  logical, indicates if main content is to be wrapped in a
+#'   Bootstrap panel
 #' @param title_side          character (HTML) or \code{htmltools::\link[htmltools]{tagList}},
 #'   title for the sidebar panel
 #' @param content_side        character (HTML) or \code{htmltools::\link[htmltools]{tagList}},

@@ -3,7 +3,7 @@
 #' This would be used when we want set options for adding items
 #'
 #' @param tag   \code{htmltools:shinytag}
-#' @param ...  additional arguments, key/va
+#' @param ...  additional arguments, key/value pairs
 #'
 #' @keywords internal
 #' @return modified copy of \code{tag}
@@ -53,7 +53,8 @@ bs_set_opts.bsplus_accordion <-
 #' @export
 #'
 bs_set_opts.bsplus_accordion_sidebar <-
-  function(tag, panel_type_active = "success", panel_type_inactive = "primary", ...){
+  function(tag, panel_type_active = "success", panel_type_inactive = "primary",
+           use_main_enclosure = TRUE,...){
 
     # panel_type
     bstypes <- c("default", "primary", "success", "info", "warning", "danger")
@@ -66,6 +67,11 @@ bs_set_opts.bsplus_accordion_sidebar <-
     if (!is.null(panel_type_inactive)){
       panel_type_inactive <- match.arg(panel_type_inactive, bstypes)
       attr(tag, "bsplus.panel_type_inactive") <- panel_type_inactive
+    }
+
+    # use_main_enclosure
+    if (!is.null(use_main_enclosure)){
+      attr(tag, "bsplus.use_main_enclosure") <- use_main_enclosure
     }
 
     tag

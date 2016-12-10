@@ -124,6 +124,7 @@ bs_append.bsplus_accordion_sidebar <- function(tag, title_side, content_side, co
   panel_type_inactive <- attr(tag, "bsplus.panel_type_inactive")
   index_side <- attr(tag, "bsplus.index_side")
   index_main <- attr(tag, "bsplus.index_main")
+  use_main_enclosure <- attr(tag, "bsplus.use_main_enclosure")
 
   # get accordion
   tag_accordion <- tag[["children"]][[index_side]][["children"]][[1]]
@@ -168,14 +169,18 @@ bs_append.bsplus_accordion_sidebar <- function(tag, title_side, content_side, co
 
   # put content_main
   # (consider panel function)
-  content_panel_main <-
-    htmltools::tags$div(
-      class = paste("panel panel", panel_type_active, sep = "-"),
+  if (use_main_enclosure) {
+    content_panel_main <-
       htmltools::tags$div(
-        class = "panel-body",
-        content_main
+        class = paste("panel panel", panel_type_active, sep = "-"),
+        htmltools::tags$div(
+          class = "panel-body",
+          content_main
+        )
       )
-    )
+  } else {
+    content_panel_main <- content_main
+  }
 
   id_main_panel <- paste(id_accordion_panel, "follow", sep = "-")
   tag[["children"]][[index_main]] <-
