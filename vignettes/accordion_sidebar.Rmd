@@ -35,7 +35,9 @@ bs_accordion_sidebar(id = "beatles") %>%
   ) 
 ```
 
-Let's try something crazy:
+## Nested accordion-sidebars
+
+Apparently, you can nest these things. Thanks to Carson Sievert for asking the crazy question.
 
 ```{r}
 bs_accordion_sidebar(id = "the_beatles") %>%
