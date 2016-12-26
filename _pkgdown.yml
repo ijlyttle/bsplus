@@ -60,8 +60,8 @@ reference:
 articles:
 - title: "Introduction"
   contents:
-  - introduction
-  - manifesto
+  - overview
+  - helper_functions
 - title: "Elements"
   contents:
   - collapse
@@ -69,5 +69,5 @@ articles:
   - accordion_sidebar
   - tooltip_popover
   - modals
-#- title: "Carousel"
+#  - carousel
 

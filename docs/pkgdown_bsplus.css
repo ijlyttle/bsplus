@@ -126,6 +126,16 @@ pre img {
   height: 0;
 }
 
+.modal-dialog h1, ..modal-dialog h2, .modal-dialog h3, .modal-dialog h4 {
+  padding-top: 0;
+  margin-top: 10px;
+}
+
+.modal-dialog a.anchor {
+  width: 0;
+  height: 0;
+}
+
 .panel .hasAnchor {
   margin-left: 0;
 }

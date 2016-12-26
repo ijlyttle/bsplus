@@ -43,47 +43,77 @@
 <div id="introduction" class="section level2">
 <h2 class="hasAnchor">
 <a href="#introduction" class="anchor"> </a>Introduction</h2>
+<p>To see all of this in action, you are referred to the <a href="http://ijlyttle.github.io/bsplus/articles/index.html">articles page</a> at this package&rsquo;s <strong>pkgdown</strong> site.</p>
 <p>The goals of this package are:</p>
-<ol><li><p>To provide a framework to use bootstrap&rsquo;s markup API: <a href="http://getbootstrap.com/javascript/" class="uri">http://getbootstrap.com/javascript/</a></p></li>
+<ol><li><p>To provide a framework to use Bootstrap&rsquo;s markup API: <a href="http://getbootstrap.com/javascript/" class="uri">http://getbootstrap.com/javascript/</a></p></li>
 <li><p>To allow you to compose HTML using pipes.</p></li>
-</ol><p>These are tools to help you compose html - a Shiny UI is, at its heart, HTML. Here&rsquo;s what we want to do:</p>
-<ul><li>modal windows</li>
-<li>tooltips</li>
-<li>popovers</li>
-<li>collapse</li>
-<li>carousel</li>
-<li>coordinated collapse</li>
-</ul><p>Shiny already provides these, but it may be handy (no hurry to do this right now):</p>
-<ul><li>tabs</li>
-</ul><p>Rmarkdown has support for navbars, but those may also be useful to make programatically:</p>
-<p>I&rsquo;d also acknowlege the shinybs package written by Eric Bailey.</p>
+</ol><p>In this package, we have function families for:</p>
+<ul><li>collapsing elements: <code><a href="reference/bs_collapse.html">bs_collapse()</a></code>
+</li>
+<li>accordion panels: <code><a href="reference/bs_accordion.html">bs_accordion()</a></code>
+</li>
+<li>accordion sidebar sets: <code><a href="reference/bs_accordion_sidebar.html">bs_accordion_sidebar()</a></code>
+</li>
+<li>tooltips: <code><a href="reference/bs_embed_tooltip.html">bs_embed_tooltip()</a></code>
+</li>
+<li>popovers: <code><a href="reference/bs_embed_popover.html">bs_embed_popover()</a></code>
+</li>
+<li>modals: <code><a href="reference/bs_modal.html">bs_modal()</a></code>
+</li>
+</ul><p>There are also helper functions:</p>
+<ul><li>embed help links into <strong>shiny</strong> inputs: <code><a href="reference/shiny_iconlink.html">shiny_iconlink()</a></code>, <code><a href="reference/shinyInput_label_embed.html">shinyInput_label_embed()</a></code>.</li>
+<li>read a markdown file to return an HTML fragment (useful for modal content): <code><a href="reference/render_html_fragment.html">render_html_fragment()</a></code>
+</li>
+</ul><p>To see the elements in action, the vignettes are a great place to start.</p>
+</div>
+<div id="grammar-and-vocabulary" class="section level2">
+<h2 class="hasAnchor">
+<a href="#grammar-and-vocabulary" class="anchor"> </a>Grammar and vocabulary</h2>
+<p>One of the goals of this package is to implement consistent grammar and vocabulary. To keep the namespace clean(er), many of the functions have the prefix <code>bs_</code>.</p>
+<p>Let&rsquo;s start with the conventions used to name the functions:</p>
+<ul><li><p><code>bs_noun()</code>, used to create a <code>tag</code>. For example, use <code><a href="reference/bs_accordion.html">bs_accordion()</a></code> to create an accordion panel-set.</p></li>
+<li><p><code>bs_verb(tag, ...)</code>, used to take an action on a <code>tag</code>. For example, use <code><a href="reference/bs_append.html">bs_append()</a></code> to append a panel to an accordion panel-set.</p></li>
+<li><p><code>bs_verb_noun(tag, ...)</code> used to take an action on a <code>tag</code> using a <code>thing</code>. For example, use <code><a href="reference/bs_embed_tooltip.html">bs_embed_tooltip()</a></code> to embed a tooltip into a <code>tag</code>.</p></li>
+<li><p><code>use_bs_noun()</code> used to add a bit of Javascript to your HTML, just like the <strong>shinyjs</strong> function <code>useShinyJS()</code>. This is necessary for <code><a href="reference/bs_accordion_sidebar.html">bs_accordion_sidebar()</a></code>, <code><a href="reference/bs_embed_tooltip.html">bs_embed_tooltip()</a></code>, or <code><a href="reference/bs_embed_popover.html">bs_embed_popover()</a></code> to work properly.</p></li>
+</ul></div>
+<div id="nouns" class="section level2">
+<h2 class="hasAnchor">
+<a href="#nouns" class="anchor"> </a>Nouns</h2>
+<p>Usually, we use the words <em>element</em> and <em>tag</em> interchangably - we are talking about HTML elements. In the grammar of this documentation (and package), it can be useful to think about <em>direct</em> objects and <em>indirect</em> objects, so we will use the word <em>tag</em> to denote <em>direct</em> objects, and the words <em>element</em> or <em>thing</em> to denote <em>indirect</em> objects.</p>
+<p>When we pipe, the first argument will always be the direct object; the name of the first argument of many functions is <code>tag</code> - you will be sending the tag through the pipe.</p>
 </div>
 <div id="verbs" class="section level2">
 <h2 class="hasAnchor">
 <a href="#verbs" class="anchor"> </a>Verbs</h2>
 <ul><li>
-<code>set</code> set options</li>
+<code><a href="reference/bs_append.html">bs_append(tag, ...)</a></code> used to append something to a tag, perhaps a panel into an accordion-group.</li>
 <li>
-<code>attach</code> attach an id of a tag to another tag</li>
+<code>bs_attach(tag, ...)</code> used to attach the id of an element to another tag, for example, you could create a modal window using <code><a href="reference/bs_modal.html">bs_modal()</a></code>, then you could <em>attach</em> the id of the modal window to</li>
 <li>
-<code>append</code> append an item to a defined group of items</li>
+<code>bs_emded_foo(tag, ...)</code> we are embed something (a foo) into a tag</li>
 <li>
-<code>embed</code> embed information into a tag</li>
-</ul><p>The verbs &ldquo;embed&rdquo; and &ldquo;attach&rdquo; are very close - the one way they are different is that we &ldquo;attach&rdquo; the id of a tag to another tag, whereas we &ldquo;embed&rdquo; things that are not id&rsquo;s of other tags.</p>
-<div id="ways-i-am-abusing-htmltools" class="section level3">
+<code><a href="reference/bs_set_opts.html">bs_set_opts(tag, ...)</a></code> we are setting some options for the items yet to be appended to a tag</li>
+</ul><p>Let&rsquo;s consider the differences between <code>append</code>, <code>attach</code>, and <code>embed</code>:</p>
+<ul><li>You can <em>append</em> more than one element to a tag, i.e., you could append multiple panels to an accordion-group.</li>
+<li>You can <em>attach</em> only one id of a thing to a tag. When we are attaching, we attach the id of an element, not the element itself. <strong>However</strong>, we can attach an id of an element to more than one tag.</li>
+<li>You can <em>embed</em> only one thing into a tag. i.e., into a given tag, we embed a tooltip or a popover, modifying the attributes and setting a child element.</li>
+</ul><div id="ways-i-am-abusing-htmltools" class="section level3">
 <h3 class="hasAnchor">
-<a href="#ways-i-am-abusing-htmltools" class="anchor"> </a>Ways I am abusing htmltools</h3>
-<p>There are places that I am not using the htmltools API; I should probably note those here:</p>
+<a href="#ways-i-am-abusing-htmltools" class="anchor"> </a>Ways I am abusing <strong>htmltools</strong>
+</h3>
+<p>There are places that I am not using the official <strong>htmltools</strong> API; I should probably note those here:</p>
 <p>If we had these functions, I could avoid the abuse:</p>
 <ul><li>
 <code>tagSetAttributes()</code> - clears and sets, rather than appends attributes</li>
 <li>
 <code>tagName()</code> - gets the name of the tag, i.e. &ldquo;div&rdquo;, &ldquo;button&rdquo;</li>
-<li>
-<code>tagNChildren()</code> - gets the number of children of the tag</li>
-</ul><p>The last two probably are not that serious.</p>
-<p>I will detail this more as I get the time&hellip;</p>
+</ul><p>I will detail this more as I get the time&hellip;</p>
 </div>
+</div>
+<div id="acknowledgments" class="section level2">
+<h2 class="hasAnchor">
+<a href="#acknowledgments" class="anchor"> </a>Acknowledgments</h2>
+<p>This package draws inspiration from the <strong>shinybs</strong> package written by Eric Bailey.</p>
 </div>
 </div>
   </div>

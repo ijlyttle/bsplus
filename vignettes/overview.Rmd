@@ -1,0 +1,193 @@
+---
+title: "Overview"
+author: "Ian Lyttle"
+date: "`r Sys.Date()`"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Overview}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+The goal of **bsplus** is to provide access to some useful components not already offered in Shiny:
+
+- [collapse](http://getbootstrap.com/javascript/#collapse)
+
+- [accordion](http://getbootstrap.com/javascript/#collapse-example-accordion)
+
+- [modal](http://getbootstrap.com/javascript/#modals)
+
+- [tooltip](http://getbootstrap.com/javascript/#tooltips)
+
+- [popover](http://getbootstrap.com/javascript/#popovers)
+
+- [carousel](http://getbootstrap.com/javascript/#carousel)
+
+We also propose a compound component:
+
+- accordion_sidebar
+
+```{r echo=FALSE}
+library("htmltools")
+library("shiny")
+library("bsplus")
+```
+
+## Collapse
+
+A collapsible element is attached to a button or link, which is used to show (or hide) the element.
+
+```{r collapse, echo = FALSE}
+tags$button(class = "btn btn-primary", "Click me") %>%
+  bs_attach_collapse(id_collapse = "ex_collapse")
+
+bs_collapse(id = "ex_collapse", content = tags$p("Hi there")) 
+```
+
+To see more of the collapse function-family, please see its vignette.
+
+## Accordion
+
+```{r accordion, echo=FALSE}
+bs_accordion(id = "meet_the_beatles") %>%
+  bs_append(title = "John", content = "Rhythm guitar, vocals") %>%
+  bs_append(title = "Paul", content = "Bass guitar, vocals") %>%
+  bs_append(title = "George", content = "Lead guitar, vocals") %>%
+  bs_append(title = "Ringo", content = "Drums, vocals")
+```
+
+To see more of the accordion function-family, including how to make the entire banner "clickable" and how to change the class of the panels, please see its vignette.
+
+## Accordion sidebar
+
+An accordion-sidebar can be useful to provide another dimension for your **shiny** apps. You can place your inputs into a sidebar, and your outputs into the main panel. 
+
+```{r echo=FALSE, accordion_sidebar}
+bs_accordion_sidebar(id = "beatles") %>%
+  bs_append(
+    title_side = "John Lennon", 
+    content_side = "Rhythm guitar, vocals",
+    content_main = "Dear Prudence"
+  ) %>%
+  bs_append(
+    title_side = "Paul McCartney", 
+    content_side = "Bass guitar, vocals",
+    content_main = "Blackbird"
+  ) %>%
+  bs_append(
+    title_side = "George Harrison", 
+    content_side = "Lead guitar, vocals",
+    content_main = "While My Guitar Gently Weeps"
+  ) %>%
+  bs_append(
+    title_side = "Ringo Starr", 
+    content_side = "Drums, vocals",
+    content_main = "Don't Pass Me By"
+  ) 
+
+use_bs_accordion_sidebar()
+```
+
+It is important call the `use_bs_accordion_sidebar()` function.
+
+## Modal
+
+Need to adjust the pkgdown css to keep the links from interfering with the 
+
+```{r echo=FALSE}
+bs_modal(
+  id = "modal_markdown", 
+  title = "Using Markdown",
+  body = render_html_fragment(
+    system.file("markdown", "modal.md", package = "bsplus"),
+    quiet = TRUE
+  )
+)
+
+tags$button(type = "button", class = "btn btn-primary", "Click for modal") %>%
+  bs_attach_modal(id_modal = "modal_markdown")
+
+tags$p()
+
+tags$button(type = "button", class = "btn btn-primary", "Also, click for modal") %>%
+  bs_attach_modal(id_modal = "modal_markdown")
+```
+
+## Tooltip
+
+``` R
+bs_embed_tooltip(tag, title)
+```
+
+### Example
+
+``` R
+tags$button("John Lennon") %>%
+  bs_embed_tooltip(title = "Rhythm Guitar, vocals")
+```
+
+## Popover
+
+``` R
+bs_embed_popover(tag, title, content)
+```
+
+### Example
+
+``` R
+tags$button("John Lennon") %>%
+  bs_embed_popover(
+    title = "More information",
+    content = "Although he wrote \"I Am the Walrus\", he later insisted that the Walrus was Paul."
+  )
+```
+
+## Carousel
+
+S3 Class
+
+``` R
+bs_carousel(id, use_indicators, use_controls)
+bs_append(carousel, content, caption)
+bs_append_img(carousel, src, alt, caption)
+bs_carousel_caption(title, content) #helper
+```
+
+### Example
+
+``` R
+bs_carousel("the_beatles") %>%
+  bs_append_img(
+    src = "img/john.jpg", alt = "John Lennon", 
+    caption = carousel_caption("John Lennon", "Rhythm guitar, vocals")
+  ) %>%
+  bs_append_img(
+    src = "img/paul.jpg", alt = "Paul McCartney", 
+    caption = carousel_caption("Paul McCartney", "Bass guitar, vocals")
+  ) %>%
+  bs_append_img(
+    src = "img/george.jpg", alt = "George Harrison", 
+    caption = carousel_caption("George Harrison", "Lead guitar, vocals")
+  ) %>%
+  bs_append_img(
+    src = "img/ringo.jpg", alt = "Ringo Starr", 
+    caption = carousel_caption("Ringo Starr", "Drums, vocals")
+  ) 
+```
+
+## Accordion Sidebar
+
+This is an add-on that makes it easier to fit more stuff into a shiny app. S3 class
+
+``` R
+bs_accordion_sidebar(id, spec_side = c(width = 4, offset =0), spec_main = c(width = 8, offset = 0), position = "left") 
+bs_append(accordion_sidebar, title_side, content_side, content_main)
+bs_set_opts(accordion_sidebar, panel_type_active, panel_type_inactive, use_main_panel) 
+```
+
+
+
+
+
+
+
