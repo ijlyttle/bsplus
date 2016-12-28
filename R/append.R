@@ -196,3 +196,65 @@ bs_append.bsplus_accordion_sidebar <- function(tag, title_side, content_side, co
   tag
 }
 
+#' @rdname bs_carousel
+#'
+#' @param tag      \code{htmltools::\link[htmltools]{tag}},
+#'   carousel div to which to append a panel
+#' @param content  \code{htmltools::\link[htmltools]{tag}},
+#'   content for the slide
+#' @param caption  \code{htmltools::\link[htmltools]{tag}},
+#'   caption for the slide
+#'
+#' @export
+#'
+bs_append.bsplus_carousel <- function(tag, content, caption = NULL, ...){
+
+  # get attributes
+  index_indicators <- attr(tag, "bsplus.index_indicators")
+  index_slides <- attr(tag, "bsplus.index_slides")
+
+  id <- htmltools::tagGetAttribute(tag, "id")
+
+  tag_slides <- tag[["children"]][[index_slides]]
+  n_slide <- length(tag_slides[["children"]])
+
+
+  # add indicator
+  if (!is.null(index_indicators)){
+
+    tag_indicator_new <-
+      htmltools::tags$li() %>%
+      bs_set_data(target = .id(id), `slide-to` = n_slide)
+
+    if (identical(n_slide, 0L)){
+      tag_indicator_new <-
+        tag_indicator_new %>%
+        htmltools::tagAppendAttributes(class = "active")
+    }
+
+    tag[["children"]][[index_indicators]] <-
+      tag[["children"]][[index_indicators]] %>%
+      htmltools::tagAppendChild(tag_indicator_new)
+
+  }
+
+  # add slide
+  tag_slide_new <-
+    htmltools::tags$div(
+      class = "item",
+      content,
+      caption
+    )
+
+  if (identical(n_slide, 0L)){
+    tag_slide_new <-
+      tag_slide_new %>%
+      htmltools::tagAppendAttributes(class = "active")
+  }
+
+  tag[["children"]][[index_slides]] <-
+    tag[["children"]][[index_slides]] %>%
+    htmltools::tagAppendChild(tag_slide_new)
+
+  tag
+}

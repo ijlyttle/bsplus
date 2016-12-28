@@ -8,3 +8,10 @@
 ^docs_old$
 ^scratch$
 ^_pkgdown\.yml$
+^vignettes/accordion\.Rmd$
+^vignettes/accordion_sidebar\.Rmd$
+^vignettes/carousel\.Rmd$
+^vignettes/collapse\.Rmd$
+^vignettes/helper_functions\.Rmd$
+^vignettes/modals\.Rmd$
+^vignettes/tooltip_popover\.Rmd$

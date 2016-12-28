@@ -2,7 +2,7 @@
 title: "Overview"
 author: "Ian Lyttle"
 date: "`r Sys.Date()`"
-output: rmarkdown::html_vignette
+output: rmarkdown::html_document
 vignette: >
   %\VignetteIndexEntry{Overview}
   %\VignetteEngine{knitr::rmarkdown}
@@ -31,13 +31,14 @@ We also propose a compound component:
 library("htmltools")
 library("shiny")
 library("bsplus")
+library("knitr")
 ```
 
 ## Collapse
 
 A collapsible element is attached to a button or link, which is used to show (or hide) the element.
 
-```{r collapse, echo = FALSE}
+```{r collapse}
 tags$button(class = "btn btn-primary", "Click me") %>%
   bs_attach_collapse(id_collapse = "ex_collapse")
 
@@ -48,7 +49,7 @@ To see more of the collapse function-family, please see its vignette.
 
 ## Accordion
 
-```{r accordion, echo=FALSE}
+```{r accordion}
 bs_accordion(id = "meet_the_beatles") %>%
   bs_append(title = "John", content = "Rhythm guitar, vocals") %>%
   bs_append(title = "Paul", content = "Bass guitar, vocals") %>%
@@ -62,7 +63,7 @@ To see more of the accordion function-family, including how to make the entire b
 
 An accordion-sidebar can be useful to provide another dimension for your **shiny** apps. You can place your inputs into a sidebar, and your outputs into the main panel. 
 
-```{r echo=FALSE, accordion_sidebar}
+```{r accordion_sidebar}
 bs_accordion_sidebar(id = "beatles") %>%
   bs_append(
     title_side = "John Lennon", 
@@ -94,7 +95,7 @@ It is important call the `use_bs_accordion_sidebar()` function.
 
 Need to adjust the pkgdown css to keep the links from interfering with the 
 
-```{r echo=FALSE}
+```{r modal}
 bs_modal(
   id = "modal_markdown", 
   title = "Using Markdown",
@@ -107,84 +108,60 @@ bs_modal(
 tags$button(type = "button", class = "btn btn-primary", "Click for modal") %>%
   bs_attach_modal(id_modal = "modal_markdown")
 
-tags$p()
-
-tags$button(type = "button", class = "btn btn-primary", "Also, click for modal") %>%
+tags$button(
+  type = "button", 
+  class = "btn btn-primary", 
+  "Different button, same modal"
+) %>%
   bs_attach_modal(id_modal = "modal_markdown")
 ```
 
 ## Tooltip
 
-``` R
-bs_embed_tooltip(tag, title)
-```
-
-### Example
-
-``` R
-tags$button("John Lennon") %>%
+```{r tooltip}
+tags$button(type = "button", class = "btn btn-default", "John Lennon") %>%
   bs_embed_tooltip(title = "Rhythm Guitar, vocals")
+
+use_bs_tooltip()
 ```
+
+Make sure that you call `use_bs_tooltip()`.
 
 ## Popover
 
-``` R
-bs_embed_popover(tag, title, content)
-```
-
-### Example
-
-``` R
-tags$button("John Lennon") %>%
+```{r popover}
+tags$button(type = "button", class = "btn btn-primary","John Lennon") %>%
   bs_embed_popover(
     title = "More information",
     content = "Although he wrote \"I Am the Walrus\", he later insisted that the Walrus was Paul."
   )
+
+use_bs_popover()
 ```
+
+Make sure that you call `use_bs_popover()`.
 
 ## Carousel
 
-S3 Class
-
-``` R
-bs_carousel(id, use_indicators, use_controls)
-bs_append(carousel, content, caption)
-bs_append_img(carousel, src, alt, caption)
-bs_carousel_caption(title, content) #helper
-```
-
-### Example
-
-``` R
-bs_carousel("the_beatles") %>%
-  bs_append_img(
-    src = "img/john.jpg", alt = "John Lennon", 
-    caption = carousel_caption("John Lennon", "Rhythm guitar, vocals")
+```{r}
+bs_carousel(id = "the_beatles", use_indicators = TRUE) %>%
+  bs_append(
+    content = bs_carousel_image(src = image_uri("img/john.jpg"), alt = "John Lennon"),
+    caption = bs_carousel_caption("John Lennon", "Rhythm guitar, vocals")
   ) %>%
-  bs_append_img(
-    src = "img/paul.jpg", alt = "Paul McCartney", 
-    caption = carousel_caption("Paul McCartney", "Bass guitar, vocals")
+  bs_append(
+    content = bs_carousel_image(src = image_uri("img/paul.jpg"), alt = "Paul McCartney"),
+    caption = bs_carousel_caption("Paul McCartney", "Bass guitar, vocals")
   ) %>%
-  bs_append_img(
-    src = "img/george.jpg", alt = "George Harrison", 
-    caption = carousel_caption("George Harrison", "Lead guitar, vocals")
+  bs_append(
+    content = bs_carousel_image(src = image_uri("img/george.jpg"), alt = "George Harrison"),
+    caption = bs_carousel_caption("George Harrison", "Lead guitar, vocals")
   ) %>%
-  bs_append_img(
-    src = "img/ringo.jpg", alt = "Ringo Starr", 
-    caption = carousel_caption("Ringo Starr", "Drums, vocals")
+  bs_append(
+    content = bs_carousel_image(src = image_uri("img/ringo.jpg"), alt = "Ringo Starr"),
+    caption = bs_carousel_caption("Ringo Starr", "Drums, vocals")
   ) 
 ```
-
-## Accordion Sidebar
-
-This is an add-on that makes it easier to fit more stuff into a shiny app. S3 class
-
-``` R
-bs_accordion_sidebar(id, spec_side = c(width = 4, offset =0), spec_main = c(width = 8, offset = 0), position = "left") 
-bs_append(accordion_sidebar, title_side, content_side, content_main)
-bs_set_opts(accordion_sidebar, panel_type_active, panel_type_inactive, use_main_panel) 
-```
-
 
 
 

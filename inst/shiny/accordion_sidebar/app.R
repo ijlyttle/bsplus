@@ -8,54 +8,28 @@ library("bsplus")
 input_number <-
   numericInput(
     inputId = "number",
-    label = "Label with tooltip help",
+    label = "Choose a number",
     value = 0
-  ) %>%
-  shinyInput_label_embed(
-    icon("info") %>%
-    bs_embed_tooltip(title = "Not a complex number")
   )
 
 input_letter <-
   selectInput(
     inputId = "letter",
-    label = "Label with popover help",
+    label = "Choose a letter",
     choices = c("a", "b", "c")
-  ) %>%
-  shinyInput_label_embed(
-    shiny_iconlink() %>%
-    bs_embed_popover(title = "Letter", content = "Choose a favorite")
-  )
-
-modal_equation <-
-  bs_modal(
-    id = "modal_equation",
-    title = "Equations",
-    body =
-      system.file("markdown", "modal.md", package = "bsplus") %>%
-      renderMarkdown() %>%
-      HTML(),
-    size = "medium"
   )
 
 input_equation <-
   selectInput(
     inputId = "equation",
-    label = "Label with modal help",
+    label = "Choose an equation",
     choices = c("F = ma", "E = mc^2")
-  ) %>%
-  shinyInput_label_embed(
-    shiny_iconlink() %>%
-      bs_attach_modal(id_modal = "modal_equation")
   )
 
 # UI
 ui <- shinyUI(fluidPage(
 
   theme = shinytheme("sandstone"),
-
-  # add modals
-  modal_equation,
 
   # Application title
   titlePanel("Accordion Sidebar"),
@@ -77,11 +51,8 @@ ui <- shinyUI(fluidPage(
       content_main = textOutput("equation")
     ),
 
-  # activate tooltips, popovers, accordion-sidebar and MathJax
-  use_bs_tooltip(),
-  use_bs_popover(),
-  use_bs_accordion_sidebar(), # needs to be at end, for some reason
-  withMathJax()
+  # accordion-sidebar
+  use_bs_accordion_sidebar() # needs to be at end, for some reason
 
 ))
 
