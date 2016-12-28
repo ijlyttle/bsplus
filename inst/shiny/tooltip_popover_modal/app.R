@@ -33,8 +33,7 @@ modal_equation <-
     title = "Equations",
     body =
       system.file("markdown", "modal.md", package = "bsplus") %>%
-      renderMarkdown() %>%
-      HTML(),
+      render_html_fragment(),
     size = "medium"
   )
 

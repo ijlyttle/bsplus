@@ -9,7 +9,7 @@ vignette: >
   %\VignetteEncoding{UTF-8}
 ---
 
-The goal of **bsplus** is to provide access to some useful components not already offered in Shiny:
+The goal of **bsplus** is to provide access to some useful components not already offered in **shiny**:
 
 - [collapse](http://getbootstrap.com/javascript/#collapse)
 
@@ -85,15 +85,18 @@ bs_accordion_sidebar(id = "beatles") %>%
     content_side = "Drums, vocals",
     content_main = "Don't Pass Me By"
   ) 
-
-use_bs_accordion_sidebar()
 ```
 
 It is important call the `use_bs_accordion_sidebar()` function.
 
+```{r}
+use_bs_accordion_sidebar()
+```
+
+
 ## Modal
 
-Need to adjust the pkgdown css to keep the links from interfering with the 
+Define a modal window.
 
 ```{r modal}
 bs_modal(
@@ -104,10 +107,18 @@ bs_modal(
     quiet = TRUE
   )
 )
+```
 
+Attach the id of the modal to a button.
+
+```{r}
 tags$button(type = "button", class = "btn btn-primary", "Click for modal") %>%
   bs_attach_modal(id_modal = "modal_markdown")
+```
 
+Attach the id of the modal to another button.
+
+```{r}
 tags$button(
   type = "button", 
   class = "btn btn-primary", 
@@ -121,11 +132,13 @@ tags$button(
 ```{r tooltip}
 tags$button(type = "button", class = "btn btn-default", "John Lennon") %>%
   bs_embed_tooltip(title = "Rhythm Guitar, vocals")
-
-use_bs_tooltip()
 ```
 
 Make sure that you call `use_bs_tooltip()`.
+
+```{r}
+use_bs_tooltip()
+```
 
 ## Popover
 
@@ -133,33 +146,38 @@ Make sure that you call `use_bs_tooltip()`.
 tags$button(type = "button", class = "btn btn-primary","John Lennon") %>%
   bs_embed_popover(
     title = "More information",
-    content = "Although he wrote \"I Am the Walrus\", he later insisted that the Walrus was Paul."
+    content = paste(
+      "Although he wrote \"I Am the Walrus\",",
+      "he later insisted that the Walrus was Paul."
+    )
   )
-
-use_bs_popover()
 ```
 
 Make sure that you call `use_bs_popover()`.
+
+```{r}
+use_bs_popover()
+```
 
 ## Carousel
 
 ```{r}
 bs_carousel(id = "the_beatles", use_indicators = TRUE) %>%
   bs_append(
-    content = bs_carousel_image(src = image_uri("img/john.jpg"), alt = "John Lennon"),
-    caption = bs_carousel_caption("John Lennon", "Rhythm guitar, vocals")
+    bs_carousel_image(src = image_uri("img/john.jpg")),
+    bs_carousel_caption("John Lennon", "Rhythm guitar, vocals")
   ) %>%
   bs_append(
-    content = bs_carousel_image(src = image_uri("img/paul.jpg"), alt = "Paul McCartney"),
-    caption = bs_carousel_caption("Paul McCartney", "Bass guitar, vocals")
+    bs_carousel_image(src = image_uri("img/paul.jpg")),
+    bs_carousel_caption("Paul McCartney", "Bass guitar, vocals")
   ) %>%
   bs_append(
-    content = bs_carousel_image(src = image_uri("img/george.jpg"), alt = "George Harrison"),
-    caption = bs_carousel_caption("George Harrison", "Lead guitar, vocals")
+    bs_carousel_image(src = image_uri("img/george.jpg")),
+    bs_carousel_caption("George Harrison", "Lead guitar, vocals")
   ) %>%
   bs_append(
-    content = bs_carousel_image(src = image_uri("img/ringo.jpg"), alt = "Ringo Starr"),
-    caption = bs_carousel_caption("Ringo Starr", "Drums, vocals")
+    bs_carousel_image(src = image_uri("img/ringo.jpg")),
+    bs_carousel_caption("Ringo Starr", "Drums, vocals")
   ) 
 ```
 
