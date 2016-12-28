@@ -5,7 +5,8 @@
 \alias{use_bs_popover}
 \title{Embed a popover into an html element}
 \usage{
-bs_embed_popover(tag, title = NULL, content = NULL, placement = NULL, ...)
+bs_embed_popover(tag, title = NULL, content = NULL, placement = "top",
+  ...)
 
 use_bs_popover()
 }

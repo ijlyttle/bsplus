@@ -5,7 +5,7 @@
 \alias{use_bs_tooltip}
 \title{Embed a tooltip into an html element}
 \usage{
-bs_embed_tooltip(tag, title = "", placement = c("right", "auto"), ...)
+bs_embed_tooltip(tag, title = "", placement = "top", ...)
 
 use_bs_tooltip()
 }
