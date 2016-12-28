@@ -24,7 +24,7 @@
 #'   bs_embed_tooltip(title = "I'm a tooltip")
 #' @export
 #'
-bs_embed_tooltip <- function(tag, title = "", placement = c("right", "auto"),
+bs_embed_tooltip <- function(tag, title = "", placement = "top",
                              ...){
   tag %>%
     .tag_validate() %>%

@@ -36,7 +36,7 @@
 #' @export
 #'
 bs_embed_popover <- function(tag, title = NULL, content = NULL,
-                             placement = NULL, ...){
+                             placement = "top", ...){
 
   tag %>%
     .tag_validate() %>%
