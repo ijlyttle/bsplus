@@ -84,7 +84,7 @@
     <p>This is useful to add a few words of explanation to an element.</p>
     
 
-    <pre><span class='fu'>bs_embed_tooltip</span>(<span class='no'>tag</span>, <span class='kw'>title</span> <span class='kw'>=</span> <span class='st'>""</span>, <span class='kw'>placement</span> <span class='kw'>=</span> <span class='fu'>c</span>(<span class='st'>"right"</span>, <span class='st'>"auto"</span>), <span class='no'>...</span>)
+    <pre><span class='fu'>bs_embed_tooltip</span>(<span class='no'>tag</span>, <span class='kw'>title</span> <span class='kw'>=</span> <span class='st'>""</span>, <span class='kw'>placement</span> <span class='kw'>=</span> <span class='st'>"top"</span>, <span class='no'>...</span>)
 
 <span class='fu'>use_bs_tooltip</span>()</pre>
     
@@ -122,7 +122,7 @@ and a popover into a tag.</p>
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'><span class='fu'>library</span>(<span class='st'>"htmltools"</span>)
 <span class='no'>tags</span>$<span class='fu'>button</span>(<span class='kw'>type</span> <span class='kw'>=</span> <span class='st'>"button"</span>, <span class='kw'>class</span> <span class='kw'>=</span> <span class='st'>"btn btn-default"</span>, <span class='st'>"I'm a button"</span>) <span class='kw'>%&gt;%</span>
-  <span class='fu'>bs_embed_tooltip</span>(<span class='kw'>title</span> <span class='kw'>=</span> <span class='st'>"I'm a tooltip"</span>)</div><div class='output co'>#&gt; &lt;button type=&quot;button&quot; class=&quot;btn btn-default&quot; title=&quot;I&amp;#39;m a tooltip&quot; data-toggle=&quot;tooltip&quot; data-placement=&quot;right auto&quot;&gt;I&#39;m a button&lt;/button&gt;</div></pre>
+  <span class='fu'>bs_embed_tooltip</span>(<span class='kw'>title</span> <span class='kw'>=</span> <span class='st'>"I'm a tooltip"</span>)</div><div class='output co'>#&gt; &lt;button type=&quot;button&quot; class=&quot;btn btn-default&quot; title=&quot;I&amp;#39;m a tooltip&quot; data-toggle=&quot;tooltip&quot; data-placement=&quot;top&quot;&gt;I&#39;m a button&lt;/button&gt;</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>

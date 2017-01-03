@@ -193,12 +193,12 @@ bs_carousel(id = "the_beatles", use_indicators = TRUE) %>%
 
 ## Help links
 
-Links to [shiny app](https://ijlyttle.shinyapps.io/tooltip_popover_modal/#)
-
 ```{r}
-icon("info") %>%
-    bs_embed_tooltip(title = "Not a complex number")
+shiny_iconlink() %>%
+  bs_embed_popover(title = "Help!", content = "I need somebody")
 ```
+
+
 
 
 

@@ -1,0 +1,115 @@
+---
+title: "Helper functions"
+author: "Ian Lyttle"
+date: "`r Sys.Date()`"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Helper functions}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+### Helpers
+
+It could be useful to take a Shiny input and embed a help link into the label. This help link 
+would have a modal window attached.
+
+Do all shiny inputs have class "form-group shiny-input-container"?
+
+Is a label element always the first child?
+
+``` R
+bs_modal(id = "my_modal", ...)
+
+my_shiny_input <- selectInput(...)
+
+shiny_iconlink <- function(...){
+  htmltools::tags$a(shiny::icon(...))
+}
+
+shinyInput_label_embed <- function(shinyInput, tag){
+
+  # validate shiny input
+  shinyInput <- 
+    .tag_validate(
+      shinyInput, 
+      name = "div", 
+      class = "form-group shiny-input-container"
+    )
+
+  # get existing label elements
+  label_elements <- shinyInput$children[[1]]$children
+  
+  # compose new label
+  label_new <- htmltools::tags$span(label_elements, tag)
+  
+  # put link into input
+  shinyInput$children[[1]] <-
+    htmltools::tagSetChildren(shinyInput$children[[1]], label_new)
+
+  shinyInput
+}
+
+link <-
+  shiny_iconlink() %>%
+  bs_attach_modal("my_modal")
+
+my_shiny_input %>%
+  shinyInput_label_embed(link = link)
+  
+my_shiny_input %>%
+  shinyInput_label_embed(
+    shiny_iconlink() %>%
+    bs_attach_modal("my_modal")
+  )
+
+my_shiny_input %>%
+  shinyInput_label_embed(
+    shiny_iconlink() %>%
+    bs_embed_popover(...)
+  )
+
+  
+```
+
+### Example
+
+``` R
+bs_modal(
+  id = "help"
+  title = "I need somebody"
+  content = tagList(
+    tags$h4("Help!"),
+    tags$p("Not just anybody")
+  )
+)
+
+tags$button("Help!") %>%
+  bs_attach_modal(id_modal = "help")
+
+selectInput(
+  inputId = "beatles_for_sale",
+  label = "Choose a Beatle",
+  choices = c("John", "Paul", "George", "Ringo")
+) %>%
+  bs_embed_modalhelp(id_modal = "help")
+```
+
+### Helper function
+
+``` R
+bs_set_data(tag, ...)
+bs_set_aria(tag, ...)
+```
+
+for the each of the named `...` args
+
+- prefixes the names with `data-` or `aria-`
+
+- converts logical values to `"true"` and `"false"`
+
+- converts lubridate durations to milliseconds
+
+- converts vectors to space-delimited character strings
+
+**Note** we have to go around the htmltools API to set (rather than append) the attributes 

@@ -41,55 +41,13 @@
       <h1>Carousel</h1>
                         <h4 class="author">Ian Lyttle</h4>
             
-            <h4 class="date">2016-12-27</h4>
+            <h4 class="date">2017-01-02</h4>
           </div>
 
     
     
 <div class="contents">
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(<span class="st">"gapminder"</span>)
-<span class="kw">library</span>(<span class="st">"ggplot2"</span>)
-<span class="kw">library</span>(<span class="st">"bsplus"</span>)
-<span class="kw">library</span>(<span class="st">"gganimate"</span>)</code></pre></div>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">tmp &lt;-<span class="st"> </span>
-<span class="st">  </span><span class="kw">ggplot</span>(gapminder, <span class="kw">aes</span>(gdpPercap, lifeExp, <span class="dt">size =</span> pop, <span class="dt">frame =</span> continent)) +
-<span class="st">  </span><span class="kw">geom_point</span>() +
-<span class="st">  </span><span class="kw">scale_x_log10</span>()
-
-tmp2 &lt;-<span class="st"> </span>ggplot2::<span class="kw">ggplot_build</span>(tmp)
-
-tmp3 &lt;-<span class="st"> </span><span class="kw">gganimate</span>(tmp)</code></pre></div>
-<p>S3 Class</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw"><a href="../reference/bs_append.bsplus_carousel.html">bs_carousel</a></span>(id, use_indicators, use_controls)
-<span class="kw"><a href="../reference/bs_append.html">bs_append</a></span>(tag, content, caption)
-<span class="kw"><a href="../reference/bs_append.bsplus_carousel.html">bs_carousel_caption</a></span>(title, body) <span class="co">#helper</span></code></pre></div>
-<div id="example" class="section level3">
-<h3 class="hasAnchor"><html><body><a href="#example" class="anchor"> </a></body></html>Example</h3>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(<span class="st">"htmltools"</span>)
-
-<span class="kw"><a href="../reference/bs_append.bsplus_carousel.html">bs_carousel</a></span>(<span class="st">"the_beatles"</span>) %&gt;%
-<span class="st">  </span><span class="kw"><a href="../reference/bs_append.html">bs_append</a></span>(
-    <span class="dt">content =</span> <span class="kw">img</span>(<span class="dt">src =</span> <span class="st">"img/john.png"</span>, <span class="dt">alt =</span> <span class="st">"John Lennon"</span>),
-    <span class="dt">caption =</span> <span class="kw"><a href="../reference/bs_append.bsplus_carousel.html">bs_carousel_caption</a></span>(<span class="st">"John Lennon"</span>, <span class="st">"Rhythm guitar, vocals"</span>)
-  ) %&gt;%
-<span class="st">  </span><span class="kw">bs_append_img</span>(
-    <span class="dt">content =</span> <span class="kw">img</span>(<span class="dt">src =</span> <span class="st">"img/paul.png"</span>, <span class="dt">alt =</span> <span class="st">"Paul McCartney"</span>),
-    <span class="dt">caption =</span> <span class="kw"><a href="../reference/bs_append.bsplus_carousel.html">bs_carousel_caption</a></span>(<span class="st">"Paul McCartney"</span>, <span class="st">"Bass guitar, vocals"</span>)
-  ) %&gt;%
-<span class="st">  </span><span class="kw">bs_append_img</span>(
-    <span class="dt">content =</span> <span class="kw">img</span>(<span class="dt">src =</span> <span class="st">"img/george.png"</span>, <span class="dt">alt =</span> <span class="st">"George Harrison"</span>),
-    <span class="dt">caption =</span> <span class="kw"><a href="../reference/bs_append.bsplus_carousel.html">bs_carousel_caption</a></span>(<span class="st">"George Harrison"</span>, <span class="st">"Lead guitar, vocals"</span>)
-  ) %&gt;%
-<span class="st">  </span><span class="kw">bs_append_img</span>(
-    <span class="dt">content =</span> <span class="kw">img</span>(<span class="dt">src =</span> <span class="st">"img/ringo.png"</span>, <span class="dt">alt =</span> <span class="st">"Ringo Starr"</span>),
-    <span class="dt">caption =</span> <span class="kw"><a href="../reference/bs_append.bsplus_carousel.html">bs_carousel_caption</a></span>(<span class="st">"Ringo Starr"</span>, <span class="st">"Drums, vocals"</span>)
-  ) </code></pre></div>
-<p>Let&rsquo;s say we have a dataframe with columns:</p>
-<ul><li><code>src</code>, relative path to image from file</li>
-<li><code>alt</code>, (optional) character, alternative text</li>
-<li><code>caption</code>, (optional) HTML for captions</li>
-</ul><p>Also, think about how to incorporate this with gganimate</p>
-</div>
+<p>Talk about carousels</p>
 </div>
   </div>
 

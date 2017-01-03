@@ -13,7 +13,7 @@ The goals of this package are:
 
 2. To allow you to compose HTML using pipes.
 
-In this package, we have function families for:
+In this package, there are function families for:
 
 - collapsing elements: `bs_collapse()`
 - accordion panels: `bs_accordion()`
@@ -24,10 +24,8 @@ In this package, we have function families for:
 
 There are also helper functions:
 
-- embed help links into **shiny** inputs: `shiny_iconlink()`, `shinyInput_label_embed()`.
+- embed help-links into **shiny** inputs: `shiny_iconlink()`, `shinyInput_label_embed()`.
 - read a markdown file to return an HTML fragment (useful for modal content): `render_html_fragment()`
-
-To see the elements in action, the vignettes are a great place to start.
 
 ## Grammar and vocabulary
 
@@ -45,9 +43,9 @@ Let's start with the conventions used to name the functions:
 
 ## Nouns
 
-Usually, we use the words *element* and *tag* interchangably - we are talking about HTML elements. In the grammar of this documentation (and package), it can be useful to think about *direct* objects and *indirect* objects, so we will use the word *tag* to denote *direct* objects, and the words *element* or *thing*  to denote *indirect* objects.
+Usually, we use the words *element* and *tag* interchangeably - we are talking about HTML elements. In the grammar of this documentation (and package), it can be useful to think about *direct* objects and *indirect* objects, so the word *tag* is used to denote *direct* objects, and the words *element* or *thing* are used to denote *indirect* objects.
 
-When we pipe, the first argument will always be the direct object; the name of the first argument of many functions is `tag` - you will be sending the tag through the pipe.
+In the context of a set of piped functions, the first argument will always be the direct object; the name of the first argument of many functions is `tag` - you will be sending the tag through the pipe.
 
 ## Verbs
 
@@ -59,19 +57,8 @@ When we pipe, the first argument will always be the direct object; the name of t
 Let's consider the differences between `append`, `attach`, and `embed`:
 
 - You can *append* more than one element to a tag, i.e., you could append multiple panels to an accordion-group.
-- You can *attach* only one id of a thing to a tag. When we are attaching, we attach the id of an element, not the element itself. **However**, we can attach an id of an element to more than one tag.
-- You can *embed* only one thing into a tag. i.e., into a given tag, we embed a tooltip or a popover, modifying the attributes and setting a child element.
-
-### Ways I am abusing **htmltools**
-
-There are places that I am not using the official **htmltools** API; I should probably note those here:
-
-If we had these functions, I could avoid the abuse:
-
-- `tagSetAttributes()` - clears and sets, rather than appends attributes
-- `tagName()` - gets the name of the tag, i.e. "div", "button"
-
-I will detail this more as I get the time...
+- You can *attach* only one id of a thing to a tag. When we are attaching, we attach the *id* of an element, not the element itself. However, we can attach an id of an element to more than one tag.
+- You can *embed* only one thing into a tag. i.e., into a given tag, you can embed a tooltip or a popover, modifying the attributes and setting a child element.
 
 ## Acknowledgments
 
