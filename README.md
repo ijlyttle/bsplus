@@ -11,7 +11,7 @@ The goals of this package are:
 
 1. To provide a framework to use Bootstrap's markup API: http://getbootstrap.com/javascript/
 
-2. To allow you to compose HTML using pipes.
+2. To promote composition of HTML using pipes.
 
 In this package, there are function families for:
 
@@ -50,9 +50,9 @@ In the context of a set of piped functions, the first argument will always be th
 ## Verbs
 
 - `bs_append(tag, ...)` used to append something to a tag, perhaps a panel into an accordion-group.
-- `bs_attach(tag, ...)` used to attach the id of an element to another tag, for example, you could create a modal window using `bs_modal()`, then you could *attach* the id of the modal window to 
-- `bs_emded_foo(tag, ...)` we are embed something (a foo) into a tag
-- `bs_set_opts(tag, ...)` we are setting some options for the items yet to be appended to a tag
+- `bs_attach(tag, ...)` used to attach the id of an element to another tag, for example, you could create a modal window using `bs_modal()`, then you could *attach* the id of the modal window to the tag,
+- `bs_emded_foo(tag, ...)` used to embed something (a foo) into a tag.
+- `bs_set_opts(tag, ...)` used to set some options for the items yet to be appended to a tag.
 
 Let's consider the differences between `append`, `attach`, and `embed`:
 

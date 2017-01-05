@@ -58,17 +58,16 @@ reference:
     - render_html_fragment
 
 articles:
-- title: "Introduction"
+- title: "Overview"
   contents:
   - overview
-  - helper_functions
 - title: "Elements"
   contents:
   - collapse
   - accordion
   - accordion_sidebar
   - tooltip_popover
-  - modals
+  - modal
   - carousel
 
 

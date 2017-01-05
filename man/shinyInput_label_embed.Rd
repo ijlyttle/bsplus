@@ -2,20 +2,29 @@
 % Please edit documentation in R/shiny.R
 \name{shinyInput_label_embed}
 \alias{shinyInput_label_embed}
-\title{Embed a tag into the label of a Shiny input}
+\title{Embed an element into the label of a Shiny-input tag}
 \usage{
-shinyInput_label_embed(shinyInput, tag)
+shinyInput_label_embed(tag, element)
 }
 \arguments{
-\item{shinyInput}{Shiny input, such as \code{shiny::\link[shiny]{numericInput}}}
+\item{tag}{Shiny input, such as \code{shiny::\link[shiny]{numericInput}}}
 
-\item{tag}{\code{htmltools::\link[htmltools]{tag}}, usually a link}
+\item{element}{\code{htmltools::\link[htmltools]{tag}} to be embedded
+into label of \code{tag}}
 }
 \value{
-Shiny input, modified copy of \code{shinyInput}
+Shiny input, modified copy of \code{tag}
 }
 \description{
-Embed a tag into the label of a Shiny input
+The element embedded into the Shiny input will be pulled to the
+right edge of the label.
+}
+\details{
+To promote consistency, the following convention is proposed:
+
+For links (activated by clicking), embed a \code{shiny::icon("info-circle")};
+this is the default for \code{\link{shiny_iconlink}}. For elements activated
+by hovering, embed a \code{shiny::icon("info")}.
 }
 \examples{
 library("shiny")

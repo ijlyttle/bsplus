@@ -32,12 +32,22 @@ shiny_iconlink <- function(name = "info-circle", ...){
   htmltools::tags$a(shiny::icon(name = name, ...), href = "#")
 }
 
-#' Embed a tag into the label of a Shiny input
+#' Embed an element into the label of a Shiny-input tag
 #'
-#' @param shinyInput Shiny input, such as \code{shiny::\link[shiny]{numericInput}}
-#' @param tag        \code{htmltools::\link[htmltools]{tag}}, usually a link
+#' The element embedded into the Shiny input will be pulled to the
+#' right edge of the label.
 #'
-#' @return Shiny input, modified copy of \code{shinyInput}
+#' To promote consistency, the following convention is proposed:
+#'
+#' For links (activated by clicking), embed a \code{shiny::icon("info-circle")};
+#' this is the default for \code{\link{shiny_iconlink}}. For elements activated
+#' by hovering, embed a \code{shiny::icon("info")}.
+#'
+#' @param tag     Shiny input, such as \code{shiny::\link[shiny]{numericInput}}
+#' @param element \code{htmltools::\link[htmltools]{tag}} to be embedded
+#'   into label of \code{tag}
+#'
+#' @return Shiny input, modified copy of \code{tag}
 #' @examples
 #' library("shiny")
 #'
@@ -50,25 +60,25 @@ shiny_iconlink <- function(name = "info-circle", ...){
 #' @seealso \code{\link{shiny_iconlink}}
 #' @export
 #'
-shinyInput_label_embed <- function(shinyInput, tag){
+shinyInput_label_embed <- function(tag, element){
 
   # validate shiny input
-  shinyInput <-
+  tag <-
     .tag_validate(
-      shinyInput,
+      tag,
       name = "div",
       class = "form-group shiny-input-container"
     )
 
-  # wrap tag in a div that pulls right
-  tag <- htmltools::div(class = "pull-right", tag)
+  # wrap element in a div that pulls right
+  element <- htmltools::div(class = "pull-right", element)
 
-  # shinyInput$children[[1]] is a <label/>
-  # add tag to children, add style attribute
-  shinyInput$children[[1]] <-
-    shinyInput$children[[1]] %>%
-    htmltools::tagAppendChild(tag) %>%
+  # tag$children[[1]] is a <label/>
+  # add element to children, add style attribute
+  tag$children[[1]] <-
+    tag$children[[1]] %>%
+    htmltools::tagAppendChild(element) %>%
     htmltools::tagAppendAttributes(style = "width:100%;")
 
-  shinyInput
+  tag
 }

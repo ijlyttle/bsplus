@@ -12,6 +12,6 @@
 ^vignettes/accordion_sidebar\.Rmd$
 ^vignettes/carousel\.Rmd$
 ^vignettes/collapse\.Rmd$
-^vignettes/helper_functions\.Rmd$
-^vignettes/modals\.Rmd$
+^vignettes/modal\.Rmd$
 ^vignettes/tooltip_popover\.Rmd$
+^vignettes/help_links\.Rmd$

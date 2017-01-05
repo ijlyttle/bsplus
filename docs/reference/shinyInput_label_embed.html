@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Embed a tag into the label of a Shiny input — shinyInput_label_embed • bsplus</title>
+<title>Embed an element into the label of a Shiny-input tag — shinyInput_label_embed • bsplus</title>
 
 <!-- jquery -->
 <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha384-nrOSfDHtoPMzJHjVTdCopGqIqeYETSXhZDFyniQ8ZHcVy08QesyHcnOUpMpqnmWq" crossorigin="anonymous"></script>
@@ -77,26 +77,35 @@
       <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Embed a tag into the label of a Shiny input</h1>
+    <h1>Embed an element into the label of a Shiny-input tag</h1>
     </div>
 
     
-    <p>Embed a tag into the label of a Shiny input</p>
+    <p>The element embedded into the Shiny input will be pulled to the
+right edge of the label.</p>
     
 
-    <pre><span class='fu'>shinyInput_label_embed</span>(<span class='no'>shinyInput</span>, <span class='no'>tag</span>)</pre>
+    <pre><span class='fu'>shinyInput_label_embed</span>(<span class='no'>tag</span>, <span class='no'>element</span>)</pre>
     
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a> Arguments</h2>
     <dl class="dl-horizontal">
-      <dt>shinyInput</dt>
-      <dd>Shiny input, such as <code>shiny::<a href='http://www.rdocumentation.org/packages/shiny/topics/numericInput'>numericInput</a></code></dd>
       <dt>tag</dt>
-      <dd><code>htmltools::<a href='http://www.rdocumentation.org/packages/htmltools/topics/tag'>tag</a></code>, usually a link</dd>
+      <dd>Shiny input, such as <code>shiny::<a href='http://www.rdocumentation.org/packages/shiny/topics/numericInput'>numericInput</a></code></dd>
+      <dt>element</dt>
+      <dd><code>htmltools::<a href='http://www.rdocumentation.org/packages/htmltools/topics/tag'>tag</a></code> to be embedded
+into label of <code>tag</code></dd>
     </dl>
     
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
-    <p>Shiny input, modified copy of <code>shinyInput</code></p>
+    <p>Shiny input, modified copy of <code>tag</code></p>
+    
+    <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
+
+    <p>To promote consistency, the following convention is proposed:</p>
+    <p>For links (activated by clicking), embed a <code>shiny::icon(&quot;info-circle&quot;)</code>;
+this is the default for <code><a href='shiny_iconlink.html'>shiny_iconlink</a></code>. For elements activated
+by hovering, embed a <code>shiny::icon(&quot;info&quot;)</code>.</p>
     
     <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
 
@@ -129,6 +138,8 @@
       <li><a href="#arguments">Arguments</a></li>
       
       <li><a href="#value">Value</a></li>
+
+      <li><a href="#details">Details</a></li>
 
       <li><a href="#see-also">See also</a></li>
       

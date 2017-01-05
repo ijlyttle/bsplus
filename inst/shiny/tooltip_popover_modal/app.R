@@ -24,7 +24,9 @@ input_letter <-
   ) %>%
   shinyInput_label_embed(
     shiny_iconlink() %>%
-    bs_embed_popover(title = "Letter", content = "Choose a favorite")
+    bs_embed_popover(
+      title = "Letter", content = "Choose a favorite", placement = "left"
+    )
   )
 
 modal_equation <-
