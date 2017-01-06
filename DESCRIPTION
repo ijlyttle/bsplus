@@ -1,6 +1,6 @@
 Package: bsplus
 Type: Package
-Title: Adds functionality to the R Markdown + Shiny Bootstrap framework
+Title: Adds Functionality to the R Markdown + Shiny Bootstrap Framework
 Version: 0.0.9.9003
 Authors@R: c(
     person(
@@ -9,7 +9,7 @@ Authors@R: c(
       email = "ian.lyttle@schneider-electric.com",
       role = c("aut", "cre", "cph")
     ),
-    person(family = "Schneider Electric", role = c("cph", "fnd")),
+    person(family = "Schneider Electric", role = c("cph")),
     person(given = "Alex", family = "Shum", email = "alex@ALShum.com", role = c("ctb")),
     person(given = "Emily", family = "Berry", email = "emily.berry@schneider-electric.com", role = c("ctb"))
   )
@@ -36,6 +36,5 @@ RoxygenNote: 5.0.1
 Suggests: testthat,
     shiny,
     covr,
-    knitr,
-    rmarkdown
+    knitr
 VignetteBuilder: knitr
