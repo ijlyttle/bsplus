@@ -14,34 +14,31 @@ library("htmltools")
 library("bsplus")
 ```
 
-The collapse family of functions may not be the most useful, but it gives us a place to start. 
+The `bs_collapse()` family of functions may not be the most useful, but it gives us a place to start. 
 
-
-## Example
-
-First, let's build the stuff we will put into the collapse elements:
-
-```{r button}
-button <- tags$button("She Loves You", class = "btn btn-primary")
-hidden <- tags$div(class = "well", "Yeah Yeah Yeah")
-```
-
-Now let's create our collapsible content. The first step is to create the div using the `collapse()` function, supplying a unique id and the content to include.
+The first step is to create (and publish to the page) a collapsible element, using the `bs_collapse()` function, supplying a unique `id` and some HTML `content`.
 
 ```{r bs_collapse}
-bs_collapse(id = "id_yeah", content = hidden)
+bs_collapse(
+  id = "yeah", 
+  content = tags$div(class = "well", "Yeah Yeah Yeah")
+)
 ```
 
-Next we attach the id of our collapsible div to our button using the `attach_collapse()` function, which returns a modified copy of the button or link sent to it.
+Next, attach the `id` of the collapsible element to a button or link tag, using the `bs_attach_collapse()` function. This returns a modified copy of the tag sent to it.
 
 ```{r bs_attach_collapse}
-button %>%
-  bs_attach_collapse(id_collapse = "id_yeah")
+tags$button("She Loves You", class = "btn btn-primary") %>%
+  bs_attach_collapse("yeah")
 ```
 
-You are able to attach a collapsible div to a button or to a link. In fact, you are able to attach a collapsible div to as many buttons or links as you like:
+You can attach the `id` of a collapsible element to as many buttons or links as you like:
 
 ```{r new_button}
 tags$button("Sie Liebt Dich", class = "btn btn-primary") %>%
-  bs_attach_collapse("id_yeah")
+  bs_attach_collapse("yeah")
 ```
+
+## Reference
+
+For more information, please see the [Bootstrap JavaScript page](http://getbootstrap.com/javascript/#collapse).

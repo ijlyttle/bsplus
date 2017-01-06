@@ -40,19 +40,29 @@
     <div id="bsplus" class="section level1">
 <div class="page-header"><h1 class="hasAnchor"><a href="#bsplus" class="anchor"> </a>bsplus</h1></div>
 
+<div id="installation" class="section level2">
+<h2 class="hasAnchor">
+<a href="#installation" class="anchor"> </a>Installation</h2>
+<p>This package is not yet on CRAN. You can install the latest development version from github with:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">if (<span class="kw">packageVersion</span>(<span class="st">"devtools"</span>) &lt;<span class="st"> </span><span class="fl">1.6</span>) {
+  <span class="kw">install.packages</span>(<span class="st">"devtools"</span>)
+}
+devtools::<span class="kw">install_github</span>(<span class="st">"ijlyttle/bsplus"</span>)</code></pre></div>
+</div>
 <div id="introduction" class="section level2">
 <h2 class="hasAnchor">
 <a href="#introduction" class="anchor"> </a>Introduction</h2>
 <p>To see all of this in action, you are referred to the <a href="http://ijlyttle.github.io/bsplus/articles/index.html">articles page</a> at this package&rsquo;s <strong>pkgdown</strong> site.</p>
 <p>The goals of this package are:</p>
-<ol><li><p>To provide a framework to use Bootstrap&rsquo;s markup API: <a href="http://getbootstrap.com/javascript/" class="uri">http://getbootstrap.com/javascript/</a></p></li>
-<li><p>To allow you to compose HTML using pipes.</p></li>
-</ol><p>In this package, there are function families for:</p>
-<ul><li>collapsing elements: <code><a href="reference/bs_collapse.html">bs_collapse()</a></code>
+<ul><li>to provide a framework to use Bootstrap&rsquo;s markup API: <a href="http://getbootstrap.com/javascript/" class="uri">http://getbootstrap.com/javascript/</a>
+</li>
+<li>to promote composition of HTML using pipes.</li>
+</ul><p>In this package, there are function families for:</p>
+<ul><li>collapsible elements: <code><a href="reference/bs_collapse.html">bs_collapse()</a></code>
 </li>
 <li>accordion panels: <code><a href="reference/bs_accordion.html">bs_accordion()</a></code>
 </li>
-<li>accordion sidebar sets: <code><a href="reference/bs_accordion_sidebar.html">bs_accordion_sidebar()</a></code>
+<li>accordion-sidebar sets: <code><a href="reference/bs_accordion_sidebar.html">bs_accordion_sidebar()</a></code>
 </li>
 <li>tooltips: <code><a href="reference/bs_embed_tooltip.html">bs_embed_tooltip()</a></code>
 </li>
@@ -61,8 +71,11 @@
 <li>modals: <code><a href="reference/bs_modal.html">bs_modal()</a></code>
 </li>
 </ul><p>There are also helper functions:</p>
-<ul><li>embed help-links into <strong>shiny</strong> inputs: <code><a href="reference/shiny_iconlink.html">shiny_iconlink()</a></code>, <code><a href="reference/shinyInput_label_embed.html">shinyInput_label_embed()</a></code>.</li>
+<ul><li>embed help-links into <strong>shiny</strong> inputs: <code><a href="reference/shiny_iconlink.html">shiny_iconlink()</a></code>, <code><a href="reference/shinyInput_label_embed.html">shinyInput_label_embed()</a></code>
+</li>
 <li>read a markdown file to return an HTML fragment (useful for modal content): <code><a href="reference/render_html_fragment.html">render_html_fragment()</a></code>
+</li>
+<li>set <code>data-</code> and <code>aria-</code> attributes of tags: <code><a href="reference/bs_set_data.html">bs_set_data()</a></code>, <code><a href="reference/bs_set_data.html">bs_set_aria()</a></code>
 </li>
 </ul></div>
 <div id="grammar-and-vocabulary" class="section level2">
@@ -78,7 +91,7 @@
 <div id="nouns" class="section level2">
 <h2 class="hasAnchor">
 <a href="#nouns" class="anchor"> </a>Nouns</h2>
-<p>Usually, we use the words <em>element</em> and <em>tag</em> interchangeably - we are talking about HTML elements. In the grammar of this documentation (and package), it can be useful to think about <em>direct</em> objects and <em>indirect</em> objects, so the word <em>tag</em> is used to denote <em>direct</em> objects, and the words <em>element</em> or <em>thing</em> are used to denote <em>indirect</em> objects.</p>
+<p>Often we use the words <em>element</em> and <em>tag</em> interchangeably - we are talking about HTML elements. In the grammar of this documentation (and package), it can be useful to think about <em>direct</em> objects and <em>indirect</em> objects, so the word <em>tag</em> is used to denote <em>direct</em> objects, and the words <em>element</em> or <em>thing</em> are used to denote <em>indirect</em> objects.</p>
 <p>In the context of a set of piped functions, the first argument will always be the direct object; the name of the first argument of many functions is <code>tag</code> - you will be sending the tag through the pipe.</p>
 </div>
 <div id="verbs" class="section level2">
@@ -87,11 +100,11 @@
 <ul><li>
 <code><a href="reference/bs_append.html">bs_append(tag, ...)</a></code> used to append something to a tag, perhaps a panel into an accordion-group.</li>
 <li>
-<code>bs_attach(tag, ...)</code> used to attach the id of an element to another tag, for example, you could create a modal window using <code><a href="reference/bs_modal.html">bs_modal()</a></code>, then you could <em>attach</em> the id of the modal window to</li>
+<code>bs_attach(tag, ...)</code> used to attach the id of an element to another tag, for example, you could create a modal window using <code><a href="reference/bs_modal.html">bs_modal()</a></code>, then you could <em>attach</em> the id of the modal window to the tag,</li>
 <li>
-<code>bs_emded_foo(tag, ...)</code> we are embed something (a foo) into a tag</li>
+<code>bs_emded_foo(tag, ...)</code> used to embed something (a foo) into a tag.</li>
 <li>
-<code><a href="reference/bs_set_opts.html">bs_set_opts(tag, ...)</a></code> we are setting some options for the items yet to be appended to a tag</li>
+<code><a href="reference/bs_set_opts.html">bs_set_opts(tag, ...)</a></code> used to set some options for the items yet to be appended to a tag.</li>
 </ul><p>Let&rsquo;s consider the differences between <code>append</code>, <code>attach</code>, and <code>embed</code>:</p>
 <ul><li>You can <em>append</em> more than one element to a tag, i.e., you could append multiple panels to an accordion-group.</li>
 <li>You can <em>attach</em> only one id of a thing to a tag. When we are attaching, we attach the <em>id</em> of an element, not the element itself. However, we can attach an id of an element to more than one tag.</li>
@@ -100,7 +113,12 @@
 <div id="acknowledgments" class="section level2">
 <h2 class="hasAnchor">
 <a href="#acknowledgments" class="anchor"> </a>Acknowledgments</h2>
-<p>This package draws inspiration from the <strong>shinybs</strong> package written by Eric Bailey.</p>
+<p>This package draws inspiration from the <strong>shinybs</strong> package written by Eric Bailey, and leans heavily on the <strong>htmltools</strong> package written by Joe Cheng.</p>
+</div>
+<div id="code-of-conduct" class="section level2">
+<h2 class="hasAnchor">
+<a href="#code-of-conduct" class="anchor"> </a>Code of conduct</h2>
+<p>Please note that this project is released with a <a href="CONDUCT.md">Contributor Code of Conduct</a>. By participating in this project you agree to abide by its terms.</p>
 </div>
 </div>
   </div>

@@ -3,29 +3,40 @@
 [![Coverage Status](https://img.shields.io/codecov/c/github/ijlyttle/bsplus/master.svg)](https://codecov.io/github/ijlyttle/bsplus?branch=master)
 [![CRAN_Status_Badge](http://www.r-pkg.org/badges/version/bsplus)](https://cran.r-project.org/package=plus)
 
+## Installation
+
+This package is not yet on CRAN. You can install the latest development version from github with:
+
+```R
+if (packageVersion("devtools") < 1.6) {
+  install.packages("devtools")
+}
+devtools::install_github("ijlyttle/bsplus")
+```
+
 ## Introduction
 
 To see all of this in action, you are referred to the [articles page](http://ijlyttle.github.io/bsplus/articles/index.html) at this package's **pkgdown** site. 
 
 The goals of this package are:
 
-1. To provide a framework to use Bootstrap's markup API: http://getbootstrap.com/javascript/
-
-2. To promote composition of HTML using pipes.
+- to provide a framework to use Bootstrap's markup API: http://getbootstrap.com/javascript/
+- to promote composition of HTML using pipes.
 
 In this package, there are function families for:
 
-- collapsing elements: `bs_collapse()`
+- collapsible elements: `bs_collapse()`
 - accordion panels: `bs_accordion()`
-- accordion sidebar sets: `bs_accordion_sidebar()`
+- accordion-sidebar sets: `bs_accordion_sidebar()`
 - tooltips: `bs_embed_tooltip()`
 - popovers: `bs_embed_popover()`
 - modals: `bs_modal()`
 
 There are also helper functions:
 
-- embed help-links into **shiny** inputs: `shiny_iconlink()`, `shinyInput_label_embed()`.
+- embed help-links into **shiny** inputs: `shiny_iconlink()`, `shinyInput_label_embed()`
 - read a markdown file to return an HTML fragment (useful for modal content): `render_html_fragment()`
+- set `data-` and `aria-` attributes of tags: `bs_set_data()`, `bs_set_aria()`
 
 ## Grammar and vocabulary
 
@@ -43,7 +54,7 @@ Let's start with the conventions used to name the functions:
 
 ## Nouns
 
-Usually, we use the words *element* and *tag* interchangeably - we are talking about HTML elements. In the grammar of this documentation (and package), it can be useful to think about *direct* objects and *indirect* objects, so the word *tag* is used to denote *direct* objects, and the words *element* or *thing* are used to denote *indirect* objects.
+Often we use the words *element* and *tag* interchangeably - we are talking about HTML elements. In the grammar of this documentation (and package), it can be useful to think about *direct* objects and *indirect* objects, so the word *tag* is used to denote *direct* objects, and the words *element* or *thing* are used to denote *indirect* objects.
 
 In the context of a set of piped functions, the first argument will always be the direct object; the name of the first argument of many functions is `tag` - you will be sending the tag through the pipe.
 
@@ -62,4 +73,8 @@ Let's consider the differences between `append`, `attach`, and `embed`:
 
 ## Acknowledgments
 
-This package draws inspiration from the **shinybs** package written by Eric Bailey.
+This package draws inspiration from the **shinybs** package written by Eric Bailey, and leans heavily on the **htmltools** package written by Joe Cheng.
+
+## Code of conduct
+
+Please note that this project is released with a [Contributor Code of Conduct](CONDUCT.md). By participating in this project you agree to abide by its terms.

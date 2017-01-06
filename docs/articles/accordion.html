@@ -47,9 +47,19 @@
     
     
 <div class="contents">
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(<span class="st">"bsplus"</span>)
-
-<span class="kw"><a href="../reference/bs_accordion.html">bs_accordion</a></span>(<span class="dt">id =</span> <span class="st">"beatles"</span>) %&gt;%
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(<span class="st">"htmltools"</span>)
+<span class="kw">library</span>(<span class="st">"bsplus"</span>)</code></pre></div>
+<p>The <code><a href="../reference/bs_accordion.html">bs_accordion()</a></code> family is an extension of the <code><a href="../reference/bs_collapse.html">bs_collapse()</a></code> family. An accordion is a set of collapsible panels constructed such that one panel, at most, is open at a time.</p>
+<p>There are three functions in this family:</p>
+<ul><li><code><a href="../reference/bs_accordion.html">bs_accordion()</a></code>, used to establish the accordion framework</li>
+<li><code><a href="../reference/bs_append.html">bs_append()</a></code>, used to add a panel (<code>title</code> and <code>content</code>) to the accordion</li>
+<li><code><a href="../reference/bs_set_opts.html">bs_set_opts()</a></code>, used to set options for the panels to follow</li>
+</ul><p>The <code><a href="../reference/bs_accordion.html">bs_accordion()</a></code> function takes a single argument, a unique <code>id</code> for the accordion frameowrk.</p>
+<p>To add a panel to an accordion, use the <code><a href="../reference/bs_append.html">bs_append()</a></code> function. Its arguments are the <code>tag</code> of the accordion, the <code>title</code> of the panel, which will generally be text, and the <code>content</code> of the panel, which can be HTML.</p>
+<p>The appearance of panels can be modified using the <code><a href="../reference/bs_set_opts.html">bs_set_opts()</a></code> function. Its first argument is the accordion <code>tag</code>, its other arguments are <code>panel_type</code>, which controls the appearance of following panels, and <code>use_heading_link</code>, which, if <code>TRUE</code>, makes the entire headings of following panels of into links, rather than just the title.</p>
+<p>The default <code>panel_type</code> is <code>"default"</code>, the default for <code>use_heading_link</code> is <code>FALSE</code>.</p>
+<p>All of these functions return an accordion tag; you can build an accordion using a pipe.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw"><a href="../reference/bs_accordion.html">bs_accordion</a></span>(<span class="dt">id =</span> <span class="st">"beatles"</span>) %&gt;%
 <span class="st">  </span><span class="kw"><a href="../reference/bs_set_opts.html">bs_set_opts</a></span>(<span class="dt">panel_type =</span> <span class="st">"success"</span>, <span class="dt">use_heading_link =</span> <span class="ot">TRUE</span>) %&gt;%
 <span class="st">  </span><span class="kw"><a href="../reference/bs_append.html">bs_append</a></span>(<span class="dt">title =</span> <span class="st">"John Lennon"</span>, <span class="dt">content =</span> <span class="st">"Rhythm guitar, vocals"</span>) %&gt;%
 <span class="st">  </span><span class="kw"><a href="../reference/bs_append.html">bs_append</a></span>(<span class="dt">title =</span> <span class="st">"Paul McCartney"</span>, <span class="dt">content =</span> <span class="st">"Bass guitar, vocals"</span>) %&gt;%
@@ -90,10 +100,82 @@
 </div>
 </div>
 </div>
+<p>The <code>panel_type</code> has to be one of the standard Bootstrap types: <code>c("default", "primary", "success", "info", "warning", "danger")</code>.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw"><a href="../reference/bs_accordion.html">bs_accordion</a></span>(<span class="dt">id =</span> <span class="st">"bootstrap_types"</span>) %&gt;%
+<span class="st">  </span><span class="kw"><a href="../reference/bs_set_opts.html">bs_set_opts</a></span>(<span class="dt">panel_type =</span> <span class="st">"default"</span>) %&gt;%
+<span class="st">  </span><span class="kw"><a href="../reference/bs_append.html">bs_append</a></span>(<span class="dt">title =</span> <span class="st">"Default"</span>, <span class="dt">content =</span> <span class="ot">NULL</span>) %&gt;%
+<span class="st">  </span><span class="kw"><a href="../reference/bs_set_opts.html">bs_set_opts</a></span>(<span class="dt">panel_type =</span> <span class="st">"primary"</span>) %&gt;%
+<span class="st">  </span><span class="kw"><a href="../reference/bs_append.html">bs_append</a></span>(<span class="dt">title =</span> <span class="st">"Primary"</span>, <span class="dt">content =</span> <span class="ot">NULL</span>) %&gt;%
+<span class="st">  </span><span class="kw"><a href="../reference/bs_set_opts.html">bs_set_opts</a></span>(<span class="dt">panel_type =</span> <span class="st">"success"</span>) %&gt;%
+<span class="st">  </span><span class="kw"><a href="../reference/bs_append.html">bs_append</a></span>(<span class="dt">title =</span> <span class="st">"Success"</span>, <span class="dt">content =</span> <span class="ot">NULL</span>) %&gt;%
+<span class="st">  </span><span class="kw"><a href="../reference/bs_set_opts.html">bs_set_opts</a></span>(<span class="dt">panel_type =</span> <span class="st">"info"</span>) %&gt;%
+<span class="st">  </span><span class="kw"><a href="../reference/bs_append.html">bs_append</a></span>(<span class="dt">title =</span> <span class="st">"Info"</span>, <span class="dt">content =</span> <span class="ot">NULL</span>) %&gt;%
+<span class="st">  </span><span class="kw"><a href="../reference/bs_set_opts.html">bs_set_opts</a></span>(<span class="dt">panel_type =</span> <span class="st">"warning"</span>) %&gt;%
+<span class="st">  </span><span class="kw"><a href="../reference/bs_append.html">bs_append</a></span>(<span class="dt">title =</span> <span class="st">"Warning"</span>, <span class="dt">content =</span> <span class="ot">NULL</span>) %&gt;%
+<span class="st">  </span><span class="kw"><a href="../reference/bs_set_opts.html">bs_set_opts</a></span>(<span class="dt">panel_type =</span> <span class="st">"danger"</span>) %&gt;%
+<span class="st">  </span><span class="kw"><a href="../reference/bs_append.html">bs_append</a></span>(<span class="dt">title =</span> <span class="st">"Danger"</span>, <span class="dt">content =</span> <span class="ot">NULL</span>)</code></pre></div>
+<div id="bootstrap_types" class="panel-group" role="tablist" aria-multiselectable="true">
+<div class="panel panel-default" id="bootstrap_types-0">
+<div id="bootstrap_types-0-heading" class="panel-heading" role="tab" data-toggle="collapse" data-target="#bootstrap_types-0-collapse" data-parent="#bootstrap_types" aria-expanded="true" aria-controls="bootstrap_types-0-collapse" style="cursor: pointer;">
+<h4 class="hasAnchor"><html><body><a href="#bootstrap_types-0-heading" class="anchor"> </a></body></html>Default</h4>
+</div>
+<div aria-labelledby="bootstrap_types-0-heading" class="panel-collapse collapse in" id="bootstrap_types-0-collapse" role="tabpanel">
+<div class="panel-body" style="padding-top: 0px; padding-bottom: 0px;"></div>
+</div>
+</div>
+<div class="panel panel-primary" id="bootstrap_types-1">
+<div id="bootstrap_types-1-heading" class="panel-heading" role="tab" data-toggle="collapse" data-target="#bootstrap_types-1-collapse" data-parent="#bootstrap_types" aria-expanded="true" aria-controls="bootstrap_types-1-collapse" style="cursor: pointer;">
+<h4 class="hasAnchor"><html><body><a href="#bootstrap_types-1-heading" class="anchor"> </a></body></html>Primary</h4>
+</div>
+<div id="bootstrap_types-1-collapse" class="panel-collapse collapse" role="tabpanel" aria-labelledby="bootstrap_types-1-heading">
+<div class="panel-body" style="padding-top: 0px; padding-bottom: 0px;"></div>
+</div>
+</div>
+<div class="panel panel-success" id="bootstrap_types-2">
+<div id="bootstrap_types-2-heading" class="panel-heading" role="tab" data-toggle="collapse" data-target="#bootstrap_types-2-collapse" data-parent="#bootstrap_types" aria-expanded="true" aria-controls="bootstrap_types-2-collapse" style="cursor: pointer;">
+<h4 class="hasAnchor"><html><body><a href="#bootstrap_types-2-heading" class="anchor"> </a></body></html>Success</h4>
+</div>
+<div id="bootstrap_types-2-collapse" class="panel-collapse collapse" role="tabpanel" aria-labelledby="bootstrap_types-2-heading">
+<div class="panel-body" style="padding-top: 0px; padding-bottom: 0px;"></div>
+</div>
+</div>
+<div class="panel panel-info" id="bootstrap_types-3">
+<div id="bootstrap_types-3-heading" class="panel-heading" role="tab" data-toggle="collapse" data-target="#bootstrap_types-3-collapse" data-parent="#bootstrap_types" aria-expanded="true" aria-controls="bootstrap_types-3-collapse" style="cursor: pointer;">
+<h4 class="hasAnchor"><html><body><a href="#bootstrap_types-3-heading" class="anchor"> </a></body></html>Info</h4>
+</div>
+<div id="bootstrap_types-3-collapse" class="panel-collapse collapse" role="tabpanel" aria-labelledby="bootstrap_types-3-heading">
+<div class="panel-body" style="padding-top: 0px; padding-bottom: 0px;"></div>
+</div>
+</div>
+<div class="panel panel-warning" id="bootstrap_types-4">
+<div id="bootstrap_types-4-heading" class="panel-heading" role="tab" data-toggle="collapse" data-target="#bootstrap_types-4-collapse" data-parent="#bootstrap_types" aria-expanded="true" aria-controls="bootstrap_types-4-collapse" style="cursor: pointer;">
+<h4 class="hasAnchor"><html><body><a href="#bootstrap_types-4-heading" class="anchor"> </a></body></html>Warning</h4>
+</div>
+<div id="bootstrap_types-4-collapse" class="panel-collapse collapse" role="tabpanel" aria-labelledby="bootstrap_types-4-heading">
+<div class="panel-body" style="padding-top: 0px; padding-bottom: 0px;"></div>
+</div>
+</div>
+<div class="panel panel-danger" id="bootstrap_types-5">
+<div id="bootstrap_types-5-heading" class="panel-heading" role="tab" data-toggle="collapse" data-target="#bootstrap_types-5-collapse" data-parent="#bootstrap_types" aria-expanded="true" aria-controls="bootstrap_types-5-collapse" style="cursor: pointer;">
+<h4 class="hasAnchor"><html><body><a href="#bootstrap_types-5-heading" class="anchor"> </a></body></html>Danger</h4>
+</div>
+<div id="bootstrap_types-5-collapse" class="panel-collapse collapse" role="tabpanel" aria-labelledby="bootstrap_types-5-heading">
+<div class="panel-body" style="padding-top: 0px; padding-bottom: 0px;"></div>
+</div>
+</div>
+</div>
+<div id="reference" class="section level2">
+<h2 class="hasAnchor"><html><body><a href="#reference" class="anchor"> </a></body></html>Reference</h2>
+<p>For more information, please see the <a href="http://getbootstrap.com/javascript/##collapse-example-accordion">Bootstrap JavaScript page</a>.</p>
+</div>
 </div>
   </div>
 
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
+        <div id="tocnav">
+      <h2>Contents</h2>
+      <ul class="nav nav-pills nav-stacked"><li><a href="#reference">Reference</a></li>
+      </ul></div>
       </div>
 
 </div>

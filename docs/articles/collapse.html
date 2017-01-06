@@ -49,25 +49,26 @@
 <div class="contents">
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(<span class="st">"htmltools"</span>)
 <span class="kw">library</span>(<span class="st">"bsplus"</span>)</code></pre></div>
-<p>The collapse family of functions may not be the most useful, but it gives us a place to start.</p>
-<div id="example" class="section level2">
-<h2 class="hasAnchor"><html><body><a href="#example" class="anchor"> </a></body></html>Example</h2>
-<p>First, let&rsquo;s build the stuff we will put into the collapse elements:</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">button &lt;-<span class="st"> </span>tags$<span class="kw">button</span>(<span class="st">"She Loves You"</span>, <span class="dt">class =</span> <span class="st">"btn btn-primary"</span>)
-hidden &lt;-<span class="st"> </span>tags$<span class="kw">div</span>(<span class="dt">class =</span> <span class="st">"well"</span>, <span class="st">"Yeah Yeah Yeah"</span>)</code></pre></div>
-<p>Now let&rsquo;s create our collapsible content. The first step is to create the div using the <code>collapse()</code> function, supplying a unique id and the content to include.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw"><a href="../reference/bs_collapse.html">bs_collapse</a></span>(<span class="dt">id =</span> <span class="st">"id_yeah"</span>, <span class="dt">content =</span> hidden)</code></pre></div>
-<div class="collapse" id="id_yeah">
+<p>The <code><a href="../reference/bs_collapse.html">bs_collapse()</a></code> family of functions may not be the most useful, but it gives us a place to start.</p>
+<p>The first step is to create (and publish to the page) a collapsible element, using the <code><a href="../reference/bs_collapse.html">bs_collapse()</a></code> function, supplying a unique <code>id</code> and some HTML <code>content</code>.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw"><a href="../reference/bs_collapse.html">bs_collapse</a></span>(
+  <span class="dt">id =</span> <span class="st">"yeah"</span>, 
+  <span class="dt">content =</span> tags$<span class="kw">div</span>(<span class="dt">class =</span> <span class="st">"well"</span>, <span class="st">"Yeah Yeah Yeah"</span>)
+)</code></pre></div>
+<div class="collapse" id="yeah">
 <div class="well">Yeah Yeah Yeah</div>
 </div>
-<p>Next we attach the id of our collapsible div to our button using the <code>attach_collapse()</code> function, which returns a modified copy of the button or link sent to it.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">button %&gt;%
-<span class="st">  </span><span class="kw"><a href="../reference/bs_collapse.html">bs_attach_collapse</a></span>(<span class="dt">id_collapse =</span> <span class="st">"id_yeah"</span>)</code></pre></div>
-<button class="btn btn-primary" data-toggle="collapse" data-target="#id_yeah">She Loves You</button>
-<p>You are able to attach a collapsible div to a button or to a link. In fact, you are able to attach a collapsible div to as many buttons or links as you like:</p>
+<p>Next, attach the <code>id</code> of the collapsible element to a button or link tag, using the <code><a href="../reference/bs_collapse.html">bs_attach_collapse()</a></code> function. This returns a modified copy of the tag sent to it.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">tags$<span class="kw">button</span>(<span class="st">"She Loves You"</span>, <span class="dt">class =</span> <span class="st">"btn btn-primary"</span>) %&gt;%
+<span class="st">  </span><span class="kw"><a href="../reference/bs_collapse.html">bs_attach_collapse</a></span>(<span class="st">"yeah"</span>)</code></pre></div>
+<button class="btn btn-primary" data-toggle="collapse" data-target="#yeah">She Loves You</button>
+<p>You can attach the <code>id</code> of a collapsible element to as many buttons or links as you like:</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">tags$<span class="kw">button</span>(<span class="st">"Sie Liebt Dich"</span>, <span class="dt">class =</span> <span class="st">"btn btn-primary"</span>) %&gt;%
-<span class="st">  </span><span class="kw"><a href="../reference/bs_collapse.html">bs_attach_collapse</a></span>(<span class="st">"id_yeah"</span>)</code></pre></div>
-<button class="btn btn-primary" data-toggle="collapse" data-target="#id_yeah">Sie Liebt Dich</button>
+<span class="st">  </span><span class="kw"><a href="../reference/bs_collapse.html">bs_attach_collapse</a></span>(<span class="st">"yeah"</span>)</code></pre></div>
+<button class="btn btn-primary" data-toggle="collapse" data-target="#yeah">Sie Liebt Dich</button>
+<div id="reference" class="section level2">
+<h2 class="hasAnchor"><html><body><a href="#reference" class="anchor"> </a></body></html>Reference</h2>
+<p>For more information, please see the <a href="http://getbootstrap.com/javascript/#collapse">Bootstrap JavaScript page</a>.</p>
 </div>
 </div>
   </div>
@@ -75,7 +76,7 @@ hidden &lt;-<span class="st"> </span>tags$<span class="kw">div</span>(<span clas
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
         <div id="tocnav">
       <h2>Contents</h2>
-      <ul class="nav nav-pills nav-stacked"><li><a href="#example">Example</a></li>
+      <ul class="nav nav-pills nav-stacked"><li><a href="#reference">Reference</a></li>
       </ul></div>
       </div>
 
