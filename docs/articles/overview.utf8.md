@@ -1,7 +1,7 @@
 ---
 title: "Overview"
 author: "Ian Lyttle"
-date: "`r Sys.Date()`"
+date: "2017-01-05"
 output: rmarkdown::html_document
 vignette: >
   %\VignetteIndexEntry{Overview}
@@ -31,12 +31,7 @@ Another goal is to provide some tools to help build **shiny** apps.
 
 Even though some of the functions here are useful only in **shiny** apps, please note that none of the functions in this package depend on the server side of **shiny** - only the UI side.
 
-```{r echo=FALSE}
-library("htmltools")
-library("shiny")
-library("bsplus")
-library("knitr")
-```
+
 
 ## Collapse
 
@@ -44,19 +39,25 @@ A collapsible element is attached to a button or link, which is used to show (or
 
 The first step is to create the collapsible element, using `bs_collapse()` with an `id`. By default, this element is initially hidden. 
 
-```{r}
+
+```r
 bs_collapse(
   id = "ex_collapse", 
   content = tags$div(class = "well", "Yeah Yeah Yeah")
 ) 
 ```
 
+preserveeab2a21ef8e36ac2
+
 Next, you create a tag, like a button, a then *attach* the `id` of the collapsible element to it.
 
-```{r collapse}
+
+```r
 tags$button(class = "btn btn-primary", "She Loves You") %>%
   bs_attach_collapse("ex_collapse")
 ```
+
+preserve97064925db21d853
 
 To see more of the collapse function-family, please see [its article](https://ijlyttle.github.io/bsplus/articles/collapse.html).
 
@@ -71,13 +72,16 @@ There are two main functions:
 
 Generally, `title` will be text, and `content` can be HTML.
 
-```{r accordion}
+
+```r
 bs_accordion(id = "meet_the_beatles") %>%
   bs_append(title = "John", content = "Rhythm guitar, vocals") %>%
   bs_append(title = "Paul", content = "Bass guitar, vocals") %>%
   bs_append(title = "George", content = "Lead guitar, vocals") %>%
   bs_append(title = "Ringo", content = "Drums, vocals")
 ```
+
+preservea6652917f9218c36
 
 To see more of the `bs_accordion()` function-family, including how to make the entire banner "clickable" and how to change the class of the panels, please see [its article](https://ijlyttle.github.io/bsplus/articles/accordion.html).
 
@@ -92,7 +96,8 @@ There like the accordion, there are two main functions:
 
 Generally, `title_side` will be text, `content_side` can be HTML (**shiny** inputs), as well as `content_main` (**shiny** outputs).
 
-```{r accordion_sidebar}
+
+```r
 bs_accordion_sidebar(id = "beatles") %>%
   bs_append(
     title_side = "John Lennon", 
@@ -116,13 +121,18 @@ bs_accordion_sidebar(id = "beatles") %>%
   ) 
 ```
 
+preserve5c30708fa631faa0
+
 As you can see, the sidebar acts like a `bs_accordion()`, but there are a couple of important differences. First, a sidebar panel's class changes according to its being open or not. Second, the state (show-hide) of each component's main panel is determined by the state of its side panel.
 
 This extra functionality is implemented using some JavaScript code inserted into your page using the `use_bs_accordion_sidebar()` function. You will have to do this only once per page; I have found that it works best to include after all of the accordion-sidebars are defined, perhaps as one of the last elements in a **shiny** UI.
 
-```{r}
+
+```r
 use_bs_accordion_sidebar()
 ```
+
+preserve39a55739d56f6b2c
 
 To see more of the `bs_accordion_sidebar()` function-family, including how to change the active/inactive classes, size and placement of the sidebar and main panels, and formatting of the main panel, please see [its article](https://ijlyttle.github.io/bsplus/articles/accordion_sidebar.html). You can also see this in action in a [**shiny** app](https://ijlyttle.shinyapps.io/accordion_sidebar/).
 
@@ -132,7 +142,8 @@ Modal windows are a great way to deliver help-documentation, although they certa
 
 The first step is to define a modal widow, giving it an `id`. The `body` is HTML; you can use the helper function `render_html_fragment()` to render a markdown file into HTML. This might be done better using the **commonmark** package, but I don't (yet) understand how it works with MathJax.
 
-```{r modal}
+
+```r
 bs_modal(
   id = "modal_markdown", 
   title = "Using Markdown",
@@ -143,19 +154,27 @@ bs_modal(
 )
 ```
 
+preservecbb01a3240bb7bbe
+
 To allow activation of the modal window, you attach its `id` to a button.
 
-```{r}
+
+```r
 tags$button(type = "button", class = "btn btn-primary", "Click for modal") %>%
   bs_attach_modal("modal_markdown")
 ```
 
+preserve7b4678574421183c
+
 The verb *attach* implies that you can attach an `id` to as many links you like. Thus: 
 
-```{r}
+
+```r
 tags$button(type = "button", class = "btn btn-primary", "New button, same modal") %>%
   bs_attach_modal("modal_markdown")
 ```
+
+preserve52706281ba409512
 
 To see more of the `bs_modal()` function-family, including how to specify the size of the modal, please see [its article](https://ijlyttle.github.io/bsplus/articles/modal.html).
 
@@ -163,16 +182,22 @@ To see more of the `bs_modal()` function-family, including how to specify the si
 
 A tooltip can be used to embed a short note into a tag; by default they are activated by hovering over the tag. 
 
-```{r tooltip}
+
+```r
 tags$button(type = "button", class = "btn btn-default", "John Lennon") %>%
   bs_embed_tooltip(title = "Rhythm Guitar, vocals")
 ```
 
+preserve3c882af60eae17bd
+
 According to the [Bootstrap site](http://getbootstrap.com/javascript/#tooltips), tooltips are not activated automatically; to activate them you can call `use_bs_tooltip()` once on your page.
 
-```{r}
+
+```r
 use_bs_tooltip()
 ```
+
+preservebe5e41200d39f54f
 
 To see more of the `bs_embed_tooltip()` function, including how to specify the placement of the tooltip, please see [its article](https://ijlyttle.github.io/bsplus/articles/tooltip_popover.html).
 
@@ -180,7 +205,8 @@ To see more of the `bs_embed_tooltip()` function, including how to specify the p
 
 A popover can be used to embed a longer note into a tag; by default they are activated by clicking on the tag. A popover has a `title`, which is generally text, and `content`, which can be HTML.
 
-```{r popover}
+
+```r
 tags$button(type = "button", class = "btn btn-primary", "John Lennon") %>%
   bs_embed_popover(
     title = "More information",
@@ -189,11 +215,16 @@ tags$button(type = "button", class = "btn btn-primary", "John Lennon") %>%
   )
 ```
 
+preserve3e08845b0d4825a2
+
 According to the [Bootstrap site](http://getbootstrap.com/javascript/#popovers), popovers are not activated automatically; to activate them you can call `use_bs_popovers()` once on your page.
 
-```{r}
+
+```r
 use_bs_popover()
 ```
+
+preservec40b053fb11b736d
 
 To see more of the `bs_embed_popover()` function, including how to specify the placement of the popover, please see [its article](https://ijlyttle.github.io/bsplus/articles/tooltip_popover.html).
 
@@ -204,7 +235,8 @@ An carousel can be useful to cycle through slides with related content. There li
 - `bs_carousel()`, used to establish the carousel framework
 - `bs_append()`, used to add a slide containing `content`, which is HTML, and an optional `caption`
 
-```{r}
+
+```r
 bs_carousel(id = "the_beatles", use_indicators = TRUE) %>%
   bs_append(
     content = bs_carousel_image(src = image_uri("img/john.jpg")),
@@ -224,6 +256,8 @@ bs_carousel(id = "the_beatles", use_indicators = TRUE) %>%
   ) 
 ```
 
+preservecf34ddde69ea8baa
+
 I think the carousel has potential not shown in this example. The content of each slide is HTML, so a carousel could contain images (as shown here), **shiny** inputs or outputs. Another possibility may be to use the the `frame` aesthetic offered by **gganimate** to cycle through **ggplot2** plots.
 
 To see more of the `bs_carousel()` framework, including its helper functions `bs_carousel_image()` and `bs_carousel_caption()`, please see [its article](https://ijlyttle.github.io/bsplus/articles/carousel.html).
@@ -240,7 +274,8 @@ Let's consider a **shiny** input. One way to put unobtrusive help into a **shiny
 
 Here's an example of everything put together:
 
-```{r eval = FALSE}
+
+```r
 selectInput(
   inputId = "letter",
   label = "Label with popover help",
@@ -268,7 +303,8 @@ Consider the [options for popovers](http://getbootstrap.com/javascript/#popovers
 
 Although you can do this using `htmltools::tagAppendAttributes()`, the function `bs_set_data()` makes things a little easier for you.
 
-```{r}
+
+```r
 tags$button(type = "button", class = "btn btn-primary", "Click for popover") %>%
   bs_embed_popover(
     title = "To dismiss",
@@ -276,6 +312,8 @@ tags$button(type = "button", class = "btn btn-primary", "Click for popover") %>%
   ) %>%
   bs_set_data(trigger = "focus")
 ```
+
+preserve8814b91f779e38b2
 
 Both of these functions are used to set attributes on tags; `bs_set_data()` is used for attributes that start with `data-`, `bs_set_aria()` is used for attributes that start with `aria-`. To see more of these helper functions, please read [their reference](https://ijlyttle.github.io/bsplus/reference/bs_set_data.html).
 
