@@ -148,7 +148,7 @@ bs_modal_closebutton <- function(title = "Close"){
   htmltools::tags$button(
     type = "button",
     class = "btn btn-default",
-    "Close"
+    title
   ) %>%
     bs_set_data(dismiss = "modal")
 }

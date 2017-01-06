@@ -143,7 +143,7 @@ bs_modal(
 )
 ```
 
-To allow activation of the modal window, you attach its `id` to a button.
+To allow activation of the modal window, attach its `id` to a button (or link).
 
 ```{r}
 tags$button(type = "button", class = "btn btn-primary", "Click for modal") %>%
@@ -162,7 +162,6 @@ To see more of the `bs_modal()` function-family, including how to specify the si
 ## Tooltip
 
 A tooltip can be used to embed a short note into a tag; by default they are activated by hovering over the tag. 
-
 ```{r tooltip}
 tags$button(type = "button", class = "btn btn-default", "John Lennon") %>%
   bs_embed_tooltip(title = "Rhythm Guitar, vocals")

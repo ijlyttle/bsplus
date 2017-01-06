@@ -14,14 +14,33 @@ library("htmltools")
 library("bsplus")
 ```
 
+Modal windows are a great way to deliver help-documentation, although they certainly have other uses. The first step is to define a modal widow, giving it an `id`.
+
 ```{r}
 bs_modal(id = "modal", title = "I'm a modal", body = "Yes, I am.")
 ```
+
+To allow activation of the modal window, attach its `id` to a button (or link).
 
 ```{r}
 tags$button(type = "button", class = "btn btn-default", "Click for modal") %>%
   bs_attach_modal(id_modal = "modal")
 ```
+
+The verb *attach* implies that you can attach an `id` to as many link tags you like. Thus: 
+
+```{r}
+tags$button(type = "button", class = "btn btn-default", "New button, same modal") %>%
+  bs_attach_modal(id_modal = "modal")
+```
+
+Let's look at a more-involved example using all of the arguments for `bs_modal()`. 
+
+In the example above, `body` is text; usually, you will want the `body` to HTML. One way to compose the HTML for the body is to write it as a Markdown file, then use the helper function `render_html_fragment()` to render it into into HTML. 
+
+The default `footer` is simply a "Close" button, which is made using the helper function `bs_modal_closebutton()`. You can compose your own footer, using this function to customize your close-button.
+
+Finally, the `size` can be `"small"`, `"medium"`, or `"large"` - the defualt is `"medium"`.
 
 ```{r}
 bs_modal(
@@ -29,9 +48,18 @@ bs_modal(
   title = "Using Markdown",
   body = render_html_fragment(
     system.file("markdown", "modal.md", package = "bsplus")
-  )
+  ),
+  footer = tags$span(
+    tags$span(class = "well", "Hello!"),
+    bs_modal_closebutton("Goodbye!")
+  ),
+  size = "large"
 )
 
-tags$button(type = "button", class = "btn btn-default", "Click for modal") %>%
+tags$button(type = "button", class = "btn btn-default", "Large modal") %>%
   bs_attach_modal(id_modal = "modal_markdown")
 ```
+
+## Reference
+
+For more information, please see the [Bootstrap JavaScript page](http://getbootstrap.com/javascript/#modals).

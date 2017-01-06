@@ -1,2 +1,0 @@
-library("rmarkdown")
-library("purrr")

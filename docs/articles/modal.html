@@ -41,7 +41,7 @@
       <h1>Modals</h1>
                         <h4 class="author">Ian Lyttle</h4>
             
-            <h4 class="date">2017-01-05</h4>
+            <h4 class="date">2017-01-06</h4>
           </div>
 
     
@@ -49,6 +49,7 @@
 <div class="contents">
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(<span class="st">"htmltools"</span>)
 <span class="kw">library</span>(<span class="st">"bsplus"</span>)</code></pre></div>
+<p>Modal windows are a great way to deliver help-documentation, although they certainly have other uses. The first step is to define a modal widow, giving it an <code>id</code>.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw"><a href="../reference/bs_modal.html">bs_modal</a></span>(<span class="dt">id =</span> <span class="st">"modal"</span>, <span class="dt">title =</span> <span class="st">"I'm a modal"</span>, <span class="dt">body =</span> <span class="st">"Yes, I am."</span>)</code></pre></div>
 <div class="modal fade" id="modal" tabindex="-1" role="dialog" aria-labelledby="modal-title">
 <div class="modal-dialog" role="document">
@@ -66,21 +67,33 @@
 </div>
 </div>
 </div>
+<p>To allow activation of the modal window, attach its <code>id</code> to a button (or link).</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">tags$<span class="kw">button</span>(<span class="dt">type =</span> <span class="st">"button"</span>, <span class="dt">class =</span> <span class="st">"btn btn-default"</span>, <span class="st">"Click for modal"</span>) %&gt;%
 <span class="st">  </span><span class="kw"><a href="../reference/bs_modal.html">bs_attach_modal</a></span>(<span class="dt">id_modal =</span> <span class="st">"modal"</span>)</code></pre></div>
 <button type="button" class="btn btn-default" data-toggle="modal" data-target="#modal">Click for modal</button>
+<p>The verb <em>attach</em> implies that you can attach an <code>id</code> to as many link tags you like. Thus:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">tags$<span class="kw">button</span>(<span class="dt">type =</span> <span class="st">"button"</span>, <span class="dt">class =</span> <span class="st">"btn btn-default"</span>, <span class="st">"New button, same modal"</span>) %&gt;%
+<span class="st">  </span><span class="kw"><a href="../reference/bs_modal.html">bs_attach_modal</a></span>(<span class="dt">id_modal =</span> <span class="st">"modal"</span>)</code></pre></div>
+<button type="button" class="btn btn-default" data-toggle="modal" data-target="#modal">New button, same modal</button>
+<p>Let&rsquo;s look at a more-involved example using all of the arguments for <code><a href="../reference/bs_modal.html">bs_modal()</a></code>.</p>
+<p>In the example above, <code>body</code> is text; usually, you will want the <code>body</code> to HTML. One way to compose the HTML for the body is to write it as a Markdown file, then use the helper function <code><a href="../reference/render_html_fragment.html">render_html_fragment()</a></code> to render it into into HTML.</p>
+<p>The default <code>footer</code> is simply a &ldquo;Close&rdquo; button, which is made using the helper function <code><a href="../reference/bs_modal.html">bs_modal_closebutton()</a></code>. You can compose your own footer, using this function to customize your close-button.</p>
+<p>Finally, the <code>size</code> can be <code>"small"</code>, <code>"medium"</code>, or <code>"large"</code> - the defualt is <code>"medium"</code>.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw"><a href="../reference/bs_modal.html">bs_modal</a></span>(
   <span class="dt">id =</span> <span class="st">"modal_markdown"</span>, 
   <span class="dt">title =</span> <span class="st">"Using Markdown"</span>,
   <span class="dt">body =</span> <span class="kw"><a href="../reference/render_html_fragment.html">render_html_fragment</a></span>(
     <span class="kw">system.file</span>(<span class="st">"markdown"</span>, <span class="st">"modal.md"</span>, <span class="dt">package =</span> <span class="st">"bsplus"</span>)
-  )
+  ),
+  <span class="dt">footer =</span> tags$<span class="kw">span</span>(
+    tags$<span class="kw">span</span>(<span class="dt">class =</span> <span class="st">"well"</span>, <span class="st">"Hello!"</span>),
+    <span class="kw"><a href="../reference/bs_modal.html">bs_modal_closebutton</a></span>(<span class="st">"Goodbye!"</span>)
+  ),
+  <span class="dt">size =</span> <span class="st">"large"</span>
 )</code></pre></div>
-<pre><code>## /Applications/RStudio.app/Contents/MacOS/pandoc/pandoc +RTS -K512m -RTS modal.utf8.md --to html --from markdown+autolink_bare_uris+ascii_identifiers+tex_math_single_backslash --output /var/folders/rg/9kvy_lsn43z90d439n02nfw80000gn/T//Rtmp4X1AC7/file14ffd4522a835 --smart --email-obfuscation none --self-contained --mathjax --standalone --section-divs --template /Library/Frameworks/R.framework/Versions/3.3/Resources/library/rmarkdown/rmd/fragment/default.html --no-highlight</code></pre>
-<pre><code>## 
-## Output created: /var/folders/rg/9kvy_lsn43z90d439n02nfw80000gn/T//Rtmp4X1AC7/file14ffd4522a835</code></pre>
-<div class="modal fade" id="modal_markdown" tabindex="-1" role="dialog" aria-labelledby="modal_markdown-title">
-<div class="modal-dialog" role="document">
+<pre><code>## /Applications/RStudio.app/Contents/MacOS/pandoc/pandoc +RTS -K512m -RTS modal.utf8.md --to html --from markdown+autolink_bare_uris+ascii_identifiers+tex_math_single_backslash --output /var/folders/rg/9kvy_lsn43z90d439n02nfw80000gn/T//RtmprAw2nu/file81d677e55084 --smart --email-obfuscation none --self-contained --mathjax --standalone --section-divs --template /Library/Frameworks/R.framework/Versions/3.3/Resources/library/rmarkdown/rmd/fragment/default.html --no-highlight</code></pre>
+<div aria-labelledby="modal_markdown-title" class="modal fade bs-example-modal-lg" id="modal_markdown" role="dialog" tabindex="-1">
+<div class="modal-dialog modal-lg" role="document">
 <div class="modal-content">
 <div class="modal-header">
 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -90,25 +103,36 @@
 </div>
 <div class="modal-body"><div id="th-level-headers-work-well" class="section level4"> <h4 class="hasAnchor"><html><body><a href="#th-level-headers-work-well" class="anchor"> </a></body></html>4th-level headers work well</h4> <p>We can do our regular Markdown stuff in modal windows.</p> <ul><li><span class="math inline">\(F = ma\)</span></li> <li><span class="math inline">\(E = mc^2\)</span></li> </ul></div></div>
 <div class="modal-footer">
-<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+<span>
+<span class="well">Hello!</span>
+<button type="button" class="btn btn-default" data-dismiss="modal">Goodbye!</button>
+</span>
 </div>
 </div>
 </div>
 </div>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">tags$<span class="kw">button</span>(<span class="dt">type =</span> <span class="st">"button"</span>, <span class="dt">class =</span> <span class="st">"btn btn-default"</span>, <span class="st">"Click for modal"</span>) %&gt;%
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">tags$<span class="kw">button</span>(<span class="dt">type =</span> <span class="st">"button"</span>, <span class="dt">class =</span> <span class="st">"btn btn-default"</span>, <span class="st">"Large modal"</span>) %&gt;%
 <span class="st">  </span><span class="kw"><a href="../reference/bs_modal.html">bs_attach_modal</a></span>(<span class="dt">id_modal =</span> <span class="st">"modal_markdown"</span>)</code></pre></div>
-<button type="button" class="btn btn-default" data-toggle="modal" data-target="#modal_markdown">Click for modal</button>
+<button type="button" class="btn btn-default" data-toggle="modal" data-target="#modal_markdown">Large modal</button>
+<div id="reference" class="section level2">
+<h2 class="hasAnchor"><html><body><a href="#reference" class="anchor"> </a></body></html>Reference</h2>
+<p>For more information, please see the <a href="http://getbootstrap.com/javascript/#modals">Bootstrap JavaScript page</a>.</p>
+</div>
 </div>
   </div>
 
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
+        <div id="tocnav">
+      <h2>Contents</h2>
+      <ul class="nav nav-pills nav-stacked"><li><a href="#reference">Reference</a></li>
+      </ul></div>
       </div>
 
 </div>
 
 
       <footer><div class="copyright">
-  <p>Developed by Ian Lyttle,  Schneider Electric.</p>
+  <p>Developed by Ian Lyttle.</p>
 </div>
 
 <div class="pkgdown">
