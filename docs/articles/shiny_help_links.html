@@ -41,14 +41,13 @@
       <h1>Shiny-input help links</h1>
                         <h4 class="author">Ian Lyttle</h4>
             
-            <h4 class="date">2017-01-06</h4>
+            <h4 class="date">2017-01-08</h4>
           </div>
 
     
     
 <div class="contents">
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(<span class="st">"htmltools"</span>)
-<span class="kw">library</span>(<span class="st">"shiny"</span>)
 <span class="kw">library</span>(<span class="st">"bsplus"</span>)</code></pre></div>
 <p>Let&rsquo;s consider a <strong>shiny</strong> input. One way to put unobtrusive help into a <strong>shiny</strong> input is to embed a help icon into its label, having associated the help icon with the help documentation. This suggests three steps:</p>
 <ol style="list-style-type: decimal"><li>Create a help icon. You can use <code>shiny::icon()</code> or <code><a href="../reference/shiny_iconlink.html">shiny_iconlink()</a></code> (which simply wraps the icon in an HTML link).</li>
@@ -66,12 +65,11 @@
     <span class="dt">title =</span> <span class="st">"Letter"</span>, <span class="dt">content =</span> <span class="st">"Choose a favorite"</span>, <span class="dt">placement =</span> <span class="st">"left"</span>
   )
 )</code></pre></div>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">tags$<span class="kw">i</span>(<span class="dt">class =</span> <span class="st">"fa fa-circle"</span>)</code></pre></div>
-<i class="fa fa-circle"></i>
 <p>As of writing, I don&rsquo;t know how to include operable <strong>shiny</strong> inputs in an html document, outside of the <strong>shiny</strong> runtime. To see these functions in action, you can refer to this <a href="https://ijlyttle.shinyapps.io/tooltip_popover_modal/#"><strong>shiny</strong> app</a>, which you can also run locally using <code>shiny::runApp(system.file("shiny", "tooltip_popover_modal", package = "bsplus"))</code>.</p>
 <div class="figure">
 <img src="img/popover.png"></div>
-<p>To see more of the help-link framework, including more examples and a proposed convention for icons, please read <a href="https://ijlyttle.github.io/bsplus/articles/shiny_help_links.html">this article</a>.</p>
+<p>To promote consistency, the following convention is proposed:</p>
+<p>For links (activated by clicking), embed a <code>shiny::icon("info-circle")</code> which is the default for <code><a href="../reference/shiny_iconlink.html">shiny_iconlink()</a></code>. For elements activated by hovering, embed a <code>shiny::icon("info")</code>.</p>
 </div>
   </div>
 
