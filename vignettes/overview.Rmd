@@ -253,7 +253,11 @@ shinyInput_label_embed(
 )
 ```
 
-As of writing, I don't know how to include operable **shiny** inputs in an html document, outside of the **shiny** runtime. To see these functions in action, you can refer to this [**shiny** app](https://ijlyttle.shinyapps.io/tooltip_popover_modal/#), which you can also run locally using `shiny::runApp(system.file("shiny", "tooltip_popover_modal", package = "bsplus"))`.
+As of writing, I don't know how to include operable **shiny** inputs in an html document, outside of the **shiny** runtime. To see these functions in action, you can refer to this [**shiny** app](https://ijlyttle.shinyapps.io/tooltip_popover_modal/#), which you can also run locally using:
+
+```R
+shiny::runApp(system.file("shiny", "tooltip_popover_modal", package = "bsplus"))
+```
 
 ![](img/popover.png)
 
@@ -261,7 +265,7 @@ To see more of the help-link framework, including more examples and a proposed c
 
 ## Helper functions
 
-Finally, there are a couple of helper functions for customizing Bootstrap tags: `bs_set_data()` and `bs_set_aria()`. The motivation is that not all of the options for Bootstrap components are represented in the arguments of functions in this package. 
+Finally, there are a couple of helper functions for customizing Bootstrap tags: `bs_set_data()` and `bs_set_aria()`. These can be useful because not all of the options for Bootstrap components are represented in the arguments of functions in this package. 
 
 Consider the [options for popovers](http://getbootstrap.com/javascript/#popovers-options); there are close to a dozen. The only one that I thought might be commonly used was `placement`, so this became an argument to `bs_embed_popover()`. Let's say that you want to be able to dismiss a popover by clicking anywhere in the browser window other than the button. To do this, you have to set the attribute `data-trigger` to the value `"focus"`.
 

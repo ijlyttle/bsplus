@@ -5,7 +5,7 @@
 \alias{bs_append.bsplus_accordion_sidebar}
 \alias{bs_set_opts.bsplus_accordion_sidebar}
 \alias{use_bs_accordion_sidebar}
-\title{Create, append, and set options for an accordion-sidebar panel-group}
+\title{Accordion-sidebar panel-group}
 \usage{
 bs_accordion_sidebar(id, spec_side = c(width = 4, offset = 0),
   spec_main = c(width = 8, offset = 0), position = c("left", "right"))

@@ -1,4 +1,4 @@
-#' Create, append, and set options for an accordion panel-group
+#' Accordion panel-group
 #'
 #' An accordion is a set of panels where, at most, one panel body is visible.
 #'

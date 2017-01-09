@@ -60,7 +60,7 @@ As you can see, the sidebar acts like a `bs_accordion()`, but there are a couple
 
 When showing him a preview of this work, Carson Sievert asked a crazy question, "can you nest those things?" Well, apparently you can. 
 
-Note that the outer accordion-sidebar has `use_main_enclosure` set to `FALSE`, while the inner accordion-sidebar has it set to `TRUE`.
+Note that the outer accordion-sidebar has `use_main_enclosure` set to `FALSE`, while each inner accordion-sidebar has it set to `TRUE`.
 
 ```{r}
 bs_accordion_sidebar(id = "the_beatles") %>%

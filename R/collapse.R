@@ -1,4 +1,4 @@
-#' Create and attach a collapsible div
+#' Collapsible element
 #'
 #' This is useful for content that you may wish to be hidden when the page is
 #' initialized, but that can be revealed (and subsequently hidden)

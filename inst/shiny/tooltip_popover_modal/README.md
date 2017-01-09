@@ -14,4 +14,4 @@ There are also a some functions that make it easier to work with **shiny**:
 
 With the help icon, I want to make it easier to know what to expect: a tooltip, popover or a modal window. I propose a convention: `shiny_iconlink("info")` for tooltips, and `shiny_iconlink("info-circle")` (its default) for links used to activate popovers and modal windows.
 
-A [companion app](https://ijlyttle.shinyapps.io/accordion_sidebar/) shows how to use other function in the bsplus package to implement an "accordion-sidebar", which can provide you another dimension (in addition to a tabPanel) for your **shiny** UI.
+A [companion app](https://ijlyttle.shinyapps.io/accordion_sidebar_navbar/) shows how to use other function in the bsplus package to implement an "accordion-sidebar", which can provide you another dimension (in addition to a tabPanel) for your **shiny** UI.

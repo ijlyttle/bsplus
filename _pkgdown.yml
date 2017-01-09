@@ -10,33 +10,45 @@ reference:
 - title: "Collapse, accordion, and accordion sidebar"
   desc: >
     All of these functions deal with collapsible elements. The foundation
-    is the collapse element. Upon this we can build a set of accordion panels.
-    For Shiny apps, the accordion-sidebar framework may be useful as it can
-    give you another dimension with which to organize your ui.
+    is the collapse element; upon this, you can build a set of accordion panels.
+    For **shiny** apps, the accordion-sidebar framework may be useful as it can
+    give you another dimension with which to organize your UI.
 
-    * Collapse: [Demonstration](../articles/collapse.html),
-    [Boostrap reference](http://getbootstrap.com/javascript/#collapse)
+    - Collapse
+        - [Article](../articles/collapse.html)
+        - [Boostrap reference](http://getbootstrap.com/javascript/#collapse)
 
-    * Accordion: [Demonstration](../articles/accordion.html),
-    [Boostrap reference](http://getbootstrap.com/javascript/#collapse-example-accordion)
+    - Accordion
+        - [Article](../articles/accordion.html)
+        - [Boostrap reference](http://getbootstrap.com/javascript/#collapse-example-accordion)
 
-    * Accordion sidebar: [Demonstration](../articles/accordion_sidebar.html)
+    - Accordion sidebar
+        - [Article](../articles/accordion_sidebar.html)
+        - [**Shiny** app](https://ijlyttle.shinyapps.io/accordion_sidebar_navbarpage)
 
   contents:
     - bs_collapse
     - bs_accordion
     - bs_accordion_sidebar
 
-- title: "Tooltips, popovers, and modals"
+- title: "Tooltip, popover, and modal"
   desc: >
-    Tooltips, popovers, and modals can be useful for including extra information.
+    Tooltips, popovers, and modals can be useful for including extra information
+    in your **rmarkdown** document or your **shiny** app.
 
-    * Tooltips and popovers: [Demonstration](../articles/tooltip_popover.html),
-    [Tooltip Bootstrap reference](http://getbootstrap.com/javascript/#tooltips),
-    [Popover Bootstrap reference](http://getbootstrap.com/javascript/#popovers)
+    - Tooltip
+        - [Article](../articles/tooltip_popover.html)
+        - [Bootstrap reference](http://getbootstrap.com/javascript/#tooltips)
+    - Popover
+        - [Article](../articles/tooltip_popover.html)
+        - [Bootstrap reference](http://getbootstrap.com/javascript/#popovers)
+    - Modals
+        - [Article](../articles/modals.html)
+        - [Boostrap reference](http://getbootstrap.com/javascript/#modals)
 
-    * Modals: [Demonstration](../articles/modals.html),
-    [Boostrap reference](http://getbootstrap.com/javascript/#modals)
+    Different verbs associated with these elements: you *embed* tooltips
+    and popovers into tags, whereas you create a modal element, then
+    *attach* the id of the element to a tag.
 
   contents:
     - bs_embed_tooltip

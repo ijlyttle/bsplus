@@ -1,4 +1,4 @@
-#' Create, append, and set options for an accordion-sidebar panel-group
+#' Accordion-sidebar panel-group
 #'
 #' Combines the Bootstrap Accordion with
 #' the \code{shiny::\link[shiny]{sidebarLayout}},

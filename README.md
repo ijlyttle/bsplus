@@ -8,9 +8,7 @@
 This package is not yet on CRAN. You can install the latest development version from github with:
 
 ```R
-if (packageVersion("devtools") < 1.6) {
-  install.packages("devtools")
-}
+# install.packages("devtools")
 devtools::install_github("ijlyttle/bsplus")
 ```
 
@@ -73,7 +71,7 @@ Let's consider the differences between `append`, `attach`, and `embed`:
 
 ## Acknowledgments
 
-This package draws inspiration from the **shinybs** package written by Eric Bailey, and leans heavily on the **htmltools** package written by Joe Cheng.
+This package draws inspiration from the **shinybs** package written by Eric Bailey, and leans heavily on the **htmltools** package written by RStudio.
 
 ## Code of conduct
 

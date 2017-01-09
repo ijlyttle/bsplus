@@ -4,7 +4,7 @@
 \alias{bs_accordion}
 \alias{bs_append.bsplus_accordion}
 \alias{bs_set_opts.bsplus_accordion}
-\title{Create, append, and set options for an accordion panel-group}
+\title{Accordion panel-group}
 \usage{
 bs_accordion(id)
 

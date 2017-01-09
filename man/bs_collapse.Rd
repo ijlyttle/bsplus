@@ -3,7 +3,7 @@
 \name{bs_collapse}
 \alias{bs_attach_collapse}
 \alias{bs_collapse}
-\title{Create and attach a collapsible div}
+\title{Collapsible element}
 \usage{
 bs_collapse(id, content = NULL, show = FALSE)
 

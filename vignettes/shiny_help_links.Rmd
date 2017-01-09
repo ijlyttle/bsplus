@@ -36,12 +36,17 @@ shinyInput_label_embed(
 )
 ```
 
-As of writing, I don't know how to include operable **shiny** inputs in an html document, outside of the **shiny** runtime. To see these functions in action, you can refer to this [**shiny** app](https://ijlyttle.shinyapps.io/tooltip_popover_modal/#), which you can also run locally using `shiny::runApp(system.file("shiny", "tooltip_popover_modal", package = "bsplus"))`.
+As of writing, I don't know how to include operable **shiny** inputs in an html document, outside of the **shiny** runtime. To see these functions in action, you can refer to this [**shiny** app](https://ijlyttle.shinyapps.io/tooltip_popover_modal/#), which you can also run locally using:
+
+```R
+shiny::runApp(system.file("shiny", "tooltip_popover_modal", package = "bsplus"))
+```
 
 ![](img/popover.png)
 
 To promote consistency, the following convention is proposed:
 
-For links (activated by clicking), embed a `shiny::icon("info-circle")` which is the default for `shiny_iconlink()`. For elements activated by hovering, embed a `shiny::icon("info")`.
+- For links (activated by clicking), embed a `shiny::icon("info-circle")`, the default for `shiny_iconlink()`. 
+- For elements activated by hovering, embed a `shiny::icon("info")`.
 
 
