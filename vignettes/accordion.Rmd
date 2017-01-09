@@ -62,5 +62,5 @@ bs_accordion(id = "bootstrap_types") %>%
 
 ## Reference
 
-For more information, please see the [Bootstrap JavaScript page](http://getbootstrap.com/javascript/##collapse-example-accordion).
+For more information, please see the [Bootstrap JavaScript page](http://getbootstrap.com/javascript/#collapse-example-accordion).
 

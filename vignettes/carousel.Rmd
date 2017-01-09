@@ -9,5 +9,53 @@ vignette: >
   %\VignetteEncoding{UTF-8}
 ---
 
-Talk about carousels
+```{r}
+library("htmltools")
+library("bsplus")
+```
 
+A carousel can be useful to cycle through slides with related content. There like the accordion, there are two main functions:
+
+- `bs_carousel()`, used to establish the carousel framework, with arguments `id`, `use_indicators`, for the "dots" indicating the slide, and `use_controls`, for the directional controls at either side. 
+- `bs_append()`, used to add a slide containing `content`, which is HTML, and an optional `caption`.
+
+The `content` and `caption` arguments can be composed using the helper functions `bs_carousel_image()`, which returs a centered-image tag, and `bs_carousel_caption()` with text arguments `title` and `body`.
+
+```{r}
+bs_carousel(id = "the_beatles", use_indicators = TRUE) %>%
+  bs_append(
+    content = bs_carousel_image(src = "img/john.jpg"),
+    caption = bs_carousel_caption("John Lennon", "Rhythm guitar, vocals")
+  ) %>%
+  bs_append(
+    content = bs_carousel_image(src = "img/paul.jpg"),
+    caption = bs_carousel_caption("Paul McCartney", "Bass guitar, vocals")
+  ) %>%
+  bs_append(
+    content = bs_carousel_image(src = "img/george.jpg"),
+    caption = bs_carousel_caption("George Harrison", "Lead guitar, vocals")
+  ) %>%
+  bs_append(
+    content = bs_carousel_image(src = "img/ringo.jpg"),
+    caption = bs_carousel_caption("Ringo Starr", "Drums, vocals")
+  ) 
+```
+
+Here's another rendering of the carousel, this time:
+
+- without indicators
+- without captions
+- the slides do not auto-advance (using `bs_set_data()` to set [Bootstrap options](http://getbootstrap.com/javascript/#carousel-options))
+
+```{r}
+bs_carousel(id = "with_the_beatles") %>%
+  bs_set_data(interval = FALSE) %>%
+  bs_append(content = bs_carousel_image(src = "img/john.jpg")) %>%
+  bs_append(content = bs_carousel_image(src = "img/paul.jpg")) %>%
+  bs_append(content = bs_carousel_image(src = "img/george.jpg")) %>%
+  bs_append(content = bs_carousel_image(src = "img/ringo.jpg")) 
+```
+
+## Reference
+
+For more information, please see the [Bootstrap JavaScript page](http://getbootstrap.com/javascript/#carousel).

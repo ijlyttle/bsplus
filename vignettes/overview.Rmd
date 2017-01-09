@@ -257,7 +257,7 @@ As of writing, I don't know how to include operable **shiny** inputs in an html 
 
 ![](img/popover.png)
 
-To see more of the help-link framework, including more examples and a proposed convention for icons, please read [this article](https://ijlyttle.github.io/bsplus/articles/help_links.html).
+To see more of the help-link framework, including more examples and a proposed convention for icons, please read [this article](https://ijlyttle.github.io/bsplus/articles/shiny_help_links.html).
 
 ## Helper functions
 

@@ -1,10 +1,11 @@
 #' Set the options
 #'
-#' This would be used when we want set options for adding items
+#' This would be used when we want to set options for adding items
 #'
 #' @param tag   \code{htmltools:shinytag}
 #' @param ...  additional arguments, key/value pairs
 #'
+#' @seealso \code{\link{bs_accordion}}, \code{\link{bs_accordion_sidebar}},
 #' @keywords internal
 #' @return modified copy of \code{tag}
 #' @export

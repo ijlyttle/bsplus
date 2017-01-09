@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Append to a bsplus html element — bs_append • bsplus</title>
+<title>Create and append to a carousel — bs_append.bsplus_carousel • bsplus</title>
 
 <!-- jquery -->
 <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha384-nrOSfDHtoPMzJHjVTdCopGqIqeYETSXhZDFyniQ8ZHcVy08QesyHcnOUpMpqnmWq" crossorigin="anonymous"></script>
@@ -77,37 +77,56 @@
       <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Append to a bsplus html element</h1>
+    <h1>Create and append to a carousel</h1>
     </div>
 
     
-    <p>This would be used when we want to add items to a collection</p>
+    <p>A carousel is a means to show a group of images, one at a time.</p>
     
 
-    <pre><span class='fu'>bs_append</span>(<span class='no'>tag</span>, <span class='no'>...</span>)
+    <pre><span class='co'># S3 method for bsplus_carousel</span>
+<span class='fu'><a href='bs_append.html'>bs_append</a></span>(<span class='no'>tag</span>, <span class='no'>content</span>, <span class='kw'>caption</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='no'>...</span>)
 
-<span class='co'># S3 method for default</span>
-<span class='fu'>bs_append</span>(<span class='no'>tag</span>, <span class='no'>...</span>)
+<span class='fu'>bs_carousel</span>(<span class='no'>id</span>, <span class='kw'>use_indicators</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>, <span class='kw'>use_controls</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>)
 
-<span class='co'># S3 method for shiny.tag</span>
-<span class='fu'>bs_append</span>(<span class='no'>tag</span>, <span class='no'>...</span>)</pre>
+<span class='fu'>bs_carousel_caption</span>(<span class='kw'>title</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>body</span> <span class='kw'>=</span> <span class='kw'>NULL</span>)
+
+<span class='fu'>bs_carousel_image</span>(<span class='no'>...</span>)</pre>
     
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a> Arguments</h2>
     <dl class="dl-horizontal">
       <dt>tag</dt>
-      <dd><code>htmltools::<a href='http://www.rdocumentation.org/packages/htmltools/topics/tag'>tag</a></code></dd>
+      <dd><code>htmltools::<a href='http://www.rdocumentation.org/packages/htmltools/topics/tag'>tag</a></code>,
+carousel to which to append a panel</dd>
+      <dt>content</dt>
+      <dd><code>htmltools::<a href='http://www.rdocumentation.org/packages/htmltools/topics/tag'>tag</a></code>,
+content for the slide</dd>
+      <dt>caption</dt>
+      <dd><code>htmltools::<a href='http://www.rdocumentation.org/packages/htmltools/topics/tag'>tag</a></code>,
+caption for the slide</dd>
       <dt>...</dt>
-      <dd>additional arguments</dd>
+      <dd>additional arguments passed to <code>htmltools::<a href='http://www.rdocumentation.org/packages/htmltools/topics/tag'>tag</a>$img</code></dd>
+      <dt>id</dt>
+      <dd>character, unique id for carousel div</dd>
+      <dt>use_indicators</dt>
+      <dd>logical, denotes use of indicators (dots)</dd>
+      <dt>use_controls</dt>
+      <dd>logical, denotes use of controls (chevrons at sides)</dd>
+      <dt>title</dt>
+      <dd>character, caption title</dd>
+      <dt>body</dt>
+      <dd>character, caption body</dd>
     </dl>
     
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
-    <p><code>htmltools::<a href='http://www.rdocumentation.org/packages/htmltools/topics/tag'>tag</a></code>, modified copy of <code>tag</code></p>
+    <p><code>bsplus_carousel</code> object</p>
+    <p><code>htmltools::<a href='http://www.rdocumentation.org/packages/htmltools/topics/tag'>tag</a></code> div for carousel caption</p>
+    <p><code>htmltools::<a href='http://www.rdocumentation.org/packages/htmltools/topics/tag'>tag</a>$img</code></p>
     
     <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
 
-    <p><code><a href='bs_accordion.html'>bs_accordion</a></code>, <code><a href='bs_accordion_sidebar.html'>bs_accordion_sidebar</a></code>,
-  <code><a href='bs_append.bsplus_carousel.html'>bs_carousel</a></code></p>
+    <p><a href = 'http://getbootstrap.com/javascript/#carousel'>http://getbootstrap.com/javascript/#carousel</a></p>
     
 
   </div>

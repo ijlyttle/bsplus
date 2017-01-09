@@ -51,7 +51,6 @@ reference:
     - shiny_iconlink
     - shinyInput_label_embed
 
-
 - title: "Helpers"
   contents:
     - bs_set_aria
@@ -61,7 +60,7 @@ articles:
 - title: "Overview"
   contents:
   - overview
-- title: "Elements"
+- title: "Function families"
   contents:
   - collapse
   - accordion
@@ -69,5 +68,6 @@ articles:
   - tooltip_popover
   - modal
   - carousel
+  - shiny_help_links
 
 

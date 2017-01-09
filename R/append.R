@@ -2,10 +2,12 @@
 #'
 #' This would be used when we want to add items to a collection
 #'
-#' @param tag   \code{htmltools:shinytag}
+#' @param tag  \code{htmltools::\link[htmltools]{tag}}
 #' @param ...  additional arguments
 #'
-#' @return modified copy of \code{tag}
+#' @return \code{htmltools::\link[htmltools]{tag}}, modified copy of \code{tag}
+#' @seealso \code{\link{bs_accordion}}, \code{\link{bs_accordion_sidebar}},
+#'   \code{\link{bs_carousel}}
 #' @keywords internal
 #' @export
 #'
@@ -196,15 +198,14 @@ bs_append.bsplus_accordion_sidebar <- function(tag, title_side, content_side, co
   tag
 }
 
-#' @rdname bs_carousel
-#'
 #' @param tag      \code{htmltools::\link[htmltools]{tag}},
-#'   carousel div to which to append a panel
+#'   carousel to which to append a panel
 #' @param content  \code{htmltools::\link[htmltools]{tag}},
 #'   content for the slide
 #' @param caption  \code{htmltools::\link[htmltools]{tag}},
 #'   caption for the slide
 #'
+#' @rdname bs_carousel
 #' @export
 #'
 bs_append.bsplus_carousel <- function(tag, content, caption = NULL, ...){

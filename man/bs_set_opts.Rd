@@ -21,7 +21,10 @@ bs_set_opts(tag, ...)
 modified copy of \code{tag}
 }
 \description{
-This would be used when we want set options for adding items
+This would be used when we want to set options for adding items
+}
+\seealso{
+\code{\link{bs_accordion}}, \code{\link{bs_accordion_sidebar}},
 }
 \keyword{internal}
 

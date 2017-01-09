@@ -2,6 +2,7 @@
 % Please edit documentation in R/append.R, R/carousel.R
 \name{bs_append.bsplus_carousel}
 \alias{bs_append.bsplus_carousel}
+\alias{bs_car}
 \alias{bs_carousel}
 \alias{bs_carousel_caption}
 \alias{bs_carousel_image}
@@ -17,7 +18,7 @@ bs_carousel_image(...)
 }
 \arguments{
 \item{tag}{\code{htmltools::\link[htmltools]{tag}},
-carousel div to which to append a panel}
+carousel to which to append a panel}
 
 \item{content}{\code{htmltools::\link[htmltools]{tag}},
 content for the slide}
@@ -38,6 +39,8 @@ caption for the slide}
 \item{body}{character, caption body}
 }
 \value{
+\code{bsplus_carousel} object
+
 \code{htmltools::\link[htmltools]{tag}} div for carousel caption
 
 \code{htmltools::\link[htmltools]{tag}$img}

@@ -6,6 +6,8 @@
 #' @param use_indicators   logical, denotes use of indicators (dots)
 #' @param use_controls     logical, denotes use of controls (chevrons at sides)
 #'
+#' @return \code{bsplus_carousel} object
+#'
 #' @seealso \url{http://getbootstrap.com/javascript/#carousel}
 #'
 #' @export
