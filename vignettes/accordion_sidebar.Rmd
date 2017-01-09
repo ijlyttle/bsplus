@@ -14,7 +14,7 @@ library("htmltools")
 library("bsplus")
 ```
 
-An accordion-sidebar can be useful to provide another dimension for your **shiny** apps. For example, you can use **shiny** `tabsetPanel()` for major groupings, then `bs_accordion_sidebar()` panels for minor groupings within each major grouping.
+An accordion-sidebar can be useful to provide another dimension for your **shiny** apps. For example, you can use **shiny** `navbarPage()` for major groupings, then `bs_accordion_sidebar()` panels for minor groupings within each major grouping.
 
 There are three functions in this family:
 

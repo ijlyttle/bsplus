@@ -2,7 +2,6 @@
 % Please edit documentation in R/append.R, R/carousel.R
 \name{bs_append.bsplus_carousel}
 \alias{bs_append.bsplus_carousel}
-\alias{bs_car}
 \alias{bs_carousel}
 \alias{bs_carousel_caption}
 \alias{bs_carousel_image}

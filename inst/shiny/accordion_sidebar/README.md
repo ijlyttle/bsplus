@@ -4,7 +4,7 @@ The primary goal of the package is to make it easier for you to use the [Bootstr
 
 This app shows the same functionality as the companion app, while introducing a new structure called "accordion sidebar". 
 
-Using the functions in the shiny package, we can build one "dimension" of layers using a `tabsetPanel()`. The accordion-sidebar provides you with an independent dimension.
+Using the functions in the shiny package, we can build one "dimension" of layers using a `navbarPage()`. The accordion-sidebar provides you with an independent dimension.
 
 An accordion-sidebar consists of panel-sets. Each panel-set has a sidebar panel and an main panel. The collection of sidebar panels acts as an [accordion](http://getbootstrap.com/javascript/#collapse-example-accordion); the active sidebar panel "controls" the appearance of its main panel.
 

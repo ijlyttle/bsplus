@@ -25,7 +25,7 @@ One of the goals of **bsplus** is to provide access to some useful Bootstrap com
 
 Another goal is to provide some tools to help build **shiny** apps.
 
-- `bs_accordion_sidebar()`: a framework, much like `shiny::tabsetPanel()`, to organize the UI of your **shiny** apps. For example, please see its [article](https://ijlyttle.github.io/bsplus/articles/accordion_sidebar.html), or this [**shiny** app](https://ijlyttle.shinyapps.io/accordion_sidebar/).
+- `bs_accordion_sidebar()`: a framework, much like `shiny::navbarPage()`, to organize the UI of your **shiny** apps. For example, please see its [article](https://ijlyttle.github.io/bsplus/articles/accordion_sidebar.html), or this [**shiny** app](https://ijlyttle.shinyapps.io/accordion_sidebar/).
 
 - `shinyInput_label_embed()`, `shiny_iconlink()`: functions to make it easier to embed help (tooltip, popover, or modal) into a **shiny** input. For example, please see this [**shiny** app](https://ijlyttle.shinyapps.io/tooltip_popover_modal/).
 
@@ -83,7 +83,7 @@ To see more of the `bs_accordion()` function-family, including how to make the e
 
 ## Accordion sidebar
 
-An accordion-sidebar can be useful to provide another dimension for your **shiny** apps. For example, you can use **shiny** `tabsetPanel()` for major groupings, then `bs_accordion_sidebar()` panels for minor groupings within each major grouping.
+An accordion-sidebar can be useful to provide another dimension for your **shiny** apps. For example, you can use **shiny** `navbarPage()` for major groupings, then `bs_accordion_sidebar()` panels for minor groupings within each major grouping.
 
 There like the accordion, there are two main functions:
 
