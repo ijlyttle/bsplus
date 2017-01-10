@@ -1,4 +1,4 @@
-#' Embed a tooltip into an html element
+#' Tooltip
 #'
 #' This is useful to add a few words of explanation to an element.
 #'

@@ -142,7 +142,7 @@
 </div>
 <p>As you can see, the sidebar acts like a <code><a href="../reference/bs_accordion.html">bs_accordion()</a></code>, but there are a couple of important differences. First, a sidebar panel&rsquo;s class changes according to its being open or not. Second, the state (show-hide) of each component&rsquo;s main panel is determined by the state of its side panel.</p>
 <p>When showing him a preview of this work, Carson Sievert asked a crazy question, &ldquo;can you nest those things?&rdquo; Well, apparently you can.</p>
-<p>Note that the outer accordion-sidebar has <code>use_main_enclosure</code> set to <code>FALSE</code>, while the inner accordion-sidebar has it set to <code>TRUE</code>.</p>
+<p>Note that the outer accordion-sidebar has <code>use_main_enclosure</code> set to <code>FALSE</code>, while each inner accordion-sidebar has it set to <code>TRUE</code>.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw"><a href="../reference/bs_accordion_sidebar.html">bs_accordion_sidebar</a></span>(<span class="dt">id =</span> <span class="st">"the_beatles"</span>) %&gt;%
 <span class="st">  </span><span class="kw"><a href="../reference/bs_set_opts.html">bs_set_opts</a></span>(<span class="dt">use_main_enclosure =</span> <span class="ot">FALSE</span>) %&gt;%
 <span class="st">  </span><span class="kw"><a href="../reference/bs_append.html">bs_append</a></span>(

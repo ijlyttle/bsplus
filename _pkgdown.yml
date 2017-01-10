@@ -26,6 +26,14 @@ reference:
         - [Article](../articles/accordion_sidebar.html)
         - [**Shiny** app](https://ijlyttle.shinyapps.io/accordion_sidebar_navbarpage)
 
+    The verb *attach* is used with collapse elements; you create a collapse element,
+    then *attach* its `id` to a link or button tag. For accordions and accordion
+    sidebars, you create the framework tag, then you *append* elements to the tag,
+    using the pipe.
+
+    Also, accordion-sidebars require activation, which you can do calling
+    `use_bs_accordion_sidebar()` once on your page.
+
   contents:
     - bs_collapse
     - bs_accordion
@@ -42,13 +50,19 @@ reference:
     - Popover
         - [Article](../articles/tooltip_popover.html)
         - [Bootstrap reference](http://getbootstrap.com/javascript/#popovers)
-    - Modals
+    - Modal window
         - [Article](../articles/modals.html)
         - [Boostrap reference](http://getbootstrap.com/javascript/#modals)
 
-    Different verbs associated with these elements: you *embed* tooltips
-    and popovers into tags, whereas you create a modal element, then
-    *attach* the id of the element to a tag.
+    You can see tooltips, popovers, and modal windows in this
+    [**shiny** app](https://ijlyttle.shinyapps.io/tooltip_popover_modal).
+
+    Different verbs are associated with these elements: you *embed* tooltips
+    and popovers into tags; whereas you create a modal element, then
+    *attach* its `id` to a tag.
+
+    Also, tooltips and popovers require activation, which you can do calling
+    `use_bs_tooltip()` or `use_bs_popover()` once on your page.
 
   contents:
     - bs_embed_tooltip
@@ -57,7 +71,7 @@ reference:
 
 - title: "Shiny extensions"
   desc: >
-    Things that require Shiny, or are used with Shiny
+
 
   contents:
     - shiny_iconlink

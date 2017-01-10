@@ -1,4 +1,4 @@
-#' Create and attach a modal window
+#' Modal window
 #'
 #' Modal windows are useful to make detailed explanations. If you want to compose
 #' body of a modal window using markdown, a helper function is provided:

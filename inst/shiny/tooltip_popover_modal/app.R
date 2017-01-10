@@ -1,6 +1,7 @@
 library("shiny")
 library("shinythemes")
 library("markdown")
+library("commonmark")
 library("bsplus")
 
 # Define some UI elements
@@ -29,13 +30,27 @@ input_letter <-
     )
   )
 
+# normally, you can use `render_html_fragment()`, but
+# shinyapps will not let it write a temporary file
+#
+# so will use commonmark instead
+#
+markdown_sample <-
+"
+#### 4th-level headers work well
+
+Who wrote your favorite equation?
+
+* Newton
+* Einstein
+* Other
+"
+
 modal_equation <-
   bs_modal(
     id = "modal_equation",
     title = "Equations",
-    body =
-      system.file("markdown", "modal.md", package = "bsplus") %>%
-      render_html_fragment(),
+    body = markdown_html(markdown_sample) %>% HTML(),
     size = "medium"
   )
 

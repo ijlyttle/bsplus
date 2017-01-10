@@ -3,7 +3,7 @@
 \name{bs_embed_popover}
 \alias{bs_embed_popover}
 \alias{use_bs_popover}
-\title{Embed a popover into an html element}
+\title{Popover}
 \usage{
 bs_embed_popover(tag, title = NULL, content = NULL, placement = "top",
   ...)

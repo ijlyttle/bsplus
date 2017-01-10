@@ -3,7 +3,7 @@
 \name{bs_embed_tooltip}
 \alias{bs_embed_tooltip}
 \alias{use_bs_tooltip}
-\title{Embed a tooltip into an html element}
+\title{Tooltip}
 \usage{
 bs_embed_tooltip(tag, title = "", placement = "top", ...)
 

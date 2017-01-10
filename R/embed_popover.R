@@ -1,4 +1,4 @@
-#' Embed a popover into an html element
+#' Popover
 #'
 #' This is useful to add a more-verbose explanation to an element.
 #'

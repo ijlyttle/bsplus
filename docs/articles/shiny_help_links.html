@@ -65,12 +65,14 @@
     <span class="dt">title =</span> <span class="st">"Letter"</span>, <span class="dt">content =</span> <span class="st">"Choose a favorite"</span>, <span class="dt">placement =</span> <span class="st">"left"</span>
   )
 )</code></pre></div>
-<p>As of writing, I don&rsquo;t know how to include operable <strong>shiny</strong> inputs in an html document, outside of the <strong>shiny</strong> runtime. To see these functions in action, you can refer to this <a href="https://ijlyttle.shinyapps.io/tooltip_popover_modal/#"><strong>shiny</strong> app</a>, which you can also run locally using <code>shiny::runApp(system.file("shiny", "tooltip_popover_modal", package = "bsplus"))</code>.</p>
+<p>As of writing, I don&rsquo;t know how to include operable <strong>shiny</strong> inputs in an html document, outside of the <strong>shiny</strong> runtime. To see these functions in action, you can refer to this <a href="https://ijlyttle.shinyapps.io/tooltip_popover_modal/#"><strong>shiny</strong> app</a>, which you can also run locally using:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">shiny::<span class="kw">runApp</span>(<span class="kw">system.file</span>(<span class="st">"shiny"</span>, <span class="st">"tooltip_popover_modal"</span>, <span class="dt">package =</span> <span class="st">"bsplus"</span>))</code></pre></div>
 <div class="figure">
 <img src="img/popover.png"></div>
 <p>To promote consistency, the following convention is proposed:</p>
-<p>For links (activated by clicking), embed a <code>shiny::icon("info-circle")</code> which is the default for <code><a href="../reference/shiny_iconlink.html">shiny_iconlink()</a></code>. For elements activated by hovering, embed a <code>shiny::icon("info")</code>.</p>
-</div>
+<ul><li>For links (activated by clicking), embed a <code>shiny::icon("info-circle")</code>, the default for <code><a href="../reference/shiny_iconlink.html">shiny_iconlink()</a></code>.</li>
+<li>For elements activated by hovering, embed a <code>shiny::icon("info")</code>.</li>
+</ul></div>
   </div>
 
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">

@@ -4,7 +4,7 @@
 \alias{bs_attach_modal}
 \alias{bs_modal}
 \alias{bs_modal_closebutton}
-\title{Create and attach a modal window}
+\title{Modal window}
 \usage{
 bs_modal(id, title, body, footer = bs_modal_closebutton(title = "Close"),
   size = c("medium", "large", "small"))
