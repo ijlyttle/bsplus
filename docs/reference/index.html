@@ -146,7 +146,7 @@
 </ul>
 </li>
 </ul>
-<p>You can see tooltips, popovers, and modal windows in this <a href="https://ijlyttle.shinyapps.io/tooltip_popover_modal"><strong>shiny</strong> app</a>. Different verbs are associated with these elements: you <em>embed</em> tooltips and popovers into tags, whereas you create a modal element, then <em>attach</em> the <code>id</code> of the element to a tag. Also, tooltips and popovers require activation, which you can do calling <code><a href="../reference/bs_embed_tooltip.html">use_bs_tooltip()</a></code> or <code><a href="../reference/bs_embed_popover.html">use_bs_popover()</a></code> once on your page.</p>
+<p>You can see tooltips, popovers, and modal windows in this <a href="https://ijlyttle.shinyapps.io/tooltip_popover_modal"><strong>shiny</strong> app</a>. Different verbs are associated with these elements: you <em>embed</em> tooltips and popovers into tags; whereas you create a modal element, then <em>attach</em> its <code>id</code> to a tag. Also, tooltips and popovers require activation, which you can do calling <code><a href="../reference/bs_embed_tooltip.html">use_bs_tooltip()</a></code> or <code><a href="../reference/bs_embed_popover.html">use_bs_popover()</a></code> once on your page.</p>
 </p>
 
       
@@ -164,8 +164,8 @@
       <ul>
         <li><code><a href="bs_modal.html">bs_attach_modal</a></code></li><li><code><a href="bs_modal.html">bs_modal</a></code></li><li><code><a href="bs_modal.html">bs_modal_closebutton</a></code></li>
       </ul>
-          <h2 id="section-shiny-extensions" class="hasAnchor"><a href="#section-shiny-extensions" class="anchor"></a>Shiny extensions</h2>
-      <p class="section-desc"><p>Things that require Shiny, or are used with Shiny</p></p>
+          <h2 id="section-shiny-ui-extensions" class="hasAnchor"><a href="#section-shiny-ui-extensions" class="anchor"></a>Shiny UI extensions</h2>
+      <p class="section-desc"><p>One of the more-specific goals of this package is to make it easier to incorporate help-documentation into your <strong>shiny</strong> apps. Some helper functions are provided to create help-links, then embed them into labels of <strong>shiny</strong> inputs. You can see these helper functions in action in this <a href="https://ijlyttle.shinyapps.io/tooltip_popover_modal/"><strong>shiny</strong> app</a>.</p></p>
 
       
       <p><a href="shiny_iconlink.html">Create link containing Shiny icon</a></p>
@@ -178,7 +178,7 @@
         <li><code><a href="shinyInput_label_embed.html">shinyInput_label_embed</a></code></li>
       </ul>
           <h2 id="section-helpers" class="hasAnchor"><a href="#section-helpers" class="anchor"></a>Helpers</h2>
-      <p class="section-desc"></p>
+      <p class="section-desc"><p>Finally, there are some other helper functions for setting the attributes of tags, and to render markdown into HTML. I am looking forward to replacing the <code><a href="../reference/render_html_fragment.html">render_html_fragment()</a></code> function with <code>markdown_html()</code> from the <strong>commonmark</strong> package, as soon as I can see a way to take care of MathJax.</p></p>
 
       
       <p><a href="bs_set_data.html">Sets Bootstrap data- and aria- attributes.</a></p>
@@ -199,7 +199,7 @@
     <ul class="nav nav-pills nav-stacked">
       <li><a href="#section-collapse-accordion-and-accordion-sidebar">Collapse, accordion, and accordion sidebar</a></li>
       <li><a href="#section-tooltip-popover-and-modal">Tooltip, popover, and modal</a></li>
-      <li><a href="#section-shiny-extensions">Shiny extensions</a></li>
+      <li><a href="#section-shiny-ui-extensions">Shiny UI extensions</a></li>
       <li><a href="#section-helpers">Helpers</a></li>
     </ul>
   </div>

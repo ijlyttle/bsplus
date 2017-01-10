@@ -69,15 +69,27 @@ reference:
     - bs_embed_popover
     - bs_modal
 
-- title: "Shiny extensions"
+- title: "Shiny UI extensions"
   desc: >
+    One of the more-specific goals of this package is to make it easier to
+    incorporate help-documentation into your **shiny** apps. Some helper
+    functions are provided to create help-links, then embed them into labels
+    of **shiny** inputs.
 
+    You can see these helper functions in action in this
+    [**shiny** app](https://ijlyttle.shinyapps.io/tooltip_popover_modal/).
 
   contents:
     - shiny_iconlink
     - shinyInput_label_embed
 
 - title: "Helpers"
+  desc: >
+    Finally, there are some other helper functions for setting the attributes
+    of tags, and to render markdown into HTML. I am looking forward to
+    replacing the `render_html_fragment()` function with `markdown_html()` from
+    the **commonmark** package, as soon as I can see a way to take care of
+    MathJax.
   contents:
     - bs_set_aria
     - render_html_fragment
