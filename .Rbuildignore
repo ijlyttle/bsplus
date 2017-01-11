@@ -15,4 +15,4 @@
 ^vignettes/modal\.Rmd$
 ^vignettes/tooltip_popover\.Rmd$
 ^vignettes/help_links\.Rmd$
-\.dcf$
+^rsconnect$
