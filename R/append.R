@@ -204,6 +204,7 @@ bs_append.bsplus_accordion_sidebar <- function(tag, title_side, content_side, co
 #'   content for the slide
 #' @param caption  character (HTML) or \code{htmltools::\link[htmltools]{tagList}},
 #'   caption for the slide
+#' @param ...              other args (not used)
 #'
 #' @rdname bs_carousel
 #' @export

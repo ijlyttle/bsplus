@@ -77,8 +77,8 @@ In the context of a set of piped functions, the first argument will always be th
 ### Verbs
 
 - `bs_append(tag, ...)` used to append something to a tag, perhaps a panel into an accordion-group.
-- `bs_attach(tag, ...)` used to attach the id of an element to another tag, for example, you could create a modal window using `bs_modal()`, then you could *attach* the id of the modal window to the tag,
-- `bs_emded_foo(tag, ...)` used to embed something (a foo) into a tag.
+- `bs_attach_foo(tag, ...)` used to attach the id of an element (foo) to another tag, for example, you could create a modal window using `bs_modal()`, then you could *attach* the id of the modal window to the tag using `bs_attach_modal()`
+- `bs_emded_foo(tag, ...)` used to embed something (a foo) into a tag, for example, `bs_embed_tooltip()`
 - `bs_set_opts(tag, ...)` used to set some options for the items yet to be appended to a tag.
 
 Let's consider the differences between `append`, `attach`, and `embed`:

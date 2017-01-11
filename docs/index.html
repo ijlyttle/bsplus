@@ -123,9 +123,11 @@ devtools::<span class="kw">install_github</span>(<span class="st">"ijlyttle/bspl
 <ul><li>
 <code><a href="reference/bs_append.html">bs_append(tag, ...)</a></code> used to append something to a tag, perhaps a panel into an accordion-group.</li>
 <li>
-<code>bs_attach(tag, ...)</code> used to attach the id of an element to another tag, for example, you could create a modal window using <code><a href="reference/bs_modal.html">bs_modal()</a></code>, then you could <em>attach</em> the id of the modal window to the tag,</li>
+<code>bs_attach_foo(tag, ...)</code> used to attach the id of an element (foo) to another tag, for example, you could create a modal window using <code><a href="reference/bs_modal.html">bs_modal()</a></code>, then you could <em>attach</em> the id of the modal window to the tag using <code><a href="reference/bs_modal.html">bs_attach_modal()</a></code>
+</li>
 <li>
-<code>bs_emded_foo(tag, ...)</code> used to embed something (a foo) into a tag.</li>
+<code>bs_emded_foo(tag, ...)</code> used to embed something (a foo) into a tag, for example, <code><a href="reference/bs_embed_tooltip.html">bs_embed_tooltip()</a></code>
+</li>
 <li>
 <code><a href="reference/bs_set_opts.html">bs_set_opts(tag, ...)</a></code> used to set some options for the items yet to be appended to a tag.</li>
 </ul><p>Let&rsquo;s consider the differences between <code>append</code>, <code>attach</code>, and <code>embed</code>:</p>

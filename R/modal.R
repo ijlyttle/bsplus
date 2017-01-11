@@ -28,7 +28,7 @@
 #' Accordingly, this can be supplied as the value of the \code{body} argument.
 #'
 #' If you want to compose your own footer for the modal window, the function
-#' \code{\link{bs_modal_closebutton()}} can be useful.
+#' \code{bs_modal_closebutton()} can be useful.
 #'
 #' @param id       character, unique id for the modal window
 #' @param title    character, title for the modal window (or close-button)

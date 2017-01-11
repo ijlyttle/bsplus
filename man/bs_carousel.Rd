@@ -19,6 +19,8 @@ content for the slide}
 \item{caption}{character (HTML) or \code{htmltools::\link[htmltools]{tagList}},
 caption for the slide}
 
+\item{...}{other args (not used)}
+
 \item{id}{character, unique id for accordion \code{<div/>},
 also serves as root id for slides appended using \code{bs_append()}}
 

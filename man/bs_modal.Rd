@@ -69,7 +69,7 @@ an external source. This is the motivation for the helper function,
 Accordingly, this can be supplied as the value of the \code{body} argument.
 
 If you want to compose your own footer for the modal window, the function
-\code{\link{bs_modal_closebutton()}} can be useful.
+\code{bs_modal_closebutton()} can be useful.
 }
 \examples{
 library("htmltools")
