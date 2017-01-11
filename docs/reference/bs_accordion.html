@@ -81,7 +81,7 @@
     </div>
 
     
-    <p>An accordion is a set of panels where, at most, one panel body is visible.</p>
+    <p>An accordion is a set of collapsible panels where, at most, one panel-body is visible.</p>
     
 
     <pre><span class='fu'>bs_accordion</span>(<span class='no'>id</span>)
@@ -96,11 +96,11 @@
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a> Arguments</h2>
     <dl class="dl-horizontal">
       <dt>id</dt>
-      <dd>character, unique id for accordion div,
-also serves as root it for panels appended using <code>bs_append()</code></dd>
+      <dd>character, unique id for accordion <code>&lt;div/&gt;</code>,
+also serves as root id for panels appended using <code>bs_append()</code></dd>
       <dt>tag</dt>
       <dd><code>htmltools::<a href='http://www.rdocumentation.org/packages/htmltools/topics/tag'>tag</a></code>,
-accordion div to which to append a panel</dd>
+accordion <code>&lt;div/&gt;</code> to which to append a panel</dd>
       <dt>title</dt>
       <dd>character (HTML) or <code>htmltools::<a href='http://www.rdocumentation.org/packages/htmltools/topics/tag'>tagList</a></code>,
 title for the panel heading</dd>
@@ -113,17 +113,19 @@ content for the panel body</dd>
       <dd>character, one of the standard Bootstrap types
 <code>c(&quot;default&quot;, &quot;primary&quot;, &quot;success&quot;, &quot;info&quot;, &quot;warning&quot;, &quot;danger&quot;)</code></dd>
       <dt>use_heading_link</dt>
-      <dd>logical, indicates whether to use the entire panel heading
-as a link.</dd>
+      <dd>logical, indicates whether to make the entire panel heading
+clickable.</dd>
     </dl>
     
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
-    <p><code>bsplus_accordion</code> object</p>
+    <p><code>bsplus_accordion</code> object (<code>htmltools::<a href='http://www.rdocumentation.org/packages/htmltools/topics/tag'>tag</a></code>,
+  <code>&lt;div/&gt;</code>)</p>
     
     <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
 
-    <p>All of these functions return a <code>bsplus_accordion</code> object, so you can
+    <p>All of these functions return a <code>bsplus_accordion</code> object
+(which is also an <code>htmltools::<a href='http://www.rdocumentation.org/packages/htmltools/topics/tag'>tag</a></code>, <code>&lt;div/&gt;</code>), so you can
 compose an accordion by piping. There are three parts to this system:</p>
     <p><ol>
 <li>A constructor function for the accordion, <code>bs_accordion()</code>
@@ -133,30 +135,12 @@ compose an accordion by piping. There are three parts to this system:</p>
 <li>A function to append a panel to the group, <code>bs_append()</code>
 </li>
 </ol></p>
-    <p>The verb &quot;append&quot; is used to signify that we can append an arbitrary
+    <p>The verb <em>append</em> is used to signify that you can append an arbitrary
 number of panels to an accordion.</p>
     <p>For the constructor, <code>bs_accordion()</code>,
-it is your responsibility to ensure that id is unique
-among html elements in your page. If you have non-unique id&#39;s, strange things may
+it is your responsibility to ensure that <code>id</code> is unique
+among HTML elements in your page. If you have non-unique <code>id</code>&#39;s, strange things may
 happen to your page.</p>
-    <p>Using <code>bs_set_opts()</code>, there are two options that can be set for
-the panels that follow:</p>
-    <p><dl class='dl-horizontal'>
-  <dt><code>panel_type</code></dt><dd>character, indicates Bootstrap type</dd>
-  <dt><code>use_heading_link</code></dt><dd>logical, indicates if the entire panel-heading shall be
-  made clickable</dd>
-</dl></p>
-    <p>If <code>use_heading_link</code> is <code>FALSE</code>,
-the panel is constructed as shown in
-<a href = 'http://getbootstrap.com/javascript/#collapse-example-accordion'>http://getbootstrap.com/javascript/#collapse-example-accordion</a>;
-if <code>TRUE</code>, makes the entire panel heading clickable.</p>
-    <p>The <code>bs_append()</code> function is used to build a panel and append it to an accordion,
-using the arguments:</p>
-    <p><dl class='dl-horizontal'>
-  <dt><code>title</code></dt><dd>Usually text for the panel heading, but HTML can be used as well</dd>
-  <dt><code>content</code></dt><dd>Content for the panel body, can be HTML or an
-  <code>htmltools::<a href='http://www.rdocumentation.org/packages/htmltools/topics/tag'>tagList</a></code></dd>
-</dl></p>
     
     <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
 

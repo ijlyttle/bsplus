@@ -96,7 +96,7 @@ body of a modal window using markdown, a helper function is provided:
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a> Arguments</h2>
     <dl class="dl-horizontal">
       <dt>id</dt>
-      <dd>character, unique id for collapsible div</dd>
+      <dd>character, unique id for the modal window</dd>
       <dt>title</dt>
       <dd>character, title for the modal window (or close-button)</dd>
       <dt>body</dt>
@@ -117,10 +117,10 @@ button or link to which to attach the modal window</dd>
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
     <p><dl class='dl-horizontal'>
-  <dt><code>bs_modal()</code></dt><dd><code>htmltools::<a href='http://www.rdocumentation.org/packages/htmltools/topics/tag'>tag</a></code>, div</dd>
+  <dt><code>bs_modal()</code></dt><dd><code>htmltools::<a href='http://www.rdocumentation.org/packages/htmltools/topics/tag'>tag</a></code>, <code>&lt;div/&gt;</code></dd>
   <dt><code>bs_attach_modal()</code></dt><dd><code>htmltools::<a href='http://www.rdocumentation.org/packages/htmltools/topics/tag'>tag</a></code>,
     modified copy of <code>tag</code></dd>
-  <dt><code>bs_modal_closebutton()</code></dt><dd><code>htmltools::<a href='http://www.rdocumentation.org/packages/htmltools/topics/tag'>tag</a></code>, button</dd>
+  <dt><code>bs_modal_closebutton()</code></dt><dd><code>htmltools::<a href='http://www.rdocumentation.org/packages/htmltools/topics/tag'>tag</a></code>, <code>&lt;button/&gt;</code></dd>
 </dl></p>
     
     <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
@@ -130,15 +130,15 @@ there are two parts to this system:</p>
     <p><ol>
 <li>A modal window, created using <code>bs_modal()</code>
   </li>
-<li>At least one button or link to which the id of the
+<li>At least one button or link to which the <code>id</code> of the
   modal window is attached, using <code>bs_attach_modal()</code>
 </li>
 </ol></p>
-    <p>The verb &quot;attach&quot; is used to signify that we are attaching the id of our
-modal window to the tag in question (likely a button or a link). This implies that
-you can attach (the id of) a modal window to more than one button or link.</p>
-    <p>It is your responsibility to ensure that id is unique
-among html elements in your page. If you have non-unique id&#39;s, strange things may
+    <p>The verb <em>attach</em> is used to signify that we are attaching the <code>id</code> of our
+modal window to the <code>tag</code> in question (generally a button or a link). This implies that
+you can attach the <code>id</code> of a modal window to more than one button or link.</p>
+    <p>It is your responsibility to ensure that <code>id</code> is unique
+among HTML elements in your page. If you have non-unique <code>id</code>&#39;s, strange things may
 happen to your page.</p>
     <p>Your code may be cleaner if you can import the content for the modal body from
 an external source. This is the motivation for the helper function,
@@ -146,8 +146,7 @@ an external source. This is the motivation for the helper function,
 (or even R markdown) file, then renders it into HTML, then returns the HTML.
 Accordingly, this can be supplied as the value of the <code>body</code> argument.</p>
     <p>If you want to compose your own footer for the modal window, the function
-<code>bs_modal_closebutton()</code> can be useful. It takes a single argument,
-<code>title</code>, as the text to put in the button.</p>
+<code>bs_modal_closebutton()</code> can be useful.</p>
     
     <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
 
@@ -181,8 +180,8 @@ Accordingly, this can be supplied as the value of the <code>body</code> argument
   <span class='kw'>body</span> <span class='kw'>=</span> <span class='fu'><a href='render_html_fragment.html'>render_html_fragment</a></span>(
     <span class='fu'>system.file</span>(<span class='st'>"markdown"</span>, <span class='st'>"modal.md"</span>, <span class='kw'>package</span> <span class='kw'>=</span> <span class='st'>"bsplus"</span>)
   )
-)</div><div class='output co'>#&gt; /Applications/RStudio.app/Contents/MacOS/pandoc/pandoc +RTS -K512m -RTS modal.utf8.md --to html --from markdown+autolink_bare_uris+ascii_identifiers+tex_math_single_backslash --output /var/folders/rg/9kvy_lsn43z90d439n02nfw80000gn/T//RtmpXbEl7t/file72939323a48 --smart --email-obfuscation none --self-contained --mathjax --standalone --section-divs --template /Users/ijlyttle/Library/R/3.3/library/rmarkdown/rmd/fragment/default.html --no-highlight </div><div class='output co'>#&gt; <span class='message'></span>
-#&gt; <span class='message'>Output created: /var/folders/rg/9kvy_lsn43z90d439n02nfw80000gn/T//RtmpXbEl7t/file72939323a48</span></div><div class='output co'>#&gt; &lt;div aria-labelledby=&quot;modal_large-title&quot; class=&quot;modal fade bs-example-modal-lg&quot; id=&quot;modal_large&quot; role=&quot;dialog&quot; tabindex=&quot;-1&quot;&gt;
+)</div><div class='output co'>#&gt; /Applications/RStudio.app/Contents/MacOS/pandoc/pandoc +RTS -K512m -RTS modal.utf8.md --to html --from markdown+autolink_bare_uris+ascii_identifiers+tex_math_single_backslash --output /var/folders/rg/9kvy_lsn43z90d439n02nfw80000gn/T//RtmppFOBpr/file4ba520e1470a --smart --email-obfuscation none --self-contained --mathjax --standalone --section-divs --template /Users/ijlyttle/Library/R/3.3/library/rmarkdown/rmd/fragment/default.html --no-highlight </div><div class='output co'>#&gt; <span class='message'></span>
+#&gt; <span class='message'>Output created: /var/folders/rg/9kvy_lsn43z90d439n02nfw80000gn/T//RtmppFOBpr/file4ba520e1470a</span></div><div class='output co'>#&gt; &lt;div aria-labelledby=&quot;modal_large-title&quot; class=&quot;modal fade bs-example-modal-lg&quot; id=&quot;modal_large&quot; role=&quot;dialog&quot; tabindex=&quot;-1&quot;&gt;
 #&gt;   &lt;div class=&quot;modal-dialog modal-lg&quot; role=&quot;document&quot;&gt;
 #&gt;     &lt;div class=&quot;modal-content&quot;&gt;
 #&gt;       &lt;div class=&quot;modal-header&quot;&gt;

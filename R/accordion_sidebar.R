@@ -1,14 +1,15 @@
 #' Accordion-sidebar panel-group
 #'
-#' Combines the Bootstrap Accordion with
-#' the \code{shiny::\link[shiny]{sidebarLayout}},
-#' allowing you to add another dimension to your Shiny apps.
+#' Combines Bootstrap accordion with
+#' the functionality of \code{shiny::\link[shiny]{sidebarLayout}},
+#' allowing you to add another dimension to your \strong{shiny} apps.
 #'
 #' If you use a \code{bs_accordion_sidebar()}, you will have to call the function
 #' \code{use_bs_accordion_sidebar()} somewhere in your UI. This attaches some
-#' javascript needed for your accordion sidebar to work properly.
+#' JavaScript needed for your accordion sidebar to work properly.
 #'
-#' All of these functions return a \code{bsplus_accsidebar} object, so you can
+#' All of these functions return a \code{bsplus_accsidebar} object,
+#' (which is also an \code{htmltools::\link[htmltools]{tag}}, \code{<div/>}), so you can
 #' compose an accordion sidebar by piping. There are three parts to this system:
 #'
 #' \enumerate{
@@ -17,42 +18,22 @@
 #'   \item{A function to append a panel-set to an accordion-sidebar, \code{bs_append()}}
 #' }
 #'
-#' The verb "append" is used to signify that we can append an arbitrary
+#' The verb \emph{append} is used to signify that you can append an arbitrary
 #' number of panels-sets to an accordion-sidebar.
 #'
 #' For the constructor, \code{bs_accordion_sidebar()},
-#' it is your responsibility to ensure that id is unique
-#' among html elements in your page. If you have non-unique id's, strange things may
+#' it is your responsibility to ensure that \code{id} is unique
+#' among HTML elements in your page. If you have non-unique \code{id}'s, strange things may
 #' happen to your page.
 #'
-#' Using \code{bs_set_opts()}, there are two options that can be set for
-#' the panels that follow: \code{panel_type_active} and \code{panel_type_active}.
-#' Both these arguments expect one of the standard Bootstrap types.
-#'
-#' \describe{
-#'   \item{\code{panel_type_active}}{used for the open accordion-panel}
-#'   \item{\code{panel_type_inactive}}{used for the closed accordion-panels}
-#' }
-#'
-#' The \code{bs_append()} function is used to build a set of panels
-#' and append them to the accordion-sidebar, using the arguments:
-#'
-#' \describe{
-#'   \item{\code{title_side}}{Usually text for the sidebar-panel heading, but HTML can be used as well}
-#'   \item{\code{content_side}}{Content for the sidebar-panel body, such as Shiny inputs. Can be HTML
-#'   or an \code{htmltools::\link[htmltools]{tagList}}}
-#'   \item{\code{content_main}}{Content for the main-panel body, such as Shiny outputs. Can be HTML
-#'   or an \code{htmltools::\link[htmltools]{tagList}}}
-#' }
-#'
-#' @param id                  character, unique id for accordion-sidebar div,
-#'   also serves as root it for panels appended using \code{bs_append()}
+#' @param id                  character, unique id for accordion-sidebar \code{<div/>},
+#'   also serves as root id for panels appended using \code{bs_append()}
 #' @param spec_side           numeric, column specification for sidebar panels
 #' @param spec_main           numeric, column specification for main panels
 #' @param position            character, indicates where to put the sidebar panels with
 #'    repspect to the main panels
 #' @param tag                 \code{htmltools::\link[htmltools]{tag}},
-#'   accordion div to which to append a panel
+#'   accordion-sidebar \code{<div/>} to which to append a panel
 #' @param panel_type_active   character, indicated bootstrap type for active-panel header,
 #'   one of \code{c("default", "primary", "success", "info", "warning", "danger")}
 #' @param panel_type_inactive character, indicated bootstrap type for inactive-panel header,
@@ -67,7 +48,8 @@
 #'   content for the main panel
 #' @param ...                 other args (not used)
 #'
-#' @return \code{bsplus_accsidebar} object
+#' @return \code{bsplus_accsidebar} object (\code{htmltools::\link[htmltools]{tag}},
+#'   \code{<div/>})
 #'
 #' @examples
 #' bs_accordion_sidebar(id = "meet_the_beatles") %>%

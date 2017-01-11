@@ -3,51 +3,65 @@
 \name{bs_append.bsplus_carousel}
 \alias{bs_append.bsplus_carousel}
 \alias{bs_carousel}
-\alias{bs_carousel_caption}
-\alias{bs_carousel_image}
-\title{Create and append to a carousel}
+\title{Carousel}
 \usage{
 \method{bs_append}{bsplus_carousel}(tag, content, caption = NULL, ...)
 
 bs_carousel(id, use_indicators = FALSE, use_controls = TRUE)
-
-bs_carousel_caption(title = NULL, body = NULL)
-
-bs_carousel_image(...)
 }
 \arguments{
 \item{tag}{\code{htmltools::\link[htmltools]{tag}},
-carousel to which to append a panel}
+carousel \code{<div/>} to which to append a panel}
 
-\item{content}{\code{htmltools::\link[htmltools]{tag}},
+\item{content}{character (HTML) or \code{htmltools::\link[htmltools]{tagList}},
 content for the slide}
 
-\item{caption}{\code{htmltools::\link[htmltools]{tag}},
+\item{caption}{character (HTML) or \code{htmltools::\link[htmltools]{tagList}},
 caption for the slide}
 
-\item{...}{additional arguments passed to \code{htmltools::\link[htmltools]{tag}$img}}
+\item{id}{character, unique id for accordion \code{<div/>},
+also serves as root id for slides appended using \code{bs_append()}}
 
-\item{id}{character, unique id for carousel div}
-
-\item{use_indicators}{logical, denotes use of indicators (dots)}
+\item{use_indicators}{logical, denotes use of slide-position indicators (dots)}
 
 \item{use_controls}{logical, denotes use of controls (chevrons at sides)}
-
-\item{title}{character, caption title}
-
-\item{body}{character, caption body}
 }
 \value{
-\code{bsplus_carousel} object
-
-\code{htmltools::\link[htmltools]{tag}} div for carousel caption
-
-\code{htmltools::\link[htmltools]{tag}$img}
+\code{bsplus_carousel} object (\code{htmltools::\link[htmltools]{tag}},
+  \code{<div/>})
 }
 \description{
-A carousel is a means to show a group of images, one at a time.
+A carousel is used to enclose a set of (typically) images,
+providing controls to move slides back-and-forth.
+}
+\details{
+All of these functions return a \code{bsplus_carousel} object
+(which is also an \code{htmltools::\link[htmltools]{tag}}, \code{<div/>}), so you can
+compose a carousel by piping. There are two parts to this system:
+
+\enumerate{
+  \item{A constructor function for the carousel, \code{bs_carousel()}}
+  \item{A function to append a slide to the carousel, \code{bs_append()}}
+}
+
+The verb \emph{append} is used to signify that you can append an arbitrary
+number of slides to a carousel.
+
+For the constructor, \code{bs_carousel()},
+it is your responsibility to ensure that \code{id} is unique
+among HTML elements in your page. If you have non-unique \code{id}'s, strange things may
+happen to your page.
+}
+\examples{
+bs_carousel(id = "with_the_beatles") \%>\%
+  bs_append(content = bs_carousel_image(src = "img/john.jpg")) \%>\%
+  bs_append(content = bs_carousel_image(src = "img/paul.jpg")) \%>\%
+  bs_append(content = bs_carousel_image(src = "img/george.jpg")) \%>\%
+  bs_append(content = bs_carousel_image(src = "img/ringo.jpg"))
+
 }
 \seealso{
-\url{http://getbootstrap.com/javascript/#carousel}
+\url{http://getbootstrap.com/javascript/#carousel},
+  \code{\link{bs_carousel_image}}, \code{\link{bs_carousel_caption}}
 }
 

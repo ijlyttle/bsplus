@@ -1,22 +1,22 @@
 #' Tooltip
 #'
-#' This is useful to add a few words of explanation to an element.
+#' A tooltip can be a useful way to add a few words of explanation to a tag.
 #'
 #' To activate the use of tooltips in your page, you will need to call
 #' the \code{use_bs_tooltip()} function somewhere.
 #'
-#' The verb "embed" is used to signify that we are embedding information
-#' into the tag. This implies that we can embed, at most, one "thing"
-#' into a particular tag. We should not, for example, embed both a tooltip
-#' and a popover into a tag.
+#' The verb \emph{embed} is used to signify that you are embedding information
+#' into a \code{tag}. This implies that you can embed, at most, one "thing"
+#' into a particular \code{tag}. You should not, for example, expect to embed both a tooltip
+#' and a popover into a \code{tag}.
 #'
-#' @param tag        \code{htmltools::\link[htmltools]{tag}},
-#'   button or link into which to embed a tooltip
+#' @param tag        \code{htmltools::\link[htmltools]{tag}}, generally
+#'   \code{<button/>} or \code{<a/>}, into which to embed the tooltip
 #' @param title      character, title for the tooltip
-#' @param placement  character, placement of the tooltip with respect to the tag
-#' @param ...        other named arguments, passed to bs_set_data()
+#' @param placement  character, placement of the tooltip with respect to \code{tag}
+#' @param ...        other named arguments, passed to \code{bs_set_data()}
 #'
-#' @return  \code{htmltools::\link[htmltools]{tag}}, modified copy of tag
+#' @return  \code{htmltools::\link[htmltools]{tag}}, modified copy of \code{tag}
 #' @seealso \code{\link{bs_embed_popover}}, \url{http://getbootstrap.com/javascript/#tooltips}
 #' @examples
 #' library("htmltools")

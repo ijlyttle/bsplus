@@ -81,9 +81,9 @@
     </div>
 
     
-    <p>Combines the Bootstrap Accordion with
-the <code>shiny::<a href='http://www.rdocumentation.org/packages/shiny/topics/sidebarLayout'>sidebarLayout</a></code>,
-allowing you to add another dimension to your Shiny apps.</p>
+    <p>Combines Bootstrap accordion with
+the functionality of <code>shiny::<a href='http://www.rdocumentation.org/packages/shiny/topics/sidebarLayout'>sidebarLayout</a></code>,
+allowing you to add another dimension to your <strong>shiny</strong> apps.</p>
     
 
     <pre><span class='fu'>bs_accordion_sidebar</span>(<span class='no'>id</span>, <span class='kw'>spec_side</span> <span class='kw'>=</span> <span class='fu'>c</span>(<span class='kw'>width</span> <span class='kw'>=</span> <span class='fl'>4</span>, <span class='kw'>offset</span> <span class='kw'>=</span> <span class='fl'>0</span>),
@@ -103,8 +103,8 @@ allowing you to add another dimension to your Shiny apps.</p>
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a> Arguments</h2>
     <dl class="dl-horizontal">
       <dt>id</dt>
-      <dd>character, unique id for accordion-sidebar div,
-also serves as root it for panels appended using <code>bs_append()</code></dd>
+      <dd>character, unique id for accordion-sidebar <code>&lt;div/&gt;</code>,
+also serves as root id for panels appended using <code>bs_append()</code></dd>
       <dt>spec_side</dt>
       <dd>numeric, column specification for sidebar panels</dd>
       <dt>spec_main</dt>
@@ -114,7 +114,7 @@ also serves as root it for panels appended using <code>bs_append()</code></dd>
 repspect to the main panels</dd>
       <dt>tag</dt>
       <dd><code>htmltools::<a href='http://www.rdocumentation.org/packages/htmltools/topics/tag'>tag</a></code>,
-accordion div to which to append a panel</dd>
+accordion-sidebar <code>&lt;div/&gt;</code> to which to append a panel</dd>
       <dt>title_side</dt>
       <dd>character (HTML) or <code>htmltools::<a href='http://www.rdocumentation.org/packages/htmltools/topics/tag'>tagList</a></code>,
 title for the sidebar panel</dd>
@@ -139,14 +139,16 @@ Bootstrap panel</dd>
     
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
-    <p><code>bsplus_accsidebar</code> object</p>
+    <p><code>bsplus_accsidebar</code> object (<code>htmltools::<a href='http://www.rdocumentation.org/packages/htmltools/topics/tag'>tag</a></code>,
+  <code>&lt;div/&gt;</code>)</p>
     
     <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
 
     <p>If you use a <code>bs_accordion_sidebar()</code>, you will have to call the function
 <code>use_bs_accordion_sidebar()</code> somewhere in your UI. This attaches some
-javascript needed for your accordion sidebar to work properly.</p>
-    <p>All of these functions return a <code>bsplus_accsidebar</code> object, so you can
+JavaScript needed for your accordion sidebar to work properly.</p>
+    <p>All of these functions return a <code>bsplus_accsidebar</code> object,
+(which is also an <code>htmltools::<a href='http://www.rdocumentation.org/packages/htmltools/topics/tag'>tag</a></code>, <code>&lt;div/&gt;</code>), so you can
 compose an accordion sidebar by piping. There are three parts to this system:</p>
     <p><ol>
 <li>A constructor function for the accordion-sidebar, <code>bs_accordion_sidebar()</code>
@@ -156,28 +158,12 @@ compose an accordion sidebar by piping. There are three parts to this system:</p
 <li>A function to append a panel-set to an accordion-sidebar, <code>bs_append()</code>
 </li>
 </ol></p>
-    <p>The verb &quot;append&quot; is used to signify that we can append an arbitrary
+    <p>The verb <em>append</em> is used to signify that you can append an arbitrary
 number of panels-sets to an accordion-sidebar.</p>
     <p>For the constructor, <code>bs_accordion_sidebar()</code>,
-it is your responsibility to ensure that id is unique
-among html elements in your page. If you have non-unique id&#39;s, strange things may
+it is your responsibility to ensure that <code>id</code> is unique
+among HTML elements in your page. If you have non-unique <code>id</code>&#39;s, strange things may
 happen to your page.</p>
-    <p>Using <code>bs_set_opts()</code>, there are two options that can be set for
-the panels that follow: <code>panel_type_active</code> and <code>panel_type_active</code>.
-Both these arguments expect one of the standard Bootstrap types.</p>
-    <p><dl class='dl-horizontal'>
-  <dt><code>panel_type_active</code></dt><dd>used for the open accordion-panel</dd>
-  <dt><code>panel_type_inactive</code></dt><dd>used for the closed accordion-panels</dd>
-</dl></p>
-    <p>The <code>bs_append()</code> function is used to build a set of panels
-and append them to the accordion-sidebar, using the arguments:</p>
-    <p><dl class='dl-horizontal'>
-  <dt><code>title_side</code></dt><dd>Usually text for the sidebar-panel heading, but HTML can be used as well</dd>
-  <dt><code>content_side</code></dt><dd>Content for the sidebar-panel body, such as Shiny inputs. Can be HTML
-  or an <code>htmltools::<a href='http://www.rdocumentation.org/packages/htmltools/topics/tag'>tagList</a></code></dd>
-  <dt><code>content_main</code></dt><dd>Content for the main-panel body, such as Shiny outputs. Can be HTML
-  or an <code>htmltools::<a href='http://www.rdocumentation.org/packages/htmltools/topics/tag'>tagList</a></code></dd>
-</dl></p>
     
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>

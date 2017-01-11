@@ -77,6 +77,8 @@ reference:
 
   contents:
   - bs_carousel
+  - bs_carousel_image
+  - bs_carousel_caption
 
 - title: "Shiny UI extensions"
   desc: >

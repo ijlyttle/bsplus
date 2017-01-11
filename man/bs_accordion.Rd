@@ -14,11 +14,11 @@ bs_accordion(id)
   use_heading_link = TRUE, ...)
 }
 \arguments{
-\item{id}{character, unique id for accordion div,
-also serves as root it for panels appended using \code{bs_append()}}
+\item{id}{character, unique id for accordion \code{<div/>},
+also serves as root id for panels appended using \code{bs_append()}}
 
 \item{tag}{\code{htmltools::\link[htmltools]{tag}},
-accordion div to which to append a panel}
+accordion \code{<div/>} to which to append a panel}
 
 \item{title}{character (HTML) or \code{htmltools::\link[htmltools]{tagList}},
 title for the panel heading}
@@ -31,17 +31,19 @@ content for the panel body}
 \item{panel_type}{character, one of the standard Bootstrap types
 \code{c("default", "primary", "success", "info", "warning", "danger")}}
 
-\item{use_heading_link}{logical, indicates whether to use the entire panel heading
-as a link.}
+\item{use_heading_link}{logical, indicates whether to make the entire panel heading
+clickable.}
 }
 \value{
-\code{bsplus_accordion} object
+\code{bsplus_accordion} object (\code{htmltools::\link[htmltools]{tag}},
+  \code{<div/>})
 }
 \description{
-An accordion is a set of panels where, at most, one panel body is visible.
+An accordion is a set of collapsible panels where, at most, one panel-body is visible.
 }
 \details{
-All of these functions return a \code{bsplus_accordion} object, so you can
+All of these functions return a \code{bsplus_accordion} object
+(which is also an \code{htmltools::\link[htmltools]{tag}}, \code{<div/>}), so you can
 compose an accordion by piping. There are three parts to this system:
 
 \enumerate{
@@ -50,36 +52,13 @@ compose an accordion by piping. There are three parts to this system:
   \item{A function to append a panel to the group, \code{bs_append()}}
 }
 
-The verb "append" is used to signify that we can append an arbitrary
+The verb \emph{append} is used to signify that you can append an arbitrary
 number of panels to an accordion.
 
 For the constructor, \code{bs_accordion()},
-it is your responsibility to ensure that id is unique
-among html elements in your page. If you have non-unique id's, strange things may
+it is your responsibility to ensure that \code{id} is unique
+among HTML elements in your page. If you have non-unique \code{id}'s, strange things may
 happen to your page.
-
-Using \code{bs_set_opts()}, there are two options that can be set for
-the panels that follow:
-
-\describe{
-  \item{\code{panel_type}}{character, indicates Bootstrap type}
-  \item{\code{use_heading_link}}{logical, indicates if the entire panel-heading shall be
-  made clickable}
-}
-
-If \code{use_heading_link} is \code{FALSE},
-the panel is constructed as shown in
-\url{http://getbootstrap.com/javascript/#collapse-example-accordion};
-if \code{TRUE}, makes the entire panel heading clickable.
-
-The \code{bs_append()} function is used to build a panel and append it to an accordion,
-using the arguments:
-
-\describe{
-  \item{\code{title}}{Usually text for the panel heading, but HTML can be used as well}
-  \item{\code{content}}{Content for the panel body, can be HTML or an
-  \code{htmltools::\link[htmltools]{tagList}}}
-}
 }
 \examples{
 bs_accordion(id = "meet_the_beatles") \%>\%

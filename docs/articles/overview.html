@@ -47,7 +47,7 @@
     
     
 <div class="contents">
-<p>One of the goals of <strong>bsplus</strong> is to provide access to some useful Bootstrap components for <strong>rmarkdown</strong> html-documents and <strong>shiny</strong> apps. These function families are:</p>
+<p>One of the goals of <strong>bsplus</strong> is to provide access to some useful Bootstrap components for <strong>rmarkdown</strong> html-documents and <strong>shiny</strong> apps:</p>
 <ul><li><p><a href="http://getbootstrap.com/javascript/#collapse">collapse</a></p></li>
 <li><p><a href="http://getbootstrap.com/javascript/#collapse-example-accordion">accordion</a></p></li>
 <li><p><a href="http://getbootstrap.com/javascript/#modals">modal</a></p></li>
@@ -57,7 +57,7 @@
 </ul><p>Another goal is to provide some tools to help build <strong>shiny</strong> apps.</p>
 <ul><li><p><code><a href="../reference/bs_accordion_sidebar.html">bs_accordion_sidebar()</a></code>: a framework, much like <code>shiny::navbarPage()</code>, to organize the UI of your <strong>shiny</strong> apps. For example, please see its <a href="https://ijlyttle.github.io/bsplus/articles/accordion_sidebar.html">article</a>, or this <a href="https://ijlyttle.shinyapps.io/accordion_sidebar/"><strong>shiny</strong> app</a>.</p></li>
 <li><p><code><a href="../reference/shinyInput_label_embed.html">shinyInput_label_embed()</a></code>, <code><a href="../reference/shiny_iconlink.html">shiny_iconlink()</a></code>: functions to make it easier to embed help (tooltip, popover, or modal) into a <strong>shiny</strong> input. For example, please see this <a href="https://ijlyttle.shinyapps.io/tooltip_popover_modal/"><strong>shiny</strong> app</a>.</p></li>
-</ul><p>Even though some of the functions here are useful only in <strong>shiny</strong> apps, please note that none of the functions in this package depend on the server side of <strong>shiny</strong> - only the UI side.</p>
+</ul><p>The philosophy of this package is to allow you to work with Bootstrap JavaScript components using HTML, while smoothing some of the rough edges. Even though some of the functions here are useful only in <strong>shiny</strong> apps, please note that none of the functions in this package depend on the server side of <strong>shiny</strong> - only the UI side.</p>
 <div id="collapse" class="section level2">
 <h2 class="hasAnchor"><html><body><a href="#collapse" class="anchor"> </a></body></html>Collapse</h2>
 <p>A collapsible element is attached to a button or link, which is used to show (or hide) the element.</p>
@@ -378,20 +378,20 @@ $('.panel-collapse-leader').on('hide.bs.collapse', function () {
 <li><code><a href="../reference/bs_append.html">bs_append()</a></code>, used to add a slide containing <code>content</code>, which is HTML, and an optional <code>caption</code></li>
 </ul><div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw"><a href="../reference/bs_append.bsplus_carousel.html">bs_carousel</a></span>(<span class="dt">id =</span> <span class="st">"the_beatles"</span>, <span class="dt">use_indicators =</span> <span class="ot">TRUE</span>) %&gt;%
 <span class="st">  </span><span class="kw"><a href="../reference/bs_append.html">bs_append</a></span>(
-    <span class="dt">content =</span> <span class="kw"><a href="../reference/bs_append.bsplus_carousel.html">bs_carousel_image</a></span>(<span class="dt">src =</span> <span class="kw">image_uri</span>(<span class="st">"img/john.jpg"</span>)),
-    <span class="dt">caption =</span> <span class="kw"><a href="../reference/bs_append.bsplus_carousel.html">bs_carousel_caption</a></span>(<span class="st">"John Lennon"</span>, <span class="st">"Rhythm guitar, vocals"</span>)
+    <span class="dt">content =</span> <span class="kw"><a href="../reference/bs_carousel_image.html">bs_carousel_image</a></span>(<span class="dt">src =</span> <span class="kw">image_uri</span>(<span class="st">"img/john.jpg"</span>)),
+    <span class="dt">caption =</span> <span class="kw"><a href="../reference/bs_carousel_caption.html">bs_carousel_caption</a></span>(<span class="st">"John Lennon"</span>, <span class="st">"Rhythm guitar, vocals"</span>)
   ) %&gt;%
 <span class="st">  </span><span class="kw"><a href="../reference/bs_append.html">bs_append</a></span>(
-    <span class="dt">content =</span> <span class="kw"><a href="../reference/bs_append.bsplus_carousel.html">bs_carousel_image</a></span>(<span class="dt">src =</span> <span class="kw">image_uri</span>(<span class="st">"img/paul.jpg"</span>)),
-    <span class="dt">caption =</span> <span class="kw"><a href="../reference/bs_append.bsplus_carousel.html">bs_carousel_caption</a></span>(<span class="st">"Paul McCartney"</span>, <span class="st">"Bass guitar, vocals"</span>)
+    <span class="dt">content =</span> <span class="kw"><a href="../reference/bs_carousel_image.html">bs_carousel_image</a></span>(<span class="dt">src =</span> <span class="kw">image_uri</span>(<span class="st">"img/paul.jpg"</span>)),
+    <span class="dt">caption =</span> <span class="kw"><a href="../reference/bs_carousel_caption.html">bs_carousel_caption</a></span>(<span class="st">"Paul McCartney"</span>, <span class="st">"Bass guitar, vocals"</span>)
   ) %&gt;%
 <span class="st">  </span><span class="kw"><a href="../reference/bs_append.html">bs_append</a></span>(
-    <span class="dt">content =</span> <span class="kw"><a href="../reference/bs_append.bsplus_carousel.html">bs_carousel_image</a></span>(<span class="dt">src =</span> <span class="kw">image_uri</span>(<span class="st">"img/george.jpg"</span>)),
-    <span class="dt">caption =</span> <span class="kw"><a href="../reference/bs_append.bsplus_carousel.html">bs_carousel_caption</a></span>(<span class="st">"George Harrison"</span>, <span class="st">"Lead guitar, vocals"</span>)
+    <span class="dt">content =</span> <span class="kw"><a href="../reference/bs_carousel_image.html">bs_carousel_image</a></span>(<span class="dt">src =</span> <span class="kw">image_uri</span>(<span class="st">"img/george.jpg"</span>)),
+    <span class="dt">caption =</span> <span class="kw"><a href="../reference/bs_carousel_caption.html">bs_carousel_caption</a></span>(<span class="st">"George Harrison"</span>, <span class="st">"Lead guitar, vocals"</span>)
   ) %&gt;%
 <span class="st">  </span><span class="kw"><a href="../reference/bs_append.html">bs_append</a></span>(
-    <span class="dt">content =</span> <span class="kw"><a href="../reference/bs_append.bsplus_carousel.html">bs_carousel_image</a></span>(<span class="dt">src =</span> <span class="kw">image_uri</span>(<span class="st">"img/ringo.jpg"</span>)),
-    <span class="dt">caption =</span> <span class="kw"><a href="../reference/bs_append.bsplus_carousel.html">bs_carousel_caption</a></span>(<span class="st">"Ringo Starr"</span>, <span class="st">"Drums, vocals"</span>)
+    <span class="dt">content =</span> <span class="kw"><a href="../reference/bs_carousel_image.html">bs_carousel_image</a></span>(<span class="dt">src =</span> <span class="kw">image_uri</span>(<span class="st">"img/ringo.jpg"</span>)),
+    <span class="dt">caption =</span> <span class="kw"><a href="../reference/bs_carousel_caption.html">bs_carousel_caption</a></span>(<span class="st">"Ringo Starr"</span>, <span class="st">"Drums, vocals"</span>)
   ) </code></pre></div>
 <div id="the_beatles" class="carousel slide" data-ride="carousel">
 <ol class="carousel-indicators"><li data-target="#the_beatles" data-slide-to="0" class="active">
@@ -434,7 +434,7 @@ $('.panel-collapse-leader').on('hide.bs.collapse', function () {
 </a>
 </div>
 <p>I think the carousel has potential not shown in this example. The content of each slide is HTML, so a carousel could contain images (as shown here), <strong>shiny</strong> inputs or outputs. Another possibility may be to use the the <code>frame</code> aesthetic offered by <strong>gganimate</strong> to cycle through <strong>ggplot2</strong> plots.</p>
-<p>To see more of the <code><a href="../reference/bs_append.bsplus_carousel.html">bs_carousel()</a></code> framework, including its helper functions <code><a href="../reference/bs_append.bsplus_carousel.html">bs_carousel_image()</a></code> and <code><a href="../reference/bs_append.bsplus_carousel.html">bs_carousel_caption()</a></code>, please see <a href="https://ijlyttle.github.io/bsplus/articles/carousel.html">its article</a>.</p>
+<p>To see more of the <code><a href="../reference/bs_append.bsplus_carousel.html">bs_carousel()</a></code> framework, including its helper functions <code><a href="../reference/bs_carousel_image.html">bs_carousel_image()</a></code> and <code><a href="../reference/bs_carousel_caption.html">bs_carousel_caption()</a></code>, please see <a href="https://ijlyttle.github.io/bsplus/articles/carousel.html">its article</a>.</p>
 </div>
 <div id="help-links" class="section level2">
 <h2 class="hasAnchor"><html><body><a href="#help-links" class="anchor"> </a></body></html>Help links</h2>
@@ -457,6 +457,7 @@ $('.panel-collapse-leader').on('hide.bs.collapse', function () {
 )</code></pre></div>
 <p>As of writing, I don&rsquo;t know how to include operable <strong>shiny</strong> inputs in an html document, outside of the <strong>shiny</strong> runtime. To see these functions in action, you can refer to this <a href="https://ijlyttle.shinyapps.io/tooltip_popover_modal/#"><strong>shiny</strong> app</a>, which you can also run locally using:</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">shiny::<span class="kw">runApp</span>(<span class="kw">system.file</span>(<span class="st">"shiny"</span>, <span class="st">"tooltip_popover_modal"</span>, <span class="dt">package =</span> <span class="st">"bsplus"</span>))</code></pre></div>
+<p>Here&rsquo;s an image of what it looks like:</p>
 <div class="figure">
 <img src="img/popover.png"></div>
 <p>To see more of the help-link framework, including more examples and a proposed convention for icons, please read <a href="https://ijlyttle.github.io/bsplus/articles/shiny_help_links.html">this article</a>.</p>

@@ -9,7 +9,7 @@ vignette: >
   %\VignetteEncoding{UTF-8}
 ---
 
-One of the goals of **bsplus** is to provide access to some useful Bootstrap components for **rmarkdown** html-documents and **shiny** apps. These function families are:
+One of the goals of **bsplus** is to provide access to some useful Bootstrap components for **rmarkdown** html-documents and **shiny** apps:
 
 - [collapse](http://getbootstrap.com/javascript/#collapse)
 
@@ -29,7 +29,7 @@ Another goal is to provide some tools to help build **shiny** apps.
 
 - `shinyInput_label_embed()`, `shiny_iconlink()`: functions to make it easier to embed help (tooltip, popover, or modal) into a **shiny** input. For example, please see this [**shiny** app](https://ijlyttle.shinyapps.io/tooltip_popover_modal/).
 
-Even though some of the functions here are useful only in **shiny** apps, please note that none of the functions in this package depend on the server side of **shiny** - only the UI side.
+The philosophy of this package is to allow you to work with Bootstrap JavaScript components using HTML, while smoothing some of the rough edges. Even though some of the functions here are useful only in **shiny** apps, please note that none of the functions in this package depend on the server side of **shiny** - only the UI side.
 
 ```{r echo=FALSE}
 library("htmltools")
@@ -258,6 +258,8 @@ As of writing, I don't know how to include operable **shiny** inputs in an html 
 ```R
 shiny::runApp(system.file("shiny", "tooltip_popover_modal", package = "bsplus"))
 ```
+
+Here's an image of what it looks like:
 
 ![](img/popover.png)
 

@@ -199,10 +199,10 @@ bs_append.bsplus_accordion_sidebar <- function(tag, title_side, content_side, co
 }
 
 #' @param tag      \code{htmltools::\link[htmltools]{tag}},
-#'   carousel to which to append a panel
-#' @param content  \code{htmltools::\link[htmltools]{tag}},
+#'   carousel \code{<div/>} to which to append a panel
+#' @param content   character (HTML) or \code{htmltools::\link[htmltools]{tagList}},
 #'   content for the slide
-#' @param caption  \code{htmltools::\link[htmltools]{tag}},
+#' @param caption  character (HTML) or \code{htmltools::\link[htmltools]{tagList}},
 #'   caption for the slide
 #'
 #' @rdname bs_carousel

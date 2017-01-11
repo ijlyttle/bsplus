@@ -10,29 +10,29 @@ bs_embed_tooltip(tag, title = "", placement = "top", ...)
 use_bs_tooltip()
 }
 \arguments{
-\item{tag}{\code{htmltools::\link[htmltools]{tag}},
-button or link into which to embed a tooltip}
+\item{tag}{\code{htmltools::\link[htmltools]{tag}}, generally
+\code{<button/>} or \code{<a/>}, into which to embed the tooltip}
 
 \item{title}{character, title for the tooltip}
 
-\item{placement}{character, placement of the tooltip with respect to the tag}
+\item{placement}{character, placement of the tooltip with respect to \code{tag}}
 
-\item{...}{other named arguments, passed to bs_set_data()}
+\item{...}{other named arguments, passed to \code{bs_set_data()}}
 }
 \value{
-\code{htmltools::\link[htmltools]{tag}}, modified copy of tag
+\code{htmltools::\link[htmltools]{tag}}, modified copy of \code{tag}
 }
 \description{
-This is useful to add a few words of explanation to an element.
+A tooltip can be a useful way to add a few words of explanation to a tag.
 }
 \details{
 To activate the use of tooltips in your page, you will need to call
 the \code{use_bs_tooltip()} function somewhere.
 
-The verb "embed" is used to signify that we are embedding information
-into the tag. This implies that we can embed, at most, one "thing"
-into a particular tag. We should not, for example, embed both a tooltip
-and a popover into a tag.
+The verb \emph{embed} is used to signify that you are embedding information
+into a \code{tag}. This implies that you can embed, at most, one "thing"
+into a particular \code{tag}. You should not, for example, expect to embed both a tooltip
+and a popover into a \code{tag}.
 }
 \examples{
 library("htmltools")

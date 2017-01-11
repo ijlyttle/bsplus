@@ -9,16 +9,16 @@
 #'
 #' \enumerate{
 #'   \item{A modal window, created using \code{bs_modal()}}
-#'   \item{At least one button or link to which the id of the
+#'   \item{At least one button or link to which the \code{id} of the
 #'   modal window is attached, using \code{bs_attach_modal()}}
 #' }
 #'
-#' The verb "attach" is used to signify that we are attaching the id of our
-#' modal window to the tag in question (likely a button or a link). This implies that
-#' you can attach (the id of) a modal window to more than one button or link.
+#' The verb \emph{attach} is used to signify that we are attaching the \code{id} of our
+#' modal window to the \code{tag} in question (generally a button or a link). This implies that
+#' you can attach the \code{id} of a modal window to more than one button or link.
 #'
-#' It is your responsibility to ensure that id is unique
-#' among html elements in your page. If you have non-unique id's, strange things may
+#' It is your responsibility to ensure that \code{id} is unique
+#' among HTML elements in your page. If you have non-unique \code{id}'s, strange things may
 #' happen to your page.
 #'
 #' Your code may be cleaner if you can import the content for the modal body from
@@ -28,10 +28,9 @@
 #' Accordingly, this can be supplied as the value of the \code{body} argument.
 #'
 #' If you want to compose your own footer for the modal window, the function
-#' \code{bs_modal_closebutton()} can be useful. It takes a single argument,
-#' \code{title}, as the text to put in the button.
+#' \code{\link{bs_modal_closebutton()}} can be useful.
 #'
-#' @param id       character, unique id for collapsible div
+#' @param id       character, unique id for the modal window
 #' @param title    character, title for the modal window (or close-button)
 #' @param body     character (HTML) or \code{htmltools::\link[htmltools]{tagList}},
 #'   content for the body of the modal window
@@ -45,10 +44,10 @@
 #' @seealso \code{\link{render_html_fragment}}
 #' @return
 #' \describe{
-#'   \item{\code{bs_modal()}}{\code{htmltools::\link[htmltools]{tag}}, div}
+#'   \item{\code{bs_modal()}}{\code{htmltools::\link[htmltools]{tag}}, \code{<div/>}}
 #'   \item{\code{bs_attach_modal()}}{\code{htmltools::\link[htmltools]{tag}},
 #'     modified copy of \code{tag}}
-#'   \item{\code{bs_modal_closebutton()}}{\code{htmltools::\link[htmltools]{tag}}, button}
+#'   \item{\code{bs_modal_closebutton()}}{\code{htmltools::\link[htmltools]{tag}}, \code{<button/>}}
 #' }
 #' @examples
 #' library("htmltools")

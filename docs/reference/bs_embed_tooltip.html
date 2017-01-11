@@ -81,7 +81,7 @@
     </div>
 
     
-    <p>This is useful to add a few words of explanation to an element.</p>
+    <p>A tooltip can be a useful way to add a few words of explanation to a tag.</p>
     
 
     <pre><span class='fu'>bs_embed_tooltip</span>(<span class='no'>tag</span>, <span class='kw'>title</span> <span class='kw'>=</span> <span class='st'>""</span>, <span class='kw'>placement</span> <span class='kw'>=</span> <span class='st'>"top"</span>, <span class='no'>...</span>)
@@ -91,28 +91,28 @@
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a> Arguments</h2>
     <dl class="dl-horizontal">
       <dt>tag</dt>
-      <dd><code>htmltools::<a href='http://www.rdocumentation.org/packages/htmltools/topics/tag'>tag</a></code>,
-button or link into which to embed a tooltip</dd>
+      <dd><code>htmltools::<a href='http://www.rdocumentation.org/packages/htmltools/topics/tag'>tag</a></code>, generally
+<code>&lt;button/&gt;</code> or <code>&lt;a/&gt;</code>, into which to embed the tooltip</dd>
       <dt>title</dt>
       <dd>character, title for the tooltip</dd>
       <dt>placement</dt>
-      <dd>character, placement of the tooltip with respect to the tag</dd>
+      <dd>character, placement of the tooltip with respect to <code>tag</code></dd>
       <dt>...</dt>
-      <dd>other named arguments, passed to bs_set_data()</dd>
+      <dd>other named arguments, passed to <code>bs_set_data()</code></dd>
     </dl>
     
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
-    <p><code>htmltools::<a href='http://www.rdocumentation.org/packages/htmltools/topics/tag'>tag</a></code>, modified copy of tag</p>
+    <p><code>htmltools::<a href='http://www.rdocumentation.org/packages/htmltools/topics/tag'>tag</a></code>, modified copy of <code>tag</code></p>
     
     <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
 
     <p>To activate the use of tooltips in your page, you will need to call
 the <code>use_bs_tooltip()</code> function somewhere.</p>
-    <p>The verb &quot;embed&quot; is used to signify that we are embedding information
-into the tag. This implies that we can embed, at most, one &quot;thing&quot;
-into a particular tag. We should not, for example, embed both a tooltip
-and a popover into a tag.</p>
+    <p>The verb <em>embed</em> is used to signify that you are embedding information
+into a <code>tag</code>. This implies that you can embed, at most, one &quot;thing&quot;
+into a particular <code>tag</code>. You should not, for example, expect to embed both a tooltip
+and a popover into a <code>tag</code>.</p>
     
     <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
 
