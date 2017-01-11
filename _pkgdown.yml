@@ -14,24 +14,23 @@ reference:
     For **shiny** apps, the accordion-sidebar framework may be useful as it can
     give you another dimension with which to organize your UI.
 
-    - Collapse
+    - Collapsible element
         - [Article](../articles/collapse.html)
         - [Boostrap reference](http://getbootstrap.com/javascript/#collapse)
 
-    - Accordion
+    - Accordion panel-group
         - [Article](../articles/accordion.html)
         - [Boostrap reference](http://getbootstrap.com/javascript/#collapse-example-accordion)
 
-    - Accordion sidebar
+    - Accordion-sidebar panel-group
         - [Article](../articles/accordion_sidebar.html)
         - [**Shiny** app](https://ijlyttle.shinyapps.io/accordion_sidebar_navbarpage)
 
     The verb *attach* is used with collapse elements; you create a collapse element,
     then *attach* its `id` to a link or button tag. For accordions and accordion
-    sidebars, you create the framework tag, then you *append* elements to the tag,
-    using the pipe.
+    sidebars, you create the framework tag, then *append* elements using the pipe.
 
-    Also, accordion-sidebars require activation, which you can do calling
+    Also, accordion-sidebars require activation, which you can do by calling
     `use_bs_accordion_sidebar()` once on your page.
 
   contents:
@@ -39,7 +38,7 @@ reference:
     - bs_accordion
     - bs_accordion_sidebar
 
-- title: "Tooltip, popover, and modal"
+- title: "Tooltip, popover, and modal window"
   desc: >
     Tooltips, popovers, and modals can be useful for including extra information
     in your **rmarkdown** document or your **shiny** app.
@@ -69,6 +68,16 @@ reference:
     - bs_embed_popover
     - bs_modal
 
+- title: "Carousel"
+  desc: >
+    Some words about carousels.
+
+      - [Article](../articles/carousel.html)
+      - [Bootstrap reference](http://getbootstrap.com/javascript/#carousel)
+
+  contents:
+  - bs_carousel
+
 - title: "Shiny UI extensions"
   desc: >
     One of the more-specific goals of this package is to make it easier to
@@ -90,6 +99,12 @@ reference:
     replacing the `render_html_fragment()` function with `markdown_html()` from
     the **commonmark** package, as soon as I can see a way to take care of
     MathJax.
+
+    The function `bs_set_data()` makes things a little easier for you by
+    prepending `"data-"` to each name and serializing values to the format
+    specified by the Bootstrap API. The function `bs_set_aria()` works
+    similarly to prepend `"aria-"` to each name.
+
   contents:
     - bs_set_aria
     - render_html_fragment

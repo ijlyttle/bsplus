@@ -14,12 +14,29 @@ devtools::install_github("ijlyttle/bsplus")
 
 ## Introduction
 
-To see all of this in action, you are referred to the [articles page](http://ijlyttle.github.io/bsplus/articles/index.html) at this package's **pkgdown** site. 
+To see all of this in action, you are referred to the [overview article](http://ijlyttle.github.io/bsplus/articles/overview.html) at this package's **pkgdown** site. 
 
 The goals of this package are:
 
 - to provide a framework to use Bootstrap's markup API: http://getbootstrap.com/javascript/
 - to promote composition of HTML using pipes.
+- to provide functions that work for both **rmarkdown** HTML documents and for **shiny** apps - the only exceptions are some functions that work with only the UI side of **shiny**.
+
+### Highlights
+
+This package has three capabilities to emphasize:
+
+#### Accordion-sidebar
+
+This is a family of functions that lets you build another dimension to your **shiny** apps, although you can still use it **rmarkdown** HTML documents.
+
+#### Shiny-help links
+
+A couple of functions make it easier to incorporate help-documentation into your **shiny** apps - functions for incorporating tooltips, popovers, and modals into the labels of **shiny** inputs. For more information, you can see this [**shiny** app](https://ijlyttle.shinyapps.io/tooltip_popover_modal/) and this [article](https://ijlyttle.github.io/bsplus/)
+
+#### Carousel
+
+### Function families 
 
 In this package, there are function families for:
 
@@ -29,6 +46,7 @@ In this package, there are function families for:
 - tooltips: `bs_embed_tooltip()`
 - popovers: `bs_embed_popover()`
 - modals: `bs_modal()`
+- carousels: `bs_carousel()`
 
 There are also helper functions:
 
@@ -50,13 +68,13 @@ Let's start with the conventions used to name the functions:
 
 - `use_bs_noun()` used to add a bit of Javascript to your HTML, just like the **shinyjs** function `useShinyJS()`. This is necessary for `bs_accordion_sidebar()`, `bs_embed_tooltip()`, or `bs_embed_popover()` to work properly.
 
-## Nouns
+### Nouns
 
 Often we use the words *element* and *tag* interchangeably - we are talking about HTML elements. In the grammar of this documentation (and package), it can be useful to think about *direct* objects and *indirect* objects, so the word *tag* is used to denote *direct* objects, and the words *element* or *thing* are used to denote *indirect* objects.
 
 In the context of a set of piped functions, the first argument will always be the direct object; the name of the first argument of many functions is `tag` - you will be sending the tag through the pipe.
 
-## Verbs
+### Verbs
 
 - `bs_append(tag, ...)` used to append something to a tag, perhaps a panel into an accordion-group.
 - `bs_attach(tag, ...)` used to attach the id of an element to another tag, for example, you could create a modal window using `bs_modal()`, then you could *attach* the id of the modal window to the tag,
@@ -71,7 +89,7 @@ Let's consider the differences between `append`, `attach`, and `embed`:
 
 ## Acknowledgments
 
-This package draws inspiration from the **shinybs** package written by Eric Bailey, and leans heavily on the **htmltools** package written by RStudio.
+This package draws inspiration from [**shinyBS**](https://ebailey78.github.io/shinyBS/), written by Eric Bailey, and leans heavily on [**htmltools**](https://cran.r-project.org/web/packages/htmltools/index.html), written by RStudio.
 
 ## Code of conduct
 

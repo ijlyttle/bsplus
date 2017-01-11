@@ -267,20 +267,22 @@ To see more of the help-link framework, including more examples and a proposed c
 
 Finally, there are a couple of helper functions for customizing Bootstrap tags: `bs_set_data()` and `bs_set_aria()`. These can be useful because not all of the options for Bootstrap components are represented in the arguments of functions in this package. 
 
-Consider the [options for popovers](http://getbootstrap.com/javascript/#popovers-options); there are close to a dozen. The only one that I thought might be commonly used was `placement`, so this became an argument to `bs_embed_popover()`. Let's say that you want to be able to dismiss a popover by clicking anywhere in the browser window other than the button. To do this, you have to set the attribute `data-trigger` to the value `"focus"`.
+Consider the [options for popovers](http://getbootstrap.com/javascript/#popovers-options); there are close to a dozen. The only one that I thought might be commonly used was `placement`, so this became an explicit argument to `bs_embed_popover()`. 
 
-Although you can do this using `htmltools::tagAppendAttributes()`, the function `bs_set_data()` makes things a little easier for you.
+Let's say that you want to be able to dismiss a popover by clicking anywhere in the browser window other than the button. To do this, you have to set the attribute `data-trigger` to the value `"focus"`. The function `bs_set_data()` makes things a little easier for you by prepending `"data-"` to each name and serializing the values to the format specified by the Bootstrap API.  
+
+The `bs_embed_popover()` function has a `...` argument; any such additional arguments are passed to `bs_set_data()`. Thus, you can add this `trigger` argument to `bs_embed_popover()`.
 
 ```{r}
 tags$button(type = "button", class = "btn btn-primary", "Click for popover") %>%
   bs_embed_popover(
     title = "To dismiss",
-    content = "Click anywhere in the browser window, except the button."
-  ) %>%
-  bs_set_data(trigger = "focus")
+    content = "Click anywhere in the browser window, except the button.",
+    trigger = "focus"
+  )
 ```
 
-Both of these functions are used to set attributes on tags; `bs_set_data()` is used for attributes that start with `data-`, `bs_set_aria()` is used for attributes that start with `aria-`. To see more of these helper functions, please read [their reference](https://ijlyttle.github.io/bsplus/reference/bs_set_data.html).
+Both of these functions are used to set attributes on tags; `bs_set_data()` is used for attributes that start with `"data-"`, `bs_set_aria()` is used for attributes that start with `"aria-"`. To see more of these helper functions, please read [their reference](https://ijlyttle.github.io/bsplus/reference/bs_set_data.html).
 
 
 

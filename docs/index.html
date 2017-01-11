@@ -50,12 +50,35 @@ devtools::<span class="kw">install_github</span>(<span class="st">"ijlyttle/bspl
 <div id="introduction" class="section level2">
 <h2 class="hasAnchor">
 <a href="#introduction" class="anchor"> </a>Introduction</h2>
-<p>To see all of this in action, you are referred to the <a href="http://ijlyttle.github.io/bsplus/articles/index.html">articles page</a> at this package&rsquo;s <strong>pkgdown</strong> site.</p>
+<p>To see all of this in action, you are referred to the <a href="http://ijlyttle.github.io/bsplus/articles/overview.html">overview article</a> at this package&rsquo;s <strong>pkgdown</strong> site.</p>
 <p>The goals of this package are:</p>
 <ul><li>to provide a framework to use Bootstrap&rsquo;s markup API: <a href="http://getbootstrap.com/javascript/" class="uri">http://getbootstrap.com/javascript/</a>
 </li>
 <li>to promote composition of HTML using pipes.</li>
-</ul><p>In this package, there are function families for:</p>
+<li>to provide functions that work for both <strong>rmarkdown</strong> HTML documents and for <strong>shiny</strong> apps - the only exceptions are some functions that work with only the UI side of <strong>shiny</strong>.</li>
+</ul><div id="highlights" class="section level3">
+<h3 class="hasAnchor">
+<a href="#highlights" class="anchor"> </a>Highlights</h3>
+<p>This package has three capabilities to emphasize:</p>
+<div id="accordion-sidebar" class="section level4">
+<h4 class="hasAnchor">
+<a href="#accordion-sidebar" class="anchor"> </a>Accordion-sidebar</h4>
+<p>This is a family of functions that lets you build another dimension to your <strong>shiny</strong> apps, although you can still use it <strong>rmarkdown</strong> HTML documents.</p>
+</div>
+<div id="shiny-help-links" class="section level4">
+<h4 class="hasAnchor">
+<a href="#shiny-help-links" class="anchor"> </a>Shiny-help links</h4>
+<p>A couple of functions make it easier to incorporate help-documentation into your <strong>shiny</strong> apps - functions for incorporating tooltips, popovers, and modals into the labels of <strong>shiny</strong> inputs. For more information, you can see this <a href="https://ijlyttle.shinyapps.io/tooltip_popover_modal/"><strong>shiny</strong> app</a> and this <a href="https://ijlyttle.github.io/bsplus/">article</a></p>
+</div>
+<div id="carousel" class="section level4">
+<h4 class="hasAnchor">
+<a href="#carousel" class="anchor"> </a>Carousel</h4>
+</div>
+</div>
+<div id="function-families" class="section level3">
+<h3 class="hasAnchor">
+<a href="#function-families" class="anchor"> </a>Function families</h3>
+<p>In this package, there are function families for:</p>
 <ul><li>collapsible elements: <code><a href="reference/bs_collapse.html">bs_collapse()</a></code>
 </li>
 <li>accordion panels: <code><a href="reference/bs_accordion.html">bs_accordion()</a></code>
@@ -68,6 +91,8 @@ devtools::<span class="kw">install_github</span>(<span class="st">"ijlyttle/bspl
 </li>
 <li>modals: <code><a href="reference/bs_modal.html">bs_modal()</a></code>
 </li>
+<li>carousels: <code><a href="reference/bs_append.bsplus_carousel.html">bs_carousel()</a></code>
+</li>
 </ul><p>There are also helper functions:</p>
 <ul><li>embed help-links into <strong>shiny</strong> inputs: <code><a href="reference/shiny_iconlink.html">shiny_iconlink()</a></code>, <code><a href="reference/shinyInput_label_embed.html">shinyInput_label_embed()</a></code>
 </li>
@@ -76,6 +101,7 @@ devtools::<span class="kw">install_github</span>(<span class="st">"ijlyttle/bspl
 <li>set <code>data-</code> and <code>aria-</code> attributes of tags: <code><a href="reference/bs_set_data.html">bs_set_data()</a></code>, <code><a href="reference/bs_set_data.html">bs_set_aria()</a></code>
 </li>
 </ul></div>
+</div>
 <div id="grammar-and-vocabulary" class="section level2">
 <h2 class="hasAnchor">
 <a href="#grammar-and-vocabulary" class="anchor"> </a>Grammar and vocabulary</h2>
@@ -85,16 +111,15 @@ devtools::<span class="kw">install_github</span>(<span class="st">"ijlyttle/bspl
 <li><p><code>bs_verb(tag, ...)</code>, used to take an action on a <code>tag</code>. For example, use <code><a href="reference/bs_append.html">bs_append()</a></code> to append a panel to an accordion panel-set.</p></li>
 <li><p><code>bs_verb_noun(tag, ...)</code> used to take an action on a <code>tag</code> using a <code>thing</code>. For example, use <code><a href="reference/bs_embed_tooltip.html">bs_embed_tooltip()</a></code> to embed a tooltip into a <code>tag</code>.</p></li>
 <li><p><code>use_bs_noun()</code> used to add a bit of Javascript to your HTML, just like the <strong>shinyjs</strong> function <code>useShinyJS()</code>. This is necessary for <code><a href="reference/bs_accordion_sidebar.html">bs_accordion_sidebar()</a></code>, <code><a href="reference/bs_embed_tooltip.html">bs_embed_tooltip()</a></code>, or <code><a href="reference/bs_embed_popover.html">bs_embed_popover()</a></code> to work properly.</p></li>
-</ul></div>
-<div id="nouns" class="section level2">
-<h2 class="hasAnchor">
-<a href="#nouns" class="anchor"> </a>Nouns</h2>
+</ul><div id="nouns" class="section level3">
+<h3 class="hasAnchor">
+<a href="#nouns" class="anchor"> </a>Nouns</h3>
 <p>Often we use the words <em>element</em> and <em>tag</em> interchangeably - we are talking about HTML elements. In the grammar of this documentation (and package), it can be useful to think about <em>direct</em> objects and <em>indirect</em> objects, so the word <em>tag</em> is used to denote <em>direct</em> objects, and the words <em>element</em> or <em>thing</em> are used to denote <em>indirect</em> objects.</p>
 <p>In the context of a set of piped functions, the first argument will always be the direct object; the name of the first argument of many functions is <code>tag</code> - you will be sending the tag through the pipe.</p>
 </div>
-<div id="verbs" class="section level2">
-<h2 class="hasAnchor">
-<a href="#verbs" class="anchor"> </a>Verbs</h2>
+<div id="verbs" class="section level3">
+<h3 class="hasAnchor">
+<a href="#verbs" class="anchor"> </a>Verbs</h3>
 <ul><li>
 <code><a href="reference/bs_append.html">bs_append(tag, ...)</a></code> used to append something to a tag, perhaps a panel into an accordion-group.</li>
 <li>
@@ -108,10 +133,11 @@ devtools::<span class="kw">install_github</span>(<span class="st">"ijlyttle/bspl
 <li>You can <em>attach</em> only one id of a thing to a tag. When we are attaching, we attach the <em>id</em> of an element, not the element itself. However, we can attach an id of an element to more than one tag.</li>
 <li>You can <em>embed</em> only one thing into a tag. i.e., into a given tag, you can embed a tooltip or a popover, modifying the attributes and setting a child element.</li>
 </ul></div>
+</div>
 <div id="acknowledgments" class="section level2">
 <h2 class="hasAnchor">
 <a href="#acknowledgments" class="anchor"> </a>Acknowledgments</h2>
-<p>This package draws inspiration from the <strong>shinybs</strong> package written by Eric Bailey, and leans heavily on the <strong>htmltools</strong> package written by RStudio.</p>
+<p>This package draws inspiration from <a href="https://ebailey78.github.io/shinyBS/"><strong>shinyBS</strong></a>, written by Eric Bailey, and leans heavily on <a href="https://cran.r-project.org/web/packages/htmltools/index.html"><strong>htmltools</strong></a>, written by RStudio.</p>
 </div>
 <div id="code-of-conduct" class="section level2">
 <h2 class="hasAnchor">
@@ -122,7 +148,8 @@ devtools::<span class="kw">install_github</span>(<span class="st">"ijlyttle/bspl
   </div>
 
   <div class="col-md-3" id="sidebar">
-    <h2>Links</h2><ul class="list-unstyled"><li>Browse source code at <br><a href="https://github.com/ijlyttle/bsplus">https://&#8203;github.com/&#8203;ijlyttle/&#8203;bsplus</a></li>
+    <h2>Links</h2><ul class="list-unstyled"><li>Download from CRAN at <br><a href="https://cran.r-project.org/package=bsplus">https://&#8203;cran.r-project.org/&#8203;package=bsplus</a></li>
+<li>Browse source code at <br><a href="https://github.com/ijlyttle/bsplus">https://&#8203;github.com/&#8203;ijlyttle/&#8203;bsplus</a></li>
 <li>Report a bug at <br><a href="https://github.com/ijlyttle/bsplus/issues">https://&#8203;github.com/&#8203;ijlyttle/&#8203;bsplus/&#8203;issues</a></li>
 </ul><h2>License</h2>
 <p><a href="https://opensource.org/licenses/mit-license.php">MIT</a> + file <a href="LICENSE">LICENSE</a></p>

@@ -93,43 +93,50 @@ by clicking a button or a link.</p>
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a> Arguments</h2>
     <dl class="dl-horizontal">
       <dt>id</dt>
-      <dd>character, unique id for collapsible div</dd>
+      <dd>character, unique id for the collapsible <code>&lt;div/&gt;</code></dd>
       <dt>content</dt>
-      <dd>character (HTML) or <code>htmltools::<a href='http://www.rdocumentation.org/packages/htmltools/topics/tag'>tagList</a></code>,
-content to be put into the div</dd>
+      <dd>character (HTML) or
+<code>htmltools::<a href='http://www.rdocumentation.org/packages/htmltools/topics/tag'>tagList</a></code>,
+content for the collapsible <code>&lt;div/&gt;</code></dd>
       <dt>show</dt>
-      <dd>logical, indicates if element is shown initially</dd>
+      <dd>logical, indicates if collapsible <code>&lt;div/&gt;</code>
+is shown initially</dd>
       <dt>tag</dt>
       <dd><code>htmltools::<a href='http://www.rdocumentation.org/packages/htmltools/topics/tag'>tag</a></code>,
-button or link to which to attach collapsible div</dd>
+button or link to which to attach the collapsible <code>&lt;div/&gt;</code></dd>
       <dt>id_collapse</dt>
-      <dd>character, id of collapsible div to attach</dd>
+      <dd>character, <code>id</code> of
+the collapsible <code>&lt;div/&gt;</code> to attach</dd>
     </dl>
     
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
     <p><dl class='dl-horizontal'>
-  <dt><code>bs_collapse()</code></dt><dd><code>htmltools::<a href='http://www.rdocumentation.org/packages/htmltools/topics/tag'>tag</a></code>, div</dd>
+  <dt><code>bs_collapse()</code></dt><dd><code>htmltools::<a href='http://www.rdocumentation.org/packages/htmltools/topics/tag'>tag</a></code>,
+  <code>&lt;div/&gt;</code></dd>
   <dt><code>bs_attach_collapse()</code></dt><dd><code>htmltools::<a href='http://www.rdocumentation.org/packages/htmltools/topics/tag'>tag</a></code>,
-    modified copy of <code>tag</code></dd>
+    modified copy of <code>tag</code> (button or link)</dd>
 </dl></p>
     
     <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
 
     <p>There are two parts to this system:</p>
     <p><ol>
-<li>A collapsible div, created using <code>bs_collapse()</code>
+<li>A collapsible <code>&lt;div/&gt;</code>, created using <code>bs_collapse()</code>
   </li>
-<li>At least one button or link to which the id of the
-  collabsible div is attached, using <code>bs_attach_collapse()</code>
+<li>At least one button (<code>&lt;button/&gt;</code>) or link (<code>&lt;a/&gt;</code>)
+  to which the <code>id</code> of the collapsible <code>&lt;div/&gt;</code> is attached,
+  using <code>bs_attach_collapse()</code>
 </li>
 </ol></p>
-    <p>The verb &quot;attach&quot; is used to signify that we are attaching the id of our collapsible
-div to the tag in question (likely a button or a link). This implies that
-you can attach (the id of) a collapsible div to more than one button or link.</p>
-    <p>It is your responsibility to ensure that id is unique
-among html elements in your page. If you have non-unique id&#39;s, strange things may
-happen to your page.</p>
+    <p>The verb <em>attach</em> is used to signify that we are attaching the
+<code>id</code> of our collapsible
+<code>&lt;div/&gt;</code> to the tag in question (a button or a link).
+Note that you can attach the <code>id</code> of a collapsible
+<code>&lt;div/&gt;</code> to more than one button or link.</p>
+    <p>It is your responsibility to ensure that <code>id</code> is unique
+among HTML elements in your page. If you have non-unique <code>id</code>&#39;s,
+strange things may happen to your page.</p>
     
     <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
 
