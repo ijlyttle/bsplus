@@ -18,23 +18,23 @@ To see all of this in action, you are referred to the [overview article](http://
 
 The goals of this package are:
 
-- to provide a framework to use Bootstrap's markup API: http://getbootstrap.com/javascript/
+- to provide a framework to use Bootstrap's JavaScript-markup API: http://getbootstrap.com/javascript/
 - to promote composition of HTML using pipes.
 - to provide functions that work for both **rmarkdown** HTML documents and for **shiny** apps - the only exceptions are some functions that work with only the UI side of **shiny**.
 
 ### Highlights
 
-This package has three capabilities to emphasize:
-
 #### Accordion-sidebar
 
-This is a family of functions that lets you build another dimension to your **shiny** apps, although you can still use it **rmarkdown** HTML documents.
+This family of functions lets you build another dimension to your **shiny** apps, although you can still use it **rmarkdown** HTML documents. Rather than explain, you can see it demonstrated in a [**shiny** app](https://ijlyttle.shinyapps.io/tooltip_popover_modal/). If you would like some explanation, please see this [article](http://ijlyttle.github.io/bsplus/articles/accordion_sidebar.html).
 
 #### Shiny-help links
 
-A couple of functions make it easier to incorporate help-documentation into your **shiny** apps - functions for incorporating tooltips, popovers, and modals into the labels of **shiny** inputs. For more information, you can see this [**shiny** app](https://ijlyttle.shinyapps.io/tooltip_popover_modal/) and this [article](https://ijlyttle.github.io/bsplus/)
+These functions make it easier to incorporate help-documentation into your **shiny** apps - functions for incorporating tooltips, popovers, and modals into the labels of **shiny** inputs. You can see this [**shiny** app](https://ijlyttle.shinyapps.io/tooltip_popover_modal/) for a demonstration, and this [article](http://ijlyttle.github.io/bsplus/articles/shiny_help_links.html) for some explanation.
 
 #### Carousel
+
+The carousel a [Boostrap JavaScript component](http://getbootstrap.com/javascript/#carousel) used to enclose a set of (typically) images, providing controls to move slides back-and-forth. You can see these in action in this [article]((http://ijlyttle.github.io/bsplus/articles/carousel.html)). I think that this could be a more-useful tool if an "easy" way can be found to populate a carousel with images produced by **gganimate**.
 
 ### Function families 
 

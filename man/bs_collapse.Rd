@@ -17,10 +17,10 @@ bs_attach_collapse(tag, id_collapse)
 content for the collapsible \code{<div/>}}
 
 \item{show}{logical, indicates if collapsible \code{<div/>}
-is shown initially}
+is shown when page is initialized}
 
 \item{tag}{\code{htmltools::\link[htmltools]{tag}},
-button or link to which to attach the collapsible \code{<div/>}}
+button or link to which to attach a collapsible \code{<div/>}}
 
 \item{id_collapse}{character, \code{id} of
 the collapsible \code{<div/>} to attach}
