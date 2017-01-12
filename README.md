@@ -19,8 +19,8 @@ To see all of this in action, you are referred to the [overview article](http://
 The goals of this package are:
 
 - to provide a framework to use Bootstrap's JavaScript-markup API: http://getbootstrap.com/javascript/
-- to promote composition of HTML using pipes.
 - to provide functions that work for both **rmarkdown** HTML documents and for **shiny** apps - the only exceptions are some functions that work with only the UI side of **shiny**.
+- to promote composition of HTML using pipes.
 
 ### Highlights
 
@@ -34,7 +34,7 @@ These functions make it easier to incorporate help-documentation into your **shi
 
 #### Carousel
 
-A carousel is a [Boostrap JavaScript component](http://getbootstrap.com/javascript/#carousel) used to enclose a set of (typically) images, providing controls to move slides back-and-forth. You can see these in action in this [article]((http://ijlyttle.github.io/bsplus/articles/carousel.html)). I think that this could be a more-useful tool if an "easy" way can be found to populate a carousel with images produced by **gganimate**.
+A carousel is a [Boostrap JavaScript component](http://getbootstrap.com/javascript/#carousel) used to enclose a set of (typically) images, providing controls to move slides back-and-forth. You can see these in action in this [article]((http://ijlyttle.github.io/bsplus/articles/carousel.html)). I think that this could be a more-useful tool if an "easy" way can be found to populate a carousel with images produced by [**gganimate**](https://github.com/dgrtwo/gganimate).
 
 ### Function families 
 
@@ -77,15 +77,15 @@ In the context of a set of piped functions, the first argument will always be th
 ### Verbs
 
 - `bs_append(tag, ...)` used to append something to a tag, perhaps a panel into an accordion-group.
-- `bs_attach_foo(tag, ...)` used to attach the id of an element (foo) to another tag, for example, you could create a modal window using `bs_modal()`, then you could *attach* the id of the modal window to the tag using `bs_attach_modal()`
+- `bs_attach_foo(tag, ...)` used to attach the `id` of an element (foo) to another tag, for example, you could create a modal window using `bs_modal()`, then you could *attach* the `id` of the modal window to the tag using `bs_attach_modal()`
 - `bs_emded_foo(tag, ...)` used to embed something (a foo) into a tag, for example, `bs_embed_tooltip()`
 - `bs_set_opts(tag, ...)` used to set some options for the items yet to be appended to a tag.
 
 Let's consider the differences between `append`, `attach`, and `embed`:
 
 - You can *append* more than one element to a tag, i.e., you could append multiple panels to an accordion-group.
-- You can *attach* only one id of a thing to a tag. When we are attaching, we attach the *id* of an element, not the element itself. However, we can attach an id of an element to more than one tag.
-- You can *embed* only one thing into a tag. i.e., into a given tag, you can embed a tooltip or a popover, modifying the attributes and setting a child element.
+- You can *attach* only one id of a thing to a tag. When we are attaching, we attach the `id` of an element, not the element itself. However, we can attach an `id` of an element to more than one tag.
+- You can *embed* only one thing into a tag. i.e., into a given tag, you can embed a tooltip or a popover, modifying the tag's attributes and setting a child element in the tag.
 
 ## Acknowledgments
 

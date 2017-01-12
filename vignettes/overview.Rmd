@@ -259,7 +259,7 @@ As of writing, I don't know how to include operable **shiny** inputs in an html 
 shiny::runApp(system.file("shiny", "tooltip_popover_modal", package = "bsplus"))
 ```
 
-Here's an image of what it looks like:
+Here's what it looks like:
 
 ![](img/popover.png)
 
