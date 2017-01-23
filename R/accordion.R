@@ -49,7 +49,7 @@
 #
 bs_accordion <- function(id){
 
-  div <- htmltools::tags$div(id = id, class = "panel-group", role="tablist")
+  div <- htmltools::tags$div(id = id, class = "panel-group", role = "tablist")
   div <- structure(div, class = c("bsplus_accordion", class(div)))
   div <- bs_set_aria(div, multiselectable = TRUE)
   div <- bs_set_opts(div, panel_type = "default", use_heading_link = FALSE)
