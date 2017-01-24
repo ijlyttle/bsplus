@@ -30,8 +30,9 @@
 
   # if class is provided
   if (!is.null(class)){
-    if (!identical(htmltools::tagGetAttribute(tag, "class"), class)){
-      stop("class needs to be: ", class)
+    class_observed <- htmltools::tagGetAttribute(tag, "class")
+    if (!identical(class_observed, class)){
+      stop("class is: ", class_observed, ", needs to be: ", class)
     }
   }
 
@@ -39,7 +40,7 @@
   fn_validate <- function(name, value, tag){
     value_observed <- htmltools::tagGetAttribute(tag, name)
     if (!identical(value_observed, value)){
-      stop("attribute ", name, " is ", value_observed, ", needs to be: ", value)
+      stop("attribute ", name, " is: ", value_observed, ", needs to be: ", value)
     }
   }
 
