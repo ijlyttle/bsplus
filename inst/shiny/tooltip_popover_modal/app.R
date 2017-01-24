@@ -1,7 +1,5 @@
 library("shiny")
 library("shinythemes")
-library("markdown")
-library("commonmark")
 library("bsplus")
 
 # Define some UI elements

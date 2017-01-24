@@ -10,7 +10,6 @@ There are also a some functions that make it easier to work with **shiny**:
 
 - Create a tag consisting of a link wrapping a **shiny** icon: `shiny_iconlink()`
 - Embed a tag into the label of a **shiny** input: `shinyInput_label_embed()`
-- Render a markdown file into an HTML fragment (useful for content of modal windows): `render_html_fragment()`
 
 With the help icon, I want to make it easier to know what to expect: a tooltip, popover or a modal window. I propose a convention: `shiny_iconlink("info")` for tooltips, and `shiny_iconlink("info-circle")` (its default) for links used to activate popovers and modal windows.
 
