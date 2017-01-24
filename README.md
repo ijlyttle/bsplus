@@ -14,7 +14,7 @@ devtools::install_github("ijlyttle/bsplus")
 
 ## Introduction
 
-To see all of this in action, you are referred to the [overview article](http://ijlyttle.github.io/bsplus/articles/overview.html) at this package's **pkgdown** site. 
+To see all of this in action, you are referred to the [overview article](https://ijlyttle.github.io/bsplus/articles/overview.html) at this package's **pkgdown** site. 
 
 The goals of this package are:
 
@@ -34,7 +34,7 @@ These functions make it easier to incorporate help-documentation into your **shi
 
 #### Carousel
 
-A carousel is a [Boostrap JavaScript component](http://getbootstrap.com/javascript/#carousel) used to enclose a set of (typically) images, providing controls to move slides back-and-forth. You can see these in action in this [article]((http://ijlyttle.github.io/bsplus/articles/carousel.html)). I think that this could be a more-useful tool if an "easy" way can be found to populate a carousel with images produced by [**gganimate**](https://github.com/dgrtwo/gganimate).
+A carousel is a [Boostrap JavaScript component](http://getbootstrap.com/javascript/#carousel) used to enclose a set of (typically) images, providing controls to move slides back-and-forth. You can see these in action in this [article]((https://ijlyttle.github.io/bsplus/articles/carousel.html)). I think that this could be a more-useful tool if an "easy" way can be found to populate a carousel with images produced by [**gganimate**](https://github.com/dgrtwo/gganimate).
 
 ### Function families 
 
@@ -88,7 +88,7 @@ Let's consider the differences between `append`, `attach`, and `embed`:
 
 ## Acknowledgments
 
-This package draws inspiration from [**shinyBS**](https://ebailey78.github.io/shinyBS/), written by Eric Bailey, and leans heavily on [**htmltools**](https://cran.r-project.org/web/packages/htmltools/index.html), written by RStudio.
+This package draws inspiration from [**shinyBS**](https://ebailey78.github.io/shinyBS/), written by Eric Bailey, and leans heavily on [**htmltools**](https://CRAN.R-project.org/package=htmltools), written by RStudio.
 
 ## Code of conduct
 
