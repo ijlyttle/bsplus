@@ -32,12 +32,14 @@ test_that("image works", {
 })
 
 carousel <-
-  bs_carousel("foo") %>%
+  bs_carousel("foo", use_indicators = TRUE) %>%
   bs_append("bar")
 
-carousel_inner <- carousel$children[[1]]
+carousel_indicators <- carousel$children[[1]]
+carousel_indicators_content <- carousel_indicators$children[[1]]
+carousel_inner <- carousel$children[[2]]
 carousel_content <- carousel_inner$children[[1]]
-carousel_left <- carousel$children[[2]]
+carousel_left <- carousel$children[[3]]
 
 test_that("carousel works", {
   expect_identical(
@@ -49,6 +51,24 @@ test_that("carousel works", {
       `data-ride` = "carousel"
     ),
     carousel
+  )
+  expect_identical(
+    .tag_validate(
+      carousel_indicators,
+      name = "ol",
+      class = "carousel-indicators"
+    ),
+    carousel_indicators
+  )
+  expect_identical(
+    .tag_validate(
+      carousel_indicators_content,
+      name = "li",
+      class = "active",
+      `data-target` = "#foo",
+      `data-slide-to` = "0"
+    ),
+    carousel_indicators_content
   )
   expect_identical(
     .tag_validate(
