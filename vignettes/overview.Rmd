@@ -130,16 +130,13 @@ To see more of the `bs_accordion_sidebar()` function-family, including how to ch
 
 Modal windows are a great way to deliver help-documentation, although they certainly have other uses.
 
-The first step is to define a modal widow, giving it an `id`. The `body` is HTML; you can use the helper function `render_html_fragment()` to render a markdown file into HTML. This might be done better using the **commonmark** package, but I don't (yet) understand how it works with MathJax.
+The first step is to define a modal widow, giving it an `id`. The **shiny** function `includeMarkdown()` can be useful to compose the content.
 
 ```{r modal}
 bs_modal(
   id = "modal_markdown", 
   title = "Using Markdown",
-  body = render_html_fragment(
-    system.file("markdown", "modal.md", package = "bsplus"),
-    quiet = TRUE
-  )
+  body = includeMarkdown(system.file("markdown", "modal.md", package = "bsplus"))
 )
 ```
 

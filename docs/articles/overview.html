@@ -307,14 +307,11 @@ $('.panel-collapse-leader').on('hide.bs.collapse', function () {
 <div id="modal" class="section level2">
 <h2 class="hasAnchor"><html><body><a href="#modal" class="anchor"> </a></body></html>Modal</h2>
 <p>Modal windows are a great way to deliver help-documentation, although they certainly have other uses.</p>
-<p>The first step is to define a modal widow, giving it an <code>id</code>. The <code>body</code> is HTML; you can use the helper function <code><a href="../reference/render_html_fragment.html">render_html_fragment()</a></code> to render a markdown file into HTML. This might be done better using the <strong>commonmark</strong> package, but I don&rsquo;t (yet) understand how it works with MathJax.</p>
+<p>The first step is to define a modal widow, giving it an <code>id</code>. The <strong>shiny</strong> function <code>includeMarkdown()</code> can be useful to compose the content.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw"><a href="../reference/bs_modal.html">bs_modal</a></span>(
   <span class="dt">id =</span> <span class="st">"modal_markdown"</span>, 
   <span class="dt">title =</span> <span class="st">"Using Markdown"</span>,
-  <span class="dt">body =</span> <span class="kw"><a href="../reference/render_html_fragment.html">render_html_fragment</a></span>(
-    <span class="kw">system.file</span>(<span class="st">"markdown"</span>, <span class="st">"modal.md"</span>, <span class="dt">package =</span> <span class="st">"bsplus"</span>),
-    <span class="dt">quiet =</span> <span class="ot">TRUE</span>
-  )
+  <span class="dt">body =</span> <span class="kw">includeMarkdown</span>(<span class="kw">system.file</span>(<span class="st">"markdown"</span>, <span class="st">"modal.md"</span>, <span class="dt">package =</span> <span class="st">"bsplus"</span>))
 )</code></pre></div>
 <div class="modal fade" id="modal_markdown" tabindex="-1" role="dialog" aria-labelledby="modal_markdown-title">
 <div class="modal-dialog" role="document">
@@ -325,7 +322,13 @@ $('.panel-collapse-leader').on('hide.bs.collapse', function () {
 </button>
 <h4 class="modal-title" id="modal_markdown-title">Using Markdown</h4>
 </div>
-<div class="modal-body"><div id="th-level-headers-work-well" class="section level4"> <h4 class="hasAnchor"><html><body><a href="#th-level-headers-work-well" class="anchor"> </a></body></html>4th-level headers work well</h4> <p>We can do our regular Markdown stuff in modal windows.</p> <ul><li><span class="math inline">\(F = ma\)</span></li> <li><span class="math inline">\(E = mc^2\)</span></li> </ul></div></div>
+<div class="modal-body"><h4>4th-level headers work well</h4>
+
+<p>We can do our regular Markdown stuff in modal windows.</p>
+
+<ul><li>\(F = ma\)</li>
+<li>\(E = mc^2\)</li>
+</ul></div>
 <div class="modal-footer">
 <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
 </div>

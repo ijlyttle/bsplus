@@ -40,14 +40,11 @@ button or link to which to attach the modal window}
 }
 }
 \description{
-Modal windows are useful to make detailed explanations. If you want to compose
-body of a modal window using markdown, a helper function is provided:
-\code{\link{render_html_fragment}}.
+Modal windows are useful to make detailed explanations, and
+are typically attached to buttons or links. Thus,
+there are two parts to this system:
 }
 \details{
-Modal windows are typically attached to buttons or links. Thus,
-there are two parts to this system:
-
 \enumerate{
   \item{A modal window, created using \code{bs_modal()}}
   \item{At least one button or link to which the \code{id} of the
@@ -63,16 +60,15 @@ among HTML elements in your page. If you have non-unique \code{id}'s, strange th
 happen to your page.
 
 Your code may be cleaner if you can import the content for the modal body from
-an external source. This is the motivation for the helper function,
-\code{\link{render_html_fragment}}, which is supplied with a path to a markdown
-(or even R markdown) file, then renders it into HTML, then returns the HTML.
-Accordingly, this can be supplied as the value of the \code{body} argument.
+an external source. Here, the function \code{shiny::\link[shiny]{includeMarkdown}}
+be useful.
 
 If you want to compose your own footer for the modal window, the function
 \code{bs_modal_closebutton()} can be useful.
 }
 \examples{
 library("htmltools")
+library("shiny")
 
 bs_modal(id = "modal", title = "I'm a modal", body = "Yes, I am.")
 tags$button(type = "button", class = "btn btn-default", "Click for modal") \%>\%
@@ -82,15 +78,13 @@ bs_modal(
   id = "modal_large",
   title = "I'm a modal",
   size = "large",
-  body = render_html_fragment(
-    system.file("markdown", "modal.md", package = "bsplus")
-  )
+  body = includeMarkdown(system.file("markdown", "modal.md", package = "bsplus"))
 )
 tags$button(type = "button", class = "btn btn-default", "Click for modal") \%>\%
   bs_attach_modal(id_modal = "modal_large")
 
 }
 \seealso{
-\code{\link{render_html_fragment}}
+\code{shiny::\link[shiny]{includeMarkdown}}
 }
 

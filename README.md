@@ -51,7 +51,6 @@ In this package, there are function families for:
 There are also helper functions:
 
 - embed help-links into **shiny** inputs: `shiny_iconlink()`, `shinyInput_label_embed()`
-- read a markdown file to return an HTML fragment (useful for modal content): `render_html_fragment()`
 - set `data-` and `aria-` attributes of tags: `bs_set_data()`, `bs_set_aria()`
 
 ## Grammar and vocabulary

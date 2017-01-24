@@ -96,12 +96,6 @@ reference:
 
 - title: "Helpers"
   desc: >
-    Finally, there are some other helper functions for setting the attributes
-    of tags, and to render markdown into HTML. I am looking forward to
-    replacing the `render_html_fragment()` function with `markdown_html()` from
-    the **commonmark** package, as soon as I can see a way to take care of
-    MathJax.
-
     The function `bs_set_data()` makes things a little easier for you by
     prepending `"data-"` to each name and serializing values to the format
     specified by the Bootstrap API. The function `bs_set_aria()` works
@@ -109,7 +103,6 @@ reference:
 
   contents:
     - bs_set_aria
-    - render_html_fragment
 
 articles:
 - title: "Overview"

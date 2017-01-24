@@ -76,24 +76,19 @@
 <span class="st">  </span><span class="kw"><a href="../reference/bs_modal.html">bs_attach_modal</a></span>(<span class="dt">id_modal =</span> <span class="st">"modal"</span>)</code></pre></div>
 <button type="button" class="btn btn-default" data-toggle="modal" data-target="#modal">New button, same modal</button>
 <p>Let&rsquo;s look at a more-involved example using all of the arguments for <code><a href="../reference/bs_modal.html">bs_modal()</a></code>.</p>
-<p>In the example above, <code>body</code> is text; usually, you will want the <code>body</code> to HTML. One way to compose the HTML for the body is to write it as a Markdown file, then use the helper function <code><a href="../reference/render_html_fragment.html">render_html_fragment()</a></code> to render it into into HTML.</p>
+<p>In the example above, <code>body</code> is text; usually, you will want the <code>body</code> to HTML. One way to compose the HTML for the body is to write it as a Markdown file, then use the helper function <code>shiny::includeMarkdown()</code> to render it into into HTML.</p>
 <p>The default <code>footer</code> is simply a &ldquo;Close&rdquo; button, which is made using the helper function <code><a href="../reference/bs_modal.html">bs_modal_closebutton()</a></code>. You can compose your own footer, using this function to customize your close-button.</p>
 <p>Finally, the <code>size</code> can be <code>"small"</code>, <code>"medium"</code>, or <code>"large"</code> - the defualt is <code>"medium"</code>.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw"><a href="../reference/bs_modal.html">bs_modal</a></span>(
   <span class="dt">id =</span> <span class="st">"modal_markdown"</span>, 
   <span class="dt">title =</span> <span class="st">"Using Markdown"</span>,
-  <span class="dt">body =</span> <span class="kw"><a href="../reference/render_html_fragment.html">render_html_fragment</a></span>(
-    <span class="kw">system.file</span>(<span class="st">"markdown"</span>, <span class="st">"modal.md"</span>, <span class="dt">package =</span> <span class="st">"bsplus"</span>)
-  ),
+  <span class="dt">body =</span> <span class="kw">includeMarkdown</span>(<span class="kw">system.file</span>(<span class="st">"markdown"</span>, <span class="st">"modal.md"</span>, <span class="dt">package =</span> <span class="st">"bsplus"</span>)),
   <span class="dt">footer =</span> tags$<span class="kw">span</span>(
     tags$<span class="kw">span</span>(<span class="dt">class =</span> <span class="st">"well"</span>, <span class="st">"Hello!"</span>),
     <span class="kw"><a href="../reference/bs_modal.html">bs_modal_closebutton</a></span>(<span class="st">"Goodbye!"</span>)
   ),
   <span class="dt">size =</span> <span class="st">"large"</span>
 )</code></pre></div>
-<pre><code>## /Applications/RStudio.app/Contents/MacOS/pandoc/pandoc +RTS -K512m -RTS modal.utf8.md --to html --from markdown+autolink_bare_uris+ascii_identifiers+tex_math_single_backslash --output /var/folders/rg/9kvy_lsn43z90d439n02nfw80000gn/T//RtmptiHLmn/fileadd64e1c9549 --smart --email-obfuscation none --self-contained --mathjax --standalone --section-divs --template /Users/ijlyttle/Library/R/3.3/library/rmarkdown/rmd/fragment/default.html --no-highlight</code></pre>
-<pre><code>## 
-## Output created: /var/folders/rg/9kvy_lsn43z90d439n02nfw80000gn/T//RtmptiHLmn/fileadd64e1c9549</code></pre>
 <div aria-labelledby="modal_markdown-title" class="modal fade bs-example-modal-lg" id="modal_markdown" role="dialog" tabindex="-1">
 <div class="modal-dialog modal-lg" role="document">
 <div class="modal-content">
@@ -103,7 +98,13 @@
 </button>
 <h4 class="modal-title" id="modal_markdown-title">Using Markdown</h4>
 </div>
-<div class="modal-body"><div id="th-level-headers-work-well" class="section level4"> <h4 class="hasAnchor"><html><body><a href="#th-level-headers-work-well" class="anchor"> </a></body></html>4th-level headers work well</h4> <p>We can do our regular Markdown stuff in modal windows.</p> <ul><li><span class="math inline">\(F = ma\)</span></li> <li><span class="math inline">\(E = mc^2\)</span></li> </ul></div></div>
+<div class="modal-body"><h4>4th-level headers work well</h4>
+
+<p>We can do our regular Markdown stuff in modal windows.</p>
+
+<ul><li>\(F = ma\)</li>
+<li>\(E = mc^2\)</li>
+</ul></div>
 <div class="modal-footer">
 <span>
 <span class="well">Hello!</span>

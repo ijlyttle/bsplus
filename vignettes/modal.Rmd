@@ -36,7 +36,7 @@ tags$button(type = "button", class = "btn btn-default", "New button, same modal"
 
 Let's look at a more-involved example using all of the arguments for `bs_modal()`. 
 
-In the example above, `body` is text; usually, you will want the `body` to HTML. One way to compose the HTML for the body is to write it as a Markdown file, then use the helper function `render_html_fragment()` to render it into into HTML. 
+In the example above, `body` is text; usually, you will want the `body` to HTML. One way to compose the HTML for the body is to write it as a Markdown file, then use the helper function `shiny::includeMarkdown()` to render it into into HTML. 
 
 The default `footer` is simply a "Close" button, which is made using the helper function `bs_modal_closebutton()`. You can compose your own footer, using this function to customize your close-button.
 
@@ -46,9 +46,7 @@ Finally, the `size` can be `"small"`, `"medium"`, or `"large"` - the defualt is 
 bs_modal(
   id = "modal_markdown", 
   title = "Using Markdown",
-  body = render_html_fragment(
-    system.file("markdown", "modal.md", package = "bsplus")
-  ),
+  body = includeMarkdown(system.file("markdown", "modal.md", package = "bsplus")),
   footer = tags$span(
     tags$span(class = "well", "Hello!"),
     bs_modal_closebutton("Goodbye!")
