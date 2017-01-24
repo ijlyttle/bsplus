@@ -63,7 +63,7 @@ library("htmltools")
 
 bs_collapse(id = "id_yeah", tags$p("Yeah Yeah Yeah"))
 
-tags$button(type = "button", class = "btn btn-default", "Shr Loves You") \%>\%
+tags$button(type = "button", class = "btn btn-default", "She Loves You") \%>\%
   bs_attach_collapse("id_yeah")
 
 }

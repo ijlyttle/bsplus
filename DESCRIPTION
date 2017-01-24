@@ -13,7 +13,7 @@ Authors@R: c(
     person(given = "Alex", family = "Shum", email = "alex@ALShum.com", role = c("ctb")),
     person(given = "Emily", family = "Berry", email = "emily.berry@schneider-electric.com", role = c("ctb"))
   )
-Description: The Bootstrap framework lets you add some Javascript functionality to your web site by
+Description: The Bootstrap framework lets you add some JavaScript functionality to your web site by
   adding attributes to your HTML tags - Bootstrap takes care of the JavaScript
   (https://getbootstrap.com/javascript). If you are using R Markdown or Shiny, you can
   use these functions to create collapsible sections, accordion panels, modals, tooltips,

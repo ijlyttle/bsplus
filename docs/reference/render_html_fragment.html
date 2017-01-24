@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Articles • bsplus</title>
+<title>Renders and returns an HTML fragment — render_html_fragment • bsplus</title>
 
 <!-- jquery -->
 <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha384-nrOSfDHtoPMzJHjVTdCopGqIqeYETSXhZDFyniQ8ZHcVy08QesyHcnOUpMpqnmWq" crossorigin="anonymous"></script>
@@ -34,7 +34,7 @@
   </head>
 
   <body>
-    <div class="container template-vignette-index">
+    <div class="container template-reference-topic">
       <header>
       <div class="navbar navbar-default navbar-fixed-top" role="navigation">
   <div class="container">
@@ -74,34 +74,60 @@
       
       </header>
 
-      <div class="page-header">
-  <h1>Vignette reference <small>version&nbsp;0.1.0</small></h1>
-</div>
-
-<div class="row">
-  <div class="col-md-9">
-    <div class="section ">
-      <h3>Overview</h3>
-      <p class="section-desc"></p>
-
-      <ul>
-        <li><a href="overview.html">Overview</a></li>
-      </ul>
+      <div class="row">
+  <div class="col-md-9 contents">
+    <div class="page-header">
+    <h1>Renders and returns an HTML fragment</h1>
     </div>
-    <div class="section ">
-      <h3>Function families</h3>
-      <p class="section-desc"></p>
 
-      <ul>
-        <li><a href="accordion_sidebar.html">Accordion Sidebar</a></li>
-        <li><a href="accordion.html">Accordion</a></li>
-        <li><a href="carousel.html">Carousel</a></li>
-        <li><a href="collapse.html">Collapse</a></li>
-        <li><a href="modal.html">Modals</a></li>
-        <li><a href="shiny_help_links.html">Shiny-input help links</a></li>
-        <li><a href="tooltip_popover.html">Tooltips and popovers</a></li>
-      </ul>
-    </div>
+    
+    <p>This is a wrapper around the <code>rmarkdown::<a href='http://www.rdocumentation.org/packages/rmarkdown/topics/render'>render</a></code>
+function. The principal difference is that the function is designed to
+return an HTML fragment (rather than writing to a file). This function is
+useful to populate the content of a modal window.</p>
+    
+
+    <pre><span class='fu'>render_html_fragment</span>(<span class='no'>input</span>, <span class='kw'>output_format</span> <span class='kw'>=</span> <span class='kw'>rmarkdown</span><span class='kw'>::</span><span class='fu'>html_fragment</span>(), <span class='no'>...</span>)</pre>
+    
+    <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a> Arguments</h2>
+    <dl class="dl-horizontal">
+      <dt>input</dt>
+      <dd>character, path to input file</dd>
+      <dt>output_format</dt>
+      <dd>rmarkdown output format, provided so you can specify arguments</dd>
+      <dt>...</dt>
+      <dd>other arguments passed to
+<code>rmarkdown::<a href='http://www.rdocumentation.org/packages/rmarkdown/topics/render'>render</a></code></dd>
+    </dl>
+    
+    <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
+
+    <p><code>htmltools::<a href='http://www.rdocumentation.org/packages/htmltools/topics/tag'>tag</a></code></p>
+    
+    <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
+
+    <p>This function is being deprecated in favor of
+ <code>shiny::<a href='http://www.rdocumentation.org/packages/shiny/topics/include'>includeMarkdown</a></code></p>
+    
+
+    <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
+    <pre class="examples"><div class='input'><span class='co'>## Not run: ------------------------------------</span>
+<span class='co'># my_file &lt;- system.file("markdown", "modal.md", package = "bsplus")</span>
+<span class='co'># render_html_fragment(my_file)</span>
+<span class='co'>## ---------------------------------------------</span></div></pre>
+  </div>
+  <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
+    <h2>Contents</h2>
+    <ul class="nav nav-pills nav-stacked">
+      <li><a href="#arguments">Arguments</a></li>
+      
+      <li><a href="#value">Value</a></li>
+
+      <li><a href="#details">Details</a></li>
+      
+      <li><a href="#examples">Examples</a></li>
+    </ul>
+
   </div>
 </div>
 

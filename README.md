@@ -5,7 +5,7 @@
 
 ## Installation
 
-This package is not yet on CRAN. You can install the latest development version from github with:
+This package is not yet on CRAN. You can install the latest development version from GitHub with:
 
 ```R
 # install.packages("devtools")
@@ -34,7 +34,7 @@ These functions make it easier to incorporate help-documentation into your **shi
 
 #### Carousel
 
-A carousel is a [Boostrap JavaScript component](http://getbootstrap.com/javascript/#carousel) used to enclose a set of (typically) images, providing controls to move slides back-and-forth. You can see these in action in this [article]((https://ijlyttle.github.io/bsplus/articles/carousel.html)). I think that this could be a more-useful tool if an "easy" way can be found to populate a carousel with images produced by [**gganimate**](https://github.com/dgrtwo/gganimate).
+A carousel is a [Boostrap JavaScript component](http://getbootstrap.com/javascript/#carousel) used to enclose a set of (typically) images, providing controls to move slides back-and-forth - as shown in this [article](https://ijlyttle.github.io/bsplus/articles/carousel.html). I think that this could be a more-useful tool if an "easy" way can be found to populate a carousel with images produced by [**gganimate**](https://github.com/dgrtwo/gganimate).
 
 ### Function families 
 
