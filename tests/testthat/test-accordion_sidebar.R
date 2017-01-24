@@ -59,3 +59,12 @@ test_that("constructor with different column-specs", {
   expect_identical(tagGetAttribute(acc_sidebar_main, "class"),
                    "col-sm-7 col-sm-offset-1")
 })
+
+js_acc_sidebar <- use_bs_accordion_sidebar()
+
+test_that("javacript-embedder works", {
+  expect_identical(
+    .tag_validate(js_acc_sidebar, name = "script"),
+    js_acc_sidebar
+  )
+})
