@@ -7,13 +7,6 @@
 ^docs$
 ^scratch$
 ^_pkgdown\.yml$
-^vignettes/img$
-^vignettes/overview\.Rmd$
-^vignettes/accordion\.Rmd$
-^vignettes/accordion_sidebar\.Rmd$
-^vignettes/carousel\.Rmd$
-^vignettes/collapse\.Rmd$
-^vignettes/modal\.Rmd$
-^vignettes/tooltip_popover\.Rmd$
-^vignettes/help_links\.Rmd$
+^vignettes\img$
+^vignettes\*.Rmd$
 ^.*/rsconnect/.*\.dcf$

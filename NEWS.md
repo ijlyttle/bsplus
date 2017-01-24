@@ -8,7 +8,7 @@
 
 ## bsplus 0.0.9.9002
 
-* adds vignettes
+* adds vignettes (articles for pkgdown)
 
 * adds modals, tooltips, and popovers
 
