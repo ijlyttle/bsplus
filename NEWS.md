@@ -1,26 +1,18 @@
-## bsplus 0.0.9.9003
+## bsplus 0.1.0
 
-* adds carousel
+- deprecates `render_html_fragment()`
 
-* fiddles with label format for shiny inputs (pulls help-links to the right)
+- adds carousel
 
-* version bump as new repository-version needed
+- fiddles with label format for shiny inputs (pulls help-links to the right)
 
-## bsplus 0.0.9.9002
+- adds vignettes (articles for pkgdown)
 
-* adds vignettes (articles for pkgdown)
+- adds modals, tooltips, and popovers
 
-* adds modals, tooltips, and popovers
+- adds pkgdown site
 
-* clears out a lot of old code
-
-* bumps version to use pkgdown
-
-## bsplus 0.0.9.9001
-
-* bumps version to account for DESCRIPTION Repository
-
-* adds a `NEWS.md` file to track changes to the package
+- adds a `NEWS.md` file to track changes to the package
 
 
 
