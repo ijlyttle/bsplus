@@ -19,7 +19,6 @@ Description: The Bootstrap framework lets you add some JavaScript functionality 
   use these functions to create collapsible sections, accordion panels, modals, tooltips,
   popovers, and an accordion sidebar framework (not described at Bootstrap site).
 License: MIT + file LICENSE
-Repository: SERAN
 LazyData: TRUE
 Depends: R (>= 3.3.0)
 Imports:
@@ -37,4 +36,3 @@ Suggests: testthat,
     shiny,
     covr,
     knitr
-VignetteBuilder: knitr
