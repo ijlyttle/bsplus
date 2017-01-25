@@ -28,7 +28,7 @@ File 'LICENSE':
   COPYRIGHT HOLDER: Ian Lyttle, Schneider Electric
 ```
 
-* win-builder objects to the spelling of "tooltips" in DESCRIPTION, I believe it to be correct in the context of the Twitter Bootstrap framework.
+* win-builder objects to the spelling of "tooltips" in DESCRIPTION. The spelling used conforms to a term-of-art in the Twitter Bootstrap framework.
 
 ## Reverse dependencies
 
