@@ -10,16 +10,16 @@
 
 0 errors | 0 warnings | 1 note
 
-* This is a new release.
+* This is a new submission.
 
-Appears to pertain to manual check of maintainter and license.
+```
+New submission
+```
 
-I believe no action to be necessary, please advise if otherwise.
+* Appears to pertain to manual check of maintainter and license. I believe no action to be necessary, please advise if otherwise.
 
 ```
 Maintainer: ‘Ian Lyttle <ian.lyttle@schneider-electric.com>’
-
-New submission
 
 License components with restrictions and base license permitting such:
   MIT + file LICENSE
@@ -28,7 +28,12 @@ File 'LICENSE':
   COPYRIGHT HOLDER: Ian Lyttle, Schneider Electric
 ```
 
-* win-builder objects to the spelling of "tooltips" in DESCRIPTION. The spelling used conforms to a term-of-art in the Twitter Bootstrap framework.
+* win-builder flags the spelling of "tooltips" in DESCRIPTION. The spelling used conforms to a term-of-art in the Twitter Bootstrap framework.
+
+```
+Possibly mis-spelled words in DESCRIPTION:
+  tooltips (19:81)
+```
 
 ## Reverse dependencies
 
