@@ -3,10 +3,6 @@ title: "Overview"
 author: "Ian Lyttle"
 date: "`r Sys.Date()`"
 output: rmarkdown::html_document
-vignette: >
-  %\VignetteIndexEntry{Overview}
-  %\VignetteEngine{knitr::rmarkdown}
-  %\VignetteEncoding{UTF-8}
 ---
 
 One of the goals of **bsplus** is to provide access to some useful Bootstrap components for **rmarkdown** html-documents and **shiny** apps:

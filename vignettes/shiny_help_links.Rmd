@@ -3,10 +3,6 @@ title: "Shiny-input help links"
 author: "Ian Lyttle"
 date: "`r Sys.Date()`"
 output: rmarkdown::html_vignette
-vignette: >
-  %\VignetteIndexEntry{Shiny-input help links}
-  %\VignetteEngine{knitr::rmarkdown}
-  %\VignetteEncoding{UTF-8}
 ---
 
 ```{r}

@@ -7,6 +7,8 @@
 ^docs$
 ^scratch$
 ^_pkgdown\.yml$
-^vignettes\img$
-^vignettes\*.Rmd$
-^.*/rsconnect/.*\.dcf$
+^.*/rsconnect$
+^cran-comments\.md$
+^vignettes$
+
+
