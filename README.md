@@ -5,7 +5,15 @@
 
 ## Installation
 
-This package is not yet on CRAN. You can install the latest development version from GitHub with:
+You can install:
+
+the latest released version from CRAN with:
+
+```
+install.packages("bsplus")
+```
+
+the latest development version from GitHub with:
 
 ```R
 # install.packages("devtools")
