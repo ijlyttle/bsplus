@@ -1,3 +1,7 @@
+## bsplus 0.1.0.9000
+
+- version bump for development
+
 ## bsplus 0.1.0
 
 - deprecates `render_html_fragment()` (#24, solution proposed by @jpmarindiaz)
