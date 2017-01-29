@@ -1,5 +1,17 @@
 ## bsplus 0.1.0.9000
 
+### To do
+
+- adds `bs_wrap_responsive()` to wrap a tag in a responsive `<div/>`.
+
+- adds `bs_well()` to create wells.
+
+- adds `bs_panel()` to create panels.
+
+- adds `bs_button()` to create buttons. (Remember to rework documentation)
+
+## Done
+
 - version bump for development
 
 ## bsplus 0.1.0
