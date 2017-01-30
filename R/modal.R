@@ -26,13 +26,15 @@
 #' \code{bs_modal_closebutton()} can be useful.
 #'
 #' @param id       character, unique id for the modal window
-#' @param title    character, title for the modal window (or close-button)
+#' @param title    character, title for the modal window (this argument is deprecated
+#'  for \code{bs_modal_closebutton}, use \code{label} instead)
 #' @param body     character (HTML) or \code{htmltools::\link[htmltools]{tagList}},
 #'   content for the body of the modal window
 #' @param footer   character (HTML) or \code{htmltools::\link[htmltools]{tagList}},
 #'   content for the footer of the modal window
 #' @param size     character, size of the modal window
 #' @param id_modal character, unique id of modal window to attach
+#' @param label    character (HTML), label for the close-button
 #' @param tag      \code{htmltools::\link[htmltools]{tag}},
 #'   button or link to which to attach the modal window
 #'
@@ -135,7 +137,12 @@ bs_modal <- function(id,
 #' @rdname bs_modal
 #' @export
 #'
-bs_modal_closebutton <- function(label = "Close"){
+bs_modal_closebutton <- function(label = "Close", title){
+
+  if (!missing(title)){
+    warning("title argument deprecated, use label instead")
+    label <- title
+  }
 
   bs_button(label, button_type = "default") %>%
     bs_set_data(dismiss = "modal")

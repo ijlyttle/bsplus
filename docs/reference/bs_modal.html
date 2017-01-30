@@ -89,7 +89,7 @@ there are two parts to this system:</p>
     <pre><span class='fu'>bs_modal</span>(<span class='no'>id</span>, <span class='no'>title</span>, <span class='no'>body</span>, <span class='kw'>footer</span> <span class='kw'>=</span> <span class='fu'>bs_modal_closebutton</span>(<span class='kw'>label</span> <span class='kw'>=</span> <span class='st'>"Close"</span>),
   <span class='kw'>size</span> <span class='kw'>=</span> <span class='fu'>c</span>(<span class='st'>"medium"</span>, <span class='st'>"large"</span>, <span class='st'>"small"</span>))
 
-<span class='fu'>bs_modal_closebutton</span>(<span class='kw'>label</span> <span class='kw'>=</span> <span class='st'>"Close"</span>)
+<span class='fu'>bs_modal_closebutton</span>(<span class='kw'>label</span> <span class='kw'>=</span> <span class='st'>"Close"</span>, <span class='no'>title</span>)
 
 <span class='fu'>bs_attach_modal</span>(<span class='no'>tag</span>, <span class='no'>id_modal</span>)</pre>
     
@@ -98,7 +98,8 @@ there are two parts to this system:</p>
       <dt>id</dt>
       <dd>character, unique id for the modal window</dd>
       <dt>title</dt>
-      <dd>character, title for the modal window (or close-button)</dd>
+      <dd>character, title for the modal window (this argument is deprecated
+for <code>bs_modal_closebutton</code>, use <code>label</code> instead)</dd>
       <dt>body</dt>
       <dd>character (HTML) or <code>htmltools::<a href='http://www.rdocumentation.org/packages/htmltools/topics/tag'>tagList</a></code>,
 content for the body of the modal window</dd>
@@ -107,6 +108,8 @@ content for the body of the modal window</dd>
 content for the footer of the modal window</dd>
       <dt>size</dt>
       <dd>character, size of the modal window</dd>
+      <dt>label</dt>
+      <dd>character (HTML), label for the close-button</dd>
       <dt>tag</dt>
       <dd><code>htmltools::<a href='http://www.rdocumentation.org/packages/htmltools/topics/tag'>tag</a></code>,
 button or link to which to attach the modal window</dd>

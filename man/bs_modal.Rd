@@ -9,14 +9,15 @@
 bs_modal(id, title, body, footer = bs_modal_closebutton(label = "Close"),
   size = c("medium", "large", "small"))
 
-bs_modal_closebutton(label = "Close")
+bs_modal_closebutton(label = "Close", title)
 
 bs_attach_modal(tag, id_modal)
 }
 \arguments{
 \item{id}{character, unique id for the modal window}
 
-\item{title}{character, title for the modal window (or close-button)}
+\item{title}{character, title for the modal window (this argument is deprecated
+for \code{bs_modal_closebutton}, use \code{label} instead)}
 
 \item{body}{character (HTML) or \code{htmltools::\link[htmltools]{tagList}},
 content for the body of the modal window}
@@ -25,6 +26,8 @@ content for the body of the modal window}
 content for the footer of the modal window}
 
 \item{size}{character, size of the modal window}
+
+\item{label}{character (HTML), label for the close-button}
 
 \item{tag}{\code{htmltools::\link[htmltools]{tag}},
 button or link to which to attach the modal window}
