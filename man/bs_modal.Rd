@@ -6,10 +6,10 @@
 \alias{bs_modal_closebutton}
 \title{Modal window}
 \usage{
-bs_modal(id, title, body, footer = bs_modal_closebutton(title = "Close"),
+bs_modal(id, title, body, footer = bs_modal_closebutton(label = "Close"),
   size = c("medium", "large", "small"))
 
-bs_modal_closebutton(title = "Close")
+bs_modal_closebutton(label = "Close")
 
 bs_attach_modal(tag, id_modal)
 }
@@ -71,7 +71,7 @@ library("htmltools")
 library("shiny")
 
 bs_modal(id = "modal", title = "I'm a modal", body = "Yes, I am.")
-tags$button(type = "button", class = "btn btn-default", "Click for modal") \%>\%
+bs_button("Click for modal") \%>\%
   bs_attach_modal(id_modal = "modal")
 
 bs_modal(
@@ -80,7 +80,7 @@ bs_modal(
   size = "large",
   body = includeMarkdown(system.file("markdown", "modal.md", package = "bsplus"))
 )
-tags$button(type = "button", class = "btn btn-default", "Click for modal") \%>\%
+bs_button("Click for modal") \%>\%
   bs_attach_modal(id_modal = "modal_large")
 
 }

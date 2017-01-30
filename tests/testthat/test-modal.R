@@ -3,10 +3,10 @@ context("modal")
 library("htmltools")
 
 
-close_button <- bs_modal_closebutton(title = "foo")
+close_button <- bs_modal_closebutton(label = "foo")
 
 button <-
-  tags$button("foo") %>%
+  bs_button("foo") %>%
   bs_attach_modal("modal")
 
 test_that("close-button works", {

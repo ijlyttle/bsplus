@@ -24,14 +24,14 @@ bs_collapse(
 Next, attach the `id` of the collapsible element to a button or link tag, using the `bs_attach_collapse()` function. This returns a modified copy of the tag sent to it.
 
 ```{r bs_attach_collapse}
-tags$button("She Loves You", class = "btn btn-primary") %>%
+bs_button("She Loves You", button_type = "primary") %>%
   bs_attach_collapse("yeah")
 ```
 
 You can attach the `id` of a collapsible element to as many buttons or links as you like:
 
 ```{r new_button}
-tags$button("Sie Liebt Dich", class = "btn btn-primary") %>%
+bs_button("Sie Liebt Dich", button_type = "primary")  %>%
   bs_attach_collapse("yeah")
 ```
 

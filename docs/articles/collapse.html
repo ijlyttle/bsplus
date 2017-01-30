@@ -41,7 +41,7 @@
       <h1>Collapse</h1>
                         <h4 class="author">Ian Lyttle</h4>
             
-            <h4 class="date">2017-01-26</h4>
+            <h4 class="date">2017-01-29</h4>
           </div>
 
     
@@ -59,11 +59,11 @@
 <div class="well">Yeah Yeah Yeah</div>
 </div>
 <p>Next, attach the <code>id</code> of the collapsible element to a button or link tag, using the <code><a href="../reference/bs_collapse.html">bs_attach_collapse()</a></code> function. This returns a modified copy of the tag sent to it.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">tags$<span class="kw">button</span>(<span class="st">"She Loves You"</span>, <span class="dt">class =</span> <span class="st">"btn btn-primary"</span>) %&gt;%
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw"><a href="../reference/bs_button.html">bs_button</a></span>(<span class="st">"She Loves You"</span>, <span class="dt">button_type =</span> <span class="st">"primary"</span>) %&gt;%
 <span class="st">  </span><span class="kw"><a href="../reference/bs_collapse.html">bs_attach_collapse</a></span>(<span class="st">"yeah"</span>)</code></pre></div>
 <button class="btn btn-primary" data-toggle="collapse" data-target="#yeah">She Loves You</button>
 <p>You can attach the <code>id</code> of a collapsible element to as many buttons or links as you like:</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">tags$<span class="kw">button</span>(<span class="st">"Sie Liebt Dich"</span>, <span class="dt">class =</span> <span class="st">"btn btn-primary"</span>) %&gt;%
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw"><a href="../reference/bs_button.html">bs_button</a></span>(<span class="st">"Sie Liebt Dich"</span>, <span class="dt">button_type =</span> <span class="st">"primary"</span>)  %&gt;%
 <span class="st">  </span><span class="kw"><a href="../reference/bs_collapse.html">bs_attach_collapse</a></span>(<span class="st">"yeah"</span>)</code></pre></div>
 <button class="btn btn-primary" data-toggle="collapse" data-target="#yeah">Sie Liebt Dich</button>
 <div id="reference" class="section level2">

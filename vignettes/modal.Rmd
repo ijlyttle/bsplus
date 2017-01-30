@@ -19,14 +19,14 @@ bs_modal(id = "modal", title = "I'm a modal", body = "Yes, I am.")
 To allow activation of the modal window, attach its `id` to a button (or link).
 
 ```{r}
-tags$button(type = "button", class = "btn btn-default", "Click for modal") %>%
+bs_button("Click for modal") %>%
   bs_attach_modal(id_modal = "modal")
 ```
 
 The verb *attach* implies that you can attach an `id` to as many link tags you like. Thus: 
 
 ```{r}
-tags$button(type = "button", class = "btn btn-default", "New button, same modal") %>%
+bs_button("New button, same modal") %>%
   bs_attach_modal(id_modal = "modal")
 ```
 
@@ -50,7 +50,7 @@ bs_modal(
   size = "large"
 )
 
-tags$button(type = "button", class = "btn btn-default", "Large modal") %>%
+bs_button("Large modal") %>%
   bs_attach_modal(id_modal = "modal_markdown")
 ```
 

@@ -6,7 +6,7 @@ library("bsplus")
 x <- 3
 test_link <- tags$a()
 test_div <- tags$div()
-test_button <- tags$button()
+test_button <- bs_button("test")
 
 test_that("attach_collapse throws correct errors", {
   expect_error(bs_attach_collapse(x, id_collapse = "foo"), regexp = "shiny")

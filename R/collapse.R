@@ -45,9 +45,9 @@
 #' @examples
 #' library("htmltools")
 #'
-#' bs_collapse(id = "id_yeah", tags$p("Yeah Yeah Yeah"))
+#' bs_collapse(id = "id_yeah", "Yeah Yeah Yeah")
 #'
-#' tags$button(type = "button", class = "btn btn-default", "She Loves You") %>%
+#' bs_button("She Loves You", button_type = "primary") %>%
 #'   bs_attach_collapse("id_yeah")
 #'
 #' @seealso \url{https://getbootstrap.com/javascript/#collapse}

@@ -41,7 +41,7 @@
       <h1>Overview</h1>
                         <h4 class="author">Ian Lyttle</h4>
             
-            <h4 class="date">2017-01-26</h4>
+            <h4 class="date">2017-01-29</h4>
           </div>
 
     
@@ -70,7 +70,7 @@
 <div class="well">Yeah Yeah Yeah</div>
 </div>
 <p>Next, you create a tag, like a button, a then <em>attach</em> the <code>id</code> of the collapsible element to it.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">tags$<span class="kw">button</span>(<span class="dt">class =</span> <span class="st">"btn btn-primary"</span>, <span class="st">"She Loves You"</span>) %&gt;%
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw"><a href="../reference/bs_button.html">bs_button</a></span>(<span class="st">"She Loves You"</span>, <span class="dt">button_type =</span> <span class="st">"primary"</span>) %&gt;%
 <span class="st">  </span><span class="kw"><a href="../reference/bs_collapse.html">bs_attach_collapse</a></span>(<span class="st">"ex_collapse"</span>)</code></pre></div>
 <button class="btn btn-primary" data-toggle="collapse" data-target="#ex_collapse">She Loves You</button>
 <p>To see more of the collapse function-family, please see <a href="https://ijlyttle.github.io/bsplus/articles/collapse.html">its article</a>.</p>
@@ -330,27 +330,27 @@ $('.panel-collapse-leader').on('hide.bs.collapse', function () {
 <li>\(E = mc^2\)</li>
 </ul></div>
 <div class="modal-footer">
-<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+<button class="btn btn-default" data-dismiss="modal">Close</button>
 </div>
 </div>
 </div>
 </div>
 <p>To allow activation of the modal window, attach its <code>id</code> to a button (or link).</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">tags$<span class="kw">button</span>(<span class="dt">type =</span> <span class="st">"button"</span>, <span class="dt">class =</span> <span class="st">"btn btn-primary"</span>, <span class="st">"Click for modal"</span>) %&gt;%
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw"><a href="../reference/bs_button.html">bs_button</a></span>(<span class="st">"Click for modal"</span>, <span class="dt">button_type =</span> <span class="st">"primary"</span>) %&gt;%
 <span class="st">  </span><span class="kw"><a href="../reference/bs_modal.html">bs_attach_modal</a></span>(<span class="st">"modal_markdown"</span>)</code></pre></div>
-<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal_markdown">Click for modal</button>
+<button class="btn btn-primary" data-toggle="modal" data-target="#modal_markdown">Click for modal</button>
 <p>The verb <em>attach</em> implies that you can attach an <code>id</code> to as many links you like. Thus:</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">tags$<span class="kw">button</span>(<span class="dt">type =</span> <span class="st">"button"</span>, <span class="dt">class =</span> <span class="st">"btn btn-primary"</span>, <span class="st">"New button, same modal"</span>) %&gt;%
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw"><a href="../reference/bs_button.html">bs_button</a></span>(<span class="st">"New button, same modal"</span>, <span class="dt">button_type =</span> <span class="st">"primary"</span>) %&gt;%
 <span class="st">  </span><span class="kw"><a href="../reference/bs_modal.html">bs_attach_modal</a></span>(<span class="st">"modal_markdown"</span>)</code></pre></div>
-<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal_markdown">New button, same modal</button>
+<button class="btn btn-primary" data-toggle="modal" data-target="#modal_markdown">New button, same modal</button>
 <p>To see more of the <code><a href="../reference/bs_modal.html">bs_modal()</a></code> function-family, including how to specify the size of the modal, please see <a href="https://ijlyttle.github.io/bsplus/articles/modal.html">its article</a>.</p>
 </div>
 <div id="tooltip" class="section level2">
 <h2 class="hasAnchor"><html><body><a href="#tooltip" class="anchor"> </a></body></html>Tooltip</h2>
 <p>A tooltip can be used to embed a short note into a tag; by default they are activated by hovering over the tag.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">tags$<span class="kw">button</span>(<span class="dt">type =</span> <span class="st">"button"</span>, <span class="dt">class =</span> <span class="st">"btn btn-default"</span>, <span class="st">"John Lennon"</span>) %&gt;%
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw"><a href="../reference/bs_button.html">bs_button</a></span>(<span class="st">"John Lennon"</span>, <span class="dt">button_type =</span> <span class="st">"default"</span>) %&gt;%
 <span class="st">  </span><span class="kw"><a href="../reference/bs_embed_tooltip.html">bs_embed_tooltip</a></span>(<span class="dt">title =</span> <span class="st">"Rhythm Guitar, vocals"</span>)</code></pre></div>
-<button type="button" class="btn btn-default" title="Rhythm Guitar, vocals" data-toggle="tooltip" data-placement="top">John Lennon</button>
+<button class="btn btn-default" title="Rhythm Guitar, vocals" data-toggle="tooltip" data-placement="top">John Lennon</button>
 <p>According to the <a href="http://getbootstrap.com/javascript/#tooltips">Bootstrap site</a>, tooltips are not activated automatically; to activate them you can call <code><a href="../reference/bs_embed_tooltip.html">use_bs_tooltip()</a></code> once on your page.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw"><a href="../reference/bs_embed_tooltip.html">use_bs_tooltip</a></span>()</code></pre></div>
 <script>$(function () {
@@ -360,13 +360,13 @@ $('.panel-collapse-leader').on('hide.bs.collapse', function () {
 <div id="popover" class="section level2">
 <h2 class="hasAnchor"><html><body><a href="#popover" class="anchor"> </a></body></html>Popover</h2>
 <p>A popover can be used to embed a longer note into a tag; by default they are activated by clicking on the tag. A popover has a <code>title</code>, which is generally text, and <code>content</code>, which can be HTML.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">tags$<span class="kw">button</span>(<span class="dt">type =</span> <span class="st">"button"</span>, <span class="dt">class =</span> <span class="st">"btn btn-primary"</span>, <span class="st">"John Lennon"</span>) %&gt;%
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw"><a href="../reference/bs_button.html">bs_button</a></span>(<span class="st">"John Lennon"</span>, <span class="dt">button_type =</span> <span class="st">"default"</span>) %&gt;%
 <span class="st">  </span><span class="kw"><a href="../reference/bs_embed_popover.html">bs_embed_popover</a></span>(
     <span class="dt">title =</span> <span class="st">"More information"</span>,
     <span class="dt">content =</span> <span class="st">"Although he wrote </span><span class="ch">\"</span><span class="st">I Am the Walrus</span><span class="ch">\"</span><span class="st">, </span>
 <span class="st">               he later insisted that the Walrus was Paul."</span>
   )</code></pre></div>
-<button type="button" class="btn btn-primary" title="More information" data-toggle="popover" data-content='Although he wrote "I Am the Walrus", 
+<button class="btn btn-default" title="More information" data-toggle="popover" data-content='Although he wrote "I Am the Walrus", 
                he later insisted that the Walrus was Paul.' data-placement="top">John Lennon</button>
 <p>According to the <a href="http://getbootstrap.com/javascript/#popovers">Bootstrap site</a>, popovers are not activated automatically; to activate them you can call <code>use_bs_popovers()</code> once on your page.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw"><a href="../reference/bs_embed_popover.html">use_bs_popover</a></span>()</code></pre></div>
@@ -471,13 +471,13 @@ $('.panel-collapse-leader').on('hide.bs.collapse', function () {
 <p>Consider the <a href="http://getbootstrap.com/javascript/#popovers-options">options for popovers</a>; there are close to a dozen. The only one that I thought might be commonly used was <code>placement</code>, so this became an explicit argument to <code><a href="../reference/bs_embed_popover.html">bs_embed_popover()</a></code>.</p>
 <p>Let&rsquo;s say that you want to be able to dismiss a popover by clicking anywhere in the browser window other than the button. To do this, you have to set the attribute <code>data-trigger</code> to the value <code>"focus"</code>. The function <code><a href="../reference/bs_set_data.html">bs_set_data()</a></code> makes things a little easier for you by prepending <code>"data-"</code> to each name and serializing the values to the format specified by the Bootstrap API.</p>
 <p>The <code><a href="../reference/bs_embed_popover.html">bs_embed_popover()</a></code> function has a <code>...</code> argument; any such additional arguments are passed to <code><a href="../reference/bs_set_data.html">bs_set_data()</a></code>. Thus, you can add this <code>trigger</code> argument to <code><a href="../reference/bs_embed_popover.html">bs_embed_popover()</a></code>.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">tags$<span class="kw">button</span>(<span class="dt">type =</span> <span class="st">"button"</span>, <span class="dt">class =</span> <span class="st">"btn btn-primary"</span>, <span class="st">"Click for popover"</span>) %&gt;%
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw"><a href="../reference/bs_button.html">bs_button</a></span>(<span class="st">"Click for popover"</span>, <span class="dt">button_type =</span> <span class="st">"primary"</span>) %&gt;%
 <span class="st">  </span><span class="kw"><a href="../reference/bs_embed_popover.html">bs_embed_popover</a></span>(
     <span class="dt">title =</span> <span class="st">"To dismiss"</span>,
     <span class="dt">content =</span> <span class="st">"Click anywhere in the browser window, except the button."</span>,
     <span class="dt">trigger =</span> <span class="st">"focus"</span>
   )</code></pre></div>
-<button type="button" class="btn btn-primary" title="To dismiss" data-toggle="popover" data-content="Click anywhere in the browser window, except the button." data-placement="top" data-trigger="focus">Click for popover</button>
+<button class="btn btn-primary" title="To dismiss" data-toggle="popover" data-content="Click anywhere in the browser window, except the button." data-placement="top" data-trigger="focus">Click for popover</button>
 <p>Both of these functions are used to set attributes on tags; <code><a href="../reference/bs_set_data.html">bs_set_data()</a></code> is used for attributes that start with <code>"data-"</code>, <code><a href="../reference/bs_set_data.html">bs_set_aria()</a></code> is used for attributes that start with <code>"aria-"</code>. To see more of these helper functions, please read <a href="https://ijlyttle.github.io/bsplus/reference/bs_set_data.html">their reference</a>.</p>
 </div>
 </div>

@@ -86,10 +86,10 @@ are typically attached to buttons or links. Thus,
 there are two parts to this system:</p>
     
 
-    <pre><span class='fu'>bs_modal</span>(<span class='no'>id</span>, <span class='no'>title</span>, <span class='no'>body</span>, <span class='kw'>footer</span> <span class='kw'>=</span> <span class='fu'>bs_modal_closebutton</span>(<span class='kw'>title</span> <span class='kw'>=</span> <span class='st'>"Close"</span>),
+    <pre><span class='fu'>bs_modal</span>(<span class='no'>id</span>, <span class='no'>title</span>, <span class='no'>body</span>, <span class='kw'>footer</span> <span class='kw'>=</span> <span class='fu'>bs_modal_closebutton</span>(<span class='kw'>label</span> <span class='kw'>=</span> <span class='st'>"Close"</span>),
   <span class='kw'>size</span> <span class='kw'>=</span> <span class='fu'>c</span>(<span class='st'>"medium"</span>, <span class='st'>"large"</span>, <span class='st'>"small"</span>))
 
-<span class='fu'>bs_modal_closebutton</span>(<span class='kw'>title</span> <span class='kw'>=</span> <span class='st'>"Close"</span>)
+<span class='fu'>bs_modal_closebutton</span>(<span class='kw'>label</span> <span class='kw'>=</span> <span class='st'>"Close"</span>)
 
 <span class='fu'>bs_attach_modal</span>(<span class='no'>tag</span>, <span class='no'>id_modal</span>)</pre>
     
@@ -164,12 +164,12 @@ be useful.</p>
 #&gt;       &lt;/div&gt;
 #&gt;       &lt;div class=&quot;modal-body&quot;&gt;Yes, I am.&lt;/div&gt;
 #&gt;       &lt;div class=&quot;modal-footer&quot;&gt;
-#&gt;         &lt;button type=&quot;button&quot; class=&quot;btn btn-default&quot; data-dismiss=&quot;modal&quot;&gt;Close&lt;/button&gt;
+#&gt;         &lt;button class=&quot;btn btn-default&quot; data-dismiss=&quot;modal&quot;&gt;Close&lt;/button&gt;
 #&gt;       &lt;/div&gt;
 #&gt;     &lt;/div&gt;
 #&gt;   &lt;/div&gt;
-#&gt; &lt;/div&gt;</div><div class='input'><span class='no'>tags</span>$<span class='fu'>button</span>(<span class='kw'>type</span> <span class='kw'>=</span> <span class='st'>"button"</span>, <span class='kw'>class</span> <span class='kw'>=</span> <span class='st'>"btn btn-default"</span>, <span class='st'>"Click for modal"</span>) <span class='kw'>%&gt;%</span>
-  <span class='fu'>bs_attach_modal</span>(<span class='kw'>id_modal</span> <span class='kw'>=</span> <span class='st'>"modal"</span>)</div><div class='output co'>#&gt; &lt;button type=&quot;button&quot; class=&quot;btn btn-default&quot; data-toggle=&quot;modal&quot; data-target=&quot;#modal&quot;&gt;Click for modal&lt;/button&gt;</div><div class='input'>
+#&gt; &lt;/div&gt;</div><div class='input'><span class='fu'><a href='bs_button.html'>bs_button</a></span>(<span class='st'>"Click for modal"</span>) <span class='kw'>%&gt;%</span>
+  <span class='fu'>bs_attach_modal</span>(<span class='kw'>id_modal</span> <span class='kw'>=</span> <span class='st'>"modal"</span>)</div><div class='output co'>#&gt; &lt;button class=&quot;btn btn-default&quot; data-toggle=&quot;modal&quot; data-target=&quot;#modal&quot;&gt;Click for modal&lt;/button&gt;</div><div class='input'>
 <span class='fu'>bs_modal</span>(
   <span class='kw'>id</span> <span class='kw'>=</span> <span class='st'>"modal_large"</span>,
   <span class='kw'>title</span> <span class='kw'>=</span> <span class='st'>"I'm a modal"</span>,
@@ -194,12 +194,12 @@ be useful.</p>
 #&gt; &lt;/ul&gt;
 #&gt; &lt;/div&gt;
 #&gt;       &lt;div class=&quot;modal-footer&quot;&gt;
-#&gt;         &lt;button type=&quot;button&quot; class=&quot;btn btn-default&quot; data-dismiss=&quot;modal&quot;&gt;Close&lt;/button&gt;
+#&gt;         &lt;button class=&quot;btn btn-default&quot; data-dismiss=&quot;modal&quot;&gt;Close&lt;/button&gt;
 #&gt;       &lt;/div&gt;
 #&gt;     &lt;/div&gt;
 #&gt;   &lt;/div&gt;
-#&gt; &lt;/div&gt;</div><div class='input'><span class='no'>tags</span>$<span class='fu'>button</span>(<span class='kw'>type</span> <span class='kw'>=</span> <span class='st'>"button"</span>, <span class='kw'>class</span> <span class='kw'>=</span> <span class='st'>"btn btn-default"</span>, <span class='st'>"Click for modal"</span>) <span class='kw'>%&gt;%</span>
-  <span class='fu'>bs_attach_modal</span>(<span class='kw'>id_modal</span> <span class='kw'>=</span> <span class='st'>"modal_large"</span>)</div><div class='output co'>#&gt; &lt;button type=&quot;button&quot; class=&quot;btn btn-default&quot; data-toggle=&quot;modal&quot; data-target=&quot;#modal_large&quot;&gt;Click for modal&lt;/button&gt;</div><div class='input'>
+#&gt; &lt;/div&gt;</div><div class='input'><span class='fu'><a href='bs_button.html'>bs_button</a></span>(<span class='st'>"Click for modal"</span>) <span class='kw'>%&gt;%</span>
+  <span class='fu'>bs_attach_modal</span>(<span class='kw'>id_modal</span> <span class='kw'>=</span> <span class='st'>"modal_large"</span>)</div><div class='output co'>#&gt; &lt;button class=&quot;btn btn-default&quot; data-toggle=&quot;modal&quot; data-target=&quot;#modal_large&quot;&gt;Click for modal&lt;/button&gt;</div><div class='input'>
 </div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">

@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Popover — bs_embed_popover • bsplus</title>
+<title>Button — bs_button • bsplus</title>
 
 <!-- jquery -->
 <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha384-nrOSfDHtoPMzJHjVTdCopGqIqeYETSXhZDFyniQ8ZHcVy08QesyHcnOUpMpqnmWq" crossorigin="anonymous"></script>
@@ -77,57 +77,38 @@
       <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Popover</h1>
+    <h1>Button</h1>
     </div>
 
     
-    <p>A popover can be a useful way to add a somewhat-verbose explanation to a tag.</p>
+    <p>Button</p>
     
 
-    <pre><span class='fu'>bs_embed_popover</span>(<span class='no'>tag</span>, <span class='kw'>title</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>content</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>placement</span> <span class='kw'>=</span> <span class='st'>"top"</span>,
-  <span class='no'>...</span>)
-
-<span class='fu'>use_bs_popover</span>()</pre>
+    <pre><span class='fu'>bs_button</span>(<span class='no'>label</span>, <span class='kw'>button_type</span> <span class='kw'>=</span> <span class='fu'>c</span>(<span class='st'>"default"</span>, <span class='st'>"primary"</span>, <span class='st'>"success"</span>, <span class='st'>"info"</span>,
+  <span class='st'>"warning"</span>, <span class='st'>"danger"</span>), <span class='no'>...</span>)</pre>
     
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a> Arguments</h2>
     <dl class="dl-horizontal">
-      <dt>tag</dt>
-      <dd><code>htmltools::<a href='http://www.rdocumentation.org/packages/htmltools/topics/tag'>tag</a></code>, generally
-<code>&lt;button/&gt;</code> or <code>&lt;a/&gt;</code>, into which to embed the popover</dd>
-      <dt>title</dt>
-      <dd>character, title for the popover, generally text</dd>
-      <dt>content</dt>
-      <dd>character, content for the popover body, can be HTML</dd>
-      <dt>placement</dt>
-      <dd>character, placement of the popover with respect to <code>tag</code></dd>
+      <dt>label</dt>
+      <dd>character (HTML), button label</dd>
+      <dt>button_type</dt>
+      <dd>character, one of the standard Bootstrap types</dd>
       <dt>...</dt>
-      <dd>other named arguments, passed to <code>bs_set_data()</code></dd>
+      <dd>attributes (named arguments) and children (unnamed arguments)
+of the button, passed to <code>htmltools::<a href='http://www.rdocumentation.org/packages/htmltools/topics/tag'>tag</a></code></dd>
     </dl>
     
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
-    <p><code>htmltools::<a href='http://www.rdocumentation.org/packages/htmltools/topics/tag'>tag</a></code>, modified copy of <code>tag</code></p>
-    
-    <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
-
-    <p>To activate the use of popovers in your page, you will need to call
-the <code>use_bs_popover()</code> function somewhere.</p>
-    <p>The verb <em>embed</em> is used to signify that you are embedding information
-into a <code>tag</code>. This implies that you can embed, at most, one &quot;thing&quot;
-into a particular <code>tag</code>. You should not, for example, expect to embed both a tooltip
-and a popover into a <code>tag</code>.</p>
+    <p><code>htmltools::<a href='http://www.rdocumentation.org/packages/htmltools/topics/tag'>tag</a></code>, <code>&lt;button/&gt;</code></p>
     
     <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
 
-    <p><code><a href='bs_embed_tooltip.html'>bs_embed_tooltip</a></code>,
-  <a href = 'http://getbootstrap.com/javascript/#popovers'>http://getbootstrap.com/javascript/#popovers</a></p>
+    <p><a href = 'http://getbootstrap.com/css/#buttons'>http://getbootstrap.com/css/#buttons</a></p>
     
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='fu'>library</span>(<span class='st'>"htmltools"</span>)
-
-<span class='fu'><a href='bs_button.html'>bs_button</a></span>(<span class='st'>"A button"</span>) <span class='kw'>%&gt;%</span>
-  <span class='fu'>bs_embed_popover</span>(<span class='kw'>title</span> <span class='kw'>=</span> <span class='st'>"I'm a popover"</span>, <span class='kw'>content</span> <span class='kw'>=</span> <span class='st'>"Really!"</span>)</div><div class='output co'>#&gt; &lt;button class=&quot;btn btn-default&quot; title=&quot;I&amp;#39;m a popover&quot; data-toggle=&quot;popover&quot; data-content=&quot;Really!&quot; data-placement=&quot;top&quot;&gt;A button&lt;/button&gt;</div></pre>
+    <pre class="examples"><div class='input'><span class='fu'>bs_button</span>(<span class='st'>"Click me"</span>, <span class='kw'>button_type</span> <span class='kw'>=</span> <span class='st'>"primary"</span>)</div><div class='output co'>#&gt; &lt;button class=&quot;btn btn-primary&quot;&gt;Click me&lt;/button&gt;</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>
@@ -135,8 +116,6 @@ and a popover into a <code>tag</code>.</p>
       <li><a href="#arguments">Arguments</a></li>
       
       <li><a href="#value">Value</a></li>
-
-      <li><a href="#details">Details</a></li>
 
       <li><a href="#see-also">See also</a></li>
       

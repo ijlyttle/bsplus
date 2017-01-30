@@ -7,6 +7,17 @@ template:
 
 
 reference:
+
+- title: "Components"
+  desc: >
+    A few more words.
+
+    - Button
+        - [Boostrap reference](http://getbootstrap.com/css/#buttons)
+
+  contents:
+    - bs_button
+
 - title: "Collapse, accordion, and accordion sidebar"
   desc: >
     All of these functions deal with collapsible elements. The foundation

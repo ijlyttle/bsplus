@@ -49,7 +49,7 @@
 #' library("shiny")
 #'
 #' bs_modal(id = "modal", title = "I'm a modal", body = "Yes, I am.")
-#' tags$button(type = "button", class = "btn btn-default", "Click for modal") %>%
+#' bs_button("Click for modal") %>%
 #'   bs_attach_modal(id_modal = "modal")
 #'
 #' bs_modal(
@@ -58,7 +58,7 @@
 #'   size = "large",
 #'   body = includeMarkdown(system.file("markdown", "modal.md", package = "bsplus"))
 #' )
-#' tags$button(type = "button", class = "btn btn-default", "Click for modal") %>%
+#' bs_button("Click for modal") %>%
 #'   bs_attach_modal(id_modal = "modal_large")
 #'
 #' @export
@@ -66,7 +66,7 @@
 bs_modal <- function(id,
                      title,
                      body,
-                     footer = bs_modal_closebutton(title = "Close"),
+                     footer = bs_modal_closebutton(label = "Close"),
                      size = c("medium", "large", "small")){
 
   # arg match on size
@@ -90,15 +90,14 @@ bs_modal <- function(id,
   id_title <- paste(id, "title", sep = "-")
 
   div <- htmltools::tags$div
-  button <- htmltools::tags$button
   span <- htmltools::tags$span
 
   modal_button <-
-    button(
+    htmltools::tags$button(
       type = "button",
       class = "close",
       span(htmltools::HTML("&times;")) %>% bs_set_aria(hidden = "true")
-    ) %>%
+     ) %>%
     bs_set_data(dismiss = "modal") %>%
     bs_set_aria(label = "Close")
 
@@ -136,13 +135,9 @@ bs_modal <- function(id,
 #' @rdname bs_modal
 #' @export
 #'
-bs_modal_closebutton <- function(title = "Close"){
+bs_modal_closebutton <- function(label = "Close"){
 
-  htmltools::tags$button(
-    type = "button",
-    class = "btn btn-default",
-    title
-  ) %>%
+  bs_button(label, button_type = "default") %>%
     bs_set_data(dismiss = "modal")
 }
 

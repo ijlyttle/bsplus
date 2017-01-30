@@ -50,7 +50,7 @@ bs_collapse(
 Next, you create a tag, like a button, a then *attach* the `id` of the collapsible element to it.
 
 ```{r collapse}
-tags$button(class = "btn btn-primary", "She Loves You") %>%
+bs_button("She Loves You", button_type = "primary") %>%
   bs_attach_collapse("ex_collapse")
 ```
 
@@ -139,14 +139,14 @@ bs_modal(
 To allow activation of the modal window, attach its `id` to a button (or link).
 
 ```{r}
-tags$button(type = "button", class = "btn btn-primary", "Click for modal") %>%
+bs_button("Click for modal", button_type = "primary") %>%
   bs_attach_modal("modal_markdown")
 ```
 
 The verb *attach* implies that you can attach an `id` to as many links you like. Thus: 
 
 ```{r}
-tags$button(type = "button", class = "btn btn-primary", "New button, same modal") %>%
+bs_button("New button, same modal", button_type = "primary") %>%
   bs_attach_modal("modal_markdown")
 ```
 
@@ -156,7 +156,7 @@ To see more of the `bs_modal()` function-family, including how to specify the si
 
 A tooltip can be used to embed a short note into a tag; by default they are activated by hovering over the tag. 
 ```{r tooltip}
-tags$button(type = "button", class = "btn btn-default", "John Lennon") %>%
+bs_button("John Lennon", button_type = "default") %>%
   bs_embed_tooltip(title = "Rhythm Guitar, vocals")
 ```
 
@@ -173,7 +173,7 @@ To see more of the `bs_embed_tooltip()` function, including how to specify the p
 A popover can be used to embed a longer note into a tag; by default they are activated by clicking on the tag. A popover has a `title`, which is generally text, and `content`, which can be HTML.
 
 ```{r popover}
-tags$button(type = "button", class = "btn btn-primary", "John Lennon") %>%
+bs_button("John Lennon", button_type = "default") %>%
   bs_embed_popover(
     title = "More information",
     content = "Although he wrote \"I Am the Walrus\", 
@@ -269,7 +269,7 @@ Let's say that you want to be able to dismiss a popover by clicking anywhere in 
 The `bs_embed_popover()` function has a `...` argument; any such additional arguments are passed to `bs_set_data()`. Thus, you can add this `trigger` argument to `bs_embed_popover()`.
 
 ```{r}
-tags$button(type = "button", class = "btn btn-primary", "Click for popover") %>%
+bs_button("Click for popover", button_type = "primary") %>%
   bs_embed_popover(
     title = "To dismiss",
     content = "Click anywhere in the browser window, except the button.",
