@@ -7,17 +7,13 @@ output: rmarkdown::html_document
 
 One of the goals of **bsplus** is to provide access to some useful Bootstrap components for **rmarkdown** html-documents and **shiny** apps:
 
-- [collapse](http://getbootstrap.com/javascript/#collapse)
+- Basic components: [button](http://getbootstrap.com/css/#buttons), [panel](http://getbootstrap.com/components/#panels), and [well](http://getbootstrap.com/components/#wells)
 
-- [accordion](http://getbootstrap.com/javascript/#collapse-example-accordion)
+- Collapsible components: [collapse](http://getbootstrap.com/javascript/#collapse) and [accordion](http://getbootstrap.com/javascript/#collapse-example-accordion)
 
-- [modal](http://getbootstrap.com/javascript/#modals)
+- Tools to help with documentation: [tooltip](http://getbootstrap.com/javascript/#tooltips), [popover](http://getbootstrap.com/javascript/#popovers), and [modal](http://getbootstrap.com/javascript/#modals), talk about the responsive embed function, once it is made.
 
-- [tooltip](http://getbootstrap.com/javascript/#tooltips)
-
-- [popover](http://getbootstrap.com/javascript/#popovers)
-
-- [carousel](http://getbootstrap.com/javascript/#carousel)
+- Present more information: [carousel](http://getbootstrap.com/javascript/#carousel)
 
 Another goal is to provide some tools to help build **shiny** apps.
 
@@ -33,6 +29,20 @@ library("shiny")
 library("bsplus")
 library("knitr")
 ```
+
+## Components
+
+This family of functions is used to build some stand-alone components. 
+
+### Button
+
+```{r}
+bs_button("This button does nothing", button_type = "warning")
+```
+
+### Panel
+
+### Well
 
 ## Collapse
 

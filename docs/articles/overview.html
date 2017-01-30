@@ -48,16 +48,30 @@
     
 <div class="contents">
 <p>One of the goals of <strong>bsplus</strong> is to provide access to some useful Bootstrap components for <strong>rmarkdown</strong> html-documents and <strong>shiny</strong> apps:</p>
-<ul><li><p><a href="http://getbootstrap.com/javascript/#collapse">collapse</a></p></li>
-<li><p><a href="http://getbootstrap.com/javascript/#collapse-example-accordion">accordion</a></p></li>
-<li><p><a href="http://getbootstrap.com/javascript/#modals">modal</a></p></li>
-<li><p><a href="http://getbootstrap.com/javascript/#tooltips">tooltip</a></p></li>
-<li><p><a href="http://getbootstrap.com/javascript/#popovers">popover</a></p></li>
-<li><p><a href="http://getbootstrap.com/javascript/#carousel">carousel</a></p></li>
+<ul><li><p>Basic components: <a href="http://getbootstrap.com/css/#buttons">button</a>, <a href="http://getbootstrap.com/components/#panels">panel</a>, and <a href="http://getbootstrap.com/components/#wells">well</a></p></li>
+<li><p>Collapsible components: <a href="http://getbootstrap.com/javascript/#collapse">collapse</a> and <a href="http://getbootstrap.com/javascript/#collapse-example-accordion">accordion</a></p></li>
+<li><p>Tools to help with documentation: <a href="http://getbootstrap.com/javascript/#tooltips">tooltip</a>, <a href="http://getbootstrap.com/javascript/#popovers">popover</a>, and <a href="http://getbootstrap.com/javascript/#modals">modal</a></p></li>
+<li><p>Way to present more information: <a href="http://getbootstrap.com/javascript/#carousel">carousel</a></p></li>
 </ul><p>Another goal is to provide some tools to help build <strong>shiny</strong> apps.</p>
 <ul><li><p><code><a href="../reference/bs_accordion_sidebar.html">bs_accordion_sidebar()</a></code>: a framework, much like <code>shiny::navbarPage()</code>, to organize the UI of your <strong>shiny</strong> apps. For example, please see its <a href="https://ijlyttle.github.io/bsplus/articles/accordion_sidebar.html">article</a>, or this <a href="https://ijlyttle.shinyapps.io/accordion_sidebar/"><strong>shiny</strong> app</a>.</p></li>
 <li><p><code><a href="../reference/shinyInput_label_embed.html">shinyInput_label_embed()</a></code>, <code><a href="../reference/shiny_iconlink.html">shiny_iconlink()</a></code>: functions to make it easier to embed help (tooltip, popover, or modal) into a <strong>shiny</strong> input. For example, please see this <a href="https://ijlyttle.shinyapps.io/tooltip_popover_modal/"><strong>shiny</strong> app</a>.</p></li>
+<li><p>talk about the responsive embed function, once it is made.</p></li>
 </ul><p>The philosophy of this package is to allow you to work with Bootstrap JavaScript components using HTML, while smoothing some of the rough edges. Even though some of the functions here are useful only in <strong>shiny</strong> apps, please note that none of the functions in this package depend on the server side of <strong>shiny</strong> - only the UI side.</p>
+<div id="components" class="section level2">
+<h2 class="hasAnchor"><html><body><a href="#components" class="anchor"> </a></body></html>Components</h2>
+<p>This family of functions is used to build some stand-alone components.</p>
+<div id="button" class="section level3">
+<h3 class="hasAnchor"><html><body><a href="#button" class="anchor"> </a></body></html>Button</h3>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw"><a href="../reference/bs_button.html">bs_button</a></span>(<span class="st">"This button does nothing"</span>, <span class="dt">button_type =</span> <span class="st">"warning"</span>)</code></pre></div>
+<button class="btn btn-warning">This button does nothing</button>
+</div>
+<div id="panel" class="section level3">
+<h3 class="hasAnchor"><html><body><a href="#panel" class="anchor"> </a></body></html>Panel</h3>
+</div>
+<div id="well" class="section level3">
+<h3 class="hasAnchor"><html><body><a href="#well" class="anchor"> </a></body></html>Well</h3>
+</div>
+</div>
 <div id="collapse" class="section level2">
 <h2 class="hasAnchor"><html><body><a href="#collapse" class="anchor"> </a></body></html>Collapse</h2>
 <p>A collapsible element is attached to a button or link, which is used to show (or hide) the element.</p>
@@ -486,7 +500,8 @@ $('.panel-collapse-leader').on('hide.bs.collapse', function () {
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
         <div id="tocnav">
       <h2>Contents</h2>
-      <ul class="nav nav-pills nav-stacked"><li><a href="#collapse">Collapse</a></li>
+      <ul class="nav nav-pills nav-stacked"><li><a href="#components">Components</a></li>
+      <li><a href="#collapse">Collapse</a></li>
       <li><a href="#accordion">Accordion</a></li>
       <li><a href="#accordion-sidebar">Accordion sidebar</a></li>
       <li><a href="#modal">Modal</a></li>

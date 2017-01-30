@@ -10,10 +10,9 @@ reference:
 
 - title: "Components"
   desc: >
-    A few more words.
 
-    - Button
-        - [Boostrap reference](http://getbootstrap.com/css/#buttons)
+
+    - Button: [Boostrap reference](http://getbootstrap.com/css/#buttons)
 
   contents:
     - bs_button
