@@ -28,4 +28,3 @@ This would be used when we want to add items to a collection
   \code{\link{bs_carousel}}
 }
 \keyword{internal}
-

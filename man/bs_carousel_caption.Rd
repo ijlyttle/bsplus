@@ -20,4 +20,3 @@ Helper function to generate HTML for a carousel caption.
 \seealso{
 \code{\link{bs_carousel}}
 }
-

@@ -2,9 +2,9 @@
 % Please edit documentation in R/accordion_sidebar.R, R/append.R, R/set_opts.R
 \name{bs_accordion_sidebar}
 \alias{bs_accordion_sidebar}
+\alias{use_bs_accordion_sidebar}
 \alias{bs_append.bsplus_accordion_sidebar}
 \alias{bs_set_opts.bsplus_accordion_sidebar}
-\alias{use_bs_accordion_sidebar}
 \title{Accordion-sidebar panel-group}
 \usage{
 bs_accordion_sidebar(id, spec_side = c(width = 4, offset = 0),
@@ -101,4 +101,3 @@ bs_accordion_sidebar(id = "meet_the_beatles") \%>\%
 use_bs_accordion_sidebar()
 }
 }
-

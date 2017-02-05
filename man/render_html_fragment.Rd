@@ -33,4 +33,3 @@ my_file <- system.file("markdown", "modal.md", package = "bsplus")
 render_html_fragment(my_file)
 }
 }
-
