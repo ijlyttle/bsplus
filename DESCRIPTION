@@ -31,7 +31,7 @@ Imports:
     methods
 URL: https://github.com/ijlyttle/bsplus
 BugReports: https://github.com/ijlyttle/bsplus/issues
-RoxygenNote: 5.0.1
+RoxygenNote: 6.0.0
 Suggests: testthat,
     shiny,
     covr,

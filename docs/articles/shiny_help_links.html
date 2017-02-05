@@ -41,7 +41,7 @@
       <h1>Shiny-input help links</h1>
                         <h4 class="author">Ian Lyttle</h4>
             
-            <h4 class="date">2017-01-26</h4>
+            <h4 class="date">2017-02-05</h4>
           </div>
 
     
@@ -50,18 +50,18 @@
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(<span class="st">"htmltools"</span>)
 <span class="kw">library</span>(<span class="st">"bsplus"</span>)</code></pre></div>
 <p>Let&rsquo;s consider a <strong>shiny</strong> input. One way to put unobtrusive help into a <strong>shiny</strong> input is to embed a help icon into its label, having associated the help icon with the help documentation. This suggests three steps:</p>
-<ol style="list-style-type: decimal"><li>Create a help icon. You can use <code>shiny::icon()</code> or <code><a href="../reference/shiny_iconlink.html">shiny_iconlink()</a></code> (which simply wraps the icon in an HTML link).</li>
-<li>Associate the help icon with your help documentation. Here, you can use <code><a href="../reference/bs_embed_tooltip.html">bs_embed_tooltip()</a></code>, <code><a href="../reference/bs_embed_popover.html">bs_embed_popover()</a></code> or <code><a href="../reference/bs_modal.html">bs_attach_modal()</a></code>.</li>
-<li>Embed your help icon into the <strong>shiny</strong> input. You can use <code><a href="../reference/shinyInput_label_embed.html">shinyInput_label_embed()</a></code>.</li>
+<ol style="list-style-type: decimal"><li>Create a help icon. You can use <code>shiny::icon()</code> or <code>shiny_iconlink()</code> (which simply wraps the icon in an HTML link).</li>
+<li>Associate the help icon with your help documentation. Here, you can use <code>bs_embed_tooltip()</code>, <code>bs_embed_popover()</code> or <code>bs_attach_modal()</code>.</li>
+<li>Embed your help icon into the <strong>shiny</strong> input. You can use <code>shinyInput_label_embed()</code>.</li>
 </ol><p>Here&rsquo;s an example of everything put together:</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">selectInput</span>(
   <span class="dt">inputId =</span> <span class="st">"letter"</span>,
   <span class="dt">label =</span> <span class="st">"Label with popover help"</span>,
   <span class="dt">choices =</span> <span class="kw">c</span>(<span class="st">"a"</span>, <span class="st">"b"</span>, <span class="st">"c"</span>)
 ) %&gt;%
-<span class="kw"><a href="../reference/shinyInput_label_embed.html">shinyInput_label_embed</a></span>(
-  <span class="kw"><a href="../reference/shiny_iconlink.html">shiny_iconlink</a></span>() %&gt;%
-<span class="st">  </span><span class="kw"><a href="../reference/bs_embed_popover.html">bs_embed_popover</a></span>(
+<span class="kw">shinyInput_label_embed</span>(
+  <span class="kw">shiny_iconlink</span>() %&gt;%
+<span class="st">  </span><span class="kw">bs_embed_popover</span>(
     <span class="dt">title =</span> <span class="st">"Letter"</span>, <span class="dt">content =</span> <span class="st">"Choose a favorite"</span>, <span class="dt">placement =</span> <span class="st">"left"</span>
   )
 )</code></pre></div>
@@ -70,7 +70,7 @@
 <div class="figure">
 <img src="img/popover.png"></div>
 <p>To promote consistency, the following convention is proposed:</p>
-<ul><li>For links (activated by clicking), embed a <code>shiny::icon("info-circle")</code>, the default for <code><a href="../reference/shiny_iconlink.html">shiny_iconlink()</a></code>.</li>
+<ul><li>For links (activated by clicking), embed a <code>shiny::icon("info-circle")</code>, the default for <code>shiny_iconlink()</code>.</li>
 <li>For elements activated by hovering, embed a <code>shiny::icon("info")</code>.</li>
 </ul></div>
   </div>

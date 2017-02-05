@@ -82,24 +82,24 @@ devtools::<span class="kw">install_github</span>(<span class="st">"ijlyttle/bspl
 <h3 class="hasAnchor">
 <a href="#function-families" class="anchor"> </a>Function families</h3>
 <p>In this package, there are function families for:</p>
-<ul><li>collapsible elements: <code><a href="reference/bs_collapse.html">bs_collapse()</a></code>
+<ul><li>collapsible elements: <code>bs_collapse()</code>
 </li>
-<li>accordion panels: <code><a href="reference/bs_accordion.html">bs_accordion()</a></code>
+<li>accordion panels: <code>bs_accordion()</code>
 </li>
-<li>accordion-sidebar sets: <code><a href="reference/bs_accordion_sidebar.html">bs_accordion_sidebar()</a></code>
+<li>accordion-sidebar sets: <code>bs_accordion_sidebar()</code>
 </li>
-<li>tooltips: <code><a href="reference/bs_embed_tooltip.html">bs_embed_tooltip()</a></code>
+<li>tooltips: <code>bs_embed_tooltip()</code>
 </li>
-<li>popovers: <code><a href="reference/bs_embed_popover.html">bs_embed_popover()</a></code>
+<li>popovers: <code>bs_embed_popover()</code>
 </li>
-<li>modals: <code><a href="reference/bs_modal.html">bs_modal()</a></code>
+<li>modals: <code>bs_modal()</code>
 </li>
-<li>carousels: <code><a href="reference/bs_append.bsplus_carousel.html">bs_carousel()</a></code>
+<li>carousels: <code>bs_carousel()</code>
 </li>
 </ul><p>There are also helper functions:</p>
-<ul><li>embed help-links into <strong>shiny</strong> inputs: <code><a href="reference/shiny_iconlink.html">shiny_iconlink()</a></code>, <code><a href="reference/shinyInput_label_embed.html">shinyInput_label_embed()</a></code>
+<ul><li>embed help-links into <strong>shiny</strong> inputs: <code>shiny_iconlink()</code>, <code>shinyInput_label_embed()</code>
 </li>
-<li>set <code>data-</code> and <code>aria-</code> attributes of tags: <code><a href="reference/bs_set_data.html">bs_set_data()</a></code>, <code><a href="reference/bs_set_data.html">bs_set_aria()</a></code>
+<li>set <code>data-</code> and <code>aria-</code> attributes of tags: <code>bs_set_data()</code>, <code>bs_set_aria()</code>
 </li>
 </ul></div>
 </div>
@@ -108,10 +108,10 @@ devtools::<span class="kw">install_github</span>(<span class="st">"ijlyttle/bspl
 <a href="#grammar-and-vocabulary" class="anchor"> </a>Grammar and vocabulary</h2>
 <p>One of the goals of this package is to implement consistent grammar and vocabulary. To keep the namespace clean(er), many of the functions have the prefix <code>bs_</code>.</p>
 <p>Let&rsquo;s start with the conventions used to name the functions:</p>
-<ul><li><p><code>bs_noun()</code>, used to create a <code>tag</code>. For example, use <code><a href="reference/bs_accordion.html">bs_accordion()</a></code> to create an accordion panel-set.</p></li>
-<li><p><code>bs_verb(tag, ...)</code>, used to take an action on a <code>tag</code>. For example, use <code><a href="reference/bs_append.html">bs_append()</a></code> to append a panel to an accordion panel-set.</p></li>
-<li><p><code>bs_verb_noun(tag, ...)</code> used to take an action on a <code>tag</code> using a <code>thing</code>. For example, use <code><a href="reference/bs_embed_tooltip.html">bs_embed_tooltip()</a></code> to embed a tooltip into a <code>tag</code>.</p></li>
-<li><p><code>use_bs_noun()</code> used to add a bit of Javascript to your HTML, just like the <strong>shinyjs</strong> function <code>useShinyJS()</code>. This is necessary for <code><a href="reference/bs_accordion_sidebar.html">bs_accordion_sidebar()</a></code>, <code><a href="reference/bs_embed_tooltip.html">bs_embed_tooltip()</a></code>, or <code><a href="reference/bs_embed_popover.html">bs_embed_popover()</a></code> to work properly.</p></li>
+<ul><li><p><code>bs_noun()</code>, used to create a <code>tag</code>. For example, use <code>bs_accordion()</code> to create an accordion panel-set.</p></li>
+<li><p><code>bs_verb(tag, ...)</code>, used to take an action on a <code>tag</code>. For example, use <code>bs_append()</code> to append a panel to an accordion panel-set.</p></li>
+<li><p><code>bs_verb_noun(tag, ...)</code> used to take an action on a <code>tag</code> using a <code>thing</code>. For example, use <code>bs_embed_tooltip()</code> to embed a tooltip into a <code>tag</code>.</p></li>
+<li><p><code>use_bs_noun()</code> used to add a bit of Javascript to your HTML, just like the <strong>shinyjs</strong> function <code>useShinyJS()</code>. This is necessary for <code>bs_accordion_sidebar()</code>, <code>bs_embed_tooltip()</code>, or <code>bs_embed_popover()</code> to work properly.</p></li>
 </ul><div id="nouns" class="section level3">
 <h3 class="hasAnchor">
 <a href="#nouns" class="anchor"> </a>Nouns</h3>
@@ -122,15 +122,15 @@ devtools::<span class="kw">install_github</span>(<span class="st">"ijlyttle/bspl
 <h3 class="hasAnchor">
 <a href="#verbs" class="anchor"> </a>Verbs</h3>
 <ul><li>
-<code><a href="reference/bs_append.html">bs_append(tag, ...)</a></code> used to append something to a tag, perhaps a panel into an accordion-group.</li>
+<code>bs_append(tag, ...)</code> used to append something to a tag, perhaps a panel into an accordion-group.</li>
 <li>
-<code>bs_attach_foo(tag, ...)</code> used to attach the <code>id</code> of an element (foo) to another tag, for example, you could create a modal window using <code><a href="reference/bs_modal.html">bs_modal()</a></code>, then you could <em>attach</em> the <code>id</code> of the modal window to the tag using <code><a href="reference/bs_modal.html">bs_attach_modal()</a></code>
+<code>bs_attach_foo(tag, ...)</code> used to attach the <code>id</code> of an element (foo) to another tag, for example, you could create a modal window using <code>bs_modal()</code>, then you could <em>attach</em> the <code>id</code> of the modal window to the tag using <code>bs_attach_modal()</code>
 </li>
 <li>
-<code>bs_emded_foo(tag, ...)</code> used to embed something (a foo) into a tag, for example, <code><a href="reference/bs_embed_tooltip.html">bs_embed_tooltip()</a></code>
+<code>bs_emded_foo(tag, ...)</code> used to embed something (a foo) into a tag, for example, <code>bs_embed_tooltip()</code>
 </li>
 <li>
-<code><a href="reference/bs_set_opts.html">bs_set_opts(tag, ...)</a></code> used to set some options for the items yet to be appended to a tag.</li>
+<code>bs_set_opts(tag, ...)</code> used to set some options for the items yet to be appended to a tag.</li>
 </ul><p>Let&rsquo;s consider the differences between <code>append</code>, <code>attach</code>, and <code>embed</code>:</p>
 <ul><li>You can <em>append</em> more than one element to a tag, i.e., you could append multiple panels to an accordion-group.</li>
 <li>You can <em>attach</em> only one id of a thing to a tag. When we are attaching, we attach the <code>id</code> of an element, not the element itself. However, we can attach an <code>id</code> of an element to more than one tag.</li>

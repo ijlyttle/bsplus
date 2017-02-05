@@ -1,7 +1,69 @@
 ---
 title: "Generalized Accordion Sidebar"
-author: "Vignette Author"
+author: "Ian Lyttle"
 date: "`r Sys.Date()`"
-output: rmarkdown::html_vignette
 ---
 
+```{r}
+library("bsplus")
+```
+
+Our first task is to see if we can nest accordions. Imagine that this will be what we would see as the sidebar.
+
+```{r}
+bs_accordion(id = "beatles") %>%
+  bs_append(
+    title = "John Lennon",
+    content = 
+      bs_accordion(id = "john") %>%
+      bs_append(
+        title = "Beatles",
+        content = "1960-1969"
+      ) %>%
+      bs_append(
+        title = "Solo",
+        content = "1968-1980"
+      ) 
+  ) %>%
+  bs_append(
+    title = "Paul McCartney",
+    content = 
+      bs_accordion(id = "paul") %>%
+      bs_append(
+        title = "Beatles",
+        content = "1960-1970"
+      ) %>%
+      bs_append(
+        title = "Solo",
+        content = "1970-"
+      ) 
+  ) %>%  
+  bs_append(
+    title = "George Harrison",
+    content = 
+      bs_accordion(id = "george") %>%
+      bs_append(
+        title = "Beatles",
+        content = "1960-1970"
+      ) %>%
+      bs_append(
+        title = "Solo",
+        content = "1968-2001"
+      ) 
+  ) %>%
+  bs_append(
+    title = "Ringo Starr",
+    content =
+      bs_accordion(id = "ringo") %>%
+      bs_append(
+        title = "Beatles",
+        content = "1962-1970"
+      ) %>%
+      bs_append(
+        title = "Solo",
+        content = "1970-"
+      ) 
+  )
+```
+
+It appears that we can nest accordions!

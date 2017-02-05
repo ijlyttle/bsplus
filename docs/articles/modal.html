@@ -41,7 +41,7 @@
       <h1>Modals</h1>
                         <h4 class="author">Ian Lyttle</h4>
             
-            <h4 class="date">2017-01-26</h4>
+            <h4 class="date">2017-02-05</h4>
           </div>
 
     
@@ -50,7 +50,7 @@
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(<span class="st">"htmltools"</span>)
 <span class="kw">library</span>(<span class="st">"bsplus"</span>)</code></pre></div>
 <p>Modal windows are a great way to deliver help-documentation, although they certainly have other uses. The first step is to define a modal widow, giving it an <code>id</code>.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw"><a href="../reference/bs_modal.html">bs_modal</a></span>(<span class="dt">id =</span> <span class="st">"modal"</span>, <span class="dt">title =</span> <span class="st">"I'm a modal"</span>, <span class="dt">body =</span> <span class="st">"Yes, I am."</span>)</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">bs_modal</span>(<span class="dt">id =</span> <span class="st">"modal"</span>, <span class="dt">title =</span> <span class="st">"I'm a modal"</span>, <span class="dt">body =</span> <span class="st">"Yes, I am."</span>)</code></pre></div>
 <div class="modal fade" id="modal" tabindex="-1" role="dialog" aria-labelledby="modal-title">
 <div class="modal-dialog" role="document">
 <div class="modal-content">
@@ -62,30 +62,30 @@
 </div>
 <div class="modal-body">Yes, I am.</div>
 <div class="modal-footer">
-<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+<button class="btn btn-default" data-dismiss="modal">Close</button>
 </div>
 </div>
 </div>
 </div>
 <p>To allow activation of the modal window, attach its <code>id</code> to a button (or link).</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">tags$<span class="kw">button</span>(<span class="dt">type =</span> <span class="st">"button"</span>, <span class="dt">class =</span> <span class="st">"btn btn-default"</span>, <span class="st">"Click for modal"</span>) %&gt;%
-<span class="st">  </span><span class="kw"><a href="../reference/bs_modal.html">bs_attach_modal</a></span>(<span class="dt">id_modal =</span> <span class="st">"modal"</span>)</code></pre></div>
+<span class="st">  </span><span class="kw">bs_attach_modal</span>(<span class="dt">id_modal =</span> <span class="st">"modal"</span>)</code></pre></div>
 <button type="button" class="btn btn-default" data-toggle="modal" data-target="#modal">Click for modal</button>
 <p>The verb <em>attach</em> implies that you can attach an <code>id</code> to as many link tags you like. Thus:</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">tags$<span class="kw">button</span>(<span class="dt">type =</span> <span class="st">"button"</span>, <span class="dt">class =</span> <span class="st">"btn btn-default"</span>, <span class="st">"New button, same modal"</span>) %&gt;%
-<span class="st">  </span><span class="kw"><a href="../reference/bs_modal.html">bs_attach_modal</a></span>(<span class="dt">id_modal =</span> <span class="st">"modal"</span>)</code></pre></div>
+<span class="st">  </span><span class="kw">bs_attach_modal</span>(<span class="dt">id_modal =</span> <span class="st">"modal"</span>)</code></pre></div>
 <button type="button" class="btn btn-default" data-toggle="modal" data-target="#modal">New button, same modal</button>
-<p>Let&rsquo;s look at a more-involved example using all of the arguments for <code><a href="../reference/bs_modal.html">bs_modal()</a></code>.</p>
+<p>Let&rsquo;s look at a more-involved example using all of the arguments for <code>bs_modal()</code>.</p>
 <p>In the example above, <code>body</code> is text; usually, you will want the <code>body</code> to HTML. One way to compose the HTML for the body is to write it as a Markdown file, then use the helper function <code>shiny::includeMarkdown()</code> to render it into into HTML.</p>
-<p>The default <code>footer</code> is simply a &ldquo;Close&rdquo; button, which is made using the helper function <code><a href="../reference/bs_modal.html">bs_modal_closebutton()</a></code>. You can compose your own footer, using this function to customize your close-button.</p>
+<p>The default <code>footer</code> is simply a &ldquo;Close&rdquo; button, which is made using the helper function <code>bs_modal_closebutton()</code>. You can compose your own footer, using this function to customize your close-button.</p>
 <p>Finally, the <code>size</code> can be <code>"small"</code>, <code>"medium"</code>, or <code>"large"</code> - the defualt is <code>"medium"</code>.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw"><a href="../reference/bs_modal.html">bs_modal</a></span>(
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">bs_modal</span>(
   <span class="dt">id =</span> <span class="st">"modal_markdown"</span>, 
   <span class="dt">title =</span> <span class="st">"Using Markdown"</span>,
   <span class="dt">body =</span> <span class="kw">includeMarkdown</span>(<span class="kw">system.file</span>(<span class="st">"markdown"</span>, <span class="st">"modal.md"</span>, <span class="dt">package =</span> <span class="st">"bsplus"</span>)),
   <span class="dt">footer =</span> tags$<span class="kw">span</span>(
     tags$<span class="kw">span</span>(<span class="dt">class =</span> <span class="st">"well"</span>, <span class="st">"Hello!"</span>),
-    <span class="kw"><a href="../reference/bs_modal.html">bs_modal_closebutton</a></span>(<span class="st">"Goodbye!"</span>)
+    <span class="kw">bs_modal_closebutton</span>(<span class="st">"Goodbye!"</span>)
   ),
   <span class="dt">size =</span> <span class="st">"large"</span>
 )</code></pre></div>
@@ -108,14 +108,14 @@
 <div class="modal-footer">
 <span>
 <span class="well">Hello!</span>
-<button type="button" class="btn btn-default" data-dismiss="modal">Goodbye!</button>
+<button class="btn btn-default" data-dismiss="modal">Goodbye!</button>
 </span>
 </div>
 </div>
 </div>
 </div>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">tags$<span class="kw">button</span>(<span class="dt">type =</span> <span class="st">"button"</span>, <span class="dt">class =</span> <span class="st">"btn btn-default"</span>, <span class="st">"Large modal"</span>) %&gt;%
-<span class="st">  </span><span class="kw"><a href="../reference/bs_modal.html">bs_attach_modal</a></span>(<span class="dt">id_modal =</span> <span class="st">"modal_markdown"</span>)</code></pre></div>
+<span class="st">  </span><span class="kw">bs_attach_modal</span>(<span class="dt">id_modal =</span> <span class="st">"modal_markdown"</span>)</code></pre></div>
 <button type="button" class="btn btn-default" data-toggle="modal" data-target="#modal_markdown">Large modal</button>
 <div id="reference" class="section level2">
 <h2 class="hasAnchor"><html><body><a href="#reference" class="anchor"> </a></body></html>Reference</h2>

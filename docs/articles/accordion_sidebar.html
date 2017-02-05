@@ -41,7 +41,7 @@
       <h1>Accordion Sidebar</h1>
                         <h4 class="author">Ian Lyttle</h4>
             
-            <h4 class="date">2017-01-26</h4>
+            <h4 class="date">2017-02-05</h4>
           </div>
 
     
@@ -49,33 +49,33 @@
 <div class="contents">
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(<span class="st">"htmltools"</span>)
 <span class="kw">library</span>(<span class="st">"bsplus"</span>)</code></pre></div>
-<p>An accordion-sidebar can be useful to provide another dimension for your <strong>shiny</strong> apps. For example, you can use <strong>shiny</strong> <code>navbarPage()</code> for major groupings, then <code><a href="../reference/bs_accordion_sidebar.html">bs_accordion_sidebar()</a></code> panels for minor groupings within each major grouping.</p>
+<p>An accordion-sidebar can be useful to provide another dimension for your <strong>shiny</strong> apps. For example, you can use <strong>shiny</strong> <code>navbarPage()</code> for major groupings, then <code>bs_accordion_sidebar()</code> panels for minor groupings within each major grouping.</p>
 <p>There are three functions in this family:</p>
-<ul><li><code><a href="../reference/bs_accordion_sidebar.html">bs_accordion_sidebar()</a></code>, used to establish the accordion-sidebar framework</li>
-<li><code><a href="../reference/bs_append.html">bs_append()</a></code>, used to add a side panel (<code>title_side</code> and <code>content_side</code>) and a main panel (<code>content_main</code>) to the accordion sidebar</li>
-<li><code><a href="../reference/bs_set_opts.html">bs_set_opts()</a></code>, used to set options for the panel-sets to follow</li>
-</ul><p>The <code><a href="../reference/bs_accordion_sidebar.html">bs_accordion_sidebar()</a></code> function is used to instantiate the accordion sidebar. Its argument, are a unique <code>id</code>, Boostrap column-specifications <code>spec_side</code> and <code>spec_main</code>, and an indication of the relative <code>position</code> of the side panel to the main panel.</p>
-<p>To add a panel set to an accordion sidebar, use the <code><a href="../reference/bs_append.html">bs_append()</a></code> function. Its arguments are the <code>tag</code> of the accordion sidebar, the <code>title_side</code> of the side panel, which will generally be text, the <code>content_side</code> of the side panel, which can be HTML (might be <strong>shiny</strong> inputs), and the <code>content_main</code> of the main panel, which can also be HTML (might be <strong>shiny</strong> outputs).</p>
-<p>The appearance of panel sets can be modified using the <code><a href="../reference/bs_set_opts.html">bs_set_opts()</a></code> function. Its first argument is the accordion sidebar <code>tag</code>, its other arguments are <code>panel_type_active</code> and <code>panel_type_inactive</code>, which control the appearance of following panels, and <code>use_main_enclosure</code>, which, if <code>TRUE</code>, encloses the content of the main panel in an HTML <code>&lt;panel/&gt;</code>.</p>
+<ul><li><code>bs_accordion_sidebar()</code>, used to establish the accordion-sidebar framework</li>
+<li><code>bs_append()</code>, used to add a side panel (<code>title_side</code> and <code>content_side</code>) and a main panel (<code>content_main</code>) to the accordion sidebar</li>
+<li><code>bs_set_opts()</code>, used to set options for the panel-sets to follow</li>
+</ul><p>The <code>bs_accordion_sidebar()</code> function is used to instantiate the accordion sidebar. Its argument, are a unique <code>id</code>, Boostrap column-specifications <code>spec_side</code> and <code>spec_main</code>, and an indication of the relative <code>position</code> of the side panel to the main panel.</p>
+<p>To add a panel set to an accordion sidebar, use the <code>bs_append()</code> function. Its arguments are the <code>tag</code> of the accordion sidebar, the <code>title_side</code> of the side panel, which will generally be text, the <code>content_side</code> of the side panel, which can be HTML (might be <strong>shiny</strong> inputs), and the <code>content_main</code> of the main panel, which can also be HTML (might be <strong>shiny</strong> outputs).</p>
+<p>The appearance of panel sets can be modified using the <code>bs_set_opts()</code> function. Its first argument is the accordion sidebar <code>tag</code>, its other arguments are <code>panel_type_active</code> and <code>panel_type_inactive</code>, which control the appearance of following panels, and <code>use_main_enclosure</code>, which, if <code>TRUE</code>, encloses the content of the main panel in an HTML <code>&lt;panel/&gt;</code>.</p>
 <p>The default <code>panel_type_active</code> is <code>"success"</code>, for <code>panel_type_inactive</code> it is <code>"primary"</code>, the default for <code>use_main_enclosure</code> is <code>TRUE</code>.</p>
 <p>All of these functions return an accordion tag; thus, you can build an accordion sidebar using a pipe.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw"><a href="../reference/bs_accordion_sidebar.html">bs_accordion_sidebar</a></span>(<span class="dt">id =</span> <span class="st">"beatles"</span>) %&gt;%
-<span class="st">  </span><span class="kw"><a href="../reference/bs_append.html">bs_append</a></span>(
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">bs_accordion_sidebar</span>(<span class="dt">id =</span> <span class="st">"beatles"</span>) %&gt;%
+<span class="st">  </span><span class="kw">bs_append</span>(
     <span class="dt">title_side =</span> <span class="st">"John Lennon"</span>, 
     <span class="dt">content_side =</span> <span class="st">"Rhythm guitar, vocals"</span>,
     <span class="dt">content_main =</span> <span class="st">"Dear Prudence"</span>
   ) %&gt;%
-<span class="st">  </span><span class="kw"><a href="../reference/bs_append.html">bs_append</a></span>(
+<span class="st">  </span><span class="kw">bs_append</span>(
     <span class="dt">title_side =</span> <span class="st">"Paul McCartney"</span>, 
     <span class="dt">content_side =</span> <span class="st">"Bass guitar, vocals"</span>,
     <span class="dt">content_main =</span> <span class="st">"Blackbird"</span>
   ) %&gt;%
-<span class="st">  </span><span class="kw"><a href="../reference/bs_append.html">bs_append</a></span>(
+<span class="st">  </span><span class="kw">bs_append</span>(
     <span class="dt">title_side =</span> <span class="st">"George Harrison"</span>, 
     <span class="dt">content_side =</span> <span class="st">"Lead guitar, vocals"</span>,
     <span class="dt">content_main =</span> <span class="st">"While My Guitar Gently Weeps"</span>
   ) %&gt;%
-<span class="st">  </span><span class="kw"><a href="../reference/bs_append.html">bs_append</a></span>(
+<span class="st">  </span><span class="kw">bs_append</span>(
     <span class="dt">title_side =</span> <span class="st">"Ringo Starr"</span>, 
     <span class="dt">content_side =</span> <span class="st">"Drums, vocals"</span>,
     <span class="dt">content_main =</span> <span class="st">"Don't Pass Me By"</span>
@@ -140,70 +140,70 @@
 </div>
 </div>
 </div>
-<p>As you can see, the sidebar acts like a <code><a href="../reference/bs_accordion.html">bs_accordion()</a></code>, but there are a couple of important differences. First, a sidebar panel&rsquo;s class changes according to its being open or not. Second, the state (show-hide) of each component&rsquo;s main panel is determined by the state of its side panel.</p>
+<p>As you can see, the sidebar acts like a <code>bs_accordion()</code>, but there are a couple of important differences. First, a sidebar panel&rsquo;s class changes according to its being open or not. Second, the state (show-hide) of each component&rsquo;s main panel is determined by the state of its side panel.</p>
 <p>When showing him a preview of this work, Carson Sievert asked a crazy question, &ldquo;can you nest those things?&rdquo; Well, apparently you can.</p>
 <p>Note that the outer accordion-sidebar has <code>use_main_enclosure</code> set to <code>FALSE</code>, while each inner accordion-sidebar has it set to <code>TRUE</code>.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw"><a href="../reference/bs_accordion_sidebar.html">bs_accordion_sidebar</a></span>(<span class="dt">id =</span> <span class="st">"the_beatles"</span>) %&gt;%
-<span class="st">  </span><span class="kw"><a href="../reference/bs_set_opts.html">bs_set_opts</a></span>(<span class="dt">use_main_enclosure =</span> <span class="ot">FALSE</span>) %&gt;%
-<span class="st">  </span><span class="kw"><a href="../reference/bs_append.html">bs_append</a></span>(
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">bs_accordion_sidebar</span>(<span class="dt">id =</span> <span class="st">"the_beatles"</span>) %&gt;%
+<span class="st">  </span><span class="kw">bs_set_opts</span>(<span class="dt">use_main_enclosure =</span> <span class="ot">FALSE</span>) %&gt;%
+<span class="st">  </span><span class="kw">bs_append</span>(
     <span class="dt">title_side =</span> <span class="st">"John Lennon"</span>, 
     <span class="dt">content_side =</span> <span class="ot">NULL</span>,
     <span class="dt">content_main =</span> 
-      <span class="kw"><a href="../reference/bs_accordion_sidebar.html">bs_accordion_sidebar</a></span>(<span class="dt">id =</span> <span class="st">"john"</span>) %&gt;%
-<span class="st">      </span><span class="kw"><a href="../reference/bs_append.html">bs_append</a></span>(
+      <span class="kw">bs_accordion_sidebar</span>(<span class="dt">id =</span> <span class="st">"john"</span>) %&gt;%
+<span class="st">      </span><span class="kw">bs_append</span>(
         <span class="dt">title_side =</span> <span class="st">"Beatles"</span>,
         <span class="dt">content_side =</span> <span class="st">"1960-1969"</span>,
         <span class="dt">content_main =</span> <span class="st">"Help!"</span>
       ) %&gt;%
-<span class="st">      </span><span class="kw"><a href="../reference/bs_append.html">bs_append</a></span>(
+<span class="st">      </span><span class="kw">bs_append</span>(
         <span class="dt">title_side =</span> <span class="st">"Solo"</span>,
         <span class="dt">content_side =</span> <span class="st">"1968-1980"</span>,
         <span class="dt">content_main =</span> <span class="st">"Love"</span>
       )
   ) %&gt;%
-<span class="st">  </span><span class="kw"><a href="../reference/bs_append.html">bs_append</a></span>(
+<span class="st">  </span><span class="kw">bs_append</span>(
     <span class="dt">title_side =</span> <span class="st">"Paul McCartney"</span>, 
     <span class="dt">content_side =</span> <span class="ot">NULL</span>,
     <span class="dt">content_main =</span>
-      <span class="kw"><a href="../reference/bs_accordion_sidebar.html">bs_accordion_sidebar</a></span>(<span class="dt">id =</span> <span class="st">"paul"</span>) %&gt;%
-<span class="st">      </span><span class="kw"><a href="../reference/bs_append.html">bs_append</a></span>(
+      <span class="kw">bs_accordion_sidebar</span>(<span class="dt">id =</span> <span class="st">"paul"</span>) %&gt;%
+<span class="st">      </span><span class="kw">bs_append</span>(
         <span class="dt">title_side =</span> <span class="st">"Beatles"</span>,
         <span class="dt">content_side =</span> <span class="st">"1960-1970"</span>,
         <span class="dt">content_main =</span> <span class="st">"Yesterday"</span>
       ) %&gt;%
-<span class="st">      </span><span class="kw"><a href="../reference/bs_append.html">bs_append</a></span>(
+<span class="st">      </span><span class="kw">bs_append</span>(
         <span class="dt">title_side =</span> <span class="st">"Solo"</span>,
         <span class="dt">content_side =</span> <span class="st">"1970-"</span>,
         <span class="dt">content_main =</span> <span class="st">"Maybe I'm Amazed"</span>
       )
   ) %&gt;%
-<span class="st">  </span><span class="kw"><a href="../reference/bs_append.html">bs_append</a></span>(
+<span class="st">  </span><span class="kw">bs_append</span>(
     <span class="dt">title_side =</span> <span class="st">"George Harrison"</span>, 
     <span class="dt">content_side =</span> <span class="ot">NULL</span>,
     <span class="dt">content_main =</span> 
-      <span class="kw"><a href="../reference/bs_accordion_sidebar.html">bs_accordion_sidebar</a></span>(<span class="dt">id =</span> <span class="st">"george"</span>) %&gt;%
-<span class="st">      </span><span class="kw"><a href="../reference/bs_append.html">bs_append</a></span>(
+      <span class="kw">bs_accordion_sidebar</span>(<span class="dt">id =</span> <span class="st">"george"</span>) %&gt;%
+<span class="st">      </span><span class="kw">bs_append</span>(
         <span class="dt">title_side =</span> <span class="st">"Beatles"</span>,
         <span class="dt">content_side =</span> <span class="st">"1960-1970"</span>,
         <span class="dt">content_main =</span> <span class="st">"Here Comes the Sun"</span>
       ) %&gt;%
-<span class="st">      </span><span class="kw"><a href="../reference/bs_append.html">bs_append</a></span>(
+<span class="st">      </span><span class="kw">bs_append</span>(
         <span class="dt">title_side =</span> <span class="st">"Solo"</span>,
         <span class="dt">content_side =</span> <span class="st">"1968-2001"</span>,
         <span class="dt">content_main =</span> <span class="st">"My Sweet Lord"</span>
       )
   ) %&gt;%
-<span class="st">  </span><span class="kw"><a href="../reference/bs_append.html">bs_append</a></span>(
+<span class="st">  </span><span class="kw">bs_append</span>(
     <span class="dt">title_side =</span> <span class="st">"Ringo Starr"</span>, 
     <span class="dt">content_side =</span> <span class="ot">NULL</span>,
     <span class="dt">content_main =</span> 
-      <span class="kw"><a href="../reference/bs_accordion_sidebar.html">bs_accordion_sidebar</a></span>(<span class="dt">id =</span> <span class="st">"ringo"</span>) %&gt;%
-<span class="st">      </span><span class="kw"><a href="../reference/bs_append.html">bs_append</a></span>(
+      <span class="kw">bs_accordion_sidebar</span>(<span class="dt">id =</span> <span class="st">"ringo"</span>) %&gt;%
+<span class="st">      </span><span class="kw">bs_append</span>(
         <span class="dt">title_side =</span> <span class="st">"Beatles"</span>,
         <span class="dt">content_side =</span> <span class="st">"1962-1970"</span>,
         <span class="dt">content_main =</span> <span class="st">"Octopus' Garden"</span>
       ) %&gt;%
-<span class="st">      </span><span class="kw"><a href="../reference/bs_append.html">bs_append</a></span>(
+<span class="st">      </span><span class="kw">bs_append</span>(
         <span class="dt">title_side =</span> <span class="st">"Solo"</span>,
         <span class="dt">content_side =</span> <span class="st">"1970-"</span>,
         <span class="dt">content_main =</span> <span class="st">"Photograph"</span>
@@ -393,8 +393,8 @@
 </div>
 </div>
 </div>
-<p>To use an accordion sidebar, you will need to insert some JavaScript code into your page using the <code><a href="../reference/bs_accordion_sidebar.html">use_bs_accordion_sidebar()</a></code> function. You will have to do this only once per page; I have found that it works best to include after all of the accordion-sidebars are defined, perhaps as one of the last elements in a <strong>shiny</strong> UI.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw"><a href="../reference/bs_accordion_sidebar.html">use_bs_accordion_sidebar</a></span>()</code></pre></div>
+<p>To use an accordion sidebar, you will need to insert some JavaScript code into your page using the <code>use_bs_accordion_sidebar()</code> function. You will have to do this only once per page; I have found that it works best to include after all of the accordion-sidebars are defined, perhaps as one of the last elements in a <strong>shiny</strong> UI.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">use_bs_accordion_sidebar</span>()</code></pre></div>
 <script>function bsplus_collpase_validator(target, collapse) {
 
   /* target    element that initiated the event

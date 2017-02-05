@@ -41,7 +41,7 @@
       <h1>Collapse</h1>
                         <h4 class="author">Ian Lyttle</h4>
             
-            <h4 class="date">2017-01-26</h4>
+            <h4 class="date">2017-02-05</h4>
           </div>
 
     
@@ -49,22 +49,22 @@
 <div class="contents">
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(<span class="st">"htmltools"</span>)
 <span class="kw">library</span>(<span class="st">"bsplus"</span>)</code></pre></div>
-<p>The <code><a href="../reference/bs_collapse.html">bs_collapse()</a></code> family of functions may not be the most useful, but it gives us a place to start.</p>
-<p>The first step is to create (and publish to the page) a collapsible element, using the <code><a href="../reference/bs_collapse.html">bs_collapse()</a></code> function, supplying a unique <code>id</code> and some HTML <code>content</code>.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw"><a href="../reference/bs_collapse.html">bs_collapse</a></span>(
+<p>The <code>bs_collapse()</code> family of functions may not be the most useful, but it gives us a place to start.</p>
+<p>The first step is to create (and publish to the page) a collapsible element, using the <code>bs_collapse()</code> function, supplying a unique <code>id</code> and some HTML <code>content</code>.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">bs_collapse</span>(
   <span class="dt">id =</span> <span class="st">"yeah"</span>, 
   <span class="dt">content =</span> tags$<span class="kw">div</span>(<span class="dt">class =</span> <span class="st">"well"</span>, <span class="st">"Yeah Yeah Yeah"</span>)
 )</code></pre></div>
 <div class="collapse" id="yeah">
 <div class="well">Yeah Yeah Yeah</div>
 </div>
-<p>Next, attach the <code>id</code> of the collapsible element to a button or link tag, using the <code><a href="../reference/bs_collapse.html">bs_attach_collapse()</a></code> function. This returns a modified copy of the tag sent to it.</p>
+<p>Next, attach the <code>id</code> of the collapsible element to a button or link tag, using the <code>bs_attach_collapse()</code> function. This returns a modified copy of the tag sent to it.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">tags$<span class="kw">button</span>(<span class="st">"She Loves You"</span>, <span class="dt">class =</span> <span class="st">"btn btn-primary"</span>) %&gt;%
-<span class="st">  </span><span class="kw"><a href="../reference/bs_collapse.html">bs_attach_collapse</a></span>(<span class="st">"yeah"</span>)</code></pre></div>
+<span class="st">  </span><span class="kw">bs_attach_collapse</span>(<span class="st">"yeah"</span>)</code></pre></div>
 <button class="btn btn-primary" data-toggle="collapse" data-target="#yeah">She Loves You</button>
 <p>You can attach the <code>id</code> of a collapsible element to as many buttons or links as you like:</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">tags$<span class="kw">button</span>(<span class="st">"Sie Liebt Dich"</span>, <span class="dt">class =</span> <span class="st">"btn btn-primary"</span>) %&gt;%
-<span class="st">  </span><span class="kw"><a href="../reference/bs_collapse.html">bs_attach_collapse</a></span>(<span class="st">"yeah"</span>)</code></pre></div>
+<span class="st">  </span><span class="kw">bs_attach_collapse</span>(<span class="st">"yeah"</span>)</code></pre></div>
 <button class="btn btn-primary" data-toggle="collapse" data-target="#yeah">Sie Liebt Dich</button>
 <div id="reference" class="section level2">
 <h2 class="hasAnchor"><html><body><a href="#reference" class="anchor"> </a></body></html>Reference</h2>
