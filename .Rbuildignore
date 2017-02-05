@@ -10,5 +10,3 @@
 ^.*/rsconnect$
 ^cran-comments\.md$
 ^vignettes$
-
-
