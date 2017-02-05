@@ -116,6 +116,7 @@ articles:
   - collapse
   - accordion
   - accordion_sidebar
+  - general_accordion_sidebar
   - tooltip_popover
   - modal
   - carousel
