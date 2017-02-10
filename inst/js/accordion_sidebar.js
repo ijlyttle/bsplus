@@ -68,7 +68,7 @@ $('.panel-collapse-leader').on('hide.bs.collapse', function () {
     panel.removeClass(panel.attr('class-active'));
     panel.addClass(panel.attr('class-inactive'));
 
-    /* find and show the element that follows this panel */
+    /* find and hide the element that follows this panel */
     var panel_id = panel.attr('id');
     var follower = $('#'.concat(panel_id).concat('-follow'));
 

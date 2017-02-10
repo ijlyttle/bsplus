@@ -23,4 +23,3 @@ but adding a class to center the image in the carousel.
 \seealso{
 \code{\link{bs_carousel}}
 }
-

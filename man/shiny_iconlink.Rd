@@ -32,4 +32,3 @@ shiny_iconlink() \%>\%
   \code{shiny::\link[shiny]{icon}}, \code{\link{bs_attach_modal}},
   \code{\link{bs_embed_popover}}, \code{\link{bs_embed_tooltip}}
 }
-

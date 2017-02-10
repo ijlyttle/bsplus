@@ -82,3 +82,55 @@ shinyInput_label_embed <- function(tag, element){
 
   tag
 }
+
+#' @export
+shinyInput_embed_collapse <- function(tag){
+
+  # validate shiny input
+  tag <-
+    .tag_validate(
+      tag,
+      name = "div",
+      class = "form-group shiny-input-container"
+    )
+
+  # generate (hopefully sufficiently random) string
+  id_random <- stringi::stri_rand_strings(1, 64)
+
+  # create a caret, point it right,
+  # wrap it in a link,
+  # put in a fixed-width div
+  caret <-
+    shiny::icon(name = "caret-right") %>%
+    htmltools::a(role = "button", class = "bsplus-shiny-collapse-button") %>%
+    bs_attach_collapse(id_collapse = id_random) %>%
+    htmltools::div(class = "pull-left", style = "width: 15px;")
+
+  # tag$children[[1]] is a <label/>
+  # add caret to children, add style attribute
+  tag$children[[1]] <-
+    tag$children[[1]] %>%
+    htmltools::tagAppendChild(caret)
+
+  # wrap the rest of the shiny input in a collapse
+  tag$children[[2]] <-
+    bs_collapse(
+      id = id_random,
+      content = tag$children[[2]]
+    ) %>%
+    htmltools::tagAppendAttributes(class = "bsplus-shiny-collapse")
+
+  tag
+}
+
+#' @export
+use_shinyInput_embed_collapse <- function(){
+
+  htmltools::tagList(
+    system.file("css", "shinyInput_embed_collapse.css", package = "bsplus") %>%
+      htmltools::includeCSS(),
+    system.file("js", "shinyInput_embed_collapse.js", package = "bsplus") %>%
+      htmltools::includeScript()
+  )
+}
+

@@ -47,3 +47,28 @@ test_that("embedding works", {
   )
   expect_identical(input_label$children[[2]]$children[[1]], iconlink)
 })
+
+#######
+
+input_checkbox <-
+  shiny::checkboxGroupInput(
+    inputId = "foo",
+    label = "Select all that apply",
+    choices = c(
+      "Lions",
+      "Tigers",
+      "Bears"
+    )
+  )
+
+input_checkbox_new <-
+  input_checkbox %>%
+  shinyInput_embed_collapse()
+
+label_checkbox <- input_checkbox$children[[1]]
+
+test_that("embed cater into label", {
+  expect_identical(input_checkbox, input_checkbox_new)
+})
+
+

@@ -1,0 +1,6 @@
+/* Following Shiny (shiny.css), for checkbox groups and radio buttons, bring the options
+   closer to label, if label is present. */
+.shiny-input-checkboxgroup label ~ .collapse,
+.shiny-input-radiogroup label ~ .collapse {
+  margin-top: -10px;
+}

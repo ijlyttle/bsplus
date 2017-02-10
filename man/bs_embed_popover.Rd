@@ -47,4 +47,3 @@ tags$button(type = "button", class = "btn btn-default", "A button") \%>\%
 \code{\link{bs_embed_tooltip}},
   \url{http://getbootstrap.com/javascript/#popovers}
 }
-

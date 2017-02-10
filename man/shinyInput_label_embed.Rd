@@ -39,4 +39,3 @@ numericInput(inputId = "foo", label = "Enter a number", value = 0) \%>\%
 \seealso{
 \code{\link{shiny_iconlink}}
 }
-

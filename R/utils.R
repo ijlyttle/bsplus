@@ -29,10 +29,20 @@
   }
 
   # if class is provided
-  if (!is.null(class)){
-    class_observed <- htmltools::tagGetAttribute(tag, "class")
-    if (!identical(class_observed, class)){
-      stop("class is: ", class_observed, ", needs to be: ", class)
+  to_vec <- function(x){
+    if (is.null(x)){
+      return(NULL)
+    }
+
+    stringr::str_split(x, " ")[[1]]
+  }
+
+  class_required <- to_vec(class)
+  class_observed <- to_vec(htmltools::tagGetAttribute(tag, "class"))
+
+  if (!is.null(class_required)){
+    if (!all(class_required %in% class_observed)){
+      stop("class is: ", class_observed, ", needs to include: ", class_required)
     }
   }
 

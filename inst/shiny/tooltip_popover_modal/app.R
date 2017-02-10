@@ -47,6 +47,18 @@ input_equation <-
     bs_attach_modal(id_modal = "modal_equation")
   )
 
+input_checkbox <-
+  checkboxGroupInput(
+    inputId = "checkbox",
+    label = "Select all that apply",
+    choices = c(
+      "Lions",
+      "Tigers",
+      "Bears"
+    )
+  ) %>%
+  shinyInput_embed_collapse()
+
 # UI
 ui <- shinyUI(fluidPage(
 
@@ -63,7 +75,8 @@ ui <- shinyUI(fluidPage(
       sidebarPanel(
         input_number,
         input_letter,
-        input_equation
+        input_equation,
+        input_checkbox
       ),
       mainPanel(
         textOutput("number"),
@@ -75,6 +88,7 @@ ui <- shinyUI(fluidPage(
    # activate tooltips, popovers, and MathJax
    use_bs_tooltip(),
    use_bs_popover(),
+   use_shinyInput_embed_collapse(),
    withMathJax()
 
 ))

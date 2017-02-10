@@ -66,4 +66,3 @@ bs_carousel(id = "with_the_beatles") \%>\%
 \url{http://getbootstrap.com/javascript/#carousel},
   \code{\link{bs_carousel_image}}, \code{\link{bs_carousel_caption}}
 }
-

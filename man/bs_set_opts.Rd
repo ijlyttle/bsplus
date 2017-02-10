@@ -27,4 +27,3 @@ This would be used when we want to set options for adding items
 \code{\link{bs_accordion}}, \code{\link{bs_accordion_sidebar}},
 }
 \keyword{internal}
-
