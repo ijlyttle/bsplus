@@ -29,7 +29,6 @@ shiny_iconlink() \%>\%
 }
 \seealso{
 \code{\link{shinyInput_label_embed}},
-  \code{shiny::\link[shiny]{icon}}, \code{\link{bs_attach_modal}},
-  \code{\link{bs_embed_popover}}, \code{\link{bs_embed_tooltip}}
+\code{shiny::\link[shiny]{icon}}, \code{\link{bs_attach_modal}},
+\code{\link{bs_embed_popover}}, \code{\link{bs_embed_tooltip}}
 }
-

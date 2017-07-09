@@ -25,12 +25,14 @@
 <script src="../pkgdown.js"></script>
 
 <!-- mathjax -->
-<script src='https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
+<script src='https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
 
 <!--[if lt IE 9]>
 <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
 <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
 <![endif]-->
+
+
   </head>
 
   <body>
@@ -81,22 +83,30 @@
     </div>
 
     
-    <p>Button</p>
+    <p>This function makes it a little easier to make Bootstrap-friendly buttons;
+it wraps <code>htmltools::tags$button()</code></p>
     
 
-    <pre><span class='fu'>bs_button</span>(<span class='no'>label</span>, <span class='kw'>button_type</span> <span class='kw'>=</span> <span class='fu'>c</span>(<span class='st'>"default"</span>, <span class='st'>"primary"</span>, <span class='st'>"success"</span>, <span class='st'>"info"</span>,
+    <pre class="usage"><span class='fu'>bs_button</span>(<span class='no'>label</span>, <span class='kw'>button_type</span> <span class='kw'>=</span> <span class='fu'>c</span>(<span class='st'>"default"</span>, <span class='st'>"primary"</span>, <span class='st'>"success"</span>, <span class='st'>"info"</span>,
   <span class='st'>"warning"</span>, <span class='st'>"danger"</span>), <span class='no'>...</span>)</pre>
     
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a> Arguments</h2>
-    <dl class="dl-horizontal">
-      <dt>label</dt>
-      <dd>character (HTML), button label</dd>
-      <dt>button_type</dt>
-      <dd>character, one of the standard Bootstrap types</dd>
-      <dt>...</dt>
-      <dd>attributes (named arguments) and children (unnamed arguments)
-of the button, passed to <code>htmltools::<a href='http://www.rdocumentation.org/packages/htmltools/topics/tag'>tag</a></code></dd>
-    </dl>
+    <table class="ref-arguments">
+    <colgroup><col class="name" /><col class="desc" /></colgroup>
+    <tr>
+      <th>label</th>
+      <td><p>character (HTML), button label</p></td>
+    </tr>
+    <tr>
+      <th>button_type</th>
+      <td><p>character, one of the standard Bootstrap types</p></td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td><p>attributes (named arguments) and children (unnamed arguments)
+of the button, passed to <code>htmltools::<a href='http://www.rdocumentation.org/packages/htmltools/topics/tag'>tag</a></code></p></td>
+    </tr>
+    </table>
     
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
@@ -108,7 +118,7 @@ of the button, passed to <code>htmltools::<a href='http://www.rdocumentation.org
     
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='fu'>bs_button</span>(<span class='st'>"Click me"</span>, <span class='kw'>button_type</span> <span class='kw'>=</span> <span class='st'>"primary"</span>)</div><div class='output co'>#&gt; &lt;button class=&quot;btn btn-primary&quot;&gt;Click me&lt;/button&gt;</div></pre>
+    <pre class="examples"><div class='input'><span class='fu'>bs_button</span>(<span class='st'>"Click me"</span>, <span class='kw'>button_type</span> <span class='kw'>=</span> <span class='st'>"primary"</span>)</div><div class='output co'>#&gt; &lt;button class="btn btn-primary"&gt;Click me&lt;/button&gt;</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>

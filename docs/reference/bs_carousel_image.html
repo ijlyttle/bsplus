@@ -25,12 +25,14 @@
 <script src="../pkgdown.js"></script>
 
 <!-- mathjax -->
-<script src='https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
+<script src='https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
 
 <!--[if lt IE 9]>
 <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
 <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
 <![endif]-->
+
+
   </head>
 
   <body>
@@ -84,18 +86,21 @@
     <p>Helper function to generate HTML for a carousel image.</p>
     
 
-    <pre><span class='fu'>bs_carousel_image</span>(<span class='no'>...</span>)</pre>
+    <pre class="usage"><span class='fu'>bs_carousel_image</span>(<span class='no'>...</span>)</pre>
     
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a> Arguments</h2>
-    <dl class="dl-horizontal">
-      <dt>...</dt>
-      <dd>additional arguments passed to
-<code>htmltools::<a href='http://www.rdocumentation.org/packages/htmltools/topics/tag'>tag</a>$img</code>, typically includes <code>src</code></dd>
-    </dl>
+    <table class="ref-arguments">
+    <colgroup><col class="name" /><col class="desc" /></colgroup>
+    <tr>
+      <th>...</th>
+      <td><p>additional arguments passed to
+<code>htmltools::<a href='http://www.rdocumentation.org/packages/htmltools/topics/tag'>tag</a>$img</code>, typically includes <code>src</code></p></td>
+    </tr>
+    </table>
     
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
-    <p><code>htmltools::<a href='http://www.rdocumentation.org/packages/htmltools/topics/tag'>tag</a>$img</code></p>
+    <p><code>htmltools::<a href='http://www.rdocumentation.org/packages/htmltools/topics/tag'>tag</a></code>, <code>&lt;/img&gt;</code></p>
     
     <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
 
@@ -104,7 +109,7 @@ but adding a class to center the image in the carousel.</p>
     
     <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
 
-    <p><code><a href='bs_append.bsplus_carousel.html'>bs_carousel</a></code></p>
+    <p><code><a href='bs_carousel.html'>bs_carousel</a></code></p>
     
 
   </div>

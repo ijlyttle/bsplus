@@ -2,9 +2,9 @@
 % Please edit documentation in R/accordion_sidebar.R, R/append.R, R/set_opts.R
 \name{bs_accordion_sidebar}
 \alias{bs_accordion_sidebar}
+\alias{use_bs_accordion_sidebar}
 \alias{bs_append.bsplus_accordion_sidebar}
 \alias{bs_set_opts.bsplus_accordion_sidebar}
-\alias{use_bs_accordion_sidebar}
 \title{Accordion-sidebar panel-group}
 \usage{
 bs_accordion_sidebar(id, spec_side = c(width = 4, offset = 0),
@@ -55,7 +55,7 @@ Bootstrap panel}
 }
 \value{
 \code{bsplus_accsidebar} object (\code{htmltools::\link[htmltools]{tag}},
-  \code{<div/>})
+\code{<div/>})
 }
 \description{
 Combines Bootstrap accordion with
@@ -72,9 +72,9 @@ All of these functions return a \code{bsplus_accsidebar} object,
 compose an accordion sidebar by piping. There are three parts to this system:
 
 \enumerate{
-  \item{A constructor function for the accordion-sidebar, \code{bs_accordion_sidebar()}}
-  \item{A function to set options for subsequent panels, \code{bs_set_opts()}}
-  \item{A function to append a panel-set to an accordion-sidebar, \code{bs_append()}}
+\item{A constructor function for the accordion-sidebar, \code{bs_accordion_sidebar()}}
+\item{A function to set options for subsequent panels, \code{bs_set_opts()}}
+\item{A function to append a panel-set to an accordion-sidebar, \code{bs_append()}}
 }
 
 The verb \emph{append} is used to signify that you can append an arbitrary
@@ -101,4 +101,3 @@ bs_accordion_sidebar(id = "meet_the_beatles") \%>\%
 use_bs_accordion_sidebar()
 }
 }
-

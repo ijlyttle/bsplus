@@ -42,4 +42,3 @@ bs_button("I'm a button") \%>\%
 \seealso{
 \code{\link{bs_embed_popover}}, \url{http://getbootstrap.com/javascript/#tooltips}
 }
-

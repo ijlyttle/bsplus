@@ -25,12 +25,14 @@
 <script src="../pkgdown.js"></script>
 
 <!-- mathjax -->
-<script src='https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
+<script src='https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
 
 <!--[if lt IE 9]>
 <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
 <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
 <![endif]-->
+
+
   </head>
 
   <body>
@@ -81,17 +83,14 @@
     </div>
 
     
-    <p><ul>
-<li> character vectors collapsed to a space-delimited character string
-  </li>
-<li> logicals are converted to &quot;true&quot; or &quot;false&quot;
-  </li>
-<li> lubridate durations are converted to numeric (milliseconds)
-</li>
-</ul></p>
+    <ul>
+<li><p>character vectors collapsed to a space-delimited character string</p></li>
+<li><p>logicals are converted to "true" or "false"</p></li>
+<li><p>lubridate durations are converted to numeric (milliseconds)</p></li>
+</ul>
     
 
-    <pre><span class='fu'>bs_attr</span>(<span class='no'>x</span>)
+    <pre class="usage"><span class='fu'>bs_attr</span>(<span class='no'>x</span>)
 
 <span class='fu'>bs_attr.default</span>(<span class='no'>x</span>)
 
@@ -103,10 +102,13 @@
 <span class='fu'>bs_attr</span>(<span class='no'>x</span>)</pre>
     
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a> Arguments</h2>
-    <dl class="dl-horizontal">
-      <dt>x</dt>
-      <dd>value to be converted</dd>
-    </dl>
+    <table class="ref-arguments">
+    <colgroup><col class="name" /><col class="desc" /></colgroup>
+    <tr>
+      <th>x</th>
+      <td><p>value to be converted</p></td>
+    </tr>
+    </table>
     
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 

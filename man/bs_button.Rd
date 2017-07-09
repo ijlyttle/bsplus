@@ -19,7 +19,8 @@ of the button, passed to \code{htmltools::\link[htmltools]{tag}}}
 \code{htmltools::\link[htmltools]{tag}}, \code{<button/>}
 }
 \description{
-Button
+This function makes it a little easier to make Bootstrap-friendly buttons;
+it wraps \code{\link[htmltools:tags$button]{htmltools::tags$button()}}
 }
 \examples{
 bs_button("Click me", button_type = "primary")
@@ -27,4 +28,3 @@ bs_button("Click me", button_type = "primary")
 \seealso{
 \url{http://getbootstrap.com/css/#buttons}
 }
-

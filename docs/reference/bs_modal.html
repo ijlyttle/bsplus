@@ -25,12 +25,14 @@
 <script src="../pkgdown.js"></script>
 
 <!-- mathjax -->
-<script src='https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
+<script src='https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
 
 <!--[if lt IE 9]>
 <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
 <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
 <![endif]-->
+
+
   </head>
 
   <body>
@@ -86,7 +88,7 @@ are typically attached to buttons or links. Thus,
 there are two parts to this system:</p>
     
 
-    <pre><span class='fu'>bs_modal</span>(<span class='no'>id</span>, <span class='no'>title</span>, <span class='no'>body</span>, <span class='kw'>footer</span> <span class='kw'>=</span> <span class='fu'>bs_modal_closebutton</span>(<span class='kw'>label</span> <span class='kw'>=</span> <span class='st'>"Close"</span>),
+    <pre class="usage"><span class='fu'>bs_modal</span>(<span class='no'>id</span>, <span class='no'>title</span>, <span class='no'>body</span>, <span class='kw'>footer</span> <span class='kw'>=</span> <span class='fu'>bs_modal_closebutton</span>(<span class='kw'>label</span> <span class='kw'>=</span> <span class='st'>"Close"</span>),
   <span class='kw'>size</span> <span class='kw'>=</span> <span class='fu'>c</span>(<span class='st'>"medium"</span>, <span class='st'>"large"</span>, <span class='st'>"small"</span>))
 
 <span class='fu'>bs_modal_closebutton</span>(<span class='kw'>label</span> <span class='kw'>=</span> <span class='st'>"Close"</span>, <span class='no'>title</span>)
@@ -94,57 +96,74 @@ there are two parts to this system:</p>
 <span class='fu'>bs_attach_modal</span>(<span class='no'>tag</span>, <span class='no'>id_modal</span>)</pre>
     
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a> Arguments</h2>
-    <dl class="dl-horizontal">
-      <dt>id</dt>
-      <dd>character, unique id for the modal window</dd>
-      <dt>title</dt>
-      <dd>character, title for the modal window (this argument is deprecated
-for <code>bs_modal_closebutton</code>, use <code>label</code> instead)</dd>
-      <dt>body</dt>
-      <dd>character (HTML) or <code>htmltools::<a href='http://www.rdocumentation.org/packages/htmltools/topics/tag'>tagList</a></code>,
-content for the body of the modal window</dd>
-      <dt>footer</dt>
-      <dd>character (HTML) or <code>htmltools::<a href='http://www.rdocumentation.org/packages/htmltools/topics/tag'>tagList</a></code>,
-content for the footer of the modal window</dd>
-      <dt>size</dt>
-      <dd>character, size of the modal window</dd>
-      <dt>label</dt>
-      <dd>character (HTML), label for the close-button</dd>
-      <dt>tag</dt>
-      <dd><code>htmltools::<a href='http://www.rdocumentation.org/packages/htmltools/topics/tag'>tag</a></code>,
-button or link to which to attach the modal window</dd>
-      <dt>id_modal</dt>
-      <dd>character, unique id of modal window to attach</dd>
-    </dl>
+    <table class="ref-arguments">
+    <colgroup><col class="name" /><col class="desc" /></colgroup>
+    <tr>
+      <th>id</th>
+      <td><p>character, unique id for the modal window</p></td>
+    </tr>
+    <tr>
+      <th>title</th>
+      <td><p>character, title for the modal window (this argument is deprecated
+for <code>bs_modal_closebutton</code>, use <code>label</code> instead)</p></td>
+    </tr>
+    <tr>
+      <th>body</th>
+      <td><p>character (HTML) or <code>htmltools::<a href='http://www.rdocumentation.org/packages/htmltools/topics/tag'>tagList</a></code>,
+content for the body of the modal window</p></td>
+    </tr>
+    <tr>
+      <th>footer</th>
+      <td><p>character (HTML) or <code>htmltools::<a href='http://www.rdocumentation.org/packages/htmltools/topics/tag'>tagList</a></code>,
+content for the footer of the modal window</p></td>
+    </tr>
+    <tr>
+      <th>size</th>
+      <td><p>character, size of the modal window</p></td>
+    </tr>
+    <tr>
+      <th>label</th>
+      <td><p>character (HTML), label for the close-button</p></td>
+    </tr>
+    <tr>
+      <th>tag</th>
+      <td><p><code>htmltools::<a href='http://www.rdocumentation.org/packages/htmltools/topics/tag'>tag</a></code>,
+button or link to which to attach the modal window</p></td>
+    </tr>
+    <tr>
+      <th>id_modal</th>
+      <td><p>character, unique id of modal window to attach</p></td>
+    </tr>
+    </table>
     
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
-    <p><dl class='dl-horizontal'>
-  <dt><code>bs_modal()</code></dt><dd><code>htmltools::<a href='http://www.rdocumentation.org/packages/htmltools/topics/tag'>tag</a></code>, <code>&lt;div/&gt;</code></dd>
-  <dt><code>bs_attach_modal()</code></dt><dd><code>htmltools::<a href='http://www.rdocumentation.org/packages/htmltools/topics/tag'>tag</a></code>,
-    modified copy of <code>tag</code></dd>
-  <dt><code>bs_modal_closebutton()</code></dt><dd><code>htmltools::<a href='http://www.rdocumentation.org/packages/htmltools/topics/tag'>tag</a></code>, <code>&lt;button/&gt;</code></dd>
-</dl></p>
+    
+<dl class='dl-horizontal'>
+<dt><code>bs_modal()</code></dt><dd><p><code>htmltools::<a href='http://www.rdocumentation.org/packages/htmltools/topics/tag'>tag</a></code>, <code>&lt;div/&gt;</code></p></dd>
+<dt><code>bs_attach_modal()</code></dt><dd><p><code>htmltools::<a href='http://www.rdocumentation.org/packages/htmltools/topics/tag'>tag</a></code>,
+modified copy of <code>tag</code></p></dd>
+<dt><code>bs_modal_closebutton()</code></dt><dd><p><code>htmltools::<a href='http://www.rdocumentation.org/packages/htmltools/topics/tag'>tag</a></code>, <code>&lt;button/&gt;</code></p></dd>
+</dl>
+
     
     <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
 
-    <p><ol>
-<li>A modal window, created using <code>bs_modal()</code>
-  </li>
-<li>At least one button or link to which the <code>id</code> of the
-  modal window is attached, using <code>bs_attach_modal()</code>
-</li>
-</ol></p>
+    <ol>
+<li><p>A modal window, created using <code>bs_modal()</code></p></li>
+<li><p>At least one button or link to which the <code>id</code> of the
+modal window is attached, using <code>bs_attach_modal()</code></p></li>
+</ol>
     <p>The verb <em>attach</em> is used to signify that we are attaching the <code>id</code> of our
 modal window to the <code>tag</code> in question (generally a button or a link). This implies that
 you can attach the <code>id</code> of a modal window to more than one button or link.</p>
-    <p>It is your responsibility to ensure that <code>id</code> is unique
-among HTML elements in your page. If you have non-unique <code>id</code>&#39;s, strange things may
+<p>It is your responsibility to ensure that <code>id</code> is unique
+among HTML elements in your page. If you have non-unique <code>id</code>'s, strange things may
 happen to your page.</p>
-    <p>Your code may be cleaner if you can import the content for the modal body from
+<p>Your code may be cleaner if you can import the content for the modal body from
 an external source. Here, the function <code>shiny::<a href='http://www.rdocumentation.org/packages/shiny/topics/include'>includeMarkdown</a></code>
 be useful.</p>
-    <p>If you want to compose your own footer for the modal window, the function
+<p>If you want to compose your own footer for the modal window, the function
 <code>bs_modal_closebutton()</code> can be useful.</p>
     
     <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
@@ -156,38 +175,38 @@ be useful.</p>
     <pre class="examples"><div class='input'><span class='fu'>library</span>(<span class='st'>"htmltools"</span>)
 <span class='fu'>library</span>(<span class='st'>"shiny"</span>)
 
-<span class='fu'>bs_modal</span>(<span class='kw'>id</span> <span class='kw'>=</span> <span class='st'>"modal"</span>, <span class='kw'>title</span> <span class='kw'>=</span> <span class='st'>"I'm a modal"</span>, <span class='kw'>body</span> <span class='kw'>=</span> <span class='st'>"Yes, I am."</span>)</div><div class='output co'>#&gt; &lt;div class=&quot;modal fade&quot; id=&quot;modal&quot; tabindex=&quot;-1&quot; role=&quot;dialog&quot; aria-labelledby=&quot;modal-title&quot;&gt;
-#&gt;   &lt;div class=&quot;modal-dialog&quot; role=&quot;document&quot;&gt;
-#&gt;     &lt;div class=&quot;modal-content&quot;&gt;
-#&gt;       &lt;div class=&quot;modal-header&quot;&gt;
-#&gt;         &lt;button type=&quot;button&quot; class=&quot;close&quot; data-dismiss=&quot;modal&quot; aria-label=&quot;Close&quot;&gt;
-#&gt;           &lt;span aria-hidden=&quot;true&quot;&gt;&amp;times;&lt;/span&gt;
+<span class='fu'>bs_modal</span>(<span class='kw'>id</span> <span class='kw'>=</span> <span class='st'>"modal"</span>, <span class='kw'>title</span> <span class='kw'>=</span> <span class='st'>"I'm a modal"</span>, <span class='kw'>body</span> <span class='kw'>=</span> <span class='st'>"Yes, I am."</span>)</div><div class='output co'>#&gt; &lt;div class="modal fade" id="modal" tabindex="-1" role="dialog" aria-labelledby="modal-title"&gt;
+#&gt;   &lt;div class="modal-dialog" role="document"&gt;
+#&gt;     &lt;div class="modal-content"&gt;
+#&gt;       &lt;div class="modal-header"&gt;
+#&gt;         &lt;button type="button" class="close" data-dismiss="modal" aria-label="Close"&gt;
+#&gt;           &lt;span aria-hidden="true"&gt;&amp;times;&lt;/span&gt;
 #&gt;         &lt;/button&gt;
-#&gt;         &lt;h4 class=&quot;modal-title&quot; id=&quot;modal-title&quot;&gt;I&#39;m a modal&lt;/h4&gt;
+#&gt;         &lt;h4 class="modal-title" id="modal-title"&gt;I'm a modal&lt;/h4&gt;
 #&gt;       &lt;/div&gt;
-#&gt;       &lt;div class=&quot;modal-body&quot;&gt;Yes, I am.&lt;/div&gt;
-#&gt;       &lt;div class=&quot;modal-footer&quot;&gt;
-#&gt;         &lt;button class=&quot;btn btn-default&quot; data-dismiss=&quot;modal&quot;&gt;Close&lt;/button&gt;
+#&gt;       &lt;div class="modal-body"&gt;Yes, I am.&lt;/div&gt;
+#&gt;       &lt;div class="modal-footer"&gt;
+#&gt;         &lt;button class="btn btn-default" data-dismiss="modal"&gt;Close&lt;/button&gt;
 #&gt;       &lt;/div&gt;
 #&gt;     &lt;/div&gt;
 #&gt;   &lt;/div&gt;
 #&gt; &lt;/div&gt;</div><div class='input'><span class='fu'><a href='bs_button.html'>bs_button</a></span>(<span class='st'>"Click for modal"</span>) <span class='kw'>%&gt;%</span>
-  <span class='fu'>bs_attach_modal</span>(<span class='kw'>id_modal</span> <span class='kw'>=</span> <span class='st'>"modal"</span>)</div><div class='output co'>#&gt; &lt;button class=&quot;btn btn-default&quot; data-toggle=&quot;modal&quot; data-target=&quot;#modal&quot;&gt;Click for modal&lt;/button&gt;</div><div class='input'>
+  <span class='fu'>bs_attach_modal</span>(<span class='kw'>id_modal</span> <span class='kw'>=</span> <span class='st'>"modal"</span>)</div><div class='output co'>#&gt; &lt;button class="btn btn-default" data-toggle="modal" data-target="#modal"&gt;Click for modal&lt;/button&gt;</div><div class='input'>
 <span class='fu'>bs_modal</span>(
   <span class='kw'>id</span> <span class='kw'>=</span> <span class='st'>"modal_large"</span>,
   <span class='kw'>title</span> <span class='kw'>=</span> <span class='st'>"I'm a modal"</span>,
   <span class='kw'>size</span> <span class='kw'>=</span> <span class='st'>"large"</span>,
   <span class='kw'>body</span> <span class='kw'>=</span> <span class='fu'>includeMarkdown</span>(<span class='fu'>system.file</span>(<span class='st'>"markdown"</span>, <span class='st'>"modal.md"</span>, <span class='kw'>package</span> <span class='kw'>=</span> <span class='st'>"bsplus"</span>))
-)</div><div class='output co'>#&gt; &lt;div aria-labelledby=&quot;modal_large-title&quot; class=&quot;modal fade bs-example-modal-lg&quot; id=&quot;modal_large&quot; role=&quot;dialog&quot; tabindex=&quot;-1&quot;&gt;
-#&gt;   &lt;div class=&quot;modal-dialog modal-lg&quot; role=&quot;document&quot;&gt;
-#&gt;     &lt;div class=&quot;modal-content&quot;&gt;
-#&gt;       &lt;div class=&quot;modal-header&quot;&gt;
-#&gt;         &lt;button type=&quot;button&quot; class=&quot;close&quot; data-dismiss=&quot;modal&quot; aria-label=&quot;Close&quot;&gt;
-#&gt;           &lt;span aria-hidden=&quot;true&quot;&gt;&amp;times;&lt;/span&gt;
+)</div><div class='output co'>#&gt; &lt;div aria-labelledby="modal_large-title" class="modal fade bs-example-modal-lg" id="modal_large" role="dialog" tabindex="-1"&gt;
+#&gt;   &lt;div class="modal-dialog modal-lg" role="document"&gt;
+#&gt;     &lt;div class="modal-content"&gt;
+#&gt;       &lt;div class="modal-header"&gt;
+#&gt;         &lt;button type="button" class="close" data-dismiss="modal" aria-label="Close"&gt;
+#&gt;           &lt;span aria-hidden="true"&gt;&amp;times;&lt;/span&gt;
 #&gt;         &lt;/button&gt;
-#&gt;         &lt;h4 class=&quot;modal-title&quot; id=&quot;modal_large-title&quot;&gt;I&#39;m a modal&lt;/h4&gt;
+#&gt;         &lt;h4 class="modal-title" id="modal_large-title"&gt;I'm a modal&lt;/h4&gt;
 #&gt;       &lt;/div&gt;
-#&gt;       &lt;div class=&quot;modal-body&quot;&gt;&lt;h4&gt;4th-level headers work well&lt;/h4&gt;
+#&gt;       &lt;div class="modal-body"&gt;&lt;h4&gt;4th-level headers work well&lt;/h4&gt;
 #&gt; 
 #&gt; &lt;p&gt;We can do our regular Markdown stuff in modal windows.&lt;/p&gt;
 #&gt; 
@@ -196,13 +215,13 @@ be useful.</p>
 #&gt; &lt;li&gt;\(E = mc^2\)&lt;/li&gt;
 #&gt; &lt;/ul&gt;
 #&gt; &lt;/div&gt;
-#&gt;       &lt;div class=&quot;modal-footer&quot;&gt;
-#&gt;         &lt;button class=&quot;btn btn-default&quot; data-dismiss=&quot;modal&quot;&gt;Close&lt;/button&gt;
+#&gt;       &lt;div class="modal-footer"&gt;
+#&gt;         &lt;button class="btn btn-default" data-dismiss="modal"&gt;Close&lt;/button&gt;
 #&gt;       &lt;/div&gt;
 #&gt;     &lt;/div&gt;
 #&gt;   &lt;/div&gt;
 #&gt; &lt;/div&gt;</div><div class='input'><span class='fu'><a href='bs_button.html'>bs_button</a></span>(<span class='st'>"Click for modal"</span>) <span class='kw'>%&gt;%</span>
-  <span class='fu'>bs_attach_modal</span>(<span class='kw'>id_modal</span> <span class='kw'>=</span> <span class='st'>"modal_large"</span>)</div><div class='output co'>#&gt; &lt;button class=&quot;btn btn-default&quot; data-toggle=&quot;modal&quot; data-target=&quot;#modal_large&quot;&gt;Click for modal&lt;/button&gt;</div><div class='input'>
+  <span class='fu'>bs_attach_modal</span>(<span class='kw'>id_modal</span> <span class='kw'>=</span> <span class='st'>"modal_large"</span>)</div><div class='output co'>#&gt; &lt;button class="btn btn-default" data-toggle="modal" data-target="#modal_large"&gt;Click for modal&lt;/button&gt;</div><div class='input'>
 </div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">

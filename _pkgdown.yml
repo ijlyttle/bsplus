@@ -1,16 +1,13 @@
-templates:
+template:
   params:
     bootswatch: sandstone
-
-template:
   assets: "inst/pkgdown/assets"
-
 
 reference:
 
 - title: "Components"
   desc: >
-
+    It may be useful to wrap a few Bootstrap components:
 
     - Button: [Boostrap reference](http://getbootstrap.com/css/#buttons)
 

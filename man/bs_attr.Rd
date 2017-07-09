@@ -3,9 +3,10 @@
 \docType{methods}
 \name{bs_attr}
 \alias{bs_attr}
-\alias{bs_attr,Duration-method}
 \alias{bs_attr.default}
 \alias{bs_attr.logical}
+\alias{bs_attr}
+\alias{bs_attr,Duration-method}
 \title{Convert a value to be used as an html attribute}
 \usage{
 bs_attr(x)
@@ -26,10 +27,9 @@ character
 }
 \description{
 \itemize{
-  \item character vectors collapsed to a space-delimited character string
-  \item logicals are converted to "true" or "false"
-  \item lubridate durations are converted to numeric (milliseconds)
+\item character vectors collapsed to a space-delimited character string
+\item logicals are converted to "true" or "false"
+\item lubridate durations are converted to numeric (milliseconds)
 }
 }
 \keyword{internal}
-

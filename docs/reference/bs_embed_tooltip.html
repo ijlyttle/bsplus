@@ -25,12 +25,14 @@
 <script src="../pkgdown.js"></script>
 
 <!-- mathjax -->
-<script src='https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
+<script src='https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
 
 <!--[if lt IE 9]>
 <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
 <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
 <![endif]-->
+
+
   </head>
 
   <body>
@@ -84,22 +86,31 @@
     <p>A tooltip can be a useful way to add a few words of explanation to a tag.</p>
     
 
-    <pre><span class='fu'>bs_embed_tooltip</span>(<span class='no'>tag</span>, <span class='kw'>title</span> <span class='kw'>=</span> <span class='st'>""</span>, <span class='kw'>placement</span> <span class='kw'>=</span> <span class='st'>"top"</span>, <span class='no'>...</span>)
+    <pre class="usage"><span class='fu'>bs_embed_tooltip</span>(<span class='no'>tag</span>, <span class='kw'>title</span> <span class='kw'>=</span> <span class='st'>""</span>, <span class='kw'>placement</span> <span class='kw'>=</span> <span class='st'>"top"</span>, <span class='no'>...</span>)
 
 <span class='fu'>use_bs_tooltip</span>()</pre>
     
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a> Arguments</h2>
-    <dl class="dl-horizontal">
-      <dt>tag</dt>
-      <dd><code>htmltools::<a href='http://www.rdocumentation.org/packages/htmltools/topics/tag'>tag</a></code>, generally
-<code>&lt;button/&gt;</code> or <code>&lt;a/&gt;</code>, into which to embed the tooltip</dd>
-      <dt>title</dt>
-      <dd>character, title for the tooltip</dd>
-      <dt>placement</dt>
-      <dd>character, placement of the tooltip with respect to <code>tag</code></dd>
-      <dt>...</dt>
-      <dd>other named arguments, passed to <code>bs_set_data()</code></dd>
-    </dl>
+    <table class="ref-arguments">
+    <colgroup><col class="name" /><col class="desc" /></colgroup>
+    <tr>
+      <th>tag</th>
+      <td><p><code>htmltools::<a href='http://www.rdocumentation.org/packages/htmltools/topics/tag'>tag</a></code>, generally
+<code>&lt;button/&gt;</code> or <code>&lt;a/&gt;</code>, into which to embed the tooltip</p></td>
+    </tr>
+    <tr>
+      <th>title</th>
+      <td><p>character, title for the tooltip</p></td>
+    </tr>
+    <tr>
+      <th>placement</th>
+      <td><p>character, placement of the tooltip with respect to <code>tag</code></p></td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td><p>other named arguments, passed to <code>bs_set_data()</code></p></td>
+    </tr>
+    </table>
     
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
@@ -109,8 +120,8 @@
 
     <p>To activate the use of tooltips in your page, you will need to call
 the <code>use_bs_tooltip()</code> function somewhere.</p>
-    <p>The verb <em>embed</em> is used to signify that you are embedding information
-into a <code>tag</code>. This implies that you can embed, at most, one &quot;thing&quot;
+<p>The verb <em>embed</em> is used to signify that you are embedding information
+into a <code>tag</code>. This implies that you can embed, at most, one "thing"
 into a particular <code>tag</code>. You should not, for example, expect to embed both a tooltip
 and a popover into a <code>tag</code>.</p>
     
@@ -122,7 +133,7 @@ and a popover into a <code>tag</code>.</p>
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'><span class='fu'>library</span>(<span class='st'>"htmltools"</span>)
 <span class='fu'><a href='bs_button.html'>bs_button</a></span>(<span class='st'>"I'm a button"</span>) <span class='kw'>%&gt;%</span>
-  <span class='fu'>bs_embed_tooltip</span>(<span class='kw'>title</span> <span class='kw'>=</span> <span class='st'>"I'm a tooltip"</span>)</div><div class='output co'>#&gt; &lt;button class=&quot;btn btn-default&quot; title=&quot;I&amp;#39;m a tooltip&quot; data-toggle=&quot;tooltip&quot; data-placement=&quot;top&quot;&gt;I&#39;m a button&lt;/button&gt;</div></pre>
+  <span class='fu'>bs_embed_tooltip</span>(<span class='kw'>title</span> <span class='kw'>=</span> <span class='st'>"I'm a tooltip"</span>)</div><div class='output co'>#&gt; &lt;button class="btn btn-default" title="I&amp;#39;m a tooltip" data-toggle="tooltip" data-placement="top"&gt;I'm a button&lt;/button&gt;</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>

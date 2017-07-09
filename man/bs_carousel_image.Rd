@@ -11,7 +11,7 @@ bs_carousel_image(...)
 \code{htmltools::\link[htmltools]{tag}$img}, typically includes \code{src}}
 }
 \value{
-\code{htmltools::\link[htmltools]{tag}$img}
+\code{htmltools::\link[htmltools]{tag}}, \code{</img>}
 }
 \description{
 Helper function to generate HTML for a carousel image.
@@ -23,4 +23,3 @@ but adding a class to center the image in the carousel.
 \seealso{
 \code{\link{bs_carousel}}
 }
-
