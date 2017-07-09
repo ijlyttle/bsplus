@@ -102,6 +102,7 @@ shinyInput_embed_collapse <- function(tag){
   # put in a fixed-width div
   caret <-
     shiny::icon(name = "caret-right") %>%
+    htmltools::tagAppendAttributes(class = "fa-lg") %>%
     htmltools::a(role = "button", class = "bsplus-shiny-collapse-button") %>%
     bs_attach_collapse(id_collapse = id_random) %>%
     htmltools::div(class = "pull-left", style = "width: 15px;")
