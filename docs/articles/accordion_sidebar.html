@@ -60,7 +60,7 @@
       <h1>Accordion Sidebar</h1>
                         <h4 class="author">Ian Lyttle</h4>
             
-            <h4 class="date">2017-07-09</h4>
+            <h4 class="date">2017-10-28</h4>
           </div>
 
     
@@ -83,22 +83,22 @@
 <p>The appearance of panel sets can be modified using the <code><a href="../reference/bs_set_opts.html">bs_set_opts()</a></code> function. Its first argument is the accordion sidebar <code>tag</code>, its other arguments are <code>panel_type_active</code> and <code>panel_type_inactive</code>, which control the appearance of following panels, and <code>use_main_enclosure</code>, which, if <code>TRUE</code>, encloses the content of the main panel in an HTML <code>&lt;panel/&gt;</code>.</p>
 <p>The default <code>panel_type_active</code> is <code>"success"</code>, for <code>panel_type_inactive</code> it is <code>"primary"</code>, the default for <code>use_main_enclosure</code> is <code>TRUE</code>.</p>
 <p>All of these functions return an accordion tag; thus, you can build an accordion sidebar using a pipe.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw"><a href="../reference/bs_accordion_sidebar.html">bs_accordion_sidebar</a></span>(<span class="dt">id =</span> <span class="st">"beatles"</span>) %&gt;%
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw"><a href="../reference/bs_accordion_sidebar.html">bs_accordion_sidebar</a></span>(<span class="dt">id =</span> <span class="st">"beatles"</span>) <span class="op">%&gt;%</span>
 <span class="st">  </span><span class="kw"><a href="../reference/bs_append.html">bs_append</a></span>(
     <span class="dt">title_side =</span> <span class="st">"John Lennon"</span>, 
     <span class="dt">content_side =</span> <span class="st">"Rhythm guitar, vocals"</span>,
     <span class="dt">content_main =</span> <span class="st">"Dear Prudence"</span>
-  ) %&gt;%
+  ) <span class="op">%&gt;%</span>
 <span class="st">  </span><span class="kw"><a href="../reference/bs_append.html">bs_append</a></span>(
     <span class="dt">title_side =</span> <span class="st">"Paul McCartney"</span>, 
     <span class="dt">content_side =</span> <span class="st">"Bass guitar, vocals"</span>,
     <span class="dt">content_main =</span> <span class="st">"Blackbird"</span>
-  ) %&gt;%
+  ) <span class="op">%&gt;%</span>
 <span class="st">  </span><span class="kw"><a href="../reference/bs_append.html">bs_append</a></span>(
     <span class="dt">title_side =</span> <span class="st">"George Harrison"</span>, 
     <span class="dt">content_side =</span> <span class="st">"Lead guitar, vocals"</span>,
     <span class="dt">content_main =</span> <span class="st">"While My Guitar Gently Weeps"</span>
-  ) %&gt;%
+  ) <span class="op">%&gt;%</span>
 <span class="st">  </span><span class="kw"><a href="../reference/bs_append.html">bs_append</a></span>(
     <span class="dt">title_side =</span> <span class="st">"Ringo Starr"</span>, 
     <span class="dt">content_side =</span> <span class="st">"Drums, vocals"</span>,
@@ -171,66 +171,66 @@
 <p>As you can see, the sidebar acts like a <code><a href="../reference/bs_accordion.html">bs_accordion()</a></code>, but there are a couple of important differences. First, a sidebar panel’s class changes according to its being open or not. Second, the state (show-hide) of each component’s main panel is determined by the state of its side panel.</p>
 <p>When showing him a preview of this work, Carson Sievert asked a crazy question, “can you nest those things?” Well, apparently you can.</p>
 <p>Note that the outer accordion-sidebar has <code>use_main_enclosure</code> set to <code>FALSE</code>, while each inner accordion-sidebar has it set to <code>TRUE</code>.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw"><a href="../reference/bs_accordion_sidebar.html">bs_accordion_sidebar</a></span>(<span class="dt">id =</span> <span class="st">"the_beatles"</span>) %&gt;%
-<span class="st">  </span><span class="kw"><a href="../reference/bs_set_opts.html">bs_set_opts</a></span>(<span class="dt">use_main_enclosure =</span> <span class="ot">FALSE</span>) %&gt;%
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw"><a href="../reference/bs_accordion_sidebar.html">bs_accordion_sidebar</a></span>(<span class="dt">id =</span> <span class="st">"the_beatles"</span>) <span class="op">%&gt;%</span>
+<span class="st">  </span><span class="kw"><a href="../reference/bs_set_opts.html">bs_set_opts</a></span>(<span class="dt">use_main_enclosure =</span> <span class="ot">FALSE</span>) <span class="op">%&gt;%</span>
 <span class="st">  </span><span class="kw"><a href="../reference/bs_append.html">bs_append</a></span>(
     <span class="dt">title_side =</span> <span class="st">"John Lennon"</span>, 
     <span class="dt">content_side =</span> <span class="ot">NULL</span>,
     <span class="dt">content_main =</span> 
-      <span class="kw"><a href="../reference/bs_accordion_sidebar.html">bs_accordion_sidebar</a></span>(<span class="dt">id =</span> <span class="st">"john"</span>) %&gt;%
+      <span class="kw"><a href="../reference/bs_accordion_sidebar.html">bs_accordion_sidebar</a></span>(<span class="dt">id =</span> <span class="st">"john"</span>) <span class="op">%&gt;%</span>
 <span class="st">      </span><span class="kw"><a href="../reference/bs_append.html">bs_append</a></span>(
         <span class="dt">title_side =</span> <span class="st">"Beatles"</span>,
         <span class="dt">content_side =</span> <span class="st">"1960-1969"</span>,
         <span class="dt">content_main =</span> <span class="st">"Help!"</span>
-      ) %&gt;%
+      ) <span class="op">%&gt;%</span>
 <span class="st">      </span><span class="kw"><a href="../reference/bs_append.html">bs_append</a></span>(
         <span class="dt">title_side =</span> <span class="st">"Solo"</span>,
         <span class="dt">content_side =</span> <span class="st">"1968-1980"</span>,
         <span class="dt">content_main =</span> <span class="st">"Love"</span>
       )
-  ) %&gt;%
+  ) <span class="op">%&gt;%</span>
 <span class="st">  </span><span class="kw"><a href="../reference/bs_append.html">bs_append</a></span>(
     <span class="dt">title_side =</span> <span class="st">"Paul McCartney"</span>, 
     <span class="dt">content_side =</span> <span class="ot">NULL</span>,
     <span class="dt">content_main =</span>
-      <span class="kw"><a href="../reference/bs_accordion_sidebar.html">bs_accordion_sidebar</a></span>(<span class="dt">id =</span> <span class="st">"paul"</span>) %&gt;%
+      <span class="kw"><a href="../reference/bs_accordion_sidebar.html">bs_accordion_sidebar</a></span>(<span class="dt">id =</span> <span class="st">"paul"</span>) <span class="op">%&gt;%</span>
 <span class="st">      </span><span class="kw"><a href="../reference/bs_append.html">bs_append</a></span>(
         <span class="dt">title_side =</span> <span class="st">"Beatles"</span>,
         <span class="dt">content_side =</span> <span class="st">"1960-1970"</span>,
         <span class="dt">content_main =</span> <span class="st">"Yesterday"</span>
-      ) %&gt;%
+      ) <span class="op">%&gt;%</span>
 <span class="st">      </span><span class="kw"><a href="../reference/bs_append.html">bs_append</a></span>(
         <span class="dt">title_side =</span> <span class="st">"Solo"</span>,
         <span class="dt">content_side =</span> <span class="st">"1970-"</span>,
         <span class="dt">content_main =</span> <span class="st">"Maybe I'm Amazed"</span>
       )
-  ) %&gt;%
+  ) <span class="op">%&gt;%</span>
 <span class="st">  </span><span class="kw"><a href="../reference/bs_append.html">bs_append</a></span>(
     <span class="dt">title_side =</span> <span class="st">"George Harrison"</span>, 
     <span class="dt">content_side =</span> <span class="ot">NULL</span>,
     <span class="dt">content_main =</span> 
-      <span class="kw"><a href="../reference/bs_accordion_sidebar.html">bs_accordion_sidebar</a></span>(<span class="dt">id =</span> <span class="st">"george"</span>) %&gt;%
+      <span class="kw"><a href="../reference/bs_accordion_sidebar.html">bs_accordion_sidebar</a></span>(<span class="dt">id =</span> <span class="st">"george"</span>) <span class="op">%&gt;%</span>
 <span class="st">      </span><span class="kw"><a href="../reference/bs_append.html">bs_append</a></span>(
         <span class="dt">title_side =</span> <span class="st">"Beatles"</span>,
         <span class="dt">content_side =</span> <span class="st">"1960-1970"</span>,
         <span class="dt">content_main =</span> <span class="st">"Here Comes the Sun"</span>
-      ) %&gt;%
+      ) <span class="op">%&gt;%</span>
 <span class="st">      </span><span class="kw"><a href="../reference/bs_append.html">bs_append</a></span>(
         <span class="dt">title_side =</span> <span class="st">"Solo"</span>,
         <span class="dt">content_side =</span> <span class="st">"1968-2001"</span>,
         <span class="dt">content_main =</span> <span class="st">"My Sweet Lord"</span>
       )
-  ) %&gt;%
+  ) <span class="op">%&gt;%</span>
 <span class="st">  </span><span class="kw"><a href="../reference/bs_append.html">bs_append</a></span>(
     <span class="dt">title_side =</span> <span class="st">"Ringo Starr"</span>, 
     <span class="dt">content_side =</span> <span class="ot">NULL</span>,
     <span class="dt">content_main =</span> 
-      <span class="kw"><a href="../reference/bs_accordion_sidebar.html">bs_accordion_sidebar</a></span>(<span class="dt">id =</span> <span class="st">"ringo"</span>) %&gt;%
+      <span class="kw"><a href="../reference/bs_accordion_sidebar.html">bs_accordion_sidebar</a></span>(<span class="dt">id =</span> <span class="st">"ringo"</span>) <span class="op">%&gt;%</span>
 <span class="st">      </span><span class="kw"><a href="../reference/bs_append.html">bs_append</a></span>(
         <span class="dt">title_side =</span> <span class="st">"Beatles"</span>,
         <span class="dt">content_side =</span> <span class="st">"1962-1970"</span>,
         <span class="dt">content_main =</span> <span class="st">"Octopus' Garden"</span>
-      ) %&gt;%
+      ) <span class="op">%&gt;%</span>
 <span class="st">      </span><span class="kw"><a href="../reference/bs_append.html">bs_append</a></span>(
         <span class="dt">title_side =</span> <span class="st">"Solo"</span>,
         <span class="dt">content_side =</span> <span class="st">"1970-"</span>,

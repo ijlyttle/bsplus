@@ -60,7 +60,7 @@
       <h1>Shiny-input help links</h1>
                         <h4 class="author">Ian Lyttle</h4>
             
-            <h4 class="date">2017-07-09</h4>
+            <h4 class="date">2017-10-28</h4>
           </div>
 
     
@@ -79,15 +79,15 @@
   <span class="dt">inputId =</span> <span class="st">"letter"</span>,
   <span class="dt">label =</span> <span class="st">"Label with popover help"</span>,
   <span class="dt">choices =</span> <span class="kw">c</span>(<span class="st">"a"</span>, <span class="st">"b"</span>, <span class="st">"c"</span>)
-) %&gt;%
+) <span class="op">%&gt;%</span>
 <span class="kw"><a href="../reference/shinyInput_label_embed.html">shinyInput_label_embed</a></span>(
-  <span class="kw"><a href="../reference/shiny_iconlink.html">shiny_iconlink</a></span>() %&gt;%
+  <span class="kw"><a href="../reference/shiny_iconlink.html">shiny_iconlink</a></span>() <span class="op">%&gt;%</span>
 <span class="st">  </span><span class="kw"><a href="../reference/bs_embed_popover.html">bs_embed_popover</a></span>(
     <span class="dt">title =</span> <span class="st">"Letter"</span>, <span class="dt">content =</span> <span class="st">"Choose a favorite"</span>, <span class="dt">placement =</span> <span class="st">"left"</span>
   )
 )</code></pre></div>
 <p>As of writing, I don’t know how to include operable <strong>shiny</strong> inputs in an html document, outside of the <strong>shiny</strong> runtime. To see these functions in action, you can refer to this <a href="https://ijlyttle.shinyapps.io/tooltip_popover_modal/#"><strong>shiny</strong> app</a>, which you can also run locally using:</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">shiny::<span class="kw">runApp</span>(<span class="kw">system.file</span>(<span class="st">"shiny"</span>, <span class="st">"tooltip_popover_modal"</span>, <span class="dt">package =</span> <span class="st">"bsplus"</span>))</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">shiny<span class="op">::</span><span class="kw">runApp</span>(<span class="kw">system.file</span>(<span class="st">"shiny"</span>, <span class="st">"tooltip_popover_modal"</span>, <span class="dt">package =</span> <span class="st">"bsplus"</span>))</code></pre></div>
 <div class="figure">
 <img src="img/popover.png">
 </div>

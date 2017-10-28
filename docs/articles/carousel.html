@@ -60,7 +60,7 @@
       <h1>Carousel</h1>
                         <h4 class="author">Ian Lyttle</h4>
             
-            <h4 class="date">2017-07-09</h4>
+            <h4 class="date">2017-10-28</h4>
           </div>
 
     
@@ -76,19 +76,19 @@
 <code><a href="../reference/bs_append.html">bs_append()</a></code>, used to add a slide containing <code>content</code>, which is HTML, and an optional <code>caption</code>.</li>
 </ul>
 <p>The <code>content</code> and <code>caption</code> arguments can be composed using the helper functions <code><a href="../reference/bs_carousel_image.html">bs_carousel_image()</a></code>, which returs a centered-image tag, and <code><a href="../reference/bs_carousel_caption.html">bs_carousel_caption()</a></code> with text arguments <code>title</code> and <code>body</code>.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw"><a href="../reference/bs_carousel.html">bs_carousel</a></span>(<span class="dt">id =</span> <span class="st">"the_beatles"</span>, <span class="dt">use_indicators =</span> <span class="ot">TRUE</span>) %&gt;%
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw"><a href="../reference/bs_carousel.html">bs_carousel</a></span>(<span class="dt">id =</span> <span class="st">"the_beatles"</span>, <span class="dt">use_indicators =</span> <span class="ot">TRUE</span>) <span class="op">%&gt;%</span>
 <span class="st">  </span><span class="kw"><a href="../reference/bs_append.html">bs_append</a></span>(
     <span class="dt">content =</span> <span class="kw"><a href="../reference/bs_carousel_image.html">bs_carousel_image</a></span>(<span class="dt">src =</span> <span class="st">"img/john.jpg"</span>),
     <span class="dt">caption =</span> <span class="kw"><a href="../reference/bs_carousel_caption.html">bs_carousel_caption</a></span>(<span class="st">"John Lennon"</span>, <span class="st">"Rhythm guitar, vocals"</span>)
-  ) %&gt;%
+  ) <span class="op">%&gt;%</span>
 <span class="st">  </span><span class="kw"><a href="../reference/bs_append.html">bs_append</a></span>(
     <span class="dt">content =</span> <span class="kw"><a href="../reference/bs_carousel_image.html">bs_carousel_image</a></span>(<span class="dt">src =</span> <span class="st">"img/paul.jpg"</span>),
     <span class="dt">caption =</span> <span class="kw"><a href="../reference/bs_carousel_caption.html">bs_carousel_caption</a></span>(<span class="st">"Paul McCartney"</span>, <span class="st">"Bass guitar, vocals"</span>)
-  ) %&gt;%
+  ) <span class="op">%&gt;%</span>
 <span class="st">  </span><span class="kw"><a href="../reference/bs_append.html">bs_append</a></span>(
     <span class="dt">content =</span> <span class="kw"><a href="../reference/bs_carousel_image.html">bs_carousel_image</a></span>(<span class="dt">src =</span> <span class="st">"img/george.jpg"</span>),
     <span class="dt">caption =</span> <span class="kw"><a href="../reference/bs_carousel_caption.html">bs_carousel_caption</a></span>(<span class="st">"George Harrison"</span>, <span class="st">"Lead guitar, vocals"</span>)
-  ) %&gt;%
+  ) <span class="op">%&gt;%</span>
 <span class="st">  </span><span class="kw"><a href="../reference/bs_append.html">bs_append</a></span>(
     <span class="dt">content =</span> <span class="kw"><a href="../reference/bs_carousel_image.html">bs_carousel_image</a></span>(<span class="dt">src =</span> <span class="st">"img/ringo.jpg"</span>),
     <span class="dt">caption =</span> <span class="kw"><a href="../reference/bs_carousel_caption.html">bs_carousel_caption</a></span>(<span class="st">"Ringo Starr"</span>, <span class="st">"Drums, vocals"</span>)
@@ -141,11 +141,11 @@
 <li>without captions</li>
 <li>the slides do not auto-advance (using <code><a href="../reference/bs_set_data.html">bs_set_data()</a></code> to set <a href="http://getbootstrap.com/javascript/#carousel-options">Bootstrap options</a>)</li>
 </ul>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw"><a href="../reference/bs_carousel.html">bs_carousel</a></span>(<span class="dt">id =</span> <span class="st">"with_the_beatles"</span>) %&gt;%
-<span class="st">  </span><span class="kw"><a href="../reference/bs_set_data.html">bs_set_data</a></span>(<span class="dt">interval =</span> <span class="ot">FALSE</span>) %&gt;%
-<span class="st">  </span><span class="kw"><a href="../reference/bs_append.html">bs_append</a></span>(<span class="dt">content =</span> <span class="kw"><a href="../reference/bs_carousel_image.html">bs_carousel_image</a></span>(<span class="dt">src =</span> <span class="st">"img/john.jpg"</span>)) %&gt;%
-<span class="st">  </span><span class="kw"><a href="../reference/bs_append.html">bs_append</a></span>(<span class="dt">content =</span> <span class="kw"><a href="../reference/bs_carousel_image.html">bs_carousel_image</a></span>(<span class="dt">src =</span> <span class="st">"img/paul.jpg"</span>)) %&gt;%
-<span class="st">  </span><span class="kw"><a href="../reference/bs_append.html">bs_append</a></span>(<span class="dt">content =</span> <span class="kw"><a href="../reference/bs_carousel_image.html">bs_carousel_image</a></span>(<span class="dt">src =</span> <span class="st">"img/george.jpg"</span>)) %&gt;%
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw"><a href="../reference/bs_carousel.html">bs_carousel</a></span>(<span class="dt">id =</span> <span class="st">"with_the_beatles"</span>) <span class="op">%&gt;%</span>
+<span class="st">  </span><span class="kw"><a href="../reference/bs_set_data.html">bs_set_data</a></span>(<span class="dt">interval =</span> <span class="ot">FALSE</span>) <span class="op">%&gt;%</span>
+<span class="st">  </span><span class="kw"><a href="../reference/bs_append.html">bs_append</a></span>(<span class="dt">content =</span> <span class="kw"><a href="../reference/bs_carousel_image.html">bs_carousel_image</a></span>(<span class="dt">src =</span> <span class="st">"img/john.jpg"</span>)) <span class="op">%&gt;%</span>
+<span class="st">  </span><span class="kw"><a href="../reference/bs_append.html">bs_append</a></span>(<span class="dt">content =</span> <span class="kw"><a href="../reference/bs_carousel_image.html">bs_carousel_image</a></span>(<span class="dt">src =</span> <span class="st">"img/paul.jpg"</span>)) <span class="op">%&gt;%</span>
+<span class="st">  </span><span class="kw"><a href="../reference/bs_append.html">bs_append</a></span>(<span class="dt">content =</span> <span class="kw"><a href="../reference/bs_carousel_image.html">bs_carousel_image</a></span>(<span class="dt">src =</span> <span class="st">"img/george.jpg"</span>)) <span class="op">%&gt;%</span>
 <span class="st">  </span><span class="kw"><a href="../reference/bs_append.html">bs_append</a></span>(<span class="dt">content =</span> <span class="kw"><a href="../reference/bs_carousel_image.html">bs_carousel_image</a></span>(<span class="dt">src =</span> <span class="st">"img/ringo.jpg"</span>)) </code></pre></div>
 <div id="with_the_beatles" class="carousel slide" data-ride="carousel" data-interval="false">
 <div class="carousel-inner" role="listbox">

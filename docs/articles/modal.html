@@ -60,7 +60,7 @@
       <h1>Modals</h1>
                         <h4 class="author">Ian Lyttle</h4>
             
-            <h4 class="date">2017-07-09</h4>
+            <h4 class="date">2017-10-28</h4>
           </div>
 
     
@@ -87,11 +87,11 @@
 </div>
 </div>
 <p>To allow activation of the modal window, attach its <code>id</code> to a button (or link).</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw"><a href="../reference/bs_button.html">bs_button</a></span>(<span class="st">"Click for modal"</span>) %&gt;%
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw"><a href="../reference/bs_button.html">bs_button</a></span>(<span class="st">"Click for modal"</span>) <span class="op">%&gt;%</span>
 <span class="st">  </span><span class="kw"><a href="../reference/bs_modal.html">bs_attach_modal</a></span>(<span class="dt">id_modal =</span> <span class="st">"modal"</span>)</code></pre></div>
 <button class="btn btn-default" data-toggle="modal" data-target="#modal">Click for modal</button>
 <p>The verb <em>attach</em> implies that you can attach an <code>id</code> to as many link tags you like. Thus:</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw"><a href="../reference/bs_button.html">bs_button</a></span>(<span class="st">"New button, same modal"</span>) %&gt;%
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw"><a href="../reference/bs_button.html">bs_button</a></span>(<span class="st">"New button, same modal"</span>) <span class="op">%&gt;%</span>
 <span class="st">  </span><span class="kw"><a href="../reference/bs_modal.html">bs_attach_modal</a></span>(<span class="dt">id_modal =</span> <span class="st">"modal"</span>)</code></pre></div>
 <button class="btn btn-default" data-toggle="modal" data-target="#modal">New button, same modal</button>
 <p>Let’s look at a more-involved example using all of the arguments for <code><a href="../reference/bs_modal.html">bs_modal()</a></code>.</p>
@@ -102,8 +102,8 @@
   <span class="dt">id =</span> <span class="st">"modal_markdown"</span>, 
   <span class="dt">title =</span> <span class="st">"Using Markdown"</span>,
   <span class="dt">body =</span> <span class="kw">includeMarkdown</span>(<span class="kw">system.file</span>(<span class="st">"markdown"</span>, <span class="st">"modal.md"</span>, <span class="dt">package =</span> <span class="st">"bsplus"</span>)),
-  <span class="dt">footer =</span> tags$<span class="kw">span</span>(
-    tags$<span class="kw">span</span>(<span class="dt">class =</span> <span class="st">"well"</span>, <span class="st">"Hello!"</span>),
+  <span class="dt">footer =</span> tags<span class="op">$</span><span class="kw">span</span>(
+    tags<span class="op">$</span><span class="kw">span</span>(<span class="dt">class =</span> <span class="st">"well"</span>, <span class="st">"Hello!"</span>),
     <span class="kw"><a href="../reference/bs_modal.html">bs_modal_closebutton</a></span>(<span class="st">"Goodbye!"</span>)
   ),
   <span class="dt">size =</span> <span class="st">"large"</span>
@@ -136,7 +136,7 @@
 </div>
 </div>
 </div>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw"><a href="../reference/bs_button.html">bs_button</a></span>(<span class="st">"Large modal"</span>) %&gt;%
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw"><a href="../reference/bs_button.html">bs_button</a></span>(<span class="st">"Large modal"</span>) <span class="op">%&gt;%</span>
 <span class="st">  </span><span class="kw"><a href="../reference/bs_modal.html">bs_attach_modal</a></span>(<span class="dt">id_modal =</span> <span class="st">"modal_markdown"</span>)</code></pre></div>
 <button class="btn btn-default" data-toggle="modal" data-target="#modal_markdown">Large modal</button>
 <div id="reference" class="section level2">
