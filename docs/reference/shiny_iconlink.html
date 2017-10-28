@@ -25,12 +25,14 @@
 <script src="../pkgdown.js"></script>
 
 <!-- mathjax -->
-<script src='https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
+<script src='https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
 
 <!--[if lt IE 9]>
 <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
 <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
 <![endif]-->
+
+
   </head>
 
   <body>
@@ -87,15 +89,20 @@ It may be useful to attach a modal window to
 (or embed a popover into) into such a link.</p>
     
 
-    <pre><span class='fu'>shiny_iconlink</span>(<span class='kw'>name</span> <span class='kw'>=</span> <span class='st'>"info-circle"</span>, <span class='no'>...</span>)</pre>
+    <pre class="usage"><span class='fu'>shiny_iconlink</span>(<span class='kw'>name</span> <span class='kw'>=</span> <span class='st'>"info-circle"</span>, <span class='no'>...</span>)</pre>
     
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a> Arguments</h2>
-    <dl class="dl-horizontal">
-      <dt>name</dt>
-      <dd>character, name of the icon, passed to <code>shiny::<a href='http://www.rdocumentation.org/packages/shiny/topics/icon'>icon</a></code></dd>
-      <dt>...</dt>
-      <dd>other arguments passed to <code>shiny::<a href='http://www.rdocumentation.org/packages/shiny/topics/icon'>icon</a></code></dd>
-    </dl>
+    <table class="ref-arguments">
+    <colgroup><col class="name" /><col class="desc" /></colgroup>
+    <tr>
+      <th>name</th>
+      <td><p>character, name of the icon, passed to <code>shiny::<a href='http://www.rdocumentation.org/packages/shiny/topics/icon'>icon</a></code></p></td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td><p>other arguments passed to <code>shiny::<a href='http://www.rdocumentation.org/packages/shiny/topics/icon'>icon</a></code></p></td>
+    </tr>
+    </table>
     
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
@@ -109,12 +116,12 @@ It may be useful to attach a modal window to
     
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='fu'>shiny_iconlink</span>()</div><div class='output co'>#&gt; &lt;a href=&quot;#&quot;&gt;
-#&gt;   &lt;i class=&quot;fa fa-info-circle&quot;&gt;&lt;/i&gt;
+    <pre class="examples"><div class='input'><span class='fu'>shiny_iconlink</span>()</div><div class='output co'>#&gt; &lt;a href="#"&gt;
+#&gt;   &lt;i class="fa fa-info-circle"&gt;&lt;/i&gt;
 #&gt; &lt;/a&gt;</div><div class='input'>
 <span class='fu'>shiny_iconlink</span>() <span class='kw'>%&gt;%</span>
-  <span class='fu'><a href='bs_embed_popover.html'>bs_embed_popover</a></span>(<span class='kw'>title</span> <span class='kw'>=</span> <span class='st'>"Help!"</span>, <span class='kw'>content</span> <span class='kw'>=</span> <span class='st'>"I need somebody"</span>)</div><div class='output co'>#&gt; &lt;a href=&quot;#&quot; title=&quot;Help!&quot; data-toggle=&quot;popover&quot; data-content=&quot;I need somebody&quot; data-placement=&quot;top&quot;&gt;
-#&gt;   &lt;i class=&quot;fa fa-info-circle&quot;&gt;&lt;/i&gt;
+  <span class='fu'><a href='bs_embed_popover.html'>bs_embed_popover</a></span>(<span class='kw'>title</span> <span class='kw'>=</span> <span class='st'>"Help!"</span>, <span class='kw'>content</span> <span class='kw'>=</span> <span class='st'>"I need somebody"</span>)</div><div class='output co'>#&gt; &lt;a href="#" title="Help!" data-toggle="popover" data-content="I need somebody" data-placement="top"&gt;
+#&gt;   &lt;i class="fa fa-info-circle"&gt;&lt;/i&gt;
 #&gt; &lt;/a&gt;</div><div class='input'>
 </div></pre>
   </div>

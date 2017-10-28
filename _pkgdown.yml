@@ -1,8 +1,6 @@
-templates:
+template:
   params:
     bootswatch: sandstone
-
-template:
   assets: "inst/pkgdown/assets"
 
 

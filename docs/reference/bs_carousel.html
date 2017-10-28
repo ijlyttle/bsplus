@@ -25,12 +25,14 @@
 <script src="../pkgdown.js"></script>
 
 <!-- mathjax -->
-<script src='https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
+<script src='https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
 
 <!--[if lt IE 9]>
 <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
 <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
 <![endif]-->
+
+
   </head>
 
   <body>
@@ -85,32 +87,47 @@
 providing controls to move slides back-and-forth.</p>
     
 
-    <pre><span class='co'># S3 method for bsplus_carousel</span>
+    <pre class="usage"><span class='co'># S3 method for bsplus_carousel</span>
 <span class='fu'><a href='bs_append.html'>bs_append</a></span>(<span class='no'>tag</span>, <span class='no'>content</span>, <span class='kw'>caption</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='no'>...</span>)
 
 <span class='fu'>bs_carousel</span>(<span class='no'>id</span>, <span class='kw'>use_indicators</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>, <span class='kw'>use_controls</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>)</pre>
     
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a> Arguments</h2>
-    <dl class="dl-horizontal">
-      <dt>tag</dt>
-      <dd><code>htmltools::<a href='http://www.rdocumentation.org/packages/htmltools/topics/tag'>tag</a></code>,
-carousel <code>&lt;div/&gt;</code> to which to append a panel</dd>
-      <dt>content</dt>
-      <dd>character (HTML) or <code>htmltools::<a href='http://www.rdocumentation.org/packages/htmltools/topics/tag'>tagList</a></code>,
-content for the slide</dd>
-      <dt>caption</dt>
-      <dd>character (HTML) or <code>htmltools::<a href='http://www.rdocumentation.org/packages/htmltools/topics/tag'>tagList</a></code>,
-caption for the slide</dd>
-      <dt>...</dt>
-      <dd>other args (not used)</dd>
-      <dt>id</dt>
-      <dd>character, unique id for accordion <code>&lt;div/&gt;</code>,
-also serves as root id for slides appended using <code>bs_append()</code></dd>
-      <dt>use_indicators</dt>
-      <dd>logical, denotes use of slide-position indicators (dots)</dd>
-      <dt>use_controls</dt>
-      <dd>logical, denotes use of controls (chevrons at sides)</dd>
-    </dl>
+    <table class="ref-arguments">
+    <colgroup><col class="name" /><col class="desc" /></colgroup>
+    <tr>
+      <th>tag</th>
+      <td><p><code>htmltools::<a href='http://www.rdocumentation.org/packages/htmltools/topics/tag'>tag</a></code>,
+carousel <code>&lt;div/&gt;</code> to which to append a panel</p></td>
+    </tr>
+    <tr>
+      <th>content</th>
+      <td><p>character (HTML) or <code>htmltools::<a href='http://www.rdocumentation.org/packages/htmltools/topics/tag'>tagList</a></code>,
+content for the slide</p></td>
+    </tr>
+    <tr>
+      <th>caption</th>
+      <td><p>character (HTML) or <code>htmltools::<a href='http://www.rdocumentation.org/packages/htmltools/topics/tag'>tagList</a></code>,
+caption for the slide</p></td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td><p>other args (not used)</p></td>
+    </tr>
+    <tr>
+      <th>id</th>
+      <td><p>character, unique id for accordion <code>&lt;div/&gt;</code>,
+also serves as root id for slides appended using <code>bs_append()</code></p></td>
+    </tr>
+    <tr>
+      <th>use_indicators</th>
+      <td><p>logical, denotes use of slide-position indicators (dots)</p></td>
+    </tr>
+    <tr>
+      <th>use_controls</th>
+      <td><p>logical, denotes use of controls (chevrons at sides)</p></td>
+    </tr>
+    </table>
     
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
@@ -121,18 +138,15 @@ also serves as root id for slides appended using <code>bs_append()</code></dd>
 
     <p>All of these functions return a <code>bsplus_carousel</code> object
 (which is also an <code>htmltools::<a href='http://www.rdocumentation.org/packages/htmltools/topics/tag'>tag</a></code>, <code>&lt;div/&gt;</code>), so you can
-compose a carousel by piping. There are two parts to this system:</p>
-    <p><ol>
-<li>A constructor function for the carousel, <code>bs_carousel()</code>
-  </li>
-<li>A function to append a slide to the carousel, <code>bs_append()</code>
-</li>
-</ol></p>
+compose a carousel by piping. There are two parts to this system:</p><ol>
+<li><p>A constructor function for the carousel, <code>bs_carousel()</code></p></li>
+<li><p>A function to append a slide to the carousel, <code>bs_append()</code></p></li>
+</ol>
     <p>The verb <em>append</em> is used to signify that you can append an arbitrary
 number of slides to a carousel.</p>
-    <p>For the constructor, <code>bs_carousel()</code>,
+<p>For the constructor, <code>bs_carousel()</code>,
 it is your responsibility to ensure that <code>id</code> is unique
-among HTML elements in your page. If you have non-unique <code>id</code>&#39;s, strange things may
+among HTML elements in your page. If you have non-unique <code>id</code>'s, strange things may
 happen to your page.</p>
     
     <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
@@ -146,28 +160,28 @@ happen to your page.</p>
   <span class='fu'><a href='bs_append.html'>bs_append</a></span>(<span class='kw'>content</span> <span class='kw'>=</span> <span class='fu'><a href='bs_carousel_image.html'>bs_carousel_image</a></span>(<span class='kw'>src</span> <span class='kw'>=</span> <span class='st'>"img/john.jpg"</span>)) <span class='kw'>%&gt;%</span>
   <span class='fu'><a href='bs_append.html'>bs_append</a></span>(<span class='kw'>content</span> <span class='kw'>=</span> <span class='fu'><a href='bs_carousel_image.html'>bs_carousel_image</a></span>(<span class='kw'>src</span> <span class='kw'>=</span> <span class='st'>"img/paul.jpg"</span>)) <span class='kw'>%&gt;%</span>
   <span class='fu'><a href='bs_append.html'>bs_append</a></span>(<span class='kw'>content</span> <span class='kw'>=</span> <span class='fu'><a href='bs_carousel_image.html'>bs_carousel_image</a></span>(<span class='kw'>src</span> <span class='kw'>=</span> <span class='st'>"img/george.jpg"</span>)) <span class='kw'>%&gt;%</span>
-  <span class='fu'><a href='bs_append.html'>bs_append</a></span>(<span class='kw'>content</span> <span class='kw'>=</span> <span class='fu'><a href='bs_carousel_image.html'>bs_carousel_image</a></span>(<span class='kw'>src</span> <span class='kw'>=</span> <span class='st'>"img/ringo.jpg"</span>))</div><div class='output co'>#&gt; &lt;div id=&quot;with_the_beatles&quot; class=&quot;carousel slide&quot; data-ride=&quot;carousel&quot;&gt;
-#&gt;   &lt;div class=&quot;carousel-inner&quot; role=&quot;listbox&quot;&gt;
-#&gt;     &lt;div class=&quot;item active&quot;&gt;
-#&gt;       &lt;img src=&quot;img/john.jpg&quot; class=&quot;img-responsive center-block&quot;/&gt;
+  <span class='fu'><a href='bs_append.html'>bs_append</a></span>(<span class='kw'>content</span> <span class='kw'>=</span> <span class='fu'><a href='bs_carousel_image.html'>bs_carousel_image</a></span>(<span class='kw'>src</span> <span class='kw'>=</span> <span class='st'>"img/ringo.jpg"</span>))</div><div class='output co'>#&gt; &lt;div id="with_the_beatles" class="carousel slide" data-ride="carousel"&gt;
+#&gt;   &lt;div class="carousel-inner" role="listbox"&gt;
+#&gt;     &lt;div class="item active"&gt;
+#&gt;       &lt;img src="img/john.jpg" class="img-responsive center-block"/&gt;
 #&gt;     &lt;/div&gt;
-#&gt;     &lt;div class=&quot;item&quot;&gt;
-#&gt;       &lt;img src=&quot;img/paul.jpg&quot; class=&quot;img-responsive center-block&quot;/&gt;
+#&gt;     &lt;div class="item"&gt;
+#&gt;       &lt;img src="img/paul.jpg" class="img-responsive center-block"/&gt;
 #&gt;     &lt;/div&gt;
-#&gt;     &lt;div class=&quot;item&quot;&gt;
-#&gt;       &lt;img src=&quot;img/george.jpg&quot; class=&quot;img-responsive center-block&quot;/&gt;
+#&gt;     &lt;div class="item"&gt;
+#&gt;       &lt;img src="img/george.jpg" class="img-responsive center-block"/&gt;
 #&gt;     &lt;/div&gt;
-#&gt;     &lt;div class=&quot;item&quot;&gt;
-#&gt;       &lt;img src=&quot;img/ringo.jpg&quot; class=&quot;img-responsive center-block&quot;/&gt;
+#&gt;     &lt;div class="item"&gt;
+#&gt;       &lt;img src="img/ringo.jpg" class="img-responsive center-block"/&gt;
 #&gt;     &lt;/div&gt;
 #&gt;   &lt;/div&gt;
-#&gt;   &lt;a class=&quot;left carousel-control&quot; href=&quot;#with_the_beatles&quot; role=&quot;button&quot; data-slide=&quot;prev&quot;&gt;
-#&gt;     &lt;span class=&quot;glyphicon glyphicon-chevron-left&quot; aria-hidden=&quot;true&quot;&gt;&lt;/span&gt;
-#&gt;     &lt;span class=&quot;sr-only&quot;&gt;Previous&lt;/span&gt;
+#&gt;   &lt;a class="left carousel-control" href="#with_the_beatles" role="button" data-slide="prev"&gt;
+#&gt;     &lt;span class="glyphicon glyphicon-chevron-left" aria-hidden="true"&gt;&lt;/span&gt;
+#&gt;     &lt;span class="sr-only"&gt;Previous&lt;/span&gt;
 #&gt;   &lt;/a&gt;
-#&gt;   &lt;a class=&quot;right carousel-control&quot; href=&quot;#with_the_beatles&quot; role=&quot;button&quot; data-slide=&quot;next&quot;&gt;
-#&gt;     &lt;span class=&quot;glyphicon glyphicon-chevron-right&quot; aria-hidden=&quot;true&quot;&gt;&lt;/span&gt;
-#&gt;     &lt;span class=&quot;sr-only&quot;&gt;Next&lt;/span&gt;
+#&gt;   &lt;a class="right carousel-control" href="#with_the_beatles" role="button" data-slide="next"&gt;
+#&gt;     &lt;span class="glyphicon glyphicon-chevron-right" aria-hidden="true"&gt;&lt;/span&gt;
+#&gt;     &lt;span class="sr-only"&gt;Next&lt;/span&gt;
 #&gt;   &lt;/a&gt;
 #&gt; &lt;/div&gt;</div><div class='input'>
 </div></pre>

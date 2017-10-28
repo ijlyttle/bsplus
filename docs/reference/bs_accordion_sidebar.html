@@ -25,12 +25,14 @@
 <script src="../pkgdown.js"></script>
 
 <!-- mathjax -->
-<script src='https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
+<script src='https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
 
 <!--[if lt IE 9]>
 <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
 <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
 <![endif]-->
+
+
   </head>
 
   <body>
@@ -86,7 +88,7 @@ the functionality of <code>shiny::<a href='http://www.rdocumentation.org/package
 allowing you to add another dimension to your <strong>shiny</strong> apps.</p>
     
 
-    <pre><span class='fu'>bs_accordion_sidebar</span>(<span class='no'>id</span>, <span class='kw'>spec_side</span> <span class='kw'>=</span> <span class='fu'>c</span>(<span class='kw'>width</span> <span class='kw'>=</span> <span class='fl'>4</span>, <span class='kw'>offset</span> <span class='kw'>=</span> <span class='fl'>0</span>),
+    <pre class="usage"><span class='fu'>bs_accordion_sidebar</span>(<span class='no'>id</span>, <span class='kw'>spec_side</span> <span class='kw'>=</span> <span class='fu'>c</span>(<span class='kw'>width</span> <span class='kw'>=</span> <span class='fl'>4</span>, <span class='kw'>offset</span> <span class='kw'>=</span> <span class='fl'>0</span>),
   <span class='kw'>spec_main</span> <span class='kw'>=</span> <span class='fu'>c</span>(<span class='kw'>width</span> <span class='kw'>=</span> <span class='fl'>8</span>, <span class='kw'>offset</span> <span class='kw'>=</span> <span class='fl'>0</span>), <span class='kw'>position</span> <span class='kw'>=</span> <span class='fu'>c</span>(<span class='st'>"left"</span>, <span class='st'>"right"</span>))
 
 <span class='fu'>use_bs_accordion_sidebar</span>()
@@ -101,41 +103,66 @@ allowing you to add another dimension to your <strong>shiny</strong> apps.</p>
   <span class='kw'>use_main_enclosure</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>, <span class='no'>...</span>)</pre>
     
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a> Arguments</h2>
-    <dl class="dl-horizontal">
-      <dt>id</dt>
-      <dd>character, unique id for accordion-sidebar <code>&lt;div/&gt;</code>,
-also serves as root id for panels appended using <code>bs_append()</code></dd>
-      <dt>spec_side</dt>
-      <dd>numeric, column specification for sidebar panels</dd>
-      <dt>spec_main</dt>
-      <dd>numeric, column specification for main panels</dd>
-      <dt>position</dt>
-      <dd>character, indicates where to put the sidebar panels with
-repspect to the main panels</dd>
-      <dt>tag</dt>
-      <dd><code>htmltools::<a href='http://www.rdocumentation.org/packages/htmltools/topics/tag'>tag</a></code>,
-accordion-sidebar <code>&lt;div/&gt;</code> to which to append a panel</dd>
-      <dt>title_side</dt>
-      <dd>character (HTML) or <code>htmltools::<a href='http://www.rdocumentation.org/packages/htmltools/topics/tag'>tagList</a></code>,
-title for the sidebar panel</dd>
-      <dt>content_side</dt>
-      <dd>character (HTML) or <code>htmltools::<a href='http://www.rdocumentation.org/packages/htmltools/topics/tag'>tagList</a></code>,
-content for the sidebar panel</dd>
-      <dt>content_main</dt>
-      <dd>character (HTML) or <code>htmltools::<a href='http://www.rdocumentation.org/packages/htmltools/topics/tag'>tagList</a></code>,
-content for the main panel</dd>
-      <dt>...</dt>
-      <dd>other args (not used)</dd>
-      <dt>panel_type_active</dt>
-      <dd>character, indicated bootstrap type for active-panel header,
-one of <code>c(&quot;default&quot;, &quot;primary&quot;, &quot;success&quot;, &quot;info&quot;, &quot;warning&quot;, &quot;danger&quot;)</code></dd>
-      <dt>panel_type_inactive</dt>
-      <dd>character, indicated bootstrap type for inactive-panel header,
-one of <code>c(&quot;default&quot;, &quot;primary&quot;, &quot;success&quot;, &quot;info&quot;, &quot;warning&quot;, &quot;danger&quot;)</code></dd>
-      <dt>use_main_enclosure</dt>
-      <dd>logical, indicates if main content is to be wrapped in a
-Bootstrap panel</dd>
-    </dl>
+    <table class="ref-arguments">
+    <colgroup><col class="name" /><col class="desc" /></colgroup>
+    <tr>
+      <th>id</th>
+      <td><p>character, unique id for accordion-sidebar <code>&lt;div/&gt;</code>,
+also serves as root id for panels appended using <code>bs_append()</code></p></td>
+    </tr>
+    <tr>
+      <th>spec_side</th>
+      <td><p>numeric, column specification for sidebar panels</p></td>
+    </tr>
+    <tr>
+      <th>spec_main</th>
+      <td><p>numeric, column specification for main panels</p></td>
+    </tr>
+    <tr>
+      <th>position</th>
+      <td><p>character, indicates where to put the sidebar panels with
+repspect to the main panels</p></td>
+    </tr>
+    <tr>
+      <th>tag</th>
+      <td><p><code>htmltools::<a href='http://www.rdocumentation.org/packages/htmltools/topics/tag'>tag</a></code>,
+accordion-sidebar <code>&lt;div/&gt;</code> to which to append a panel</p></td>
+    </tr>
+    <tr>
+      <th>title_side</th>
+      <td><p>character (HTML) or <code>htmltools::<a href='http://www.rdocumentation.org/packages/htmltools/topics/tag'>tagList</a></code>,
+title for the sidebar panel</p></td>
+    </tr>
+    <tr>
+      <th>content_side</th>
+      <td><p>character (HTML) or <code>htmltools::<a href='http://www.rdocumentation.org/packages/htmltools/topics/tag'>tagList</a></code>,
+content for the sidebar panel</p></td>
+    </tr>
+    <tr>
+      <th>content_main</th>
+      <td><p>character (HTML) or <code>htmltools::<a href='http://www.rdocumentation.org/packages/htmltools/topics/tag'>tagList</a></code>,
+content for the main panel</p></td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td><p>other args (not used)</p></td>
+    </tr>
+    <tr>
+      <th>panel_type_active</th>
+      <td><p>character, indicated bootstrap type for active-panel header,
+one of <code>c("default", "primary", "success", "info", "warning", "danger")</code></p></td>
+    </tr>
+    <tr>
+      <th>panel_type_inactive</th>
+      <td><p>character, indicated bootstrap type for inactive-panel header,
+one of <code>c("default", "primary", "success", "info", "warning", "danger")</code></p></td>
+    </tr>
+    <tr>
+      <th>use_main_enclosure</th>
+      <td><p>logical, indicates if main content is to be wrapped in a
+Bootstrap panel</p></td>
+    </tr>
+    </table>
     
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
@@ -147,22 +174,18 @@ Bootstrap panel</dd>
     <p>If you use a <code>bs_accordion_sidebar()</code>, you will have to call the function
 <code>use_bs_accordion_sidebar()</code> somewhere in your UI. This attaches some
 JavaScript needed for your accordion sidebar to work properly.</p>
-    <p>All of these functions return a <code>bsplus_accsidebar</code> object,
+<p>All of these functions return a <code>bsplus_accsidebar</code> object,
 (which is also an <code>htmltools::<a href='http://www.rdocumentation.org/packages/htmltools/topics/tag'>tag</a></code>, <code>&lt;div/&gt;</code>), so you can
-compose an accordion sidebar by piping. There are three parts to this system:</p>
-    <p><ol>
-<li>A constructor function for the accordion-sidebar, <code>bs_accordion_sidebar()</code>
-  </li>
-<li>A function to set options for subsequent panels, <code>bs_set_opts()</code>
-  </li>
-<li>A function to append a panel-set to an accordion-sidebar, <code>bs_append()</code>
-</li>
-</ol></p>
+compose an accordion sidebar by piping. There are three parts to this system:</p><ol>
+<li><p>A constructor function for the accordion-sidebar, <code>bs_accordion_sidebar()</code></p></li>
+<li><p>A function to set options for subsequent panels, <code>bs_set_opts()</code></p></li>
+<li><p>A function to append a panel-set to an accordion-sidebar, <code>bs_append()</code></p></li>
+</ol>
     <p>The verb <em>append</em> is used to signify that you can append an arbitrary
 number of panels-sets to an accordion-sidebar.</p>
-    <p>For the constructor, <code>bs_accordion_sidebar()</code>,
+<p>For the constructor, <code>bs_accordion_sidebar()</code>,
 it is your responsibility to ensure that <code>id</code> is unique
-among HTML elements in your page. If you have non-unique <code>id</code>&#39;s, strange things may
+among HTML elements in your page. If you have non-unique <code>id</code>'s, strange things may
 happen to your page.</p>
     
 
@@ -177,42 +200,42 @@ happen to your page.</p>
     <span class='kw'>title_side</span> <span class='kw'>=</span> <span class='st'>"Paul McCartney"</span>,
     <span class='kw'>content_side</span> <span class='kw'>=</span> <span class='st'>"Bass guitar, vocals"</span>,
     <span class='kw'>content_main</span> <span class='kw'>=</span> <span class='st'>"Blackbird"</span>
-  )</div><div class='output co'>#&gt; &lt;div class=&quot;row&quot; id=&quot;meet_the_beatles&quot;&gt;
-#&gt;   &lt;div class=&quot;col-sm-4&quot; id=&quot;meet_the_beatles-side&quot;&gt;
-#&gt;     &lt;div id=&quot;meet_the_beatles-side-accordion&quot; class=&quot;panel-group&quot; role=&quot;tablist&quot; aria-multiselectable=&quot;true&quot;&gt;
-#&gt;       &lt;div class=&quot;panel panel-success&quot; class-active=&quot;panel-success&quot; class-inactive=&quot;panel-primary&quot; id=&quot;meet_the_beatles-side-accordion-0&quot;&gt;
-#&gt;         &lt;div id=&quot;meet_the_beatles-side-accordion-0-heading&quot; class=&quot;panel-heading&quot; role=&quot;tab&quot; data-toggle=&quot;collapse&quot; data-target=&quot;#meet_the_beatles-side-accordion-0-collapse&quot; data-parent=&quot;#meet_the_beatles-side-accordion&quot; aria-expanded=&quot;true&quot; aria-controls=&quot;meet_the_beatles-side-accordion-0-collapse&quot; style=&quot;cursor: pointer;&quot;&gt;
-#&gt;           &lt;h4 class=&quot;panel-title&quot;&gt;John Lennon&lt;/h4&gt;
+  )</div><div class='output co'>#&gt; &lt;div class="row" id="meet_the_beatles"&gt;
+#&gt;   &lt;div class="col-sm-4" id="meet_the_beatles-side"&gt;
+#&gt;     &lt;div id="meet_the_beatles-side-accordion" class="panel-group" role="tablist" aria-multiselectable="true"&gt;
+#&gt;       &lt;div class="panel panel-success" class-active="panel-success" class-inactive="panel-primary" id="meet_the_beatles-side-accordion-0"&gt;
+#&gt;         &lt;div id="meet_the_beatles-side-accordion-0-heading" class="panel-heading" role="tab" data-toggle="collapse" data-target="#meet_the_beatles-side-accordion-0-collapse" data-parent="#meet_the_beatles-side-accordion" aria-expanded="true" aria-controls="meet_the_beatles-side-accordion-0-collapse" style="cursor: pointer;"&gt;
+#&gt;           &lt;h4 class="panel-title"&gt;John Lennon&lt;/h4&gt;
 #&gt;         &lt;/div&gt;
-#&gt;         &lt;div aria-labelledby=&quot;meet_the_beatles-side-accordion-0-heading&quot; class=&quot;panel-collapse collapse in panel-collapse-leader&quot; id=&quot;meet_the_beatles-side-accordion-0-collapse&quot; role=&quot;tabpanel&quot;&gt;
-#&gt;           &lt;div class=&quot;panel-body&quot; style=&quot;&quot;&gt;Rhythm guitar, vocals&lt;/div&gt;
-#&gt;         &lt;/div&gt;
-#&gt;       &lt;/div&gt;
-#&gt;       &lt;div class=&quot;panel panel-primary&quot; class-active=&quot;panel-success&quot; class-inactive=&quot;panel-primary&quot; id=&quot;meet_the_beatles-side-accordion-1&quot;&gt;
-#&gt;         &lt;div id=&quot;meet_the_beatles-side-accordion-1-heading&quot; class=&quot;panel-heading&quot; role=&quot;tab&quot; data-toggle=&quot;collapse&quot; data-target=&quot;#meet_the_beatles-side-accordion-1-collapse&quot; data-parent=&quot;#meet_the_beatles-side-accordion&quot; aria-expanded=&quot;true&quot; aria-controls=&quot;meet_the_beatles-side-accordion-1-collapse&quot; style=&quot;cursor: pointer;&quot;&gt;
-#&gt;           &lt;h4 class=&quot;panel-title&quot;&gt;Paul McCartney&lt;/h4&gt;
-#&gt;         &lt;/div&gt;
-#&gt;         &lt;div aria-labelledby=&quot;meet_the_beatles-side-accordion-1-heading&quot; class=&quot;panel-collapse collapse panel-collapse-leader&quot; id=&quot;meet_the_beatles-side-accordion-1-collapse&quot; role=&quot;tabpanel&quot;&gt;
-#&gt;           &lt;div class=&quot;panel-body&quot; style=&quot;&quot;&gt;Bass guitar, vocals&lt;/div&gt;
+#&gt;         &lt;div aria-labelledby="meet_the_beatles-side-accordion-0-heading" class="panel-collapse collapse in panel-collapse-leader" id="meet_the_beatles-side-accordion-0-collapse" role="tabpanel"&gt;
+#&gt;           &lt;div class="panel-body" style=""&gt;Rhythm guitar, vocals&lt;/div&gt;
 #&gt;         &lt;/div&gt;
 #&gt;       &lt;/div&gt;
-#&gt;     &lt;/div&gt;
-#&gt;   &lt;/div&gt;
-#&gt;   &lt;div class=&quot;col-sm-8&quot; id=&quot;meet_the_beatles-main&quot;&gt;
-#&gt;     &lt;div class=&quot;collapse in&quot; id=&quot;meet_the_beatles-side-accordion-0-follow&quot;&gt;
-#&gt;       &lt;div class=&quot;panel panel-success&quot;&gt;
-#&gt;         &lt;div class=&quot;panel-body&quot;&gt;Dear Prudence&lt;/div&gt;
-#&gt;       &lt;/div&gt;
-#&gt;     &lt;/div&gt;
-#&gt;     &lt;div class=&quot;collapse&quot; id=&quot;meet_the_beatles-side-accordion-1-follow&quot;&gt;
-#&gt;       &lt;div class=&quot;panel panel-success&quot;&gt;
-#&gt;         &lt;div class=&quot;panel-body&quot;&gt;Blackbird&lt;/div&gt;
+#&gt;       &lt;div class="panel panel-primary" class-active="panel-success" class-inactive="panel-primary" id="meet_the_beatles-side-accordion-1"&gt;
+#&gt;         &lt;div id="meet_the_beatles-side-accordion-1-heading" class="panel-heading" role="tab" data-toggle="collapse" data-target="#meet_the_beatles-side-accordion-1-collapse" data-parent="#meet_the_beatles-side-accordion" aria-expanded="true" aria-controls="meet_the_beatles-side-accordion-1-collapse" style="cursor: pointer;"&gt;
+#&gt;           &lt;h4 class="panel-title"&gt;Paul McCartney&lt;/h4&gt;
+#&gt;         &lt;/div&gt;
+#&gt;         &lt;div aria-labelledby="meet_the_beatles-side-accordion-1-heading" class="panel-collapse collapse panel-collapse-leader" id="meet_the_beatles-side-accordion-1-collapse" role="tabpanel"&gt;
+#&gt;           &lt;div class="panel-body" style=""&gt;Bass guitar, vocals&lt;/div&gt;
+#&gt;         &lt;/div&gt;
 #&gt;       &lt;/div&gt;
 #&gt;     &lt;/div&gt;
 #&gt;   &lt;/div&gt;
-#&gt; &lt;/div&gt;</div><div class='input'><span class='co'>## Not run: ------------------------------------</span>
-<span class='co'># use_bs_accordion_sidebar()</span>
-<span class='co'>## ---------------------------------------------</span></div></pre>
+#&gt;   &lt;div class="col-sm-8" id="meet_the_beatles-main"&gt;
+#&gt;     &lt;div class="collapse in" id="meet_the_beatles-side-accordion-0-follow"&gt;
+#&gt;       &lt;div class="panel panel-success"&gt;
+#&gt;         &lt;div class="panel-body"&gt;Dear Prudence&lt;/div&gt;
+#&gt;       &lt;/div&gt;
+#&gt;     &lt;/div&gt;
+#&gt;     &lt;div class="collapse" id="meet_the_beatles-side-accordion-1-follow"&gt;
+#&gt;       &lt;div class="panel panel-success"&gt;
+#&gt;         &lt;div class="panel-body"&gt;Blackbird&lt;/div&gt;
+#&gt;       &lt;/div&gt;
+#&gt;     &lt;/div&gt;
+#&gt;   &lt;/div&gt;
+#&gt; &lt;/div&gt;</div><div class='input'><span class='fu'>not_run</span>({
+  <span class='fu'>use_bs_accordion_sidebar</span>()
+})</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>

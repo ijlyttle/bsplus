@@ -25,12 +25,14 @@
 <script src="../pkgdown.js"></script>
 
 <!-- mathjax -->
-<script src='https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
+<script src='https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
 
 <!--[if lt IE 9]>
 <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
 <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
 <![endif]-->
+
+
   </head>
 
   <body>
@@ -81,20 +83,25 @@
     </div>
 
     
-    <p>Helper function to manage attributes for Bootstrap&#39;s Javascript components.</p>
+    <p>Helper function to manage attributes for Bootstrap's Javascript components.</p>
     
 
-    <pre><span class='fu'>bs_set_data</span>(<span class='no'>tag</span>, <span class='no'>...</span>)
+    <pre class="usage"><span class='fu'>bs_set_data</span>(<span class='no'>tag</span>, <span class='no'>...</span>)
 
 <span class='fu'>bs_set_aria</span>(<span class='no'>tag</span>, <span class='no'>...</span>)</pre>
     
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a> Arguments</h2>
-    <dl class="dl-horizontal">
-      <dt>tag</dt>
-      <dd><code>htmltools::<a href='http://www.rdocumentation.org/packages/htmltools/topics/tag'>tag</a></code></dd>
-      <dt>...</dt>
-      <dd>named arguments used to set the attributes of <code>tag</code></dd>
-    </dl>
+    <table class="ref-arguments">
+    <colgroup><col class="name" /><col class="desc" /></colgroup>
+    <tr>
+      <th>tag</th>
+      <td><p><code>htmltools::<a href='http://www.rdocumentation.org/packages/htmltools/topics/tag'>tag</a></code></p></td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td><p>named arguments used to set the attributes of <code>tag</code></p></td>
+    </tr>
+    </table>
     
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
@@ -103,47 +110,37 @@
     <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
 
     <p>One of the mechanisms used by the API for Boostrap Javascript-components is
-an html elements&#39; attributes. These attribute names are prefixed with
-<code>&quot;data-&quot;</code> or <code>&quot;aria-&quot;</code>, depending on the function.</p>
-    <p>When expressed in html, attributes themselves have the properties:</p>
-    <p><ul>
-<li> Logical values are expressed as <code>&quot;true&quot;</code> or <code>&quot;false&quot;</code>.
-  </li>
-<li> Time durations are expressed as number of milliseconds.
-  </li>
-<li> Vector (non scalar) values are expressed in a space-delimited list.
-</li>
-</ul></p>
+an html elements' attributes. These attribute names are prefixed with
+<code>"data-"</code> or <code>"aria-"</code>, depending on the function.</p>
+<p>When expressed in html, attributes themselves have the properties:</p><ul>
+<li><p>Logical values are expressed as <code>"true"</code> or <code>"false"</code>.</p></li>
+<li><p>Time durations are expressed as number of milliseconds.</p></li>
+<li><p>Vector (non scalar) values are expressed in a space-delimited list.</p></li>
+</ul>
     <p>The purpose of this function is to let you express these values in ways
-familiar to you as an R user. For example:</p>
-    <p><ul>
-<li> Logical values can be expressed as logicals: <code>TRUE</code> or <code>FALSE</code>.
-  </li>
-<li> Time durations can be expressed using lubridate durations.
-  </li>
-<li> Vector (non scalar) values can be expressed as vectors.
-</li>
-</ul></p>
+familiar to you as an R user. For example:</p><ul>
+<li><p>Logical values can be expressed as logicals: <code>TRUE</code> or <code>FALSE</code>.</p></li>
+<li><p>Time durations can be expressed using lubridate durations.</p></li>
+<li><p>Vector (non scalar) values can be expressed as vectors.</p></li>
+</ul>
     <p>Note that this returns a modified copy of the tag sent to it, so it is pipeable.</p>
     
     <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
 
-    <p><a href = 'Boostrap Javascript Components'>http://getbootstrap.com/javascript</a></p>
+    <p><a href = 'http://getbootstrap.com/javascript'>Boostrap Javascript Components</a></p>
     
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'><span class='fu'>library</span>(<span class='st'>"htmltools"</span>)
-<span class='fu'>library</span>(<span class='st'>"lubridate"</span>)</div><div class='output co'>#&gt; <span class='message'></span>
-#&gt; <span class='message'>Attaching package: ‘lubridate’</span></div><div class='output co'>#&gt; <span class='message'>The following object is masked from ‘package:base’:</span>
-#&gt; <span class='message'></span>
-#&gt; <span class='message'>    date</span></div><div class='input'>
+<span class='fu'>library</span>(<span class='st'>"lubridate"</span>)
+
 <span class='no'>tags</span>$<span class='fu'>div</span>() <span class='kw'>%&gt;%</span>
   <span class='fu'>bs_set_data</span>(
     <span class='kw'>target</span> <span class='kw'>=</span> <span class='st'>"#foobar"</span>,
     <span class='kw'>delay</span> <span class='kw'>=</span> <span class='fu'>dseconds</span>(<span class='fl'>1</span>),
     <span class='kw'>placement</span> <span class='kw'>=</span> <span class='fu'>c</span>(<span class='st'>"right"</span>, <span class='st'>"auto"</span>)
   ) <span class='kw'>%&gt;%</span>
-  <span class='fu'>bs_set_aria</span>(<span class='kw'>expanded</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>)</div><div class='output co'>#&gt; &lt;div data-target=&quot;#foobar&quot; data-delay=&quot;1000&quot; data-placement=&quot;right auto&quot; aria-expanded=&quot;false&quot;&gt;&lt;/div&gt;</div></pre>
+  <span class='fu'>bs_set_aria</span>(<span class='kw'>expanded</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>)</div><div class='output co'>#&gt; &lt;div data-target="#foobar" data-delay="1000" data-placement="right auto" aria-expanded="false"&gt;&lt;/div&gt;</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>
