@@ -32,6 +32,8 @@ This function makes it a little easier to make Bootstrap-friendly panels;
 it wraps the \code{\link[htmltools:tags]{htmltools::tags()}} function for panels
 }
 \examples{
+library("htmltools")
+
 bs_panel(
   panel_type = "primary",
   heading = tags$h3("title"),
