@@ -16,6 +16,8 @@
 #'
 #' @return [htmltools::tag()], `<button/>`
 #' @examples
+#' library("htmltools")
+#'
 #' bs_panel(
 #'   panel_type = "primary",
 #'   heading = tags$h3("title"),
