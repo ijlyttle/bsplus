@@ -37,7 +37,13 @@ $('.panel-collapse-leader').on('show.bs.collapse', function () {
    * 'panel-collapse-leader' has been expanded, or shown.
    */
 
-  var is_valid = bsplus_collpase_validator(event.target, this);
+  var is_valid = false
+  if (typeof event !== 'undefined') {
+    is_valid = bsplus_collpase_validator(event.target, this);
+  } else {
+    //console.log("x40(b): event undefined ");
+    is_valid = true
+  }
 
   if (is_valid){
     /*  finds the closest parent with the class name 'panel' */
@@ -59,7 +65,13 @@ $('.panel-collapse-leader').on('show.bs.collapse', function () {
 
 $('.panel-collapse-leader').on('hide.bs.collapse', function () {
 
-  var is_valid = bsplus_collpase_validator(event.target, this);
+  var is_valid = false
+  if (typeof event !== 'undefined') {
+    is_valid = bsplus_collpase_validator(event.target, this);
+  } else {
+    //console.log("x66(c): event NOT DEFINED");
+    is_valid = true
+  }
 
   if (is_valid){
 
