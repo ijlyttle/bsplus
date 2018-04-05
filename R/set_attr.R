@@ -117,9 +117,9 @@ bs_set_attr <- function(tag, .prefix = "data", ...){
 
 #' Sets Bootstrap data- and aria- attributes.
 #'
-#' Helper function to manage attributes for Bootstrap's Javascript components.
+#' Helper function to manage attributes for Bootstrap's JavaScript components.
 #'
-#' One of the mechanisms used by the API for Boostrap Javascript-components is
+#' One of the mechanisms used by the API for Boostrap JavaScript-components is
 #' an html elements' attributes. These attribute names are prefixed with
 #' \code{"data-"} or \code{"aria-"}, depending on the function.
 #'
@@ -159,7 +159,7 @@ bs_set_attr <- function(tag, .prefix = "data", ...){
 #'   bs_set_aria(expanded = FALSE)
 #' @export
 #'
-#' @seealso \href{http://getbootstrap.com/javascript}{Boostrap Javascript Components}
+#' @seealso \href{http://getbootstrap.com/javascript}{Boostrap JavaScript Components}
 #
 bs_set_data <- function(tag, ...){
   bs_set_attr(tag, .prefix = "data", ...)

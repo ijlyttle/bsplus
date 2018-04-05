@@ -31,7 +31,7 @@
 #' @param spec_side           numeric, column specification for sidebar panels
 #' @param spec_main           numeric, column specification for main panels
 #' @param position            character, indicates where to put the sidebar panels with
-#'    repspect to the main panels
+#'    respect to the main panels
 #' @param tag                 \code{htmltools::\link[htmltools]{tag}},
 #'   accordion-sidebar \code{<div/>} to which to append a panel
 #' @param panel_type_active   character, indicated bootstrap type for active-panel header,
@@ -46,7 +46,7 @@
 #'   content for the sidebar panel
 #' @param content_main        character (HTML) or \code{htmltools::\link[htmltools]{tagList}},
 #'   content for the main panel
-#' @param ...                 other args (not used)
+#' @param ...                 other arguments (not used)
 #'
 #' @return \code{bsplus_accsidebar} object (\code{htmltools::\link[htmltools]{tag}},
 #'   \code{<div/>})

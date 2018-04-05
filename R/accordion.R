@@ -28,7 +28,7 @@
 #'   title for the panel heading
 #' @param content          character (HTML) or \code{htmltools::\link[htmltools]{tagList}},
 #'   content for the panel body
-#' @param ...              other args (not used)
+#' @param ...              other arguments (not used)
 #' @param panel_type      character, one of the standard Bootstrap types
 #'   \code{c("default", "primary", "success", "info", "warning", "danger")}
 #' @param use_heading_link logical, indicates whether to make the entire panel heading
