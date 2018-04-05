@@ -1,4 +1,4 @@
-# bsplus 0.1.0.9
+# bsplus 0.1.1
 
 - fixes an S3/S4 dispatch bug in `bs_attr()` (#34)
 
