@@ -30,7 +30,7 @@ also serves as root id for slides appended using \code{bs_append()}}
 }
 \value{
 \code{bsplus_carousel} object (\code{htmltools::\link[htmltools]{tag}},
-  \code{<div/>})
+\code{<div/>})
 }
 \description{
 A carousel is used to enclose a set of (typically) images,
@@ -42,8 +42,8 @@ All of these functions return a \code{bsplus_carousel} object
 compose a carousel by piping. There are two parts to this system:
 
 \enumerate{
-  \item{A constructor function for the carousel, \code{bs_carousel()}}
-  \item{A function to append a slide to the carousel, \code{bs_append()}}
+\item{A constructor function for the carousel, \code{bs_carousel()}}
+\item{A function to append a slide to the carousel, \code{bs_append()}}
 }
 
 The verb \emph{append} is used to signify that you can append an arbitrary
@@ -64,6 +64,5 @@ bs_carousel(id = "with_the_beatles") \%>\%
 }
 \seealso{
 \url{http://getbootstrap.com/javascript/#carousel},
-  \code{\link{bs_carousel_image}}, \code{\link{bs_carousel_caption}}
+\code{\link{bs_carousel_image}}, \code{\link{bs_carousel_caption}}
 }
-

@@ -1,0 +1,13 @@
+pandoc: 2.1.3
+pkgdown: 0.1.0.9000
+pkgdown_sha: b074c575119c35459f544f15e3dae3a6d617d9bb
+articles:
+  accordion: accordion.html
+  accordion_sidebar: accordion_sidebar.html
+  carousel: carousel.html
+  collapse: collapse.html
+  modal: modal.html
+  overview: overview.html
+  shiny_help_links: shiny_help_links.html
+  tooltip_popover: tooltip_popover.html
+

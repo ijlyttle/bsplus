@@ -36,10 +36,9 @@ and a popover into a \code{tag}.
 }
 \examples{
 library("htmltools")
-tags$button(type = "button", class = "btn btn-default", "I'm a button") \%>\%
+bs_button("I'm a button") \%>\%
   bs_embed_tooltip(title = "I'm a tooltip")
 }
 \seealso{
 \code{\link{bs_embed_popover}}, \url{http://getbootstrap.com/javascript/#tooltips}
 }
-

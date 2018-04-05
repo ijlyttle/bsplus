@@ -26,13 +26,15 @@
 #' \code{bs_modal_closebutton()} can be useful.
 #'
 #' @param id       character, unique id for the modal window
-#' @param title    character, title for the modal window (or close-button)
+#' @param title    character, title for the modal window (this argument is deprecated
+#'  for \code{bs_modal_closebutton}, use \code{label} instead)
 #' @param body     character (HTML) or \code{htmltools::\link[htmltools]{tagList}},
 #'   content for the body of the modal window
 #' @param footer   character (HTML) or \code{htmltools::\link[htmltools]{tagList}},
 #'   content for the footer of the modal window
 #' @param size     character, size of the modal window
 #' @param id_modal character, unique id of modal window to attach
+#' @param label    character (HTML), label for the close-button
 #' @param tag      \code{htmltools::\link[htmltools]{tag}},
 #'   button or link to which to attach the modal window
 #'
@@ -49,7 +51,7 @@
 #' library("shiny")
 #'
 #' bs_modal(id = "modal", title = "I'm a modal", body = "Yes, I am.")
-#' tags$button(type = "button", class = "btn btn-default", "Click for modal") %>%
+#' bs_button("Click for modal") %>%
 #'   bs_attach_modal(id_modal = "modal")
 #'
 #' bs_modal(
@@ -58,7 +60,7 @@
 #'   size = "large",
 #'   body = includeMarkdown(system.file("markdown", "modal.md", package = "bsplus"))
 #' )
-#' tags$button(type = "button", class = "btn btn-default", "Click for modal") %>%
+#' bs_button("Click for modal") %>%
 #'   bs_attach_modal(id_modal = "modal_large")
 #'
 #' @export
@@ -66,7 +68,7 @@
 bs_modal <- function(id,
                      title,
                      body,
-                     footer = bs_modal_closebutton(title = "Close"),
+                     footer = bs_modal_closebutton(label = "Close"),
                      size = c("medium", "large", "small")){
 
   # arg match on size
@@ -90,15 +92,14 @@ bs_modal <- function(id,
   id_title <- paste(id, "title", sep = "-")
 
   div <- htmltools::tags$div
-  button <- htmltools::tags$button
   span <- htmltools::tags$span
 
   modal_button <-
-    button(
+    htmltools::tags$button(
       type = "button",
       class = "close",
       span(htmltools::HTML("&times;")) %>% bs_set_aria(hidden = "true")
-    ) %>%
+     ) %>%
     bs_set_data(dismiss = "modal") %>%
     bs_set_aria(label = "Close")
 
@@ -136,13 +137,14 @@ bs_modal <- function(id,
 #' @rdname bs_modal
 #' @export
 #'
-bs_modal_closebutton <- function(title = "Close"){
+bs_modal_closebutton <- function(label = "Close", title){
 
-  htmltools::tags$button(
-    type = "button",
-    class = "btn btn-default",
-    title
-  ) %>%
+  if (!missing(title)){
+    warning("title argument deprecated, use label instead")
+    label <- title
+  }
+
+  bs_button(label, button_type = "default") %>%
     bs_set_data(dismiss = "modal")
 }
 

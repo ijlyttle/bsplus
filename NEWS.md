@@ -1,8 +1,20 @@
-## bsplus 0.1.0.9000
+# bsplus 0.1.0.9000
+
+## To do
+
+- adds `bs_wrap_responsive()` to wrap a tag in a responsive `<div/>`
+
+- adds `bs_well()` to create wells
+
+- adds `bs_panel()` to create panels
+
+## Done
+
+- adds wrappers for Bootstrap components: `bs_button()` to create buttons
 
 - version bump for development
 
-## bsplus 0.1.0
+# bsplus 0.1.0
 
 - deprecates `render_html_fragment()` (#24, solution proposed by @jpmarindiaz)
 

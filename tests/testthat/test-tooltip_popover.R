@@ -5,7 +5,7 @@ library("htmltools")
 js_tooltip <- use_bs_tooltip()
 js_popover <- use_bs_popover()
 
-button <- tags$button("foo", class = "btn")
+button <- bs_button("foo")
 button_tooltip <-
   button %>%
   bs_embed_tooltip(title = "tooltip")
@@ -23,7 +23,7 @@ test_that("tooltip works", {
     .tag_validate(
       button_tooltip,
       name = "button",
-      class = "btn",
+      class = "btn btn-default",
       title = "tooltip",
       `data-toggle` = "tooltip",
       `data-placement` = "top"
@@ -37,7 +37,7 @@ test_that("popover works", {
     .tag_validate(
       button_popover,
       name = "button",
-      class = "btn",
+      class = "btn btn-default",
       title = "popover title",
       `data-toggle` = "popover",
       `data-content` = "popover content",

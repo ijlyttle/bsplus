@@ -13,19 +13,19 @@ library("bsplus")
 Tooltips and popovers are used to add additional content, like short notes. They can be useful for short help-documentation. A tooltip is used to embed a short note into a tag; by default they are activated by hovering over the tag. A popover is used to embed a longer note into a tag; by default they are activated by clicking on the tag. A tooltip has only a text `title`; a popover has a `title`, which is generally text, and `content`, which can be HTML.
 
 ```{r}
-tags$button(type = "button", class = "btn btn-default", "Hover for tooltip") %>%
+bs_button("Hover for tooltip") %>%
   bs_embed_tooltip(title = "I'm a tooltip")
 ```
 
 ```{r}
-tags$button(type = "button", class = "btn btn-default", "Click for popover") %>%
+bs_button("Click for popover") %>%
   bs_embed_popover(title = "I'm a popover", content = "Really!")
 ```
 
 Both of these functions have an additional argument, `placement`, which defaults to `"top"`, following the Bootstrap default. The possible values are `c("top", "bottom", "left", "right", "auto")`.
 
 ```{r}
-tags$button(type = "button", class = "btn btn-default", "Another tooltip") %>%
+bs_button("Another tooltip") %>%
   bs_embed_tooltip(title = "I'm on the right", placement = "right")
 ```
 

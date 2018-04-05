@@ -3,120 +3,121 @@ template:
     bootswatch: sandstone
   assets: "inst/pkgdown/assets"
 
-
 reference:
-- title: "Collapse, accordion, and accordion sidebar"
-  desc: >
-    All of these functions deal with collapsible elements. The foundation
-    is the collapse element; upon this, you can build a set of accordion panels.
-    For **shiny** apps, the accordion-sidebar framework may be useful as it can
-    give you another dimension with which to organize your UI.
+  - title: "Components"
+    desc: >
+      It may be useful to wrap a few Bootstrap components:
 
-    - Collapsible element
-        - [Article](../articles/collapse.html)
-        - [Boostrap reference](http://getbootstrap.com/javascript/#collapse)
+      - Button: [Boostrap reference](http://getbootstrap.com/css/#buttons)
+      - Panels: [Boostrap reference](http://getbootstrap.com/css/#panels)
+      - Wells: [Boostrap reference](http://getbootstrap.com/css/#wells)
+      - Responsive Embed: [Boostrap reference](http://getbootstrap.com/css/#responsive-embed)
+    contents:
+      - bs_button
+      - bs_panel
+  - title: "Collapse, accordion, and accordion sidebar"
+    desc: >
+      All of these functions deal with collapsible elements. The foundation
+      is the collapse element; upon this, you can build a set of accordion panels.
+      For **shiny** apps, the accordion-sidebar framework may be useful as it can
+      give you another dimension with which to organize your UI.
 
-    - Accordion panel-group
-        - [Article](../articles/accordion.html)
-        - [Boostrap reference](http://getbootstrap.com/javascript/#collapse-example-accordion)
+      - Collapsible element
+          - [Article](../articles/collapse.html)
+          - [Boostrap reference](http://getbootstrap.com/javascript/#collapse)
 
-    - Accordion-sidebar panel-group
-        - [Article](../articles/accordion_sidebar.html)
-        - [**Shiny** app](https://ijlyttle.shinyapps.io/accordion_sidebar_navbarpage)
+      - Accordion panel-group
+          - [Article](../articles/accordion.html)
+          - [Boostrap reference](http://getbootstrap.com/javascript/#collapse-example-accordion)
 
-    The verb *attach* is used with collapse elements; you create a collapse element,
-    then *attach* its `id` to a link or button tag. For accordions and accordion
-    sidebars, you create the framework tag, then *append* elements using the pipe.
+      - Accordion-sidebar panel-group
+          - [Article](../articles/accordion_sidebar.html)
+          - [**Shiny** app](https://ijlyttle.shinyapps.io/accordion_sidebar_navbarpage)
 
-    Also, accordion-sidebars require activation, which you can do by calling
-    `use_bs_accordion_sidebar()` once on your page.
+      The verb *attach* is used with collapse elements; you create a collapse element,
+      then *attach* its `id` to a link or button tag. For accordions and accordion
+      sidebars, you create the framework tag, then *append* elements using the pipe.
 
-  contents:
-    - bs_collapse
-    - bs_accordion
-    - bs_accordion_sidebar
+      Also, accordion-sidebars require activation, which you can do by calling
+      `use_bs_accordion_sidebar()` once on your page.
+    contents:
+      - bs_collapse
+      - bs_accordion
+      - bs_accordion_sidebar
+  - title: "Tooltip, popover, and modal window"
+    desc: >
+      Tooltips, popovers, and modals can be useful for including extra information
+      in your **rmarkdown** document or your **shiny** app.
 
-- title: "Tooltip, popover, and modal window"
-  desc: >
-    Tooltips, popovers, and modals can be useful for including extra information
-    in your **rmarkdown** document or your **shiny** app.
+      - Tooltip
+          - [Article](../articles/tooltip_popover.html)
+          - [Bootstrap reference](http://getbootstrap.com/javascript/#tooltips)
+      - Popover
+          - [Article](../articles/tooltip_popover.html)
+          - [Bootstrap reference](http://getbootstrap.com/javascript/#popovers)
+      - Modal window
+          - [Article](../articles/modals.html)
+          - [Boostrap reference](http://getbootstrap.com/javascript/#modals)
 
-    - Tooltip
-        - [Article](../articles/tooltip_popover.html)
-        - [Bootstrap reference](http://getbootstrap.com/javascript/#tooltips)
-    - Popover
-        - [Article](../articles/tooltip_popover.html)
-        - [Bootstrap reference](http://getbootstrap.com/javascript/#popovers)
-    - Modal window
-        - [Article](../articles/modals.html)
-        - [Boostrap reference](http://getbootstrap.com/javascript/#modals)
+      You can see tooltips, popovers, and modal windows in this
+      [**shiny** app](https://ijlyttle.shinyapps.io/tooltip_popover_modal).
 
-    You can see tooltips, popovers, and modal windows in this
-    [**shiny** app](https://ijlyttle.shinyapps.io/tooltip_popover_modal).
+      Different verbs are associated with these elements: you *embed* tooltips
+      and popovers into tags; whereas you create a modal element, then
+      *attach* its `id` to a tag.
 
-    Different verbs are associated with these elements: you *embed* tooltips
-    and popovers into tags; whereas you create a modal element, then
-    *attach* its `id` to a tag.
+      Also, tooltips and popovers require activation, which you can do calling
+      `use_bs_tooltip()` or `use_bs_popover()` once on your page.
+    contents:
+      - bs_embed_tooltip
+      - bs_embed_popover
+      - bs_modal
+  - title: "Carousel"
+    desc: >
+      Carousels are used to contain sets of "content", while showing one element
+      of the set at a time. Generally, the content are images, but it can be any HTML.
+      One way that a this could be a more-useful tool if an “easy” way can be found
+      to populate a carousel with images produced by **gganimate**.
 
-    Also, tooltips and popovers require activation, which you can do calling
-    `use_bs_tooltip()` or `use_bs_popover()` once on your page.
+        - [Article](../articles/carousel.html)
+        - [Bootstrap reference](http://getbootstrap.com/javascript/#carousel)
+    contents:
+    - bs_carousel
+    - bs_carousel_image
+    - bs_carousel_caption
+  - title: "Shiny UI extensions"
+    desc: >
+      One of the more-specific goals of this package is to make it easier to
+      incorporate help-documentation into your **shiny** apps. Some helper
+      functions are provided to create help-links, then embed them into labels
+      of **shiny** inputs.
 
-  contents:
-    - bs_embed_tooltip
-    - bs_embed_popover
-    - bs_modal
-
-- title: "Carousel"
-  desc: >
-    Carousels are used to contain sets of "content", while showing one element
-    of the set at a time. Generally, the content are images, but it can be any HTML.
-    One way that a this could be a more-useful tool if an “easy” way can be found
-    to populate a carousel with images produced by **gganimate**.
-
-      - [Article](../articles/carousel.html)
-      - [Bootstrap reference](http://getbootstrap.com/javascript/#carousel)
-
-  contents:
-  - bs_carousel
-  - bs_carousel_image
-  - bs_carousel_caption
-
-- title: "Shiny UI extensions"
-  desc: >
-    One of the more-specific goals of this package is to make it easier to
-    incorporate help-documentation into your **shiny** apps. Some helper
-    functions are provided to create help-links, then embed them into labels
-    of **shiny** inputs.
-
-    You can see these helper functions in action in this
-    [**shiny** app](https://ijlyttle.shinyapps.io/tooltip_popover_modal/).
-
-  contents:
-    - shiny_iconlink
-    - shinyInput_label_embed
-
-- title: "Helpers"
-  desc: >
-    The function `bs_set_data()` makes things a little easier for you by
-    prepending `"data-"` to each name and serializing values to the format
-    specified by the Bootstrap API. The function `bs_set_aria()` works
-    similarly to prepend `"aria-"` to each name.
-
-  contents:
-    - bs_set_aria
+      You can see these helper functions in action in this
+      [**shiny** app](https://ijlyttle.shinyapps.io/tooltip_popover_modal/).
+    contents:
+      - shiny_iconlink
+      - shinyInput_label_embed
+  - title: "Helpers"
+    desc: >
+      The function `bs_set_data()` makes things a little easier for you by
+      prepending `"data-"` to each name and serializing values to the format
+      specified by the Bootstrap API. The function `bs_set_aria()` works
+      similarly to prepend `"aria-"` to each name.
+    contents:
+      - bs_set_aria
 
 articles:
-- title: "Overview"
-  contents:
-  - overview
-- title: "Function families"
-  contents:
-  - collapse
-  - accordion
-  - accordion_sidebar
-  - tooltip_popover
-  - modal
-  - carousel
-  - shiny_help_links
+  - title: "Overview"
+    contents:
+    - overview
+  - title: "Function families"
+    contents:
+    - collapse
+    - accordion
+    - accordion_sidebar
+    - tooltip_popover
+    - modal
+    - carousel
+    - shiny_help_links
 
 

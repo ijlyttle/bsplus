@@ -18,11 +18,19 @@
 <!-- Font Awesome icons -->
 <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-T8Gy5hrqNKT+hzMclPo118YTQO6cYprQmhrYwIiQ/3axmI1hQomh7Ud2hPOy8SP1" crossorigin="anonymous">
 
+<!-- clipboard.js -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/1.7.1/clipboard.min.js" integrity="sha384-cV+rhyOuRHc9Ub/91rihWcGmMmCXDeksTtCihMupQHSsi8GIIRDG0ThDc3HGQFJ3" crossorigin="anonymous"></script>
 
 <!-- pkgdown -->
 <link href="../pkgdown.css" rel="stylesheet">
 <script src="../jquery.sticky-kit.min.js"></script>
 <script src="../pkgdown.js"></script>
+<meta property="og:title" content="Carousel — bs_append.bsplus_carousel" />
+
+<meta property="og:description" content="A carousel is used to enclose a set of (typically) images,
+providing controls to move slides back-and-forth." />
+<meta name="twitter:card" content="summary" />
+
 
 <!-- mathjax -->
 <script src='https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
@@ -31,6 +39,8 @@
 <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
 <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
 <![endif]-->
+
+
 
 
   </head>
@@ -46,18 +56,58 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="../index.html">bsplus</a>
+      <span class="navbar-brand">
+        <a class="navbar-link" href="../index.html">bsplus</a>
+        <span class="label label-default" data-toggle="tooltip" data-placement="bottom" title="Released package">0.1.0.9000</span>
+      </span>
     </div>
+
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
         <li>
+  <a href="../index.html">
+    <span class="fa fa-home fa-lg"></span>
+     
+  </a>
+</li>
+<li>
   <a href="../reference/index.html">Reference</a>
 </li>
-<li>
-  <a href="../articles/index.html">Articles</a>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+    Articles
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li>
+      <a href="../articles/accordion.html">Accordion</a>
+    </li>
+    <li>
+      <a href="../articles/accordion_sidebar.html">Accordion Sidebar</a>
+    </li>
+    <li>
+      <a href="../articles/carousel.html">Carousel</a>
+    </li>
+    <li>
+      <a href="../articles/collapse.html">Collapse</a>
+    </li>
+    <li>
+      <a href="../articles/modal.html">Modals</a>
+    </li>
+    <li>
+      <a href="../articles/overview.html">Overview</a>
+    </li>
+    <li>
+      <a href="../articles/shiny_help_links.html">Shiny-input help links</a>
+    </li>
+    <li>
+      <a href="../articles/tooltip_popover.html">Tooltips and popovers</a>
+    </li>
+  </ul>
 </li>
 <li>
-  <a href="../news/index.html">News</a>
+  <a href="../news/index.html">Changelog</a>
 </li>
       </ul>
       
@@ -69,6 +119,7 @@
   </a>
 </li>
       </ul>
+      
     </div><!--/.nav-collapse -->
   </div><!--/.container -->
 </div><!--/.navbar -->
@@ -76,10 +127,11 @@
       
       </header>
 
-      <div class="row">
+<div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
     <h1>Carousel</h1>
+    <small>Source: <a href='https://github.com/ijlyttle/bsplus/blob/master/R/append.R'><code>R/append.R</code></a>, <a href='https://github.com/ijlyttle/bsplus/blob/master/R/carousel.R'><code>R/carousel.R</code></a></small>
     </div>
 
     
@@ -92,7 +144,7 @@ providing controls to move slides back-and-forth.</p>
 
 <span class='fu'>bs_carousel</span>(<span class='no'>id</span>, <span class='kw'>use_indicators</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>, <span class='kw'>use_controls</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>)</pre>
     
-    <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a> Arguments</h2>
+    <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
@@ -117,7 +169,7 @@ caption for the slide</p></td>
     <tr>
       <th>id</th>
       <td><p>character, unique id for accordion <code>&lt;div/&gt;</code>,
-also serves as root id for slides appended using <code>bs_append()</code></p></td>
+also serves as root id for slides appended using <code><a href='bs_append.html'>bs_append()</a></code></p></td>
     </tr>
     <tr>
       <th>use_indicators</th>
@@ -132,15 +184,16 @@ also serves as root id for slides appended using <code>bs_append()</code></p></t
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
     <p><code>bsplus_carousel</code> object (<code>htmltools::<a href='http://www.rdocumentation.org/packages/htmltools/topics/tag'>tag</a></code>,
-  <code>&lt;div/&gt;</code>)</p>
+<code>&lt;div/&gt;</code>)</p>
     
     <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
 
     <p>All of these functions return a <code>bsplus_carousel</code> object
 (which is also an <code>htmltools::<a href='http://www.rdocumentation.org/packages/htmltools/topics/tag'>tag</a></code>, <code>&lt;div/&gt;</code>), so you can
-compose a carousel by piping. There are two parts to this system:</p><ol>
+compose a carousel by piping. There are two parts to this system:</p>
+<ol>
 <li><p>A constructor function for the carousel, <code>bs_carousel()</code></p></li>
-<li><p>A function to append a slide to the carousel, <code>bs_append()</code></p></li>
+<li><p>A function to append a slide to the carousel, <code><a href='bs_append.html'>bs_append()</a></code></p></li>
 </ol>
     <p>The verb <em>append</em> is used to signify that you can append an arbitrary
 number of slides to a carousel.</p>
@@ -151,8 +204,8 @@ happen to your page.</p>
     
     <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
 
-    <p><a href = 'http://getbootstrap.com/javascript/#carousel'>http://getbootstrap.com/javascript/#carousel</a>,
-  <code><a href='bs_carousel_image.html'>bs_carousel_image</a></code>, <code><a href='bs_carousel_caption.html'>bs_carousel_caption</a></code></p>
+    <div class='dont-index'><p><a href='http://getbootstrap.com/javascript/#carousel'>http://getbootstrap.com/javascript/#carousel</a>,
+<code><a href='bs_carousel_image.html'>bs_carousel_image</a></code>, <code><a href='bs_carousel_caption.html'>bs_carousel_caption</a></code></p></div>
     
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
@@ -209,11 +262,14 @@ happen to your page.</p>
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="http://hadley.github.io/pkgdown/">pkgdown</a>.</p>
+  <p>Site built with <a href="http://pkgdown.r-lib.org/">pkgdown</a>.</p>
 </div>
 
       </footer>
    </div>
 
+  
+
   </body>
 </html>
+

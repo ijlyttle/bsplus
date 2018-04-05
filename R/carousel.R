@@ -146,7 +146,7 @@ bs_carousel_caption <- function(title = NULL, body = NULL){
 #' @param ...   additional arguments passed to
 #'   \code{htmltools::\link[htmltools]{tag}$img}, typically includes \code{src}
 #'
-#' @return \code{htmltools::\link[htmltools]{tag}$img}
+#' @return \code{htmltools::\link[htmltools]{tag}}, \code{</img>}
 #'
 #' @seealso \code{\link{bs_carousel}}
 #' @export
