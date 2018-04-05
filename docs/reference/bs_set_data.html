@@ -27,7 +27,7 @@
 <script src="../pkgdown.js"></script>
 <meta property="og:title" content="Sets Bootstrap data- and aria- attributes. — bs_set_data" />
 
-<meta property="og:description" content="Helper function to manage attributes for Bootstrap's Javascript components." />
+<meta property="og:description" content="Helper function to manage attributes for Bootstrap's JavaScript components." />
 <meta name="twitter:card" content="summary" />
 
 
@@ -134,7 +134,7 @@
     </div>
 
     
-    <p>Helper function to manage attributes for Bootstrap's Javascript components.</p>
+    <p>Helper function to manage attributes for Bootstrap's JavaScript components.</p>
     
 
     <pre class="usage"><span class='fu'>bs_set_data</span>(<span class='no'>tag</span>, <span class='no'>...</span>)
@@ -160,7 +160,7 @@
     
     <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
 
-    <p>One of the mechanisms used by the API for Boostrap Javascript-components is
+    <p>One of the mechanisms used by the API for Boostrap JavaScript-components is
 an html elements' attributes. These attribute names are prefixed with
 <code>"data-"</code> or <code>"aria-"</code>, depending on the function.</p>
 <p>When expressed in html, attributes themselves have the properties:</p>
@@ -180,13 +180,15 @@ familiar to you as an R user. For example:</p>
     
     <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
 
-    <div class='dont-index'><p><a href='http://getbootstrap.com/javascript'>Boostrap Javascript Components</a></p></div>
+    <div class='dont-index'><p><a href='http://getbootstrap.com/javascript'>Boostrap JavaScript Components</a></p></div>
     
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'><span class='fu'>library</span>(<span class='st'>"htmltools"</span>)
-<span class='fu'>library</span>(<span class='st'>"lubridate"</span>)
-
+<span class='fu'>library</span>(<span class='st'>"lubridate"</span>)</div><div class='output co'>#&gt; <span class='message'></span>
+#&gt; <span class='message'>Attaching package: ‘lubridate’</span></div><div class='output co'>#&gt; <span class='message'>The following object is masked from ‘package:base’:</span>
+#&gt; <span class='message'></span>
+#&gt; <span class='message'>    date</span></div><div class='input'>
 <span class='no'>tags</span>$<span class='fu'><a href='http://www.rdocumentation.org/packages/htmltools/topics/builder'>div</a></span>() <span class='kw'>%&gt;%</span>
   <span class='fu'>bs_set_data</span>(
     <span class='kw'>target</span> <span class='kw'>=</span> <span class='st'>"#foobar"</span>,

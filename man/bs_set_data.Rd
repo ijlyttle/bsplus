@@ -18,10 +18,10 @@ bs_set_aria(tag, ...)
 \code{htmltools::\link[htmltools]{tag}}, modified copy of \code{tag}
 }
 \description{
-Helper function to manage attributes for Bootstrap's Javascript components.
+Helper function to manage attributes for Bootstrap's JavaScript components.
 }
 \details{
-One of the mechanisms used by the API for Boostrap Javascript-components is
+One of the mechanisms used by the API for Boostrap JavaScript-components is
 an html elements' attributes. These attribute names are prefixed with
 \code{"data-"} or \code{"aria-"}, depending on the function.
 
@@ -57,5 +57,5 @@ tags$div() \%>\%
   bs_set_aria(expanded = FALSE)
 }
 \seealso{
-\href{http://getbootstrap.com/javascript}{Boostrap Javascript Components}
+\href{http://getbootstrap.com/javascript}{Boostrap JavaScript Components}
 }

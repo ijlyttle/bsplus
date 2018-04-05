@@ -28,7 +28,7 @@ also serves as root id for panels appended using \code{bs_append()}}
 \item{spec_main}{numeric, column specification for main panels}
 
 \item{position}{character, indicates where to put the sidebar panels with
-repspect to the main panels}
+respect to the main panels}
 
 \item{tag}{\code{htmltools::\link[htmltools]{tag}},
 accordion-sidebar \code{<div/>} to which to append a panel}
@@ -42,7 +42,7 @@ content for the sidebar panel}
 \item{content_main}{character (HTML) or \code{htmltools::\link[htmltools]{tagList}},
 content for the main panel}
 
-\item{...}{other args (not used)}
+\item{...}{other arguments (not used)}
 
 \item{panel_type_active}{character, indicated bootstrap type for active-panel header,
 one of \code{c("default", "primary", "success", "info", "warning", "danger")}}
