@@ -7,11 +7,12 @@ Authors@R: c(
       given = "Ian",
       family = "Lyttle",
       email = "ian.lyttle@schneider-electric.com",
-      role = c("aut", "cre", "cph")
+      role = c("aut", "cre", "cph"),
+      comment = c(ORCID = "0000-0001-9962-4849"),
     ),
     person(family = "Schneider Electric", role = c("cph")),
     person(given = "Alex", family = "Shum", email = "alex@ALShum.com", role = c("ctb")),
-    person(given = "Emily", family = "Berry", email = "emily.berry@schneider-electric.com", role = c("ctb"))
+    person(given = "Emily", family = "Berry", email = "berrye123@gmail.com", role = c("ctb"))
   )
 Description: The Bootstrap framework lets you add some JavaScript functionality to your web site by
   adding attributes to your HTML tags - Bootstrap takes care of the JavaScript
@@ -28,12 +29,10 @@ Imports:
     lubridate,
     stringr,
     rmarkdown,
-    methods,
-    glue
+    methods
 URL: https://github.com/ijlyttle/bsplus
 BugReports: https://github.com/ijlyttle/bsplus/issues
-RoxygenNote: 6.0.1
-Roxygen: list(markdown = TRUE)
+RoxygenNote: 5.0.1
 Suggests: testthat,
     shiny,
     covr,
