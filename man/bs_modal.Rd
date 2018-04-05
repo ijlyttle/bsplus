@@ -36,10 +36,10 @@ button or link to which to attach the modal window}
 }
 \value{
 \describe{
-\item{\code{bs_modal()}}{\code{htmltools::\link[htmltools]{tag}}, \code{<div/>}}
-\item{\code{bs_attach_modal()}}{\code{htmltools::\link[htmltools]{tag}},
-modified copy of \code{tag}}
-\item{\code{bs_modal_closebutton()}}{\code{htmltools::\link[htmltools]{tag}}, \code{<button/>}}
+  \item{\code{bs_modal()}}{\code{htmltools::\link[htmltools]{tag}}, \code{<div/>}}
+  \item{\code{bs_attach_modal()}}{\code{htmltools::\link[htmltools]{tag}},
+    modified copy of \code{tag}}
+  \item{\code{bs_modal_closebutton()}}{\code{htmltools::\link[htmltools]{tag}}, \code{<button/>}}
 }
 }
 \description{
@@ -49,9 +49,9 @@ there are two parts to this system:
 }
 \details{
 \enumerate{
-\item{A modal window, created using \code{bs_modal()}}
-\item{At least one button or link to which the \code{id} of the
-modal window is attached, using \code{bs_attach_modal()}}
+  \item{A modal window, created using \code{bs_modal()}}
+  \item{At least one button or link to which the \code{id} of the
+  modal window is attached, using \code{bs_attach_modal()}}
 }
 
 The verb \emph{attach} is used to signify that we are attaching the \code{id} of our

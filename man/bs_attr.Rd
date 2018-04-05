@@ -33,9 +33,9 @@ character
 }
 \description{
 \itemize{
-\item character vectors collapsed to a space-delimited character string
-\item logicals are converted to "true" or "false"
-\item lubridate durations are converted to numeric (milliseconds)
+  \item character vectors collapsed to a space-delimited character string
+  \item logicals are converted to "true" or "false"
+  \item lubridate durations are converted to numeric (milliseconds)
 }
 }
 \keyword{internal}

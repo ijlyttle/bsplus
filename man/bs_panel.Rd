@@ -12,24 +12,24 @@ bs_panel(id = NULL, panel_type = c("default", "primary", "success", "info",
 
 \item{panel_type}{character, one of the standard Bootstrap types}
 
-\item{heading}{character (HTML) or \code{\link[htmltools:tagList]{htmltools::tagList()}},
+\item{heading}{character (HTML) or [htmltools::tagList()],
 content for the heading}
 
-\item{body}{character (HTML) or \code{\link[htmltools:tagList]{htmltools::tagList()}},
+\item{body}{character (HTML) or [htmltools::tagList()],
 content for the body}
 
-\item{...}{character (HTML) or \code{\link[htmltools:tagList]{htmltools::tagList()}},
+\item{...}{character (HTML) or [htmltools::tagList()],
 other content}
 
-\item{footer}{character (HTML) or \code{\link[htmltools:tagList]{htmltools::tagList()}},
+\item{footer}{character (HTML) or [htmltools::tagList()],
 content for the footer}
 }
 \value{
-\code{\link[htmltools:tag]{htmltools::tag()}}, \code{<button/>}
+[htmltools::tag()], `<button/>`
 }
 \description{
 This function makes it a little easier to make Bootstrap-friendly panels;
-it wraps the \code{\link[htmltools:tags]{htmltools::tags()}} function for panels
+it wraps the [htmltools::tags()] function for panels
 }
 \examples{
 library("htmltools")

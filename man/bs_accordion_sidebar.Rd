@@ -55,7 +55,7 @@ Bootstrap panel}
 }
 \value{
 \code{bsplus_accsidebar} object (\code{htmltools::\link[htmltools]{tag}},
-\code{<div/>})
+  \code{<div/>})
 }
 \description{
 Combines Bootstrap accordion with
@@ -72,9 +72,9 @@ All of these functions return a \code{bsplus_accsidebar} object,
 compose an accordion sidebar by piping. There are three parts to this system:
 
 \enumerate{
-\item{A constructor function for the accordion-sidebar, \code{bs_accordion_sidebar()}}
-\item{A function to set options for subsequent panels, \code{bs_set_opts()}}
-\item{A function to append a panel-set to an accordion-sidebar, \code{bs_append()}}
+  \item{A constructor function for the accordion-sidebar, \code{bs_accordion_sidebar()}}
+  \item{A function to set options for subsequent panels, \code{bs_set_opts()}}
+  \item{A function to append a panel-set to an accordion-sidebar, \code{bs_append()}}
 }
 
 The verb \emph{append} is used to signify that you can append an arbitrary

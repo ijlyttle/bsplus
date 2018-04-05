@@ -1,16 +1,8 @@
-# bsplus 0.1.0.9000
+# bsplus 0.1.0.9
 
-## To do
+- fixes an S3/S4 dispatch bug in `bs_attr()` (#34)
 
-- adds `bs_wrap_responsive()` to wrap a tag in a responsive `<div/>`
-
-- adds `bs_well()` to create wells
-
-- adds `bs_panel()` to create panels
-
-## Done
-
-- adds wrappers for Bootstrap components: `bs_button()` to create buttons
+- adds wrappers for Bootstrap components: `bs_button()` to create buttons, `bs_panel()` to create panels
 
 - version bump for development
 

@@ -36,7 +36,7 @@ clickable.}
 }
 \value{
 \code{bsplus_accordion} object (\code{htmltools::\link[htmltools]{tag}},
-\code{<div/>})
+  \code{<div/>})
 }
 \description{
 An accordion is a set of collapsible panels where, at most, one panel-body is visible.
@@ -47,9 +47,9 @@ All of these functions return a \code{bsplus_accordion} object
 compose an accordion by piping. There are three parts to this system:
 
 \enumerate{
-\item{A constructor function for the accordion, \code{bs_accordion()}}
-\item{A function to set options for subsequent panels, \code{bs_set_opts()}}
-\item{A function to append a panel to the group, \code{bs_append()}}
+  \item{A constructor function for the accordion, \code{bs_accordion()}}
+  \item{A function to set options for subsequent panels, \code{bs_set_opts()}}
+  \item{A function to append a panel to the group, \code{bs_append()}}
 }
 
 The verb \emph{append} is used to signify that you can append an arbitrary
