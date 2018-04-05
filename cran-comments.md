@@ -50,7 +50,7 @@ Possibly mis-spelled words in DESCRIPTION:
   tooltips (20:81)
 ```
 
-* win-builder (R-oldrelease) found possibly invalid URLS - I have manially verified the validity of each:
+* win-builder (R-oldrelease) found possibly invalid URLS - I have manually verified the validity of each:
 
 ```
 Found the following (possibly) invalid URLs:
