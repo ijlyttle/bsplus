@@ -57,5 +57,5 @@ tags$div() \%>\%
   bs_set_aria(expanded = FALSE)
 }
 \seealso{
-\href{http://getbootstrap.com/javascript}{Boostrap JavaScript Components}
+\href{http://getbootstrap.com/javascript}{Bootstrap JavaScript Components}
 }
