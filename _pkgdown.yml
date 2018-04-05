@@ -8,10 +8,16 @@ reference:
     desc: >
       It may be useful to wrap a few Bootstrap components:
 
-      - Button: [Boostrap reference](http://getbootstrap.com/css/#buttons)
-      - Panels: [Boostrap reference](http://getbootstrap.com/css/#panels)
-      - Wells: [Boostrap reference](http://getbootstrap.com/css/#wells)
-      - Responsive Embed: [Boostrap reference](http://getbootstrap.com/css/#responsive-embed)
+        - Button: [Boostrap reference](http://getbootstrap.com/css/#buttons)
+
+        - Panels: [Boostrap reference](http://getbootstrap.com/css/#panels)
+
+      These components will be wrapped in a future version:
+
+        - Wells: [Boostrap reference](http://getbootstrap.com/css/#wells)
+
+        - Responsive Embed: [Boostrap reference](http://getbootstrap.com/css/#responsive-embed)
+
     contents:
       - bs_button
       - bs_panel
