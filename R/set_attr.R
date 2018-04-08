@@ -2,9 +2,9 @@
 #'
 #' \itemize{
 #'   \item character vectors collapsed to a space-delimited character string
-#'   \item logicals are converted to "true" or "false"
+#'   \item logicals are converted to `"true"` or `"false"`
 #'   \item lubridate durations are converted to numeric (milliseconds)
-#'   \item lists are converted to JSON.
+#'   \item lists are converted to JSON,
 #'     **Limitation**: [lubridate::duration()] objects within lists
 #'     will not translate correctly
 #' }
