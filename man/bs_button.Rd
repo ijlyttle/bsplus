@@ -20,7 +20,7 @@ of the button, passed to \code{htmltools::\link[htmltools]{tag}}}
 }
 \description{
 This function makes it a little easier to make Bootstrap-friendly buttons;
-it wraps the [htmltools::tags()] function for buttons.
+it wraps the \code{\link[htmltools:tags]{htmltools::tags()}} function for buttons.
 }
 \examples{
 bs_button("Click me", button_type = "primary")

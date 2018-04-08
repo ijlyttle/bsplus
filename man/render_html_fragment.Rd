@@ -25,7 +25,7 @@ useful to populate the content of a modal window.
 }
 \details{
 This function is being deprecated in favor of
- \code{shiny::\link[shiny]{includeMarkdown}}
+\code{shiny::\link[shiny]{includeMarkdown}}
 }
 \examples{
 \dontrun{

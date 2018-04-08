@@ -25,6 +25,6 @@ This would be used when we want to add items to a collection
 }
 \seealso{
 \code{\link{bs_accordion}}, \code{\link{bs_accordion_sidebar}},
-  \code{\link{bs_carousel}}
+\code{\link{bs_carousel}}
 }
 \keyword{internal}

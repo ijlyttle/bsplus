@@ -1,3 +1,9 @@
+# bsplus 0.1.1.9000
+
+- adds support for lists in `bs_attr()` (#50)
+
+- version bump for development
+
 # bsplus 0.1.1
 
 - fixes an S3/S4 dispatch bug in `bs_attr()` (#34)

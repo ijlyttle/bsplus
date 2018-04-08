@@ -4,6 +4,9 @@
 #'   \item character vectors collapsed to a space-delimited character string
 #'   \item logicals are converted to "true" or "false"
 #'   \item lubridate durations are converted to numeric (milliseconds)
+#'   \item lists are converted to JSON.
+#'     **Limitation**: [lubridate::duration()] objects within lists
+#'     will not translate correctly
 #' }
 #'
 #' @param x  value to be converted
@@ -43,6 +46,17 @@ bs_attr.logical <- function(x){
 }
 
 #' @rdname bs_attr
+#' @rawNamespace S3method(bs_attr,list)
+#' @keywords internal
+#' @export
+bs_attr.list <- function(x){
+
+  x <- jsonlite::toJSON(x, auto_unbox = TRUE)
+
+  x
+}
+
+#' @rdname bs_attr
 #' @rawNamespace S3method(bs_attr,Duration)
 #' @keywords internal
 #' @export
@@ -65,6 +79,12 @@ setGeneric("bs_attr", useAsDefault = bs_attr.default)
 #' @export
 #'
 setMethod("bs_attr", list("logical"), bs_attr.logical)
+
+#' @rdname bs_attr
+#' @keywords internal
+#' @export
+#'
+setMethod("bs_attr", list("list"), bs_attr.list)
 
 #' @rdname bs_attr
 #' @keywords internal

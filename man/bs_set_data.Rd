@@ -28,18 +28,18 @@ an html elements' attributes. These attribute names are prefixed with
 When expressed in html, attributes themselves have the properties:
 
 \itemize{
-  \item Logical values are expressed as \code{"true"} or \code{"false"}.
-  \item Time durations are expressed as number of milliseconds.
-  \item Vector (non scalar) values are expressed in a space-delimited list.
+\item Logical values are expressed as \code{"true"} or \code{"false"}.
+\item Time durations are expressed as number of milliseconds.
+\item Vector (non scalar) values are expressed in a space-delimited list.
 }
 
 The purpose of this function is to let you express these values in ways
 familiar to you as an R user. For example:
 
 \itemize{
-  \item Logical values can be expressed as logicals: \code{TRUE} or \code{FALSE}.
-  \item Time durations can be expressed using lubridate durations.
-  \item Vector (non scalar) values can be expressed as vectors.
+\item Logical values can be expressed as logicals: \code{TRUE} or \code{FALSE}.
+\item Time durations can be expressed using lubridate durations.
+\item Vector (non scalar) values can be expressed as vectors.
 }
 
 Note that this returns a modified copy of the tag sent to it, so it is pipeable.

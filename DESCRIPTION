@@ -1,7 +1,7 @@
 Package: bsplus
 Type: Package
 Title: Adds Functionality to the R Markdown + Shiny Bootstrap Framework
-Version: 0.1.1
+Version: 0.1.1.9000
 Authors@R: c(
     person(
       given = "Ian",
@@ -22,7 +22,7 @@ Description: The Bootstrap framework lets you add some JavaScript functionality 
 License: MIT + file LICENSE
 LazyData: TRUE
 Depends: R (>= 3.3.0)
-Imports: 
+Imports:
     htmltools,
     magrittr,
     purrr,
@@ -30,9 +30,11 @@ Imports:
     stringr,
     rmarkdown,
     methods,
-    glue
+    glue,
+    jsonlite
 URL: https://github.com/ijlyttle/bsplus
 BugReports: https://github.com/ijlyttle/bsplus/issues
+Roxygen: list(markdown = TRUE)
 RoxygenNote: 6.0.1
 Suggests: testthat,
     shiny,

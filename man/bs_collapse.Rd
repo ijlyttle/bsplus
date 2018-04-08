@@ -27,10 +27,10 @@ the collapsible \code{<div/>} to attach}
 }
 \value{
 \describe{
-  \item{\code{bs_collapse()}}{\code{htmltools::\link[htmltools]{tag}},
-  \code{<div/>}}
-  \item{\code{bs_attach_collapse()}}{\code{htmltools::\link[htmltools]{tag}},
-    modified copy of \code{tag} (button or link)}
+\item{\code{bs_collapse()}}{\code{htmltools::\link[htmltools]{tag}},
+\code{<div/>}}
+\item{\code{bs_attach_collapse()}}{\code{htmltools::\link[htmltools]{tag}},
+modified copy of \code{tag} (button or link)}
 }
 }
 \description{
@@ -42,10 +42,10 @@ by clicking a button or a link.
 There are two parts to this system:
 
 \enumerate{
-  \item{A collapsible \code{<div/>}, created using \code{bs_collapse()}}
-  \item{At least one button (\code{<button/>}) or link (\code{<a/>})
-  to which the \code{id} of the collapsible \code{<div/>} is attached,
-  using \code{bs_attach_collapse()}}
+\item{A collapsible \code{<div/>}, created using \code{bs_collapse()}}
+\item{At least one button (\code{<button/>}) or link (\code{<a/>})
+to which the \code{id} of the collapsible \code{<div/>} is attached,
+using \code{bs_attach_collapse()}}
 }
 
 The verb \emph{attach} is used to signify that we are attaching the
