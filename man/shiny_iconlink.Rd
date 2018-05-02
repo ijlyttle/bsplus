@@ -4,10 +4,12 @@
 \alias{shiny_iconlink}
 \title{Create link containing Shiny icon}
 \usage{
-shiny_iconlink(name = "info-circle", ...)
+shiny_iconlink(name = "info-circle", id = NULL, ...)
 }
 \arguments{
 \item{name}{character, name of the icon, passed to \code{shiny::\link[shiny]{icon}}}
+
+\item{id}{character, option ID for the link}
 
 \item{...}{other arguments passed to \code{shiny::\link[shiny]{icon}}}
 }

@@ -6,6 +6,7 @@
 #' (or embed a popover into) into such a link.
 #'
 #' @param name  character, name of the icon, passed to \code{shiny::\link[shiny]{icon}}
+#' @param id    character, option ID for the link
 #' @param ...   other arguments passed to \code{shiny::\link[shiny]{icon}}
 #'
 #' @return \code{htmltools::\link[htmltools]{tag}}, \code{<a/>}
@@ -20,7 +21,7 @@
 #'   \code{\link{bs_embed_popover}}, \code{\link{bs_embed_tooltip}}
 #' @export
 #'
-shiny_iconlink <- function(name = "info-circle", ...){
+shiny_iconlink <- function(name = "info-circle", id = NULL, ...){
 
   if (!requireNamespace("shiny", quietly = TRUE)) {
     stop(
@@ -29,7 +30,7 @@ shiny_iconlink <- function(name = "info-circle", ...){
     )
   }
 
-  htmltools::tags$a(shiny::icon(name = name, ...), href = "#")
+  htmltools::tags$a(shiny::icon(name = name, ...), id = id, href = "#")
 }
 
 #' Embed an element into the label of a Shiny-input tag
