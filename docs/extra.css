@@ -1,0 +1,39 @@
+/* IJL fixes for bsplus */
+
+.panel h1, .panel h2, .panel h3, .panel h4 {
+  padding-top: 0;
+  margin-top: 10px;
+}
+
+.popover h1, .popover h2, .popover h3, .popover h4,
+.modal-dialog h1, .modal-dialog h2, .modal-dialog h3, .modal-dialog h4
+{
+  padding-top: 8px;
+  margin-top: 0;
+}
+
+.panel a.anchor,
+.popover a.anchor,
+.modal a.anchor
+{
+  width: 0;
+  height: 0;
+}
+
+.panel .hasAnchor,
+.popover .hasAnchor,
+.modal .hasAnchor
+{
+  margin-left: 0;
+}
+
+.btn
+{
+  margin-bottom: 10px;
+}
+
+.carousel
+{
+  margin-bottom: 10px;
+}
+

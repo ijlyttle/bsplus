@@ -25,11 +25,17 @@
 <link href="../pkgdown.css" rel="stylesheet">
 <script src="../jquery.sticky-kit.min.js"></script>
 <script src="../pkgdown.js"></script>
+
+
+
+  <link href="../extra.css" rel="stylesheet">
+  
 <meta property="og:title" content="Button — bs_button" />
 
 <meta property="og:description" content="This function makes it a little easier to make Bootstrap-friendly buttons;
-it wraps the [htmltools::tags()] function for buttons." />
+it wraps the htmltools::tags() function for buttons." />
 <meta name="twitter:card" content="summary" />
+
 
 
 <!-- mathjax -->
@@ -39,8 +45,6 @@ it wraps the [htmltools::tags()] function for buttons." />
 <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
 <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
 <![endif]-->
-
-
 
 
   </head>
@@ -58,7 +62,7 @@ it wraps the [htmltools::tags()] function for buttons." />
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">bsplus</a>
-        <span class="label label-default" data-toggle="tooltip" data-placement="bottom" title="Released package">0.1.1</span>
+        <span class="label label-default" data-toggle="tooltip" data-placement="bottom" title="Released package">0.1.1.9000</span>
       </span>
     </div>
 
@@ -131,13 +135,16 @@ it wraps the [htmltools::tags()] function for buttons." />
   <div class="col-md-9 contents">
     <div class="page-header">
     <h1>Button</h1>
-    <small>Source: <a href='https://github.com/ijlyttle/bsplus/blob/master/R/button.R'><code>R/button.R</code></a></small>
+    <small class="dont-index">Source: <a href='https://github.com/ijlyttle/bsplus/blob/master/R/button.R'><code>R/button.R</code></a></small>
+    <div class="hidden name"><code>bs_button.Rd</code></div>
     </div>
 
+    <div class="ref-description">
     
     <p>This function makes it a little easier to make Bootstrap-friendly buttons;
-it wraps the [htmltools::tags()] function for buttons.</p>
+it wraps the <code><a href='http://www.rdocumentation.org/packages/htmltools/topics/builder'>htmltools::tags()</a></code> function for buttons.</p>
     
+    </div>
 
     <pre class="usage"><span class='fu'>bs_button</span>(<span class='no'>label</span>, <span class='kw'>button_type</span> <span class='kw'>=</span> <span class='fu'>c</span>(<span class='st'>"default"</span>, <span class='st'>"primary"</span>, <span class='st'>"success"</span>, <span class='st'>"info"</span>,
   <span class='st'>"warning"</span>, <span class='st'>"danger"</span>), <span class='no'>...</span>)</pre>

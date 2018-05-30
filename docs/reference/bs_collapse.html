@@ -25,12 +25,18 @@
 <link href="../pkgdown.css" rel="stylesheet">
 <script src="../jquery.sticky-kit.min.js"></script>
 <script src="../pkgdown.js"></script>
+
+
+
+  <link href="../extra.css" rel="stylesheet">
+  
 <meta property="og:title" content="Collapsible element — bs_collapse" />
 
 <meta property="og:description" content="This is useful for content that you may wish to be hidden when the page is
 initialized, but that can be revealed (and subsequently hidden)
 by clicking a button or a link." />
 <meta name="twitter:card" content="summary" />
+
 
 
 <!-- mathjax -->
@@ -40,8 +46,6 @@ by clicking a button or a link." />
 <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
 <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
 <![endif]-->
-
-
 
 
   </head>
@@ -59,7 +63,7 @@ by clicking a button or a link." />
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">bsplus</a>
-        <span class="label label-default" data-toggle="tooltip" data-placement="bottom" title="Released package">0.1.1</span>
+        <span class="label label-default" data-toggle="tooltip" data-placement="bottom" title="Released package">0.1.1.9000</span>
       </span>
     </div>
 
@@ -132,14 +136,17 @@ by clicking a button or a link." />
   <div class="col-md-9 contents">
     <div class="page-header">
     <h1>Collapsible element</h1>
-    <small>Source: <a href='https://github.com/ijlyttle/bsplus/blob/master/R/collapse.R'><code>R/collapse.R</code></a></small>
+    <small class="dont-index">Source: <a href='https://github.com/ijlyttle/bsplus/blob/master/R/collapse.R'><code>R/collapse.R</code></a></small>
+    <div class="hidden name"><code>bs_collapse.Rd</code></div>
     </div>
 
+    <div class="ref-description">
     
     <p>This is useful for content that you may wish to be hidden when the page is
 initialized, but that can be revealed (and subsequently hidden)
 by clicking a button or a link.</p>
     
+    </div>
 
     <pre class="usage"><span class='fu'>bs_collapse</span>(<span class='no'>id</span>, <span class='kw'>content</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>show</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>)
 
@@ -179,10 +186,10 @@ the collapsible <code>&lt;div/&gt;</code> to attach</p></td>
 
     
 <dl class='dl-horizontal'>
-  <dt><code>bs_collapse()</code></dt><dd><p><code>htmltools::<a href='http://www.rdocumentation.org/packages/htmltools/topics/tag'>tag</a></code>,
-  <code>&lt;div/&gt;</code></p></dd>
-  <dt><code>bs_attach_collapse()</code></dt><dd><p><code>htmltools::<a href='http://www.rdocumentation.org/packages/htmltools/topics/tag'>tag</a></code>,
-    modified copy of <code>tag</code> (button or link)</p></dd>
+<dt><code>bs_collapse()</code></dt><dd><p><code>htmltools::<a href='http://www.rdocumentation.org/packages/htmltools/topics/tag'>tag</a></code>,
+<code>&lt;div/&gt;</code></p></dd>
+<dt><code>bs_attach_collapse()</code></dt><dd><p><code>htmltools::<a href='http://www.rdocumentation.org/packages/htmltools/topics/tag'>tag</a></code>,
+modified copy of <code>tag</code> (button or link)</p></dd>
 </dl>
 
     
@@ -192,8 +199,8 @@ the collapsible <code>&lt;div/&gt;</code> to attach</p></td>
 <ol>
 <li><p>A collapsible <code>&lt;div/&gt;</code>, created using <code>bs_collapse()</code></p></li>
 <li><p>At least one button (<code>&lt;button/&gt;</code>) or link (<code>&lt;a/&gt;</code>)
-  to which the <code>id</code> of the collapsible <code>&lt;div/&gt;</code> is attached,
-  using <code>bs_attach_collapse()</code></p></li>
+to which the <code>id</code> of the collapsible <code>&lt;div/&gt;</code> is attached,
+using <code>bs_attach_collapse()</code></p></li>
 </ol>
     <p>The verb <em>attach</em> is used to signify that we are attaching the
 <code>id</code> of our collapsible

@@ -25,6 +25,11 @@
 <link href="../pkgdown.css" rel="stylesheet">
 <script src="../jquery.sticky-kit.min.js"></script>
 <script src="../pkgdown.js"></script>
+
+
+
+  <link href="../extra.css" rel="stylesheet">
+  
 <meta property="og:title" content="Renders and returns an HTML fragment — render_html_fragment" />
 
 <meta property="og:description" content="This is a wrapper around the rmarkdown::render
@@ -34,6 +39,7 @@ useful to populate the content of a modal window." />
 <meta name="twitter:card" content="summary" />
 
 
+
 <!-- mathjax -->
 <script src='https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
 
@@ -41,8 +47,6 @@ useful to populate the content of a modal window." />
 <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
 <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
 <![endif]-->
-
-
 
 
   </head>
@@ -60,7 +64,7 @@ useful to populate the content of a modal window." />
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">bsplus</a>
-        <span class="label label-default" data-toggle="tooltip" data-placement="bottom" title="Released package">0.1.1</span>
+        <span class="label label-default" data-toggle="tooltip" data-placement="bottom" title="Released package">0.1.1.9000</span>
       </span>
     </div>
 
@@ -133,15 +137,18 @@ useful to populate the content of a modal window." />
   <div class="col-md-9 contents">
     <div class="page-header">
     <h1>Renders and returns an HTML fragment</h1>
-    <small>Source: <a href='https://github.com/ijlyttle/bsplus/blob/master/R/render_html_fragment.R'><code>R/render_html_fragment.R</code></a></small>
+    <small class="dont-index">Source: <a href='https://github.com/ijlyttle/bsplus/blob/master/R/render_html_fragment.R'><code>R/render_html_fragment.R</code></a></small>
+    <div class="hidden name"><code>render_html_fragment.Rd</code></div>
     </div>
 
+    <div class="ref-description">
     
     <p>This is a wrapper around the <code>rmarkdown::<a href='http://www.rdocumentation.org/packages/rmarkdown/topics/render'>render</a></code>
 function. The principal difference is that the function is designed to
 return an HTML fragment (rather than writing to a file). This function is
 useful to populate the content of a modal window.</p>
     
+    </div>
 
     <pre class="usage"><span class='fu'>render_html_fragment</span>(<span class='no'>input</span>, <span class='kw'>output_format</span> <span class='kw'>=</span> <span class='kw pkg'>rmarkdown</span><span class='kw ns'>::</span><span class='fu'><a href='http://www.rdocumentation.org/packages/rmarkdown/topics/html_fragment'>html_fragment</a></span>(), <span class='no'>...</span>)</pre>
     
@@ -170,7 +177,7 @@ useful to populate the content of a modal window.</p>
     <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
 
     <p>This function is being deprecated in favor of
- <code>shiny::<a href='http://www.rdocumentation.org/packages/shiny/topics/include'>includeMarkdown</a></code></p>
+<code>shiny::<a href='http://www.rdocumentation.org/packages/shiny/topics/include'>includeMarkdown</a></code></p>
     
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
