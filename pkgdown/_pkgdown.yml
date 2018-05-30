@@ -62,7 +62,7 @@ reference:
           - [Article](../articles/tooltip_popover.html)
           - [Bootstrap reference](http://getbootstrap.com/javascript/#popovers)
       - Modal window
-          - [Article](../articles/modals.html)
+          - [Article](../articles/modal.html)
           - [Boostrap reference](http://getbootstrap.com/javascript/#modals)
 
       You can see tooltips, popovers, and modal windows in this
