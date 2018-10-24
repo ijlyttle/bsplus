@@ -37,3 +37,8 @@
   margin-bottom: 10px;
 }
 
+/* fixes dragging of anchors by pkgdown */
+.panel-group a.anchor {
+  margin-left: 0;
+}
+

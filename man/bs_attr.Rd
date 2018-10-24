@@ -7,7 +7,6 @@
 \alias{bs_attr.logical}
 \alias{bs_attr.list}
 \alias{bs_attr.Duration}
-\alias{bs_attr}
 \alias{bs_attr,logical-method}
 \alias{bs_attr,list-method}
 \alias{bs_attr,Duration-method}

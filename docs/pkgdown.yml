@@ -1,6 +1,6 @@
-pandoc: '2.2'
-pkgdown: 1.0.0.9000
-pkgdown_sha: ec07721af836595483aa678822a26c3f285c5ffa
+pandoc: 2.2.1
+pkgdown: 1.1.0
+pkgdown_sha: ~
 articles:
   accordion: accordion.html
   accordion_sidebar: accordion_sidebar.html
