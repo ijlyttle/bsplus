@@ -30,9 +30,11 @@
 
   # if class is provided
   if (!is.null(class)){
-    class_observed <- htmltools::tagGetAttribute(tag, "class")
-    if (!identical(class_observed, class)){
-      stop("class is: ", class_observed, ", needs to be: ", class)
+    class_split <- split_class(class)
+    class_observed_split <-
+      split_class(htmltools::tagGetAttribute(tag, "class"))
+    if (!all(class_split %in% class_observed_split)){
+      stop("class is: ", class_observed, ", needs to include: ", class)
     }
   }
 
@@ -54,9 +56,8 @@
 
 
 # we will be able to get rid of this code
-get_class <- function(tag){
+split_class <- function(x) {
 
-  x <- htmltools::tagGetAttribute(tag, "class")
   x <- stringr::str_trim(x)
   x <- stringr::str_split(x, " ")
 
