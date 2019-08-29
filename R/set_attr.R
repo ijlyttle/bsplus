@@ -126,7 +126,7 @@ bs_set_attr <- function(tag, .prefix = "data", ...){
   names_to_keep <- setdiff(names_existing, names_new)
 
   # keep those attributes
-  tag$attribs <- tag$attribs[names_to_keep]
+  tag$attribs <- tag$attribs[names_existing %in% names_to_keep]
 
   # append these attributes to the tag
   args <- c(list(tag = tag), attributes_bs)
