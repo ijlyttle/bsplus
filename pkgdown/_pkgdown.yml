@@ -113,9 +113,6 @@ reference:
       - bs_set_aria
 
 articles:
-  - title: "Overview"
-    contents:
-    - overview
   - title: "Function families"
     contents:
     - collapse
