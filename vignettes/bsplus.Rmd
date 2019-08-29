@@ -1,5 +1,5 @@
 ---
-title: "Overview"
+title: "bsplus"
 author: "Ian Lyttle"
 date: "`r Sys.Date()`"
 output: rmarkdown::html_document
@@ -39,10 +39,6 @@ This family of functions is used to build some stand-alone components.
 ```{r}
 bs_button("This button does nothing", button_type = "warning")
 ```
-
-### Panel
-
-### Well
 
 ## Collapse
 
