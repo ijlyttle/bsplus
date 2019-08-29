@@ -3,6 +3,9 @@ template:
     bootswatch: sandstone
   assets: "inst/pkgdown/assets"
 
+development:
+  mode: auto
+
 reference:
   - title: "Components"
     desc: >
