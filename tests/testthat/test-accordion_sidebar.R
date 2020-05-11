@@ -54,10 +54,10 @@ acc_sidebar_side <- acc_sidebar[["children"]][[1]]
 acc_sidebar_main <- acc_sidebar[["children"]][[2]]
 
 test_that("constructor with different column-specs", {
-  expect_identical(tagGetAttribute(acc_sidebar_side, "class"),
-                   "col-sm-3 col-sm-offset-1")
-  expect_identical(tagGetAttribute(acc_sidebar_main, "class"),
-                   "col-sm-7 col-sm-offset-1")
+  expect_match(tagGetAttribute(acc_sidebar_side, "class"),
+                   "col-sm-3", fixed = TRUE)
+  expect_match(tagGetAttribute(acc_sidebar_main, "class"),
+                   "col-sm-7", fixed = TRUE)
 })
 
 js_acc_sidebar <- use_bs_accordion_sidebar()
