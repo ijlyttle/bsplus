@@ -4,9 +4,12 @@
 \alias{bs_button}
 \title{Button}
 \usage{
-bs_button(label, button_type = c("default", "primary", "success", "info",
-  "warning", "danger"), button_size = c("default", "large", "small",
-  "extra-small"), ...)
+bs_button(
+  label,
+  button_type = c("default", "primary", "success", "info", "warning", "danger"),
+  button_size = c("default", "large", "small", "extra-small"),
+  ...
+)
 }
 \arguments{
 \item{label}{character (HTML), button label}

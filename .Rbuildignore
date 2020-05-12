@@ -10,5 +10,5 @@
 ^.*/rsconnect$
 ^cran-comments\.md$
 ^vignettes$
-
+^pkgdown$
 ^\.github$

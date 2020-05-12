@@ -6,8 +6,13 @@
 \alias{bs_attach_modal}
 \title{Modal window}
 \usage{
-bs_modal(id, title, body, footer = bs_modal_closebutton(label = "Close"),
-  size = c("medium", "large", "small"))
+bs_modal(
+  id,
+  title,
+  body,
+  footer = bs_modal_closebutton(label = "Close"),
+  size = c("medium", "large", "small")
+)
 
 bs_modal_closebutton(label = "Close", title)
 

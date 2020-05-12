@@ -7,17 +7,24 @@
 \alias{bs_set_opts.bsplus_accordion_sidebar}
 \title{Accordion-sidebar panel-group}
 \usage{
-bs_accordion_sidebar(id, spec_side = c(width = 4, offset = 0),
-  spec_main = c(width = 8, offset = 0), position = c("left", "right"))
+bs_accordion_sidebar(
+  id,
+  spec_side = c(width = 4, offset = 0),
+  spec_main = c(width = 8, offset = 0),
+  position = c("left", "right")
+)
 
 use_bs_accordion_sidebar()
 
-\method{bs_append}{bsplus_accordion_sidebar}(tag, title_side, content_side,
-  content_main, ...)
+\method{bs_append}{bsplus_accordion_sidebar}(tag, title_side, content_side, content_main, ...)
 
-\method{bs_set_opts}{bsplus_accordion_sidebar}(tag,
-  panel_type_active = "success", panel_type_inactive = "primary",
-  use_main_enclosure = TRUE, ...)
+\method{bs_set_opts}{bsplus_accordion_sidebar}(
+  tag,
+  panel_type_active = "success",
+  panel_type_inactive = "primary",
+  use_main_enclosure = TRUE,
+  ...
+)
 }
 \arguments{
 \item{id}{character, unique id for accordion-sidebar \code{<div/>},

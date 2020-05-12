@@ -4,9 +4,14 @@
 \alias{bs_panel}
 \title{Panel}
 \usage{
-bs_panel(id = NULL, panel_type = c("default", "primary", "success",
-  "info", "warning", "danger"), heading = NULL, body = NULL, ...,
-  footer = NULL)
+bs_panel(
+  id = NULL,
+  panel_type = c("default", "primary", "success", "info", "warning", "danger"),
+  heading = NULL,
+  body = NULL,
+  ...,
+  footer = NULL
+)
 }
 \arguments{
 \item{id}{character, unique identifier}
@@ -26,7 +31,7 @@ other content}
 content for the footer}
 }
 \value{
-\code{\link[htmltools:tag]{htmltools::tag()}}, \code{<button/>}
+\code{\link[htmltools:tag]{htmltools::tag()}}, \verb{<button/>}
 }
 \description{
 This function makes it a little easier to make Bootstrap-friendly panels;
