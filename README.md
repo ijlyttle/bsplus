@@ -1,7 +1,10 @@
 # bsplus
 
-[![Coverage Status](https://img.shields.io/codecov/c/github/ijlyttle/bsplus/master.svg)](https://codecov.io/github/ijlyttle/bsplus?branch=master)
+<!-- badges: start -->
 [![CRAN status](https://www.r-pkg.org/badges/version/bsplus)](https://cran.r-project.org/package=bsplus)
+[![R build status](https://github.com/ijlyttle/bsplus/workflows/R-CMD-check/badge.svg)](https://github.com/ijlyttle/bsplus/actions)
+[![Coverage Status](https://img.shields.io/codecov/c/github/ijlyttle/bsplus/master.svg)](https://codecov.io/github/ijlyttle/bsplus?branch=master)
+<!-- badges: end -->
 
 Please note that if you are viewing this page at this package's [pkgdown site](http://ijlyttle.github.io/bsplus), despite the "released" tag, this site represents a recent *development* version of this package. The most-recent version of the development package has its own [pkgdown site](http://ijlyttle.github.io/bsplus/dev). 
 

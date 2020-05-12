@@ -11,3 +11,4 @@
 ^cran-comments\.md$
 ^vignettes$
 
+^\.github$
