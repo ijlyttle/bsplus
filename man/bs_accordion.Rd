@@ -10,8 +10,7 @@ bs_accordion(id)
 
 \method{bs_append}{bsplus_accordion}(tag, title, content, ...)
 
-\method{bs_set_opts}{bsplus_accordion}(tag, panel_type = "primary",
-  use_heading_link = TRUE, ...)
+\method{bs_set_opts}{bsplus_accordion}(tag, panel_type = "primary", use_heading_link = TRUE, ...)
 }
 \arguments{
 \item{id}{character, unique id for accordion \code{<div/>},

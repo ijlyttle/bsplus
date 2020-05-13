@@ -5,8 +5,7 @@
 \alias{use_bs_popover}
 \title{Popover}
 \usage{
-bs_embed_popover(tag, title = NULL, content = NULL,
-  placement = "top", ...)
+bs_embed_popover(tag, title = NULL, content = NULL, placement = "top", ...)
 
 use_bs_popover()
 }

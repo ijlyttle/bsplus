@@ -4,8 +4,7 @@
 \alias{render_html_fragment}
 \title{Renders and returns an HTML fragment}
 \usage{
-render_html_fragment(input, output_format = rmarkdown::html_fragment(),
-  ...)
+render_html_fragment(input, output_format = rmarkdown::html_fragment(), ...)
 }
 \arguments{
 \item{input}{character, path to input file}

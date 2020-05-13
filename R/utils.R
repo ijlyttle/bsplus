@@ -34,7 +34,7 @@
     class_observed_split <-
       split_class(htmltools::tagGetAttribute(tag, "class"))
     if (!all(class_split %in% class_observed_split)){
-      stop("class is: ", class_observed, ", needs to include: ", class)
+      stop("class is: ", class_observed_split, ", needs to include: ", class_split)
     }
   }
 
