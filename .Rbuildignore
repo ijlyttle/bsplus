@@ -12,3 +12,4 @@
 ^vignettes$
 ^pkgdown$
 ^\.github$
+^revdep$
