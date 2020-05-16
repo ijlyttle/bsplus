@@ -43,7 +43,7 @@
 
 <meta property="og:title" content="Accordion-sidebar panel-group — bs_accordion_sidebar" />
 <meta property="og:description" content="Combines Bootstrap accordion with
-the functionality of shiny::sidebarLayout,
+the functionality of shiny::[sidebarLayout][shiny::sidebarLayout],
 allowing you to add another dimension to your shiny apps." />
 
 
@@ -76,7 +76,7 @@ allowing you to add another dimension to your shiny apps." />
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">bsplus</a>
-        <span class="version label label-danger" data-toggle="tooltip" data-placement="bottom" title="In-development version">0.1.1.9005</span>
+        <span class="version label label-danger" data-toggle="tooltip" data-placement="bottom" title="In-development version">0.1.1.9006</span>
       </span>
     </div>
 
@@ -128,7 +128,7 @@ allowing you to add another dimension to your shiny apps." />
 
     <div class="ref-description">
     <p>Combines Bootstrap accordion with
-the functionality of <code>shiny::<a href='https://rdrr.io/pkg/shiny/man/sidebarLayout.html'>sidebarLayout</a></code>,
+the functionality of <code>shiny::[sidebarLayout][shiny::sidebarLayout]</code>,
 allowing you to add another dimension to your <strong>shiny</strong> apps.</p>
     </div>
 
@@ -176,22 +176,22 @@ respect to the main panels</p></td>
     </tr>
     <tr>
       <th>tag</th>
-      <td><p><code>htmltools::<a href='https://rdrr.io/pkg/htmltools/man/tag.html'>tag</a></code>,
+      <td><p><code>htmltools::[tag][htmltools::tag]</code>,
 accordion-sidebar <code>&lt;div/&gt;</code> to which to append a panel</p></td>
     </tr>
     <tr>
       <th>title_side</th>
-      <td><p>character (HTML) or <code>htmltools::<a href='https://rdrr.io/pkg/htmltools/man/tag.html'>tagList</a></code>,
+      <td><p>character (HTML) or <code>htmltools::[tagList][htmltools::tagList]</code>,
 title for the sidebar panel</p></td>
     </tr>
     <tr>
       <th>content_side</th>
-      <td><p>character (HTML) or <code>htmltools::<a href='https://rdrr.io/pkg/htmltools/man/tag.html'>tagList</a></code>,
+      <td><p>character (HTML) or <code>htmltools::[tagList][htmltools::tagList]</code>,
 content for the sidebar panel</p></td>
     </tr>
     <tr>
       <th>content_main</th>
-      <td><p>character (HTML) or <code>htmltools::<a href='https://rdrr.io/pkg/htmltools/man/tag.html'>tagList</a></code>,
+      <td><p>character (HTML) or <code>htmltools::[tagList][htmltools::tagList]</code>,
 content for the main panel</p></td>
     </tr>
     <tr>
@@ -217,7 +217,7 @@ Bootstrap panel</p></td>
 
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
-    <p><code>bsplus_accsidebar</code> object (<code>htmltools::<a href='https://rdrr.io/pkg/htmltools/man/tag.html'>tag</a></code>,
+    <p><code>bsplus_accsidebar</code> object (<code>htmltools::[tag][htmltools::tag]</code>,
 <code>&lt;div/&gt;</code>)</p>
     <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
 
@@ -225,7 +225,7 @@ Bootstrap panel</p></td>
 <code>use_bs_accordion_sidebar()</code> somewhere in your UI. This attaches some
 JavaScript needed for your accordion sidebar to work properly.</p>
 <p>All of these functions return a <code>bsplus_accsidebar</code> object,
-(which is also an <code>htmltools::<a href='https://rdrr.io/pkg/htmltools/man/tag.html'>tag</a></code>, <code>&lt;div/&gt;</code>), so you can
+(which is also an <code>htmltools::[tag][htmltools::tag]</code>, <code>&lt;div/&gt;</code>), so you can
 compose an accordion sidebar by piping. There are three parts to this system:</p>
 <ol>
 <li><p>A constructor function for the accordion-sidebar, <code>bs_accordion_sidebar()</code></p></li>

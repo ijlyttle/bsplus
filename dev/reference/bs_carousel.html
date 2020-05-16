@@ -75,7 +75,7 @@ providing controls to move slides back-and-forth." />
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">bsplus</a>
-        <span class="version label label-danger" data-toggle="tooltip" data-placement="bottom" title="In-development version">0.1.1.9005</span>
+        <span class="version label label-danger" data-toggle="tooltip" data-placement="bottom" title="In-development version">0.1.1.9006</span>
       </span>
     </div>
 
@@ -140,17 +140,17 @@ providing controls to move slides back-and-forth.</p>
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
       <th>tag</th>
-      <td><p><code>htmltools::<a href='https://rdrr.io/pkg/htmltools/man/tag.html'>tag</a></code>,
+      <td><p><code>htmltools::[tag][htmltools::tag]</code>,
 carousel <code>&lt;div/&gt;</code> to which to append a panel</p></td>
     </tr>
     <tr>
       <th>content</th>
-      <td><p>character (HTML) or <code>htmltools::<a href='https://rdrr.io/pkg/htmltools/man/tag.html'>tagList</a></code>,
+      <td><p>character (HTML) or <code>htmltools::[tagList][htmltools::tagList]</code>,
 content for the slide</p></td>
     </tr>
     <tr>
       <th>caption</th>
-      <td><p>character (HTML) or <code>htmltools::<a href='https://rdrr.io/pkg/htmltools/man/tag.html'>tagList</a></code>,
+      <td><p>character (HTML) or <code>htmltools::[tagList][htmltools::tagList]</code>,
 caption for the slide</p></td>
     </tr>
     <tr>
@@ -174,12 +174,12 @@ also serves as root id for slides appended using <code><a href='bs_append.html'>
 
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
-    <p><code>bsplus_carousel</code> object (<code>htmltools::<a href='https://rdrr.io/pkg/htmltools/man/tag.html'>tag</a></code>,
+    <p><code>bsplus_carousel</code> object (<code>htmltools::[tag][htmltools::tag]</code>,
 <code>&lt;div/&gt;</code>)</p>
     <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
 
     <p>All of these functions return a <code>bsplus_carousel</code> object
-(which is also an <code>htmltools::<a href='https://rdrr.io/pkg/htmltools/man/tag.html'>tag</a></code>, <code>&lt;div/&gt;</code>), so you can
+(which is also an <code>htmltools::[tag][htmltools::tag]</code>, <code>&lt;div/&gt;</code>), so you can
 compose a carousel by piping. There are two parts to this system:</p>
 <ol>
 <li><p>A constructor function for the carousel, <code>bs_carousel()</code></p></li>
@@ -195,7 +195,7 @@ happen to your page.</p>
     <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
 
     <div class='dont-index'><p><a href='http://getbootstrap.com/javascript/#carousel'>http://getbootstrap.com/javascript/#carousel</a>,
-<code><a href='bs_carousel_image.html'>bs_carousel_image</a></code>, <code><a href='bs_carousel_caption.html'>bs_carousel_caption</a></code></p></div>
+<code><a href='bs_carousel_image.html'>bs_carousel_image()</a></code>, <code><a href='bs_carousel_caption.html'>bs_carousel_caption()</a></code></p></div>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'><span class='fu'>bs_carousel</span>(<span class='kw'>id</span> <span class='kw'>=</span> <span class='st'>"with_the_beatles"</span>) <span class='kw'>%&gt;%</span>
