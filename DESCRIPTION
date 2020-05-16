@@ -1,7 +1,7 @@
 Package: bsplus
 Type: Package
 Title: Adds Functionality to the R Markdown + Shiny Bootstrap Framework
-Version: 0.1.1.9005
+Version: 0.1.1.9006
 Authors@R: c(
     person(
       given = "Ian",
@@ -36,6 +36,7 @@ URL: https://github.com/ijlyttle/bsplus
 BugReports: https://github.com/ijlyttle/bsplus/issues
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.1.0
+Encoding: UTF-8
 Suggests: testthat,
     shiny,
     covr,

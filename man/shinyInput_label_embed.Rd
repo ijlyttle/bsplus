@@ -7,9 +7,9 @@
 shinyInput_label_embed(tag, element)
 }
 \arguments{
-\item{tag}{Shiny input, such as \code{shiny::\link[shiny]{numericInput}}}
+\item{tag}{Shiny input, such as \verb{shiny::[numericInput][shiny::numericInput]}}
 
-\item{element}{\code{htmltools::\link[htmltools]{tag}} to be embedded
+\item{element}{\verb{htmltools::[tag][htmltools::tag]} to be embedded
 into label of \code{tag}}
 }
 \value{
@@ -23,7 +23,7 @@ right edge of the label.
 To promote consistency, the following convention is proposed:
 
 For links (activated by clicking), embed a \code{shiny::icon("info-circle")};
-this is the default for \code{\link{shiny_iconlink}}. For elements activated
+this is the default for \code{\link[=shiny_iconlink]{shiny_iconlink()}}. For elements activated
 by hovering, embed a \code{shiny::icon("info")}.
 }
 \examples{
@@ -37,5 +37,5 @@ numericInput(inputId = "foo", label = "Enter a number", value = 0) \%>\%
 
 }
 \seealso{
-\code{\link{shiny_iconlink}}
+\code{\link[=shiny_iconlink]{shiny_iconlink()}}
 }

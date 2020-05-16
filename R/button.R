@@ -7,12 +7,12 @@
 #' @param button_type character, one of the standard Bootstrap types
 #' @param button_size character, size of the button
 #' @param ... attributes (named arguments) and children (unnamed arguments)
-#'   of the button, passed to \code{htmltools::\link[htmltools]{tag}}
+#'   of the button, passed to `htmltools::[tag][htmltools::tag]`
 #'
-#' @return \code{htmltools::\link[htmltools]{tag}}, \code{<button/>}
+#' @return Object with S3 class, `shiny.tag`, `<button/>`.
 #' @examples
 #' bs_button("Click me", button_type = "primary", button_size = "small")
-#' @seealso \url{http://getbootstrap.com/css/#buttons}
+#' @seealso <http://getbootstrap.com/css/#buttons>
 #' @export
 #'
 bs_button <- function(

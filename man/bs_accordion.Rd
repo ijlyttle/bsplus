@@ -13,16 +13,16 @@ bs_accordion(id)
 \method{bs_set_opts}{bsplus_accordion}(tag, panel_type = "primary", use_heading_link = TRUE, ...)
 }
 \arguments{
-\item{id}{character, unique id for accordion \code{<div/>},
+\item{id}{character, unique id for accordion \verb{<div/>},
 also serves as root id for panels appended using \code{bs_append()}}
 
-\item{tag}{\code{htmltools::\link[htmltools]{tag}},
-accordion \code{<div/>} to which to append a panel}
+\item{tag}{\verb{htmltools::[tag][htmltools::tag]},
+accordion \verb{<div/>} to which to append a panel}
 
-\item{title}{character (HTML) or \code{htmltools::\link[htmltools]{tagList}},
+\item{title}{character (HTML) or \verb{htmltools::[tagList][htmltools::tagList]},
 title for the panel heading}
 
-\item{content}{character (HTML) or \code{htmltools::\link[htmltools]{tagList}},
+\item{content}{character (HTML) or \verb{htmltools::[tagList][htmltools::tagList]},
 content for the panel body}
 
 \item{...}{other arguments (not used)}
@@ -34,15 +34,15 @@ content for the panel body}
 clickable.}
 }
 \value{
-\code{bsplus_accordion} object (\code{htmltools::\link[htmltools]{tag}},
-\code{<div/>})
+\code{bsplus_accordion} object (\verb{htmltools::[tag][htmltools::tag]},
+\verb{<div/>})
 }
 \description{
 An accordion is a set of collapsible panels where, at most, one panel-body is visible.
 }
 \details{
 All of these functions return a \code{bsplus_accordion} object
-(which is also an \code{htmltools::\link[htmltools]{tag}}, \code{<div/>}), so you can
+(which is also an \verb{htmltools::[tag][htmltools::tag]}, \verb{<div/>}), so you can
 compose an accordion by piping. There are three parts to this system:
 
 \enumerate{

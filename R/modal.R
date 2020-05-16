@@ -5,46 +5,46 @@
 #' there are two parts to this system:
 #'
 #' \enumerate{
-#'   \item{A modal window, created using \code{bs_modal()}}
-#'   \item{At least one button or link to which the \code{id} of the
-#'   modal window is attached, using \code{bs_attach_modal()}}
+#'   \item{A modal window, created using `bs_modal()`}
+#'   \item{At least one button or link to which the `id` of the
+#'   modal window is attached, using `bs_attach_modal()`}
 #' }
 #'
-#' The verb \emph{attach} is used to signify that we are attaching the \code{id} of our
-#' modal window to the \code{tag} in question (generally a button or a link). This implies that
-#' you can attach the \code{id} of a modal window to more than one button or link.
+#' The verb *attach* is used to signify that we are attaching the `id` of our
+#' modal window to the `tag` in question (generally a button or a link). This implies that
+#' you can attach the `id` of a modal window to more than one button or link.
 #'
-#' It is your responsibility to ensure that \code{id} is unique
-#' among HTML elements in your page. If you have non-unique \code{id}'s, strange things may
+#' It is your responsibility to ensure that `id` is unique
+#' among HTML elements in your page. If you have non-unique `id`'s, strange things may
 #' happen to your page.
 #'
 #' Your code may be cleaner if you can import the content for the modal body from
-#' an external source. Here, the function \code{shiny::\link[shiny]{includeMarkdown}}
+#' an external source. Here, the function `shiny::[includeMarkdown][shiny::includeMarkdown]`
 #' be useful.
 #'
 #' If you want to compose your own footer for the modal window, the function
-#' \code{bs_modal_closebutton()} can be useful.
+#' `bs_modal_closebutton()` can be useful.
 #'
 #' @param id       character, unique id for the modal window
 #' @param title    character, title for the modal window (this argument is deprecated
-#'  for \code{bs_modal_closebutton}, use \code{label} instead)
-#' @param body     character (HTML) or \code{htmltools::\link[htmltools]{tagList}},
+#'  for `bs_modal_closebutton`, use `label` instead)
+#' @param body     character (HTML) or `htmltools::[tagList][htmltools::tagList]`,
 #'   content for the body of the modal window
-#' @param footer   character (HTML) or \code{htmltools::\link[htmltools]{tagList}},
+#' @param footer   character (HTML) or `htmltools::[tagList][htmltools::tagList]`,
 #'   content for the footer of the modal window
 #' @param size     character, size of the modal window
 #' @param id_modal character, unique id of modal window to attach
 #' @param label    character (HTML), label for the close-button
-#' @param tag      \code{htmltools::\link[htmltools]{tag}},
+#' @param tag      `htmltools::[tag][htmltools::tag]`,
 #'   button or link to which to attach the modal window
 #'
-#' @seealso \code{shiny::\link[shiny]{includeMarkdown}}
+#' @seealso `shiny::[includeMarkdown][shiny::includeMarkdown]`
 #' @return
 #' \describe{
-#'   \item{\code{bs_modal()}}{\code{htmltools::\link[htmltools]{tag}}, \code{<div/>}}
-#'   \item{\code{bs_attach_modal()}}{\code{htmltools::\link[htmltools]{tag}},
-#'     modified copy of \code{tag}}
-#'   \item{\code{bs_modal_closebutton()}}{\code{htmltools::\link[htmltools]{tag}}, \code{<button/>}}
+#'   \item{`bs_modal()`}{`htmltools::[tag][htmltools::tag]`, `<div/>`}
+#'   \item{`bs_attach_modal()`}{`htmltools::[tag][htmltools::tag]`,
+#'     modified copy of `tag`}
+#'   \item{`bs_modal_closebutton()`}{`htmltools::[tag][htmltools::tag]`, `<button/>`}
 #' }
 #' @examples
 #' library("htmltools")

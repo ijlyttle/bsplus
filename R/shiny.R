@@ -1,24 +1,24 @@
 #' Create link containing Shiny icon
 #'
 #' You can use this helper function to wrap link element
-#' around a \code{shiny::\link[shiny]{icon}}.
+#' around a `shiny::[icon][shiny::icon]`.
 #' It may be useful to attach a modal window to
 #' (or embed a popover into) into such a link.
 #'
-#' @param name  character, name of the icon, passed to \code{shiny::\link[shiny]{icon}}
+#' @param name  character, name of the icon, passed to `shiny::[icon][shiny::icon]`
 #' @param id    character, option ID for the link
-#' @param ...   other arguments passed to \code{shiny::\link[shiny]{icon}}
+#' @param ...   other arguments passed to `shiny::[icon][shiny::icon]`
 #'
-#' @return \code{htmltools::\link[htmltools]{tag}}, \code{<a/>}
+#' @return `htmltools::[tag][htmltools::tag]`, `<a/>`
 #' @examples
 #' shiny_iconlink()
 #'
 #' shiny_iconlink() %>%
 #'   bs_embed_popover(title = "Help!", content = "I need somebody")
 #'
-#' @seealso \code{\link{shinyInput_label_embed}},
-#'   \code{shiny::\link[shiny]{icon}}, \code{\link{bs_attach_modal}},
-#'   \code{\link{bs_embed_popover}}, \code{\link{bs_embed_tooltip}}
+#' @seealso [shinyInput_label_embed()],
+#'   `shiny::[icon][shiny::icon]`, [bs_attach_modal()],
+#'   [bs_embed_popover()], [bs_embed_tooltip()]
 #' @export
 #'
 shiny_iconlink <- function(name = "info-circle", id = NULL, ...){
@@ -40,15 +40,15 @@ shiny_iconlink <- function(name = "info-circle", id = NULL, ...){
 #'
 #' To promote consistency, the following convention is proposed:
 #'
-#' For links (activated by clicking), embed a \code{shiny::icon("info-circle")};
-#' this is the default for \code{\link{shiny_iconlink}}. For elements activated
-#' by hovering, embed a \code{shiny::icon("info")}.
+#' For links (activated by clicking), embed a `shiny::icon("info-circle")`;
+#' this is the default for [shiny_iconlink()]. For elements activated
+#' by hovering, embed a `shiny::icon("info")`.
 #'
-#' @param tag     Shiny input, such as \code{shiny::\link[shiny]{numericInput}}
-#' @param element \code{htmltools::\link[htmltools]{tag}} to be embedded
-#'   into label of \code{tag}
+#' @param tag     Shiny input, such as `shiny::[numericInput][shiny::numericInput]`
+#' @param element `htmltools::[tag][htmltools::tag]` to be embedded
+#'   into label of `tag`
 #'
-#' @return Shiny input, modified copy of \code{tag}
+#' @return Shiny input, modified copy of `tag`
 #' @examples
 #' library("shiny")
 #'
@@ -58,7 +58,7 @@ shiny_iconlink <- function(name = "info-circle", id = NULL, ...){
 #'     bs_embed_popover(title = "Number", content = "Not a complex number")
 #'   )
 #'
-#' @seealso \code{\link{shiny_iconlink}}
+#' @seealso [shiny_iconlink()]
 #' @export
 #'
 shinyInput_label_embed <- function(tag, element){

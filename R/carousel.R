@@ -3,30 +3,30 @@
 #' A carousel is used to enclose a set of (typically) images,
 #' providing controls to move slides back-and-forth.
 #'
-#' All of these functions return a \code{bsplus_carousel} object
-#' (which is also an \code{htmltools::\link[htmltools]{tag}}, \code{<div/>}), so you can
+#' All of these functions return a `bsplus_carousel` object
+#' (which is also an `htmltools::[tag][htmltools::tag]`, `<div/>`), so you can
 #' compose a carousel by piping. There are two parts to this system:
 #'
 #' \enumerate{
-#'   \item{A constructor function for the carousel, \code{bs_carousel()}}
-#'   \item{A function to append a slide to the carousel, \code{bs_append()}}
+#'   \item{A constructor function for the carousel, `bs_carousel()`}
+#'   \item{A function to append a slide to the carousel, `bs_append()`}
 #' }
 #'
-#' The verb \emph{append} is used to signify that you can append an arbitrary
+#' The verb *append* is used to signify that you can append an arbitrary
 #' number of slides to a carousel.
 #'
-#' For the constructor, \code{bs_carousel()},
-#' it is your responsibility to ensure that \code{id} is unique
-#' among HTML elements in your page. If you have non-unique \code{id}'s, strange things may
+#' For the constructor, `bs_carousel()`,
+#' it is your responsibility to ensure that `id` is unique
+#' among HTML elements in your page. If you have non-unique `id`'s, strange things may
 #' happen to your page.
 #'
-#' @param id               character, unique id for accordion \code{<div/>},
-#'   also serves as root id for slides appended using \code{bs_append()}
+#' @param id               character, unique id for accordion `<div/>`,
+#'   also serves as root id for slides appended using `bs_append()`
 #' @param use_indicators   logical, denotes use of slide-position indicators (dots)
 #' @param use_controls     logical, denotes use of controls (chevrons at sides)
 #'
-#' @return \code{bsplus_carousel} object (\code{htmltools::\link[htmltools]{tag}},
-#'   \code{<div/>})
+#' @return `bsplus_carousel` object (`htmltools::[tag][htmltools::tag]`,
+#'   `<div/>`)
 #'
 #' @examples
 #' bs_carousel(id = "with_the_beatles") %>%
@@ -35,8 +35,8 @@
 #'   bs_append(content = bs_carousel_image(src = "img/george.jpg")) %>%
 #'   bs_append(content = bs_carousel_image(src = "img/ringo.jpg"))
 #'
-#' @seealso \url{http://getbootstrap.com/javascript/#carousel},
-#'   \code{\link{bs_carousel_image}}, \code{\link{bs_carousel_caption}}
+#' @seealso <http://getbootstrap.com/javascript/#carousel>,
+#'   [bs_carousel_image()], [bs_carousel_caption()]
 #'
 #' @export
 #'
@@ -121,9 +121,9 @@ bs_carousel <- function(id, use_indicators = FALSE, use_controls = TRUE){
 #' @param title   character, caption title
 #' @param body    character, caption body
 #'
-#' @return \code{htmltools::\link[htmltools]{tag}} \code{<div/>} for carousel caption
+#' @return `htmltools::[tag][htmltools::tag]` `<div/>` for carousel caption
 #'
-#' @seealso \code{\link{bs_carousel}}
+#' @seealso [bs_carousel()]
 #' @export
 #'
 bs_carousel_caption <- function(title = NULL, body = NULL){
@@ -140,15 +140,15 @@ bs_carousel_caption <- function(title = NULL, body = NULL){
 #'
 #' Helper function to generate HTML for a carousel image.
 #'
-#' This function wraps \code{htmltools::\link[htmltools]{tag}$img},
+#' This function wraps `htmltools::[tag][htmltools::tag]$img`,
 #' but adding a class to center the image in the carousel.
 #'
 #' @param ...   additional arguments passed to
-#'   \code{htmltools::\link[htmltools]{tag}$img}, typically includes \code{src}
+#'   `htmltools::[tag][htmltools::tag]$img`, typically includes `src`
 #'
-#' @return \code{htmltools::\link[htmltools]{tag}}, \code{</img>}
+#' @return `htmltools::[tag][htmltools::tag]`, `</img>`
 #'
-#' @seealso \code{\link{bs_carousel}}
+#' @seealso [bs_carousel()]
 #' @export
 #'
 bs_carousel_image <- function(...){

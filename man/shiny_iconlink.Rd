@@ -7,18 +7,18 @@
 shiny_iconlink(name = "info-circle", id = NULL, ...)
 }
 \arguments{
-\item{name}{character, name of the icon, passed to \code{shiny::\link[shiny]{icon}}}
+\item{name}{character, name of the icon, passed to \verb{shiny::[icon][shiny::icon]}}
 
 \item{id}{character, option ID for the link}
 
-\item{...}{other arguments passed to \code{shiny::\link[shiny]{icon}}}
+\item{...}{other arguments passed to \verb{shiny::[icon][shiny::icon]}}
 }
 \value{
-\code{htmltools::\link[htmltools]{tag}}, \code{<a/>}
+\verb{htmltools::[tag][htmltools::tag]}, \verb{<a/>}
 }
 \description{
 You can use this helper function to wrap link element
-around a \code{shiny::\link[shiny]{icon}}.
+around a \verb{shiny::[icon][shiny::icon]}.
 It may be useful to attach a modal window to
 (or embed a popover into) into such a link.
 }
@@ -30,7 +30,7 @@ shiny_iconlink() \%>\%
 
 }
 \seealso{
-\code{\link{shinyInput_label_embed}},
-\code{shiny::\link[shiny]{icon}}, \code{\link{bs_attach_modal}},
-\code{\link{bs_embed_popover}}, \code{\link{bs_embed_tooltip}}
+\code{\link[=shinyInput_label_embed]{shinyInput_label_embed()}},
+\verb{shiny::[icon][shiny::icon]}, \code{\link[=bs_attach_modal]{bs_attach_modal()}},
+\code{\link[=bs_embed_popover]{bs_embed_popover()}}, \code{\link[=bs_embed_tooltip]{bs_embed_tooltip()}}
 }

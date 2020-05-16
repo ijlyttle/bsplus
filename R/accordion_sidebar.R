@@ -1,55 +1,55 @@
 #' Accordion-sidebar panel-group
 #'
 #' Combines Bootstrap accordion with
-#' the functionality of \code{shiny::\link[shiny]{sidebarLayout}},
-#' allowing you to add another dimension to your \strong{shiny} apps.
+#' the functionality of `shiny::[sidebarLayout][shiny::sidebarLayout]`,
+#' allowing you to add another dimension to your **shiny** apps.
 #'
-#' If you use a \code{bs_accordion_sidebar()}, you will have to call the function
-#' \code{use_bs_accordion_sidebar()} somewhere in your UI. This attaches some
+#' If you use a `bs_accordion_sidebar()`, you will have to call the function
+#' `use_bs_accordion_sidebar()` somewhere in your UI. This attaches some
 #' JavaScript needed for your accordion sidebar to work properly.
 #'
-#' All of these functions return a \code{bsplus_accsidebar} object,
-#' (which is also an \code{htmltools::\link[htmltools]{tag}}, \code{<div/>}), so you can
+#' All of these functions return a `bsplus_accsidebar` object,
+#' (which is also an `htmltools::[tag][htmltools::tag]`, `<div/>`), so you can
 #' compose an accordion sidebar by piping. There are three parts to this system:
 #'
 #' \enumerate{
-#'   \item{A constructor function for the accordion-sidebar, \code{bs_accordion_sidebar()}}
-#'   \item{A function to set options for subsequent panels, \code{bs_set_opts()}}
-#'   \item{A function to append a panel-set to an accordion-sidebar, \code{bs_append()}}
+#'   \item{A constructor function for the accordion-sidebar, `bs_accordion_sidebar()`}
+#'   \item{A function to set options for subsequent panels, `bs_set_opts()`}
+#'   \item{A function to append a panel-set to an accordion-sidebar, `bs_append()`}
 #' }
 #'
-#' The verb \emph{append} is used to signify that you can append an arbitrary
+#' The verb *append* is used to signify that you can append an arbitrary
 #' number of panels-sets to an accordion-sidebar.
 #'
-#' For the constructor, \code{bs_accordion_sidebar()},
-#' it is your responsibility to ensure that \code{id} is unique
-#' among HTML elements in your page. If you have non-unique \code{id}'s, strange things may
+#' For the constructor, `bs_accordion_sidebar()`,
+#' it is your responsibility to ensure that `id` is unique
+#' among HTML elements in your page. If you have non-unique `id`'s, strange things may
 #' happen to your page.
 #'
-#' @param id                  character, unique id for accordion-sidebar \code{<div/>},
-#'   also serves as root id for panels appended using \code{bs_append()}
+#' @param id                  character, unique id for accordion-sidebar `<div/>`,
+#'   also serves as root id for panels appended using `bs_append()`
 #' @param spec_side           numeric, column specification for sidebar panels
 #' @param spec_main           numeric, column specification for main panels
 #' @param position            character, indicates where to put the sidebar panels with
 #'    respect to the main panels
-#' @param tag                 \code{htmltools::\link[htmltools]{tag}},
-#'   accordion-sidebar \code{<div/>} to which to append a panel
+#' @param tag                 `htmltools::[tag][htmltools::tag]`,
+#'   accordion-sidebar `<div/>` to which to append a panel
 #' @param panel_type_active   character, indicated bootstrap type for active-panel header,
-#'   one of \code{c("default", "primary", "success", "info", "warning", "danger")}
+#'   one of `c("default", "primary", "success", "info", "warning", "danger")`
 #' @param panel_type_inactive character, indicated bootstrap type for inactive-panel header,
-#'   one of \code{c("default", "primary", "success", "info", "warning", "danger")}
+#'   one of `c("default", "primary", "success", "info", "warning", "danger")`
 #' @param use_main_enclosure  logical, indicates if main content is to be wrapped in a
 #'   Bootstrap panel
-#' @param title_side          character (HTML) or \code{htmltools::\link[htmltools]{tagList}},
+#' @param title_side          character (HTML) or `htmltools::[tagList][htmltools::tagList]`,
 #'   title for the sidebar panel
-#' @param content_side        character (HTML) or \code{htmltools::\link[htmltools]{tagList}},
+#' @param content_side        character (HTML) or `htmltools::[tagList][htmltools::tagList]`,
 #'   content for the sidebar panel
-#' @param content_main        character (HTML) or \code{htmltools::\link[htmltools]{tagList}},
+#' @param content_main        character (HTML) or `htmltools::[tagList][htmltools::tagList]`,
 #'   content for the main panel
 #' @param ...                 other arguments (not used)
 #'
-#' @return \code{bsplus_accsidebar} object (\code{htmltools::\link[htmltools]{tag}},
-#'   \code{<div/>})
+#' @return `bsplus_accsidebar` object (`htmltools::[tag][htmltools::tag]`,
+#'   `<div/>`)
 #'
 #' @examples
 #' bs_accordion_sidebar(id = "meet_the_beatles") %>%

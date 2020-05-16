@@ -8,18 +8,18 @@ bs_carousel_image(...)
 }
 \arguments{
 \item{...}{additional arguments passed to
-\code{htmltools::\link[htmltools]{tag}$img}, typically includes \code{src}}
+\verb{htmltools::[tag][htmltools::tag]$img}, typically includes \code{src}}
 }
 \value{
-\code{htmltools::\link[htmltools]{tag}}, \code{</img>}
+\verb{htmltools::[tag][htmltools::tag]}, \verb{</img>}
 }
 \description{
 Helper function to generate HTML for a carousel image.
 }
 \details{
-This function wraps \code{htmltools::\link[htmltools]{tag}$img},
+This function wraps \verb{htmltools::[tag][htmltools::tag]$img},
 but adding a class to center the image in the carousel.
 }
 \seealso{
-\code{\link{bs_carousel}}
+\code{\link[=bs_carousel]{bs_carousel()}}
 }

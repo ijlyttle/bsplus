@@ -10,8 +10,8 @@ bs_embed_tooltip(tag, title = "", placement = "top", ...)
 use_bs_tooltip()
 }
 \arguments{
-\item{tag}{\code{htmltools::\link[htmltools]{tag}}, generally
-\code{<button/>} or \code{<a/>}, into which to embed the tooltip}
+\item{tag}{\verb{htmltools::[tag][htmltools::tag]}, generally
+\verb{<button/>} or \verb{<a/>}, into which to embed the tooltip}
 
 \item{title}{character, title for the tooltip}
 
@@ -20,7 +20,7 @@ use_bs_tooltip()
 \item{...}{other named arguments, passed to \code{bs_set_data()}}
 }
 \value{
-\code{htmltools::\link[htmltools]{tag}}, modified copy of \code{tag}
+\verb{htmltools::[tag][htmltools::tag]}, modified copy of \code{tag}
 }
 \description{
 A tooltip can be a useful way to add a few words of explanation to a tag.
@@ -40,5 +40,5 @@ bs_button("I'm a button") \%>\%
   bs_embed_tooltip(title = "I'm a tooltip")
 }
 \seealso{
-\code{\link{bs_embed_popover}}, \url{http://getbootstrap.com/javascript/#tooltips}
+\code{\link[=bs_embed_popover]{bs_embed_popover()}}, \url{http://getbootstrap.com/javascript/#tooltips}
 }

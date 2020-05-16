@@ -3,23 +3,23 @@
 #' A popover can be a useful way to add a somewhat-verbose explanation to a tag.
 #'
 #' To activate the use of popovers in your page, you will need to call
-#' the \code{use_bs_popover()} function somewhere.
+#' the `use_bs_popover()` function somewhere.
 #'
-#' The verb \emph{embed} is used to signify that you are embedding information
-#' into a \code{tag}. This implies that you can embed, at most, one "thing"
-#' into a particular \code{tag}. You should not, for example, expect to embed both a tooltip
-#' and a popover into a \code{tag}.
+#' The verb *embed* is used to signify that you are embedding information
+#' into a `tag`. This implies that you can embed, at most, one "thing"
+#' into a particular `tag`. You should not, for example, expect to embed both a tooltip
+#' and a popover into a `tag`.
 #'
-#' @param tag        \code{htmltools::\link[htmltools]{tag}}, generally
-#'   \code{<button/>} or \code{<a/>}, into which to embed the popover
+#' @param tag        `htmltools::[tag][htmltools::tag]`, generally
+#'   `<button/>` or `<a/>`, into which to embed the popover
 #' @param title      character, title for the popover, generally text
 #' @param content    character, content for the popover body, can be HTML
-#' @param placement  character, placement of the popover with respect to \code{tag}
-#' @param ...        other named arguments, passed to \code{bs_set_data()}
+#' @param placement  character, placement of the popover with respect to `tag`
+#' @param ...        other named arguments, passed to `bs_set_data()`
 #'
-#' @return  \code{htmltools::\link[htmltools]{tag}}, modified copy of \code{tag}
-#' @seealso \code{\link{bs_embed_tooltip}},
-#'   \url{http://getbootstrap.com/javascript/#popovers}
+#' @return  `htmltools::[tag][htmltools::tag]`, modified copy of `tag`
+#' @seealso [bs_embed_tooltip()],
+#'   <http://getbootstrap.com/javascript/#popovers>
 #' @examples
 #' library("htmltools")
 #'

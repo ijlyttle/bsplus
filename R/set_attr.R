@@ -141,12 +141,12 @@ bs_set_attr <- function(tag, .prefix = "data", ...){
 #'
 #' One of the mechanisms used by the API for Boostrap JavaScript-components is
 #' an html elements' attributes. These attribute names are prefixed with
-#' \code{"data-"} or \code{"aria-"}, depending on the function.
+#' `"data-"` or `"aria-"`, depending on the function.
 #'
 #' When expressed in html, attributes themselves have the properties:
 #'
 #' \itemize{
-#'   \item Logical values are expressed as \code{"true"} or \code{"false"}.
+#'   \item Logical values are expressed as `"true"` or `"false"`.
 #'   \item Time durations are expressed as number of milliseconds.
 #'   \item Vector (non scalar) values are expressed in a space-delimited list.
 #' }
@@ -155,17 +155,17 @@ bs_set_attr <- function(tag, .prefix = "data", ...){
 #' familiar to you as an R user. For example:
 #'
 #' \itemize{
-#'   \item Logical values can be expressed as logicals: \code{TRUE} or \code{FALSE}.
+#'   \item Logical values can be expressed as logicals: `TRUE` or `FALSE`.
 #'   \item Time durations can be expressed using lubridate durations.
 #'   \item Vector (non scalar) values can be expressed as vectors.
 #' }
 #'
 #' Note that this returns a modified copy of the tag sent to it, so it is pipeable.
 #'
-#' @param tag     \code{htmltools::\link[htmltools]{tag}}
-#' @param ...     named arguments used to set the attributes of \code{tag}
+#' @param tag     `htmltools::[tag][htmltools::tag]`
+#' @param ...     named arguments used to set the attributes of `tag`
 #'
-#' @return \code{htmltools::\link[htmltools]{tag}}, modified copy of \code{tag}
+#' @return `htmltools::[tag][htmltools::tag]`, modified copy of `tag`
 #' @examples
 #' library("htmltools")
 #' library("lubridate")
@@ -179,7 +179,7 @@ bs_set_attr <- function(tag, .prefix = "data", ...){
 #'   bs_set_aria(expanded = FALSE)
 #' @export
 #'
-#' @seealso \href{http://getbootstrap.com/javascript}{Bootstrap JavaScript Components}
+#' @seealso [Bootstrap JavaScript Components](http://getbootstrap.com/javascript)
 #
 bs_set_data <- function(tag, ...){
   bs_set_attr(tag, .prefix = "data", ...)

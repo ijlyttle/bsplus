@@ -10,26 +10,26 @@ bs_collapse(id, content = NULL, show = FALSE)
 bs_attach_collapse(tag, id_collapse)
 }
 \arguments{
-\item{id}{character, unique id for the collapsible \code{<div/>}}
+\item{id}{character, unique id for the collapsible \verb{<div/>}}
 
 \item{content}{character (HTML) or
-\code{htmltools::\link[htmltools]{tagList}},
-content for the collapsible \code{<div/>}}
+\verb{htmltools::[tagList][htmltools::tagList]},
+content for the collapsible \verb{<div/>}}
 
-\item{show}{logical, indicates if collapsible \code{<div/>}
+\item{show}{logical, indicates if collapsible \verb{<div/>}
 is shown when page is initialized}
 
-\item{tag}{\code{htmltools::\link[htmltools]{tag}},
-button or link to which to attach a collapsible \code{<div/>}}
+\item{tag}{\verb{htmltools::[tag][htmltools::tag]},
+button or link to which to attach a collapsible \verb{<div/>}}
 
 \item{id_collapse}{character, \code{id} of
-the collapsible \code{<div/>} to attach}
+the collapsible \verb{<div/>} to attach}
 }
 \value{
 \describe{
-\item{\code{bs_collapse()}}{\code{htmltools::\link[htmltools]{tag}},
-\code{<div/>}}
-\item{\code{bs_attach_collapse()}}{\code{htmltools::\link[htmltools]{tag}},
+\item{\code{bs_collapse()}}{\verb{htmltools::[tag][htmltools::tag]},
+\verb{<div/>}}
+\item{\code{bs_attach_collapse()}}{\verb{htmltools::[tag][htmltools::tag]},
 modified copy of \code{tag} (button or link)}
 }
 }
@@ -42,17 +42,17 @@ by clicking a button or a link.
 There are two parts to this system:
 
 \enumerate{
-\item{A collapsible \code{<div/>}, created using \code{bs_collapse()}}
-\item{At least one button (\code{<button/>}) or link (\code{<a/>})
-to which the \code{id} of the collapsible \code{<div/>} is attached,
+\item{A collapsible \verb{<div/>}, created using \code{bs_collapse()}}
+\item{At least one button (\verb{<button/>}) or link (\verb{<a/>})
+to which the \code{id} of the collapsible \verb{<div/>} is attached,
 using \code{bs_attach_collapse()}}
 }
 
 The verb \emph{attach} is used to signify that we are attaching the
 \code{id} of our collapsible
-\code{<div/>} to the tag in question (a button or a link).
+\verb{<div/>} to the tag in question (a button or a link).
 Note that you can attach the \code{id} of a collapsible
-\code{<div/>} to more than one button or link.
+\verb{<div/>} to more than one button or link.
 
 It is your responsibility to ensure that \code{id} is unique
 among HTML elements in your page. If you have non-unique \code{id}'s,
