@@ -5,7 +5,7 @@
 #' @param tag  \code{htmltools::\link[htmltools]{tag}}
 #' @param ...  additional arguments
 #'
-#' @return \code{htmltools::\link[htmltools]{tag}}, modified copy of \code{tag}
+#' @return \code{htmltools::\link[htmltools]{tag}}, modified copy of `tag`
 #' @seealso \code{\link{bs_accordion}}, \code{\link{bs_accordion_sidebar}},
 #'   \code{\link{bs_carousel}}
 #' @keywords internal
@@ -199,7 +199,7 @@ bs_append.bsplus_accordion_sidebar <- function(tag, title_side, content_side, co
 }
 
 #' @param tag      \code{htmltools::\link[htmltools]{tag}},
-#'   carousel \code{<div/>} to which to append a panel
+#'   carousel `<div/>` to which to append a panel
 #' @param content   character (HTML) or \code{htmltools::\link[htmltools]{tagList}},
 #'   content for the slide
 #' @param caption  character (HTML) or \code{htmltools::\link[htmltools]{tagList}},

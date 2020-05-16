@@ -9,10 +9,10 @@
 #' @param ... attributes (named arguments) and children (unnamed arguments)
 #'   of the button, passed to \code{htmltools::\link[htmltools]{tag}}
 #'
-#' @return \code{htmltools::\link[htmltools]{tag}}, \code{<button/>}
+#' @return \code{htmltools::\link[htmltools]{tag}}, `<button/>`
 #' @examples
 #' bs_button("Click me", button_type = "primary", button_size = "small")
-#' @seealso \url{http://getbootstrap.com/css/#buttons}
+#' @seealso <http://getbootstrap.com/css/#buttons>
 #' @export
 #'
 bs_button <- function(

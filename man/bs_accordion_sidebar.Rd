@@ -27,7 +27,7 @@ use_bs_accordion_sidebar()
 )
 }
 \arguments{
-\item{id}{character, unique id for accordion-sidebar \code{<div/>},
+\item{id}{character, unique id for accordion-sidebar \verb{<div/>},
 also serves as root id for panels appended using \code{bs_append()}}
 
 \item{spec_side}{numeric, column specification for sidebar panels}
@@ -38,7 +38,7 @@ also serves as root id for panels appended using \code{bs_append()}}
 respect to the main panels}
 
 \item{tag}{\code{htmltools::\link[htmltools]{tag}},
-accordion-sidebar \code{<div/>} to which to append a panel}
+accordion-sidebar \verb{<div/>} to which to append a panel}
 
 \item{title_side}{character (HTML) or \code{htmltools::\link[htmltools]{tagList}},
 title for the sidebar panel}
@@ -62,7 +62,7 @@ Bootstrap panel}
 }
 \value{
 \code{bsplus_accsidebar} object (\code{htmltools::\link[htmltools]{tag}},
-\code{<div/>})
+\verb{<div/>})
 }
 \description{
 Combines Bootstrap accordion with
@@ -75,7 +75,7 @@ If you use a \code{bs_accordion_sidebar()}, you will have to call the function
 JavaScript needed for your accordion sidebar to work properly.
 
 All of these functions return a \code{bsplus_accsidebar} object,
-(which is also an \code{htmltools::\link[htmltools]{tag}}, \code{<div/>}), so you can
+(which is also an \code{htmltools::\link[htmltools]{tag}}, \verb{<div/>}), so you can
 compose an accordion sidebar by piping. There are three parts to this system:
 
 \enumerate{

@@ -11,7 +11,7 @@ bs_carousel_image(...)
 \code{htmltools::\link[htmltools]{tag}$img}, typically includes \code{src}}
 }
 \value{
-\code{htmltools::\link[htmltools]{tag}}, \code{</img>}
+\code{htmltools::\link[htmltools]{tag}}, \verb{</img>}
 }
 \description{
 Helper function to generate HTML for a carousel image.

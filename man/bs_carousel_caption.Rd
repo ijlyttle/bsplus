@@ -12,7 +12,7 @@ bs_carousel_caption(title = NULL, body = NULL)
 \item{body}{character, caption body}
 }
 \value{
-\code{htmltools::\link[htmltools]{tag}} \code{<div/>} for carousel caption
+\code{htmltools::\link[htmltools]{tag}} \verb{<div/>} for carousel caption
 }
 \description{
 Helper function to generate HTML for a carousel caption.

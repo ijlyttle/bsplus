@@ -22,7 +22,7 @@ bs_button(
 of the button, passed to \code{htmltools::\link[htmltools]{tag}}}
 }
 \value{
-\code{htmltools::\link[htmltools]{tag}}, \code{<button/>}
+\code{htmltools::\link[htmltools]{tag}}, \verb{<button/>}
 }
 \description{
 This function makes it a little easier to make Bootstrap-friendly buttons;

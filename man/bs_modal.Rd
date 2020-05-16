@@ -41,10 +41,10 @@ button or link to which to attach the modal window}
 }
 \value{
 \describe{
-\item{\code{bs_modal()}}{\code{htmltools::\link[htmltools]{tag}}, \code{<div/>}}
+\item{\code{bs_modal()}}{\code{htmltools::\link[htmltools]{tag}}, \verb{<div/>}}
 \item{\code{bs_attach_modal()}}{\code{htmltools::\link[htmltools]{tag}},
 modified copy of \code{tag}}
-\item{\code{bs_modal_closebutton()}}{\code{htmltools::\link[htmltools]{tag}}, \code{<button/>}}
+\item{\code{bs_modal_closebutton()}}{\code{htmltools::\link[htmltools]{tag}}, \verb{<button/>}}
 }
 }
 \description{

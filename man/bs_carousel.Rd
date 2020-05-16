@@ -11,7 +11,7 @@ bs_carousel(id, use_indicators = FALSE, use_controls = TRUE)
 }
 \arguments{
 \item{tag}{\code{htmltools::\link[htmltools]{tag}},
-carousel \code{<div/>} to which to append a panel}
+carousel \verb{<div/>} to which to append a panel}
 
 \item{content}{character (HTML) or \code{htmltools::\link[htmltools]{tagList}},
 content for the slide}
@@ -21,7 +21,7 @@ caption for the slide}
 
 \item{...}{other args (not used)}
 
-\item{id}{character, unique id for accordion \code{<div/>},
+\item{id}{character, unique id for accordion \verb{<div/>},
 also serves as root id for slides appended using \code{bs_append()}}
 
 \item{use_indicators}{logical, denotes use of slide-position indicators (dots)}
@@ -30,7 +30,7 @@ also serves as root id for slides appended using \code{bs_append()}}
 }
 \value{
 \code{bsplus_carousel} object (\code{htmltools::\link[htmltools]{tag}},
-\code{<div/>})
+\verb{<div/>})
 }
 \description{
 A carousel is used to enclose a set of (typically) images,
@@ -38,7 +38,7 @@ providing controls to move slides back-and-forth.
 }
 \details{
 All of these functions return a \code{bsplus_carousel} object
-(which is also an \code{htmltools::\link[htmltools]{tag}}, \code{<div/>}), so you can
+(which is also an \code{htmltools::\link[htmltools]{tag}}, \verb{<div/>}), so you can
 compose a carousel by piping. There are two parts to this system:
 
 \enumerate{

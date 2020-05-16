@@ -14,7 +14,7 @@ shiny_iconlink(name = "info-circle", id = NULL, ...)
 \item{...}{other arguments passed to \code{shiny::\link[shiny]{icon}}}
 }
 \value{
-\code{htmltools::\link[htmltools]{tag}}, \code{<a/>}
+\code{htmltools::\link[htmltools]{tag}}, \verb{<a/>}
 }
 \description{
 You can use this helper function to wrap link element

@@ -11,7 +11,7 @@ use_bs_tooltip()
 }
 \arguments{
 \item{tag}{\code{htmltools::\link[htmltools]{tag}}, generally
-\code{<button/>} or \code{<a/>}, into which to embed the tooltip}
+\verb{<button/>} or \verb{<a/>}, into which to embed the tooltip}
 
 \item{title}{character, title for the tooltip}
 

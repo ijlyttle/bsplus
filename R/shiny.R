@@ -9,7 +9,7 @@
 #' @param id    character, option ID for the link
 #' @param ...   other arguments passed to \code{shiny::\link[shiny]{icon}}
 #'
-#' @return \code{htmltools::\link[htmltools]{tag}}, \code{<a/>}
+#' @return \code{htmltools::\link[htmltools]{tag}}, `<a/>`
 #' @examples
 #' shiny_iconlink()
 #'
@@ -40,15 +40,15 @@ shiny_iconlink <- function(name = "info-circle", id = NULL, ...){
 #'
 #' To promote consistency, the following convention is proposed:
 #'
-#' For links (activated by clicking), embed a \code{shiny::icon("info-circle")};
+#' For links (activated by clicking), embed a `shiny::icon("info-circle")`;
 #' this is the default for \code{\link{shiny_iconlink}}. For elements activated
-#' by hovering, embed a \code{shiny::icon("info")}.
+#' by hovering, embed a `shiny::icon("info")`.
 #'
 #' @param tag     Shiny input, such as \code{shiny::\link[shiny]{numericInput}}
 #' @param element \code{htmltools::\link[htmltools]{tag}} to be embedded
-#'   into label of \code{tag}
+#'   into label of `tag`
 #'
-#' @return Shiny input, modified copy of \code{tag}
+#' @return Shiny input, modified copy of `tag`
 #' @examples
 #' library("shiny")
 #'

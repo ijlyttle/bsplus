@@ -11,7 +11,7 @@ use_bs_popover()
 }
 \arguments{
 \item{tag}{\code{htmltools::\link[htmltools]{tag}}, generally
-\code{<button/>} or \code{<a/>}, into which to embed the popover}
+\verb{<button/>} or \verb{<a/>}, into which to embed the popover}
 
 \item{title}{character, title for the popover, generally text}
 
