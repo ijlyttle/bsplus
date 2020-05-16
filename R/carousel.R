@@ -4,7 +4,7 @@
 #' providing controls to move slides back-and-forth.
 #'
 #' All of these functions return a `bsplus_carousel` object
-#' (which is also an \code{htmltools::\link[htmltools]{tag}}, `<div/>`), so you can
+#' (which is also an `htmltools::[tag][htmltools::tag]`, `<div/>`), so you can
 #' compose a carousel by piping. There are two parts to this system:
 #'
 #' \enumerate{
@@ -25,7 +25,7 @@
 #' @param use_indicators   logical, denotes use of slide-position indicators (dots)
 #' @param use_controls     logical, denotes use of controls (chevrons at sides)
 #'
-#' @return `bsplus_carousel` object (\code{htmltools::\link[htmltools]{tag}},
+#' @return `bsplus_carousel` object (`htmltools::[tag][htmltools::tag]`,
 #'   `<div/>`)
 #'
 #' @examples
@@ -36,7 +36,7 @@
 #'   bs_append(content = bs_carousel_image(src = "img/ringo.jpg"))
 #'
 #' @seealso <http://getbootstrap.com/javascript/#carousel>,
-#'   \code{\link{bs_carousel_image}}, \code{\link{bs_carousel_caption}}
+#'   [bs_carousel_image()], [bs_carousel_caption()]
 #'
 #' @export
 #'
@@ -121,9 +121,9 @@ bs_carousel <- function(id, use_indicators = FALSE, use_controls = TRUE){
 #' @param title   character, caption title
 #' @param body    character, caption body
 #'
-#' @return \code{htmltools::\link[htmltools]{tag}} `<div/>` for carousel caption
+#' @return `htmltools::[tag][htmltools::tag]` `<div/>` for carousel caption
 #'
-#' @seealso \code{\link{bs_carousel}}
+#' @seealso [bs_carousel()]
 #' @export
 #'
 bs_carousel_caption <- function(title = NULL, body = NULL){
@@ -140,15 +140,15 @@ bs_carousel_caption <- function(title = NULL, body = NULL){
 #'
 #' Helper function to generate HTML for a carousel image.
 #'
-#' This function wraps \code{htmltools::\link[htmltools]{tag}$img},
+#' This function wraps `htmltools::[tag][htmltools::tag]$img`,
 #' but adding a class to center the image in the carousel.
 #'
 #' @param ...   additional arguments passed to
-#'   \code{htmltools::\link[htmltools]{tag}$img}, typically includes `src`
+#'   `htmltools::[tag][htmltools::tag]$img`, typically includes `src`
 #'
-#' @return \code{htmltools::\link[htmltools]{tag}}, `</img>`
+#' @return `htmltools::[tag][htmltools::tag]`, `</img>`
 #'
-#' @seealso \code{\link{bs_carousel}}
+#' @seealso [bs_carousel()]
 #' @export
 #'
 bs_carousel_image <- function(...){

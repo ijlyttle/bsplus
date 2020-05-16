@@ -10,13 +10,13 @@
 bs_carousel(id, use_indicators = FALSE, use_controls = TRUE)
 }
 \arguments{
-\item{tag}{\code{htmltools::\link[htmltools]{tag}},
+\item{tag}{\verb{htmltools::[tag][htmltools::tag]},
 carousel \verb{<div/>} to which to append a panel}
 
-\item{content}{character (HTML) or \code{htmltools::\link[htmltools]{tagList}},
+\item{content}{character (HTML) or \verb{htmltools::[tagList][htmltools::tagList]},
 content for the slide}
 
-\item{caption}{character (HTML) or \code{htmltools::\link[htmltools]{tagList}},
+\item{caption}{character (HTML) or \verb{htmltools::[tagList][htmltools::tagList]},
 caption for the slide}
 
 \item{...}{other args (not used)}
@@ -29,7 +29,7 @@ also serves as root id for slides appended using \code{bs_append()}}
 \item{use_controls}{logical, denotes use of controls (chevrons at sides)}
 }
 \value{
-\code{bsplus_carousel} object (\code{htmltools::\link[htmltools]{tag}},
+\code{bsplus_carousel} object (\verb{htmltools::[tag][htmltools::tag]},
 \verb{<div/>})
 }
 \description{
@@ -38,7 +38,7 @@ providing controls to move slides back-and-forth.
 }
 \details{
 All of these functions return a \code{bsplus_carousel} object
-(which is also an \code{htmltools::\link[htmltools]{tag}}, \verb{<div/>}), so you can
+(which is also an \verb{htmltools::[tag][htmltools::tag]}, \verb{<div/>}), so you can
 compose a carousel by piping. There are two parts to this system:
 
 \enumerate{
@@ -64,5 +64,5 @@ bs_carousel(id = "with_the_beatles") \%>\%
 }
 \seealso{
 \url{http://getbootstrap.com/javascript/#carousel},
-\code{\link{bs_carousel_image}}, \code{\link{bs_carousel_caption}}
+\code{\link[=bs_carousel_image]{bs_carousel_image()}}, \code{\link[=bs_carousel_caption]{bs_carousel_caption()}}
 }

@@ -19,10 +19,10 @@ bs_button(
 \item{button_size}{character, size of the button}
 
 \item{...}{attributes (named arguments) and children (unnamed arguments)
-of the button, passed to \code{htmltools::\link[htmltools]{tag}}}
+of the button, passed to \verb{htmltools::[tag][htmltools::tag]}}
 }
 \value{
-\code{htmltools::\link[htmltools]{tag}}, \verb{<button/>}
+Object with S3 class, \code{shiny.tag}, \verb{<button/>}.
 }
 \description{
 This function makes it a little easier to make Bootstrap-friendly buttons;

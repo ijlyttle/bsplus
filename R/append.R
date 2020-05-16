@@ -2,12 +2,12 @@
 #'
 #' This would be used when we want to add items to a collection
 #'
-#' @param tag  \code{htmltools::\link[htmltools]{tag}}
+#' @param tag  `htmltools::[tag][htmltools::tag]`
 #' @param ...  additional arguments
 #'
-#' @return \code{htmltools::\link[htmltools]{tag}}, modified copy of `tag`
-#' @seealso \code{\link{bs_accordion}}, \code{\link{bs_accordion_sidebar}},
-#'   \code{\link{bs_carousel}}
+#' @return `htmltools::[tag][htmltools::tag]`, modified copy of `tag`
+#' @seealso [bs_accordion()], [bs_accordion_sidebar()],
+#'   [bs_carousel()]
 #' @keywords internal
 #' @export
 #'
@@ -198,11 +198,11 @@ bs_append.bsplus_accordion_sidebar <- function(tag, title_side, content_side, co
   tag
 }
 
-#' @param tag      \code{htmltools::\link[htmltools]{tag}},
+#' @param tag      `htmltools::[tag][htmltools::tag]`,
 #'   carousel `<div/>` to which to append a panel
-#' @param content   character (HTML) or \code{htmltools::\link[htmltools]{tagList}},
+#' @param content   character (HTML) or `htmltools::[tagList][htmltools::tagList]`,
 #'   content for the slide
-#' @param caption  character (HTML) or \code{htmltools::\link[htmltools]{tagList}},
+#' @param caption  character (HTML) or `htmltools::[tagList][htmltools::tagList]`,
 #'   caption for the slide
 #' @param ...              other args (not used)
 #'

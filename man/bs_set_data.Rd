@@ -10,12 +10,12 @@ bs_set_data(tag, ...)
 bs_set_aria(tag, ...)
 }
 \arguments{
-\item{tag}{\code{htmltools::\link[htmltools]{tag}}}
+\item{tag}{\verb{htmltools::[tag][htmltools::tag]}}
 
 \item{...}{named arguments used to set the attributes of \code{tag}}
 }
 \value{
-\code{htmltools::\link[htmltools]{tag}}, modified copy of \code{tag}
+\verb{htmltools::[tag][htmltools::tag]}, modified copy of \code{tag}
 }
 \description{
 Helper function to manage attributes for Bootstrap's JavaScript components.

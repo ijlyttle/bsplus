@@ -162,10 +162,10 @@ bs_set_attr <- function(tag, .prefix = "data", ...){
 #'
 #' Note that this returns a modified copy of the tag sent to it, so it is pipeable.
 #'
-#' @param tag     \code{htmltools::\link[htmltools]{tag}}
+#' @param tag     `htmltools::[tag][htmltools::tag]`
 #' @param ...     named arguments used to set the attributes of `tag`
 #'
-#' @return \code{htmltools::\link[htmltools]{tag}}, modified copy of `tag`
+#' @return `htmltools::[tag][htmltools::tag]`, modified copy of `tag`
 #' @examples
 #' library("htmltools")
 #' library("lubridate")

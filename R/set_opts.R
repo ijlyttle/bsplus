@@ -5,7 +5,7 @@
 #' @param tag   `htmltools:shinytag`
 #' @param ...  additional arguments, key/value pairs
 #'
-#' @seealso \code{\link{bs_accordion}}, \code{\link{bs_accordion_sidebar}},
+#' @seealso [bs_accordion()], [bs_accordion_sidebar()],
 #' @keywords internal
 #' @return modified copy of `tag`
 #' @export

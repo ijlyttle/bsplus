@@ -10,14 +10,14 @@
 #' into a particular `tag`. You should not, for example, expect to embed both a tooltip
 #' and a popover into a `tag`.
 #'
-#' @param tag        \code{htmltools::\link[htmltools]{tag}}, generally
+#' @param tag        `htmltools::[tag][htmltools::tag]`, generally
 #'   `<button/>` or `<a/>`, into which to embed the tooltip
 #' @param title      character, title for the tooltip
 #' @param placement  character, placement of the tooltip with respect to `tag`
 #' @param ...        other named arguments, passed to `bs_set_data()`
 #'
-#' @return  \code{htmltools::\link[htmltools]{tag}}, modified copy of `tag`
-#' @seealso \code{\link{bs_embed_popover}}, <http://getbootstrap.com/javascript/#tooltips>
+#' @return  `htmltools::[tag][htmltools::tag]`, modified copy of `tag`
+#' @seealso [bs_embed_popover()], <http://getbootstrap.com/javascript/#tooltips>
 #' @examples
 #' library("htmltools")
 #' bs_button("I'm a button") %>%

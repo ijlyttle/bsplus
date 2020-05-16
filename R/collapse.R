@@ -25,20 +25,20 @@
 #'
 #' @param id           character, unique id for the collapsible `<div/>`
 #' @param content      character (HTML) or
-#'   \code{htmltools::\link[htmltools]{tagList}},
+#'   `htmltools::[tagList][htmltools::tagList]`,
 #'   content for the collapsible `<div/>`
 #' @param show         logical, indicates if collapsible `<div/>`
 #'   is shown when page is initialized
-#' @param tag          \code{htmltools::\link[htmltools]{tag}},
+#' @param tag          `htmltools::[tag][htmltools::tag]`,
 #'   button or link to which to attach a collapsible `<div/>`
 #' @param id_collapse  character, `id` of
 #'   the collapsible `<div/>` to attach
 #'
 #' @return
 #' \describe{
-#'   \item{`bs_collapse()`}{\code{htmltools::\link[htmltools]{tag}},
+#'   \item{`bs_collapse()`}{`htmltools::[tag][htmltools::tag]`,
 #'   `<div/>`}
-#'   \item{`bs_attach_collapse()`}{\code{htmltools::\link[htmltools]{tag}},
+#'   \item{`bs_attach_collapse()`}{`htmltools::[tag][htmltools::tag]`,
 #'     modified copy of `tag` (button or link)}
 #' }
 #'

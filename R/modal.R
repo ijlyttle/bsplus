@@ -19,7 +19,7 @@
 #' happen to your page.
 #'
 #' Your code may be cleaner if you can import the content for the modal body from
-#' an external source. Here, the function \code{shiny::\link[shiny]{includeMarkdown}}
+#' an external source. Here, the function `shiny::[includeMarkdown][shiny::includeMarkdown]`
 #' be useful.
 #'
 #' If you want to compose your own footer for the modal window, the function
@@ -28,23 +28,23 @@
 #' @param id       character, unique id for the modal window
 #' @param title    character, title for the modal window (this argument is deprecated
 #'  for `bs_modal_closebutton`, use `label` instead)
-#' @param body     character (HTML) or \code{htmltools::\link[htmltools]{tagList}},
+#' @param body     character (HTML) or `htmltools::[tagList][htmltools::tagList]`,
 #'   content for the body of the modal window
-#' @param footer   character (HTML) or \code{htmltools::\link[htmltools]{tagList}},
+#' @param footer   character (HTML) or `htmltools::[tagList][htmltools::tagList]`,
 #'   content for the footer of the modal window
 #' @param size     character, size of the modal window
 #' @param id_modal character, unique id of modal window to attach
 #' @param label    character (HTML), label for the close-button
-#' @param tag      \code{htmltools::\link[htmltools]{tag}},
+#' @param tag      `htmltools::[tag][htmltools::tag]`,
 #'   button or link to which to attach the modal window
 #'
-#' @seealso \code{shiny::\link[shiny]{includeMarkdown}}
+#' @seealso `shiny::[includeMarkdown][shiny::includeMarkdown]`
 #' @return
 #' \describe{
-#'   \item{`bs_modal()`}{\code{htmltools::\link[htmltools]{tag}}, `<div/>`}
-#'   \item{`bs_attach_modal()`}{\code{htmltools::\link[htmltools]{tag}},
+#'   \item{`bs_modal()`}{`htmltools::[tag][htmltools::tag]`, `<div/>`}
+#'   \item{`bs_attach_modal()`}{`htmltools::[tag][htmltools::tag]`,
 #'     modified copy of `tag`}
-#'   \item{`bs_modal_closebutton()`}{\code{htmltools::\link[htmltools]{tag}}, `<button/>`}
+#'   \item{`bs_modal_closebutton()`}{`htmltools::[tag][htmltools::tag]`, `<button/>`}
 #' }
 #' @examples
 #' library("htmltools")

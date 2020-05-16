@@ -24,27 +24,27 @@ bs_attach_modal(tag, id_modal)
 \item{title}{character, title for the modal window (this argument is deprecated
 for \code{bs_modal_closebutton}, use \code{label} instead)}
 
-\item{body}{character (HTML) or \code{htmltools::\link[htmltools]{tagList}},
+\item{body}{character (HTML) or \verb{htmltools::[tagList][htmltools::tagList]},
 content for the body of the modal window}
 
-\item{footer}{character (HTML) or \code{htmltools::\link[htmltools]{tagList}},
+\item{footer}{character (HTML) or \verb{htmltools::[tagList][htmltools::tagList]},
 content for the footer of the modal window}
 
 \item{size}{character, size of the modal window}
 
 \item{label}{character (HTML), label for the close-button}
 
-\item{tag}{\code{htmltools::\link[htmltools]{tag}},
+\item{tag}{\verb{htmltools::[tag][htmltools::tag]},
 button or link to which to attach the modal window}
 
 \item{id_modal}{character, unique id of modal window to attach}
 }
 \value{
 \describe{
-\item{\code{bs_modal()}}{\code{htmltools::\link[htmltools]{tag}}, \verb{<div/>}}
-\item{\code{bs_attach_modal()}}{\code{htmltools::\link[htmltools]{tag}},
+\item{\code{bs_modal()}}{\verb{htmltools::[tag][htmltools::tag]}, \verb{<div/>}}
+\item{\code{bs_attach_modal()}}{\verb{htmltools::[tag][htmltools::tag]},
 modified copy of \code{tag}}
-\item{\code{bs_modal_closebutton()}}{\code{htmltools::\link[htmltools]{tag}}, \verb{<button/>}}
+\item{\code{bs_modal_closebutton()}}{\verb{htmltools::[tag][htmltools::tag]}, \verb{<button/>}}
 }
 }
 \description{
@@ -68,7 +68,7 @@ among HTML elements in your page. If you have non-unique \code{id}'s, strange th
 happen to your page.
 
 Your code may be cleaner if you can import the content for the modal body from
-an external source. Here, the function \code{shiny::\link[shiny]{includeMarkdown}}
+an external source. Here, the function \verb{shiny::[includeMarkdown][shiny::includeMarkdown]}
 be useful.
 
 If you want to compose your own footer for the modal window, the function
@@ -93,5 +93,5 @@ bs_button("Click for modal") \%>\%
 
 }
 \seealso{
-\code{shiny::\link[shiny]{includeMarkdown}}
+\verb{shiny::[includeMarkdown][shiny::includeMarkdown]}
 }

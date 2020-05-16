@@ -3,7 +3,7 @@
 #' An accordion is a set of collapsible panels where, at most, one panel-body is visible.
 #'
 #' All of these functions return a `bsplus_accordion` object
-#' (which is also an \code{htmltools::\link[htmltools]{tag}}, `<div/>`), so you can
+#' (which is also an `htmltools::[tag][htmltools::tag]`, `<div/>`), so you can
 #' compose an accordion by piping. There are three parts to this system:
 #'
 #' \enumerate{
@@ -22,11 +22,11 @@
 #'
 #' @param id               character, unique id for accordion `<div/>`,
 #'   also serves as root id for panels appended using `bs_append()`
-#' @param tag              \code{htmltools::\link[htmltools]{tag}},
+#' @param tag              `htmltools::[tag][htmltools::tag]`,
 #'   accordion `<div/>` to which to append a panel
-#' @param title            character (HTML) or \code{htmltools::\link[htmltools]{tagList}},
+#' @param title            character (HTML) or `htmltools::[tagList][htmltools::tagList]`,
 #'   title for the panel heading
-#' @param content          character (HTML) or \code{htmltools::\link[htmltools]{tagList}},
+#' @param content          character (HTML) or `htmltools::[tagList][htmltools::tagList]`,
 #'   content for the panel body
 #' @param ...              other arguments (not used)
 #' @param panel_type      character, one of the standard Bootstrap types
@@ -34,7 +34,7 @@
 #' @param use_heading_link logical, indicates whether to make the entire panel heading
 #'   clickable.
 #'
-#' @return `bsplus_accordion` object (\code{htmltools::\link[htmltools]{tag}},
+#' @return `bsplus_accordion` object (`htmltools::[tag][htmltools::tag]`,
 #'   `<div/>`)
 #'
 #' @examples

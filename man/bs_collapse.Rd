@@ -13,13 +13,13 @@ bs_attach_collapse(tag, id_collapse)
 \item{id}{character, unique id for the collapsible \verb{<div/>}}
 
 \item{content}{character (HTML) or
-\code{htmltools::\link[htmltools]{tagList}},
+\verb{htmltools::[tagList][htmltools::tagList]},
 content for the collapsible \verb{<div/>}}
 
 \item{show}{logical, indicates if collapsible \verb{<div/>}
 is shown when page is initialized}
 
-\item{tag}{\code{htmltools::\link[htmltools]{tag}},
+\item{tag}{\verb{htmltools::[tag][htmltools::tag]},
 button or link to which to attach a collapsible \verb{<div/>}}
 
 \item{id_collapse}{character, \code{id} of
@@ -27,9 +27,9 @@ the collapsible \verb{<div/>} to attach}
 }
 \value{
 \describe{
-\item{\code{bs_collapse()}}{\code{htmltools::\link[htmltools]{tag}},
+\item{\code{bs_collapse()}}{\verb{htmltools::[tag][htmltools::tag]},
 \verb{<div/>}}
-\item{\code{bs_attach_collapse()}}{\code{htmltools::\link[htmltools]{tag}},
+\item{\code{bs_attach_collapse()}}{\verb{htmltools::[tag][htmltools::tag]},
 modified copy of \code{tag} (button or link)}
 }
 }

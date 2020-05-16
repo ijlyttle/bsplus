@@ -1,7 +1,7 @@
 #' Accordion-sidebar panel-group
 #'
 #' Combines Bootstrap accordion with
-#' the functionality of \code{shiny::\link[shiny]{sidebarLayout}},
+#' the functionality of `shiny::[sidebarLayout][shiny::sidebarLayout]`,
 #' allowing you to add another dimension to your **shiny** apps.
 #'
 #' If you use a `bs_accordion_sidebar()`, you will have to call the function
@@ -9,7 +9,7 @@
 #' JavaScript needed for your accordion sidebar to work properly.
 #'
 #' All of these functions return a `bsplus_accsidebar` object,
-#' (which is also an \code{htmltools::\link[htmltools]{tag}}, `<div/>`), so you can
+#' (which is also an `htmltools::[tag][htmltools::tag]`, `<div/>`), so you can
 #' compose an accordion sidebar by piping. There are three parts to this system:
 #'
 #' \enumerate{
@@ -32,7 +32,7 @@
 #' @param spec_main           numeric, column specification for main panels
 #' @param position            character, indicates where to put the sidebar panels with
 #'    respect to the main panels
-#' @param tag                 \code{htmltools::\link[htmltools]{tag}},
+#' @param tag                 `htmltools::[tag][htmltools::tag]`,
 #'   accordion-sidebar `<div/>` to which to append a panel
 #' @param panel_type_active   character, indicated bootstrap type for active-panel header,
 #'   one of `c("default", "primary", "success", "info", "warning", "danger")`
@@ -40,15 +40,15 @@
 #'   one of `c("default", "primary", "success", "info", "warning", "danger")`
 #' @param use_main_enclosure  logical, indicates if main content is to be wrapped in a
 #'   Bootstrap panel
-#' @param title_side          character (HTML) or \code{htmltools::\link[htmltools]{tagList}},
+#' @param title_side          character (HTML) or `htmltools::[tagList][htmltools::tagList]`,
 #'   title for the sidebar panel
-#' @param content_side        character (HTML) or \code{htmltools::\link[htmltools]{tagList}},
+#' @param content_side        character (HTML) or `htmltools::[tagList][htmltools::tagList]`,
 #'   content for the sidebar panel
-#' @param content_main        character (HTML) or \code{htmltools::\link[htmltools]{tagList}},
+#' @param content_main        character (HTML) or `htmltools::[tagList][htmltools::tagList]`,
 #'   content for the main panel
 #' @param ...                 other arguments (not used)
 #'
-#' @return `bsplus_accsidebar` object (\code{htmltools::\link[htmltools]{tag}},
+#' @return `bsplus_accsidebar` object (`htmltools::[tag][htmltools::tag]`,
 #'   `<div/>`)
 #'
 #' @examples

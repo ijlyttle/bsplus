@@ -37,16 +37,16 @@ also serves as root id for panels appended using \code{bs_append()}}
 \item{position}{character, indicates where to put the sidebar panels with
 respect to the main panels}
 
-\item{tag}{\code{htmltools::\link[htmltools]{tag}},
+\item{tag}{\verb{htmltools::[tag][htmltools::tag]},
 accordion-sidebar \verb{<div/>} to which to append a panel}
 
-\item{title_side}{character (HTML) or \code{htmltools::\link[htmltools]{tagList}},
+\item{title_side}{character (HTML) or \verb{htmltools::[tagList][htmltools::tagList]},
 title for the sidebar panel}
 
-\item{content_side}{character (HTML) or \code{htmltools::\link[htmltools]{tagList}},
+\item{content_side}{character (HTML) or \verb{htmltools::[tagList][htmltools::tagList]},
 content for the sidebar panel}
 
-\item{content_main}{character (HTML) or \code{htmltools::\link[htmltools]{tagList}},
+\item{content_main}{character (HTML) or \verb{htmltools::[tagList][htmltools::tagList]},
 content for the main panel}
 
 \item{...}{other arguments (not used)}
@@ -61,12 +61,12 @@ one of \code{c("default", "primary", "success", "info", "warning", "danger")}}
 Bootstrap panel}
 }
 \value{
-\code{bsplus_accsidebar} object (\code{htmltools::\link[htmltools]{tag}},
+\code{bsplus_accsidebar} object (\verb{htmltools::[tag][htmltools::tag]},
 \verb{<div/>})
 }
 \description{
 Combines Bootstrap accordion with
-the functionality of \code{shiny::\link[shiny]{sidebarLayout}},
+the functionality of \verb{shiny::[sidebarLayout][shiny::sidebarLayout]},
 allowing you to add another dimension to your \strong{shiny} apps.
 }
 \details{
@@ -75,7 +75,7 @@ If you use a \code{bs_accordion_sidebar()}, you will have to call the function
 JavaScript needed for your accordion sidebar to work properly.
 
 All of these functions return a \code{bsplus_accsidebar} object,
-(which is also an \code{htmltools::\link[htmltools]{tag}}, \verb{<div/>}), so you can
+(which is also an \verb{htmltools::[tag][htmltools::tag]}, \verb{<div/>}), so you can
 compose an accordion sidebar by piping. There are three parts to this system:
 
 \enumerate{

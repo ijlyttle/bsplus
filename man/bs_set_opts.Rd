@@ -24,6 +24,6 @@ modified copy of \code{tag}
 This would be used when we want to set options for adding items
 }
 \seealso{
-\code{\link{bs_accordion}}, \code{\link{bs_accordion_sidebar}},
+\code{\link[=bs_accordion]{bs_accordion()}}, \code{\link[=bs_accordion_sidebar]{bs_accordion_sidebar()}},
 }
 \keyword{internal}

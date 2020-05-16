@@ -12,20 +12,20 @@ render_html_fragment(input, output_format = rmarkdown::html_fragment(), ...)
 \item{output_format}{rmarkdown output format, provided so you can specify arguments}
 
 \item{...}{other arguments passed to
-\code{rmarkdown::\link[rmarkdown]{render}}}
+\verb{rmarkdown::[render][rmarkdown::render]}}
 }
 \value{
-\code{htmltools::\link[htmltools]{tag}}
+\verb{htmltools::[tag][htmltools::tag]}
 }
 \description{
-This is a wrapper around the \code{rmarkdown::\link[rmarkdown]{render}}
+This is a wrapper around the \verb{rmarkdown::[render][rmarkdown::render]}
 function. The principal difference is that the function is designed to
 return an HTML fragment (rather than writing to a file). This function is
 useful to populate the content of a modal window.
 }
 \details{
 This function is being deprecated in favor of
-\code{shiny::\link[shiny]{includeMarkdown}}
+\verb{shiny::[includeMarkdown][shiny::includeMarkdown]}
 }
 \examples{
 \dontrun{
