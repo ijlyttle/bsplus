@@ -1,11 +1,10 @@
 #' Panel
 #'
 #' This function makes it a little easier to make Bootstrap-friendly panels;
-#' it wraps the [htmltools::tags()] function for panels
+#' it wraps [`htmltools::tags`][`htmltools::builder`] for panels
 #'
 #' @param id         character, unique identifier
 #' @param panel_type character, one of the standard Bootstrap types
-#' @param heading    character (HTML) or [htmltools::tagList()],
 #'   content for the heading
 #' @param body       character (HTML) or [htmltools::tagList()],
 #'   content for the body

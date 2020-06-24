@@ -16,9 +16,7 @@ bs_panel(
 \arguments{
 \item{id}{character, unique identifier}
 
-\item{panel_type}{character, one of the standard Bootstrap types}
-
-\item{heading}{character (HTML) or \code{\link[htmltools:tagList]{htmltools::tagList()}},
+\item{panel_type}{character, one of the standard Bootstrap types
 content for the heading}
 
 \item{body}{character (HTML) or \code{\link[htmltools:tagList]{htmltools::tagList()}},
@@ -35,7 +33,7 @@ Object with S3 class, \code{shiny.tag}, \verb{<div/>}
 }
 \description{
 This function makes it a little easier to make Bootstrap-friendly panels;
-it wraps the \code{\link[htmltools:tags]{htmltools::tags()}} function for panels
+it wraps \code{\link[htmltools:builder]{htmltools::tags}} for panels
 }
 \examples{
 library("htmltools")
