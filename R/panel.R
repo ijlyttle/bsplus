@@ -5,13 +5,13 @@
 #'
 #' @param id         character, unique identifier
 #' @param panel_type character, one of the standard Bootstrap types
-#' @param heading    character (HTML) or [htmltools::tagList()],
+#' @param heading    character (HTML) or [htmltools::tagList()][htmltools::tag()],
 #'   content for the heading
-#' @param body       character (HTML) or [htmltools::tagList()],
+#' @param body       character (HTML) or [htmltools::tagList()][htmltools::tag()],
 #'   content for the body
-#' @param ...        character (HTML) or [htmltools::tagList()],
+#' @param ...        character (HTML) or [htmltools::tagList()][htmltools::tag()],
 #'   other content
-#' @param footer     character (HTML) or [htmltools::tagList()],
+#' @param footer     character (HTML) or [htmltools::tagList()][htmltools::tag()],
 #'   content for the footer
 #'
 #' @return Object with S3 class, `shiny.tag`, `<div/>`

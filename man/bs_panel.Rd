@@ -18,16 +18,16 @@ bs_panel(
 
 \item{panel_type}{character, one of the standard Bootstrap types}
 
-\item{heading}{character (HTML) or \code{\link[htmltools:tagList]{htmltools::tagList()}},
+\item{heading}{character (HTML) or \link[htmltools:tag]{htmltools::tagList()},
 content for the heading}
 
-\item{body}{character (HTML) or \code{\link[htmltools:tagList]{htmltools::tagList()}},
+\item{body}{character (HTML) or \link[htmltools:tag]{htmltools::tagList()},
 content for the body}
 
-\item{...}{character (HTML) or \code{\link[htmltools:tagList]{htmltools::tagList()}},
+\item{...}{character (HTML) or \link[htmltools:tag]{htmltools::tagList()},
 other content}
 
-\item{footer}{character (HTML) or \code{\link[htmltools:tagList]{htmltools::tagList()}},
+\item{footer}{character (HTML) or \link[htmltools:tag]{htmltools::tagList()},
 content for the footer}
 }
 \value{
