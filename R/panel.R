@@ -23,7 +23,7 @@
 #'   heading = tags$h3("title"),
 #'   body = tags$p("Some very important content")
 #' )
-#' @seealso <http://getbootstrap.com/css/#panels>
+#' @seealso <http://getbootstrap.com/docs/3.3/css/#panels>
 #' @export
 #'
 bs_panel <- function(

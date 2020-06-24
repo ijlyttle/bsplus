@@ -37,4 +37,4 @@ bs_button("Sie Liebt Dich", button_type = "primary")  %>%
 
 ## Reference
 
-For more information, please see the [Bootstrap JavaScript page](http://getbootstrap.com/javascript/#collapse).
+For more information, please see the [Bootstrap JavaScript page](http://getbootstrap.com/docs/3.3/javascript/#collapse).

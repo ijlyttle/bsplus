@@ -68,5 +68,5 @@ bs_accordion(id = "meet_the_beatles") \%>\%
 
 }
 \seealso{
-\url{http://getbootstrap.com/javascript/#collapse-example-accordion}
+\url{http://getbootstrap.com/docs/3.3/javascript/#collapse-example-accordion}
 }

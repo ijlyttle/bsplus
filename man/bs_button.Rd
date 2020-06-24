@@ -32,5 +32,5 @@ it wraps \code{\link[htmltools:builder]{htmltools::tags}} for buttons.
 bs_button("Click me", button_type = "primary", button_size = "small")
 }
 \seealso{
-\url{http://getbootstrap.com/css/#buttons}
+\url{http://getbootstrap.com/docs/3.3/css/#buttons}
 }

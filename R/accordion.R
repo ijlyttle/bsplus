@@ -44,7 +44,7 @@
 #'   bs_set_opts(panel_type = "info") %>%
 #'   bs_append(title = "Paul McCartney", content = "Bass guitar, vocals")
 #'
-#' @seealso <http://getbootstrap.com/javascript/#collapse-example-accordion>
+#' @seealso <http://getbootstrap.com/docs/3.3/javascript/#collapse-example-accordion>
 #' @export
 #
 bs_accordion <- function(id){

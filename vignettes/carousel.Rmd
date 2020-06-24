@@ -41,7 +41,7 @@ Here's another rendering of the carousel, this time:
 
 - without indicators
 - without captions
-- the slides do not auto-advance (using `bs_set_data()` to set [Bootstrap options](http://getbootstrap.com/javascript/#carousel-options))
+- the slides do not auto-advance (using `bs_set_data()` to set [Bootstrap options](http://getbootstrap.com/docs/3.3/javascript/#carousel-options))
 
 ```{r}
 bs_carousel(id = "with_the_beatles") %>%
@@ -54,4 +54,4 @@ bs_carousel(id = "with_the_beatles") %>%
 
 ## Reference
 
-For more information, please see the [Bootstrap JavaScript page](http://getbootstrap.com/javascript/#carousel).
+For more information, please see the [Bootstrap JavaScript page](http://getbootstrap.com/docs/3.3/javascript/#carousel).

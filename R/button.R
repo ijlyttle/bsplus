@@ -12,7 +12,7 @@
 #' @return Object with S3 class, `shiny.tag`, `<button/>`.
 #' @examples
 #' bs_button("Click me", button_type = "primary", button_size = "small")
-#' @seealso <http://getbootstrap.com/css/#buttons>
+#' @seealso <http://getbootstrap.com/docs/3.3/css/#buttons>
 #' @export
 #'
 bs_button <- function(

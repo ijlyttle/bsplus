@@ -68,5 +68,5 @@ bs_button("She Loves You", button_type = "primary") \%>\%
 
 }
 \seealso{
-\url{https://getbootstrap.com/javascript/#collapse}
+\url{https://getbootstrap.com/docs/3.3/javascript/#collapse}
 }
