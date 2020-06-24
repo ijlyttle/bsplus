@@ -5,6 +5,7 @@
 #'
 #' @param id         character, unique identifier
 #' @param panel_type character, one of the standard Bootstrap types
+#' @param heading    character (HTML) or [htmltools::tagList()],
 #'   content for the heading
 #' @param body       character (HTML) or [htmltools::tagList()],
 #'   content for the body

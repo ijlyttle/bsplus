@@ -16,7 +16,9 @@ bs_panel(
 \arguments{
 \item{id}{character, unique identifier}
 
-\item{panel_type}{character, one of the standard Bootstrap types
+\item{panel_type}{character, one of the standard Bootstrap types}
+
+\item{heading}{character (HTML) or \code{\link[htmltools:tagList]{htmltools::tagList()}},
 content for the heading}
 
 \item{body}{character (HTML) or \code{\link[htmltools:tagList]{htmltools::tagList()}},
