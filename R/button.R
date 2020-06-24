@@ -1,7 +1,7 @@
 #' Button
 #'
 #' This function makes it a little easier to make Bootstrap-friendly buttons;
-#' it wraps [htmltools::tags] for buttons.
+#' it wraps [`htmltools::tags`][`htmltools::builder`] for buttons.
 #'
 #' @param label character (HTML), button label
 #' @param button_type character, one of the standard Bootstrap types
