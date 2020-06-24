@@ -1,4 +1,7 @@
-# bsplus
+---
+title: bsplus
+output: github_document
+---
 
 <!-- badges: start -->
 [![CRAN status](https://www.r-pkg.org/badges/version/bsplus)](https://cran.r-project.org/package=bsplus)
@@ -25,7 +28,7 @@ devtools::install_github("ijlyttle/bsplus")
 
 ## Introduction
 
-To see all of this in action, you are referred to the [overview article](https://ijlyttle.github.io/bsplus/articles/overview.html) at this package's **pkgdown** site. 
+To see all of this in action, you are referred to the [getting-started article](http://ijlyttle.github.io/bsplus/articles/bsplus.html) at this package's **pkgdown** site. 
 
 The goals of this package are:
 

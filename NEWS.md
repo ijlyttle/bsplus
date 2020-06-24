@@ -1,4 +1,4 @@
-# bsplus 0.1.1.9000
+# bsplus 0.1.2
 
 - adds `button_size` argument to `bs_button()` (#54)
 
