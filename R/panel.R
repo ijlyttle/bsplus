@@ -14,7 +14,7 @@
 #' @param footer     character (HTML) or [htmltools::tagList()],
 #'   content for the footer
 #'
-#' @return [htmltools::tag()], `<button/>`
+#' @return Object with S3 class, `shiny.tag`, `<div/>`
 #' @examples
 #' library("htmltools")
 #'

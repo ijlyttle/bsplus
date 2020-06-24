@@ -1,13 +1,13 @@
 #' Button
 #'
 #' This function makes it a little easier to make Bootstrap-friendly buttons;
-#' it wraps the [htmltools::tags()] function for buttons.
+#' it wraps [htmltools::tags] for buttons.
 #'
 #' @param label character (HTML), button label
 #' @param button_type character, one of the standard Bootstrap types
 #' @param button_size character, size of the button
 #' @param ... attributes (named arguments) and children (unnamed arguments)
-#'   of the button, passed to `htmltools::[tag][htmltools::tag]`
+#'   of the button, passed to
 #'
 #' @return Object with S3 class, `shiny.tag`, `<button/>`.
 #' @examples

@@ -31,7 +31,7 @@ other content}
 content for the footer}
 }
 \value{
-\code{\link[htmltools:tag]{htmltools::tag()}}, \verb{<button/>}
+Object with S3 class, \code{shiny.tag}, \verb{<div/>}
 }
 \description{
 This function makes it a little easier to make Bootstrap-friendly panels;
