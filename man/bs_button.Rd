@@ -26,7 +26,7 @@ Object with S3 class, \code{shiny.tag}, \verb{<button/>}.
 }
 \description{
 This function makes it a little easier to make Bootstrap-friendly buttons;
-it wraps \link[htmltools:tags]{htmltools::tags} for buttons.
+it wraps \code{\link[htmltools:builder]{htmltools::tags}} for buttons.
 }
 \examples{
 bs_button("Click me", button_type = "primary", button_size = "small")
