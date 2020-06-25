@@ -50,7 +50,7 @@
 #' bs_button("She Loves You", button_type = "primary") %>%
 #'   bs_attach_collapse("id_yeah")
 #'
-#' @seealso <https://getbootstrap.com/javascript/#collapse>
+#' @seealso <https://getbootstrap.com/docs/3.3/javascript/#collapse>
 #'
 #' @export
 #'

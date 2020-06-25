@@ -56,4 +56,4 @@ bs_button("Large modal") %>%
 
 ## Reference
 
-For more information, please see the [Bootstrap JavaScript page](http://getbootstrap.com/javascript/#modals).
+For more information, please see the [Bootstrap JavaScript page](http://getbootstrap.com/docs/3.3/javascript/#modals).

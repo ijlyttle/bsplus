@@ -7,13 +7,13 @@ output: rmarkdown::html_document
 
 One of the goals of **bsplus** is to provide access to some useful Bootstrap components for **rmarkdown** html-documents and **shiny** apps:
 
-- Basic components: [button](http://getbootstrap.com/css/#buttons), [panel](http://getbootstrap.com/components/#panels), and [well](http://getbootstrap.com/components/#wells)
+- Basic components: [button](http://getbootstrap.com/docs/3.3/css/#buttons), [panel](http://getbootstrap.com/docs/3.3/components/#panels), and [well](http://getbootstrap.com/docs/3.3/components/#wells)
 
-- Collapsible components: [collapse](http://getbootstrap.com/javascript/#collapse) and [accordion](http://getbootstrap.com/javascript/#collapse-example-accordion)
+- Collapsible components: [collapse](http://getbootstrap.com/docs/3.3/javascript/#collapse) and [accordion](http://getbootstrap.com/docs/3.3/javascript/#collapse-example-accordion)
 
-- Tools to help with documentation: [tooltip](http://getbootstrap.com/javascript/#tooltips), [popover](http://getbootstrap.com/javascript/#popovers), and [modal](http://getbootstrap.com/javascript/#modals), talk about the responsive embed function, once it is made.
+- Tools to help with documentation: [tooltip](http://getbootstrap.com/docs/3.3/javascript/#tooltips), [popover](http://getbootstrap.com/docs/3.3/javascript/#popovers), and [modal](http://getbootstrap.com/docs/3.3/javascript/#modals), talk about the responsive embed function, once it is made.
 
-- Present more information: [carousel](http://getbootstrap.com/javascript/#carousel)
+- Present more information: [carousel](http://getbootstrap.com/docs/3.3/javascript/#carousel)
 
 Another goal is to provide some tools to help build **shiny** apps.
 
@@ -166,7 +166,7 @@ bs_button("John Lennon", button_type = "default") %>%
   bs_embed_tooltip(title = "Rhythm Guitar, vocals")
 ```
 
-According to the [Bootstrap site](http://getbootstrap.com/javascript/#tooltips), tooltips are not activated automatically; to activate them you can call `use_bs_tooltip()` once on your page.
+According to the [Bootstrap site](http://getbootstrap.com/docs/3.3/javascript/#tooltips), tooltips are not activated automatically; to activate them you can call `use_bs_tooltip()` once on your page.
 
 ```{r}
 use_bs_tooltip()
@@ -187,7 +187,7 @@ bs_button("John Lennon", button_type = "default") %>%
   )
 ```
 
-According to the [Bootstrap site](http://getbootstrap.com/javascript/#popovers), popovers are not activated automatically; to activate them you can call `use_bs_popovers()` once on your page.
+According to the [Bootstrap site](http://getbootstrap.com/docs/3.3/javascript/#popovers), popovers are not activated automatically; to activate them you can call `use_bs_popovers()` once on your page.
 
 ```{r}
 use_bs_popover()
@@ -268,7 +268,7 @@ To see more of the help-link framework, including more examples and a proposed c
 
 Finally, there are a couple of helper functions for customizing Bootstrap tags: `bs_set_data()` and `bs_set_aria()`. These can be useful because not all of the options for Bootstrap components are represented in the arguments of functions in this package. 
 
-Consider the [options for popovers](http://getbootstrap.com/javascript/#popovers-options); there are close to a dozen. The only one that I thought might be commonly used was `placement`, so this became an explicit argument to `bs_embed_popover()`. 
+Consider the [options for popovers](http://getbootstrap.com/docs/3.3/javascript/#popovers-options); there are close to a dozen. The only one that I thought might be commonly used was `placement`, so this became an explicit argument to `bs_embed_popover()`. 
 
 Let's say that you want to be able to dismiss a popover by clicking anywhere in the browser window other than the button. To do this, you have to set the attribute `data-trigger` to the value `"focus"`. The function `bs_set_data()` makes things a little easier for you by prepending `"data-"` to each name and serializing the values to the format specified by the Bootstrap API.  
 

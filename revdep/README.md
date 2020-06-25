@@ -10,20 +10,22 @@
 |collate  |en_US.UTF-8                  |
 |ctype    |en_US.UTF-8                  |
 |tz       |America/Chicago              |
-|date     |2020-05-16                   |
+|date     |2020-06-24                   |
 
 # Dependencies
 
-|package   |old   |new        |Δ  |
-|:---------|:-----|:----------|:--|
-|bsplus    |0.1.1 |0.1.1.9004 |*  |
-|glue      |NA    |1.4.1      |*  |
-|lubridate |NA    |1.7.8      |*  |
-|purrr     |NA    |0.3.4      |*  |
-|Rcpp      |NA    |1.0.4.6    |*  |
-|rlang     |NA    |0.4.6      |*  |
-|tinytex   |NA    |0.22       |*  |
-|xfun      |NA    |0.13       |*  |
+|package   |old   |new     |Δ  |
+|:---------|:-----|:-------|:--|
+|bsplus    |0.1.1 |0.1.2   |*  |
+|glue      |NA    |1.4.1   |*  |
+|htmltools |NA    |0.5.0   |*  |
+|knitr     |NA    |1.29    |*  |
+|lubridate |NA    |1.7.9   |*  |
+|purrr     |NA    |0.3.4   |*  |
+|Rcpp      |NA    |1.0.4.6 |*  |
+|rmarkdown |NA    |2.3     |*  |
+|tinytex   |NA    |0.24    |*  |
+|xfun      |NA    |0.15    |*  |
 
 # Revdeps
 

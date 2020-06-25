@@ -38,5 +38,5 @@ use_bs_popover()
 
 ## Reference
 
-For more information, please see the Bootstrap JavaScript page on [tooltips](http://getbootstrap.com/javascript/#tooltips) or [popovers](http://getbootstrap.com/javascript/#popovers).
+For more information, please see the Bootstrap JavaScript page on [tooltips](http://getbootstrap.com/docs/3.3/javascript/#tooltips) or [popovers](http://getbootstrap.com/docs/3.3/javascript/#popovers).
 

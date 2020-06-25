@@ -1,20 +1,20 @@
 #' Panel
 #'
 #' This function makes it a little easier to make Bootstrap-friendly panels;
-#' it wraps the [htmltools::tags()] function for panels
+#' it wraps [`htmltools::tags`][`htmltools::builder`] for panels
 #'
 #' @param id         character, unique identifier
 #' @param panel_type character, one of the standard Bootstrap types
-#' @param heading    character (HTML) or [htmltools::tagList()],
+#' @param heading    character (HTML) or [htmltools::tagList()][htmltools::tag()],
 #'   content for the heading
-#' @param body       character (HTML) or [htmltools::tagList()],
+#' @param body       character (HTML) or [htmltools::tagList()][htmltools::tag()],
 #'   content for the body
-#' @param ...        character (HTML) or [htmltools::tagList()],
+#' @param ...        character (HTML) or [htmltools::tagList()][htmltools::tag()],
 #'   other content
-#' @param footer     character (HTML) or [htmltools::tagList()],
+#' @param footer     character (HTML) or [htmltools::tagList()][htmltools::tag()],
 #'   content for the footer
 #'
-#' @return [htmltools::tag()], `<button/>`
+#' @return Object with S3 class, `shiny.tag`, `<div/>`
 #' @examples
 #' library("htmltools")
 #'
@@ -23,7 +23,7 @@
 #'   heading = tags$h3("title"),
 #'   body = tags$p("Some very important content")
 #' )
-#' @seealso <http://getbootstrap.com/css/#panels>
+#' @seealso <http://getbootstrap.com/docs/3.3/css/#panels>
 #' @export
 #'
 bs_panel <- function(
