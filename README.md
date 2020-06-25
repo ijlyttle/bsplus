@@ -1,7 +1,4 @@
----
-title: bsplus
-output: github_document
----
+# bsplus
 
 <!-- badges: start -->
 [![CRAN status](https://www.r-pkg.org/badges/version/bsplus)](https://cran.r-project.org/package=bsplus)
