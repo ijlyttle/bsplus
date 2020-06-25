@@ -10,21 +10,27 @@
 
 
 <!-- jquery -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
 <!-- Bootstrap -->
-<link href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/sandstone/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous" />
+<link href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.4.0/sandstone/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous" />
 
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha256-U5ZEeKfGNOja007MMD3YBI0A3OSZOQbeG6z2f2Y0hu8=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha256-nuL8/2cJ5NDSSwnKD8VqreErSWHtnEP9E7AySL+1ev4=" crossorigin="anonymous"></script>
+
+<!-- bootstrap-toc -->
+<link rel="stylesheet" href="../bootstrap-toc.css">
+<script src="../bootstrap-toc.js"></script>
 
 <!-- Font Awesome icons -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/v4-shims.min.css" integrity="sha256-wZjR52fzng1pJHwx4aV2AO3yyTOXrcDW7jBpJtTwVxw=" crossorigin="anonymous" />
 
 <!-- clipboard.js -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.4/clipboard.min.js" integrity="sha256-FiZwavyI2V6+EXO1U+xzLG3IKldpiTFf3153ea9zikQ=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script>
 
-<!-- sticky kit -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/sticky-kit/1.1.3/sticky-kit.min.js" integrity="sha256-c4Rlo1ZozqTPE2RLuvbusY3+SU1pQaJC0TjuhygMipw=" crossorigin="anonymous"></script>
+<!-- headroom.js -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/headroom.min.js" integrity="sha256-AsUX4SJE1+yuDu5+mAVzJbuYNPHj/WroHuZ8Ir/CkE0=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/jQuery.headroom.min.js" integrity="sha256-ZX/yNShbjqsohH1k95liqY9Gd8uOiE1S4vZc+9KQ1K4=" crossorigin="anonymous"></script>
 
 <!-- pkgdown -->
 <link href="../pkgdown.css" rel="stylesheet">
@@ -38,7 +44,6 @@
 <meta property="og:title" content="Carousel — bs_append.bsplus_carousel" />
 <meta property="og:description" content="A carousel is used to enclose a set of (typically) images,
 providing controls to move slides back-and-forth." />
-<meta name="twitter:card" content="summary" />
 
 
 
@@ -53,9 +58,10 @@ providing controls to move slides back-and-forth." />
 <![endif]-->
 
 
+
   </head>
 
-  <body>
+  <body data-spy="scroll" data-target="#toc">
     <div class="container template-reference-topic">
       <header>
       <div class="navbar navbar-default navbar-fixed-top" role="navigation">
@@ -69,7 +75,7 @@ providing controls to move slides back-and-forth." />
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">bsplus</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.1.1.9002</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.1.2</span>
       </span>
     </div>
 
@@ -77,7 +83,7 @@ providing controls to move slides back-and-forth." />
       <ul class="nav navbar-nav">
         <li>
   <a href="../index.html">
-    <span class="fa fa-home fa-lg"></span>
+    <span class="fas fa fas fa-home fa-lg"></span>
      
   </a>
 </li>
@@ -87,35 +93,8 @@ providing controls to move slides back-and-forth." />
 <li>
   <a href="../reference/index.html">Reference</a>
 </li>
-<li class="dropdown">
-  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-    Articles
-     
-    <span class="caret"></span>
-  </a>
-  <ul class="dropdown-menu" role="menu">
-    <li>
-      <a href="../articles/accordion.html">Accordion</a>
-    </li>
-    <li>
-      <a href="../articles/accordion_sidebar.html">Accordion Sidebar</a>
-    </li>
-    <li>
-      <a href="../articles/carousel.html">Carousel</a>
-    </li>
-    <li>
-      <a href="../articles/collapse.html">Collapse</a>
-    </li>
-    <li>
-      <a href="../articles/modal.html">Modals</a>
-    </li>
-    <li>
-      <a href="../articles/shiny_help_links.html">Shiny-input help links</a>
-    </li>
-    <li>
-      <a href="../articles/tooltip_popover.html">Tooltips and popovers</a>
-    </li>
-  </ul>
+<li>
+  <a href="../articles/index.html">Articles</a>
 </li>
 <li>
   <a href="../news/index.html">Changelog</a>
@@ -123,8 +102,8 @@ providing controls to move slides back-and-forth." />
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <li>
-  <a href="https://github.com/ijlyttle/bsplus">
-    <span class="fa fa-github fa-lg"></span>
+  <a href="https://github.com/ijlyttle/bsplus/">
+    <span class="fab fa fab fa-github fa-lg"></span>
      
   </a>
 </li>
@@ -135,6 +114,7 @@ providing controls to move slides back-and-forth." />
 </div><!--/.navbar -->
 
       
+
       </header>
 
 <div class="row">
@@ -151,26 +131,26 @@ providing controls to move slides back-and-forth.</p>
     </div>
 
     <pre class="usage"><span class='co'># S3 method for bsplus_carousel</span>
-<span class='fu'><a href='bs_append.html'>bs_append</a></span>(<span class='no'>tag</span>, <span class='no'>content</span>, <span class='kw'>caption</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='no'>...</span>)
+<span class='fu'>bs_append</span>(<span class='kw'>tag</span>, <span class='kw'>content</span>, caption = <span class='kw'>NULL</span>, <span class='kw'>...</span>)
 
-<span class='fu'>bs_carousel</span>(<span class='no'>id</span>, <span class='kw'>use_indicators</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>, <span class='kw'>use_controls</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>)</pre>
+<span class='fu'>bs_carousel</span>(<span class='kw'>id</span>, use_indicators = <span class='fl'>FALSE</span>, use_controls = <span class='fl'>TRUE</span>)</pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
       <th>tag</th>
-      <td><p><code>htmltools::<a href='https://www.rdocumentation.org/packages/htmltools/topics/tag'>tag</a></code>,
+      <td><p><code>htmltools::[tag][htmltools::tag]</code>,
 carousel <code>&lt;div/&gt;</code> to which to append a panel</p></td>
     </tr>
     <tr>
       <th>content</th>
-      <td><p>character (HTML) or <code>htmltools::<a href='https://www.rdocumentation.org/packages/htmltools/topics/tag'>tagList</a></code>,
+      <td><p>character (HTML) or <code>htmltools::[tagList][htmltools::tagList]</code>,
 content for the slide</p></td>
     </tr>
     <tr>
       <th>caption</th>
-      <td><p>character (HTML) or <code>htmltools::<a href='https://www.rdocumentation.org/packages/htmltools/topics/tag'>tagList</a></code>,
+      <td><p>character (HTML) or <code>htmltools::[tagList][htmltools::tagList]</code>,
 caption for the slide</p></td>
     </tr>
     <tr>
@@ -180,7 +160,7 @@ caption for the slide</p></td>
     <tr>
       <th>id</th>
       <td><p>character, unique id for accordion <code>&lt;div/&gt;</code>,
-also serves as root id for slides appended using <code><a href='bs_append.html'>bs_append()</a></code></p></td>
+also serves as root id for slides appended using <code>bs_append()</code></p></td>
     </tr>
     <tr>
       <th>use_indicators</th>
@@ -194,18 +174,19 @@ also serves as root id for slides appended using <code><a href='bs_append.html'>
 
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
-    <p><code>bsplus_carousel</code> object (<code>htmltools::<a href='https://www.rdocumentation.org/packages/htmltools/topics/tag'>tag</a></code>,
+    <p><code>bsplus_carousel</code> object (<code>htmltools::[tag][htmltools::tag]</code>,
 <code>&lt;div/&gt;</code>)</p>
     <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
 
     <p>All of these functions return a <code>bsplus_carousel</code> object
-(which is also an <code>htmltools::<a href='https://www.rdocumentation.org/packages/htmltools/topics/tag'>tag</a></code>, <code>&lt;div/&gt;</code>), so you can
+(which is also an <code>htmltools::[tag][htmltools::tag]</code>, <code>&lt;div/&gt;</code>), so you can
 compose a carousel by piping. There are two parts to this system:</p>
 <ol>
 <li><p>A constructor function for the carousel, <code>bs_carousel()</code></p></li>
-<li><p>A function to append a slide to the carousel, <code><a href='bs_append.html'>bs_append()</a></code></p></li>
+<li><p>A function to append a slide to the carousel, <code>bs_append()</code></p></li>
 </ol>
-    <p>The verb <em>append</em> is used to signify that you can append an arbitrary
+
+<p>The verb <em>append</em> is used to signify that you can append an arbitrary
 number of slides to a carousel.</p>
 <p>For the constructor, <code>bs_carousel()</code>,
 it is your responsibility to ensure that <code>id</code> is unique
@@ -213,15 +194,15 @@ among HTML elements in your page. If you have non-unique <code>id</code>'s, stra
 happen to your page.</p>
     <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
 
-    <div class='dont-index'><p><a href='http://getbootstrap.com/javascript/#carousel'>http://getbootstrap.com/javascript/#carousel</a>,
-<code><a href='bs_carousel_image.html'>bs_carousel_image</a></code>, <code><a href='bs_carousel_caption.html'>bs_carousel_caption</a></code></p></div>
+    <div class='dont-index'><p><a href='http://getbootstrap.com/docs/3.3/javascript/#carousel'>http://getbootstrap.com/docs/3.3/javascript/#carousel</a>,
+<code>bs_carousel_image()</code>, <code>bs_carousel_caption()</code></p></div>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='fu'>bs_carousel</span>(<span class='kw'>id</span> <span class='kw'>=</span> <span class='st'>"with_the_beatles"</span>) <span class='kw'>%&gt;%</span>
-  <span class='fu'><a href='bs_append.html'>bs_append</a></span>(<span class='kw'>content</span> <span class='kw'>=</span> <span class='fu'><a href='bs_carousel_image.html'>bs_carousel_image</a></span>(<span class='kw'>src</span> <span class='kw'>=</span> <span class='st'>"img/john.jpg"</span>)) <span class='kw'>%&gt;%</span>
-  <span class='fu'><a href='bs_append.html'>bs_append</a></span>(<span class='kw'>content</span> <span class='kw'>=</span> <span class='fu'><a href='bs_carousel_image.html'>bs_carousel_image</a></span>(<span class='kw'>src</span> <span class='kw'>=</span> <span class='st'>"img/paul.jpg"</span>)) <span class='kw'>%&gt;%</span>
-  <span class='fu'><a href='bs_append.html'>bs_append</a></span>(<span class='kw'>content</span> <span class='kw'>=</span> <span class='fu'><a href='bs_carousel_image.html'>bs_carousel_image</a></span>(<span class='kw'>src</span> <span class='kw'>=</span> <span class='st'>"img/george.jpg"</span>)) <span class='kw'>%&gt;%</span>
-  <span class='fu'><a href='bs_append.html'>bs_append</a></span>(<span class='kw'>content</span> <span class='kw'>=</span> <span class='fu'><a href='bs_carousel_image.html'>bs_carousel_image</a></span>(<span class='kw'>src</span> <span class='kw'>=</span> <span class='st'>"img/ringo.jpg"</span>))</div><div class='output co'>#&gt; &lt;div id="with_the_beatles" class="carousel slide" data-ride="carousel"&gt;
+    <pre class="examples"><div class='input'><span class='fu'>bs_carousel</span>(id = <span class='st'>"with_the_beatles"</span>) <span class='op'>%&gt;%</span>
+  <span class='fu'>bs_append</span>(content = <span class='fu'>bs_carousel_image</span>(src = <span class='st'>"img/john.jpg"</span>)) <span class='op'>%&gt;%</span>
+  <span class='fu'>bs_append</span>(content = <span class='fu'>bs_carousel_image</span>(src = <span class='st'>"img/paul.jpg"</span>)) <span class='op'>%&gt;%</span>
+  <span class='fu'>bs_append</span>(content = <span class='fu'>bs_carousel_image</span>(src = <span class='st'>"img/george.jpg"</span>)) <span class='op'>%&gt;%</span>
+  <span class='fu'>bs_append</span>(content = <span class='fu'>bs_carousel_image</span>(src = <span class='st'>"img/ringo.jpg"</span>))</div><div class='output co'>#&gt; &lt;div id="with_the_beatles" class="carousel slide" data-ride="carousel"&gt;
 #&gt;   &lt;div class="carousel-inner" role="listbox"&gt;
 #&gt;     &lt;div class="item active"&gt;
 #&gt;       &lt;img src="img/john.jpg" class="img-responsive center-block"/&gt;
@@ -244,21 +225,15 @@ happen to your page.</p>
 #&gt;     &lt;span class="glyphicon glyphicon-chevron-right" aria-hidden="true"&gt;&lt;/span&gt;
 #&gt;     &lt;span class="sr-only"&gt;Next&lt;/span&gt;
 #&gt;   &lt;/a&gt;
-#&gt; &lt;/div&gt;</div><div class='input'>
-</div></pre>
+#&gt; &lt;/div&gt;</div><div class='input'></div></pre>
   </div>
-  <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
-    <h2>Contents</h2>
-    <ul class="nav nav-pills nav-stacked">
-      <li><a href="#arguments">Arguments</a></li>
-      <li><a href="#value">Value</a></li>
-      <li><a href="#details">Details</a></li>
-      <li><a href="#see-also">See also</a></li>
-      <li><a href="#examples">Examples</a></li>
-    </ul>
-
+  <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
+    <nav id="toc" data-toggle="toc" class="sticky-top">
+      <h2 data-toc-skip>Contents</h2>
+    </nav>
   </div>
 </div>
+
 
       <footer>
       <div class="copyright">
@@ -266,13 +241,16 @@ happen to your page.</p>
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.3.0.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.5.1.9000.</p>
 </div>
+
       </footer>
    </div>
 
   
 
+
   </body>
 </html>
+
 
