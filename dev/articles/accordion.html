@@ -33,7 +33,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">bsplus</a>
-        <span class="version label label-danger" data-toggle="tooltip" data-placement="bottom" title="In-development version">0.1.1.9006</span>
+        <span class="version label label-danger" data-toggle="tooltip" data-placement="bottom" title="In-development version">0.1.2.9000</span>
       </span>
     </div>
 
@@ -75,13 +75,13 @@
 
       
 
-      </header><div class="row">
+      </header><script src="accordion_files/accessible-code-block-0.0.1/empty-anchor.js"></script><div class="row">
   <div class="col-md-9 contents">
     <div class="page-header toc-ignore">
       <h1 data-toc-skip>Accordion</h1>
                         <h4 class="author">Ian Lyttle</h4>
             
-            <h4 class="date">2020-05-16</h4>
+            <h4 class="date">2020-06-25</h4>
       
       <small class="dont-index">Source: <a href="https://github.com/ijlyttle/bsplus/blob/master/vignettes/accordion.Rmd"><code>vignettes/accordion.Rmd</code></a></small>
       <div class="hidden name"><code>accordion.Rmd</code></div>
@@ -90,8 +90,10 @@
 
     
     
-<div class="sourceCode" id="cb1"><html><body><pre class="r"><span class="fu"><a href="https://rdrr.io/r/base/library.html">library</a></span>(<span class="st">"htmltools"</span>)
-<span class="fu"><a href="https://rdrr.io/r/base/library.html">library</a></span>(<span class="st">"bsplus"</span>)</pre></body></html></div>
+<div class="sourceCode" id="cb1"><pre class="downlit">
+<span class="fu"><a href="https://rdrr.io/r/base/library.html">library</a></span>(<span class="st"><a href="https://github.com/rstudio/htmltools">"htmltools"</a></span>)
+<span class="fu"><a href="https://rdrr.io/r/base/library.html">library</a></span>(<span class="st"><a href="https://github.com/ijlyttle/bsplus">"bsplus"</a></span>)
+</pre></div>
 <p>The <code><a href="../reference/bs_accordion.html">bs_accordion()</a></code> family is an extension of the <code><a href="../reference/bs_collapse.html">bs_collapse()</a></code> family. An accordion is a set of collapsible panels constructed such that one panel, at most, is open at a time.</p>
 <p>There are three functions in this family:</p>
 <ul>
@@ -107,13 +109,15 @@
 <p>The appearance of panels can be modified using the <code><a href="../reference/bs_set_opts.html">bs_set_opts()</a></code> function. Its first argument is the accordion <code>tag</code>, its other arguments are <code>panel_type</code>, which controls the appearance of following panels, and <code>use_heading_link</code>, which, if <code>TRUE</code>, makes the entire headings of following panels of into links, rather than just the title.</p>
 <p>The default <code>panel_type</code> is <code>"default"</code>, the default for <code>use_heading_link</code> is <code>FALSE</code>.</p>
 <p>All of these functions return an accordion tag; thus, you can build an accordion using a pipe.</p>
-<div class="sourceCode" id="cb2"><html><body><pre class="r"><span class="fu"><a href="../reference/bs_accordion.html">bs_accordion</a></span>(<span class="kw">id</span> <span class="kw">=</span> <span class="st">"beatles"</span>) <span class="kw">%&gt;%</span>
-  <span class="fu"><a href="../reference/bs_set_opts.html">bs_set_opts</a></span>(<span class="kw">panel_type</span> <span class="kw">=</span> <span class="st">"success"</span>, <span class="kw">use_heading_link</span> <span class="kw">=</span> <span class="fl">TRUE</span>) <span class="kw">%&gt;%</span>
-  <span class="fu"><a href="../reference/bs_append.html">bs_append</a></span>(<span class="kw">title</span> <span class="kw">=</span> <span class="st">"John Lennon"</span>, <span class="kw">content</span> <span class="kw">=</span> <span class="st">"Rhythm guitar, vocals"</span>) <span class="kw">%&gt;%</span>
-  <span class="fu"><a href="../reference/bs_append.html">bs_append</a></span>(<span class="kw">title</span> <span class="kw">=</span> <span class="st">"Paul McCartney"</span>, <span class="kw">content</span> <span class="kw">=</span> <span class="st">"Bass guitar, vocals"</span>) <span class="kw">%&gt;%</span>
-  <span class="fu"><a href="../reference/bs_append.html">bs_append</a></span>(<span class="kw">title</span> <span class="kw">=</span> <span class="st">"George Harrison"</span>, <span class="kw">content</span> <span class="kw">=</span> <span class="st">"Lead guitar, vocals"</span>) <span class="kw">%&gt;%</span>
-  <span class="fu"><a href="../reference/bs_set_opts.html">bs_set_opts</a></span>(<span class="kw">panel_type</span> <span class="kw">=</span> <span class="st">"info"</span>) <span class="kw">%&gt;%</span>
-  <span class="fu"><a href="../reference/bs_append.html">bs_append</a></span>(<span class="kw">title</span> <span class="kw">=</span> <span class="st">"Ringo Starr"</span>, <span class="kw">content</span> <span class="kw">=</span> <span class="st">"Drums, vocals"</span>)</pre></body></html></div>
+<div class="sourceCode" id="cb2"><pre class="downlit">
+<span class="fu"><a href="../reference/bs_accordion.html">bs_accordion</a></span>(id = <span class="st">"beatles"</span>) <span class="op">%&gt;%</span>
+  <span class="fu"><a href="../reference/bs_set_opts.html">bs_set_opts</a></span>(panel_type = <span class="st">"success"</span>, use_heading_link = <span class="fl">TRUE</span>) <span class="op">%&gt;%</span>
+  <span class="fu"><a href="../reference/bs_append.html">bs_append</a></span>(title = <span class="st">"John Lennon"</span>, content = <span class="st">"Rhythm guitar, vocals"</span>) <span class="op">%&gt;%</span>
+  <span class="fu"><a href="../reference/bs_append.html">bs_append</a></span>(title = <span class="st">"Paul McCartney"</span>, content = <span class="st">"Bass guitar, vocals"</span>) <span class="op">%&gt;%</span>
+  <span class="fu"><a href="../reference/bs_append.html">bs_append</a></span>(title = <span class="st">"George Harrison"</span>, content = <span class="st">"Lead guitar, vocals"</span>) <span class="op">%&gt;%</span>
+  <span class="fu"><a href="../reference/bs_set_opts.html">bs_set_opts</a></span>(panel_type = <span class="st">"info"</span>) <span class="op">%&gt;%</span>
+  <span class="fu"><a href="../reference/bs_append.html">bs_append</a></span>(title = <span class="st">"Ringo Starr"</span>, content = <span class="st">"Drums, vocals"</span>) 
+</pre></div>
 <div id="beatles" class="panel-group" role="tablist" aria-multiselectable="true">
 <div class="panel panel-success" id="beatles-0">
 <div id="beatles-0-heading" class="panel-heading" role="tab" data-toggle="collapse" data-target="#beatles-0-collapse" data-parent="#beatles" aria-expanded="true" aria-controls="beatles-0-collapse" style="cursor: pointer;">
@@ -153,19 +157,21 @@
 </div>
 </div>
 <p>The <code>panel_type</code> has to be one of the standard Bootstrap types: <code><a href="https://rdrr.io/r/base/c.html">c("default", "primary", "success", "info", "warning", "danger")</a></code>.</p>
-<div class="sourceCode" id="cb3"><html><body><pre class="r"><span class="fu"><a href="../reference/bs_accordion.html">bs_accordion</a></span>(<span class="kw">id</span> <span class="kw">=</span> <span class="st">"bootstrap_types"</span>) <span class="kw">%&gt;%</span>
-  <span class="fu"><a href="../reference/bs_set_opts.html">bs_set_opts</a></span>(<span class="kw">panel_type</span> <span class="kw">=</span> <span class="st">"default"</span>) <span class="kw">%&gt;%</span>
-  <span class="fu"><a href="../reference/bs_append.html">bs_append</a></span>(<span class="kw">title</span> <span class="kw">=</span> <span class="st">"Default"</span>, <span class="kw">content</span> <span class="kw">=</span> <span class="kw">NULL</span>) <span class="kw">%&gt;%</span>
-  <span class="fu"><a href="../reference/bs_set_opts.html">bs_set_opts</a></span>(<span class="kw">panel_type</span> <span class="kw">=</span> <span class="st">"primary"</span>) <span class="kw">%&gt;%</span>
-  <span class="fu"><a href="../reference/bs_append.html">bs_append</a></span>(<span class="kw">title</span> <span class="kw">=</span> <span class="st">"Primary"</span>, <span class="kw">content</span> <span class="kw">=</span> <span class="kw">NULL</span>) <span class="kw">%&gt;%</span>
-  <span class="fu"><a href="../reference/bs_set_opts.html">bs_set_opts</a></span>(<span class="kw">panel_type</span> <span class="kw">=</span> <span class="st">"success"</span>) <span class="kw">%&gt;%</span>
-  <span class="fu"><a href="../reference/bs_append.html">bs_append</a></span>(<span class="kw">title</span> <span class="kw">=</span> <span class="st">"Success"</span>, <span class="kw">content</span> <span class="kw">=</span> <span class="kw">NULL</span>) <span class="kw">%&gt;%</span>
-  <span class="fu"><a href="../reference/bs_set_opts.html">bs_set_opts</a></span>(<span class="kw">panel_type</span> <span class="kw">=</span> <span class="st">"info"</span>) <span class="kw">%&gt;%</span>
-  <span class="fu"><a href="../reference/bs_append.html">bs_append</a></span>(<span class="kw">title</span> <span class="kw">=</span> <span class="st">"Info"</span>, <span class="kw">content</span> <span class="kw">=</span> <span class="kw">NULL</span>) <span class="kw">%&gt;%</span>
-  <span class="fu"><a href="../reference/bs_set_opts.html">bs_set_opts</a></span>(<span class="kw">panel_type</span> <span class="kw">=</span> <span class="st">"warning"</span>) <span class="kw">%&gt;%</span>
-  <span class="fu"><a href="../reference/bs_append.html">bs_append</a></span>(<span class="kw">title</span> <span class="kw">=</span> <span class="st">"Warning"</span>, <span class="kw">content</span> <span class="kw">=</span> <span class="kw">NULL</span>) <span class="kw">%&gt;%</span>
-  <span class="fu"><a href="../reference/bs_set_opts.html">bs_set_opts</a></span>(<span class="kw">panel_type</span> <span class="kw">=</span> <span class="st">"danger"</span>) <span class="kw">%&gt;%</span>
-  <span class="fu"><a href="../reference/bs_append.html">bs_append</a></span>(<span class="kw">title</span> <span class="kw">=</span> <span class="st">"Danger"</span>, <span class="kw">content</span> <span class="kw">=</span> <span class="kw">NULL</span>)</pre></body></html></div>
+<div class="sourceCode" id="cb3"><pre class="downlit">
+<span class="fu"><a href="../reference/bs_accordion.html">bs_accordion</a></span>(id = <span class="st">"bootstrap_types"</span>) <span class="op">%&gt;%</span>
+  <span class="fu"><a href="../reference/bs_set_opts.html">bs_set_opts</a></span>(panel_type = <span class="st">"default"</span>) <span class="op">%&gt;%</span>
+  <span class="fu"><a href="../reference/bs_append.html">bs_append</a></span>(title = <span class="st">"Default"</span>, content = <span class="kw">NULL</span>) <span class="op">%&gt;%</span>
+  <span class="fu"><a href="../reference/bs_set_opts.html">bs_set_opts</a></span>(panel_type = <span class="st">"primary"</span>) <span class="op">%&gt;%</span>
+  <span class="fu"><a href="../reference/bs_append.html">bs_append</a></span>(title = <span class="st">"Primary"</span>, content = <span class="kw">NULL</span>) <span class="op">%&gt;%</span>
+  <span class="fu"><a href="../reference/bs_set_opts.html">bs_set_opts</a></span>(panel_type = <span class="st">"success"</span>) <span class="op">%&gt;%</span>
+  <span class="fu"><a href="../reference/bs_append.html">bs_append</a></span>(title = <span class="st">"Success"</span>, content = <span class="kw">NULL</span>) <span class="op">%&gt;%</span>
+  <span class="fu"><a href="../reference/bs_set_opts.html">bs_set_opts</a></span>(panel_type = <span class="st">"info"</span>) <span class="op">%&gt;%</span>
+  <span class="fu"><a href="../reference/bs_append.html">bs_append</a></span>(title = <span class="st">"Info"</span>, content = <span class="kw">NULL</span>) <span class="op">%&gt;%</span>
+  <span class="fu"><a href="../reference/bs_set_opts.html">bs_set_opts</a></span>(panel_type = <span class="st">"warning"</span>) <span class="op">%&gt;%</span>
+  <span class="fu"><a href="../reference/bs_append.html">bs_append</a></span>(title = <span class="st">"Warning"</span>, content = <span class="kw">NULL</span>) <span class="op">%&gt;%</span>
+  <span class="fu"><a href="../reference/bs_set_opts.html">bs_set_opts</a></span>(panel_type = <span class="st">"danger"</span>) <span class="op">%&gt;%</span>
+  <span class="fu"><a href="../reference/bs_append.html">bs_append</a></span>(title = <span class="st">"Danger"</span>, content = <span class="kw">NULL</span>)
+</pre></div>
 <div id="bootstrap_types" class="panel-group" role="tablist" aria-multiselectable="true">
 <div class="panel panel-default" id="bootstrap_types-0">
 <div id="bootstrap_types-0-heading" class="panel-heading" role="tab" data-toggle="collapse" data-target="#bootstrap_types-0-collapse" data-parent="#bootstrap_types" aria-expanded="true" aria-controls="bootstrap_types-0-collapse" style="cursor: pointer;">
@@ -225,7 +231,7 @@
 <div id="reference" class="section level2">
 <h2 class="hasAnchor">
 <a href="#reference" class="anchor"></a>Reference</h2>
-<p>For more information, please see the <a href="http://getbootstrap.com/javascript/#collapse-example-accordion">Bootstrap JavaScript page</a>.</p>
+<p>For more information, please see the <a href="http://getbootstrap.com/docs/3.3/javascript/#collapse-example-accordion">Bootstrap JavaScript page</a>.</p>
 </div>
   </div>
 

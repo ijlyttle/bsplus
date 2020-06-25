@@ -74,7 +74,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">bsplus</a>
-        <span class="version label label-danger" data-toggle="tooltip" data-placement="bottom" title="In-development version">0.1.1.9006</span>
+        <span class="version label label-danger" data-toggle="tooltip" data-placement="bottom" title="In-development version">0.1.2.9000</span>
       </span>
     </div>
 
@@ -128,13 +128,13 @@
     <p>An accordion is a set of collapsible panels where, at most, one panel-body is visible.</p>
     </div>
 
-    <pre class="usage"><span class='fu'>bs_accordion</span>(<span class='no'>id</span>)
+    <pre class="usage"><span class='fu'>bs_accordion</span>(<span class='kw'>id</span>)
 
 <span class='co'># S3 method for bsplus_accordion</span>
-<span class='fu'><a href='bs_append.html'>bs_append</a></span>(<span class='no'>tag</span>, <span class='no'>title</span>, <span class='no'>content</span>, <span class='no'>...</span>)
+<span class='fu'>bs_append</span>(<span class='kw'>tag</span>, <span class='kw'>title</span>, <span class='kw'>content</span>, <span class='kw'>...</span>)
 
 <span class='co'># S3 method for bsplus_accordion</span>
-<span class='fu'><a href='bs_set_opts.html'>bs_set_opts</a></span>(<span class='no'>tag</span>, <span class='kw'>panel_type</span> <span class='kw'>=</span> <span class='st'>"primary"</span>, <span class='kw'>use_heading_link</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>, <span class='no'>...</span>)</pre>
+<span class='fu'>bs_set_opts</span>(<span class='kw'>tag</span>, panel_type = <span class='st'>"primary"</span>, use_heading_link = <span class='fl'>TRUE</span>, <span class='kw'>...</span>)</pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -142,7 +142,7 @@
     <tr>
       <th>id</th>
       <td><p>character, unique id for accordion <code>&lt;div/&gt;</code>,
-also serves as root id for panels appended using <code><a href='bs_append.html'>bs_append()</a></code></p></td>
+also serves as root id for panels appended using <code>bs_append()</code></p></td>
     </tr>
     <tr>
       <th>tag</th>
@@ -186,8 +186,8 @@ clickable.</p></td>
 compose an accordion by piping. There are three parts to this system:</p>
 <ol>
 <li><p>A constructor function for the accordion, <code>bs_accordion()</code></p></li>
-<li><p>A function to set options for subsequent panels, <code><a href='bs_set_opts.html'>bs_set_opts()</a></code></p></li>
-<li><p>A function to append a panel to the group, <code><a href='bs_append.html'>bs_append()</a></code></p></li>
+<li><p>A function to set options for subsequent panels, <code>bs_set_opts()</code></p></li>
+<li><p>A function to append a panel to the group, <code>bs_append()</code></p></li>
 </ol>
 
 <p>The verb <em>append</em> is used to signify that you can append an arbitrary
@@ -198,14 +198,14 @@ among HTML elements in your page. If you have non-unique <code>id</code>'s, stra
 happen to your page.</p>
     <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
 
-    <div class='dont-index'><p><a href='http://getbootstrap.com/javascript/#collapse-example-accordion'>http://getbootstrap.com/javascript/#collapse-example-accordion</a></p></div>
+    <div class='dont-index'><p><a href='http://getbootstrap.com/docs/3.3/javascript/#collapse-example-accordion'>http://getbootstrap.com/docs/3.3/javascript/#collapse-example-accordion</a></p></div>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='fu'>bs_accordion</span>(<span class='kw'>id</span> <span class='kw'>=</span> <span class='st'>"meet_the_beatles"</span>) <span class='kw'>%&gt;%</span>
-  <span class='fu'><a href='bs_set_opts.html'>bs_set_opts</a></span>(<span class='kw'>panel_type</span> <span class='kw'>=</span> <span class='st'>"success"</span>, <span class='kw'>use_heading_link</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>) <span class='kw'>%&gt;%</span>
-  <span class='fu'><a href='bs_append.html'>bs_append</a></span>(<span class='kw'>title</span> <span class='kw'>=</span> <span class='st'>"John Lennon"</span>, <span class='kw'>content</span> <span class='kw'>=</span> <span class='st'>"Rhythm guitar, vocals"</span>) <span class='kw'>%&gt;%</span>
-  <span class='fu'><a href='bs_set_opts.html'>bs_set_opts</a></span>(<span class='kw'>panel_type</span> <span class='kw'>=</span> <span class='st'>"info"</span>) <span class='kw'>%&gt;%</span>
-  <span class='fu'><a href='bs_append.html'>bs_append</a></span>(<span class='kw'>title</span> <span class='kw'>=</span> <span class='st'>"Paul McCartney"</span>, <span class='kw'>content</span> <span class='kw'>=</span> <span class='st'>"Bass guitar, vocals"</span>)</div><div class='output co'>#&gt; &lt;div id="meet_the_beatles" class="panel-group" role="tablist" aria-multiselectable="true"&gt;
+    <pre class="examples"><div class='input'><span class='fu'>bs_accordion</span>(id = <span class='st'>"meet_the_beatles"</span>) <span class='op'>%&gt;%</span>
+  <span class='fu'>bs_set_opts</span>(panel_type = <span class='st'>"success"</span>, use_heading_link = <span class='fl'>TRUE</span>) <span class='op'>%&gt;%</span>
+  <span class='fu'>bs_append</span>(title = <span class='st'>"John Lennon"</span>, content = <span class='st'>"Rhythm guitar, vocals"</span>) <span class='op'>%&gt;%</span>
+  <span class='fu'>bs_set_opts</span>(panel_type = <span class='st'>"info"</span>) <span class='op'>%&gt;%</span>
+  <span class='fu'>bs_append</span>(title = <span class='st'>"Paul McCartney"</span>, content = <span class='st'>"Bass guitar, vocals"</span>)</div><div class='output co'>#&gt; &lt;div id="meet_the_beatles" class="panel-group" role="tablist" aria-multiselectable="true"&gt;
 #&gt;   &lt;div class="panel panel-success" id="meet_the_beatles-0"&gt;
 #&gt;     &lt;div id="meet_the_beatles-0-heading" class="panel-heading" role="tab" data-toggle="collapse" data-target="#meet_the_beatles-0-collapse" data-parent="#meet_the_beatles" aria-expanded="true" aria-controls="meet_the_beatles-0-collapse" style="cursor: pointer;"&gt;
 #&gt;       &lt;h4 class="panel-title"&gt;John Lennon&lt;/h4&gt;
@@ -222,8 +222,7 @@ happen to your page.</p>
 #&gt;       &lt;div class="panel-body" style=""&gt;Bass guitar, vocals&lt;/div&gt;
 #&gt;     &lt;/div&gt;
 #&gt;   &lt;/div&gt;
-#&gt; &lt;/div&gt;</div><div class='input'>
-</div></pre>
+#&gt; &lt;/div&gt;</div><div class='input'></div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">

@@ -75,7 +75,7 @@ right edge of the label." />
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">bsplus</a>
-        <span class="version label label-danger" data-toggle="tooltip" data-placement="bottom" title="In-development version">0.1.1.9006</span>
+        <span class="version label label-danger" data-toggle="tooltip" data-placement="bottom" title="In-development version">0.1.2.9000</span>
       </span>
     </div>
 
@@ -130,7 +130,7 @@ right edge of the label." />
 right edge of the label.</p>
     </div>
 
-    <pre class="usage"><span class='fu'>shinyInput_label_embed</span>(<span class='no'>tag</span>, <span class='no'>element</span>)</pre>
+    <pre class="usage"><span class='fu'>shinyInput_label_embed</span>(<span class='kw'>tag</span>, <span class='kw'>element</span>)</pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -153,19 +153,19 @@ into label of <code>tag</code></p></td>
 
     <p>To promote consistency, the following convention is proposed:</p>
 <p>For links (activated by clicking), embed a <code><a href='https://rdrr.io/pkg/shiny/man/icon.html'>shiny::icon("info-circle")</a></code>;
-this is the default for <code><a href='shiny_iconlink.html'>shiny_iconlink()</a></code>. For elements activated
+this is the default for <code>shiny_iconlink()</code>. For elements activated
 by hovering, embed a <code><a href='https://rdrr.io/pkg/shiny/man/icon.html'>shiny::icon("info")</a></code>.</p>
     <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
 
-    <div class='dont-index'><p><code><a href='shiny_iconlink.html'>shiny_iconlink()</a></code></p></div>
+    <div class='dont-index'><p><code>shiny_iconlink()</code></p></div>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='fu'><a href='https://rdrr.io/r/base/library.html'>library</a></span>(<span class='st'>"shiny"</span>)
+    <pre class="examples"><div class='input'><span class='fu'><a href='https://rdrr.io/r/base/library.html'>library</a></span>(<span class='st'><a href='http://shiny.rstudio.com'>"shiny"</a></span>)
 
-<span class='fu'><a href='https://rdrr.io/pkg/shiny/man/numericInput.html'>numericInput</a></span>(<span class='kw'>inputId</span> <span class='kw'>=</span> <span class='st'>"foo"</span>, <span class='kw'>label</span> <span class='kw'>=</span> <span class='st'>"Enter a number"</span>, <span class='kw'>value</span> <span class='kw'>=</span> <span class='fl'>0</span>) <span class='kw'>%&gt;%</span>
+<span class='fu'><a href='https://rdrr.io/pkg/shiny/man/numericInput.html'>numericInput</a></span>(inputId = <span class='st'>"foo"</span>, label = <span class='st'>"Enter a number"</span>, value = <span class='fl'>0</span>) <span class='op'>%&gt;%</span>
   <span class='fu'>shinyInput_label_embed</span>(
-    <span class='fu'><a href='shiny_iconlink.html'>shiny_iconlink</a></span>() <span class='kw'>%&gt;%</span>
-    <span class='fu'><a href='bs_embed_popover.html'>bs_embed_popover</a></span>(<span class='kw'>title</span> <span class='kw'>=</span> <span class='st'>"Number"</span>, <span class='kw'>content</span> <span class='kw'>=</span> <span class='st'>"Not a complex number"</span>)
+    <span class='fu'>shiny_iconlink</span>() <span class='op'>%&gt;%</span>
+    <span class='fu'>bs_embed_popover</span>(title = <span class='st'>"Number"</span>, content = <span class='st'>"Not a complex number"</span>)
   )</div><div class='output co'>#&gt; &lt;div class="form-group shiny-input-container"&gt;
 #&gt;   &lt;label class="control-label" for="foo" style="width:100%;"&gt;
 #&gt;     Enter a number
@@ -176,8 +176,7 @@ by hovering, embed a <code><a href='https://rdrr.io/pkg/shiny/man/icon.html'>shi
 #&gt;     &lt;/div&gt;
 #&gt;   &lt;/label&gt;
 #&gt;   &lt;input id="foo" type="number" class="form-control" value="0"/&gt;
-#&gt; &lt;/div&gt;</div><div class='input'>
-</div></pre>
+#&gt; &lt;/div&gt;</div><div class='input'></div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">

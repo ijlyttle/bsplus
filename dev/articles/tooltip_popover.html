@@ -33,7 +33,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">bsplus</a>
-        <span class="version label label-danger" data-toggle="tooltip" data-placement="bottom" title="In-development version">0.1.1.9006</span>
+        <span class="version label label-danger" data-toggle="tooltip" data-placement="bottom" title="In-development version">0.1.2.9000</span>
       </span>
     </div>
 
@@ -75,13 +75,13 @@
 
       
 
-      </header><div class="row">
+      </header><script src="tooltip_popover_files/accessible-code-block-0.0.1/empty-anchor.js"></script><div class="row">
   <div class="col-md-9 contents">
     <div class="page-header toc-ignore">
       <h1 data-toc-skip>Tooltips and popovers</h1>
                         <h4 class="author">Ian Lyttle</h4>
             
-            <h4 class="date">2020-05-16</h4>
+            <h4 class="date">2020-06-25</h4>
       
       <small class="dont-index">Source: <a href="https://github.com/ijlyttle/bsplus/blob/master/vignettes/tooltip_popover.Rmd"><code>vignettes/tooltip_popover.Rmd</code></a></small>
       <div class="hidden name"><code>tooltip_popover.Rmd</code></div>
@@ -90,30 +90,42 @@
 
     
     
-<div class="sourceCode" id="cb1"><html><body><pre class="r"><span class="fu"><a href="https://rdrr.io/r/base/library.html">library</a></span>(<span class="st">"htmltools"</span>)
-<span class="fu"><a href="https://rdrr.io/r/base/library.html">library</a></span>(<span class="st">"bsplus"</span>)</pre></body></html></div>
+<div class="sourceCode" id="cb1"><pre class="downlit">
+<span class="fu"><a href="https://rdrr.io/r/base/library.html">library</a></span>(<span class="st"><a href="https://github.com/rstudio/htmltools">"htmltools"</a></span>)
+<span class="fu"><a href="https://rdrr.io/r/base/library.html">library</a></span>(<span class="st"><a href="https://github.com/ijlyttle/bsplus">"bsplus"</a></span>)
+</pre></div>
 <p>Tooltips and popovers are used to add additional content, like short notes. They can be useful for short help-documentation. A tooltip is used to embed a short note into a tag; by default they are activated by hovering over the tag. A popover is used to embed a longer note into a tag; by default they are activated by clicking on the tag. A tooltip has only a text <code>title</code>; a popover has a <code>title</code>, which is generally text, and <code>content</code>, which can be HTML.</p>
-<div class="sourceCode" id="cb2"><html><body><pre class="r"><span class="fu"><a href="../reference/bs_button.html">bs_button</a></span>(<span class="st">"Hover for tooltip"</span>) <span class="kw">%&gt;%</span>
-  <span class="fu"><a href="../reference/bs_embed_tooltip.html">bs_embed_tooltip</a></span>(<span class="kw">title</span> <span class="kw">=</span> <span class="st">"I'm a tooltip"</span>)</pre></body></html></div>
+<div class="sourceCode" id="cb2"><pre class="downlit">
+<span class="fu"><a href="../reference/bs_button.html">bs_button</a></span>(<span class="st">"Hover for tooltip"</span>) <span class="op">%&gt;%</span>
+  <span class="fu"><a href="../reference/bs_embed_tooltip.html">bs_embed_tooltip</a></span>(title = <span class="st">"I'm a tooltip"</span>)
+</pre></div>
 <button class="btn btn-default" title="I'm a tooltip" data-toggle="tooltip" data-placement="top">Hover for tooltip</button>
-<div class="sourceCode" id="cb3"><html><body><pre class="r"><span class="fu"><a href="../reference/bs_button.html">bs_button</a></span>(<span class="st">"Click for popover"</span>) <span class="kw">%&gt;%</span>
-  <span class="fu"><a href="../reference/bs_embed_popover.html">bs_embed_popover</a></span>(<span class="kw">title</span> <span class="kw">=</span> <span class="st">"I'm a popover"</span>, <span class="kw">content</span> <span class="kw">=</span> <span class="st">"Really!"</span>)</pre></body></html></div>
+<div class="sourceCode" id="cb3"><pre class="downlit">
+<span class="fu"><a href="../reference/bs_button.html">bs_button</a></span>(<span class="st">"Click for popover"</span>) <span class="op">%&gt;%</span>
+  <span class="fu"><a href="../reference/bs_embed_popover.html">bs_embed_popover</a></span>(title = <span class="st">"I'm a popover"</span>, content = <span class="st">"Really!"</span>)
+</pre></div>
 <button class="btn btn-default" title="I'm a popover" data-toggle="popover" data-content="Really!" data-placement="top">Click for popover</button>
 <p>Both of these functions have an additional argument, <code>placement</code>, which defaults to <code>"top"</code>, following the Bootstrap default. The possible values are <code><a href="https://rdrr.io/r/base/c.html">c("top", "bottom", "left", "right", "auto")</a></code>.</p>
-<div class="sourceCode" id="cb4"><html><body><pre class="r"><span class="fu"><a href="../reference/bs_button.html">bs_button</a></span>(<span class="st">"Another tooltip"</span>) <span class="kw">%&gt;%</span>
-  <span class="fu"><a href="../reference/bs_embed_tooltip.html">bs_embed_tooltip</a></span>(<span class="kw">title</span> <span class="kw">=</span> <span class="st">"I'm on the right"</span>, <span class="kw">placement</span> <span class="kw">=</span> <span class="st">"right"</span>)</pre></body></html></div>
+<div class="sourceCode" id="cb4"><pre class="downlit">
+<span class="fu"><a href="../reference/bs_button.html">bs_button</a></span>(<span class="st">"Another tooltip"</span>) <span class="op">%&gt;%</span>
+  <span class="fu"><a href="../reference/bs_embed_tooltip.html">bs_embed_tooltip</a></span>(title = <span class="st">"I'm on the right"</span>, placement = <span class="st">"right"</span>)
+</pre></div>
 <button class="btn btn-default" title="I'm on the right" data-toggle="tooltip" data-placement="right">Another tooltip</button>
 <p>Tooltips and popovers are not activted by default in Bootstrap. For either of them to work properly, you will have to activate them on your page, using the <code><a href="../reference/bs_embed_tooltip.html">use_bs_tooltip()</a></code> or <code><a href="../reference/bs_embed_popover.html">use_bs_popover()</a></code> functions. For each page you write, you will need to call each function once, at most.</p>
-<div class="sourceCode" id="cb5"><html><body><pre class="r"><span class="fu"><a href="../reference/bs_embed_tooltip.html">use_bs_tooltip</a></span>()</pre></body></html></div>
+<div class="sourceCode" id="cb5"><pre class="downlit">
+<span class="fu"><a href="../reference/bs_embed_tooltip.html">use_bs_tooltip</a></span>()
+</pre></div>
 <script>$(function () {
   $('[data-toggle="tooltip"]').tooltip();
-});</script><div class="sourceCode" id="cb6"><html><body><pre class="r"><span class="fu"><a href="../reference/bs_embed_popover.html">use_bs_popover</a></span>()</pre></body></html></div>
+});</script><div class="sourceCode" id="cb6"><pre class="downlit">
+<span class="fu"><a href="../reference/bs_embed_popover.html">use_bs_popover</a></span>()
+</pre></div>
 <script>$(function () {
   $('[data-toggle="popover"]').popover();
 });</script><div id="reference" class="section level2">
 <h2 class="hasAnchor">
 <a href="#reference" class="anchor"></a>Reference</h2>
-<p>For more information, please see the Bootstrap JavaScript page on <a href="http://getbootstrap.com/javascript/#tooltips">tooltips</a> or <a href="http://getbootstrap.com/javascript/#popovers">popovers</a>.</p>
+<p>For more information, please see the Bootstrap JavaScript page on <a href="http://getbootstrap.com/docs/3.3/javascript/#tooltips">tooltips</a> or <a href="http://getbootstrap.com/docs/3.3/javascript/#popovers">popovers</a>.</p>
 </div>
   </div>
 

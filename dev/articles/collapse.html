@@ -33,7 +33,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">bsplus</a>
-        <span class="version label label-danger" data-toggle="tooltip" data-placement="bottom" title="In-development version">0.1.1.9006</span>
+        <span class="version label label-danger" data-toggle="tooltip" data-placement="bottom" title="In-development version">0.1.2.9000</span>
       </span>
     </div>
 
@@ -75,13 +75,13 @@
 
       
 
-      </header><div class="row">
+      </header><script src="collapse_files/accessible-code-block-0.0.1/empty-anchor.js"></script><div class="row">
   <div class="col-md-9 contents">
     <div class="page-header toc-ignore">
       <h1 data-toc-skip>Collapse</h1>
                         <h4 class="author">Ian Lyttle</h4>
             
-            <h4 class="date">2020-05-16</h4>
+            <h4 class="date">2020-06-25</h4>
       
       <small class="dont-index">Source: <a href="https://github.com/ijlyttle/bsplus/blob/master/vignettes/collapse.Rmd"><code>vignettes/collapse.Rmd</code></a></small>
       <div class="hidden name"><code>collapse.Rmd</code></div>
@@ -90,29 +90,37 @@
 
     
     
-<div class="sourceCode" id="cb1"><html><body><pre class="r"><span class="fu"><a href="https://rdrr.io/r/base/library.html">library</a></span>(<span class="st">"htmltools"</span>)
-<span class="fu"><a href="https://rdrr.io/r/base/library.html">library</a></span>(<span class="st">"bsplus"</span>)</pre></body></html></div>
+<div class="sourceCode" id="cb1"><pre class="downlit">
+<span class="fu"><a href="https://rdrr.io/r/base/library.html">library</a></span>(<span class="st"><a href="https://github.com/rstudio/htmltools">"htmltools"</a></span>)
+<span class="fu"><a href="https://rdrr.io/r/base/library.html">library</a></span>(<span class="st"><a href="https://github.com/ijlyttle/bsplus">"bsplus"</a></span>)
+</pre></div>
 <p>The <code><a href="../reference/bs_collapse.html">bs_collapse()</a></code> family of functions may not be the most useful, but it gives us a place to start.</p>
 <p>The first step is to create (and publish to the page) a collapsible element, using the <code><a href="../reference/bs_collapse.html">bs_collapse()</a></code> function, supplying a unique <code>id</code> and some HTML <code>content</code>.</p>
-<div class="sourceCode" id="cb2"><html><body><pre class="r"><span class="fu"><a href="../reference/bs_collapse.html">bs_collapse</a></span>(
-  <span class="kw">id</span> <span class="kw">=</span> <span class="st">"yeah"</span>,
-  <span class="kw">content</span> <span class="kw">=</span> <span class="no">tags</span>$<span class="fu"><a href="https://rdrr.io/pkg/htmltools/man/builder.html">div</a></span>(<span class="kw">class</span> <span class="kw">=</span> <span class="st">"well"</span>, <span class="st">"Yeah Yeah Yeah"</span>)
-)</pre></body></html></div>
+<div class="sourceCode" id="cb2"><pre class="downlit">
+<span class="fu"><a href="../reference/bs_collapse.html">bs_collapse</a></span>(
+  id = <span class="st">"yeah"</span>, 
+  content = <span class="kw">tags</span><span class="op">$</span><span class="fu"><a href="https://rdrr.io/pkg/htmltools/man/builder.html">div</a></span>(class = <span class="st">"well"</span>, <span class="st">"Yeah Yeah Yeah"</span>)
+)
+</pre></div>
 <div class="collapse" id="yeah">
 <div class="well">Yeah Yeah Yeah</div>
 </div>
 <p>Next, attach the <code>id</code> of the collapsible element to a button or link tag, using the <code><a href="../reference/bs_collapse.html">bs_attach_collapse()</a></code> function. This returns a modified copy of the tag sent to it.</p>
-<div class="sourceCode" id="cb3"><html><body><pre class="r"><span class="fu"><a href="../reference/bs_button.html">bs_button</a></span>(<span class="st">"She Loves You"</span>, <span class="kw">button_type</span> <span class="kw">=</span> <span class="st">"primary"</span>) <span class="kw">%&gt;%</span>
-  <span class="fu"><a href="../reference/bs_collapse.html">bs_attach_collapse</a></span>(<span class="st">"yeah"</span>)</pre></body></html></div>
+<div class="sourceCode" id="cb3"><pre class="downlit">
+<span class="fu"><a href="../reference/bs_button.html">bs_button</a></span>(<span class="st">"She Loves You"</span>, button_type = <span class="st">"primary"</span>) <span class="op">%&gt;%</span>
+  <span class="fu"><a href="../reference/bs_collapse.html">bs_attach_collapse</a></span>(<span class="st">"yeah"</span>)
+</pre></div>
 <button class="btn btn-primary" data-toggle="collapse" data-target="#yeah">She Loves You</button>
 <p>You can attach the <code>id</code> of a collapsible element to as many buttons or links as you like:</p>
-<div class="sourceCode" id="cb4"><html><body><pre class="r"><span class="fu"><a href="../reference/bs_button.html">bs_button</a></span>(<span class="st">"Sie Liebt Dich"</span>, <span class="kw">button_type</span> <span class="kw">=</span> <span class="st">"primary"</span>)  <span class="kw">%&gt;%</span>
-  <span class="fu"><a href="../reference/bs_collapse.html">bs_attach_collapse</a></span>(<span class="st">"yeah"</span>)</pre></body></html></div>
+<div class="sourceCode" id="cb4"><pre class="downlit">
+<span class="fu"><a href="../reference/bs_button.html">bs_button</a></span>(<span class="st">"Sie Liebt Dich"</span>, button_type = <span class="st">"primary"</span>)  <span class="op">%&gt;%</span>
+  <span class="fu"><a href="../reference/bs_collapse.html">bs_attach_collapse</a></span>(<span class="st">"yeah"</span>)
+</pre></div>
 <button class="btn btn-primary" data-toggle="collapse" data-target="#yeah">Sie Liebt Dich</button>
 <div id="reference" class="section level2">
 <h2 class="hasAnchor">
 <a href="#reference" class="anchor"></a>Reference</h2>
-<p>For more information, please see the <a href="http://getbootstrap.com/javascript/#collapse">Bootstrap JavaScript page</a>.</p>
+<p>For more information, please see the <a href="http://getbootstrap.com/docs/3.3/javascript/#collapse">Bootstrap JavaScript page</a>.</p>
 </div>
   </div>
 

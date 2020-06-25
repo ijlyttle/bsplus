@@ -76,7 +76,7 @@ allowing you to add another dimension to your shiny apps." />
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">bsplus</a>
-        <span class="version label label-danger" data-toggle="tooltip" data-placement="bottom" title="In-development version">0.1.1.9006</span>
+        <span class="version label label-danger" data-toggle="tooltip" data-placement="bottom" title="In-development version">0.1.2.9000</span>
       </span>
     </div>
 
@@ -133,24 +133,24 @@ allowing you to add another dimension to your <strong>shiny</strong> apps.</p>
     </div>
 
     <pre class="usage"><span class='fu'>bs_accordion_sidebar</span>(
-  <span class='no'>id</span>,
-  <span class='kw'>spec_side</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='kw'>width</span> <span class='kw'>=</span> <span class='fl'>4</span>, <span class='kw'>offset</span> <span class='kw'>=</span> <span class='fl'>0</span>),
-  <span class='kw'>spec_main</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='kw'>width</span> <span class='kw'>=</span> <span class='fl'>8</span>, <span class='kw'>offset</span> <span class='kw'>=</span> <span class='fl'>0</span>),
-  <span class='kw'>position</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='st'>"left"</span>, <span class='st'>"right"</span>)
+  <span class='kw'>id</span>,
+  spec_side = <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(width = <span class='fl'>4</span>, offset = <span class='fl'>0</span>),
+  spec_main = <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(width = <span class='fl'>8</span>, offset = <span class='fl'>0</span>),
+  position = <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='st'>"left"</span>, <span class='st'>"right"</span>)
 )
 
 <span class='fu'>use_bs_accordion_sidebar</span>()
 
 <span class='co'># S3 method for bsplus_accordion_sidebar</span>
-<span class='fu'><a href='bs_append.html'>bs_append</a></span>(<span class='no'>tag</span>, <span class='no'>title_side</span>, <span class='no'>content_side</span>, <span class='no'>content_main</span>, <span class='no'>...</span>)
+<span class='fu'>bs_append</span>(<span class='kw'>tag</span>, <span class='kw'>title_side</span>, <span class='kw'>content_side</span>, <span class='kw'>content_main</span>, <span class='kw'>...</span>)
 
 <span class='co'># S3 method for bsplus_accordion_sidebar</span>
-<span class='fu'><a href='bs_set_opts.html'>bs_set_opts</a></span>(
-  <span class='no'>tag</span>,
-  <span class='kw'>panel_type_active</span> <span class='kw'>=</span> <span class='st'>"success"</span>,
-  <span class='kw'>panel_type_inactive</span> <span class='kw'>=</span> <span class='st'>"primary"</span>,
-  <span class='kw'>use_main_enclosure</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>,
-  <span class='no'>...</span>
+<span class='fu'>bs_set_opts</span>(
+  <span class='kw'>tag</span>,
+  panel_type_active = <span class='st'>"success"</span>,
+  panel_type_inactive = <span class='st'>"primary"</span>,
+  use_main_enclosure = <span class='fl'>TRUE</span>,
+  <span class='kw'>...</span>
 )</pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
@@ -159,7 +159,7 @@ allowing you to add another dimension to your <strong>shiny</strong> apps.</p>
     <tr>
       <th>id</th>
       <td><p>character, unique id for accordion-sidebar <code>&lt;div/&gt;</code>,
-also serves as root id for panels appended using <code><a href='bs_append.html'>bs_append()</a></code></p></td>
+also serves as root id for panels appended using <code>bs_append()</code></p></td>
     </tr>
     <tr>
       <th>spec_side</th>
@@ -229,8 +229,8 @@ JavaScript needed for your accordion sidebar to work properly.</p>
 compose an accordion sidebar by piping. There are three parts to this system:</p>
 <ol>
 <li><p>A constructor function for the accordion-sidebar, <code>bs_accordion_sidebar()</code></p></li>
-<li><p>A function to set options for subsequent panels, <code><a href='bs_set_opts.html'>bs_set_opts()</a></code></p></li>
-<li><p>A function to append a panel-set to an accordion-sidebar, <code><a href='bs_append.html'>bs_append()</a></code></p></li>
+<li><p>A function to set options for subsequent panels, <code>bs_set_opts()</code></p></li>
+<li><p>A function to append a panel-set to an accordion-sidebar, <code>bs_append()</code></p></li>
 </ol>
 
 <p>The verb <em>append</em> is used to signify that you can append an arbitrary
@@ -241,16 +241,16 @@ among HTML elements in your page. If you have non-unique <code>id</code>'s, stra
 happen to your page.</p>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='fu'>bs_accordion_sidebar</span>(<span class='kw'>id</span> <span class='kw'>=</span> <span class='st'>"meet_the_beatles"</span>) <span class='kw'>%&gt;%</span>
-  <span class='fu'><a href='bs_append.html'>bs_append</a></span>(
-    <span class='kw'>title_side</span> <span class='kw'>=</span> <span class='st'>"John Lennon"</span>,
-    <span class='kw'>content_side</span> <span class='kw'>=</span> <span class='st'>"Rhythm guitar, vocals"</span>,
-    <span class='kw'>content_main</span> <span class='kw'>=</span> <span class='st'>"Dear Prudence"</span>
-  ) <span class='kw'>%&gt;%</span>
-  <span class='fu'><a href='bs_append.html'>bs_append</a></span>(
-    <span class='kw'>title_side</span> <span class='kw'>=</span> <span class='st'>"Paul McCartney"</span>,
-    <span class='kw'>content_side</span> <span class='kw'>=</span> <span class='st'>"Bass guitar, vocals"</span>,
-    <span class='kw'>content_main</span> <span class='kw'>=</span> <span class='st'>"Blackbird"</span>
+    <pre class="examples"><div class='input'><span class='fu'>bs_accordion_sidebar</span>(id = <span class='st'>"meet_the_beatles"</span>) <span class='op'>%&gt;%</span>
+  <span class='fu'>bs_append</span>(
+    title_side = <span class='st'>"John Lennon"</span>,
+    content_side = <span class='st'>"Rhythm guitar, vocals"</span>,
+    content_main = <span class='st'>"Dear Prudence"</span>
+  ) <span class='op'>%&gt;%</span>
+  <span class='fu'>bs_append</span>(
+    title_side = <span class='st'>"Paul McCartney"</span>,
+    content_side = <span class='st'>"Bass guitar, vocals"</span>,
+    content_main = <span class='st'>"Blackbird"</span>
   )</div><div class='output co'>#&gt; &lt;div class="row" id="meet_the_beatles"&gt;
 #&gt;   &lt;div class="col-sm-4" id="meet_the_beatles-side"&gt;
 #&gt;     &lt;div id="meet_the_beatles-side-accordion" class="panel-group" role="tablist" aria-multiselectable="true"&gt;
@@ -284,7 +284,7 @@ happen to your page.</p>
 #&gt;       &lt;/div&gt;
 #&gt;     &lt;/div&gt;
 #&gt;   &lt;/div&gt;
-#&gt; &lt;/div&gt;</div><div class='input'><span class='kw'>if</span> (<span class='fl'>FALSE</span>) {
+#&gt; &lt;/div&gt;</div><div class='input'><span class='co'>if</span> (<span class='fl'>FALSE</span>) {
 <span class='fu'>use_bs_accordion_sidebar</span>()
 }</div></pre>
   </div>

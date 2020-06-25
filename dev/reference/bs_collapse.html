@@ -76,7 +76,7 @@ by clicking a button or a link." />
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">bsplus</a>
-        <span class="version label label-danger" data-toggle="tooltip" data-placement="bottom" title="In-development version">0.1.1.9006</span>
+        <span class="version label label-danger" data-toggle="tooltip" data-placement="bottom" title="In-development version">0.1.2.9000</span>
       </span>
     </div>
 
@@ -132,9 +132,9 @@ initialized, but that can be revealed (and subsequently hidden)
 by clicking a button or a link.</p>
     </div>
 
-    <pre class="usage"><span class='fu'>bs_collapse</span>(<span class='no'>id</span>, <span class='kw'>content</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>show</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>)
+    <pre class="usage"><span class='fu'>bs_collapse</span>(<span class='kw'>id</span>, content = <span class='kw'>NULL</span>, show = <span class='fl'>FALSE</span>)
 
-<span class='fu'>bs_attach_collapse</span>(<span class='no'>tag</span>, <span class='no'>id_collapse</span>)</pre>
+<span class='fu'>bs_attach_collapse</span>(<span class='kw'>tag</span>, <span class='kw'>id_collapse</span>)</pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -197,15 +197,14 @@ among HTML elements in your page. If you have non-unique <code>id</code>'s,
 strange things may happen to your page.</p>
     <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
 
-    <div class='dont-index'><p><a href='https://getbootstrap.com/javascript/#collapse'>https://getbootstrap.com/javascript/#collapse</a></p></div>
+    <div class='dont-index'><p><a href='https://getbootstrap.com/docs/3.3/javascript/#collapse'>https://getbootstrap.com/docs/3.3/javascript/#collapse</a></p></div>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='fu'><a href='https://rdrr.io/r/base/library.html'>library</a></span>(<span class='st'>"htmltools"</span>)
+    <pre class="examples"><div class='input'><span class='fu'><a href='https://rdrr.io/r/base/library.html'>library</a></span>(<span class='st'><a href='https://github.com/rstudio/htmltools'>"htmltools"</a></span>)
 
-<span class='fu'>bs_collapse</span>(<span class='kw'>id</span> <span class='kw'>=</span> <span class='st'>"id_yeah"</span>, <span class='st'>"Yeah Yeah Yeah"</span>)</div><div class='output co'>#&gt; &lt;div class="collapse" id="id_yeah"&gt;Yeah Yeah Yeah&lt;/div&gt;</div><div class='input'>
-<span class='fu'><a href='bs_button.html'>bs_button</a></span>(<span class='st'>"She Loves You"</span>, <span class='kw'>button_type</span> <span class='kw'>=</span> <span class='st'>"primary"</span>) <span class='kw'>%&gt;%</span>
-  <span class='fu'>bs_attach_collapse</span>(<span class='st'>"id_yeah"</span>)</div><div class='output co'>#&gt; &lt;button class="btn btn-primary" data-toggle="collapse" data-target="#id_yeah"&gt;She Loves You&lt;/button&gt;</div><div class='input'>
-</div></pre>
+<span class='fu'>bs_collapse</span>(id = <span class='st'>"id_yeah"</span>, <span class='st'>"Yeah Yeah Yeah"</span>)</div><div class='output co'>#&gt; &lt;div class="collapse" id="id_yeah"&gt;Yeah Yeah Yeah&lt;/div&gt;</div><div class='input'>
+<span class='fu'>bs_button</span>(<span class='st'>"She Loves You"</span>, button_type = <span class='st'>"primary"</span>) <span class='op'>%&gt;%</span>
+  <span class='fu'>bs_attach_collapse</span>(<span class='st'>"id_yeah"</span>)</div><div class='output co'>#&gt; &lt;button class="btn btn-primary" data-toggle="collapse" data-target="#id_yeah"&gt;She Loves You&lt;/button&gt;</div><div class='input'></div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">

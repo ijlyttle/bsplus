@@ -43,7 +43,7 @@
 
 <meta property="og:title" content="Panel — bs_panel" />
 <meta property="og:description" content="This function makes it a little easier to make Bootstrap-friendly panels;
-it wraps the htmltools::tags() function for panels" />
+it wraps htmltools::tags for panels" />
 
 
 <meta name="robots" content="noindex">
@@ -75,7 +75,7 @@ it wraps the htmltools::tags() function for panels" />
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">bsplus</a>
-        <span class="version label label-danger" data-toggle="tooltip" data-placement="bottom" title="In-development version">0.1.1.9006</span>
+        <span class="version label label-danger" data-toggle="tooltip" data-placement="bottom" title="In-development version">0.1.2.9000</span>
       </span>
     </div>
 
@@ -127,16 +127,16 @@ it wraps the htmltools::tags() function for panels" />
 
     <div class="ref-description">
     <p>This function makes it a little easier to make Bootstrap-friendly panels;
-it wraps the <code><a href='https://rdrr.io/pkg/htmltools/man/builder.html'>htmltools::tags()</a></code> function for panels</p>
+it wraps <code><a href='https://rdrr.io/pkg/htmltools/man/builder.html'>htmltools::tags</a></code> for panels</p>
     </div>
 
     <pre class="usage"><span class='fu'>bs_panel</span>(
-  <span class='kw'>id</span> <span class='kw'>=</span> <span class='kw'>NULL</span>,
-  <span class='kw'>panel_type</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='st'>"default"</span>, <span class='st'>"primary"</span>, <span class='st'>"success"</span>, <span class='st'>"info"</span>, <span class='st'>"warning"</span>, <span class='st'>"danger"</span>),
-  <span class='kw'>heading</span> <span class='kw'>=</span> <span class='kw'>NULL</span>,
-  <span class='kw'>body</span> <span class='kw'>=</span> <span class='kw'>NULL</span>,
-  <span class='no'>...</span>,
-  <span class='kw'>footer</span> <span class='kw'>=</span> <span class='kw'>NULL</span>
+  id = <span class='kw'>NULL</span>,
+  panel_type = <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='st'>"default"</span>, <span class='st'>"primary"</span>, <span class='st'>"success"</span>, <span class='st'>"info"</span>, <span class='st'>"warning"</span>, <span class='st'>"danger"</span>),
+  heading = <span class='kw'>NULL</span>,
+  body = <span class='kw'>NULL</span>,
+  <span class='kw'>...</span>,
+  footer = <span class='kw'>NULL</span>
 )</pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
@@ -152,40 +152,40 @@ it wraps the <code><a href='https://rdrr.io/pkg/htmltools/man/builder.html'>html
     </tr>
     <tr>
       <th>heading</th>
-      <td><p>character (HTML) or <code><a href='https://rdrr.io/pkg/htmltools/man/tag.html'>htmltools::tagList()</a></code>,
+      <td><p>character (HTML) or <a href='https://rdrr.io/pkg/htmltools/man/tag.html'>htmltools::tagList()</a>,
 content for the heading</p></td>
     </tr>
     <tr>
       <th>body</th>
-      <td><p>character (HTML) or <code><a href='https://rdrr.io/pkg/htmltools/man/tag.html'>htmltools::tagList()</a></code>,
+      <td><p>character (HTML) or <a href='https://rdrr.io/pkg/htmltools/man/tag.html'>htmltools::tagList()</a>,
 content for the body</p></td>
     </tr>
     <tr>
       <th>...</th>
-      <td><p>character (HTML) or <code><a href='https://rdrr.io/pkg/htmltools/man/tag.html'>htmltools::tagList()</a></code>,
+      <td><p>character (HTML) or <a href='https://rdrr.io/pkg/htmltools/man/tag.html'>htmltools::tagList()</a>,
 other content</p></td>
     </tr>
     <tr>
       <th>footer</th>
-      <td><p>character (HTML) or <code><a href='https://rdrr.io/pkg/htmltools/man/tag.html'>htmltools::tagList()</a></code>,
+      <td><p>character (HTML) or <a href='https://rdrr.io/pkg/htmltools/man/tag.html'>htmltools::tagList()</a>,
 content for the footer</p></td>
     </tr>
     </table>
 
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
-    <p><code><a href='https://rdrr.io/pkg/htmltools/man/tag.html'>htmltools::tag()</a></code>, <code>&lt;button/&gt;</code></p>
+    <p>Object with S3 class, <code>shiny.tag</code>, <code>&lt;div/&gt;</code></p>
     <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
 
-    <div class='dont-index'><p><a href='http://getbootstrap.com/css/#panels'>http://getbootstrap.com/css/#panels</a></p></div>
+    <div class='dont-index'><p><a href='http://getbootstrap.com/docs/3.3/css/#panels'>http://getbootstrap.com/docs/3.3/css/#panels</a></p></div>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='fu'><a href='https://rdrr.io/r/base/library.html'>library</a></span>(<span class='st'>"htmltools"</span>)
+    <pre class="examples"><div class='input'><span class='fu'><a href='https://rdrr.io/r/base/library.html'>library</a></span>(<span class='st'><a href='https://github.com/rstudio/htmltools'>"htmltools"</a></span>)
 
 <span class='fu'>bs_panel</span>(
-  <span class='kw'>panel_type</span> <span class='kw'>=</span> <span class='st'>"primary"</span>,
-  <span class='kw'>heading</span> <span class='kw'>=</span> <span class='no'>tags</span>$<span class='fu'><a href='https://rdrr.io/pkg/htmltools/man/builder.html'>h3</a></span>(<span class='st'>"title"</span>),
-  <span class='kw'>body</span> <span class='kw'>=</span> <span class='no'>tags</span>$<span class='fu'><a href='https://rdrr.io/pkg/htmltools/man/builder.html'>p</a></span>(<span class='st'>"Some very important content"</span>)
+  panel_type = <span class='st'>"primary"</span>,
+  heading = <span class='kw'>tags</span><span class='op'>$</span><span class='fu'><a href='https://rdrr.io/pkg/htmltools/man/builder.html'>h3</a></span>(<span class='st'>"title"</span>),
+  body = <span class='kw'>tags</span><span class='op'>$</span><span class='fu'><a href='https://rdrr.io/pkg/htmltools/man/builder.html'>p</a></span>(<span class='st'>"Some very important content"</span>)
 )</div><div class='output co'>#&gt; &lt;div class="panel panel-primary"&gt;
 #&gt;   &lt;h3&gt;title&lt;/h3&gt;
 #&gt;   &lt;p&gt;Some very important content&lt;/p&gt;

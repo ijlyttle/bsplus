@@ -33,7 +33,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">bsplus</a>
-        <span class="version label label-danger" data-toggle="tooltip" data-placement="bottom" title="In-development version">0.1.1.9006</span>
+        <span class="version label label-danger" data-toggle="tooltip" data-placement="bottom" title="In-development version">0.1.2.9000</span>
       </span>
     </div>
 
@@ -75,13 +75,13 @@
 
       
 
-      </header><div class="row">
+      </header><script src="shiny_help_links_files/accessible-code-block-0.0.1/empty-anchor.js"></script><div class="row">
   <div class="col-md-9 contents">
     <div class="page-header toc-ignore">
       <h1 data-toc-skip>Shiny-input help links</h1>
                         <h4 class="author">Ian Lyttle</h4>
             
-            <h4 class="date">2020-05-16</h4>
+            <h4 class="date">2020-06-25</h4>
       
       <small class="dont-index">Source: <a href="https://github.com/ijlyttle/bsplus/blob/master/vignettes/shiny_help_links.Rmd"><code>vignettes/shiny_help_links.Rmd</code></a></small>
       <div class="hidden name"><code>shiny_help_links.Rmd</code></div>
@@ -90,8 +90,10 @@
 
     
     
-<div class="sourceCode" id="cb1"><html><body><pre class="r"><span class="fu"><a href="https://rdrr.io/r/base/library.html">library</a></span>(<span class="st">"htmltools"</span>)
-<span class="fu"><a href="https://rdrr.io/r/base/library.html">library</a></span>(<span class="st">"bsplus"</span>)</pre></body></html></div>
+<div class="sourceCode" id="cb1"><pre class="downlit">
+<span class="fu"><a href="https://rdrr.io/r/base/library.html">library</a></span>(<span class="st"><a href="https://github.com/rstudio/htmltools">"htmltools"</a></span>)
+<span class="fu"><a href="https://rdrr.io/r/base/library.html">library</a></span>(<span class="st"><a href="https://github.com/ijlyttle/bsplus">"bsplus"</a></span>)
+</pre></div>
 <p>Let’s consider a <strong>shiny</strong> input. One way to put unobtrusive help into a <strong>shiny</strong> input is to embed a help icon into its label, having associated the help icon with the help documentation. This suggests three steps:</p>
 <ol style="list-style-type: decimal">
 <li>Create a help icon. You can use <code><a href="https://rdrr.io/pkg/shiny/man/icon.html">shiny::icon()</a></code> or <code><a href="../reference/shiny_iconlink.html">shiny_iconlink()</a></code> (which simply wraps the icon in an HTML link).</li>
@@ -99,19 +101,23 @@
 <li>Embed your help icon into the <strong>shiny</strong> input. You can use <code><a href="../reference/shinyInput_label_embed.html">shinyInput_label_embed()</a></code>.</li>
 </ol>
 <p>Here’s an example of everything put together:</p>
-<div class="sourceCode" id="cb2"><html><body><pre class="r"><span class="fu">selectInput</span>(
-  <span class="kw">inputId</span> <span class="kw">=</span> <span class="st">"letter"</span>,
-  <span class="kw">label</span> <span class="kw">=</span> <span class="st">"Label with popover help"</span>,
-  <span class="kw">choices</span> <span class="kw">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="st">"a"</span>, <span class="st">"b"</span>, <span class="st">"c"</span>)
-) <span class="kw">%&gt;%</span>
+<div class="sourceCode" id="cb2"><pre class="downlit">
+<span class="fu"><a href="https://rdrr.io/pkg/shiny/man/selectInput.html">selectInput</a></span>(
+  inputId = <span class="st">"letter"</span>,
+  label = <span class="st">"Label with popover help"</span>,
+  choices = <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="st">"a"</span>, <span class="st">"b"</span>, <span class="st">"c"</span>)
+) <span class="op">%&gt;%</span>
 <span class="fu"><a href="../reference/shinyInput_label_embed.html">shinyInput_label_embed</a></span>(
-  <span class="fu"><a href="../reference/shiny_iconlink.html">shiny_iconlink</a></span>() <span class="kw">%&gt;%</span>
+  <span class="fu"><a href="../reference/shiny_iconlink.html">shiny_iconlink</a></span>() <span class="op">%&gt;%</span>
   <span class="fu"><a href="../reference/bs_embed_popover.html">bs_embed_popover</a></span>(
-    <span class="kw">title</span> <span class="kw">=</span> <span class="st">"Letter"</span>, <span class="kw">content</span> <span class="kw">=</span> <span class="st">"Choose a favorite"</span>, <span class="kw">placement</span> <span class="kw">=</span> <span class="st">"left"</span>
+    title = <span class="st">"Letter"</span>, content = <span class="st">"Choose a favorite"</span>, placement = <span class="st">"left"</span>
   )
-)</pre></body></html></div>
+)
+</pre></div>
 <p>As of writing, I don’t know how to include operable <strong>shiny</strong> inputs in an html document, outside of the <strong>shiny</strong> runtime. To see these functions in action, you can refer to this <a href="https://ijlyttle.shinyapps.io/tooltip_popover_modal/#"><strong>shiny</strong> app</a>, which you can also run locally using:</p>
-<div class="sourceCode" id="cb3"><html><body><pre class="r"><span class="kw pkg">shiny</span><span class="kw ns">::</span><span class="fu"><a href="https://rdrr.io/pkg/shiny/man/runApp.html">runApp</a></span>(<span class="fu"><a href="https://rdrr.io/r/base/system.file.html">system.file</a></span>(<span class="st">"shiny"</span>, <span class="st">"tooltip_popover_modal"</span>, <span class="kw">package</span> <span class="kw">=</span> <span class="st">"bsplus"</span>))</pre></body></html></div>
+<div class="sourceCode" id="cb3"><pre class="downlit">
+<span class="kw">shiny</span>::<span class="fu"><a href="https://rdrr.io/pkg/shiny/man/runApp.html">runApp</a></span>(<span class="fu"><a href="https://rdrr.io/r/base/system.file.html">system.file</a></span>(<span class="st">"shiny"</span>, <span class="st">"tooltip_popover_modal"</span>, package = <span class="st">"bsplus"</span>))
+</pre></div>
 <p><img src="img/popover.png"></p>
 <p>To promote consistency, the following convention is proposed:</p>
 <ul>

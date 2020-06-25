@@ -37,7 +37,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="index.html">bsplus</a>
-        <span class="version label label-danger" data-toggle="tooltip" data-placement="bottom" title="In-development version">0.1.1.9006</span>
+        <span class="version label label-danger" data-toggle="tooltip" data-placement="bottom" title="In-development version">0.1.2.9000</span>
       </span>
     </div>
 
@@ -81,11 +81,11 @@
 
       </header><div class="row">
   <div class="contents col-md-9">
-<div id="bsplus" class="section level1">
-<div class="page-header"><h1 class="hasAnchor">
-<a href="#bsplus" class="anchor"></a>bsplus</h1></div>
-<!-- badges: start -->
 
+<hr>
+<p>title: bsplus output: github_document —</p>
+<!-- badges: start -->
+<p><a href="https://cran.r-project.org/package=bsplus"><img src="https://www.r-pkg.org/badges/version/bsplus" alt="CRAN status"></a> <a href="https://github.com/ijlyttle/bsplus/actions"><img src="https://github.com/ijlyttle/bsplus/workflows/R-CMD-check/badge.svg" alt="R build status"></a> <a href="https://codecov.io/github/ijlyttle/bsplus?branch=master"><img src="https://img.shields.io/codecov/c/github/ijlyttle/bsplus/master.svg" alt="Coverage Status"></a> <!-- badges: end --></p>
 <p>Please note that if you are viewing this page at this package’s <a href="http://ijlyttle.github.io/bsplus">pkgdown site</a>, despite the “released” tag, this site represents a recent <em>development</em> version of this package. The most-recent version of the development package has its own <a href="http://ijlyttle.github.io/bsplus/dev">pkgdown site</a>.</p>
 <div id="installation" class="section level2">
 <h2 class="hasAnchor">
@@ -93,16 +93,18 @@
 <p>You can install the latest released version from CRAN with:</p>
 <pre><code><a href="https://rdrr.io/r/utils/install.packages.html">install.packages("bsplus")</a></code></pre>
 <p>or the latest development version from GitHub with:</p>
-<div class="sourceCode" id="cb2"><pre class="r"><span class="co"># install.packages("devtools")</span>
-<span class="kw pkg">devtools</span><span class="kw ns">::</span><span class="fu">install_github</span>(<span class="st">"ijlyttle/bsplus"</span>)</pre></div>
+<div class="sourceCode" id="cb2"><pre class="downlit">
+<span class="co"># install.packages("devtools")</span>
+<span class="kw">devtools</span>::<span class="fu">install_github</span>(<span class="st">"ijlyttle/bsplus"</span>)
+</pre></div>
 </div>
 <div id="introduction" class="section level2">
 <h2 class="hasAnchor">
 <a href="#introduction" class="anchor"></a>Introduction</h2>
-<p>To see all of this in action, you are referred to the <a href="https://ijlyttle.github.io/bsplus/articles/overview.html">overview article</a> at this package’s <strong>pkgdown</strong> site.</p>
+<p>To see all of this in action, you are referred to the <a href="http://ijlyttle.github.io/bsplus/articles/bsplus.html">getting-started article</a> at this package’s <strong>pkgdown</strong> site.</p>
 <p>The goals of this package are:</p>
 <ul>
-<li>to provide a framework to use Bootstrap’s JavaScript-markup API: <a href="http://getbootstrap.com/javascript/" class="uri">http://getbootstrap.com/javascript/</a>
+<li>to provide a framework to use Bootstrap’s JavaScript-markup API: <a href="https://getbootstrap.com/docs/3.3/javascript/" class="uri">https://getbootstrap.com/docs/3.3/javascript/</a>
 </li>
 <li>to provide functions that work for both <strong>rmarkdown</strong> HTML documents and for <strong>shiny</strong> apps - the only exceptions are some functions that work with only the UI side of <strong>shiny</strong>.</li>
 <li>to promote composition of HTML using pipes.</li>
@@ -113,17 +115,17 @@
 <div id="accordion-sidebar" class="section level4">
 <h4 class="hasAnchor">
 <a href="#accordion-sidebar" class="anchor"></a>Accordion-sidebar</h4>
-<p>This family of functions lets you build another dimension to your <strong>shiny</strong> apps, although you can still use it <strong>rmarkdown</strong> HTML documents. Rather than explain, you can see it demonstrated in a <a href="https://ijlyttle.shinyapps.io/tooltip_popover_modal/"><strong>shiny</strong> app</a>. If you would like some explanation, please see this <a href="http://ijlyttle.github.io/bsplus/articles/accordion_sidebar.html">article</a>.</p>
+<p>This family of functions lets you build another dimension to your <strong>shiny</strong> apps, although you can still use it <strong>rmarkdown</strong> HTML documents, explained further in this <a href="http://ijlyttle.github.io/bsplus/articles/accordion_sidebar.html">article</a>.</p>
 </div>
 <div id="shiny-help-links" class="section level4">
 <h4 class="hasAnchor">
 <a href="#shiny-help-links" class="anchor"></a>Shiny-help links</h4>
-<p>These functions make it easier to incorporate help-documentation into your <strong>shiny</strong> apps - functions for incorporating tooltips, popovers, and modals into the labels of <strong>shiny</strong> inputs. You can see this <a href="https://ijlyttle.shinyapps.io/tooltip_popover_modal/"><strong>shiny</strong> app</a> for a demonstration, and this <a href="http://ijlyttle.github.io/bsplus/articles/shiny_help_links.html">article</a> for some explanation.</p>
+<p>These functions make it easier to incorporate help-documentation into your <strong>shiny</strong> apps - functions for incorporating tooltips, popovers, and modals into the labels of <strong>shiny</strong> inputs, explained further in this <a href="http://ijlyttle.github.io/bsplus/articles/shiny_help_links.html">article</a>.</p>
 </div>
 <div id="carousel" class="section level4">
 <h4 class="hasAnchor">
 <a href="#carousel" class="anchor"></a>Carousel</h4>
-<p>A carousel is a <a href="http://getbootstrap.com/javascript/#carousel">Boostrap JavaScript component</a> used to enclose a set of (typically) images, providing controls to move slides back-and-forth - as shown in this <a href="https://ijlyttle.github.io/bsplus/articles/carousel.html">article</a>. I think that this could be a more-useful tool if an “easy” way can be found to populate a carousel with images produced by <a href="https://github.com/dgrtwo/gganimate"><strong>gganimate</strong></a>.</p>
+<p>A carousel is a <a href="http://getbootstrap.com/javascript/#carousel">Boostrap JavaScript component</a> used to enclose a set of (typically) images, providing controls to move slides back-and-forth - as shown in this <a href="https://ijlyttle.github.io/bsplus/articles/carousel.html">article</a>. I think that this could be a more-useful tool if an “easy” way can be found to populate a carousel with images produced by <a href="https://github.com/thomasp85/gganimate"><strong>gganimate</strong></a>.</p>
 </div>
 </div>
 <div id="function-families" class="section level3">
@@ -143,7 +145,7 @@
 </li>
 <li>modals: <code><a href="reference/bs_modal.html">bs_modal()</a></code>
 </li>
-<li>carousels: <code><a href="reference/bs_carousel.html">bs_carousel()</a></code>
+<li>carousels: <code><a href="reference/bs_append.bsplus_carousel.html">bs_carousel()</a></code>
 </li>
 </ul>
 <p>There are also helper functions:</p>
@@ -203,9 +205,9 @@
 <div id="code-of-conduct" class="section level2">
 <h2 class="hasAnchor">
 <a href="#code-of-conduct" class="anchor"></a>Code of conduct</h2>
-<p>Please note that this project is released with a <a href="CONDUCT.html">Contributor Code of Conduct</a>. By participating in this project you agree to abide by its terms.</p>
+<p>Please note that this project is released with a <a href="http://ijlyttle.github.io/bsplus/CONDUCT.html">Contributor Code of Conduct</a>. By participating in this project you agree to abide by its terms.</p>
 </div>
-</div>
+
   </div>
 
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
@@ -236,15 +238,7 @@
 </ul>
 </div>
 
-  <div class="dev-status">
-<h2>Dev status</h2>
-<ul class="list-unstyled">
-<li><a href="https://cran.r-project.org/package=bsplus"><img src="https://www.r-pkg.org/badges/version/bsplus" alt="CRAN status"></a></li>
-<li><a href="https://github.com/ijlyttle/bsplus/actions"><img src="https://github.com/ijlyttle/bsplus/workflows/R-CMD-check/badge.svg" alt="R build status"></a></li>
-<li><a href="https://codecov.io/github/ijlyttle/bsplus?branch=master"><img src="https://img.shields.io/codecov/c/github/ijlyttle/bsplus/master.svg" alt="Coverage Status"></a></li>
-</ul>
-</div>
-</div>
+  </div>
 </div>
 
 
