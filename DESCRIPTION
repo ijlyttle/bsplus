@@ -29,7 +29,6 @@ Imports:
     lubridate,
     stringr,
     rmarkdown,
-    methods,
     glue,
     jsonlite
 URL: https://github.com/ijlyttle/bsplus
