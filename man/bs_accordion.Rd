@@ -8,7 +8,8 @@
 \usage{
 bs_accordion(id)
 
-\method{bs_append}{bsplus_accordion}(tag, title, content, ...)
+\method{bs_append}{bsplus_accordion}(tag, title, content, show = TRUE,
+  ...)
 
 \method{bs_set_opts}{bsplus_accordion}(tag, panel_type = "primary", use_heading_link = TRUE, ...)
 }
@@ -24,6 +25,8 @@ title for the panel heading}
 
 \item{content}{character (HTML) or \verb{htmltools::[tagList][htmltools::tagList]},
 content for the panel body}
+
+\item{show}{logical, indicates whether to show content of first panel}
 
 \item{...}{other arguments (not used)}
 
