@@ -75,7 +75,7 @@ If you want to compose your own footer for the modal window, the function
 \code{bs_modal_closebutton()} can be useful.
 }
 \examples{
-library("htmltools")
+library("htmltools") # also needs `markdown` package
 library("shiny")
 
 bs_modal(id = "modal", title = "I'm a modal", body = "Yes, I am.")

@@ -47,7 +47,7 @@
 #'   \item{`bs_modal_closebutton()`}{`htmltools::[tag][htmltools::tag]`, `<button/>`}
 #' }
 #' @examples
-#' library("htmltools")
+#' library("htmltools") # also needs `markdown` package
 #' library("shiny")
 #'
 #' bs_modal(id = "modal", title = "I'm a modal", body = "Yes, I am.")
