@@ -20,7 +20,6 @@ Description: The Bootstrap framework lets you add some JavaScript functionality 
   use these functions to create collapsible sections, accordion panels, modals, tooltips,
   popovers, and an accordion sidebar framework (not described at Bootstrap site).
 License: MIT + file LICENSE
-LazyData: TRUE
 Depends: R (>= 3.3.0)
 Imports:
     htmltools,
@@ -30,13 +29,15 @@ Imports:
     stringr,
     rmarkdown,
     glue,
-    jsonlite
+    jsonlite,
+    methods
 URL: https://github.com/ijlyttle/bsplus
 BugReports: https://github.com/ijlyttle/bsplus/issues
 Roxygen: list(markdown = TRUE)
-RoxygenNote: 7.1.0
+RoxygenNote: 7.1.1
 Encoding: UTF-8
 Suggests: testthat,
     shiny,
     covr,
-    knitr
+    knitr,
+    markdown
