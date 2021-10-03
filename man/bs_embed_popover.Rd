@@ -44,5 +44,5 @@ bs_button("A button") \%>\%
 }
 \seealso{
 \code{\link[=bs_embed_tooltip]{bs_embed_tooltip()}},
-\url{http://getbootstrap.com/docs/3.3/javascript/#popovers}
+\url{https://getbootstrap.com/docs/3.3/javascript/#popovers}
 }

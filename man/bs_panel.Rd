@@ -47,5 +47,5 @@ bs_panel(
 )
 }
 \seealso{
-\url{http://getbootstrap.com/docs/3.3/css/#panels}
+\url{https://getbootstrap.com/docs/3.3/css/#panels}
 }
