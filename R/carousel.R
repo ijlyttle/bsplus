@@ -35,7 +35,7 @@
 #'   bs_append(content = bs_carousel_image(src = "img/george.jpg")) %>%
 #'   bs_append(content = bs_carousel_image(src = "img/ringo.jpg"))
 #'
-#' @seealso <http://getbootstrap.com/docs/3.3/javascript/#carousel>,
+#' @seealso <https://getbootstrap.com/docs/3.3/javascript/#carousel>,
 #'   [bs_carousel_image()], [bs_carousel_caption()]
 #'
 #' @export

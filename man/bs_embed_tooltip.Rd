@@ -40,5 +40,5 @@ bs_button("I'm a button") \%>\%
   bs_embed_tooltip(title = "I'm a tooltip")
 }
 \seealso{
-\code{\link[=bs_embed_popover]{bs_embed_popover()}}, \url{http://getbootstrap.com/docs/3.3/javascript/#tooltips}
+\code{\link[=bs_embed_popover]{bs_embed_popover()}}, \url{https://getbootstrap.com/docs/3.3/javascript/#tooltips}
 }

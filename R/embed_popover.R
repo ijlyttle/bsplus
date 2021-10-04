@@ -19,7 +19,7 @@
 #'
 #' @return  `htmltools::[tag][htmltools::tag]`, modified copy of `tag`
 #' @seealso [bs_embed_tooltip()],
-#'   <http://getbootstrap.com/docs/3.3/javascript/#popovers>
+#'   <https://getbootstrap.com/docs/3.3/javascript/#popovers>
 #' @examples
 #' library("htmltools")
 #'

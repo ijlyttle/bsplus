@@ -1,5 +1,7 @@
 # bsplus 0.1.2.9000 (development version)
 
+- behind-the-scenes changes to remedy CRAN errors and notes
+
 # bsplus 0.1.2
 
 - adds `button_size` argument to `bs_button()` (#54)

@@ -17,7 +17,7 @@
 #' @param ...        other named arguments, passed to `bs_set_data()`
 #'
 #' @return  `htmltools::[tag][htmltools::tag]`, modified copy of `tag`
-#' @seealso [bs_embed_popover()], <http://getbootstrap.com/docs/3.3/javascript/#tooltips>
+#' @seealso [bs_embed_popover()], <https://getbootstrap.com/docs/3.3/javascript/#tooltips>
 #' @examples
 #' library("htmltools")
 #' bs_button("I'm a button") %>%

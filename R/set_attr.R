@@ -179,7 +179,7 @@ bs_set_attr <- function(tag, .prefix = "data", ...){
 #'   bs_set_aria(expanded = FALSE)
 #' @export
 #'
-#' @seealso [Bootstrap JavaScript Components](http://getbootstrap.com/docs/3.3/javascript)
+#' @seealso [Bootstrap JavaScript Components](https://getbootstrap.com/docs/3.3/javascript/)
 #
 bs_set_data <- function(tag, ...){
   bs_set_attr(tag, .prefix = "data", ...)

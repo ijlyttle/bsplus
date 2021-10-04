@@ -1,12 +1,12 @@
 Package: bsplus
 Type: Package
 Title: Adds Functionality to the R Markdown + Shiny Bootstrap Framework
-Version: 0.1.2.9000
+Version: 0.1.2.9001
 Authors@R: c(
     person(
       given = "Ian",
       family = "Lyttle",
-      email = "ian.lyttle@schneider-electric.com",
+      email = "ian.lyttle@se.com",
       role = c("aut", "cre", "cph"),
       comment = c(ORCID = "0000-0001-9962-4849"),
     ),
@@ -16,11 +16,11 @@ Authors@R: c(
   )
 Description: The Bootstrap framework lets you add some JavaScript functionality to your web site by
   adding attributes to your HTML tags - Bootstrap takes care of the JavaScript
-  <https://getbootstrap.com/javascript>. If you are using R Markdown or Shiny, you can
+  <https://getbootstrap.com/docs/3.3/javascript/>. If you are using R Markdown or Shiny, you can
   use these functions to create collapsible sections, accordion panels, modals, tooltips,
   popovers, and an accordion sidebar framework (not described at Bootstrap site).
+  Please note this package was designed for Bootstrap 3.3.
 License: MIT + file LICENSE
-LazyData: TRUE
 Depends: R (>= 3.3.0)
 Imports:
     htmltools,
@@ -29,15 +29,16 @@ Imports:
     lubridate,
     stringr,
     rmarkdown,
-    methods,
     glue,
-    jsonlite
+    jsonlite,
+    methods
 URL: https://github.com/ijlyttle/bsplus
 BugReports: https://github.com/ijlyttle/bsplus/issues
 Roxygen: list(markdown = TRUE)
-RoxygenNote: 7.1.0
+RoxygenNote: 7.1.1
 Encoding: UTF-8
 Suggests: testthat,
     shiny,
     covr,
-    knitr
+    knitr,
+    markdown

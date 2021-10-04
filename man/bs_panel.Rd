@@ -18,16 +18,16 @@ bs_panel(
 
 \item{panel_type}{character, one of the standard Bootstrap types}
 
-\item{heading}{character (HTML) or \link[htmltools:tag]{htmltools::tagList()},
+\item{heading}{character (HTML) or \link[htmltools:builder]{htmltools::tagList()},
 content for the heading}
 
-\item{body}{character (HTML) or \link[htmltools:tag]{htmltools::tagList()},
+\item{body}{character (HTML) or \link[htmltools:builder]{htmltools::tagList()},
 content for the body}
 
-\item{...}{character (HTML) or \link[htmltools:tag]{htmltools::tagList()},
+\item{...}{character (HTML) or \link[htmltools:builder]{htmltools::tagList()},
 other content}
 
-\item{footer}{character (HTML) or \link[htmltools:tag]{htmltools::tagList()},
+\item{footer}{character (HTML) or \link[htmltools:builder]{htmltools::tagList()},
 content for the footer}
 }
 \value{
@@ -47,5 +47,5 @@ bs_panel(
 )
 }
 \seealso{
-\url{http://getbootstrap.com/docs/3.3/css/#panels}
+\url{https://getbootstrap.com/docs/3.3/css/#panels}
 }
