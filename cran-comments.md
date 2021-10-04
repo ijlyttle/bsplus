@@ -1,19 +1,27 @@
-This is a small patch release to address the CRAN-test failures idenified by Prof. Ripley (email 2020-06-24).
+This is a small patch release to address the CRAN-test failures idenified by Prof. Ripley (email 2021-09-15).
 
-## Test environments
+Please note that I have updated my email address.
 
-* GitHub actions (ubuntu-16.04): release
-* GitHub actions (windows): release
-* Github actions (macOS): release, devel
-* win-builder: devel 
-* r-hub: Fedora Linux, R-devel, clang, gfortran
-* r-hub: Ubuntu Linux 16.04 LTS, R-release, GCC
-* r-hub: Windows Server 2008 R2 SP1, R-devel, 32/64 bit
+## R CMD check results
 
-0 errors | 0 warnings | 0 notes
+0 errors | 0 warnings | 1 note
 
-## Reverse dependencies
+  Maintainer: ‘Ian Lyttle <ian.lyttle@se.com>’
+  
+  New maintainer:
+    Ian Lyttle <ian.lyttle@se.com>
+  Old maintainer(s):
+    Ian Lyttle <ian.lyttle@schneider-electric.com>
 
-I checked 5 reverse dependencies, comparing R CMD check results across CRAN and dev versions of this package.
+## revdepcheck results
 
-I saw 0 new problems.
+I checked 8 reverse dependencies (7 from CRAN + 1 from Bioconductor), comparing R CMD check results across CRAN and dev versions of this package.
+
+ * I saw 0 new problems
+ * I failed to check 1 packages
+
+Issues with CRAN packages are summarised below.
+
+### Failed to check
+
+* MAFDash (NA)

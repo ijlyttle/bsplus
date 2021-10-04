@@ -35,14 +35,8 @@ Error: .onLoad failed in loadNamespace() for 'Cairo', details:
   call: dyn.load(file, DLLpath = DLLpath, ...)
   error: unable to load shared object '/Users/ijlyttle/Documents/repos/public/bsplus/revdep/library.noindex/MAFDash/Cairo/libs/Cairo.so':
   dlopen(/Users/ijlyttle/Documents/repos/public/bsplus/revdep/library.noindex/MAFDash/Cairo/libs/Cairo.so, 6): Library not loaded: /opt/X11/lib/libXrender.1.dylib
-...
-  3.     ├─[ base::suppressPackageStartupMessages(...) ] with 1 more call
-  5.     └─base::loadNamespace(...)
-  6.       ├─[ base::namespaceImportFrom(...) ] with 1 more call
-  8.       └─base::loadNamespace(j <- i[[1L]], c(lib.loc, .libPaths()), versionCheck = vI[[j]])
-  9.         ├─[ base::namespaceImportFrom(...) ] with 1 more call
- 11.         └─base::loadNamespace(j <- i[[1L]], c(lib.loc, .libPaths()), versionCheck = vI[[j]])
- 12.           └─base:::runHook(".onLoad", env, package.lib, package)
+  Referenced from: /Users/ijlyttle/Documents/repos/public/bsplus/revdep/library.noindex/MAFDash/Cairo/libs/Cairo.so
+  Reason: image not found
 Execution halted
 ERROR: lazy loading failed for package ‘MAFDash’
 * removing ‘/Users/ijlyttle/Documents/repos/public/bsplus/revdep/checks.noindex/MAFDash/new/MAFDash.Rcheck/MAFDash’
@@ -62,14 +56,8 @@ Error: .onLoad failed in loadNamespace() for 'Cairo', details:
   call: dyn.load(file, DLLpath = DLLpath, ...)
   error: unable to load shared object '/Users/ijlyttle/Documents/repos/public/bsplus/revdep/library.noindex/MAFDash/Cairo/libs/Cairo.so':
   dlopen(/Users/ijlyttle/Documents/repos/public/bsplus/revdep/library.noindex/MAFDash/Cairo/libs/Cairo.so, 6): Library not loaded: /opt/X11/lib/libXrender.1.dylib
-...
-  3.     ├─[ base::suppressPackageStartupMessages(...) ] with 1 more call
-  5.     └─base::loadNamespace(...)
-  6.       ├─[ base::namespaceImportFrom(...) ] with 1 more call
-  8.       └─base::loadNamespace(j <- i[[1L]], c(lib.loc, .libPaths()), versionCheck = vI[[j]])
-  9.         ├─[ base::namespaceImportFrom(...) ] with 1 more call
- 11.         └─base::loadNamespace(j <- i[[1L]], c(lib.loc, .libPaths()), versionCheck = vI[[j]])
- 12.           └─base:::runHook(".onLoad", env, package.lib, package)
+  Referenced from: /Users/ijlyttle/Documents/repos/public/bsplus/revdep/library.noindex/MAFDash/Cairo/libs/Cairo.so
+  Reason: image not found
 Execution halted
 ERROR: lazy loading failed for package ‘MAFDash’
 * removing ‘/Users/ijlyttle/Documents/repos/public/bsplus/revdep/checks.noindex/MAFDash/old/MAFDash.Rcheck/MAFDash’
