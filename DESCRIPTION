@@ -1,7 +1,7 @@
 Package: bsplus
 Type: Package
 Title: Adds Functionality to the R Markdown + Shiny Bootstrap Framework
-Version: 0.1.3
+Version: 0.1.3.9000
 Authors@R: c(
     person(
       given = "Ian",
@@ -12,7 +12,7 @@ Authors@R: c(
     ),
     person(family = "Schneider Electric", role = c("cph")),
     person(given = "Alex", family = "Shum", email = "alex@ALShum.com", role = c("ctb")),
-    person(given = "Emily", family = "Bosak", email = "berrye123@gmail.com", role = c("ctb"))
+    person(given = "Em", family = "Bosak", email = "berrye123@gmail.com", role = c("ctb"))
   )
 Description: The Bootstrap framework lets you add some JavaScript functionality to your web site by
   adding attributes to your HTML tags - Bootstrap takes care of the JavaScript
