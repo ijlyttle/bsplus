@@ -1,6 +1,14 @@
 pandoc: 2.7.3
-pkgdown: 1.5.1.9000
-pkgdown_sha: caf7cc74e008e8d0d6e53eeda93cd3cad3545bf2
-articles: []
-last_built: 2020-06-25T12:34Z
+pkgdown: 1.6.1
+pkgdown_sha: ~
+articles:
+  accordion: accordion.html
+  accordion_sidebar: accordion_sidebar.html
+  bsplus: bsplus.html
+  carousel: carousel.html
+  collapse: collapse.html
+  modal: modal.html
+  shiny_help_links: shiny_help_links.html
+  tooltip_popover: tooltip_popover.html
+last_built: 2021-10-10T20:52Z
 

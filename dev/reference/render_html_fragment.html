@@ -77,7 +77,7 @@ useful to populate the content of a modal window." />
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">bsplus</a>
-        <span class="version label label-danger" data-toggle="tooltip" data-placement="bottom" title="In-development version">0.1.2.9000</span>
+        <span class="version label label-danger" data-toggle="tooltip" data-placement="bottom" title="In-development version">0.1.3.9000</span>
       </span>
     </div>
 
@@ -85,7 +85,7 @@ useful to populate the content of a modal window." />
       <ul class="nav navbar-nav">
         <li>
   <a href="../index.html">
-    <span class="fas fa fas fa-home fa-lg"></span>
+    <span class="fas fa-home fa-lg"></span>
      
   </a>
 </li>
@@ -134,7 +134,7 @@ useful to populate the content of a modal window." />
       <ul class="nav navbar-nav navbar-right">
         <li>
   <a href="https://github.com/ijlyttle/bsplus/">
-    <span class="fab fa fab fa-github fa-lg"></span>
+    <span class="fab fa-github fa-lg"></span>
      
   </a>
 </li>
@@ -163,7 +163,7 @@ return an HTML fragment (rather than writing to a file). This function is
 useful to populate the content of a modal window.</p>
     </div>
 
-    <pre class="usage"><span class='fu'>render_html_fragment</span>(<span class='kw'>input</span>, output_format = <span class='kw'>rmarkdown</span>::<span class='fu'><a href='https://rdrr.io/pkg/rmarkdown/man/html_fragment.html'>html_fragment</a></span>(), <span class='kw'>...</span>)</pre>
+    <pre class="usage"><span class='fu'>render_html_fragment</span><span class='op'>(</span><span class='va'>input</span>, output_format <span class='op'>=</span> <span class='fu'>rmarkdown</span><span class='fu'>::</span><span class='fu'><a href='https://pkgs.rstudio.com/rmarkdown/reference/html_fragment.html'>html_fragment</a></span><span class='op'>(</span><span class='op'>)</span>, <span class='va'>...</span><span class='op'>)</span></pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -192,10 +192,11 @@ useful to populate the content of a modal window.</p>
 <code>shiny::[includeMarkdown][shiny::includeMarkdown]</code></p>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='co'>if</span> (<span class='fl'>FALSE</span>) {
-<span class='kw'>my_file</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/system.file.html'>system.file</a></span>(<span class='st'>"markdown"</span>, <span class='st'>"modal.md"</span>, package = <span class='st'>"bsplus"</span>)
-<span class='fu'>render_html_fragment</span>(<span class='kw'>my_file</span>)
-}</div></pre>
+    <pre class="examples"><div class='input'><span class='kw'>if</span> <span class='op'>(</span><span class='cn'>FALSE</span><span class='op'>)</span> <span class='op'>{</span>
+<span class='va'>my_file</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/system.file.html'>system.file</a></span><span class='op'>(</span><span class='st'>"markdown"</span>, <span class='st'>"modal.md"</span>, package <span class='op'>=</span> <span class='st'>"bsplus"</span><span class='op'>)</span>
+<span class='fu'>render_html_fragment</span><span class='op'>(</span><span class='va'>my_file</span><span class='op'>)</span>
+<span class='op'>}</span>
+</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">
@@ -211,7 +212,7 @@ useful to populate the content of a modal window.</p>
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.5.1.9000.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.6.1.</p>
 </div>
 
       </footer>
