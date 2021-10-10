@@ -32,7 +32,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">bsplus</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.1.2</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.1.3</span>
       </span>
     </div>
 
@@ -40,7 +40,7 @@
       <ul class="nav navbar-nav">
 <li>
   <a href="../index.html">
-    <span class="fas fa fas fa-home fa-lg"></span>
+    <span class="fas fa-home fa-lg"></span>
      
   </a>
 </li>
@@ -89,7 +89,7 @@
 <ul class="nav navbar-nav navbar-right">
 <li>
   <a href="https://github.com/ijlyttle/bsplus/">
-    <span class="fab fa fab fa-github fa-lg"></span>
+    <span class="fab fa-github fa-lg"></span>
      
   </a>
 </li>
@@ -109,7 +109,7 @@
       <h1 data-toc-skip>Accordion Sidebar</h1>
                         <h4 class="author">Ian Lyttle</h4>
             
-            <h4 class="date">2020-06-25</h4>
+            <h4 class="date">2021-10-10</h4>
       
       <small class="dont-index">Source: <a href="https://github.com/ijlyttle/bsplus/blob/master/vignettes/accordion_sidebar.Rmd"><code>vignettes/accordion_sidebar.Rmd</code></a></small>
       <div class="hidden name"><code>accordion_sidebar.Rmd</code></div>
@@ -118,10 +118,9 @@
 
     
     
-<div class="sourceCode" id="cb1"><pre class="downlit">
-<span class="fu"><a href="https://rdrr.io/r/base/library.html">library</a></span>(<span class="st"><a href="https://github.com/rstudio/htmltools">"htmltools"</a></span>)
-<span class="fu"><a href="https://rdrr.io/r/base/library.html">library</a></span>(<span class="st"><a href="https://github.com/ijlyttle/bsplus">"bsplus"</a></span>)
-</pre></div>
+<div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="st"><a href="https://github.com/rstudio/htmltools">"htmltools"</a></span><span class="op">)</span>
+<span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="st"><a href="https://github.com/ijlyttle/bsplus">"bsplus"</a></span><span class="op">)</span></code></pre></div>
 <p>An accordion-sidebar can be useful to provide another dimension for your <strong>shiny</strong> apps. For example, you can use <strong>shiny</strong> <code><a href="https://rdrr.io/pkg/shiny/man/navbarPage.html">navbarPage()</a></code> for major groupings, then <code><a href="../reference/bs_accordion_sidebar.html">bs_accordion_sidebar()</a></code> panels for minor groupings within each major grouping.</p>
 <p>There are three functions in this family:</p>
 <ul>
@@ -137,29 +136,28 @@
 <p>The appearance of panel sets can be modified using the <code><a href="../reference/bs_set_opts.html">bs_set_opts()</a></code> function. Its first argument is the accordion sidebar <code>tag</code>, its other arguments are <code>panel_type_active</code> and <code>panel_type_inactive</code>, which control the appearance of following panels, and <code>use_main_enclosure</code>, which, if <code>TRUE</code>, encloses the content of the main panel in an HTML <code>&lt;panel/&gt;</code>.</p>
 <p>The default <code>panel_type_active</code> is <code>"success"</code>, for <code>panel_type_inactive</code> it is <code>"primary"</code>, the default for <code>use_main_enclosure</code> is <code>TRUE</code>.</p>
 <p>All of these functions return an accordion tag; thus, you can build an accordion sidebar using a pipe.</p>
-<div class="sourceCode" id="cb2"><pre class="downlit">
-<span class="fu"><a href="../reference/bs_accordion_sidebar.html">bs_accordion_sidebar</a></span>(id = <span class="st">"beatles"</span>) <span class="op">%&gt;%</span>
-  <span class="fu"><a href="../reference/bs_append.html">bs_append</a></span>(
-    title_side = <span class="st">"John Lennon"</span>, 
-    content_side = <span class="st">"Rhythm guitar, vocals"</span>,
-    content_main = <span class="st">"Dear Prudence"</span>
-  ) <span class="op">%&gt;%</span>
-  <span class="fu"><a href="../reference/bs_append.html">bs_append</a></span>(
-    title_side = <span class="st">"Paul McCartney"</span>, 
-    content_side = <span class="st">"Bass guitar, vocals"</span>,
-    content_main = <span class="st">"Blackbird"</span>
-  ) <span class="op">%&gt;%</span>
-  <span class="fu"><a href="../reference/bs_append.html">bs_append</a></span>(
-    title_side = <span class="st">"George Harrison"</span>, 
-    content_side = <span class="st">"Lead guitar, vocals"</span>,
-    content_main = <span class="st">"While My Guitar Gently Weeps"</span>
-  ) <span class="op">%&gt;%</span>
-  <span class="fu"><a href="../reference/bs_append.html">bs_append</a></span>(
-    title_side = <span class="st">"Ringo Starr"</span>, 
-    content_side = <span class="st">"Drums, vocals"</span>,
-    content_main = <span class="st">"Don't Pass Me By"</span>
-  ) 
-</pre></div>
+<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fu"><a href="../reference/bs_accordion_sidebar.html">bs_accordion_sidebar</a></span><span class="op">(</span>id <span class="op">=</span> <span class="st">"beatles"</span><span class="op">)</span> <span class="op">%&gt;%</span>
+  <span class="fu"><a href="../reference/bs_append.html">bs_append</a></span><span class="op">(</span>
+    title_side <span class="op">=</span> <span class="st">"John Lennon"</span>, 
+    content_side <span class="op">=</span> <span class="st">"Rhythm guitar, vocals"</span>,
+    content_main <span class="op">=</span> <span class="st">"Dear Prudence"</span>
+  <span class="op">)</span> <span class="op">%&gt;%</span>
+  <span class="fu"><a href="../reference/bs_append.html">bs_append</a></span><span class="op">(</span>
+    title_side <span class="op">=</span> <span class="st">"Paul McCartney"</span>, 
+    content_side <span class="op">=</span> <span class="st">"Bass guitar, vocals"</span>,
+    content_main <span class="op">=</span> <span class="st">"Blackbird"</span>
+  <span class="op">)</span> <span class="op">%&gt;%</span>
+  <span class="fu"><a href="../reference/bs_append.html">bs_append</a></span><span class="op">(</span>
+    title_side <span class="op">=</span> <span class="st">"George Harrison"</span>, 
+    content_side <span class="op">=</span> <span class="st">"Lead guitar, vocals"</span>,
+    content_main <span class="op">=</span> <span class="st">"While My Guitar Gently Weeps"</span>
+  <span class="op">)</span> <span class="op">%&gt;%</span>
+  <span class="fu"><a href="../reference/bs_append.html">bs_append</a></span><span class="op">(</span>
+    title_side <span class="op">=</span> <span class="st">"Ringo Starr"</span>, 
+    content_side <span class="op">=</span> <span class="st">"Drums, vocals"</span>,
+    content_main <span class="op">=</span> <span class="st">"Don't Pass Me By"</span>
+  <span class="op">)</span> </code></pre></div>
 <div class="row" id="beatles">
 <div class="col-sm-4" id="beatles-side">
 <div id="beatles-side-accordion" class="panel-group" role="tablist" aria-multiselectable="true">
@@ -227,74 +225,73 @@
 <p>As you can see, the sidebar acts like a <code><a href="../reference/bs_accordion.html">bs_accordion()</a></code>, but there are a couple of important differences. First, a sidebar panel’s class changes according to its being open or not. Second, the state (show-hide) of each component’s main panel is determined by the state of its side panel.</p>
 <p>When showing him a preview of this work, Carson Sievert asked a crazy question, “can you nest those things?” Well, apparently you can.</p>
 <p>Note that the outer accordion-sidebar has <code>use_main_enclosure</code> set to <code>FALSE</code>, while each inner accordion-sidebar has it set to <code>TRUE</code>.</p>
-<div class="sourceCode" id="cb3"><pre class="downlit">
-<span class="fu"><a href="../reference/bs_accordion_sidebar.html">bs_accordion_sidebar</a></span>(id = <span class="st">"the_beatles"</span>) <span class="op">%&gt;%</span>
-  <span class="fu"><a href="../reference/bs_set_opts.html">bs_set_opts</a></span>(use_main_enclosure = <span class="fl">FALSE</span>) <span class="op">%&gt;%</span>
-  <span class="fu"><a href="../reference/bs_append.html">bs_append</a></span>(
-    title_side = <span class="st">"John Lennon"</span>, 
-    content_side = <span class="kw">NULL</span>,
-    content_main = 
-      <span class="fu"><a href="../reference/bs_accordion_sidebar.html">bs_accordion_sidebar</a></span>(id = <span class="st">"john"</span>) <span class="op">%&gt;%</span>
-      <span class="fu"><a href="../reference/bs_append.html">bs_append</a></span>(
-        title_side = <span class="st">"Beatles"</span>,
-        content_side = <span class="st">"1960-1969"</span>,
-        content_main = <span class="st">"Help!"</span>
-      ) <span class="op">%&gt;%</span>
-      <span class="fu"><a href="../reference/bs_append.html">bs_append</a></span>(
-        title_side = <span class="st">"Solo"</span>,
-        content_side = <span class="st">"1968-1980"</span>,
-        content_main = <span class="st">"Love"</span>
-      )
-  ) <span class="op">%&gt;%</span>
-  <span class="fu"><a href="../reference/bs_append.html">bs_append</a></span>(
-    title_side = <span class="st">"Paul McCartney"</span>, 
-    content_side = <span class="kw">NULL</span>,
-    content_main =
-      <span class="fu"><a href="../reference/bs_accordion_sidebar.html">bs_accordion_sidebar</a></span>(id = <span class="st">"paul"</span>) <span class="op">%&gt;%</span>
-      <span class="fu"><a href="../reference/bs_append.html">bs_append</a></span>(
-        title_side = <span class="st">"Beatles"</span>,
-        content_side = <span class="st">"1960-1970"</span>,
-        content_main = <span class="st">"Yesterday"</span>
-      ) <span class="op">%&gt;%</span>
-      <span class="fu"><a href="../reference/bs_append.html">bs_append</a></span>(
-        title_side = <span class="st">"Solo"</span>,
-        content_side = <span class="st">"1970-"</span>,
-        content_main = <span class="st">"Maybe I'm Amazed"</span>
-      )
-  ) <span class="op">%&gt;%</span>
-  <span class="fu"><a href="../reference/bs_append.html">bs_append</a></span>(
-    title_side = <span class="st">"George Harrison"</span>, 
-    content_side = <span class="kw">NULL</span>,
-    content_main = 
-      <span class="fu"><a href="../reference/bs_accordion_sidebar.html">bs_accordion_sidebar</a></span>(id = <span class="st">"george"</span>) <span class="op">%&gt;%</span>
-      <span class="fu"><a href="../reference/bs_append.html">bs_append</a></span>(
-        title_side = <span class="st">"Beatles"</span>,
-        content_side = <span class="st">"1960-1970"</span>,
-        content_main = <span class="st">"Here Comes the Sun"</span>
-      ) <span class="op">%&gt;%</span>
-      <span class="fu"><a href="../reference/bs_append.html">bs_append</a></span>(
-        title_side = <span class="st">"Solo"</span>,
-        content_side = <span class="st">"1968-2001"</span>,
-        content_main = <span class="st">"My Sweet Lord"</span>
-      )
-  ) <span class="op">%&gt;%</span>
-  <span class="fu"><a href="../reference/bs_append.html">bs_append</a></span>(
-    title_side = <span class="st">"Ringo Starr"</span>, 
-    content_side = <span class="kw">NULL</span>,
-    content_main = 
-      <span class="fu"><a href="../reference/bs_accordion_sidebar.html">bs_accordion_sidebar</a></span>(id = <span class="st">"ringo"</span>) <span class="op">%&gt;%</span>
-      <span class="fu"><a href="../reference/bs_append.html">bs_append</a></span>(
-        title_side = <span class="st">"Beatles"</span>,
-        content_side = <span class="st">"1962-1970"</span>,
-        content_main = <span class="st">"Octopus' Garden"</span>
-      ) <span class="op">%&gt;%</span>
-      <span class="fu"><a href="../reference/bs_append.html">bs_append</a></span>(
-        title_side = <span class="st">"Solo"</span>,
-        content_side = <span class="st">"1970-"</span>,
-        content_main = <span class="st">"Photograph"</span>
-      )
-  ) 
-</pre></div>
+<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fu"><a href="../reference/bs_accordion_sidebar.html">bs_accordion_sidebar</a></span><span class="op">(</span>id <span class="op">=</span> <span class="st">"the_beatles"</span><span class="op">)</span> <span class="op">%&gt;%</span>
+  <span class="fu"><a href="../reference/bs_set_opts.html">bs_set_opts</a></span><span class="op">(</span>use_main_enclosure <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span> <span class="op">%&gt;%</span>
+  <span class="fu"><a href="../reference/bs_append.html">bs_append</a></span><span class="op">(</span>
+    title_side <span class="op">=</span> <span class="st">"John Lennon"</span>, 
+    content_side <span class="op">=</span> <span class="cn">NULL</span>,
+    content_main <span class="op">=</span> 
+      <span class="fu"><a href="../reference/bs_accordion_sidebar.html">bs_accordion_sidebar</a></span><span class="op">(</span>id <span class="op">=</span> <span class="st">"john"</span><span class="op">)</span> <span class="op">%&gt;%</span>
+      <span class="fu"><a href="../reference/bs_append.html">bs_append</a></span><span class="op">(</span>
+        title_side <span class="op">=</span> <span class="st">"Beatles"</span>,
+        content_side <span class="op">=</span> <span class="st">"1960-1969"</span>,
+        content_main <span class="op">=</span> <span class="st">"Help!"</span>
+      <span class="op">)</span> <span class="op">%&gt;%</span>
+      <span class="fu"><a href="../reference/bs_append.html">bs_append</a></span><span class="op">(</span>
+        title_side <span class="op">=</span> <span class="st">"Solo"</span>,
+        content_side <span class="op">=</span> <span class="st">"1968-1980"</span>,
+        content_main <span class="op">=</span> <span class="st">"Love"</span>
+      <span class="op">)</span>
+  <span class="op">)</span> <span class="op">%&gt;%</span>
+  <span class="fu"><a href="../reference/bs_append.html">bs_append</a></span><span class="op">(</span>
+    title_side <span class="op">=</span> <span class="st">"Paul McCartney"</span>, 
+    content_side <span class="op">=</span> <span class="cn">NULL</span>,
+    content_main <span class="op">=</span>
+      <span class="fu"><a href="../reference/bs_accordion_sidebar.html">bs_accordion_sidebar</a></span><span class="op">(</span>id <span class="op">=</span> <span class="st">"paul"</span><span class="op">)</span> <span class="op">%&gt;%</span>
+      <span class="fu"><a href="../reference/bs_append.html">bs_append</a></span><span class="op">(</span>
+        title_side <span class="op">=</span> <span class="st">"Beatles"</span>,
+        content_side <span class="op">=</span> <span class="st">"1960-1970"</span>,
+        content_main <span class="op">=</span> <span class="st">"Yesterday"</span>
+      <span class="op">)</span> <span class="op">%&gt;%</span>
+      <span class="fu"><a href="../reference/bs_append.html">bs_append</a></span><span class="op">(</span>
+        title_side <span class="op">=</span> <span class="st">"Solo"</span>,
+        content_side <span class="op">=</span> <span class="st">"1970-"</span>,
+        content_main <span class="op">=</span> <span class="st">"Maybe I'm Amazed"</span>
+      <span class="op">)</span>
+  <span class="op">)</span> <span class="op">%&gt;%</span>
+  <span class="fu"><a href="../reference/bs_append.html">bs_append</a></span><span class="op">(</span>
+    title_side <span class="op">=</span> <span class="st">"George Harrison"</span>, 
+    content_side <span class="op">=</span> <span class="cn">NULL</span>,
+    content_main <span class="op">=</span> 
+      <span class="fu"><a href="../reference/bs_accordion_sidebar.html">bs_accordion_sidebar</a></span><span class="op">(</span>id <span class="op">=</span> <span class="st">"george"</span><span class="op">)</span> <span class="op">%&gt;%</span>
+      <span class="fu"><a href="../reference/bs_append.html">bs_append</a></span><span class="op">(</span>
+        title_side <span class="op">=</span> <span class="st">"Beatles"</span>,
+        content_side <span class="op">=</span> <span class="st">"1960-1970"</span>,
+        content_main <span class="op">=</span> <span class="st">"Here Comes the Sun"</span>
+      <span class="op">)</span> <span class="op">%&gt;%</span>
+      <span class="fu"><a href="../reference/bs_append.html">bs_append</a></span><span class="op">(</span>
+        title_side <span class="op">=</span> <span class="st">"Solo"</span>,
+        content_side <span class="op">=</span> <span class="st">"1968-2001"</span>,
+        content_main <span class="op">=</span> <span class="st">"My Sweet Lord"</span>
+      <span class="op">)</span>
+  <span class="op">)</span> <span class="op">%&gt;%</span>
+  <span class="fu"><a href="../reference/bs_append.html">bs_append</a></span><span class="op">(</span>
+    title_side <span class="op">=</span> <span class="st">"Ringo Starr"</span>, 
+    content_side <span class="op">=</span> <span class="cn">NULL</span>,
+    content_main <span class="op">=</span> 
+      <span class="fu"><a href="../reference/bs_accordion_sidebar.html">bs_accordion_sidebar</a></span><span class="op">(</span>id <span class="op">=</span> <span class="st">"ringo"</span><span class="op">)</span> <span class="op">%&gt;%</span>
+      <span class="fu"><a href="../reference/bs_append.html">bs_append</a></span><span class="op">(</span>
+        title_side <span class="op">=</span> <span class="st">"Beatles"</span>,
+        content_side <span class="op">=</span> <span class="st">"1962-1970"</span>,
+        content_main <span class="op">=</span> <span class="st">"Octopus' Garden"</span>
+      <span class="op">)</span> <span class="op">%&gt;%</span>
+      <span class="fu"><a href="../reference/bs_append.html">bs_append</a></span><span class="op">(</span>
+        title_side <span class="op">=</span> <span class="st">"Solo"</span>,
+        content_side <span class="op">=</span> <span class="st">"1970-"</span>,
+        content_main <span class="op">=</span> <span class="st">"Photograph"</span>
+      <span class="op">)</span>
+  <span class="op">)</span> </code></pre></div>
 <div class="row" id="the_beatles">
 <div class="col-sm-4" id="the_beatles-side">
 <div id="the_beatles-side-accordion" class="panel-group" role="tablist" aria-multiselectable="true">
@@ -492,9 +489,8 @@
 </div>
 </div>
 <p>To use an accordion sidebar, you will need to insert some JavaScript code into your page using the <code><a href="../reference/bs_accordion_sidebar.html">use_bs_accordion_sidebar()</a></code> function. You will have to do this only once per page; I have found that it works best to include after all of the accordion-sidebars are defined, perhaps as one of the last elements in a <strong>shiny</strong> UI.</p>
-<div class="sourceCode" id="cb4"><pre class="downlit">
-<span class="fu"><a href="../reference/bs_accordion_sidebar.html">use_bs_accordion_sidebar</a></span>()
-</pre></div>
+<div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fu"><a href="../reference/bs_accordion_sidebar.html">use_bs_accordion_sidebar</a></span><span class="op">(</span><span class="op">)</span></code></pre></div>
 <script>function bsplus_collpase_validator(target, collapse) {
 
   /* target    element that initiated the event
@@ -603,7 +599,7 @@ $('.panel-collapse-leader').on('hide.bs.collapse', function () {
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.5.1.9000.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.6.1.</p>
 </div>
 
       </footer>

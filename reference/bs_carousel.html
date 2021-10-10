@@ -75,7 +75,7 @@ providing controls to move slides back-and-forth." />
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">bsplus</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.1.2</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.1.3</span>
       </span>
     </div>
 
@@ -83,7 +83,7 @@ providing controls to move slides back-and-forth." />
       <ul class="nav navbar-nav">
         <li>
   <a href="../index.html">
-    <span class="fas fa fas fa-home fa-lg"></span>
+    <span class="fas fa-home fa-lg"></span>
      
   </a>
 </li>
@@ -132,7 +132,7 @@ providing controls to move slides back-and-forth." />
       <ul class="nav navbar-nav navbar-right">
         <li>
   <a href="https://github.com/ijlyttle/bsplus/">
-    <span class="fab fa fab fa-github fa-lg"></span>
+    <span class="fab fa-github fa-lg"></span>
      
   </a>
 </li>
@@ -160,9 +160,9 @@ providing controls to move slides back-and-forth.</p>
     </div>
 
     <pre class="usage"><span class='co'># S3 method for bsplus_carousel</span>
-<span class='fu'>bs_append</span>(<span class='kw'>tag</span>, <span class='kw'>content</span>, caption = <span class='kw'>NULL</span>, <span class='kw'>...</span>)
+<span class='fu'><a href='bs_append.html'>bs_append</a></span><span class='op'>(</span><span class='va'>tag</span>, <span class='va'>content</span>, caption <span class='op'>=</span> <span class='cn'>NULL</span>, <span class='va'>...</span><span class='op'>)</span>
 
-<span class='fu'>bs_carousel</span>(<span class='kw'>id</span>, use_indicators = <span class='fl'>FALSE</span>, use_controls = <span class='fl'>TRUE</span>)</pre>
+<span class='fu'>bs_carousel</span><span class='op'>(</span><span class='va'>id</span>, use_indicators <span class='op'>=</span> <span class='cn'>FALSE</span>, use_controls <span class='op'>=</span> <span class='cn'>TRUE</span><span class='op'>)</span></pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -189,7 +189,7 @@ caption for the slide</p></td>
     <tr>
       <th>id</th>
       <td><p>character, unique id for accordion <code>&lt;div/&gt;</code>,
-also serves as root id for slides appended using <code>bs_append()</code></p></td>
+also serves as root id for slides appended using <code><a href='bs_append.html'>bs_append()</a></code></p></td>
     </tr>
     <tr>
       <th>use_indicators</th>
@@ -212,7 +212,7 @@ also serves as root id for slides appended using <code>bs_append()</code></p></t
 compose a carousel by piping. There are two parts to this system:</p>
 <ol>
 <li><p>A constructor function for the carousel, <code>bs_carousel()</code></p></li>
-<li><p>A function to append a slide to the carousel, <code>bs_append()</code></p></li>
+<li><p>A function to append a slide to the carousel, <code><a href='bs_append.html'>bs_append()</a></code></p></li>
 </ol>
 
 <p>The verb <em>append</em> is used to signify that you can append an arbitrary
@@ -223,15 +223,16 @@ among HTML elements in your page. If you have non-unique <code>id</code>'s, stra
 happen to your page.</p>
     <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
 
-    <div class='dont-index'><p><a href='http://getbootstrap.com/docs/3.3/javascript/#carousel'>http://getbootstrap.com/docs/3.3/javascript/#carousel</a>,
-<code>bs_carousel_image()</code>, <code>bs_carousel_caption()</code></p></div>
+    <div class='dont-index'><p><a href='https://getbootstrap.com/docs/3.3/javascript/#carousel'>https://getbootstrap.com/docs/3.3/javascript/#carousel</a>,
+<code><a href='bs_carousel_image.html'>bs_carousel_image()</a></code>, <code><a href='bs_carousel_caption.html'>bs_carousel_caption()</a></code></p></div>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='fu'>bs_carousel</span>(id = <span class='st'>"with_the_beatles"</span>) <span class='op'>%&gt;%</span>
-  <span class='fu'>bs_append</span>(content = <span class='fu'>bs_carousel_image</span>(src = <span class='st'>"img/john.jpg"</span>)) <span class='op'>%&gt;%</span>
-  <span class='fu'>bs_append</span>(content = <span class='fu'>bs_carousel_image</span>(src = <span class='st'>"img/paul.jpg"</span>)) <span class='op'>%&gt;%</span>
-  <span class='fu'>bs_append</span>(content = <span class='fu'>bs_carousel_image</span>(src = <span class='st'>"img/george.jpg"</span>)) <span class='op'>%&gt;%</span>
-  <span class='fu'>bs_append</span>(content = <span class='fu'>bs_carousel_image</span>(src = <span class='st'>"img/ringo.jpg"</span>))</div><div class='output co'>#&gt; &lt;div id="with_the_beatles" class="carousel slide" data-ride="carousel"&gt;
+    <pre class="examples"><div class='input'><span class='fu'>bs_carousel</span><span class='op'>(</span>id <span class='op'>=</span> <span class='st'>"with_the_beatles"</span><span class='op'>)</span> <span class='op'>%&gt;%</span>
+  <span class='fu'><a href='bs_append.html'>bs_append</a></span><span class='op'>(</span>content <span class='op'>=</span> <span class='fu'><a href='bs_carousel_image.html'>bs_carousel_image</a></span><span class='op'>(</span>src <span class='op'>=</span> <span class='st'>"img/john.jpg"</span><span class='op'>)</span><span class='op'>)</span> <span class='op'>%&gt;%</span>
+  <span class='fu'><a href='bs_append.html'>bs_append</a></span><span class='op'>(</span>content <span class='op'>=</span> <span class='fu'><a href='bs_carousel_image.html'>bs_carousel_image</a></span><span class='op'>(</span>src <span class='op'>=</span> <span class='st'>"img/paul.jpg"</span><span class='op'>)</span><span class='op'>)</span> <span class='op'>%&gt;%</span>
+  <span class='fu'><a href='bs_append.html'>bs_append</a></span><span class='op'>(</span>content <span class='op'>=</span> <span class='fu'><a href='bs_carousel_image.html'>bs_carousel_image</a></span><span class='op'>(</span>src <span class='op'>=</span> <span class='st'>"img/george.jpg"</span><span class='op'>)</span><span class='op'>)</span> <span class='op'>%&gt;%</span>
+  <span class='fu'><a href='bs_append.html'>bs_append</a></span><span class='op'>(</span>content <span class='op'>=</span> <span class='fu'><a href='bs_carousel_image.html'>bs_carousel_image</a></span><span class='op'>(</span>src <span class='op'>=</span> <span class='st'>"img/ringo.jpg"</span><span class='op'>)</span><span class='op'>)</span>
+</div><div class='output co'>#&gt; &lt;div id="with_the_beatles" class="carousel slide" data-ride="carousel"&gt;
 #&gt;   &lt;div class="carousel-inner" role="listbox"&gt;
 #&gt;     &lt;div class="item active"&gt;
 #&gt;       &lt;img src="img/john.jpg" class="img-responsive center-block"/&gt;
@@ -254,7 +255,8 @@ happen to your page.</p>
 #&gt;     &lt;span class="glyphicon glyphicon-chevron-right" aria-hidden="true"&gt;&lt;/span&gt;
 #&gt;     &lt;span class="sr-only"&gt;Next&lt;/span&gt;
 #&gt;   &lt;/a&gt;
-#&gt; &lt;/div&gt;</div><div class='input'></div></pre>
+#&gt; &lt;/div&gt;</div><div class='input'>
+</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">
@@ -270,7 +272,7 @@ happen to your page.</p>
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.5.1.9000.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.6.1.</p>
 </div>
 
       </footer>
