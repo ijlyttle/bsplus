@@ -8,7 +8,7 @@ test_that("iconlink works", {
     iconlink
   )
   expect_identical(
-    .tag_validate(iconlink$children[[1]], name = "i", class = "fa fa-info-circle"),
+    .tag_validate(iconlink$children[[1]], name = "i", class = "fas fa-circle-info"),
     iconlink$children[[1]]
   )
 })
