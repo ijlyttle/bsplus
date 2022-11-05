@@ -1,5 +1,9 @@
 # bsplus 0.1.3 (development version)
 
+- behind-the-scenes changes to remedy CRAN errors and notes
+
+- update authors
+
 - version bump for development
 
 # bsplus 0.1.3
