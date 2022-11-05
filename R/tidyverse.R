@@ -6,6 +6,7 @@
 #' @importFrom magrittr %>%
 #' @name %>%
 #' @rdname pipe
+#' @keywords internal
 #' @export
 #' @param lhs,rhs An object and a function to apply to it
 NULL

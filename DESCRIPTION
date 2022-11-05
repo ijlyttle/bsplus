@@ -1,18 +1,17 @@
 Package: bsplus
 Type: Package
 Title: Adds Functionality to the R Markdown + Shiny Bootstrap Framework
-Version: 0.1.3.9000
+Version: 0.1.3.9001
 Authors@R: c(
     person(
       given = "Ian",
       family = "Lyttle",
-      email = "ian.lyttle@se.com",
-      role = c("aut", "cre", "cph"),
+      email = "ijlyttle@me.com",
+      role = c("aut", "cre"),
       comment = c(ORCID = "0000-0001-9962-4849"),
     ),
-    person(family = "Schneider Electric", role = c("cph")),
     person(given = "Alex", family = "Shum", email = "alex@ALShum.com", role = c("ctb")),
-    person(given = "Em", family = "Bosak", email = "berrye123@gmail.com", role = c("ctb"))
+    person(given = "Emerson", family = "Berry", email = "berrye123@gmail.com", role = c("ctb"))
   )
 Description: The Bootstrap framework lets you add some JavaScript functionality to your web site by
   adding attributes to your HTML tags - Bootstrap takes care of the JavaScript
@@ -35,7 +34,7 @@ Imports:
 URL: https://github.com/ijlyttle/bsplus
 BugReports: https://github.com/ijlyttle/bsplus/issues
 Roxygen: list(markdown = TRUE)
-RoxygenNote: 7.1.1
+RoxygenNote: 7.2.1
 Encoding: UTF-8
 Suggests: testthat,
     shiny,
