@@ -1,3 +1,8 @@
+.dummy <- function(x) {
+  # suppress CRAN note
+  methods::as
+}
+
 .id <- function(x){
   paste0("#", x)
 }
