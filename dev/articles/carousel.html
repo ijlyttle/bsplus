@@ -21,6 +21,8 @@
 <![endif]-->
 </head>
 <body data-spy="scroll" data-target="#toc">
+    
+
     <div class="container template-article">
       <header><div class="navbar navbar-default navbar-fixed-top" role="navigation">
   <div class="container">
@@ -33,18 +35,12 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">bsplus</a>
-        <span class="version label label-danger" data-toggle="tooltip" data-placement="bottom" title="In-development version">0.1.3.9000</span>
+        <span class="version label label-danger" data-toggle="tooltip" data-placement="bottom" title="In-development version">0.1.3.9001</span>
       </span>
     </div>
 
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
-<li>
-  <a href="../index.html">
-    <span class="fas fa-home fa-lg"></span>
-     
-  </a>
-</li>
 <li>
   <a href="../articles/bsplus.html">Get started</a>
 </li>
@@ -52,7 +48,7 @@
   <a href="../reference/index.html">Reference</a>
 </li>
 <li class="dropdown">
-  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
     Articles
      
     <span class="caret"></span>
@@ -60,7 +56,8 @@
   <ul class="dropdown-menu" role="menu">
 <li class="dropdown-header">Function Families</li>
     <li class="divider">
-    <li>
+    </li>
+<li>
       <a href="../articles/collapse.html">collpase</a>
     </li>
     <li>
@@ -89,7 +86,7 @@
       </ul>
 <ul class="nav navbar-nav navbar-right">
 <li>
-  <a href="https://github.com/ijlyttle/bsplus/">
+  <a href="https://github.com/ijlyttle/bsplus/" class="external-link">
     <span class="fab fa-github fa-lg"></span>
      
   </a>
@@ -104,15 +101,15 @@
 
       
 
-      </header><script src="carousel_files/accessible-code-block-0.0.1/empty-anchor.js"></script><div class="row">
+      </header><div class="row">
   <div class="col-md-9 contents">
     <div class="page-header toc-ignore">
       <h1 data-toc-skip>Carousel</h1>
-                        <h4 class="author">Ian Lyttle</h4>
+                        <h4 data-toc-skip class="author">Ian Lyttle</h4>
             
-            <h4 class="date">2021-10-10</h4>
+            <h4 data-toc-skip class="date">2022-11-05</h4>
       
-      <small class="dont-index">Source: <a href="https://github.com/ijlyttle/bsplus/blob/master/vignettes/carousel.Rmd"><code>vignettes/carousel.Rmd</code></a></small>
+      <small class="dont-index">Source: <a href="https://github.com/ijlyttle/bsplus/blob/HEAD/vignettes/carousel.Rmd" class="external-link"><code>vignettes/carousel.Rmd</code></a></small>
       <div class="hidden name"><code>carousel.Rmd</code></div>
 
     </div>
@@ -120,34 +117,44 @@
     
     
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="st"><a href="https://github.com/rstudio/htmltools">"htmltools"</a></span><span class="op">)</span>
-<span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="st"><a href="https://github.com/ijlyttle/bsplus">"bsplus"</a></span><span class="op">)</span></code></pre></div>
-<p>A carousel can be useful to cycle through slides with related content. There like the accordion, there are two main functions:</p>
+<code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="st"><a href="https://github.com/rstudio/htmltools" class="external-link">"htmltools"</a></span><span class="op">)</span></span>
+<span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="st"><a href="https://github.com/ijlyttle/bsplus" class="external-link">"bsplus"</a></span><span class="op">)</span></span></code></pre></div>
+<p>A carousel can be useful to cycle through slides with related
+content. There like the accordion, there are two main functions:</p>
 <ul>
 <li>
-<code><a href="../reference/bs_append.bsplus_carousel.html">bs_carousel()</a></code>, used to establish the carousel framework, with arguments <code>id</code>, <code>use_indicators</code>, for the “dots” indicating the slide, and <code>use_controls</code>, for the directional controls at either side.</li>
+<code><a href="../reference/bs_carousel.html">bs_carousel()</a></code>, used to establish the carousel
+framework, with arguments <code>id</code>, <code>use_indicators</code>,
+for the “dots” indicating the slide, and <code>use_controls</code>, for
+the directional controls at either side.</li>
 <li>
-<code><a href="../reference/bs_append.html">bs_append()</a></code>, used to add a slide containing <code>content</code>, which is HTML, and an optional <code>caption</code>.</li>
+<code><a href="../reference/bs_append.html">bs_append()</a></code>, used to add a slide containing
+<code>content</code>, which is HTML, and an optional
+<code>caption</code>.</li>
 </ul>
-<p>The <code>content</code> and <code>caption</code> arguments can be composed using the helper functions <code><a href="../reference/bs_carousel_image.html">bs_carousel_image()</a></code>, which returs a centered-image tag, and <code><a href="../reference/bs_carousel_caption.html">bs_carousel_caption()</a></code> with text arguments <code>title</code> and <code>body</code>.</p>
+<p>The <code>content</code> and <code>caption</code> arguments can be
+composed using the helper functions <code><a href="../reference/bs_carousel_image.html">bs_carousel_image()</a></code>,
+which returs a centered-image tag, and
+<code><a href="../reference/bs_carousel_caption.html">bs_carousel_caption()</a></code> with text arguments
+<code>title</code> and <code>body</code>.</p>
 <div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="fu"><a href="../reference/bs_append.bsplus_carousel.html">bs_carousel</a></span><span class="op">(</span>id <span class="op">=</span> <span class="st">"the_beatles"</span>, use_indicators <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span> <span class="op">%&gt;%</span>
-  <span class="fu"><a href="../reference/bs_append.html">bs_append</a></span><span class="op">(</span>
-    content <span class="op">=</span> <span class="fu"><a href="../reference/bs_carousel_image.html">bs_carousel_image</a></span><span class="op">(</span>src <span class="op">=</span> <span class="st">"img/john.jpg"</span><span class="op">)</span>,
-    caption <span class="op">=</span> <span class="fu"><a href="../reference/bs_carousel_caption.html">bs_carousel_caption</a></span><span class="op">(</span><span class="st">"John Lennon"</span>, <span class="st">"Rhythm guitar, vocals"</span><span class="op">)</span>
-  <span class="op">)</span> <span class="op">%&gt;%</span>
-  <span class="fu"><a href="../reference/bs_append.html">bs_append</a></span><span class="op">(</span>
-    content <span class="op">=</span> <span class="fu"><a href="../reference/bs_carousel_image.html">bs_carousel_image</a></span><span class="op">(</span>src <span class="op">=</span> <span class="st">"img/paul.jpg"</span><span class="op">)</span>,
-    caption <span class="op">=</span> <span class="fu"><a href="../reference/bs_carousel_caption.html">bs_carousel_caption</a></span><span class="op">(</span><span class="st">"Paul McCartney"</span>, <span class="st">"Bass guitar, vocals"</span><span class="op">)</span>
-  <span class="op">)</span> <span class="op">%&gt;%</span>
-  <span class="fu"><a href="../reference/bs_append.html">bs_append</a></span><span class="op">(</span>
-    content <span class="op">=</span> <span class="fu"><a href="../reference/bs_carousel_image.html">bs_carousel_image</a></span><span class="op">(</span>src <span class="op">=</span> <span class="st">"img/george.jpg"</span><span class="op">)</span>,
-    caption <span class="op">=</span> <span class="fu"><a href="../reference/bs_carousel_caption.html">bs_carousel_caption</a></span><span class="op">(</span><span class="st">"George Harrison"</span>, <span class="st">"Lead guitar, vocals"</span><span class="op">)</span>
-  <span class="op">)</span> <span class="op">%&gt;%</span>
-  <span class="fu"><a href="../reference/bs_append.html">bs_append</a></span><span class="op">(</span>
-    content <span class="op">=</span> <span class="fu"><a href="../reference/bs_carousel_image.html">bs_carousel_image</a></span><span class="op">(</span>src <span class="op">=</span> <span class="st">"img/ringo.jpg"</span><span class="op">)</span>,
-    caption <span class="op">=</span> <span class="fu"><a href="../reference/bs_carousel_caption.html">bs_carousel_caption</a></span><span class="op">(</span><span class="st">"Ringo Starr"</span>, <span class="st">"Drums, vocals"</span><span class="op">)</span>
-  <span class="op">)</span> </code></pre></div>
+<code class="sourceCode R"><span><span class="fu"><a href="../reference/bs_carousel.html">bs_carousel</a></span><span class="op">(</span>id <span class="op">=</span> <span class="st">"the_beatles"</span>, use_indicators <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span> <span class="op"><a href="../reference/pipe.html">%&gt;%</a></span></span>
+<span>  <span class="fu"><a href="../reference/bs_append.html">bs_append</a></span><span class="op">(</span></span>
+<span>    content <span class="op">=</span> <span class="fu"><a href="../reference/bs_carousel_image.html">bs_carousel_image</a></span><span class="op">(</span>src <span class="op">=</span> <span class="st">"img/john.jpg"</span><span class="op">)</span>,</span>
+<span>    caption <span class="op">=</span> <span class="fu"><a href="../reference/bs_carousel_caption.html">bs_carousel_caption</a></span><span class="op">(</span><span class="st">"John Lennon"</span>, <span class="st">"Rhythm guitar, vocals"</span><span class="op">)</span></span>
+<span>  <span class="op">)</span> <span class="op"><a href="../reference/pipe.html">%&gt;%</a></span></span>
+<span>  <span class="fu"><a href="../reference/bs_append.html">bs_append</a></span><span class="op">(</span></span>
+<span>    content <span class="op">=</span> <span class="fu"><a href="../reference/bs_carousel_image.html">bs_carousel_image</a></span><span class="op">(</span>src <span class="op">=</span> <span class="st">"img/paul.jpg"</span><span class="op">)</span>,</span>
+<span>    caption <span class="op">=</span> <span class="fu"><a href="../reference/bs_carousel_caption.html">bs_carousel_caption</a></span><span class="op">(</span><span class="st">"Paul McCartney"</span>, <span class="st">"Bass guitar, vocals"</span><span class="op">)</span></span>
+<span>  <span class="op">)</span> <span class="op"><a href="../reference/pipe.html">%&gt;%</a></span></span>
+<span>  <span class="fu"><a href="../reference/bs_append.html">bs_append</a></span><span class="op">(</span></span>
+<span>    content <span class="op">=</span> <span class="fu"><a href="../reference/bs_carousel_image.html">bs_carousel_image</a></span><span class="op">(</span>src <span class="op">=</span> <span class="st">"img/george.jpg"</span><span class="op">)</span>,</span>
+<span>    caption <span class="op">=</span> <span class="fu"><a href="../reference/bs_carousel_caption.html">bs_carousel_caption</a></span><span class="op">(</span><span class="st">"George Harrison"</span>, <span class="st">"Lead guitar, vocals"</span><span class="op">)</span></span>
+<span>  <span class="op">)</span> <span class="op"><a href="../reference/pipe.html">%&gt;%</a></span></span>
+<span>  <span class="fu"><a href="../reference/bs_append.html">bs_append</a></span><span class="op">(</span></span>
+<span>    content <span class="op">=</span> <span class="fu"><a href="../reference/bs_carousel_image.html">bs_carousel_image</a></span><span class="op">(</span>src <span class="op">=</span> <span class="st">"img/ringo.jpg"</span><span class="op">)</span>,</span>
+<span>    caption <span class="op">=</span> <span class="fu"><a href="../reference/bs_carousel_caption.html">bs_carousel_caption</a></span><span class="op">(</span><span class="st">"Ringo Starr"</span>, <span class="st">"Drums, vocals"</span><span class="op">)</span></span>
+<span>  <span class="op">)</span> </span></code></pre></div>
 <div id="the_beatles" class="carousel slide" data-ride="carousel">
 <ol class="carousel-indicators">
 <li data-target="#the_beatles" data-slide-to="0" class="active">
@@ -194,15 +201,17 @@
 <ul>
 <li>without indicators</li>
 <li>without captions</li>
-<li>the slides do not auto-advance (using <code><a href="../reference/bs_set_data.html">bs_set_data()</a></code> to set <a href="http://getbootstrap.com/docs/3.3/javascript/#carousel-options">Bootstrap options</a>)</li>
+<li>the slides do not auto-advance (using <code><a href="../reference/bs_set_data.html">bs_set_data()</a></code> to
+set <a href="http://getbootstrap.com/docs/3.3/javascript/#carousel-options" class="external-link">Bootstrap
+options</a>)</li>
 </ul>
 <div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="fu"><a href="../reference/bs_append.bsplus_carousel.html">bs_carousel</a></span><span class="op">(</span>id <span class="op">=</span> <span class="st">"with_the_beatles"</span><span class="op">)</span> <span class="op">%&gt;%</span>
-  <span class="fu"><a href="../reference/bs_set_data.html">bs_set_data</a></span><span class="op">(</span>interval <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span> <span class="op">%&gt;%</span>
-  <span class="fu"><a href="../reference/bs_append.html">bs_append</a></span><span class="op">(</span>content <span class="op">=</span> <span class="fu"><a href="../reference/bs_carousel_image.html">bs_carousel_image</a></span><span class="op">(</span>src <span class="op">=</span> <span class="st">"img/john.jpg"</span><span class="op">)</span><span class="op">)</span> <span class="op">%&gt;%</span>
-  <span class="fu"><a href="../reference/bs_append.html">bs_append</a></span><span class="op">(</span>content <span class="op">=</span> <span class="fu"><a href="../reference/bs_carousel_image.html">bs_carousel_image</a></span><span class="op">(</span>src <span class="op">=</span> <span class="st">"img/paul.jpg"</span><span class="op">)</span><span class="op">)</span> <span class="op">%&gt;%</span>
-  <span class="fu"><a href="../reference/bs_append.html">bs_append</a></span><span class="op">(</span>content <span class="op">=</span> <span class="fu"><a href="../reference/bs_carousel_image.html">bs_carousel_image</a></span><span class="op">(</span>src <span class="op">=</span> <span class="st">"img/george.jpg"</span><span class="op">)</span><span class="op">)</span> <span class="op">%&gt;%</span>
-  <span class="fu"><a href="../reference/bs_append.html">bs_append</a></span><span class="op">(</span>content <span class="op">=</span> <span class="fu"><a href="../reference/bs_carousel_image.html">bs_carousel_image</a></span><span class="op">(</span>src <span class="op">=</span> <span class="st">"img/ringo.jpg"</span><span class="op">)</span><span class="op">)</span> </code></pre></div>
+<code class="sourceCode R"><span><span class="fu"><a href="../reference/bs_carousel.html">bs_carousel</a></span><span class="op">(</span>id <span class="op">=</span> <span class="st">"with_the_beatles"</span><span class="op">)</span> <span class="op"><a href="../reference/pipe.html">%&gt;%</a></span></span>
+<span>  <span class="fu"><a href="../reference/bs_set_data.html">bs_set_data</a></span><span class="op">(</span>interval <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span> <span class="op"><a href="../reference/pipe.html">%&gt;%</a></span></span>
+<span>  <span class="fu"><a href="../reference/bs_append.html">bs_append</a></span><span class="op">(</span>content <span class="op">=</span> <span class="fu"><a href="../reference/bs_carousel_image.html">bs_carousel_image</a></span><span class="op">(</span>src <span class="op">=</span> <span class="st">"img/john.jpg"</span><span class="op">)</span><span class="op">)</span> <span class="op"><a href="../reference/pipe.html">%&gt;%</a></span></span>
+<span>  <span class="fu"><a href="../reference/bs_append.html">bs_append</a></span><span class="op">(</span>content <span class="op">=</span> <span class="fu"><a href="../reference/bs_carousel_image.html">bs_carousel_image</a></span><span class="op">(</span>src <span class="op">=</span> <span class="st">"img/paul.jpg"</span><span class="op">)</span><span class="op">)</span> <span class="op"><a href="../reference/pipe.html">%&gt;%</a></span></span>
+<span>  <span class="fu"><a href="../reference/bs_append.html">bs_append</a></span><span class="op">(</span>content <span class="op">=</span> <span class="fu"><a href="../reference/bs_carousel_image.html">bs_carousel_image</a></span><span class="op">(</span>src <span class="op">=</span> <span class="st">"img/george.jpg"</span><span class="op">)</span><span class="op">)</span> <span class="op"><a href="../reference/pipe.html">%&gt;%</a></span></span>
+<span>  <span class="fu"><a href="../reference/bs_append.html">bs_append</a></span><span class="op">(</span>content <span class="op">=</span> <span class="fu"><a href="../reference/bs_carousel_image.html">bs_carousel_image</a></span><span class="op">(</span>src <span class="op">=</span> <span class="st">"img/ringo.jpg"</span><span class="op">)</span><span class="op">)</span> </span></code></pre></div>
 <div id="with_the_beatles" class="carousel slide" data-ride="carousel" data-interval="false">
 <div class="carousel-inner" role="listbox">
 <div class="item active">
@@ -227,10 +236,11 @@
 <span class="sr-only">Next</span>
 </a>
 </div>
-<div id="reference" class="section level2">
-<h2 class="hasAnchor">
-<a href="#reference" class="anchor"></a>Reference</h2>
-<p>For more information, please see the <a href="http://getbootstrap.com/docs/3.3/javascript/#carousel">Bootstrap JavaScript page</a>.</p>
+<div class="section level2">
+<h2 id="reference">Reference<a class="anchor" aria-label="anchor" href="#reference"></a>
+</h2>
+<p>For more information, please see the <a href="http://getbootstrap.com/docs/3.3/javascript/#carousel" class="external-link">Bootstrap
+JavaScript page</a>.</p>
 </div>
   </div>
 
@@ -245,11 +255,13 @@
 
 
       <footer><div class="copyright">
-  <p>Developed by Ian Lyttle.</p>
+  <p></p>
+<p>Developed by Ian Lyttle.</p>
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.6.1.</p>
+  <p></p>
+<p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.6.</p>
 </div>
 
       </footer>
@@ -257,6 +269,8 @@
 
   
 
+
+  
 
   </body>
 </html>
