@@ -29,10 +29,11 @@ bs_append.shiny.tag <- function(tag, ...){
   stop("This shiny.tag is not supported")
 }
 
+#' @param show logical, indicates whether to show content of first panel
 #' @rdname bs_accordion
 #' @export
 #'
-bs_append.bsplus_accordion <- function(tag, title, content, ...){
+bs_append.bsplus_accordion <- function(tag, title, content, show = TRUE, ...){
 
   # characterize the existing accordion
   n_panel <- length(tag$children)
@@ -101,7 +102,7 @@ bs_append.bsplus_accordion <- function(tag, title, content, ...){
   collapse <- bs_set_aria(collapse, labelledby = id_heading)
 
   # if this is the first panel, set it as open (add option to suppress)
-  if (identical(n_panel, 0L)){
+  if (identical(n_panel, 0L) & show){
     collapse <- htmltools::tagAppendAttributes(collapse, class = "in")
   }
 
