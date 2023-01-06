@@ -1,6 +1,6 @@
 #' Allow multiple `bs_accordion` sections to be open, and specify which ones start as open
 #'
-#' @param shinyBS::bs_accordion object
+#' @param X shinyBS::bs_accordion object
 #' @param multi logical Should more than one panel be permitted to be open at one time.
 #' @param open integer vector Indices of panels that should be open when the page loads.
 #'

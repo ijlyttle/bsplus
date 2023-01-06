@@ -34,7 +34,7 @@ Imports:
 URL: https://github.com/ijlyttle/bsplus
 BugReports: https://github.com/ijlyttle/bsplus/issues
 Roxygen: list(markdown = TRUE)
-RoxygenNote: 7.2.1
+RoxygenNote: 7.2.3
 Encoding: UTF-8
 Suggests: testthat,
     shiny,
