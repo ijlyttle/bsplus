@@ -14,7 +14,7 @@ bs_accordion_multi(X, multi = TRUE, open = 1)
 \item{open}{integer vector Indices of panels that should be open when the page loads.}
 }
 \value{
-. Modified shinyBS::bs_accordion object
+Modified shinyBS::bs_accordion object
 }
 \description{
 Allow multiple \code{bs_accordion} sections to be open, and specify which ones start as open
@@ -22,6 +22,9 @@ Allow multiple \code{bs_accordion} sections to be open, and specify which ones s
 \examples{
 
 if(interactive())
+{
+library(shiny)
+library(bsplus)
 
 shinyApp(
   ui = fluidPage(
@@ -74,6 +77,6 @@ shinyApp(
   server = function(input, output) {}
   )
 
-
+}
 
 }

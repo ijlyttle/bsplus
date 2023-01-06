@@ -4,13 +4,16 @@
 #' @param multi logical Should more than one panel be permitted to be open at one time.
 #' @param open integer vector Indices of panels that should be open when the page loads.
 #'
-#' @return. Modified shinyBS::bs_accordion object
+#' @return Modified shinyBS::bs_accordion object
 #'
 #' @export
 #'
 #' @examples
 #'
 #' if(interactive())
+#' {
+#' library(shiny)
+#' library(bsplus)
 #'
 #' shinyApp(
 #'   ui = fluidPage(
@@ -63,7 +66,7 @@
 #'   server = function(input, output) {}
 #'   )
 #'
-#'
+#' }
 #'
 bs_accordion_multi <- function(X, multi=TRUE, open=1) {
   for(i in 1:length(X$children))
