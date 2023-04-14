@@ -13,7 +13,7 @@ navbar:
       menu:
       - text: "Function Families"
       - text: "---"
-      - text: "collpase"
+      - text: "collapse"
         href: articles/collapse.html
       - text: "accordion"
         href: articles/accordion.html
