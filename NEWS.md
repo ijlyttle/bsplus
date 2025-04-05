@@ -1,5 +1,7 @@
 # bsplus (development version)
 
+- refactor example to be explicit about only reading example data (#116)
+
 # bsplus 0.1.4
 
 - behind-the-scenes changes to remedy CRAN errors and notes
