@@ -47,8 +47,17 @@
 #'   \item{`bs_modal_closebutton()`}{`htmltools::[tag][htmltools::tag]`, `<button/>`}
 #' }
 #' @examples
-#' library("htmltools") # also needs `markdown` package
 #' library("shiny")
+#'
+#' requireNamespace("litedown", quietly = TRUE)
+#' requireNamespace("withr", quietly = TRUE)
+#'
+#' example_path = system.file("markdown", "modal.md", package = "bsplus")
+#' example_markdown = withr::with_connection(
+#'   list(con = file(example_path, open = "r")), {
+#'     readLines(con)
+#'   }
+#' )
 #'
 #' bs_modal(id = "modal", title = "I'm a modal", body = "Yes, I am.")
 #' bs_button("Click for modal") %>%
@@ -58,7 +67,7 @@
 #'   id = "modal_large",
 #'   title = "I'm a modal",
 #'   size = "large",
-#'   body = includeMarkdown(system.file("markdown", "modal.md", package = "bsplus"))
+#'   body = litedown::mark(text = example_markdown)
 #' )
 #' bs_button("Click for modal") %>%
 #'   bs_attach_modal(id_modal = "modal_large")
