@@ -20,19 +20,19 @@ The `content` and `caption` arguments can be composed using the helper functions
 ```{r}
 bs_carousel(id = "the_beatles", use_indicators = TRUE) %>%
   bs_append(
-    content = bs_carousel_image(src = "img/john.jpg"),
+    content = bs_carousel_image(src = "img/john.jpg", alt = "John Lennon"),
     caption = bs_carousel_caption("John Lennon", "Rhythm guitar, vocals")
   ) %>%
   bs_append(
-    content = bs_carousel_image(src = "img/paul.jpg"),
+    content = bs_carousel_image(src = "img/paul.jpg", alt = "Paul McCartney"),
     caption = bs_carousel_caption("Paul McCartney", "Bass guitar, vocals")
   ) %>%
   bs_append(
-    content = bs_carousel_image(src = "img/george.jpg"),
+    content = bs_carousel_image(src = "img/george.jpg", alt = "George Harrison"),
     caption = bs_carousel_caption("George Harrison", "Lead guitar, vocals")
   ) %>%
   bs_append(
-    content = bs_carousel_image(src = "img/ringo.jpg"),
+    content = bs_carousel_image(src = "img/ringo.jpg", alt = "Ringo Starr"),
     caption = bs_carousel_caption("Ringo Starr", "Drums, vocals")
   ) 
 ```
@@ -46,10 +46,10 @@ Here's another rendering of the carousel, this time:
 ```{r}
 bs_carousel(id = "with_the_beatles") %>%
   bs_set_data(interval = FALSE) %>%
-  bs_append(content = bs_carousel_image(src = "img/john.jpg")) %>%
-  bs_append(content = bs_carousel_image(src = "img/paul.jpg")) %>%
-  bs_append(content = bs_carousel_image(src = "img/george.jpg")) %>%
-  bs_append(content = bs_carousel_image(src = "img/ringo.jpg")) 
+  bs_append(content = bs_carousel_image(src = "img/john.jpg", alt = "John Lennon")) %>%
+  bs_append(content = bs_carousel_image(src = "img/paul.jpg", alt = "Paul McCartney")) %>%
+  bs_append(content = bs_carousel_image(src = "img/george.jpg", alt = "George Harrison")) %>%
+  bs_append(content = bs_carousel_image(src = "img/ringo.jpg", alt = "Ringo Starr")) 
 ```
 
 ## Reference
