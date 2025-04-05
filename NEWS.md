@@ -1,6 +1,8 @@
 # bsplus (development version)
 
-- refactor example to be explicit about only reading example data (#116)
+- update GitHub Actions workflows (#118)
+
+- fix example to be explicit about only reading example data (#116)
 
 # bsplus 0.1.4
 
