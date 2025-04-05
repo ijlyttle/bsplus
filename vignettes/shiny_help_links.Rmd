@@ -1,8 +1,5 @@
 ---
 title: "Shiny-input help links"
-author: "Ian Lyttle"
-date: "`r Sys.Date()`"
-output: rmarkdown::html_vignette
 ---
 
 ```{r}
