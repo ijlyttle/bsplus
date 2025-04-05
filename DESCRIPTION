@@ -20,6 +20,7 @@ Description: The Bootstrap framework lets you add some JavaScript functionality 
   popovers, and an accordion sidebar framework (not described at Bootstrap site).
   Please note this package was designed for Bootstrap 3.3.
 License: MIT + file LICENSE
+URL: https://ijlyttle.github.io/bsplus/
 Depends: R (>= 3.3.0)
 Imports:
     htmltools,
@@ -31,10 +32,9 @@ Imports:
     glue,
     jsonlite,
     methods
-URL: https://github.com/ijlyttle/bsplus
 BugReports: https://github.com/ijlyttle/bsplus/issues
 Roxygen: list(markdown = TRUE)
-RoxygenNote: 7.2.1
+RoxygenNote: 7.3.2
 Encoding: UTF-8
 Suggests: 
     testthat,

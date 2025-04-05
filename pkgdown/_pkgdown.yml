@@ -1,10 +1,12 @@
+url: https://ijlyttle.github.io/bsplus/
+
+development:
+  mode: auto
+
 template:
   params:
     bootswatch: sandstone
   assets: "inst/pkgdown/assets"
-
-development:
-  mode: auto
 
 navbar:
   components:
