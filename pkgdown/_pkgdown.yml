@@ -1,32 +1,23 @@
+url: https://ijlyttle.github.io/bsplus/
+
+development:
+  mode: auto
+
 template:
   params:
     bootswatch: sandstone
   assets: "inst/pkgdown/assets"
 
-development:
-  mode: auto
-
 navbar:
+  structure:
+    left: [setup, reference, articles, news]
+    right: [search, github]
   components:
-    articles:
-      text: Articles
-      menu:
-      - text: "Function Families"
-      - text: "---"
-      - text: "collpase"
-        href: articles/collapse.html
-      - text: "accordion"
-        href: articles/accordion.html
-      - text: "accordion_sidebar"
-        href: articles/accordion_sidebar.html
-      - text: "tooltip_popover"
-        href: articles/tooltip_popover.html
-      - text: "modal"
-        href: articles/modal.html
-      - text: "carousel"
-        href: articles/carousel.html
-      - text: "shiny_help_links"
-        href: articles/shiny_help_links.html
+    setup:
+      text: Get Started
+      href: articles/bsplus.html
+
+
 
 reference:
   - title: "Components"

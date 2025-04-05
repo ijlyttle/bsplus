@@ -205,19 +205,19 @@ An carousel can be useful to cycle through slides with related content. There li
 ```{r}
 bs_carousel(id = "the_beatles", use_indicators = TRUE) %>%
   bs_append(
-    content = bs_carousel_image(src = image_uri("img/john.jpg")),
+    content = bs_carousel_image(src = image_uri("img/john.jpg"), alt = "John Lennon"),
     caption = bs_carousel_caption("John Lennon", "Rhythm guitar, vocals")
   ) %>%
   bs_append(
-    content = bs_carousel_image(src = image_uri("img/paul.jpg")),
+    content = bs_carousel_image(src = image_uri("img/paul.jpg"), alt = "Paul McCartney"),
     caption = bs_carousel_caption("Paul McCartney", "Bass guitar, vocals")
   ) %>%
   bs_append(
-    content = bs_carousel_image(src = image_uri("img/george.jpg")),
+    content = bs_carousel_image(src = image_uri("img/george.jpg"), alt = "George Harrison"),
     caption = bs_carousel_caption("George Harrison", "Lead guitar, vocals")
   ) %>%
   bs_append(
-    content = bs_carousel_image(src = image_uri("img/ringo.jpg")),
+    content = bs_carousel_image(src = image_uri("img/ringo.jpg"), alt = "Ringo Starr"),
     caption = bs_carousel_caption("Ringo Starr", "Drums, vocals")
   ) 
 ```
@@ -260,7 +260,7 @@ shiny::runApp(system.file("shiny", "tooltip_popover_modal", package = "bsplus"))
 
 Here's what it looks like:
 
-![](img/popover.png)
+![](img/popover.png){alt="Demonstration of popover with information icon"}
 
 To see more of the help-link framework, including more examples and a proposed convention for icons, please read [this article](https://ijlyttle.github.io/bsplus/articles/shiny_help_links.html).
 

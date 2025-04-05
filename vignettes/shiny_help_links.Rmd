@@ -1,8 +1,5 @@
 ---
 title: "Shiny-input help links"
-author: "Ian Lyttle"
-date: "`r Sys.Date()`"
-output: rmarkdown::html_vignette
 ---
 
 ```{r}
@@ -38,7 +35,7 @@ As of writing, I don't know how to include operable **shiny** inputs in an html 
 shiny::runApp(system.file("shiny", "tooltip_popover_modal", package = "bsplus"))
 ```
 
-![](img/popover.png)
+![](img/popover.png){alt="Demonstration of popover with information icon"}
 
 To promote consistency, the following convention is proposed:
 

@@ -2,8 +2,6 @@
 
 <!-- badges: start -->
 [![CRAN status](https://www.r-pkg.org/badges/version/bsplus)](https://cran.r-project.org/package=bsplus)
-[![R build status](https://github.com/ijlyttle/bsplus/workflows/R-CMD-check/badge.svg)](https://github.com/ijlyttle/bsplus/actions)
-[![Coverage Status](https://img.shields.io/codecov/c/github/ijlyttle/bsplus/main.svg)](https://codecov.io/github/ijlyttle/bsplus?branch=main)
 [![R-CMD-check](https://github.com/ijlyttle/bsplus/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/ijlyttle/bsplus/actions/workflows/R-CMD-check.yaml)
 <!-- badges: end -->
 
