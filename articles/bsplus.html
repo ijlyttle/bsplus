@@ -6,20 +6,21 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>bsplus • bsplus</title>
-<!-- jquery --><script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script><!-- Bootstrap --><link href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.4.0/sandstone/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
+<!-- jquery --><script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><!-- Bootstrap --><link href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.4.0/sandstone/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha256-nuL8/2cJ5NDSSwnKD8VqreErSWHtnEP9E7AySL+1ev4=" crossorigin="anonymous"></script><!-- bootstrap-toc --><link rel="stylesheet" href="../bootstrap-toc.css">
 <script src="../bootstrap-toc.js"></script><!-- Font Awesome icons --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=" crossorigin="anonymous">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/v4-shims.min.css" integrity="sha256-wZjR52fzng1pJHwx4aV2AO3yyTOXrcDW7jBpJtTwVxw=" crossorigin="anonymous">
 <!-- clipboard.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><!-- headroom.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/headroom.min.js" integrity="sha256-AsUX4SJE1+yuDu5+mAVzJbuYNPHj/WroHuZ8Ir/CkE0=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/jQuery.headroom.min.js" integrity="sha256-ZX/yNShbjqsohH1k95liqY9Gd8uOiE1S4vZc+9KQ1K4=" crossorigin="anonymous"></script><!-- pkgdown --><link href="../pkgdown.css" rel="stylesheet">
 <script src="../pkgdown.js"></script><link href="../extra.css" rel="stylesheet">
 <meta property="og:title" content="bsplus">
-<meta property="og:description" content="bsplus">
 <!-- mathjax --><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js" integrity="sha256-nvJJv9wWKEm88qvoQl9ekL2J+k/RWIsaSScxxlsrv8k=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/config/TeX-AMS-MML_HTMLorMML.js" integrity="sha256-84DKXVJXs0/F8OTMzX4UR909+jtl4G7SPypPavF+GfA=" crossorigin="anonymous"></script><!--[if lt IE 9]>
 <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
 <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
 <![endif]-->
 </head>
 <body data-spy="scroll" data-target="#toc">
+
+
     <div class="container template-article">
       <header><div class="navbar navbar-default navbar-fixed-top" role="navigation">
   <div class="container">
@@ -32,18 +33,12 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">bsplus</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.1.3</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.1.4</span>
       </span>
     </div>
 
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
-<li>
-  <a href="../index.html">
-    <span class="fas fa-home fa-lg"></span>
-     
-  </a>
-</li>
 <li>
   <a href="../articles/bsplus.html">Get started</a>
 </li>
@@ -51,15 +46,16 @@
   <a href="../reference/index.html">Reference</a>
 </li>
 <li class="dropdown">
-  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
     Articles
-     
+
     <span class="caret"></span>
   </a>
   <ul class="dropdown-menu" role="menu">
 <li class="dropdown-header">Function Families</li>
     <li class="divider">
-    <li>
+    </li>
+<li>
       <a href="../articles/collapse.html">collpase</a>
     </li>
     <li>
@@ -88,9 +84,9 @@
       </ul>
 <ul class="nav navbar-nav navbar-right">
 <li>
-  <a href="https://github.com/ijlyttle/bsplus/">
+  <a href="https://github.com/ijlyttle/bsplus/" class="external-link">
     <span class="fab fa-github fa-lg"></span>
-     
+
   </a>
 </li>
       </ul>
@@ -101,91 +97,121 @@
 </div>
 <!--/.navbar -->
 
-      
 
-      </header><script src="bsplus_files/accessible-code-block-0.0.1/empty-anchor.js"></script><div class="row">
+
+      </header><div class="row">
   <div class="col-md-9 contents">
     <div class="page-header toc-ignore">
       <h1 data-toc-skip>bsplus</h1>
-                        <h4 class="author">Ian Lyttle</h4>
+                        <h4 data-toc-skip class="author">Ian Lyttle</h4>
             
-            <h4 class="date">2021-10-10</h4>
+            <h4 data-toc-skip class="date">2025-04-05</h4>
       
-      <small class="dont-index">Source: <a href="https://github.com/ijlyttle/bsplus/blob/master/vignettes/bsplus.Rmd"><code>vignettes/bsplus.Rmd</code></a></small>
+      <small class="dont-index">Source: <a href="https://github.com/ijlyttle/bsplus/blob/main/vignettes/bsplus.Rmd" class="external-link"><code>vignettes/bsplus.Rmd</code></a></small>
       <div class="hidden name"><code>bsplus.Rmd</code></div>
 
     </div>
 
     
     
-<p>One of the goals of <strong>bsplus</strong> is to provide access to some useful Bootstrap components for <strong>rmarkdown</strong> html-documents and <strong>shiny</strong> apps:</p>
+<p>One of the goals of <strong>bsplus</strong> is to provide access to
+some useful Bootstrap components for <strong>rmarkdown</strong>
+html-documents and <strong>shiny</strong> apps:</p>
 <ul>
-<li><p>Basic components: <a href="http://getbootstrap.com/docs/3.3/css/#buttons">button</a>, <a href="http://getbootstrap.com/docs/3.3/components/#panels">panel</a>, and <a href="http://getbootstrap.com/docs/3.3/components/#wells">well</a></p></li>
-<li><p>Collapsible components: <a href="http://getbootstrap.com/docs/3.3/javascript/#collapse">collapse</a> and <a href="http://getbootstrap.com/docs/3.3/javascript/#collapse-example-accordion">accordion</a></p></li>
-<li><p>Tools to help with documentation: <a href="http://getbootstrap.com/docs/3.3/javascript/#tooltips">tooltip</a>, <a href="http://getbootstrap.com/docs/3.3/javascript/#popovers">popover</a>, and <a href="http://getbootstrap.com/docs/3.3/javascript/#modals">modal</a>, talk about the responsive embed function, once it is made.</p></li>
-<li><p>Present more information: <a href="http://getbootstrap.com/docs/3.3/javascript/#carousel">carousel</a></p></li>
+<li><p>Basic components: <a href="http://getbootstrap.com/docs/3.3/css/#buttons" class="external-link">button</a>, <a href="http://getbootstrap.com/docs/3.3/components/#panels" class="external-link">panel</a>,
+and <a href="http://getbootstrap.com/docs/3.3/components/#wells" class="external-link">well</a></p></li>
+<li><p>Collapsible components: <a href="http://getbootstrap.com/docs/3.3/javascript/#collapse" class="external-link">collapse</a>
+and <a href="http://getbootstrap.com/docs/3.3/javascript/#collapse-example-accordion" class="external-link">accordion</a></p></li>
+<li><p>Tools to help with documentation: <a href="http://getbootstrap.com/docs/3.3/javascript/#tooltips" class="external-link">tooltip</a>,
+<a href="http://getbootstrap.com/docs/3.3/javascript/#popovers" class="external-link">popover</a>,
+and <a href="http://getbootstrap.com/docs/3.3/javascript/#modals" class="external-link">modal</a>,
+talk about the responsive embed function, once it is made.</p></li>
+<li><p>Present more information: <a href="http://getbootstrap.com/docs/3.3/javascript/#carousel" class="external-link">carousel</a></p></li>
 </ul>
-<p>Another goal is to provide some tools to help build <strong>shiny</strong> apps.</p>
+<p>Another goal is to provide some tools to help build
+<strong>shiny</strong> apps.</p>
 <ul>
-<li><p><code><a href="../reference/bs_accordion_sidebar.html">bs_accordion_sidebar()</a></code>: a framework, much like <code><a href="https://rdrr.io/pkg/shiny/man/navbarPage.html">shiny::navbarPage()</a></code>, to organize the UI of your <strong>shiny</strong> apps. For example, please see its <a href="https://ijlyttle.github.io/bsplus/articles/accordion_sidebar.html">article</a>, or this <a href="https://ijlyttle.shinyapps.io/accordion_sidebar/"><strong>shiny</strong> app</a>.</p></li>
-<li><p><code><a href="../reference/shinyInput_label_embed.html">shinyInput_label_embed()</a></code>, <code><a href="../reference/shiny_iconlink.html">shiny_iconlink()</a></code>: functions to make it easier to embed help (tooltip, popover, or modal) into a <strong>shiny</strong> input. For example, please see this <a href="https://ijlyttle.shinyapps.io/tooltip_popover_modal/"><strong>shiny</strong> app</a>.</p></li>
+<li><p><code><a href="../reference/bs_accordion_sidebar.html">bs_accordion_sidebar()</a></code>: a framework, much like
+<code><a href="https://rdrr.io/pkg/shiny/man/navbarPage.html" class="external-link">shiny::navbarPage()</a></code>, to organize the UI of your
+<strong>shiny</strong> apps. For example, please see its <a href="https://ijlyttle.github.io/bsplus/articles/accordion_sidebar.html" class="external-link">article</a>,
+or this <a href="https://ijlyttle.shinyapps.io/accordion_sidebar/" class="external-link"><strong>shiny</strong>
+app</a>.</p></li>
+<li><p><code><a href="../reference/shinyInput_label_embed.html">shinyInput_label_embed()</a></code>,
+<code><a href="../reference/shiny_iconlink.html">shiny_iconlink()</a></code>: functions to make it easier to embed help
+(tooltip, popover, or modal) into a <strong>shiny</strong> input. For
+example, please see this <a href="https://ijlyttle.shinyapps.io/tooltip_popover_modal/" class="external-link"><strong>shiny</strong>
+app</a>.</p></li>
 </ul>
-<p>The philosophy of this package is to allow you to work with Bootstrap JavaScript components using HTML, while smoothing some of the rough edges. Even though some of the functions here are useful only in <strong>shiny</strong> apps, please note that none of the functions in this package depend on the server side of <strong>shiny</strong> - only the UI side.</p>
-<div id="components" class="section level2">
-<h2 class="hasAnchor">
-<a href="#components" class="anchor"></a>Components</h2>
-<p>This family of functions is used to build some stand-alone components.</p>
-<div id="button" class="section level3">
-<h3 class="hasAnchor">
-<a href="#button" class="anchor"></a>Button</h3>
+<p>The philosophy of this package is to allow you to work with Bootstrap
+JavaScript components using HTML, while smoothing some of the rough
+edges. Even though some of the functions here are useful only in
+<strong>shiny</strong> apps, please note that none of the functions in
+this package depend on the server side of <strong>shiny</strong> - only
+the UI side.</p>
+<div class="section level2">
+<h2 id="components">Components<a class="anchor" aria-label="anchor" href="#components"></a>
+</h2>
+<p>This family of functions is used to build some stand-alone
+components.</p>
+<div class="section level3">
+<h3 id="button">Button<a class="anchor" aria-label="anchor" href="#button"></a>
+</h3>
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="fu"><a href="../reference/bs_button.html">bs_button</a></span><span class="op">(</span><span class="st">"This button does nothing"</span>, button_type <span class="op">=</span> <span class="st">"warning"</span><span class="op">)</span></code></pre></div>
-<p><button class="btn btn-warning">This button does nothing</button></p>
+<code class="sourceCode R"><span><span class="fu"><a href="../reference/bs_button.html">bs_button</a></span><span class="op">(</span><span class="st">"This button does nothing"</span>, button_type <span class="op">=</span> <span class="st">"warning"</span><span class="op">)</span></span></code></pre></div>
+<button class="btn btn-warning">This button does nothing</button>
 </div>
 </div>
-<div id="collapse" class="section level2">
-<h2 class="hasAnchor">
-<a href="#collapse" class="anchor"></a>Collapse</h2>
-<p>A collapsible element is attached to a button or link, which is used to show (or hide) the element.</p>
-<p>The first step is to create the collapsible element, using <code><a href="../reference/bs_collapse.html">bs_collapse()</a></code> with an <code>id</code>. By default, this element is initially hidden.</p>
+<div class="section level2">
+<h2 id="collapse">Collapse<a class="anchor" aria-label="anchor" href="#collapse"></a>
+</h2>
+<p>A collapsible element is attached to a button or link, which is used
+to show (or hide) the element.</p>
+<p>The first step is to create the collapsible element, using
+<code><a href="../reference/bs_collapse.html">bs_collapse()</a></code> with an <code>id</code>. By default, this
+element is initially hidden.</p>
 <div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="fu"><a href="../reference/bs_collapse.html">bs_collapse</a></span><span class="op">(</span>
-  id <span class="op">=</span> <span class="st">"ex_collapse"</span>, 
-  content <span class="op">=</span> <span class="va">tags</span><span class="op">$</span><span class="fu">div</span><span class="op">(</span>class <span class="op">=</span> <span class="st">"well"</span>, <span class="st">"Yeah Yeah Yeah"</span><span class="op">)</span>
-<span class="op">)</span> </code></pre></div>
+<code class="sourceCode R"><span><span class="fu"><a href="../reference/bs_collapse.html">bs_collapse</a></span><span class="op">(</span></span>
+<span>  id <span class="op">=</span> <span class="st">"ex_collapse"</span>, </span>
+<span>  content <span class="op">=</span> <span class="va">tags</span><span class="op">$</span><span class="fu">div</span><span class="op">(</span>class <span class="op">=</span> <span class="st">"well"</span>, <span class="st">"Yeah Yeah Yeah"</span><span class="op">)</span></span>
+<span><span class="op">)</span> </span></code></pre></div>
 <div class="collapse" id="ex_collapse">
 <div class="well">Yeah Yeah Yeah</div>
 </div>
-<p>Next, you create a tag, like a button, a then <em>attach</em> the <code>id</code> of the collapsible element to it.</p>
+<p>Next, you create a tag, like a button, a then <em>attach</em> the
+<code>id</code> of the collapsible element to it.</p>
 <div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="fu"><a href="../reference/bs_button.html">bs_button</a></span><span class="op">(</span><span class="st">"She Loves You"</span>, button_type <span class="op">=</span> <span class="st">"primary"</span><span class="op">)</span> <span class="op">%&gt;%</span>
-  <span class="fu"><a href="../reference/bs_collapse.html">bs_attach_collapse</a></span><span class="op">(</span><span class="st">"ex_collapse"</span><span class="op">)</span></code></pre></div>
-<p><button class="btn btn-primary" data-toggle="collapse" data-target="#ex_collapse">She Loves You</button></p>
-<p>To see more of the collapse function-family, please see <a href="https://ijlyttle.github.io/bsplus/articles/collapse.html">its article</a>.</p>
+<code class="sourceCode R"><span><span class="fu"><a href="../reference/bs_button.html">bs_button</a></span><span class="op">(</span><span class="st">"She Loves You"</span>, button_type <span class="op">=</span> <span class="st">"primary"</span><span class="op">)</span> <span class="op"><a href="../reference/pipe.html">%&gt;%</a></span></span>
+<span>  <span class="fu"><a href="../reference/bs_collapse.html">bs_attach_collapse</a></span><span class="op">(</span><span class="st">"ex_collapse"</span><span class="op">)</span></span></code></pre></div>
+<button class="btn btn-primary" data-toggle="collapse" data-target="#ex_collapse">She Loves You</button>
+<p>To see more of the collapse function-family, please see <a href="https://ijlyttle.github.io/bsplus/articles/collapse.html" class="external-link">its
+article</a>.</p>
 </div>
-<div id="accordion" class="section level2">
-<h2 class="hasAnchor">
-<a href="#accordion" class="anchor"></a>Accordion</h2>
-<p>An accordion is a set of collapsible panels constructed such that one panel, at most, is open at a time.</p>
+<div class="section level2">
+<h2 id="accordion">Accordion<a class="anchor" aria-label="anchor" href="#accordion"></a>
+</h2>
+<p>An accordion is a set of collapsible panels constructed such that one
+panel, at most, is open at a time.</p>
 <p>There are two main functions:</p>
 <ul>
 <li>
-<code><a href="../reference/bs_accordion.html">bs_accordion()</a></code>, used to establish the accordion framework</li>
+<code><a href="../reference/bs_accordion.html">bs_accordion()</a></code>, used to establish the accordion
+framework</li>
 <li>
-<code><a href="../reference/bs_append.html">bs_append()</a></code>, used to add a panel (<code>title</code> and <code>content</code>) to the accordion.</li>
+<code><a href="../reference/bs_append.html">bs_append()</a></code>, used to add a panel (<code>title</code>
+and <code>content</code>) to the accordion.</li>
 </ul>
-<p>Generally, <code>title</code> will be text, and <code>content</code> can be HTML.</p>
+<p>Generally, <code>title</code> will be text, and <code>content</code>
+can be HTML.</p>
 <div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="fu"><a href="../reference/bs_accordion.html">bs_accordion</a></span><span class="op">(</span>id <span class="op">=</span> <span class="st">"meet_the_beatles"</span><span class="op">)</span> <span class="op">%&gt;%</span>
-  <span class="fu"><a href="../reference/bs_append.html">bs_append</a></span><span class="op">(</span>title <span class="op">=</span> <span class="st">"John"</span>, content <span class="op">=</span> <span class="st">"Rhythm guitar, vocals"</span><span class="op">)</span> <span class="op">%&gt;%</span>
-  <span class="fu"><a href="../reference/bs_append.html">bs_append</a></span><span class="op">(</span>title <span class="op">=</span> <span class="st">"Paul"</span>, content <span class="op">=</span> <span class="st">"Bass guitar, vocals"</span><span class="op">)</span> <span class="op">%&gt;%</span>
-  <span class="fu"><a href="../reference/bs_append.html">bs_append</a></span><span class="op">(</span>title <span class="op">=</span> <span class="st">"George"</span>, content <span class="op">=</span> <span class="st">"Lead guitar, vocals"</span><span class="op">)</span> <span class="op">%&gt;%</span>
-  <span class="fu"><a href="../reference/bs_append.html">bs_append</a></span><span class="op">(</span>title <span class="op">=</span> <span class="st">"Ringo"</span>, content <span class="op">=</span> <span class="st">"Drums, vocals"</span><span class="op">)</span></code></pre></div>
+<code class="sourceCode R"><span><span class="fu"><a href="../reference/bs_accordion.html">bs_accordion</a></span><span class="op">(</span>id <span class="op">=</span> <span class="st">"meet_the_beatles"</span><span class="op">)</span> <span class="op"><a href="../reference/pipe.html">%&gt;%</a></span></span>
+<span>  <span class="fu"><a href="../reference/bs_append.html">bs_append</a></span><span class="op">(</span>title <span class="op">=</span> <span class="st">"John"</span>, content <span class="op">=</span> <span class="st">"Rhythm guitar, vocals"</span><span class="op">)</span> <span class="op"><a href="../reference/pipe.html">%&gt;%</a></span></span>
+<span>  <span class="fu"><a href="../reference/bs_append.html">bs_append</a></span><span class="op">(</span>title <span class="op">=</span> <span class="st">"Paul"</span>, content <span class="op">=</span> <span class="st">"Bass guitar, vocals"</span><span class="op">)</span> <span class="op"><a href="../reference/pipe.html">%&gt;%</a></span></span>
+<span>  <span class="fu"><a href="../reference/bs_append.html">bs_append</a></span><span class="op">(</span>title <span class="op">=</span> <span class="st">"George"</span>, content <span class="op">=</span> <span class="st">"Lead guitar, vocals"</span><span class="op">)</span> <span class="op"><a href="../reference/pipe.html">%&gt;%</a></span></span>
+<span>  <span class="fu"><a href="../reference/bs_append.html">bs_append</a></span><span class="op">(</span>title <span class="op">=</span> <span class="st">"Ringo"</span>, content <span class="op">=</span> <span class="st">"Drums, vocals"</span><span class="op">)</span></span></code></pre></div>
 <div id="meet_the_beatles" class="panel-group" role="tablist" aria-multiselectable="true">
 <div class="panel panel-default" id="meet_the_beatles-0">
 <div id="meet_the_beatles-0-heading" class="panel-heading" role="tab">
-<h4 class="hasAnchor">
-<a href="#meet_the_beatles-0-heading" class="anchor"></a>
+<h4 class="panel-title">
 <a data-toggle="collapse" role="button" href="#meet_the_beatles-0-collapse" data-parent="#meet_the_beatles" aria-expanded="true" aria-controls="meet_the_beatles-0-collapse">John</a>
 </h4>
 </div>
@@ -195,8 +221,7 @@
 </div>
 <div class="panel panel-default" id="meet_the_beatles-1">
 <div id="meet_the_beatles-1-heading" class="panel-heading" role="tab">
-<h4 class="hasAnchor">
-<a href="#meet_the_beatles-1-heading" class="anchor"></a>
+<h4 class="panel-title">
 <a data-toggle="collapse" role="button" href="#meet_the_beatles-1-collapse" data-parent="#meet_the_beatles" aria-expanded="true" aria-controls="meet_the_beatles-1-collapse">Paul</a>
 </h4>
 </div>
@@ -206,8 +231,7 @@
 </div>
 <div class="panel panel-default" id="meet_the_beatles-2">
 <div id="meet_the_beatles-2-heading" class="panel-heading" role="tab">
-<h4 class="hasAnchor">
-<a href="#meet_the_beatles-2-heading" class="anchor"></a>
+<h4 class="panel-title">
 <a data-toggle="collapse" role="button" href="#meet_the_beatles-2-collapse" data-parent="#meet_the_beatles" aria-expanded="true" aria-controls="meet_the_beatles-2-collapse">George</a>
 </h4>
 </div>
@@ -217,8 +241,7 @@
 </div>
 <div class="panel panel-default" id="meet_the_beatles-3">
 <div id="meet_the_beatles-3-heading" class="panel-heading" role="tab">
-<h4 class="hasAnchor">
-<a href="#meet_the_beatles-3-heading" class="anchor"></a>
+<h4 class="panel-title">
 <a data-toggle="collapse" role="button" href="#meet_the_beatles-3-collapse" data-parent="#meet_the_beatles" aria-expanded="true" aria-controls="meet_the_beatles-3-collapse">Ringo</a>
 </h4>
 </div>
@@ -227,49 +250,61 @@
 </div>
 </div>
 </div>
-<p>To see more of the <code><a href="../reference/bs_accordion.html">bs_accordion()</a></code> function-family, including how to make the entire banner “clickable” and how to change the class of the panels, please see <a href="https://ijlyttle.github.io/bsplus/articles/accordion.html">its article</a>.</p>
+<p>To see more of the <code><a href="../reference/bs_accordion.html">bs_accordion()</a></code> function-family,
+including how to make the entire banner “clickable” and how to change
+the class of the panels, please see <a href="https://ijlyttle.github.io/bsplus/articles/accordion.html" class="external-link">its
+article</a>.</p>
 </div>
-<div id="accordion-sidebar" class="section level2">
-<h2 class="hasAnchor">
-<a href="#accordion-sidebar" class="anchor"></a>Accordion sidebar</h2>
-<p>An accordion-sidebar can be useful to provide another dimension for your <strong>shiny</strong> apps. For example, you can use <strong>shiny</strong> <code><a href="https://rdrr.io/pkg/shiny/man/navbarPage.html">navbarPage()</a></code> for major groupings, then <code><a href="../reference/bs_accordion_sidebar.html">bs_accordion_sidebar()</a></code> panels for minor groupings within each major grouping.</p>
+<div class="section level2">
+<h2 id="accordion-sidebar">Accordion sidebar<a class="anchor" aria-label="anchor" href="#accordion-sidebar"></a>
+</h2>
+<p>An accordion-sidebar can be useful to provide another dimension for
+your <strong>shiny</strong> apps. For example, you can use
+<strong>shiny</strong> <code><a href="https://rdrr.io/pkg/shiny/man/navbarPage.html" class="external-link">navbarPage()</a></code> for major groupings,
+then <code><a href="../reference/bs_accordion_sidebar.html">bs_accordion_sidebar()</a></code> panels for minor groupings
+within each major grouping.</p>
 <p>There like the accordion, there are two main functions:</p>
 <ul>
 <li>
-<code><a href="../reference/bs_accordion_sidebar.html">bs_accordion_sidebar()</a></code>, used to establish the accordion-sidebar framework</li>
+<code><a href="../reference/bs_accordion_sidebar.html">bs_accordion_sidebar()</a></code>, used to establish the
+accordion-sidebar framework</li>
 <li>
-<code><a href="../reference/bs_append.html">bs_append()</a></code>, used to add a side panel (<code>title_side</code> and <code>content_side</code>) and a main panel (<code>content_main</code>) to the accordion sidebar</li>
+<code><a href="../reference/bs_append.html">bs_append()</a></code>, used to add a side panel
+(<code>title_side</code> and <code>content_side</code>) and a main panel
+(<code>content_main</code>) to the accordion sidebar</li>
 </ul>
-<p>Generally, <code>title_side</code> will be text, <code>content_side</code> can be HTML (<strong>shiny</strong> inputs), as well as <code>content_main</code> (<strong>shiny</strong> outputs).</p>
+<p>Generally, <code>title_side</code> will be text,
+<code>content_side</code> can be HTML (<strong>shiny</strong> inputs),
+as well as <code>content_main</code> (<strong>shiny</strong>
+outputs).</p>
 <div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="fu"><a href="../reference/bs_accordion_sidebar.html">bs_accordion_sidebar</a></span><span class="op">(</span>id <span class="op">=</span> <span class="st">"beatles"</span><span class="op">)</span> <span class="op">%&gt;%</span>
-  <span class="fu"><a href="../reference/bs_append.html">bs_append</a></span><span class="op">(</span>
-    title_side <span class="op">=</span> <span class="st">"John Lennon"</span>, 
-    content_side <span class="op">=</span> <span class="st">"Rhythm guitar, vocals"</span>,
-    content_main <span class="op">=</span> <span class="st">"Dear Prudence"</span>
-  <span class="op">)</span> <span class="op">%&gt;%</span>
-  <span class="fu"><a href="../reference/bs_append.html">bs_append</a></span><span class="op">(</span>
-    title_side <span class="op">=</span> <span class="st">"Paul McCartney"</span>, 
-    content_side <span class="op">=</span> <span class="st">"Bass guitar, vocals"</span>,
-    content_main <span class="op">=</span> <span class="st">"Blackbird"</span>
-  <span class="op">)</span> <span class="op">%&gt;%</span>
-  <span class="fu"><a href="../reference/bs_append.html">bs_append</a></span><span class="op">(</span>
-    title_side <span class="op">=</span> <span class="st">"George Harrison"</span>, 
-    content_side <span class="op">=</span> <span class="st">"Lead guitar, vocals"</span>,
-    content_main <span class="op">=</span> <span class="st">"While My Guitar Gently Weeps"</span>
-  <span class="op">)</span> <span class="op">%&gt;%</span>
-  <span class="fu"><a href="../reference/bs_append.html">bs_append</a></span><span class="op">(</span>
-    title_side <span class="op">=</span> <span class="st">"Ringo Starr"</span>, 
-    content_side <span class="op">=</span> <span class="st">"Drums, vocals"</span>,
-    content_main <span class="op">=</span> <span class="st">"Don't Pass Me By"</span>
-  <span class="op">)</span> </code></pre></div>
+<code class="sourceCode R"><span><span class="fu"><a href="../reference/bs_accordion_sidebar.html">bs_accordion_sidebar</a></span><span class="op">(</span>id <span class="op">=</span> <span class="st">"beatles"</span><span class="op">)</span> <span class="op"><a href="../reference/pipe.html">%&gt;%</a></span></span>
+<span>  <span class="fu"><a href="../reference/bs_append.html">bs_append</a></span><span class="op">(</span></span>
+<span>    title_side <span class="op">=</span> <span class="st">"John Lennon"</span>, </span>
+<span>    content_side <span class="op">=</span> <span class="st">"Rhythm guitar, vocals"</span>,</span>
+<span>    content_main <span class="op">=</span> <span class="st">"Dear Prudence"</span></span>
+<span>  <span class="op">)</span> <span class="op"><a href="../reference/pipe.html">%&gt;%</a></span></span>
+<span>  <span class="fu"><a href="../reference/bs_append.html">bs_append</a></span><span class="op">(</span></span>
+<span>    title_side <span class="op">=</span> <span class="st">"Paul McCartney"</span>, </span>
+<span>    content_side <span class="op">=</span> <span class="st">"Bass guitar, vocals"</span>,</span>
+<span>    content_main <span class="op">=</span> <span class="st">"Blackbird"</span></span>
+<span>  <span class="op">)</span> <span class="op"><a href="../reference/pipe.html">%&gt;%</a></span></span>
+<span>  <span class="fu"><a href="../reference/bs_append.html">bs_append</a></span><span class="op">(</span></span>
+<span>    title_side <span class="op">=</span> <span class="st">"George Harrison"</span>, </span>
+<span>    content_side <span class="op">=</span> <span class="st">"Lead guitar, vocals"</span>,</span>
+<span>    content_main <span class="op">=</span> <span class="st">"While My Guitar Gently Weeps"</span></span>
+<span>  <span class="op">)</span> <span class="op"><a href="../reference/pipe.html">%&gt;%</a></span></span>
+<span>  <span class="fu"><a href="../reference/bs_append.html">bs_append</a></span><span class="op">(</span></span>
+<span>    title_side <span class="op">=</span> <span class="st">"Ringo Starr"</span>, </span>
+<span>    content_side <span class="op">=</span> <span class="st">"Drums, vocals"</span>,</span>
+<span>    content_main <span class="op">=</span> <span class="st">"Don't Pass Me By"</span></span>
+<span>  <span class="op">)</span> </span></code></pre></div>
 <div class="row" id="beatles">
 <div class="col-sm-4" id="beatles-side">
 <div id="beatles-side-accordion" class="panel-group" role="tablist" aria-multiselectable="true">
 <div class="panel panel-success" class-active="panel-success" class-inactive="panel-primary" id="beatles-side-accordion-0">
 <div id="beatles-side-accordion-0-heading" class="panel-heading" role="tab" data-toggle="collapse" data-target="#beatles-side-accordion-0-collapse" data-parent="#beatles-side-accordion" aria-expanded="true" aria-controls="beatles-side-accordion-0-collapse" style="cursor: pointer;">
-<h4 class="hasAnchor">
-<a href="#beatles-side-accordion-0-heading" class="anchor"></a>John Lennon</h4>
+<h4 class="panel-title">John Lennon</h4>
 </div>
 <div aria-labelledby="beatles-side-accordion-0-heading" class="panel-collapse collapse in panel-collapse-leader" id="beatles-side-accordion-0-collapse" role="tabpanel">
 <div class="panel-body" style="">Rhythm guitar, vocals</div>
@@ -277,8 +312,7 @@
 </div>
 <div class="panel panel-primary" class-active="panel-success" class-inactive="panel-primary" id="beatles-side-accordion-1">
 <div id="beatles-side-accordion-1-heading" class="panel-heading" role="tab" data-toggle="collapse" data-target="#beatles-side-accordion-1-collapse" data-parent="#beatles-side-accordion" aria-expanded="true" aria-controls="beatles-side-accordion-1-collapse" style="cursor: pointer;">
-<h4 class="hasAnchor">
-<a href="#beatles-side-accordion-1-heading" class="anchor"></a>Paul McCartney</h4>
+<h4 class="panel-title">Paul McCartney</h4>
 </div>
 <div aria-labelledby="beatles-side-accordion-1-heading" class="panel-collapse collapse panel-collapse-leader" id="beatles-side-accordion-1-collapse" role="tabpanel">
 <div class="panel-body" style="">Bass guitar, vocals</div>
@@ -286,8 +320,7 @@
 </div>
 <div class="panel panel-primary" class-active="panel-success" class-inactive="panel-primary" id="beatles-side-accordion-2">
 <div id="beatles-side-accordion-2-heading" class="panel-heading" role="tab" data-toggle="collapse" data-target="#beatles-side-accordion-2-collapse" data-parent="#beatles-side-accordion" aria-expanded="true" aria-controls="beatles-side-accordion-2-collapse" style="cursor: pointer;">
-<h4 class="hasAnchor">
-<a href="#beatles-side-accordion-2-heading" class="anchor"></a>George Harrison</h4>
+<h4 class="panel-title">George Harrison</h4>
 </div>
 <div aria-labelledby="beatles-side-accordion-2-heading" class="panel-collapse collapse panel-collapse-leader" id="beatles-side-accordion-2-collapse" role="tabpanel">
 <div class="panel-body" style="">Lead guitar, vocals</div>
@@ -295,8 +328,7 @@
 </div>
 <div class="panel panel-primary" class-active="panel-success" class-inactive="panel-primary" id="beatles-side-accordion-3">
 <div id="beatles-side-accordion-3-heading" class="panel-heading" role="tab" data-toggle="collapse" data-target="#beatles-side-accordion-3-collapse" data-parent="#beatles-side-accordion" aria-expanded="true" aria-controls="beatles-side-accordion-3-collapse" style="cursor: pointer;">
-<h4 class="hasAnchor">
-<a href="#beatles-side-accordion-3-heading" class="anchor"></a>Ringo Starr</h4>
+<h4 class="panel-title">Ringo Starr</h4>
 </div>
 <div aria-labelledby="beatles-side-accordion-3-heading" class="panel-collapse collapse panel-collapse-leader" id="beatles-side-accordion-3-collapse" role="tabpanel">
 <div class="panel-body" style="">Drums, vocals</div>
@@ -327,10 +359,19 @@
 </div>
 </div>
 </div>
-<p>As you can see, the sidebar acts like a <code><a href="../reference/bs_accordion.html">bs_accordion()</a></code>, but there are a couple of important differences. First, a sidebar panel’s class changes according to its being open or not. Second, the state (show-hide) of each component’s main panel is determined by the state of its side panel.</p>
-<p>This extra functionality is implemented using some JavaScript code inserted into your page using the <code><a href="../reference/bs_accordion_sidebar.html">use_bs_accordion_sidebar()</a></code> function. You will have to do this only once per page; I have found that it works best to include after all of the accordion-sidebars are defined, perhaps as one of the last elements in a <strong>shiny</strong> UI.</p>
+<p>As you can see, the sidebar acts like a <code><a href="../reference/bs_accordion.html">bs_accordion()</a></code>,
+but there are a couple of important differences. First, a sidebar
+panel’s class changes according to its being open or not. Second, the
+state (show-hide) of each component’s main panel is determined by the
+state of its side panel.</p>
+<p>This extra functionality is implemented using some JavaScript code
+inserted into your page using the
+<code><a href="../reference/bs_accordion_sidebar.html">use_bs_accordion_sidebar()</a></code> function. You will have to do
+this only once per page; I have found that it works best to include
+after all of the accordion-sidebars are defined, perhaps as one of the
+last elements in a <strong>shiny</strong> UI.</p>
 <div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="fu"><a href="../reference/bs_accordion_sidebar.html">use_bs_accordion_sidebar</a></span><span class="op">(</span><span class="op">)</span></code></pre></div>
+<code class="sourceCode R"><span><span class="fu"><a href="../reference/bs_accordion_sidebar.html">use_bs_accordion_sidebar</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
 <script>function bsplus_collpase_validator(target, collapse) {
 
   /* target    element that initiated the event
@@ -423,19 +464,27 @@ $('.panel-collapse-leader').on('hide.bs.collapse', function () {
 });
 
 
-</script><p>To see more of the <code><a href="../reference/bs_accordion_sidebar.html">bs_accordion_sidebar()</a></code> function-family, including how to change the active/inactive classes, size and placement of the sidebar and main panels, and formatting of the main panel, please see <a href="https://ijlyttle.github.io/bsplus/articles/accordion_sidebar.html">its article</a>. You can also see this in action in a <a href="https://ijlyttle.shinyapps.io/accordion_sidebar/"><strong>shiny</strong> app</a>.</p>
+</script><p>To see more of the <code><a href="../reference/bs_accordion_sidebar.html">bs_accordion_sidebar()</a></code>
+function-family, including how to change the active/inactive classes,
+size and placement of the sidebar and main panels, and formatting of the
+main panel, please see <a href="https://ijlyttle.github.io/bsplus/articles/accordion_sidebar.html" class="external-link">its
+article</a>. You can also see this in action in a <a href="https://ijlyttle.shinyapps.io/accordion_sidebar/" class="external-link"><strong>shiny</strong>
+app</a>.</p>
 </div>
-<div id="modal" class="section level2">
-<h2 class="hasAnchor">
-<a href="#modal" class="anchor"></a>Modal</h2>
-<p>Modal windows are a great way to deliver help-documentation, although they certainly have other uses.</p>
-<p>The first step is to define a modal widow, giving it an <code>id</code>. The <strong>shiny</strong> function <code><a href="https://rdrr.io/pkg/htmltools/man/include.html">includeMarkdown()</a></code> can be useful to compose the content.</p>
+<div class="section level2">
+<h2 id="modal">Modal<a class="anchor" aria-label="anchor" href="#modal"></a>
+</h2>
+<p>Modal windows are a great way to deliver help-documentation, although
+they certainly have other uses.</p>
+<p>The first step is to define a modal widow, giving it an
+<code>id</code>. The <strong>shiny</strong> function
+<code><a href="https://rstudio.github.io/htmltools/reference/include.html" class="external-link">includeMarkdown()</a></code> can be useful to compose the content.</p>
 <div class="sourceCode" id="cb7"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="fu"><a href="../reference/bs_modal.html">bs_modal</a></span><span class="op">(</span>
-  id <span class="op">=</span> <span class="st">"modal_markdown"</span>, 
-  title <span class="op">=</span> <span class="st">"Using Markdown"</span>,
-  body <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/pkg/htmltools/man/include.html">includeMarkdown</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/system.file.html">system.file</a></span><span class="op">(</span><span class="st">"markdown"</span>, <span class="st">"modal.md"</span>, package <span class="op">=</span> <span class="st">"bsplus"</span><span class="op">)</span><span class="op">)</span>
-<span class="op">)</span></code></pre></div>
+<code class="sourceCode R"><span><span class="fu"><a href="../reference/bs_modal.html">bs_modal</a></span><span class="op">(</span></span>
+<span>  id <span class="op">=</span> <span class="st">"modal_markdown"</span>, </span>
+<span>  title <span class="op">=</span> <span class="st">"Using Markdown"</span>,</span>
+<span>  body <span class="op">=</span> <span class="fu"><a href="https://rstudio.github.io/htmltools/reference/include.html" class="external-link">includeMarkdown</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/system.file.html" class="external-link">system.file</a></span><span class="op">(</span><span class="st">"markdown"</span>, <span class="st">"modal.md"</span>, package <span class="op">=</span> <span class="st">"bsplus"</span><span class="op">)</span><span class="op">)</span></span>
+<span><span class="op">)</span></span></code></pre></div>
 <div class="modal fade" id="modal_markdown" tabindex="-1" role="dialog" aria-labelledby="modal_markdown-title">
 <div class="modal-dialog" role="document">
 <div class="modal-content">
@@ -446,10 +495,8 @@ $('.panel-collapse-leader').on('hide.bs.collapse', function () {
 <h4 class="modal-title" id="modal_markdown-title">Using Markdown</h4>
 </div>
 <div class="modal-body">
-<h4>4th-level headers work well</h4>
-
+<h4 id="4th-level-headers-work-well">4th-level headers work well</h4>
 <p>We can do our regular Markdown stuff in modal windows.</p>
-
 <ul>
 <li>\(F = ma\)</li>
 <li>\(E = mc^2\)</li>
@@ -461,88 +508,112 @@ $('.panel-collapse-leader').on('hide.bs.collapse', function () {
 </div>
 </div>
 </div>
-<p>To allow activation of the modal window, attach its <code>id</code> to a button (or link).</p>
+<p>To allow activation of the modal window, attach its <code>id</code>
+to a button (or link).</p>
 <div class="sourceCode" id="cb8"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="fu"><a href="../reference/bs_button.html">bs_button</a></span><span class="op">(</span><span class="st">"Click for modal"</span>, button_type <span class="op">=</span> <span class="st">"primary"</span><span class="op">)</span> <span class="op">%&gt;%</span>
-  <span class="fu"><a href="../reference/bs_modal.html">bs_attach_modal</a></span><span class="op">(</span><span class="st">"modal_markdown"</span><span class="op">)</span></code></pre></div>
-<p><button class="btn btn-primary" data-toggle="modal" data-target="#modal_markdown">Click for modal</button></p>
-<p>The verb <em>attach</em> implies that you can attach an <code>id</code> to as many links you like. Thus:</p>
+<code class="sourceCode R"><span><span class="fu"><a href="../reference/bs_button.html">bs_button</a></span><span class="op">(</span><span class="st">"Click for modal"</span>, button_type <span class="op">=</span> <span class="st">"primary"</span><span class="op">)</span> <span class="op"><a href="../reference/pipe.html">%&gt;%</a></span></span>
+<span>  <span class="fu"><a href="../reference/bs_modal.html">bs_attach_modal</a></span><span class="op">(</span><span class="st">"modal_markdown"</span><span class="op">)</span></span></code></pre></div>
+<button class="btn btn-primary" data-toggle="modal" data-target="#modal_markdown">Click for modal</button>
+<p>The verb <em>attach</em> implies that you can attach an
+<code>id</code> to as many links you like. Thus:</p>
 <div class="sourceCode" id="cb9"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="fu"><a href="../reference/bs_button.html">bs_button</a></span><span class="op">(</span><span class="st">"New button, same modal"</span>, button_type <span class="op">=</span> <span class="st">"primary"</span><span class="op">)</span> <span class="op">%&gt;%</span>
-  <span class="fu"><a href="../reference/bs_modal.html">bs_attach_modal</a></span><span class="op">(</span><span class="st">"modal_markdown"</span><span class="op">)</span></code></pre></div>
-<p><button class="btn btn-primary" data-toggle="modal" data-target="#modal_markdown">New button, same modal</button></p>
-<p>To see more of the <code><a href="../reference/bs_modal.html">bs_modal()</a></code> function-family, including how to specify the size of the modal, please see <a href="https://ijlyttle.github.io/bsplus/articles/modal.html">its article</a>.</p>
+<code class="sourceCode R"><span><span class="fu"><a href="../reference/bs_button.html">bs_button</a></span><span class="op">(</span><span class="st">"New button, same modal"</span>, button_type <span class="op">=</span> <span class="st">"primary"</span><span class="op">)</span> <span class="op"><a href="../reference/pipe.html">%&gt;%</a></span></span>
+<span>  <span class="fu"><a href="../reference/bs_modal.html">bs_attach_modal</a></span><span class="op">(</span><span class="st">"modal_markdown"</span><span class="op">)</span></span></code></pre></div>
+<button class="btn btn-primary" data-toggle="modal" data-target="#modal_markdown">New button, same modal</button>
+<p>To see more of the <code><a href="../reference/bs_modal.html">bs_modal()</a></code> function-family, including
+how to specify the size of the modal, please see <a href="https://ijlyttle.github.io/bsplus/articles/modal.html" class="external-link">its
+article</a>.</p>
 </div>
-<div id="tooltip" class="section level2">
-<h2 class="hasAnchor">
-<a href="#tooltip" class="anchor"></a>Tooltip</h2>
-<p>A tooltip can be used to embed a short note into a tag; by default they are activated by hovering over the tag.</p>
+<div class="section level2">
+<h2 id="tooltip">Tooltip<a class="anchor" aria-label="anchor" href="#tooltip"></a>
+</h2>
+<p>A tooltip can be used to embed a short note into a tag; by default
+they are activated by hovering over the tag.</p>
 <div class="sourceCode" id="cb10"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="fu"><a href="../reference/bs_button.html">bs_button</a></span><span class="op">(</span><span class="st">"John Lennon"</span>, button_type <span class="op">=</span> <span class="st">"default"</span><span class="op">)</span> <span class="op">%&gt;%</span>
-  <span class="fu"><a href="../reference/bs_embed_tooltip.html">bs_embed_tooltip</a></span><span class="op">(</span>title <span class="op">=</span> <span class="st">"Rhythm Guitar, vocals"</span><span class="op">)</span></code></pre></div>
-<p><button class="btn btn-default" title="Rhythm Guitar, vocals" data-toggle="tooltip" data-placement="top">John Lennon</button></p>
-<p>According to the <a href="http://getbootstrap.com/docs/3.3/javascript/#tooltips">Bootstrap site</a>, tooltips are not activated automatically; to activate them you can call <code><a href="../reference/bs_embed_tooltip.html">use_bs_tooltip()</a></code> once on your page.</p>
+<code class="sourceCode R"><span><span class="fu"><a href="../reference/bs_button.html">bs_button</a></span><span class="op">(</span><span class="st">"John Lennon"</span>, button_type <span class="op">=</span> <span class="st">"default"</span><span class="op">)</span> <span class="op"><a href="../reference/pipe.html">%&gt;%</a></span></span>
+<span>  <span class="fu"><a href="../reference/bs_embed_tooltip.html">bs_embed_tooltip</a></span><span class="op">(</span>title <span class="op">=</span> <span class="st">"Rhythm Guitar, vocals"</span><span class="op">)</span></span></code></pre></div>
+<button class="btn btn-default" title="Rhythm Guitar, vocals" data-toggle="tooltip" data-placement="top">John Lennon</button>
+<p>According to the <a href="http://getbootstrap.com/docs/3.3/javascript/#tooltips" class="external-link">Bootstrap
+site</a>, tooltips are not activated automatically; to activate them you
+can call <code><a href="../reference/bs_embed_tooltip.html">use_bs_tooltip()</a></code> once on your page.</p>
 <div class="sourceCode" id="cb11"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="fu"><a href="../reference/bs_embed_tooltip.html">use_bs_tooltip</a></span><span class="op">(</span><span class="op">)</span></code></pre></div>
+<code class="sourceCode R"><span><span class="fu"><a href="../reference/bs_embed_tooltip.html">use_bs_tooltip</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
 <script>$(function () {
   $('[data-toggle="tooltip"]').tooltip();
-});</script><p>To see more of the <code><a href="../reference/bs_embed_tooltip.html">bs_embed_tooltip()</a></code> function, including how to specify the placement of the tooltip, please see <a href="https://ijlyttle.github.io/bsplus/articles/tooltip_popover.html">its article</a>.</p>
+});</script><p>To see more of the <code><a href="../reference/bs_embed_tooltip.html">bs_embed_tooltip()</a></code> function,
+including how to specify the placement of the tooltip, please see <a href="https://ijlyttle.github.io/bsplus/articles/tooltip_popover.html" class="external-link">its
+article</a>.</p>
 </div>
-<div id="popover" class="section level2">
-<h2 class="hasAnchor">
-<a href="#popover" class="anchor"></a>Popover</h2>
-<p>A popover can be used to embed a longer note into a tag; by default they are activated by clicking on the tag. A popover has a <code>title</code>, which is generally text, and <code>content</code>, which can be HTML.</p>
+<div class="section level2">
+<h2 id="popover">Popover<a class="anchor" aria-label="anchor" href="#popover"></a>
+</h2>
+<p>A popover can be used to embed a longer note into a tag; by default
+they are activated by clicking on the tag. A popover has a
+<code>title</code>, which is generally text, and <code>content</code>,
+which can be HTML.</p>
 <div class="sourceCode" id="cb12"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="fu"><a href="../reference/bs_button.html">bs_button</a></span><span class="op">(</span><span class="st">"John Lennon"</span>, button_type <span class="op">=</span> <span class="st">"default"</span><span class="op">)</span> <span class="op">%&gt;%</span>
-  <span class="fu"><a href="../reference/bs_embed_popover.html">bs_embed_popover</a></span><span class="op">(</span>
-    title <span class="op">=</span> <span class="st">"More information"</span>,
-    content <span class="op">=</span> <span class="st">"Although he wrote \"I Am the Walrus\", 
-               he later insisted that the Walrus was Paul."</span>
-  <span class="op">)</span></code></pre></div>
-<p><button class="btn btn-default" title="More information" data-toggle="popover" data-content='Although he wrote "I Am the Walrus", 
-               he later insisted that the Walrus was Paul.' data-placement="top">John Lennon</button></p>
-<p>According to the <a href="http://getbootstrap.com/docs/3.3/javascript/#popovers">Bootstrap site</a>, popovers are not activated automatically; to activate them you can call <code>use_bs_popovers()</code> once on your page.</p>
+<code class="sourceCode R"><span><span class="fu"><a href="../reference/bs_button.html">bs_button</a></span><span class="op">(</span><span class="st">"John Lennon"</span>, button_type <span class="op">=</span> <span class="st">"default"</span><span class="op">)</span> <span class="op"><a href="../reference/pipe.html">%&gt;%</a></span></span>
+<span>  <span class="fu"><a href="../reference/bs_embed_popover.html">bs_embed_popover</a></span><span class="op">(</span></span>
+<span>    title <span class="op">=</span> <span class="st">"More information"</span>,</span>
+<span>    content <span class="op">=</span> <span class="st">"Although he wrote \"I Am the Walrus\", </span></span>
+<span><span class="st">               he later insisted that the Walrus was Paul."</span></span>
+<span>  <span class="op">)</span></span></code></pre></div>
+<button class="btn btn-default" title="More information" data-toggle="popover" data-content='Although he wrote "I Am the Walrus", 
+               he later insisted that the Walrus was Paul.' data-placement="top">John Lennon</button>
+<p>According to the <a href="http://getbootstrap.com/docs/3.3/javascript/#popovers" class="external-link">Bootstrap
+site</a>, popovers are not activated automatically; to activate them you
+can call <code>use_bs_popovers()</code> once on your page.</p>
 <div class="sourceCode" id="cb13"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="fu"><a href="../reference/bs_embed_popover.html">use_bs_popover</a></span><span class="op">(</span><span class="op">)</span></code></pre></div>
+<code class="sourceCode R"><span><span class="fu"><a href="../reference/bs_embed_popover.html">use_bs_popover</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
 <script>$(function () {
   $('[data-toggle="popover"]').popover();
-});</script><p>To see more of the <code><a href="../reference/bs_embed_popover.html">bs_embed_popover()</a></code> function, including how to specify the placement of the popover, please see <a href="https://ijlyttle.github.io/bsplus/articles/tooltip_popover.html">its article</a>.</p>
+});</script><p>To see more of the <code><a href="../reference/bs_embed_popover.html">bs_embed_popover()</a></code> function,
+including how to specify the placement of the popover, please see <a href="https://ijlyttle.github.io/bsplus/articles/tooltip_popover.html" class="external-link">its
+article</a>.</p>
 </div>
-<div id="carousel" class="section level2">
-<h2 class="hasAnchor">
-<a href="#carousel" class="anchor"></a>Carousel</h2>
-<p>An carousel can be useful to cycle through slides with related content. There like the accordion, there are two main functions:</p>
+<div class="section level2">
+<h2 id="carousel">Carousel<a class="anchor" aria-label="anchor" href="#carousel"></a>
+</h2>
+<p>An carousel can be useful to cycle through slides with related
+content. There like the accordion, there are two main functions:</p>
 <ul>
 <li>
-<code><a href="../reference/bs_append.bsplus_carousel.html">bs_carousel()</a></code>, used to establish the carousel framework</li>
+<code><a href="../reference/bs_carousel.html">bs_carousel()</a></code>, used to establish the carousel
+framework</li>
 <li>
-<code><a href="../reference/bs_append.html">bs_append()</a></code>, used to add a slide containing <code>content</code>, which is HTML, and an optional <code>caption</code>
+<code><a href="../reference/bs_append.html">bs_append()</a></code>, used to add a slide containing
+<code>content</code>, which is HTML, and an optional
+<code>caption</code>
 </li>
 </ul>
 <div class="sourceCode" id="cb14"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="fu"><a href="../reference/bs_append.bsplus_carousel.html">bs_carousel</a></span><span class="op">(</span>id <span class="op">=</span> <span class="st">"the_beatles"</span>, use_indicators <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span> <span class="op">%&gt;%</span>
-  <span class="fu"><a href="../reference/bs_append.html">bs_append</a></span><span class="op">(</span>
-    content <span class="op">=</span> <span class="fu"><a href="../reference/bs_carousel_image.html">bs_carousel_image</a></span><span class="op">(</span>src <span class="op">=</span> <span class="fu">image_uri</span><span class="op">(</span><span class="st">"img/john.jpg"</span><span class="op">)</span><span class="op">)</span>,
-    caption <span class="op">=</span> <span class="fu"><a href="../reference/bs_carousel_caption.html">bs_carousel_caption</a></span><span class="op">(</span><span class="st">"John Lennon"</span>, <span class="st">"Rhythm guitar, vocals"</span><span class="op">)</span>
-  <span class="op">)</span> <span class="op">%&gt;%</span>
-  <span class="fu"><a href="../reference/bs_append.html">bs_append</a></span><span class="op">(</span>
-    content <span class="op">=</span> <span class="fu"><a href="../reference/bs_carousel_image.html">bs_carousel_image</a></span><span class="op">(</span>src <span class="op">=</span> <span class="fu">image_uri</span><span class="op">(</span><span class="st">"img/paul.jpg"</span><span class="op">)</span><span class="op">)</span>,
-    caption <span class="op">=</span> <span class="fu"><a href="../reference/bs_carousel_caption.html">bs_carousel_caption</a></span><span class="op">(</span><span class="st">"Paul McCartney"</span>, <span class="st">"Bass guitar, vocals"</span><span class="op">)</span>
-  <span class="op">)</span> <span class="op">%&gt;%</span>
-  <span class="fu"><a href="../reference/bs_append.html">bs_append</a></span><span class="op">(</span>
-    content <span class="op">=</span> <span class="fu"><a href="../reference/bs_carousel_image.html">bs_carousel_image</a></span><span class="op">(</span>src <span class="op">=</span> <span class="fu">image_uri</span><span class="op">(</span><span class="st">"img/george.jpg"</span><span class="op">)</span><span class="op">)</span>,
-    caption <span class="op">=</span> <span class="fu"><a href="../reference/bs_carousel_caption.html">bs_carousel_caption</a></span><span class="op">(</span><span class="st">"George Harrison"</span>, <span class="st">"Lead guitar, vocals"</span><span class="op">)</span>
-  <span class="op">)</span> <span class="op">%&gt;%</span>
-  <span class="fu"><a href="../reference/bs_append.html">bs_append</a></span><span class="op">(</span>
-    content <span class="op">=</span> <span class="fu"><a href="../reference/bs_carousel_image.html">bs_carousel_image</a></span><span class="op">(</span>src <span class="op">=</span> <span class="fu">image_uri</span><span class="op">(</span><span class="st">"img/ringo.jpg"</span><span class="op">)</span><span class="op">)</span>,
-    caption <span class="op">=</span> <span class="fu"><a href="../reference/bs_carousel_caption.html">bs_carousel_caption</a></span><span class="op">(</span><span class="st">"Ringo Starr"</span>, <span class="st">"Drums, vocals"</span><span class="op">)</span>
-  <span class="op">)</span> </code></pre></div>
+<code class="sourceCode R"><span><span class="fu"><a href="../reference/bs_carousel.html">bs_carousel</a></span><span class="op">(</span>id <span class="op">=</span> <span class="st">"the_beatles"</span>, use_indicators <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span> <span class="op"><a href="../reference/pipe.html">%&gt;%</a></span></span>
+<span>  <span class="fu"><a href="../reference/bs_append.html">bs_append</a></span><span class="op">(</span></span>
+<span>    content <span class="op">=</span> <span class="fu"><a href="../reference/bs_carousel_image.html">bs_carousel_image</a></span><span class="op">(</span>src <span class="op">=</span> <span class="fu">image_uri</span><span class="op">(</span><span class="st">"img/john.jpg"</span><span class="op">)</span><span class="op">)</span>,</span>
+<span>    caption <span class="op">=</span> <span class="fu"><a href="../reference/bs_carousel_caption.html">bs_carousel_caption</a></span><span class="op">(</span><span class="st">"John Lennon"</span>, <span class="st">"Rhythm guitar, vocals"</span><span class="op">)</span></span>
+<span>  <span class="op">)</span> <span class="op"><a href="../reference/pipe.html">%&gt;%</a></span></span>
+<span>  <span class="fu"><a href="../reference/bs_append.html">bs_append</a></span><span class="op">(</span></span>
+<span>    content <span class="op">=</span> <span class="fu"><a href="../reference/bs_carousel_image.html">bs_carousel_image</a></span><span class="op">(</span>src <span class="op">=</span> <span class="fu">image_uri</span><span class="op">(</span><span class="st">"img/paul.jpg"</span><span class="op">)</span><span class="op">)</span>,</span>
+<span>    caption <span class="op">=</span> <span class="fu"><a href="../reference/bs_carousel_caption.html">bs_carousel_caption</a></span><span class="op">(</span><span class="st">"Paul McCartney"</span>, <span class="st">"Bass guitar, vocals"</span><span class="op">)</span></span>
+<span>  <span class="op">)</span> <span class="op"><a href="../reference/pipe.html">%&gt;%</a></span></span>
+<span>  <span class="fu"><a href="../reference/bs_append.html">bs_append</a></span><span class="op">(</span></span>
+<span>    content <span class="op">=</span> <span class="fu"><a href="../reference/bs_carousel_image.html">bs_carousel_image</a></span><span class="op">(</span>src <span class="op">=</span> <span class="fu">image_uri</span><span class="op">(</span><span class="st">"img/george.jpg"</span><span class="op">)</span><span class="op">)</span>,</span>
+<span>    caption <span class="op">=</span> <span class="fu"><a href="../reference/bs_carousel_caption.html">bs_carousel_caption</a></span><span class="op">(</span><span class="st">"George Harrison"</span>, <span class="st">"Lead guitar, vocals"</span><span class="op">)</span></span>
+<span>  <span class="op">)</span> <span class="op"><a href="../reference/pipe.html">%&gt;%</a></span></span>
+<span>  <span class="fu"><a href="../reference/bs_append.html">bs_append</a></span><span class="op">(</span></span>
+<span>    content <span class="op">=</span> <span class="fu"><a href="../reference/bs_carousel_image.html">bs_carousel_image</a></span><span class="op">(</span>src <span class="op">=</span> <span class="fu">image_uri</span><span class="op">(</span><span class="st">"img/ringo.jpg"</span><span class="op">)</span><span class="op">)</span>,</span>
+<span>    caption <span class="op">=</span> <span class="fu"><a href="../reference/bs_carousel_caption.html">bs_carousel_caption</a></span><span class="op">(</span><span class="st">"Ringo Starr"</span>, <span class="st">"Drums, vocals"</span><span class="op">)</span></span>
+<span>  <span class="op">)</span> </span></code></pre></div>
 <div id="the_beatles" class="carousel slide" data-ride="carousel">
 <ol class="carousel-indicators">
 <li data-target="#the_beatles" data-slide-to="0" class="active">
+</li>
 <li data-target="#the_beatles" data-slide-to="1">
+</li>
 <li data-target="#the_beatles" data-slide-to="2">
+</li>
 <li data-target="#the_beatles" data-slide-to="3">
+</li>
 </ol>
 <div class="carousel-inner" role="listbox">
 <div class="item active">
@@ -579,80 +650,126 @@ $('.panel-collapse-leader').on('hide.bs.collapse', function () {
 <span class="sr-only">Next</span>
 </a>
 </div>
-<p>I think the carousel has potential not shown in this example. The content of each slide is HTML, so a carousel could contain images (as shown here), <strong>shiny</strong> inputs or outputs. Another possibility may be to use the the <code>frame</code> aesthetic offered by <strong>gganimate</strong> to cycle through <strong>ggplot2</strong> plots.</p>
-<p>To see more of the <code><a href="../reference/bs_append.bsplus_carousel.html">bs_carousel()</a></code> framework, including its helper functions <code><a href="../reference/bs_carousel_image.html">bs_carousel_image()</a></code> and <code><a href="../reference/bs_carousel_caption.html">bs_carousel_caption()</a></code>, please see <a href="https://ijlyttle.github.io/bsplus/articles/carousel.html">its article</a>.</p>
+<p>I think the carousel has potential not shown in this example. The
+content of each slide is HTML, so a carousel could contain images (as
+shown here), <strong>shiny</strong> inputs or outputs. Another
+possibility may be to use the the <code>frame</code> aesthetic offered
+by <strong>gganimate</strong> to cycle through <strong>ggplot2</strong>
+plots.</p>
+<p>To see more of the <code><a href="../reference/bs_carousel.html">bs_carousel()</a></code> framework, including
+its helper functions <code><a href="../reference/bs_carousel_image.html">bs_carousel_image()</a></code> and
+<code><a href="../reference/bs_carousel_caption.html">bs_carousel_caption()</a></code>, please see <a href="https://ijlyttle.github.io/bsplus/articles/carousel.html" class="external-link">its
+article</a>.</p>
 </div>
-<div id="help-links" class="section level2">
-<h2 class="hasAnchor">
-<a href="#help-links" class="anchor"></a>Help links</h2>
-<p>If you want to include help links in your <strong>shiny</strong> app, some functions in this package can help you do that.</p>
-<p>Let’s consider a <strong>shiny</strong> input. One way to put unobtrusive help into a <strong>shiny</strong> input is to embed a help icon into its label, having associated the help icon with the help documentation. This suggests three steps:</p>
+<div class="section level2">
+<h2 id="help-links">Help links<a class="anchor" aria-label="anchor" href="#help-links"></a>
+</h2>
+<p>If you want to include help links in your <strong>shiny</strong> app,
+some functions in this package can help you do that.</p>
+<p>Let’s consider a <strong>shiny</strong> input. One way to put
+unobtrusive help into a <strong>shiny</strong> input is to embed a help
+icon into its label, having associated the help icon with the help
+documentation. This suggests three steps:</p>
 <ol style="list-style-type: decimal">
-<li>Create a help icon. You can use <code><a href="https://rdrr.io/pkg/shiny/man/icon.html">shiny::icon()</a></code> or <code><a href="../reference/shiny_iconlink.html">shiny_iconlink()</a></code> (which simply wraps the icon in an HTML link).</li>
-<li>Associate the help icon with your help documentation. Here, you can use <code><a href="../reference/bs_embed_tooltip.html">bs_embed_tooltip()</a></code>, <code><a href="../reference/bs_embed_popover.html">bs_embed_popover()</a></code> or <code><a href="../reference/bs_modal.html">bs_attach_modal()</a></code>.</li>
-<li>Embed your help icon into the <strong>shiny</strong> input. You can use <code><a href="../reference/shinyInput_label_embed.html">shinyInput_label_embed()</a></code>.</li>
+<li>Create a help icon. You can use <code><a href="https://rdrr.io/pkg/shiny/man/icon.html" class="external-link">shiny::icon()</a></code> or
+<code><a href="../reference/shiny_iconlink.html">shiny_iconlink()</a></code> (which simply wraps the icon in an HTML
+link).</li>
+<li>Associate the help icon with your help documentation. Here, you can
+use <code><a href="../reference/bs_embed_tooltip.html">bs_embed_tooltip()</a></code>, <code><a href="../reference/bs_embed_popover.html">bs_embed_popover()</a></code> or
+<code><a href="../reference/bs_modal.html">bs_attach_modal()</a></code>.</li>
+<li>Embed your help icon into the <strong>shiny</strong> input. You can
+use <code><a href="../reference/shinyInput_label_embed.html">shinyInput_label_embed()</a></code>.</li>
 </ol>
 <p>Here’s an example of everything put together:</p>
 <div class="sourceCode" id="cb15"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/pkg/shiny/man/selectInput.html">selectInput</a></span><span class="op">(</span>
-  inputId <span class="op">=</span> <span class="st">"letter"</span>,
-  label <span class="op">=</span> <span class="st">"Label with popover help"</span>,
-  choices <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"a"</span>, <span class="st">"b"</span>, <span class="st">"c"</span><span class="op">)</span>
-<span class="op">)</span> <span class="op">%&gt;%</span>
-<span class="fu"><a href="../reference/shinyInput_label_embed.html">shinyInput_label_embed</a></span><span class="op">(</span>
-  <span class="fu"><a href="../reference/shiny_iconlink.html">shiny_iconlink</a></span><span class="op">(</span><span class="op">)</span> <span class="op">%&gt;%</span>
-  <span class="fu"><a href="../reference/bs_embed_popover.html">bs_embed_popover</a></span><span class="op">(</span>
-    title <span class="op">=</span> <span class="st">"Letter"</span>, content <span class="op">=</span> <span class="st">"Choose a favorite"</span>, placement <span class="op">=</span> <span class="st">"left"</span>
-  <span class="op">)</span>
-<span class="op">)</span></code></pre></div>
-<p>As of writing, I don’t know how to include operable <strong>shiny</strong> inputs in an html document, outside of the <strong>shiny</strong> runtime. To see these functions in action, you can refer to this <a href="https://ijlyttle.shinyapps.io/tooltip_popover_modal/#"><strong>shiny</strong> app</a>, which you can also run locally using:</p>
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/pkg/shiny/man/selectInput.html" class="external-link">selectInput</a></span><span class="op">(</span></span>
+<span>  inputId <span class="op">=</span> <span class="st">"letter"</span>,</span>
+<span>  label <span class="op">=</span> <span class="st">"Label with popover help"</span>,</span>
+<span>  choices <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"a"</span>, <span class="st">"b"</span>, <span class="st">"c"</span><span class="op">)</span></span>
+<span><span class="op">)</span> <span class="op"><a href="../reference/pipe.html">%&gt;%</a></span></span>
+<span><span class="fu"><a href="../reference/shinyInput_label_embed.html">shinyInput_label_embed</a></span><span class="op">(</span></span>
+<span>  <span class="fu"><a href="../reference/shiny_iconlink.html">shiny_iconlink</a></span><span class="op">(</span><span class="op">)</span> <span class="op"><a href="../reference/pipe.html">%&gt;%</a></span></span>
+<span>  <span class="fu"><a href="../reference/bs_embed_popover.html">bs_embed_popover</a></span><span class="op">(</span></span>
+<span>    title <span class="op">=</span> <span class="st">"Letter"</span>, content <span class="op">=</span> <span class="st">"Choose a favorite"</span>, placement <span class="op">=</span> <span class="st">"left"</span></span>
+<span>  <span class="op">)</span></span>
+<span><span class="op">)</span></span></code></pre></div>
+<p>As of writing, I don’t know how to include operable
+<strong>shiny</strong> inputs in an html document, outside of the
+<strong>shiny</strong> runtime. To see these functions in action, you
+can refer to this <a href="https://ijlyttle.shinyapps.io/tooltip_popover_modal/#" class="external-link"><strong>shiny</strong>
+app</a>, which you can also run locally using:</p>
 <div class="sourceCode" id="cb16"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="fu">shiny</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/shiny/man/runApp.html">runApp</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/system.file.html">system.file</a></span><span class="op">(</span><span class="st">"shiny"</span>, <span class="st">"tooltip_popover_modal"</span>, package <span class="op">=</span> <span class="st">"bsplus"</span><span class="op">)</span><span class="op">)</span></code></pre></div>
+<code class="sourceCode R"><span><span class="fu">shiny</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/shiny/man/runApp.html" class="external-link">runApp</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/system.file.html" class="external-link">system.file</a></span><span class="op">(</span><span class="st">"shiny"</span>, <span class="st">"tooltip_popover_modal"</span>, package <span class="op">=</span> <span class="st">"bsplus"</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
 <p>Here’s what it looks like:</p>
-<p><img src="img/popover.png"></p>
-<p>To see more of the help-link framework, including more examples and a proposed convention for icons, please read <a href="https://ijlyttle.github.io/bsplus/articles/shiny_help_links.html">this article</a>.</p>
+<p><img src="img%2Fpopover.png"></p>
+<p>To see more of the help-link framework, including more examples and a
+proposed convention for icons, please read <a href="https://ijlyttle.github.io/bsplus/articles/shiny_help_links.html" class="external-link">this
+article</a>.</p>
 </div>
-<div id="helper-functions" class="section level2">
-<h2 class="hasAnchor">
-<a href="#helper-functions" class="anchor"></a>Helper functions</h2>
-<p>Finally, there are a couple of helper functions for customizing Bootstrap tags: <code><a href="../reference/bs_set_data.html">bs_set_data()</a></code> and <code><a href="../reference/bs_set_data.html">bs_set_aria()</a></code>. These can be useful because not all of the options for Bootstrap components are represented in the arguments of functions in this package.</p>
-<p>Consider the <a href="http://getbootstrap.com/docs/3.3/javascript/#popovers-options">options for popovers</a>; there are close to a dozen. The only one that I thought might be commonly used was <code>placement</code>, so this became an explicit argument to <code><a href="../reference/bs_embed_popover.html">bs_embed_popover()</a></code>.</p>
-<p>Let’s say that you want to be able to dismiss a popover by clicking anywhere in the browser window other than the button. To do this, you have to set the attribute <code>data-trigger</code> to the value <code>"focus"</code>. The function <code><a href="../reference/bs_set_data.html">bs_set_data()</a></code> makes things a little easier for you by prepending <code>"data-"</code> to each name and serializing the values to the format specified by the Bootstrap API.</p>
-<p>The <code><a href="../reference/bs_embed_popover.html">bs_embed_popover()</a></code> function has a <code>...</code> argument; any such additional arguments are passed to <code><a href="../reference/bs_set_data.html">bs_set_data()</a></code>. Thus, you can add this <code>trigger</code> argument to <code><a href="../reference/bs_embed_popover.html">bs_embed_popover()</a></code>.</p>
+<div class="section level2">
+<h2 id="helper-functions">Helper functions<a class="anchor" aria-label="anchor" href="#helper-functions"></a>
+</h2>
+<p>Finally, there are a couple of helper functions for customizing
+Bootstrap tags: <code><a href="../reference/bs_set_data.html">bs_set_data()</a></code> and
+<code><a href="../reference/bs_set_data.html">bs_set_aria()</a></code>. These can be useful because not all of the
+options for Bootstrap components are represented in the arguments of
+functions in this package.</p>
+<p>Consider the <a href="http://getbootstrap.com/docs/3.3/javascript/#popovers-options" class="external-link">options
+for popovers</a>; there are close to a dozen. The only one that I
+thought might be commonly used was <code>placement</code>, so this
+became an explicit argument to <code><a href="../reference/bs_embed_popover.html">bs_embed_popover()</a></code>.</p>
+<p>Let’s say that you want to be able to dismiss a popover by clicking
+anywhere in the browser window other than the button. To do this, you
+have to set the attribute <code>data-trigger</code> to the value
+<code>"focus"</code>. The function <code><a href="../reference/bs_set_data.html">bs_set_data()</a></code> makes
+things a little easier for you by prepending <code>"data-"</code> to
+each name and serializing the values to the format specified by the
+Bootstrap API.</p>
+<p>The <code><a href="../reference/bs_embed_popover.html">bs_embed_popover()</a></code> function has a <code>...</code>
+argument; any such additional arguments are passed to
+<code><a href="../reference/bs_set_data.html">bs_set_data()</a></code>. Thus, you can add this <code>trigger</code>
+argument to <code><a href="../reference/bs_embed_popover.html">bs_embed_popover()</a></code>.</p>
 <div class="sourceCode" id="cb17"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="fu"><a href="../reference/bs_button.html">bs_button</a></span><span class="op">(</span><span class="st">"Click for popover"</span>, button_type <span class="op">=</span> <span class="st">"primary"</span><span class="op">)</span> <span class="op">%&gt;%</span>
-  <span class="fu"><a href="../reference/bs_embed_popover.html">bs_embed_popover</a></span><span class="op">(</span>
-    title <span class="op">=</span> <span class="st">"To dismiss"</span>,
-    content <span class="op">=</span> <span class="st">"Click anywhere in the browser window, except the button."</span>,
-    trigger <span class="op">=</span> <span class="st">"focus"</span>
-  <span class="op">)</span></code></pre></div>
-<p><button class="btn btn-primary" title="To dismiss" data-toggle="popover" data-content="Click anywhere in the browser window, except the button." data-placement="top" data-trigger="focus">Click for popover</button></p>
-<p>Both of these functions are used to set attributes on tags; <code><a href="../reference/bs_set_data.html">bs_set_data()</a></code> is used for attributes that start with <code>"data-"</code>, <code><a href="../reference/bs_set_data.html">bs_set_aria()</a></code> is used for attributes that start with <code>"aria-"</code>. To see more of these helper functions, please read <a href="https://ijlyttle.github.io/bsplus/reference/bs_set_data.html">their reference</a>.</p>
+<code class="sourceCode R"><span><span class="fu"><a href="../reference/bs_button.html">bs_button</a></span><span class="op">(</span><span class="st">"Click for popover"</span>, button_type <span class="op">=</span> <span class="st">"primary"</span><span class="op">)</span> <span class="op"><a href="../reference/pipe.html">%&gt;%</a></span></span>
+<span>  <span class="fu"><a href="../reference/bs_embed_popover.html">bs_embed_popover</a></span><span class="op">(</span></span>
+<span>    title <span class="op">=</span> <span class="st">"To dismiss"</span>,</span>
+<span>    content <span class="op">=</span> <span class="st">"Click anywhere in the browser window, except the button."</span>,</span>
+<span>    trigger <span class="op">=</span> <span class="st">"focus"</span></span>
+<span>  <span class="op">)</span></span></code></pre></div>
+<button class="btn btn-primary" title="To dismiss" data-toggle="popover" data-content="Click anywhere in the browser window, except the button." data-placement="top" data-trigger="focus">Click for popover</button>
+<p>Both of these functions are used to set attributes on tags;
+<code><a href="../reference/bs_set_data.html">bs_set_data()</a></code> is used for attributes that start with
+<code>"data-"</code>, <code><a href="../reference/bs_set_data.html">bs_set_aria()</a></code> is used for attributes
+that start with <code>"aria-"</code>. To see more of these helper
+functions, please read <a href="https://ijlyttle.github.io/bsplus/reference/bs_set_data.html" class="external-link">their
+reference</a>.</p>
 </div>
   </div>
 
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
 
-        <nav id="toc" data-toggle="toc"><h2 data-toc-skip>Contents</h2>
-    </nav>
-</div>
+      </div>
 
 </div>
 
 
 
       <footer><div class="copyright">
-  <p>Developed by Ian Lyttle.</p>
+  <p></p>
+<p>Developed by Ian Lyttle.</p>
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.6.1.</p>
+  <p></p>
+<p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.1.1.</p>
 </div>
 
       </footer>
 </div>
 
-  
+
+
+
 
 
   </body>
