@@ -1,14 +1,13 @@
-pandoc: 2.19.2
-pkgdown: 2.0.6
+pandoc: 3.1.11
+pkgdown: 2.1.1
 pkgdown_sha: ~
 articles:
-  accordion: accordion.html
   accordion_sidebar: accordion_sidebar.html
+  accordion: accordion.html
   bsplus: bsplus.html
   carousel: carousel.html
   collapse: collapse.html
   modal: modal.html
   shiny_help_links: shiny_help_links.html
   tooltip_popover: tooltip_popover.html
-last_built: 2022-11-14T13:01Z
-
+last_built: 2025-04-05T15:39Z
