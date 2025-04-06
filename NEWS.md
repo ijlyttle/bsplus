@@ -1,3 +1,5 @@
+# bsplus (development version)
+
 # bsplus 0.1.5
 
 - fix pkgdown warnings, add alt text to images (#120)
