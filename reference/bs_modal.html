@@ -19,13 +19,13 @@ there are two parts to this system:"><!-- mathjax --><script src="https://cdnjs.
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">bsplus</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.1.4</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.1.5</span>
       </span>
     </div>
 
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav"><li>
-  <a href="../articles/bsplus.html">Get started</a>
+  <a href="../articles/bsplus.html">Get Started</a>
 </li>
 <li>
   <a href="../reference/index.html">Reference</a>
@@ -36,28 +36,26 @@ there are two parts to this system:"><!-- mathjax --><script src="https://cdnjs.
 
     <span class="caret"></span>
   </a>
-  <ul class="dropdown-menu" role="menu"><li class="dropdown-header">Function Families</li>
-    <li class="divider">
-    <li>
-      <a href="../articles/collapse.html">collpase</a>
+  <ul class="dropdown-menu" role="menu"><li>
+      <a href="../articles/accordion_sidebar.html">Accordion Sidebar</a>
     </li>
     <li>
-      <a href="../articles/accordion.html">accordion</a>
+      <a href="../articles/accordion.html">Accordion</a>
     </li>
     <li>
-      <a href="../articles/accordion_sidebar.html">accordion_sidebar</a>
+      <a href="../articles/carousel.html">Carousel</a>
     </li>
     <li>
-      <a href="../articles/tooltip_popover.html">tooltip_popover</a>
+      <a href="../articles/collapse.html">Collapse</a>
     </li>
     <li>
-      <a href="../articles/modal.html">modal</a>
+      <a href="../articles/modal.html">Modals</a>
     </li>
     <li>
-      <a href="../articles/carousel.html">carousel</a>
+      <a href="../articles/shiny_help_links.html">Shiny-input help links</a>
     </li>
     <li>
-      <a href="../articles/shiny_help_links.html">shiny_help_links</a>
+      <a href="../articles/tooltip_popover.html">Tooltips and Popovers</a>
     </li>
   </ul></li>
 <li>
@@ -183,8 +181,17 @@ be useful.</p>
 
     <div id="ref-examples">
     <h2>Examples</h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="st"><a href="https://github.com/rstudio/htmltools" class="external-link">"htmltools"</a></span><span class="op">)</span> <span class="co"># also needs `markdown` package</span></span></span>
-<span class="r-in"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="st"><a href="https://shiny.posit.co/" class="external-link">"shiny"</a></span><span class="op">)</span></span></span>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="st"><a href="https://shiny.posit.co/" class="external-link">"shiny"</a></span><span class="op">)</span></span></span>
+<span class="r-in"><span></span></span>
+<span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/base/ns-load.html" class="external-link">requireNamespace</a></span><span class="op">(</span><span class="st">"litedown"</span>, quietly <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/base/ns-load.html" class="external-link">requireNamespace</a></span><span class="op">(</span><span class="st">"withr"</span>, quietly <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span></span>
+<span class="r-in"><span></span></span>
+<span class="r-in"><span><span class="va">example_path</span> <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/system.file.html" class="external-link">system.file</a></span><span class="op">(</span><span class="st">"markdown"</span>, <span class="st">"modal.md"</span>, package <span class="op">=</span> <span class="st">"bsplus"</span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="va">example_markdown</span> <span class="op">=</span> <span class="fu">withr</span><span class="fu">::</span><span class="fu"><a href="https://withr.r-lib.org/reference/with_connection.html" class="external-link">with_connection</a></span><span class="op">(</span></span></span>
+<span class="r-in"><span>  <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span>con <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/connections.html" class="external-link">file</a></span><span class="op">(</span><span class="va">example_path</span>, open <span class="op">=</span> <span class="st">"r"</span><span class="op">)</span><span class="op">)</span>, <span class="op">{</span></span></span>
+<span class="r-in"><span>    <span class="fu"><a href="https://rdrr.io/r/base/readLines.html" class="external-link">readLines</a></span><span class="op">(</span><span class="va">con</span><span class="op">)</span></span></span>
+<span class="r-in"><span>  <span class="op">}</span></span></span>
+<span class="r-in"><span><span class="op">)</span></span></span>
 <span class="r-in"><span></span></span>
 <span class="r-in"><span><span class="fu">bs_modal</span><span class="op">(</span>id <span class="op">=</span> <span class="st">"modal"</span>, title <span class="op">=</span> <span class="st">"I'm a modal"</span>, body <span class="op">=</span> <span class="st">"Yes, I am."</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> &lt;div class="modal fade" id="modal" tabindex="-1" role="dialog" aria-labelledby="modal-title"&gt;</span>
@@ -211,7 +218,7 @@ be useful.</p>
 <span class="r-in"><span>  id <span class="op">=</span> <span class="st">"modal_large"</span>,</span></span>
 <span class="r-in"><span>  title <span class="op">=</span> <span class="st">"I'm a modal"</span>,</span></span>
 <span class="r-in"><span>  size <span class="op">=</span> <span class="st">"large"</span>,</span></span>
-<span class="r-in"><span>  body <span class="op">=</span> <span class="fu"><a href="https://rstudio.github.io/htmltools/reference/include.html" class="external-link">includeMarkdown</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/system.file.html" class="external-link">system.file</a></span><span class="op">(</span><span class="st">"markdown"</span>, <span class="st">"modal.md"</span>, package <span class="op">=</span> <span class="st">"bsplus"</span><span class="op">)</span><span class="op">)</span></span></span>
+<span class="r-in"><span>  body <span class="op">=</span> <span class="fu">litedown</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/litedown/man/mark.html" class="external-link">mark</a></span><span class="op">(</span>text <span class="op">=</span> <span class="va">example_markdown</span><span class="op">)</span></span></span>
 <span class="r-in"><span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> &lt;div aria-labelledby="modal_large-title" class="modal fade bs-example-modal-lg" id="modal_large" role="dialog" tabindex="-1"&gt;</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>   &lt;div class="modal-dialog modal-lg" role="document"&gt;</span>
@@ -222,13 +229,12 @@ be useful.</p>
 <span class="r-out co"><span class="r-pr">#&gt;</span>         &lt;/button&gt;</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>         &lt;h4 class="modal-title" id="modal_large-title"&gt;I'm a modal&lt;/h4&gt;</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>       &lt;/div&gt;</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>       &lt;div class="modal-body"&gt;&lt;h4 id="4th-level-headers-work-well"&gt;4th-level headers work well&lt;/h4&gt;</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> &lt;p&gt;We can do our regular Markdown stuff in modal windows.&lt;/p&gt;</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> &lt;ul&gt;</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> &lt;li&gt;\(F = ma\)&lt;/li&gt;</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> &lt;li&gt;\(E = mc^2\)&lt;/li&gt;</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> &lt;/ul&gt;</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> &lt;/div&gt;</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>       &lt;div class="modal-body"&gt;&amp;lt;h4 id="sec:4th-level-headers-work-well"&amp;gt;4th-level headers work well&amp;lt;/h4&amp;gt;</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> &amp;lt;p&amp;gt;We can do our regular Markdown stuff in modal windows.&amp;lt;/p&amp;gt;</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> &amp;lt;ul&amp;gt;</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> &amp;lt;li&amp;gt;\(F = ma\)&amp;lt;/li&amp;gt;</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> &amp;lt;li&amp;gt;\(E = mc^2\)&amp;lt;/li&amp;gt;</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> &amp;lt;/ul&amp;gt;&lt;/div&gt;</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>       &lt;div class="modal-footer"&gt;</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>         &lt;button class="btn btn-default" data-dismiss="modal"&gt;Close&lt;/button&gt;</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>       &lt;/div&gt;</span>
